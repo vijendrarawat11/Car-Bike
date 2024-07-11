@@ -904,6 +904,7 @@
                 <div class="content" id="content">
                     <section id="specifications">
                         <h4 class="contentheading">Specifications</h4>
+                    <div id="specificationsContainer">
                             @foreach (var spec in ViewBag.Specs)
                             {
                             <div class="container-fluid">
@@ -931,6 +932,7 @@
                                     </table>
                                 </div>
                             }
+                            </div>
                     </section>
                     <section id="engineTransmission">
                         <h4 class="contentheading">Engine & Transmission</h4>
@@ -1364,6 +1366,61 @@
         <button class="scroltop fa fa-chevron-up"></button>
     @* </div> *@
     
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#varientId').change(function () {
+                var varientId = $(this).val();
+                alert(varientId);
+                if (varientId) {
+                    debugger;
+                    $.ajax({
+                        url: '@Url.Action("GetTWSpecByVarient", "Home")',
+                        type: 'GET',
+                        data: { varientId: varientId },
+                        success: function (data) {
+                            alert(data);
+                            var specificationsContainer = $('#specificationsContainer');
+                            specificationsContainer.empty();
+                            $.each(data, function (index, item) {
+                                var row = '<div class="container-fluid">' +
+                                    '<table class="contenttable">' +
+                                    '<tr>' +
+                                    '<th><h4>Varient :- ' + item.Varients + '</h4></th>' +
+                                    '<td></td>' +
+                                    '</tr>' +
+                                    '<tr>' +
+                                    '<th>Mileage</th>' +
+                                    '<td>' + item.Milage + '</td>' +
+                                    '</tr>' +
+                                    '<tr>' +
+                                    '<th>Front Brake</th>' +
+                                    '<td>' + item.FrontBrake + '</td>' +
+                                    '</tr>' +
+                                    '<tr>' +
+                                    '<th>Rear Brake</th>' +
+                                    '<td>' + item.RearBrake + '</td>' +
+                                    '</tr>' +
+                                    '<tr>' +
+                                    '<th>Fuel Capacity</th>' +
+                                    '<td>' + item.FuelCapacity + '</td>' +
+                                    '</tr>' +
+                                    '</table>' +
+                                    '</div>';
+                                specificationsContainer.append(row);
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+
+
+
+
     <!--For Highlisght the scorllspy part-->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -1393,76 +1450,6 @@
             });
         });
     </script>
-
-    @* <script>
-        $(document).ready(function () {
-            // alert("1");
-            $("#ddlBrand").change(function () {
-                // alert("2");
-                var url = "@Url.Action("GetModelsByBrand", "Home")";
-                $.getJSON(url, { Id: $("#ddlBrand").val() }, function (data) {
-                    // alert(JSON.stringify(data));
-                    $("#ddlModel").empty(); // Clear existing options
-                    $("#ddlModel").append('<option value="">Select Model</option>');
-                    $.each(data, function (index, item) {
-                        // debugger;
-                        $("#ddlModel").append('<option value="' + item.twoWheelerId + '">' + item.twoWheelerName + '</option>');
-                    });
-                });
-            });
-            $('#searchButton').click(function () {
-                //debugger;
-                var brandId = $('#ddlBrand').val();
-                var modelId = $('#ddlModel').val();
-                // if (brandId && modelId) {
-                //     window.location.href = '@Url.Action("TwoWheelerDetails")?brandId=' + brandId + '&modelId=' + modelId;
-                // } else {
-                //     alert("Please select both brand and model.");
-                // }
-                if (brandId && !modelId) {
-                    // If only brand is selected, navigate to the first view
-                    window.location.href = '@Url.Action("TWBrandDetails")?brandId=' + brandId;
-                } else if (brandId && modelId) {
-                    // If both brand and model are selected, navigate to the second view
-                    window.location.href = '@Url.Action("TwoWheelerDetails")?brandId=' + brandId + '&modelId=' + modelId;
-                } else {
-                    alert("Please select a brand.");
-                }
-            });
-            $('#varientId').change(function () {
-                // var modelId = $('#ddlModel').val();
-                var varientId = $('#varientId').val();
-                if (modelId && varientId) {
-                    window.location.href = '@Url.Action("TwoWheelerDetails")?varientId=' + varientId;
-                }
-            })
-        });
-    </script> *@
-   @*  <script>
-        $(document).ready(function () {
-            // Load data when variant changes
-            $("#varientId").change(function () {
-                var variantId = $(this).val();
-                if (variantId) {
-                    var url = "@Url.Action("GetDataByVariant", "Home")";
-                    $.getJSON(url, { variantId: variantId }, function (data) {
-                        // Process and display the data based on your requirements
-                        var content = '';
-                        if (data.Specs && data.Specs.length > 0) {
-                            content += '<h3>Specifications</h3>';
-                            $.each(data.Specs, function (index, item) {
-                                content += '<p>' + item.SpecificationDetails + '</p>';
-                            });
-                        }
-                        // Add similar blocks for other data arrays like Features, Safety, etc.
-                        $("#content").html(content);
-                    });
-                } else {
-                    $("#content").empty();
-                }
-            });
-        });
-    </script> *@
 </body>
 
 

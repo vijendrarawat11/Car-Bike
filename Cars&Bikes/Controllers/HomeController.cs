@@ -38,8 +38,8 @@ namespace Cars_Bikes.Controllers
             ViewBag.FourwheelerName = new SelectList(FourWheelerBrand, "Id", "FourWheelerBrandName");
             var TWNews = _context.TWLatestNews.OrderByDescending(m => m.TWLatestNewsId).Take(5).ToList();
             ViewBag.TWNews = TWNews;
-            var FWNews = _fourwheeler.FWLatestNews.OrderByDescending(m => m.FWLatestNewsId).Take(5).ToList();
-            ViewBag.FWNews = FWNews;
+            //var FWNews = _fourwheeler.FWLatestNews.OrderByDescending(m => m.FWLatestNewsId).Take(5).ToList();
+            //ViewBag.FWNews = FWNews;
             var UpcomingBike = _context.UpcomingBikes.ToList();
             ViewBag.Upcomingbike = UpcomingBike;
 
@@ -76,6 +76,24 @@ namespace Cars_Bikes.Controllers
                                 .ToList();
             return View("TWBrandDetails",brand);
         }
+        [HttpGet]
+        public JsonResult GetTWSpecByVarient(int varientId)
+        {
+            var twSpecs = _context.TWSpec
+                .Where(t => t.TWVarientId == varientId)
+                .Select(t => new
+                {
+                    t.TWName,
+                    t.Varients,
+                    t.Milage,
+                    t.FrontBrake,
+                    t.RearBrake,
+                    t.FuelCapacity,
+                    t.BodyType
+                }).ToList();
+
+            return Json(twSpecs);
+        }
         public ActionResult TwoWheelerDetails(int brandId, int modelId,int varientId)
         {
             //Item1
@@ -85,7 +103,8 @@ namespace Cars_Bikes.Controllers
             var varient =_context.TWVarients.Where(t => t.TwoWheelerId == modelId).ToList();
             ViewBag.varient = new SelectList(varient, "TWVarientId", "Varients");
             //Item2
-            var spec = _context.TWSpec.Where(t => t.TWVarients.TWVarientId == varientId).ToList();
+            //ViewBag.Specs = new List<TWSpec>();
+            var spec = _context.TWSpec.Where(t =>t.TwoWheeler.TwoWheelerId==modelId && t.TWVarientId == varientId).ToList();
             //var spec = _context.TWSpec.Where(t => t.TWVarientId == varientId).ToList();
             //Item3
             var features = _context.TWFeatures.Where(t => t.TwoWheelerId == modelId).ToList();

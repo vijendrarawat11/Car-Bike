@@ -1029,7 +1029,7 @@
                 </div>
             </div>
 
-            <div class="tab-lscontent" id="carNews">
+            @* <div class="tab-lscontent" id="carNews">
                 <div class="latest-news-container">
                 @foreach (var news in ViewBag.FWNews)
                 {
@@ -1049,7 +1049,7 @@
                     <button class="scroll-btn left" onclick="scrollLeft('carNews')">&lt;</button>
                     <button class="scroll-btn right" onclick="scrollRight('carNews')">&gt;</button>
                 </div>
-            </div>
+            </div> *@
         </div>
 
             @* <div class="section-full bg-white content-inner-1">
@@ -1238,55 +1238,6 @@
         });
     });
 </script>
-@* <script>
-    $(document).ready(function () {
-        // alert("1");
-        $("#ddlBrand").change(function () {
-            // alert("2");
-            var url = "@Url.Action("GetModelsByBrand", "Home")";
-            $.getJSON(url, { Id: $("#ddlBrand").val() }, function (data) {
-                // alert(JSON.stringify(data));
-                $("#ddlModel").empty(); // Clear existing options
-                $("#ddlModel").append('<option value="">Select Model</option>');
-                $.each(data, function (index, item) {
-                    // debugger;
-                    $("#ddlModel").append('<option value="' + item.twoWheelerId + '">' + item.twoWheelerName + '</option>');
-                });
-            });
-        });
-        $("#ddlModel").change(function () {
-            var url = "@Url.Action("GetVariantsByModel", "Home")";
-            $.getJSON(url, { Id: $("#ddlModel").val() }, function (data) {
-                $("#varientId").empty();
-                $("#varientId").append('<option value="">Select Variant</option>');
-                $.each(data, function (index, item) {
-                    $("#varientId").append('<option value="' + item.TWVarientId + '">' + item.Varients + '</option>');
-                });
-            });
-        });
-        $('#searchButton').click(function () {
-            //debugger;
-            var brandId = $('#ddlBrand').val();
-            var modelId = $('#ddlModel').val();
-            var varientId = $('#varientId').val();
-            // if (brandId && modelId) {
-            //     window.location.href = '@Url.Action("TwoWheelerDetails")?brandId=' + brandId + '&modelId=' + modelId;
-            // } else {
-            //     alert("Please select both brand and model.");
-            // }
-            if (brandId && modelId && varientId) {
-                window.location.href = '@Url.Action("TwoWheelerDetails")?brandId=' + brandId + '&modelId=' + modelId + '&varientId=' + varientId;
-            } else if (brandId && modelId) {
-                window.location.href = '@Url.Action("TwoWheelerDetails")?brandId=' + brandId + '&modelId=' + modelId;
-            } else if (brandId) {
-                window.location.href = '@Url.Action("TWBrandDetails")?brandId=' + brandId;
-            } else {
-                alert("Please select a brand.");
-            }
-        });
-    });
-</script> *@
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!--Upcoming Bike-->
 <script>
