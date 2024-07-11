@@ -4,6 +4,7 @@ using Cars_Bikes.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cars_Bikes.Migrations.FourWheelerBrandDBMigrations
 {
     [DbContext(typeof(FourWheelerBrandDB))]
-    partial class FourWheelerBrandDBModelSnapshot : ModelSnapshot
+    [Migration("20240708111709_AddDateInFWNews")]
+    partial class AddDateInFWNews
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

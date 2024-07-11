@@ -78,16 +78,17 @@
                         <!-- END REVOLUTION SLIDER -->
                     </div>
                 </div>
+
                 <!-- Form -->
                 <div class="form-slide">
                     <div class="container">
                         <form class="search-car" action="new-car-search-result-list.html" method="post">
-                            <div class="form-head" @* style="background-color:blue;margin-bottom: 40px;position: relative;text-align: center;z-index: 1" *@>
+                            <div class="form-head">
                                 <h2>Search the right vehicle</h2>
                             </div>
                             <!-- TABS -->
                             <div class="form-find-area">
-                                <ul class="nav theme-tabs">
+                                <ul class="nav theme-tabs justify-content-center">
                                     <li role="presentation" class="active"><a data-toggle="tab" aria-controls="new-car" href="#new-car">CAR</a></li>
                                     <li role="presentation"><a data-toggle="tab" aria-controls="popular" href="#used-car">Bike</a></li>
                                 </ul>
@@ -149,9 +150,9 @@
                                         <div class="input-group">
                                             <button class="site-button button-lg btn-block" type="submit">SEARCH</button>
                                         </div>
-                                        <div class="input-group text-center">
+                                        @* <div class="input-group text-center">
                                             <a class="site-button-link" href="new-car-search.html">ADVANCED SEARCH <i class="fa fa-angle-right"></i></a>
-                                        </div>
+                                        </div> *@
                                     </div>
                                     <!-- USED CAR -->
                                     <div id="used-car" class="tab-pane clearfix">
@@ -162,7 +163,7 @@
                                             </li>
                                             <li>
                                                 <input id="radio4" type="radio" name="used_search" value="used_model" />
-                                                <label for="radio4">BY MODEL</label>
+                                                <label for="radio4">BY BRAND</label>
                                             </li>
                                         </ul>
                                         <div id="used_budgetDiv" class="used_form_div">
@@ -190,18 +191,21 @@
                                                 </select>
                                             </div>
                                             <div class="input-group">
-                                                <select id="ddlModel" class="form-control">
+                                                <select id="ddlModel" asp-for="TwoWheelerName" class="form-control">
                                                     <option value="">Select Model</option>
 											</select>
                                             </div>
                                             
                                         </div>
                                         <div class="input-group">
-                                            <button class="site-button button-lg btn-block" type="submit" onclick="window.location.href='sed-car-search.html'">SEARCH</button>
+                                            <button class="site-button button-lg btn-block" type="button" id="searchButton">SEARCH</button>
                                         </div>
-                                        <div class="input-group text-center">
+                                        @* <div class="input-group">
+                                            <button class="site-button button-lg btn-block" type="submit" id="searchButton" onclick="window.location.href='sed-car-search.html'">SEARCH</button>
+                                        </div> *@
+                                        @* <div class="input-group text-center">
                                             <a class="site-button-link" href="new-car-search.html">ADVANCED SEARCH <i class="fa fa-angle-right"></i></a>
-                                        </div>
+                                        </div> *@
                                     </div>
                                 </div>
                                 </div>
@@ -217,9 +221,32 @@
 </div>-->
             </div>
             </div>
+        <!-- Upcoming bikes section -->
+        <div class="upcoming-bikes-section">
+            <div class="upcoming-bikes-head">
+                <h1>Upcoming Bikes</h1>
+            </div>
+            <button class="scroll-button left" onclick="scrollLeft()">&#9664;</button>
+            <div class="upcoming-bikes-container" id="upcomingBikesContainer">
+                @foreach (var bike in ViewBag.Upcomingbike)
+                {
+                    <div class="upcoming-bike-item">
+                        <img src="@bike.ImageURL" alt="Bike Image">
+                        <div class="upcoming-bike-name">@bike.UpcomingBikeName</div>
+                        <div class="upcoming-bike-date">
+                            @bike.ExpectedLaunchDate?.ToString("d MMM yyyy")
+                        </div>
+                        @* <div class="upcoming-bike-details">
+                    @bike.UpcomingBikeDetails
+                    </div> *@
+                    </div>
+                }
+            </div>
+            <button class="scroll-button right" onclick="scrollRight()">&#9654;</button>
+        </div>
             <!-- Slider END -->
             <!-- New Car -->
-            <div class="section-full bg-img-fix dlab-new-work overlay-white-dark " style="background-image: url(images/background/bg1.jpg);">
+            @* <div class="section-full bg-img-fix dlab-new-work overlay-white-dark " style="background-image: url(images/background/bg1.jpg);">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-3 col-sm-4  p-a0 no-of-item">
@@ -230,17 +257,19 @@
                         </div>
                         <div class="col-md-9 col-sm-8 p-a0">
                             <div class="new-item owl-btn-style-1 owl-carousel">
+                            @foreach (var UPBike in ViewBag.Upcomingbike){
                                 <div class="item dlab-new-item">
                                     <div class="dlab-box">
                                         <div class="dlab-media">
                                             <a href="#"><img src="images/our-work/work/pic1.jpg" alt=""></a>
                                         </div>
                                         <div class="dlab-info">
-                                            <p class="event-date">November 6, 2018</p>
+                                            <p class="event-date">@UPBike.ExpectLaunchDate?.ToString("d MMM yyyy")</p>
                                             <h4 class="dlab-title"><a href="new-car-upcoming.html">Toyota avalon hybrid  <i class="fa fa-angle-right pull-right"></i></a></h4>
                                         </div>
                                     </div>
                                 </div>
+                            }
                                 <div class="item dlab-new-item">
                                     <div class="dlab-box">
                                         <div class="dlab-media">
@@ -267,7 +296,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> *@
             <!-- New Car New -->
             <!-- About Us -->
            <!-- <div class="section-full about-us bg-white content-inner-2" style="background-image: url(images/background/about-us.jpg); background-position:bottom; background-repeat:no-repeat; background-size:100%;">
@@ -967,17 +996,75 @@
             </div>-->
             <!-- Testimonial -->
             <!-- Latest News -->
-            <div class="section-full bg-white content-inner-1">
+        <div class="m-b20 m-t20">
+            <div class="section-head">
+                <h3 class="h3 text-uppercase">Latest News</h3>
+                <ul class="navlatestnews theme-tabs">
+                    <li role="presentation"><a href="#bikeNews" class="active" data-toggle="tab">Bikes</a></li>
+                    @* <li role="presentation"><a href="#carNews" data-toggle="tab">Cars</a></li> *@
+                </ul>
+            </div>
+
+            <div class="tab-lscontent active" id="bikeNews">
+                <div class="latest-news-container">
+                @foreach (var news in ViewBag.TWNews)
+                {
+                        <a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = news.TWLatestNewsId })" rel="bookmark">
+                           <div class="latest-news-item">
+                            <center><img src="@news.ImageURL" alt="Bike News Image"></center>
+                            <div class="latest-news-content">
+                                    <div class="latest-news-heading"><a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = news.TWLatestNewsId })" title="Bike post"><p>@news.NewsHeading</p></a> </div>
+                                <div class="latest-news-summary">@news.NewsSummary</div>
+                                <div class="ow-post-readmore">
+                                    <a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = news.TWLatestNewsId })" rel="bookmark" class=""> Read More <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                           </div>
+                        </a>
+                }
+                </div>
+                <div class="scroll-btns">
+                    <button class="scroll-btn left" onclick="scrollLeft('bikeNews')">&lt;</button>
+                    <button class="scroll-btn right" onclick="scrollRight('bikeNews')">&gt;</button>
+                </div>
+            </div>
+
+            <div class="tab-lscontent" id="carNews">
+                <div class="latest-news-container">
+                @foreach (var news in ViewBag.FWNews)
+                {
+                        <div class="latest-news-item">
+                            <center><img src="@news.ImageURL" alt="Car News Image"></center>
+                            <div class="latest-news-content">
+                                <div class="latest-news-heading"><a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = news.FWLatestNewsId })" title="Car post">@news.NewsHeading</a> </div>
+                                <div class="latest-news-summary">@news.NewsSummary</div>
+                                <div class="ow-post-readmore">
+                                    <a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = news.FWLatestNewsId })" rel="bookmark" class="site-button-link text-decoration-none"> Read More <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                }
+                </div>
+                <div class="scroll-btns">
+                    <button class="scroll-btn left" onclick="scrollLeft('carNews')">&lt;</button>
+                    <button class="scroll-btn right" onclick="scrollRight('carNews')">&gt;</button>
+                </div>
+            </div>
+        </div>
+
+            @* <div class="section-full bg-white content-inner-1">
                 <div class="container">
                     <div class="section-head text-center head-1">
-                        <span class="text-primary">Read our latest news</span>
-                        <h3 class="h3 text-uppercase">Latest News</h3>
+                        <span class="text-danger">Read our latest news</span>
+                        <h3 class="h3 text-uppercase fw-bold">Latest News</h3>
                     </div>
                     <div class="row">
                         <div class="blog-carousel owl-carousel col-md-12">
+                    @foreach (var TWNews in ViewBag.TWNews)
+                               { 
                             <div class="item">
                                 <div class="ow-blog-post date-style-2 dlab-latest-blog">
-                                    <div class="ow-post-media dlab-img-effect zoom-slow"> <img src="images/blog/latest-blog/pic2.jpg" alt=""> </div>
+                                    <div class="ow-post-media dlab-img-effect zoom-slow shadow"> <img src="@TWNews.ImageURL" alt=""> </div>
                                     <div class="ow-post-meta">
                                         <ul>
                                             <li class="profile-user">
@@ -990,17 +1077,17 @@
                                     </div>
                                     <div class="ow-post-info ">
                                         <div class="ow-post-title">
-                                            <h4 class="post-title"> <a href="blog-single-sidebar.html" title="Video post">Porche Release New Model</a> </h4>
+                                            <h4 class="post-title"> <a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = TWNews.TWLatestNewsId })" title="Video post">@TWNews.NewsHeading</a> </h4>
                                         </div>
                                         <div class="ow-post-text">
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry......</p>
+                                            <p>@TWNews.NewsSummary</p>
                                         </div>
                                         <div class="ow-post-readmore ">
-                                            <a href="#" rel="bookmark" class="site-button-link"> Read More <i class="fa fa-angle-right"></i></a>
+                                            <a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = TWNews.TWLatestNewsId })" rel="bookmark" class="site-button-link text-decoration-none"> Read More <i class="fa fa-angle-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>}
                             <div class="item">
                                 <div class="ow-blog-post date-style-2 dlab-latest-blog">
                                     <div class="ow-post-media dlab-img-effect zoom-slow"> <img src="images/blog/latest-blog/pic1.jpg" alt=""> </div>
@@ -1056,7 +1143,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> *@
             <!-- Latest News END-->
             
 
@@ -1112,223 +1199,171 @@
 </body>
 
 </html>
-@* @section Scripts {
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#brandDropdown').change(function () {
-                var brandName = $(this).val();
-                if (brandName) {
-                    $.ajax({
-                        url: '@Url.Action("GetModelsByBrand", "Home")',
-                        type: 'GET',
-                        data: { brandName: brandName },
-                        success: function (data) {
-                            var modelDropdown = $('#modelDropdown');
-                            modelDropdown.empty();
-                            modelDropdown.append('<option value="">Select Model</option>');
-                            $.each(data, function (index, item) {
-                                modelDropdown.append('<option value="' + item.twoWheelerName + '">' + item.twoWheelerName + '</option>');
-                            });
-                        },
-                        error: function (xhr, status, error) {
-                            console.error('AJAX error: ' + status + ' - ' + error);
-                        }
-                    });
-                } else {
-                    $('#modelDropdown').empty();
-                    $('#modelDropdown').append('<option value="">Select Modelsss</option>');
-                }
-            });
-        });
-    </script>
-} *@
-@* @section Scripts {
-<script>
-    $(document).ready(function () {
-        getModelsBybrandName();
-    })
-    $('#brandName').change(function () {
-        getModelsBybrandName();
-    });
-        var getModelsBybrandName = function () {
-            $.ajax({
-                url: '@Url.Action("GetModelsByBrand","Home")',
-                type: 'GET',
-                data: {
-                    brandName: $('#brandName').val(),
-                },
-                success: function (data) {
-                    $('#modelDropdown').empty(); // Clear previous options
-                    $.each(data, function (index, item) {
-                        $('#modelDropdown').append('<option value="' + item.Id + '">' + item.TwoWheelerName + '</option>');
-                    });
-                },
-                error: function (xhr, status, error) {
-                    console.error(xhr.responseText);
-                }
-            });
-        };
-</script>} *@
-@* <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-@section Scripts {
-    <script>
-        debugger;
-        // alert("1");
-        $(document).ready(function () {
-            // alert("2");
-            $('#brandName').change(function () {
-                getModelsBybrandName();
-            });
-        });
-        // alert("3");
-        var getModelsBybrandName = function () {
-            // alert("4");
-            $.ajax({
-                url: '@Url.Action("GetModelsByBrand", "Home")',
-                type: 'GET',
-                data: {
-                    brandName: $('#brandName').val(),
-                },
-                success: function (data) {
-                    // alert("5");
-                    // $('#modelDropdown').empty(); // Clear existing options
-                    // $('#modelDropdown').append('<option value="">Select Model</option>');
-                    $.each(data, function (index, item) {
-                        // alert("6");
-                        $('#modelDropdown').append('<option value="' + item.company+ '">' + item.twoWheelerName + '</option>');
-                    });
-                }
-            });
-        }
-    </script>
-} *@
+<!--For Searching Dropdown-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
-        
+        // alert("1");
         $("#ddlBrand").change(function () {
             // alert("2");
             var url = "@Url.Action("GetModelsByBrand", "Home")";
-            $.getJSON(url, { id: $("#ddlBrand").val() }, function (data) {
-                alert(JSON.stringify(data));
-                // populateDropdown(JSON.stringify(data));
-                populateDropdown(data);
-                //data = JSON.stringify(data);
-                // $("#ddlModel").empty();
-                // $("#ddlModel").append("<option>Select Model</option>");
-                // $.each(data, function (index, optionData) {
-                //     alert(optionData.TwoWheelerName);
-                //     var option = "<option value='" + optionData.TwoWheelerId + "'>" + optionData.TwoWheelerName + "</option>";
-                //     $("#ddlModel").append(option);
-                // }); 
-
-
+            $.getJSON(url, { Id: $("#ddlBrand").val() }, function (data) {
+                // alert(JSON.stringify(data));
+                $("#ddlModel").empty(); // Clear existing options
+                $("#ddlModel").append('<option value="">Select Model</option>');
+                $.each(data, function (index, item) {
+                    // debugger;
+                    $("#ddlModel").append('<option value="' + item.twoWheelerId + '">' + item.twoWheelerName + '</option>');
+                });
             });
         });
-
-        function BrandByModel(data) {
-            debugger;
-            $.ajax({
-                type: "GET",
-                url: '@Url.Action("GetModelsByBrand", "Home")',
-                data: "{}",
-                success: function (data) {
-                    var s = '<option value="-1">Pickup Location</option>';
-                    for (var i = 0; i < data.length; i++) {
-                        console.log(data[i])
-                        s += '<option value="' + data[i].twoWheelerId + '">' + data[i].twoWheelerName + " " + data[i].twoWheelerName + '</option>';
-                    }
-                    $("#ddlModel").html(s);
-                }
-            });
-        }
-        //for checking again
-        function populateDropdown(data) { 
-            debugger;
-            $.ajax({
-                url: '@Url.Action("GetModelsByBrand", "Home")',
-                type: 'GET',
-                data: {
-                    Id: $('#ddlBrand').val()
-                },
-                success: function (data) {
-                    $(data).each( function (index, item) {
-                        $('#ddlModel').append('<option value="' + item.twoWheelerId + '">' + item.twoWheelerName + '</option>');
-                    });
-                }
-            })
-        }
-        
-
+        $('#searchButton').click(function () {
+            //debugger;
+            var brandId = $('#ddlBrand').val();
+            var modelId = $('#ddlModel').val();
+            // if (brandId && modelId) {
+            //     window.location.href = '@Url.Action("TwoWheelerDetails")?brandId=' + brandId + '&modelId=' + modelId;
+            // } else {
+            //     alert("Please select both brand and model.");
+            // }
+            if (brandId && !modelId) {
+                // If only brand is selected, navigate to the first view
+                window.location.href = '@Url.Action("TWBrandDetails")?brandId=' + brandId;
+            } else if (brandId && modelId) {
+                // If both brand and model are selected, navigate to the second view
+                window.location.href = '@Url.Action("TwoWheelerDetails")?brandId=' + brandId + '&modelId=' + modelId;
+            } else {
+                alert("Please select a brand.");
+            }
+        });
     });
 </script>
 @* <script>
     $(document).ready(function () {
-        alert("1");
+        // alert("1");
         $("#ddlBrand").change(function () {
-            alert("2");
-            var url = "@Url.RouteUrl("Default", new { controller = "Home", action = "GetModelsByBrand" })";
+            // alert("2");
+            var url = "@Url.Action("GetModelsByBrand", "Home")";
             $.getJSON(url, { Id: $("#ddlBrand").val() }, function (data) {
-                alert("3");
-                $("#ddlModel").empty();
-                $("#ddlModel").append("<option>Select Model</option>");
-                $.each(data, function (index, optionData) {
-                    var option = "<option value='" + optionData.TwoWheelerId + "'>" + optionData.TwoWheelerName + "</option>";
-                    $("#ddlModel").append(option);
+                // alert(JSON.stringify(data));
+                $("#ddlModel").empty(); // Clear existing options
+                $("#ddlModel").append('<option value="">Select Model</option>');
+                $.each(data, function (index, item) {
+                    // debugger;
+                    $("#ddlModel").append('<option value="' + item.twoWheelerId + '">' + item.twoWheelerName + '</option>');
                 });
             });
         });
-    });
-</script> *@
-@* <script>
-    $(document).ready(function () {
-        alert("1");
-        $("#ddlBrand").change(function () {
-            alert("2");
-            var url = "@Url.Action("GetModelsByBrand", "Home")";
-            $.getJSON(url, { Id: $("#ddlBrand").val() }, function (response) {
-                alert("3");
-                debugger;
-                if (response.success) {
-                    $("#ddlModel").empty();
-                    $("#ddlModel").append("<option>Select Model</option>");
-                    $.each(response.data, function (index, optionData) {
-                        var option = "<option value='" + optionData.TwoWheelerId + "'>" + optionData.TwoWheelerName + "</option>";
-                        $("#ddlModel").append(option);
-                    });
-                } else {
-                    alert(response.message);
-                }
+        $("#ddlModel").change(function () {
+            var url = "@Url.Action("GetVariantsByModel", "Home")";
+            $.getJSON(url, { Id: $("#ddlModel").val() }, function (data) {
+                $("#varientId").empty();
+                $("#varientId").append('<option value="">Select Variant</option>');
+                $.each(data, function (index, item) {
+                    $("#varientId").append('<option value="' + item.TWVarientId + '">' + item.Varients + '</option>');
+                });
             });
         });
+        $('#searchButton').click(function () {
+            //debugger;
+            var brandId = $('#ddlBrand').val();
+            var modelId = $('#ddlModel').val();
+            var varientId = $('#varientId').val();
+            // if (brandId && modelId) {
+            //     window.location.href = '@Url.Action("TwoWheelerDetails")?brandId=' + brandId + '&modelId=' + modelId;
+            // } else {
+            //     alert("Please select both brand and model.");
+            // }
+            if (brandId && modelId && varientId) {
+                window.location.href = '@Url.Action("TwoWheelerDetails")?brandId=' + brandId + '&modelId=' + modelId + '&varientId=' + varientId;
+            } else if (brandId && modelId) {
+                window.location.href = '@Url.Action("TwoWheelerDetails")?brandId=' + brandId + '&modelId=' + modelId;
+            } else if (brandId) {
+                window.location.href = '@Url.Action("TWBrandDetails")?brandId=' + brandId;
+            } else {
+                alert("Please select a brand.");
+            }
+        });
     });
 </script> *@
-@* @section Scripts{
-    <script>
-        $(document).ready(function () {
-            getModelByBrand();
-        });
 
-        $("#ddlBrand").change(function () {
-            getModelByBrand();
-        });
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--Upcoming Bike-->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById('upcomingBikesContainer');
+        const itemWidth = container.querySelector('.upcoming-bike-item').offsetWidth;
 
-        var getModelByBrand = function () {
-            debugger;
-            $.ajax({
-                url: '@Url.Action("GetModelsByBrand", "Home")',
-                type: 'GET',
-                data: {
-                    Id: $('#ddlBrand').val()
-                },
-                success: function (data) {
-                    $('#ddlModel').find('option').remove();
-                    $(data).each(function (index, item) {
-                        $('#ddlModel').append('<option value="' + item.TwoWheelerId + '">' + item.TwoWheelerName + '</option>');
-                    });
-                }
+        function scrollLeft() {
+            container.scrollBy({
+                left: -itemWidth,
+                behavior: 'smooth'
             });
         }
-    </script>
-} *@
+
+        function scrollRight() {
+            container.scrollBy({
+                left: itemWidth,
+                behavior: 'smooth'
+            });
+        }
+
+        document.querySelector('.scroll-button.left').addEventListener('click', scrollLeft);
+        document.querySelector('.scroll-button.right').addEventListener('click', scrollRight);
+    });
+</script>
+<!--Latest New-->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        function scrollLeft(containerId) {
+            const container = document.querySelector(`#${containerId} .latest-news-container`);
+            const itemWidth = container.querySelector('.latest-news-item').offsetWidth;
+            container.scrollBy({
+                left: -itemWidth,
+                behavior: 'smooth'
+            });
+        }
+
+        function scrollRight(containerId) {
+            const container = document.querySelector(`#${containerId} .latest-news-container`);
+            const itemWidth = container.querySelector('.latest-news-item').offsetWidth;
+            container.scrollBy({
+                left: itemWidth,
+                behavior: 'smooth'
+            });
+        }
+
+        document.querySelectorAll('.navlatestnews a').forEach(tab => {
+            tab.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelectorAll('.navlatestnews a').forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                this.classList.add('active');
+
+                document.querySelectorAll('.tab-lscontent').forEach(pane => {
+                    pane.classList.remove('active');
+                });
+
+                const target = this.getAttribute('href');
+                document.querySelector(target).classList.add('active');
+            });
+        });
+
+        document.querySelectorAll('.scroll-btn.left').forEach(button => {
+            button.addEventListener('click', function () {
+                const containerId = this.closest('.tab-lscontent').id;
+                scrollLeft(containerId);
+            });
+        });
+
+        document.querySelectorAll('.scroll-btn.right').forEach(button => {
+            button.addEventListener('click', function () {
+                const containerId = this.closest('.tab-lscontent').id;
+                scrollRight(containerId);
+            });
+        });
+    });
+</script>

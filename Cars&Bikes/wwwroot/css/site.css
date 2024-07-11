@@ -20,3 +20,279 @@ html {
 body {
   margin-bottom: 60px;
 }-->
+/* Upcoming bikes styles */
+.upcoming-bikes-section {
+    /*background: linear-gradient(#ccc, #475372, #78829A, #9EA3AD, #fff);*/
+    /*background: rgba(255, 255, 255, 0.9);*/
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.upcoming-bikes-head {
+    background-color: #fff;
+    padding: 2px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+    .upcoming-bikes-head h1 {
+        font-size: 2em;
+        color: #475372;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        letter-spacing: 1px;
+    }
+
+.upcoming-bikes-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+}
+
+    .upcoming-bikes-container::-webkit-scrollbar {
+        display: none; /* Webkit */
+    }
+
+.upcoming-bike-item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    background: #fff;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+@media (min-width: 600px) {
+    .upcoming-bike-item {
+        flex: 0 0 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .upcoming-bike-item {
+        flex: 0 0 33.3333%;
+    }
+}
+
+.upcoming-bike-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    background: #f8fafb;
+}
+.upcoming-bike-item img:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.upcoming-bike-item img {
+    max-width: 100%;
+    height: auto;
+    background: #f0f0f0; /* Light gray background for transparency */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.upcoming-bike-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: red;
+}
+
+.upcoming-bike-date {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+
+.upcoming-bike-details {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+    .scroll-button.left {
+        left: 0;
+    }
+
+    .scroll-button.right {
+        right: 0;
+    }
+
+    .scroll-button:hover {
+        background: rgba(255, 255, 255, 1);
+    }
+
+ /*--------Latest News Style-------------*/
+.section-head {
+    text-align: center;
+    margin: 20px 0;
+}
+
+    .section-head h3 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+.navlatestnews {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+    .navlatestnews li {
+        margin: 0 10px;
+    }
+
+    .navlatestnews a {
+        padding: 10px 20px;
+        background: #EEEEEE;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        text-decoration: none;
+    }
+
+        .navlatestnews a.active,
+        .navlatestnews a:hover {
+            background: #D81517;
+            color: white;
+            text-decoration:none;
+        }
+
+.tab-lscontent {
+    display: none;
+    position: relative;
+}
+
+    .tab-lscontent.active {
+        display: block;
+    }
+
+.latest-news-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+    .latest-news-container::-webkit-scrollbar {
+        display: none;
+    }
+
+.latest-news-item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    background: #fff;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;*/
+}
+
+    .latest-news-item img {
+        max-width: 100%;
+        height: auto;
+        margin-right: 20px;
+        border-radius: 10px;
+    }
+
+.latest-news-content {
+    text-align: left;
+    padding:5px;
+}
+
+.latest-news-heading {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+    .latest-news-heading p {
+        color: black;
+    }
+    .latest-news-summary {
+    font-size: 16px;
+    color: #666;
+}
+
+.ow-post-readmore {
+    text-align: right;
+    margin-top: 10px;
+}
+
+    .ow-post-readmore a {
+        text-decoration: none;
+        color: #D81517;
+        font-size:17px;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+        .ow-post-readmore a:hover {
+            color: #78829A;
+        }
+
+@media (min-width: 768px) {
+    .latest-news-item {
+        flex: 0 0 30%;
+    }
+}
+
+@media (max-width: 767px) {
+    .latest-news-item {
+        flex: 0 0 100%;
+    }
+}
+
+.scroll-btns {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.scroll-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    pointer-events: all;
+    z-index: 10;
+}
+
+.scroll-btn.left {
+    left: 10px;
+}
+
+    .scroll-btn.right {
+        right: 10px;
+    }
+
+/*-------------------Latest Bike News main Page-------------------*/

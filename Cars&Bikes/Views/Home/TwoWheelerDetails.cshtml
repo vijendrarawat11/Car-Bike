@@ -1,0 +1,1473 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@* @model IEnumerable<YourNamespace.Models.TwoWheeler> *@
+    @* @model IEnumerable<TwoWheeler> *@
+@* @model Tuple<List<Cars_Bikes.TwoWheeler>, List<Cars_Bikes.TWSpec>> *@
+@* @{
+    var twoWheelers = ViewBag.TwoWheelers as List<Cars_Bikes.Models.TwoWheeler>;
+} *@
+
+<link href="~/css/style.min.css" rel="stylesheet" />
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<style>
+    .linkcontainer {
+        display: flex;
+        height: 600px;
+        border: 1px solid #ccc;
+        padding-left:15px ;
+        padding-top:15px ;
+        padding-bottom:10px ;
+        border-radius:10px;
+    }
+
+    .highlight {
+        left: 0;
+        width: 220px;
+        /* padding-top: 20px; */
+        border-right: 1px solid #ccc;
+        height: 100%;
+        padding:10px 5px 5px 5px;
+        overflow-y: hidden;
+
+    }
+
+        .highlight ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .highlight li {
+            padding: 10px;
+            color: #000;
+            cursor: pointer;
+        }
+
+            .highlight li.active {
+                background-color: #e82527;
+                color: #fff;
+            }
+
+    .content {
+        /* margin-left: 220px; */
+        padding-top: 5px;
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+    }
+
+    section {
+       /*  padding: 20px 0; */
+        /* border-bottom: 1px solid #ccc; */
+    }
+
+    .contentheading{
+        margin-left:10px;
+        margin-right:10px;
+        padding:8px;
+        font-weight:500;
+        background-color: #191F23;
+        color: #A7A7A7;
+    }
+    .contenttable{
+        border-bottom: 1px solid #ccc;
+    }
+</style>
+
+<body id="bg">
+    @* <div class="page-wraper"> *@
+        @* <div id="loading-area"></div> *@
+        <!-- Content -->
+        <div class=" page-content">
+            <!-- inner page banner -->
+       @*  <div class="dlab-bnr-inr overlay-black-middle container-fluid" style="background-image:url(images/banner/bnr3.jpg);">
+            <center> <img src="~/images/car2.png" style="height:170px; margin:0;" /><img src="~/images/car3.png" style="height:170px; margin:0;" /></center>
+                <div class="">
+                    <div class="dlab-bnr-inr-entry">
+                        <h1 class="text-white">Bike Details</h1>
+                    </div>
+                </div>
+            </div> *@
+       @*  <div class="container-fluid" style="backdrop-filter:blur(4px);height:160px;background:linear-gradient(#23335A,#475372,#78829A,#9EA3AD);"></div>
+            <!-- inner page banner END -->
+            <!-- Breadcrumb row -->
+            <div class="breadcrumb-row">
+                <div class="container">
+                    <ul class="list-inline">
+                        <li><a href="#">Home</a></li>
+                        <li>Car Details</li>
+                    </ul>
+                </div>
+            </div> *@
+        <div class="overlay-black-middle" style=" background:linear-gradient(#475372, #78829A, #9EA3AD, #fff); margin:0;">
+            <img src="~/images/background/banner.png" style="width:100%;height:350px;" />
+        </div>
+            <!-- Breadcrumb row END -->
+        <div class="car-details-info">
+            <div class="container">
+                <div class="row">
+                        <div class="col-md-12 ">
+                            <div class="nav">
+                                <ul>
+                                    <li class="active"><a href="car-details-overview.html">Overview</a></li>
+                                    <li><a href="car-detail-specifications.html">Specifications</a></li>
+                                    <li><a href="car-detail-price.html">Price</a></li>
+                                    <li><a href="car-detail-compare.html">Compare</a></li>
+                                    <li><a href="car-detail-pictures.html">Pictures</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @* <div class="container-fluid m-t100" style="background-color:black; border-radius:20px; position:sticky;">
+            <div class="container">
+                <h2 class="text-gray">Car Details</h2>
+            </div>
+        </div> *@
+        
+            <div class="container-fluid section-full p-t50 bg-white content-inner-2">
+                <div class="container-fluid">
+                
+                    <div class="row">
+                        <!-- Side bar start -->
+                        <div class="col-md-8">
+                                @* @foreach (var twoWheeler in Model.Item1) *@
+                            @foreach (var twoWheeler in ViewBag.TwoWheelers)
+                                { 
+                            <div class="car-dl-info m-b30">
+                                <h1 class="h3 m-t0 price">@twoWheeler.TwoWheelerName</h1>
+                                <ul class="used-car-dl-info">
+                                    <li><i class="fa fa-bank"></i> @twoWheeler.Brand</li>
+                                    <li><i class="fa fa-calendar"></i> @twoWheeler.LaunchDate?.ToString("d MMM yyyy")</li>
+                                    <li><i class="fa fa-list"></i> @twoWheeler.Type</li>
+                                </ul>
+                                <div class="car-dl-info m-t20"><center><img src="@twoWheeler.TWImage" alt="Page Image" class="img-fluid" style="width:70%; height:70%;" /></center></div>
+
+                                </div>
+
+
+                                }
+                            @* <div class="owl-fade-one owl-carousel owl-btn-center-lr">
+                                <div class="item">
+                                    <div class="dlab-thum-bx"> <img src="images/blog/default/thum1.jpg" alt=""> </div>
+                                </div>
+                                <div class="item">
+                                    <div class="dlab-thum-bx"> <img src="images/blog/default/thum2.jpg" alt=""> </div>
+                                </div>
+                                <div class="item">
+                                    <div class="dlab-thum-bx"> <img src="images/blog/default/thum3.jpg" alt=""> </div>
+                                </div>
+                                <div class="item">
+                                    <div class="dlab-thum-bx"> <img src="images/blog/default/thum4.jpg" alt=""> </div>
+                                </div>
+                            </div> *@
+                           
+
+                            <div class="modal fade lead-form-modal" id="car-details" tabindex="-1" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <div class="modal-body clearfix">
+                                            <div class="pull-letf max-width-300"></div>
+                                            <div class="lead-form">
+                                                <form>
+                                                    <h3 class="m-t0">Personal Details</h3>
+                                                    <div class="form-group">
+                                                        <input value="" class="form-control" placeholder="Name" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input value="" class="form-control" placeholder="Mobile Number" />
+                                                    </div>
+                                                    <div class="clearfix">
+                                                        <button type="button" class="btn-primary site-button btn-block">Submit </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!-- Side bar END -->
+                        <div class="col-md-4 ">
+                            <div class="car-dl-info m-b30">
+                                    @foreach (var twoWheeler in ViewBag.TwoWheelers)
+                                {
+                                <div class="price">
+                                        <h3 class="m-t0 m-b5">@twoWheeler.BasePrice - @twoWheeler.TopPrice</h3>
+                                        <span>@twoWheeler.TwoWheelerName</span>
+                                </div>}
+                                @* <form>
+                                    <p class="m-t0 m-b5">Ex-showroom Price</p>
+                                    <div class="form-group">
+                                        <select>
+                                            <option>Mumbai</option>
+                                            <option>Chandigarh </option>
+                                            <option>Rajasthan</option>
+                                        </select>
+                                    </div>
+                                    <div class="clearfix">
+                                        <button type="button" class="btn-primary site-button btn-block" title="READ MORE" rel="bookmark" data-toggle="modal" data-target="#car-details">View On Road Price </button>
+                                    </div>
+                                </form> *@
+                            </div>
+                            <div class="used-car-features clearfix m-b30">
+                                <div class="car-features">
+                                <i class="fa fa-calendar"></i>
+                                    <h5>2019</h5>
+                                    <span>Model</span>
+                                </div>
+                                <div class="car-features">
+                                <i class="fa fa-dashboard"></i>
+                                    <h5>6,900 km</h5>
+                                    <span>Driven</span>
+                                </div>
+                                <div class="car-features">
+                                    <i class="flaticon-gas-station"></i>
+                                    <h5>Diesel</h5>
+                                    <span>Fuel</span>
+                                </div>
+                                <div class="car-features">
+                                <i class="fa fa-microphone"></i>
+                                    <h5>Individual</h5>
+                                    <span>Seller</span>
+                                </div>
+                                <div class="car-features">
+                                    <i class="flaticon-calendar"></i>
+                                    <h5>Automatic</h5>
+                                    <span>Transmission</span>
+                                </div>
+                                <div class="car-features">
+                                    <i class="flaticon-car-key"></i>
+                                    <h5>First</h5>
+                                    <span>Owner</span>
+                                </div>
+                            </div>
+
+                            @* <div class="widget client-logo-wg">
+                                <h4 class="widget-title">Popular Cars By Brand</h4>
+                                <ul>
+                                    <li class="brand-logo">
+                                        <a href="new-car-popular.html"><img src="images/client-logo/logo1.jpg" alt="" /></a>
+                                    </li>
+                                    <li class="brand-logo">
+                                        <a href="new-car-popular.html"><img src="images/client-logo/logo2.jpg" alt="" /></a>
+                                    </li>
+                                    <li class="brand-logo">
+                                        <a href="new-car-popular.html"><img src="images/client-logo/logo3.jpg" alt="" /></a>
+                                    </li>
+                                    <li class="brand-logo">
+                                        <a href="new-car-popular.html"><img src="images/client-logo/logo4.jpg" alt="" /></a>
+                                    </li>
+                                    <li class="brand-logo">
+                                        <a href="new-car-popular.html"><img src="images/client-logo/logo5.jpg" alt="" /></a>
+                                    </li>
+                                    <li class="brand-logo">
+                                        <a href="new-car-popular.html"><img src="images/client-logo/logo6.jpg" alt="" /></a>
+                                    </li>
+                                    <li class="brand-logo">
+                                        <a href="new-car-popular.html"><img src="images/client-logo/logo7.jpg" alt="" /></a>
+                                    </li>
+                                    <li class="brand-logo">
+                                        <a href="new-car-popular.html"><img src="images/client-logo/logo8.jpg" alt="" /></a>
+                                    </li>
+                                    <li class="brand-logo">
+                                        <a href="new-car-popular.html"><img src="images/client-logo/logo9.jpg" alt="" /></a>
+                                    </li>
+                                    <li class="brand-logo">
+                                        <a href="new-car-popular.html"><img src="images/client-logo/logo10.jpg" alt="" /></a>
+                                    </li>
+                                    <li class="brand-logo">
+                                        <a href="new-car-popular.html"><img src="images/client-logo/logo11.jpg" alt="" /></a>
+                                    </li>
+                                    <li class="brand-logo">
+                                        <a href="new-car-popular.html"><img src="images/client-logo/logo12.jpg" alt="" /></a>
+                                    </li>
+                                </ul>
+                            </div> *@
+                        </div>
+                    </div>
+  @*                   <div class="tab-wrapper">
+                        <div class="scroller scroller-left">
+                            <i class="fa fa-chevron-left"></i>
+                        </div>
+                        <div class="scroller scroller-right">
+                            <i class="fa fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="clearfix m-t30 container-lg">
+                        <div class=" tab-container">
+                            <ul class="nav theme-tabs m-b10 navbar-nav">
+                                <li class="active">
+                                    <a data-toggle="tab" aria-controls="economy" href="#economy">
+                                        <i class="fa fa-usd"></i>
+                                        Specifications
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" aria-controls="presentation" href="#presentation">
+                                        <i class="fa fa-tachometer"></i>
+                                        Engine & Transmission
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" aria-controls="features" href="#features">
+                                        <i class="fa fa-star"></i>
+                                        Features
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" aria-controls="safety" href="#safety">
+                                        <i class="fa fa-automobile"></i>
+                                        Safety
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" aria-controls="mileageandperformance" href="#mileageandperformance">
+                                        <i class="fa fa-automobile"></i>
+                                        Mileage & Performance
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" aria-controls="chassisAndSuspension" href="#chassisAndSuspension">
+                                        <i class="fa fa-automobile"></i>
+                                        Chassis & Suspension
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" aria-controls="dimensionsAndCapacity" href="#dimensionsAndCapacity">
+                                        <i class="fa fa-automobile"></i>
+                                        Dimensions & Capacity
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" aria-controls="electricals" href="#electricals">
+                                        <i class="fa fa-automobile"></i>
+                                        Electricals
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" aria-controls="tyresAndBrakes" href="#tyresAndBrakes">
+                                        <i class="fa fa-automobile"></i>
+                                        Tyres & Brakes
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" aria-controls="motorAndBatteries" href="#motorAndBatteries">
+                                        <i class="fa fa-automobile"></i>
+                                        Motor & Battery
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" aria-controls="underpinnings" href="#underpinnings">
+                                        <i class="fa fa-automobile"></i>
+                                        Underpinnings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" aria-controls="chargings" href="#chargings">
+                                        <i class="fa fa-automobile"></i>
+                                        Charging
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="dlab-tabs" style="padding:30px 0px 0px 0px">
+                            <div class="tab-content">
+                                <div id="economy" class="tab-pane active clearfix city-list">
+                                    @foreach (var spec in ViewBag.Specs)
+                                    {
+                                        <div class="icon-bx-wraper bx-style-1 p-a30">
+                                            <h4 class="fw-bold"><span class="fw-bold fw-bolder"> Varient</span> :- @spec.Varients</h4>
+                                            <ul class="table-dl clearfix">
+                                                <li>
+                                                    <div class="leftview">Mileage</div>
+                                                    <div class="rightview">@spec.Milage</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Front Brake</div>
+                                                    <div class="rightview">@spec.FrontBrake</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Rear Brake</div>
+                                                    <div class="rightview">@spec.RearBrake</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Fuel Capacity</div>
+                                                    <div class="rightview">@spec.FuelCapacity</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Displacement</div>
+                                                    <div class="rightview">@spec.Displacement</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    }
+                                </div>
+                                <div id="presentation" class="tab-pane clearfix city-list">
+                                    @foreach (var engineandtransmission in ViewBag.EngineAndTransmission)
+                                    {
+                                        <div class="icon-bx-wraper bx-style-1 p-a30">
+                                            <ul class="table-dl clearfix">
+                                                <li>
+                                                    <div class="leftview">Engine Type</div>
+                                                    <div class="rightview">@engineandtransmission.EngineType</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Displacement</div>
+                                                    <div class="rightview">@engineandtransmission.Displacement</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Max Torque</div>
+                                                    <div class="rightview">@engineandtransmission.MaxTorque</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">No. of Cylinders</div>
+                                                    <div class="rightview">@engineandtransmission.NumOfCylinders</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Cooling System</div>
+                                                    <div class="rightview">@engineandtransmission.CoolingSystem</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Valve Per Cylinder</div>
+                                                    <div class="rightview">@engineandtransmission.ValvePerCylinder</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Starting</div>
+                                                    <div class="rightview">@engineandtransmission.Starting</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Fuel Supply</div>
+                                                    <div class="rightview">@engineandtransmission.FuelSupply</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Clutch</div>
+                                                    <div class="rightview">@engineandtransmission.Clutch</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Gear Box</div>
+                                                    <div class="rightview">@engineandtransmission.GearBox</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Emission Type</div>
+                                                    <div class="rightview">@engineandtransmission.EmissionType</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Compression Ratio</div>
+                                                    <div class="rightview">@engineandtransmission.CompressionRatio</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    }
+                                </div>
+                                <div id="features" class="tab-pane clearfix city-list">
+                                    @foreach (var features in ViewBag.Features)
+                                    {
+                                        <div class="icon-bx-wraper bx-style-1 p-a30">
+                                            <ul class="table-dl clearfix">
+                                                <li>
+                                                    <div class="leftview">ABS</div>
+                                                    <div class="rightview">@features.ABS</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Speedometer</div>
+                                                    <div class="rightview">@features.Speedometer</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Tripmeter</div>
+                                                    <div class="rightview">@features.Tripmeter</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Tachometer</div>
+                                                    <div class="rightview">@features.Tachometer</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">LED Tail Light</div>
+                                                    <div class="rightview">@features.LEDTailLight</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Odometer</div>
+                                                    <div class="rightview">@features.Odometer</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Fuel gauge</div>
+                                                    <div class="rightview">@features.FuelGauge</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Instrument Console</div>
+                                                    <div class="rightview">@features.InstrumentConsole</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Seat Type</div>
+                                                    <div class="rightview">@features.SeatType</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Body Graphics</div>
+                                                    <div class="rightview">@features.BodyGraphics</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Clock</div>
+                                                    <div class="rightview">@features.Clock</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Passenger Footrest</div>
+                                                    <div class="rightview">@features.PassengerFootrest</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    }
+                                </div>
+                                <div id="safety" class="tab-pane clearfix city-list">
+                                    @foreach (var safety in ViewBag.Safety)
+                                    {
+                                        <div class="icon-bx-wraper bx-style-1 p-a30">
+                                            <ul class="table-dl clearfix">
+                                                <li>
+                                                    <div class="leftview">Pass Switch</div>
+                                                    <div class="rightview">@safety.PassSwitch</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Engine Kill Switch</div>
+                                                    <div class="rightview">@safety.EngineKillSwitch</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Display</div>
+                                                    <div class="rightview">@safety.Display</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    }
+                                </div>
+                                <div id="mileageandperformance" class="tab-pane clearfix city-list">
+                                    @foreach (var mileageandperformance in ViewBag.MileageAndPerformance)
+                                    {
+                                        <div class="icon-bx-wraper bx-style-1 p-a30">
+                                            <ul class="table-dl clearfix">
+                                                <li>
+                                                    <div class="leftview">Overall Mileage</div>
+                                                    <div class="rightview">@mileageandperformance.OverallMileage</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">City Mileage</div>
+                                                    <div class="rightview">@mileageandperformance.CityMileage</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Highway Mileage</div>
+                                                    <div class="rightview">@mileageandperformance.HighwayMileage</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    }
+                                </div>
+                                <div id="chassisAndSuspension" class="tab-pane clearfix city-list">
+                                    @foreach (var chassisAndSuspension in ViewBag.ChassisAndSuspension)
+                                    {
+                                        <div class="icon-bx-wraper bx-style-1 p-a30">
+                                            <ul class="table-dl clearfix">
+                                                <li>
+                                                    <div class="leftview">Body Type</div>
+                                                    <div class="rightview">@chassisAndSuspension.BodyType</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Body Graphics</div>
+                                                    <div class="rightview">@chassisAndSuspension.BodyGraphics</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    }
+                                </div>
+                                <div id="dimensionsAndCapacity" class="tab-pane clearfix city-list">
+                                    @foreach (var dimensionsAndCapacity in ViewBag.DimensionsAndCapacity)
+                                    {
+                                        <div class="icon-bx-wraper bx-style-1 p-a30">
+                                            <ul class="table-dl clearfix">
+                                                <li>
+                                                    <div class="leftview">Width</div>
+                                                    <div class="rightview">@dimensionsAndCapacity.Width</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Length</div>
+                                                    <div class="rightview">@dimensionsAndCapacity.Length</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Height</div>
+                                                    <div class="rightview">@dimensionsAndCapacity.Height</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Fuel Capacity</div>
+                                                    <div class="rightview">@dimensionsAndCapacity.FuelCapacity</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Ground Clearance</div>
+                                                    <div class="rightview">@dimensionsAndCapacity.GroundClearance</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Wheelbase</div>
+                                                    <div class="rightview">@dimensionsAndCapacity.Wheelbase</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Kerb Weight</div>
+                                                    <div class="rightview">@dimensionsAndCapacity.KerbWeight</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Fuel Reserve</div>
+                                                    <div class="rightview">@dimensionsAndCapacity.FuelReserve</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Saddle Height</div>
+                                                    <div class="rightview">@dimensionsAndCapacity.SaddleHeight</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    }
+                                </div>
+                                <div id="electricals" class="tab-pane clearfix city-list">
+                                    @foreach (var electricals in ViewBag.Electricals)
+                                    {
+                                        <div class="icon-bx-wraper bx-style-1 p-a30">
+                                            <ul class="table-dl clearfix">
+                                                <li>
+                                                    <div class="leftview">Headlight</div>
+                                                    <div class="rightview">@electricals.Headlight</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Tail Light</div>
+                                                    <div class="rightview">@electricals.TailLight</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Turn Signal Lamp</div>
+                                                    <div class="rightview">@electricals.TurnSignalLamp</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">LED Tail Lights</div>
+                                                    <div class="rightview">@electricals.LEDTailLights</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Low Fuel Indicato</div>
+                                                    <div class="rightview">@electricals.LowFuelIndicato</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Pilot Lamps</div>
+                                                    <div class="rightview">@electricals.PilotLamps</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Distance to Empty Indicator</div>
+                                                    <div class="rightview">@electricals.DistanceToEmptyIndicator</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">DRLs</div>
+                                                    <div class="rightview">@electricals.DRLs</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    }
+                                </div>
+                                <div id="tyresAndBrakes" class="tab-pane clearfix city-list">
+                                    @foreach (var tyresAndBrakes in ViewBag.TyresAndBrakes)
+                                    {
+                                        <div class="icon-bx-wraper bx-style-1 p-a30">
+                                            <ul class="table-dl clearfix">
+                                                <li>
+                                                    <div class="leftview">Front Brake Diameter</div>
+                                                    <div class="rightview">@tyresAndBrakes.FrontBrakeDiameter</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Rear Brake Diameter</div>
+                                                    <div class="rightview">@tyresAndBrakes.RearBrakeDiameter</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Radial Tyre</div>
+                                                    <div class="rightview">@tyresAndBrakes.RadialTyre</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Front Suspension</div>
+                                                    <div class="rightview">@tyresAndBrakes.FrontSuspension</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Rear Suspension</div>
+                                                    <div class="rightview">@tyresAndBrakes.RearSuspension</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    }
+                                </div>
+                                <div id="motorAndBatteries" class="tab-pane clearfix city-list">
+                                    @foreach (var motorAndBatteries in ViewBag.MotorAndBatteries)
+                                    {
+                                        <div class="icon-bx-wraper bx-style-1 p-a30">
+                                            <ul class="table-dl clearfix">
+                                                <li>
+                                                    <div class="leftview">Peak Power</div>
+                                                    <div class="rightview">@motorAndBatteries.PeakPower</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Drive Type</div>
+                                                    <div class="rightview">@motorAndBatteries.DriveType</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Transmission</div>
+                                                    <div class="rightview">@motorAndBatteries.Transmission</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Battery Capacity</div>
+                                                    <div class="rightview">@motorAndBatteries.BatteryCapacity</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    }
+                                </div>
+                                <div id="underpinnings" class="tab-pane clearfix city-list">
+                                    @foreach (var underpinnings in ViewBag.Underpinnings)
+                                    {
+                                        <div class="icon-bx-wraper bx-style-1 p-a30">
+                                            <ul class="table-dl clearfix">
+                                                <li>
+                                                    <div class="leftview">Suspension Front</div>
+                                                    <div class="rightview">@underpinnings.SuspensionFront</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Suspension Rear</div>
+                                                    <div class="rightview">@underpinnings.SuspensionRear</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Brakes Front</div>
+                                                    <div class="rightview">@underpinnings.BrakesFront</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Brakes Rear</div>
+                                                    <div class="rightview">@underpinnings.BrakesRear</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Tyre Size</div>
+                                                    <div class="rightview">@underpinnings.TyreSize</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Wheel Size</div>
+                                                    <div class="rightview">@underpinnings.WheelSize</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Wheel Type</div>
+                                                    <div class="rightview">@underpinnings.WheelType</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Tubeless Tyre</div>
+                                                    <div class="rightview">@underpinnings.TubelessTyre</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    }
+                                </div>
+                                <div id="chargings" class="tab-pane clearfix city-list">
+                                    @foreach (var chargings in ViewBag.Chargings)
+                                    {
+                                        <div class="icon-bx-wraper bx-style-1 p-a30">
+                                            <ul class="table-dl clearfix">
+                                                <li>
+                                                    <div class="leftview">Charging At Home</div>
+                                                    <div class="rightview">@chargings.ChargingAtHome</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Charging At Charging Station</div>
+                                                    <div class="rightview">@chargings.ChargingAtChargingStation</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> *@
+                   
+                </div>
+            </div>
+            
+            @* <div class="section-full bg-white  p-t40 p-b70">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="section-head">
+                                <h3 class="h4 text-uppercase">For your quick look</h3>
+
+                            </div>
+                            <div class="clearfix owl-carousel owl-btn-style-2 quick-look">
+                                <div class="item">
+                                    <div class="dlab-feed-list">
+                                        <div class="dlab-media">
+                                            <a href="new-car-search-result-column.html"><img src="images/our-work/work/pic1.jpg" alt=""></a>
+                                        </div>
+                                        <div class="dlab-info">
+                                            <h4 class="dlab-title"><a href="new-car-search-result-column.html">Hyundai santa fe sport </a></h4>
+                                            <div class="dlab-separator bg-black"></div>
+                                            <p class="dlab-price"><del>$40,152</del> <span class="text-primary">$26,598</span></p>
+                                        </div>
+                                        <div class="icon-box-btn text-center">
+                                            <ul class="clearfix">
+                                                <li>2019</li>
+                                                <li>Manual</li>
+                                                <li>210 hp </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="dlab-feed-list">
+                                        <div class="dlab-media">
+                                            <a href="new-car-search-result-column.html"><img src="images/our-work/work/pic2.jpg" alt=""></a>
+                                        </div>
+                                        <div class="dlab-info">
+                                            <h4 class="dlab-title"><a href="new-car-search-result-column.html">Hyundai santa fe sport </a></h4>
+                                            <div class="dlab-separator bg-black"></div>
+                                            <p class="dlab-price"><del>$40,152</del> <span class="text-primary">$26,598</span></p>
+                                        </div>
+                                        <div class="icon-box-btn text-center">
+                                            <ul class="clearfix">
+                                                <li>2019</li>
+                                                <li>Manual</li>
+                                                <li>210 hp </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="dlab-feed-list">
+                                        <div class="dlab-media">
+                                            <a href="new-car-search-result-column.html"><img src="images/our-work/work/pic3.jpg" alt=""></a>
+                                        </div>
+                                        <div class="dlab-info">
+                                            <h4 class="dlab-title"><a href="new-car-search-result-column.html">Hyundai santa fe sport </a></h4>
+                                            <div class="dlab-separator bg-black"></div>
+                                            <p class="dlab-price"><del>$40,152</del> <span class="text-primary">$26,598</span></p>
+                                        </div>
+                                        <div class="icon-box-btn text-center">
+                                            <ul class="clearfix">
+                                                <li>2019</li>
+                                                <li>Manual</li>
+                                                <li>210 hp </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="dlab-feed-list">
+                                        <div class="dlab-media">
+                                            <a href="new-car-search-result-column.html"><img src="images/our-work/work/pic4.jpg" alt=""></a>
+                                        </div>
+                                        <div class="dlab-info">
+                                            <h4 class="dlab-title"><a href="new-car-search-result-column.html">Hyundai santa fe sport </a></h4>
+                                            <div class="dlab-separator bg-black"></div>
+                                            <p class="dlab-price"><del>$40,152</del> <span class="text-primary">$26,598</span></p>
+                                        </div>
+                                        <div class="icon-box-btn text-center">
+                                            <ul class="clearfix">
+                                                <li>2019</li>
+                                                <li>Manual</li>
+                                                <li>210 hp </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div> *@
+        <select class="" asp-items="ViewBag.varient" id="varientId">
+            <option value="" disabled> </option>
+        </select>
+            <div class="linkcontainer shadow rounded-6">
+                <div class="highlight nav">
+                    <ul>
+                        <li data-target="specifications">Specifications</li>
+                        <li data-target="engineTransmission">Engine & Transmission</li>
+                        <li data-target="features">Features</li>
+                        <li data-target="safety">Safety</li>
+                        <li data-target="mileageandperformance">Mileage & Performance</li>
+                        <li data-target="chassisAndSuspension">Chassis & Suspension</li>
+                        <li data-target="dimensionsAndCapacity">Dimensions & Capacity</li>
+                        <li data-target="electricals">Electricals</li>
+                        <li data-target="tyresAndBrakes">Tyres & Brakes</li>
+                        <li data-target="motorAndBatteries">Motor & Battery</li>
+                        <li data-target="underpinnings">Underpinnings</li>
+                        <li data-target="chargings">Chargings</li>
+                    </ul>
+                </div>
+                <div class="content" id="content">
+                    <section id="specifications">
+                        <h4 class="contentheading">Specifications</h4>
+                            @foreach (var spec in ViewBag.Specs)
+                            {
+                            <div class="container-fluid">
+                                    <table class="contenttable">
+                                    <tr>
+                                        <th><h4>Varient :- @spec.Varients</h4></th>
+                                        <td></td>
+                                    </tr>
+                                        <tr>
+                                        <th>Mileage</th>
+                                        <td>@spec.Milage</td>
+                                        </tr>
+                                        <tr>
+                                        <th>Front Brake</th>
+                                        <td>@spec.FrontBrake</td>
+                                        </tr>
+                                        <tr>
+                                        <th>Rear Brake</th>
+                                        <td>@spec.RearBrake</td>
+                                        </tr>
+                                        <tr>
+                                        <th>Fuel Capacity</th>
+                                        <td>@spec.FuelCapacity</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            }
+                    </section>
+                    <section id="engineTransmission">
+                        <h4 class="contentheading">Engine & Transmission</h4>
+                            @foreach (var engineandtransmission in ViewBag.EngineAndTransmission)
+                            {
+                                <div class="container-fluid">
+                                <table class="contenttable">
+                                    <tr>
+                                    <th><h4>Varient :- @engineandtransmission.Varients</h4></th>
+                                        <td></td>
+                                    </tr>
+                                <tr>
+                                    <th>Engine Type</th>
+                                    <td>@engineandtransmission.EngineType</td>
+                                </tr>
+                                <tr>
+                                    <th>Displacement</th>
+                                    <td>@engineandtransmission.Displacement</td>
+                                </tr>
+                                <tr>
+                                    <th>Max Torque</th>
+                                    <td>@engineandtransmission.MaxTorque</td>
+                                </tr>
+                                <tr>
+                                    <th>No. of Cylinders</th>
+                                    <td>@engineandtransmission.NumOfCylinders</td>
+                                </tr>
+                                <tr>
+                                    <th>Cooling System</th>
+                                    <td>@engineandtransmission.CoolingSystem</td>
+                                </tr>
+                                <tr>
+                                    <th>Valve Per Cylinder</th>
+                                    <td>@engineandtransmission.ValvePerCylinder</td>
+                                </tr>
+                                <tr>
+                                    <th>Starting</th>
+                                    <td>@engineandtransmission.Starting</td>
+                                </tr>
+                                <tr>
+                                    <th>Fuel Supply</th>
+                                    <td>@engineandtransmission.FuelSupply</td>
+                                </tr>
+                                <tr>
+                                    <th>Clutch</th>
+                                    <td>@engineandtransmission.Clutch</td>
+                                </tr>
+                                <tr>
+                                    <th>Gear Box</th>
+                                    <td>@engineandtransmission.GearBox</td>
+                                </tr>
+                                <tr>
+                                    <th>Emission Type</th>
+                                    <td>@engineandtransmission.EmissionType</td>
+                                </tr>
+                                <tr>
+                                    <th>Compression Ratio</th>
+                                    <td>@engineandtransmission.CompressionRatio</td>
+                                </tr>
+                                </table>
+                                </div>
+                            }
+                    </section>
+                    <section id="features">
+                        <h4 class="contentheading">Features</h4>
+                        @foreach (var features in ViewBag.Features)
+                        {
+                            <div class="container-fluid">
+                                <table class="contenttable">
+                                    <tr>
+                                    <th><h4>Varient :- @features.Varients</h4></th>
+                                        <td></td>
+                                    </tr>
+                                <tr>
+                                    <th>ABS</th>
+                                    <td>@features.ABS</td>
+                                </tr>
+                                <tr>
+                                    <th>Speedometer</th>
+                                    <td>@features.Speedometer</td>
+                                </tr>
+                                <tr>
+                                    <th>Tripmeter</th>
+                                    <td>@features.Tripmeter</td>
+                                </tr>
+                                <tr>
+                                    <th>Tachometer</th>
+                                    <td>@features.Tachometer</td>
+                                </tr>
+                                <tr>
+                                    <th>LED Tail Light</th>
+                                    <td>@features.LEDTailLight</td>
+                                </tr>
+                                <tr>
+                                    <th>Odometer</th>
+                                    <td>@features.Odometer</td>
+                                </tr>
+                                <tr>
+                                    <th>Fuel gauge</th>
+                                    <td>@features.FuelGauge</td>
+                                </tr>
+                                <tr>
+                                    <th>Instrument Console</th>
+                                    <td>@features.InstrumentConsole</td>
+                                </tr>
+                                <tr>
+                                    <th>Seat Type</th>
+                                    <td>@features.SeatType</td>
+                                </tr>
+                                <tr>
+                                    <th>Body Graphics</th>
+                                    <td>@features.BodyGraphics</td>
+                                </tr>
+                                <tr>
+                                    <th>Clock</th>
+                                    <td>@features.Clock</td>
+                                </tr>
+                                <tr>
+                                    <th>Passenger Footrest</th>
+                                    <td>@features.PassengerFootrest</td>
+                                </tr>
+                                </table>
+                            </div>
+                        }
+                    </section>
+                    <section id="safety">
+                        <h4 class="contentheading">Safety</h4>
+                        @foreach (var safety in ViewBag.Safety)
+                        {
+                            <div class="container-fluid">
+                                <table class="contenttable">
+                                    <tr>
+                                    <th><h4>Varient :- @safety.Varients</h4></th>
+                                        <td></td>
+                                    </tr>
+                                <tr>
+                                    <th>Pass Switch</th>
+                                    <td>@safety.PassSwitch</td>
+                                </tr>
+                                <tr>
+                                    <th>Engine Kill Switch</th>
+                                    <td>@safety.EngineKillSwitch</td>
+                                </tr>
+                                <tr>
+                                    <th>Display</th>
+                                    <td>@safety.Display</td>
+                                </tr>
+                                </table>
+                                </div>
+                        }
+                    </section>
+                    <section id="mileageandperformance">
+                        <h4 class="contentheading">Mileage & Performance</h4>
+                        @foreach (var mileageandperformance in ViewBag.MileageAndPerformance)
+                        {
+                             <div class="container-fluid">
+                                <table class="contenttable">
+                                    <tr>
+                                    <th><h4>Varient :- @mileageandperformance.Varients</h4></th>
+                                        <td></td>
+                                    </tr>
+                                <tr>
+                                    <th>Overall Mileage</th>
+                                    <td>@mileageandperformance.OverallMileage</td>
+                                </tr>
+                                <tr>
+                                    <th>City Mileage</th>
+                                    <td>@mileageandperformance.CityMileage</td>
+                                </tr>
+                                <tr>
+                                    <th>Highway Mileage</th>
+                                    <td>@mileageandperformance.HighwayMileage</td>
+                                </tr>
+                                </table>
+                             </div>
+                        }
+                    </section>
+                    <section id="chassisAndSuspension">
+                        <h4 class="contentheading">Chassis & Suspension</h4>
+                        @foreach (var chassisAndSuspension in ViewBag.ChassisAndSuspension)
+                        {
+                            <div class="container-fluid">
+                                <table class="contenttable">
+                                    <tr>
+                                    <th><h4>Varient :- @chassisAndSuspension.Varients</h4></th>
+                                        <td></td>
+                                    </tr>
+                                <tr>
+                                    <th>Body Type</th>
+                                    <td>@chassisAndSuspension.BodyType</td>
+                                </tr>
+                                <tr>
+                                    <th>Body Graphics</th>
+                                    <td>@chassisAndSuspension.BodyGraphics</td>
+                                </tr>
+                                </table>
+                            </div>
+                        }
+                    </section>
+                    <section id="dimensionsAndCapacity">
+                        <h4 class="contentheading">Dimensions & Capacity</h4>
+                        @foreach (var dimensionsAndCapacity in ViewBag.DimensionsAndCapacity)
+                        {
+                            <div class="container-fluid">
+                                <table class="contenttable">
+                                    <tr>
+                                    <th><h4>Varient :- @dimensionsAndCapacity.Varients</h4></th>
+                                        <td></td>
+                                    </tr>
+                                <tr>
+                                    <th>Width</th>
+                                    <td>@dimensionsAndCapacity.Width</td>
+                                </tr>
+                                <tr>
+                                    <th>Length</th>
+                                    <td>@dimensionsAndCapacity.Length</td>
+                                </tr>
+                                <tr>
+                                    <th>Height</th>
+                                    <td>@dimensionsAndCapacity.Height</td>
+                                </tr>
+                                <tr>
+                                    <th>Fuel Capacity</th>
+                                    <td>@dimensionsAndCapacity.FuelCapacity</td>
+                                </tr>
+                                <tr>
+                                    <th>Ground Clearance</th>
+                                    <td>@dimensionsAndCapacity.GroundClearance</td>
+                                </tr>
+                                <tr>
+                                    <th>Wheelbase</th>
+                                    <td>@dimensionsAndCapacity.Wheelbase</td>
+                                </tr>
+                                <tr>
+                                    <th>Kerb Weight</th>
+                                    <td>@dimensionsAndCapacity.KerbWeight</td>
+                                </tr>
+                                <tr>
+                                    <th>Fuel Reserve</th>
+                                    <td>@dimensionsAndCapacity.FuelReserve</td>
+                                </tr>
+                                <tr>
+                                    <th>Saddle Height</th>
+                                    <td>@dimensionsAndCapacity.SaddleHeight</td>
+                                </tr>
+                                </table>
+                                </div>
+                        }
+                    </section>
+                    <section id="electricals">
+                        <h4 class="contentheading">Electricals</h4>
+                        @foreach (var electricals in ViewBag.Electricals)
+                        {
+                            <div class="container-fluid">
+                                <table class="contenttable">
+                                    <tr>
+                                    <th><h4>Varient :- @electricals.Varients</h4></th>
+                                        <td></td>
+                                    </tr>
+                                <tr>
+                                    <th>Headlight</th>
+                                    <td>@electricals.Headlight</td>
+                                </tr>
+                                <tr>
+                                    <th>Tail Light</th>
+                                    <td>@electricals.TailLight</td>
+                                </tr>
+                                <tr>
+                                    <th>Turn Signal Lamp</th>
+                                    <td>@electricals.TurnSignalLamp</td>
+                                </tr>
+                                <tr>
+                                    <th>LED Tail Lights</th>
+                                    <td>@electricals.LEDTailLights</td>
+                                </tr>
+                                <tr>
+                                    <th>Low Fuel Indicato</th>
+                                    <td>@electricals.LowFuelIndicato</td>
+                                </tr>
+                                <tr>
+                                    <th>Pilot Lamps</th>
+                                    <td>@electricals.PilotLamps</td>
+                                </tr>
+                                <tr>
+                                    <th>Distance to Empty Indicator</th>
+                                    <td>@electricals.DistanceToEmptyIndicator</td>
+                                </tr>
+                                <tr>
+                                    <th>DRLs</th>
+                                    <td>@electricals.DRLs</td>
+                                </tr>
+                                </table>
+                                </div>
+                        }
+                    </section>
+                    <section id="tyresAndBrakes">
+                        <h4 class="contentheading">Tyres & Brakes</h4>
+                        @foreach (var tyresAndBrakes in ViewBag.TyresAndBrakes)
+                        {
+                            <div class="container-fluid">
+                                <table class="contenttable">
+                                    <tr>
+                                    <th><h4>Varient :- @tyresAndBrakes.Varients</h4></th>
+                                        <td></td>
+                                    </tr>
+                                <tr>
+                                    <th>Front Brake Diameter</th>
+                                    <td>@tyresAndBrakes.FrontBrakeDiameter</td>
+                                </tr>
+                                <tr>
+                                    <th>Rear Brake Diameter</th>
+                                    <td>@tyresAndBrakes.RearBrakeDiameter</td>
+                                </tr>
+                                <tr>
+                                    <th>Radial Tyre</th>
+                                    <td>@tyresAndBrakes.RadialTyre</td>
+                                </tr>
+                                <tr>
+                                    <th>Front Suspension</th>
+                                    <td>@tyresAndBrakes.FrontSuspension</td>
+                                </tr>
+                                <tr>
+                                    <th>Rear Suspension</th>
+                                    <td>@tyresAndBrakes.RearSuspension</td>
+                                </tr>
+                                </table>
+                                </div>
+                        }
+                    </section>
+                    <section id="motorAndBatteries">
+                        <h4 class="contentheading">Motor & Battery</h4>
+                        @foreach (var motorAndBatteries in ViewBag.MotorAndBatteries)
+                        {
+                            <div class="container-fluid">
+                                <table class="contenttable">
+                                    <tr>
+                                    <th><h4>Varient :- @motorAndBatteries.Varients</h4></th>
+                                        <td></td>
+                                    </tr>
+                                <tr>
+                                    <th>Peak Power</th>
+                                    <td>@motorAndBatteries.PeakPower</td>
+                                </tr>
+                                <tr>
+                                    <th>Drive Type</th>
+                                    <td>@motorAndBatteries.DriveType</td>
+                                </tr>
+                                <tr>
+                                    <th>Transmission</th>
+                                    <td>@motorAndBatteries.Transmission</td>
+                                </tr>
+                                <tr>
+                                    <th>Battery Capacity</th>
+                                    <td>@motorAndBatteries.BatteryCapacity</td>
+                                </tr>
+                                </table>
+                                </div>
+                        }
+                    </section>
+                    <section id="underpinnings">
+                        <h4 class="contentheading">Underpinnings</h4>
+                        @foreach (var underpinnings in ViewBag.Underpinnings)
+                        {
+                            <div class="container-fluid">
+                                <table class="contenttable">
+                                    <tr>
+                                    <th><h4>Varient :- @underpinnings.Varients</h4></th>
+                                        <td></td>
+                                    </tr>
+                                <tr>
+                                    <th>Suspension Front</th>
+                                    <td>@underpinnings.SuspensionFront</td>
+                                </tr>
+                                <tr>
+                                    <th>Suspension Rear</th>
+                                    <td>@underpinnings.SuspensionRear</td>
+                                </tr>
+                                <tr>
+                                    <th>Brakes Front</th>
+                                    <td>@underpinnings.BrakesFront</td>
+                                </tr>
+                                <tr>
+                                    <th>Brakes Rear</th>
+                                    <td>@underpinnings.BrakesRear</td>
+                                    <tr>
+                                    <th>Tyre Size</th>
+                                    <td>@underpinnings.TyreSize</td>
+                                </tr>
+                                <tr>
+                                    <th>Wheel Size</th>
+                                    <td>@underpinnings.WheelSize</td>
+                                </tr>
+                                <tr>
+                                    <th>Wheel Type</th>
+                                    <td>@underpinnings.WheelType</td>
+                                </tr>
+                                <tr>
+                                    <th>Tubeless Tyre</th>
+                                    <td>@underpinnings.TubelessTyre</td>
+                                </tr>
+                                </table>
+                                </div>
+                        }
+                    </section>
+                    <section id="chargings">
+                        <h4 class="contentheading">chargings</h4>
+                        @foreach (var chargings in ViewBag.Chargings)
+                        {
+                            <div class="container-fluid">
+                                <table class="contenttable">
+                                    <tr>
+                                    <th><h4>Varient :- @chargings.Varients</h4></th>
+                                        <td></td>
+                                    </tr>
+                                <tr>
+                                    <th>Charging At Home</th>
+                                    <td>@chargings.ChargingAtHome</td>
+                                </tr>
+                                <tr>
+                                    <th>Charging At Charging Station</th>
+                                    <td>@chargings.ChargingAtChargingStation</td>
+                                </tr>
+                                </table>
+                                </div>
+                        }
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- Content END-->
+        <button class="scroltop fa fa-chevron-up"></button>
+    @* </div> *@
+    
+    <!--For Highlisght the scorllspy part-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('.highlight li');
+            const sections = document.querySelectorAll('section');
+            const content = document.getElementById('content');
+
+            function changeActiveLink() {
+                let index = sections.length;
+
+                while (--index && content.scrollTop + 50 < sections[index].offsetTop - content.offsetTop) { }
+
+                navLinks.forEach((link) => link.classList.remove('active'));
+                navLinks[index].classList.add('active');
+            }
+
+            changeActiveLink();
+            content.addEventListener('scroll', changeActiveLink);
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+                    const targetElement = document.getElementById(targetId);
+                    const topOffset = targetElement.offsetTop - content.offsetTop;
+                    content.scrollTo({ top: topOffset, behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
+
+    @* <script>
+        $(document).ready(function () {
+            // alert("1");
+            $("#ddlBrand").change(function () {
+                // alert("2");
+                var url = "@Url.Action("GetModelsByBrand", "Home")";
+                $.getJSON(url, { Id: $("#ddlBrand").val() }, function (data) {
+                    // alert(JSON.stringify(data));
+                    $("#ddlModel").empty(); // Clear existing options
+                    $("#ddlModel").append('<option value="">Select Model</option>');
+                    $.each(data, function (index, item) {
+                        // debugger;
+                        $("#ddlModel").append('<option value="' + item.twoWheelerId + '">' + item.twoWheelerName + '</option>');
+                    });
+                });
+            });
+            $('#searchButton').click(function () {
+                //debugger;
+                var brandId = $('#ddlBrand').val();
+                var modelId = $('#ddlModel').val();
+                // if (brandId && modelId) {
+                //     window.location.href = '@Url.Action("TwoWheelerDetails")?brandId=' + brandId + '&modelId=' + modelId;
+                // } else {
+                //     alert("Please select both brand and model.");
+                // }
+                if (brandId && !modelId) {
+                    // If only brand is selected, navigate to the first view
+                    window.location.href = '@Url.Action("TWBrandDetails")?brandId=' + brandId;
+                } else if (brandId && modelId) {
+                    // If both brand and model are selected, navigate to the second view
+                    window.location.href = '@Url.Action("TwoWheelerDetails")?brandId=' + brandId + '&modelId=' + modelId;
+                } else {
+                    alert("Please select a brand.");
+                }
+            });
+            $('#varientId').change(function () {
+                // var modelId = $('#ddlModel').val();
+                var varientId = $('#varientId').val();
+                if (modelId && varientId) {
+                    window.location.href = '@Url.Action("TwoWheelerDetails")?varientId=' + varientId;
+                }
+            })
+        });
+    </script> *@
+   @*  <script>
+        $(document).ready(function () {
+            // Load data when variant changes
+            $("#varientId").change(function () {
+                var variantId = $(this).val();
+                if (variantId) {
+                    var url = "@Url.Action("GetDataByVariant", "Home")";
+                    $.getJSON(url, { variantId: variantId }, function (data) {
+                        // Process and display the data based on your requirements
+                        var content = '';
+                        if (data.Specs && data.Specs.length > 0) {
+                            content += '<h3>Specifications</h3>';
+                            $.each(data.Specs, function (index, item) {
+                                content += '<p>' + item.SpecificationDetails + '</p>';
+                            });
+                        }
+                        // Add similar blocks for other data arrays like Features, Safety, etc.
+                        $("#content").html(content);
+                    });
+                } else {
+                    $("#content").empty();
+                }
+            });
+        });
+    </script> *@
+</body>
+
+
+
+
+
+
+

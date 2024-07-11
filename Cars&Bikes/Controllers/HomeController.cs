@@ -23,11 +23,6 @@ namespace Cars_Bikes.Controllers
             _context = context;
             _fourwheeler = fourWheeler;
         }
-        //BrandDB _context;
-        //public HomeController(BrandDB context)
-        //{
-        //    _context = context;
-        //}
         public IActionResult Index()
         {
             var TWList = _context.TwowheelerBrands.ToList();
@@ -41,33 +36,29 @@ namespace Cars_Bikes.Controllers
             //ViewBag.ModelNames = new SelectList(Models, "Company", "TwoWheelerName");
             var FourWheelerBrand = _fourwheeler.FourWheelerBrands.ToList();
             ViewBag.FourwheelerName = new SelectList(FourWheelerBrand, "Id", "FourWheelerBrandName");
-            
+            var TWNews = _context.TWLatestNews.OrderByDescending(m => m.TWLatestNewsId).Take(5).ToList();
+            ViewBag.TWNews = TWNews;
+            var FWNews = _fourwheeler.FWLatestNews.OrderByDescending(m => m.FWLatestNewsId).Take(5).ToList();
+            ViewBag.FWNews = FWNews;
+            var UpcomingBike = _context.UpcomingBikes.ToList();
+            ViewBag.Upcomingbike = UpcomingBike;
+
+
+            return View();
+        }
+        public IActionResult TWLatestNewsDetails(int id)
+        {
+            var newsItem = _context.TWLatestNews.FirstOrDefault(m => m.TWLatestNewsId == id);
+            if (newsItem == null)
+            {
+                return NotFound();
+            }
+            ViewBag.TWNews = newsItem;
+            var allNews = _context.TWLatestNews.OrderByDescending(m => m.TWLatestNewsId).Take(10).ToList();
+            ViewBag.AllNews = allNews;
             return View();
         }
         [HttpGet]
-        //public JsonResult GetModelsByBrand(int id)
-        //{
-        //    if (id <= 0)
-        //    {
-        //        return Json(new { success = false, message = "Invalid brand ID" });
-        //    }
-
-        //    var models = _context.Twowheelers
-        //        .Where(u => u.TwoWBrandId == id)
-        //        .Select(u => new
-        //        {
-        //            u.TwoWheelerId,
-        //            u.TwoWheelerName
-        //        })
-        //        .ToList();
-
-        //    if (models == null || !models.Any())
-        //    {
-        //        return Json(new { success = false, message = "No models found for this brand" });
-        //    }
-
-        //    return Json(new { success = true, data = models });
-        //}
         public JsonResult GetModelsByBrand(int Id)
         {
             var ListModel = _context.Twowheelers.Where(u => u.TwoWBrandId == Id).Select(u => new
@@ -77,25 +68,67 @@ namespace Cars_Bikes.Controllers
             }).ToList();
             return Json(ListModel);
         }
-        //public JsonResult GetModelsByBrand(int Id)
-        //{
-        //    return Json(_context.Twowheelers.Where(u => u.TwoWheelerBrand == Id).ToList());
-        //}
-        //public JsonResult GetModelsByBrand(string brandName)
-        //{
-        //    var models = _twowheeler.TwoWheelers.Where(u => u.Company == brandName).ToList();
-        //    return Json(models);
-        //}
-        //[HttpGet]
-        //public JsonResult GetModelsByBrand(string brandName)
-        //{
-        //    var models = _twowheeler.TwoWheelers
-        //                            .Where(t => t.Company == brandName)
-        //                            .Select(t => new { t.Id, t.TwoWheelerName })
-        //                            .ToList();
-        //    return Json(models);
-        //}
+        public IActionResult TWBrandDetails(int brandId)
+        {
+            var brand = _context.Twowheelers
+                                .Where(b => b.TwoWheelerBrands.TWBrandId == brandId)
+                                //.FirstOrDefault();
+                                .ToList();
+            return View("TWBrandDetails",brand);
+        }
+        public ActionResult TwoWheelerDetails(int brandId, int modelId,int varientId)
+        {
+            //Item1
+            var twoWheelers = _context.Twowheelers
+                                      .Where(t => t.TwoWheelerBrands.TWBrandId == brandId && t.TwoWheelerId == modelId)
+                                      .ToList();
+            var varient =_context.TWVarients.Where(t => t.TwoWheelerId == modelId).ToList();
+            ViewBag.varient = new SelectList(varient, "TWVarientId", "Varients");
+            //Item2
+            var spec = _context.TWSpec.Where(t => t.TWVarients.TWVarientId == varientId).ToList();
+            //var spec = _context.TWSpec.Where(t => t.TWVarientId == varientId).ToList();
+            //Item3
+            var features = _context.TWFeatures.Where(t => t.TwoWheelerId == modelId).ToList();
+            //Item4
+            var safety = _context.TWSafety.Where(t => t.TwoWheelerId == modelId).ToList();
+            //Item5
+            var mileageAndPerformance = _context.TWMileageAndPerformances.Where(t => t.TwoWheelerId == modelId).ToList();
+            //Item6
+            var engineAndTransmission = _context.TWEngineAndTransmissions.Where(t => t.TwoWheelerId == modelId).ToList();
+            //Item7
+            var chassisAndSuspension = _context.TWChassisAndSuspensions.Where(t => t.TwoWheelerId == modelId).ToList();
+            //Item8
+            var dimensionsAndCapacity = _context.TWDimensionsAndCapacities.Where(t => t.TwoWheelerId == modelId).ToList();
+            //Item9
+            var electricals = _context.TWElectricals.Where(t => t.TwoWheelerId == modelId).ToList();
+            //Item10
+            var tyresAndBrakes = _context.TWTyresAndBrakes.Where(t => t.TwoWheelerId == modelId).ToList();
+            //Item11
+            var motorAndBatteries = _context.TWMotorAndBatteries.Where(t => t.TwoWheelerId == modelId).ToList();
+            //Item12
+            var underpinnings = _context.TWUnderpinnings.Where(t => t.TwoWheelerId == modelId).ToList();
+            //Item13
+            var chargings = _context.TWChargings.Where(t => t.TwoWheelerId == modelId).ToList();
+            ////var tuple = new Tuple<List<TwoWheeler>, List<TWSpec>, List<TWFeatures>, List<TWSafety>, List<TWMileageAndPerformance>, List<TWEngineAndTransmission>, List<TWChassisAndSuspension>, List<TWDimensionsAndCapacity>,List<TWTyresAndBrakes>>
+            ////    (twoWheelers, spec, features, safety, mileageandperformance, engineandtransmission, chassisandsuspension, dimensionsandcapacity, tyresandbrakes);
+            ////return View("TwoWheelerDetails", tuple);
 
+            ViewBag.TwoWheelers = twoWheelers;
+            ViewBag.Specs = spec;
+            ViewBag.Features = features;
+            ViewBag.Safety = safety;
+            ViewBag.MileageAndPerformance = mileageAndPerformance;
+            ViewBag.EngineAndTransmission = engineAndTransmission;
+            ViewBag.ChassisAndSuspension = chassisAndSuspension;
+            ViewBag.DimensionsAndCapacity = dimensionsAndCapacity;
+            ViewBag.Electricals = electricals;
+            ViewBag.TyresAndBrakes = tyresAndBrakes;
+            ViewBag.MotorAndBatteries = motorAndBatteries;
+            ViewBag.Underpinnings = underpinnings;
+            ViewBag.Chargings = chargings;
+
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

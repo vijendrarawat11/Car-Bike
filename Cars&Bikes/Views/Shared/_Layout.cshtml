@@ -7,10 +7,9 @@
     <!--<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />-->
     <!--<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />-->
     <!--<link rel="stylesheet" href="~/Cars_Bikes.styles.css" asp-append-version="true" />-->
-     @* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> *@
 </head>
 <body>
-<header class="site-header header-transparent">
+    <header class="site-header header-transparent">
             <!--<div class="top-bar">
                 <div class="container">
                     <div class="row">
@@ -206,7 +205,7 @@
             </div>
             <!-- main header END -->
         </header>
-    <div class="container">
+    <div class="container-fluid">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -355,6 +354,10 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+<link href="~/css/site.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
 <link href="~/css/plugins.css" rel="stylesheet" />
 <link href="~/css/style.min.css" rel="stylesheet" />
 <link href="~/css/templete.min.css" rel="stylesheet" />
@@ -377,7 +380,7 @@
  <script src="~/js/masonry.filter.js"></script>
  <script src="~/js/owl.carousel.js"></script>
  <script src="~/js/dz.carousel.js"></script>
-<script src="~/js/dz.ajax.js"></script>
+ <script src="~/js/dz.ajax.js"></script>
 
  <script src="~/plugins/revolution/v5.4.3/js/jquery.themepunch.revolution.min.js"></script>
  <script src="~/plugins/revolution/v5.4.3/js/jquery.themepunch.tools.min.js"></script>

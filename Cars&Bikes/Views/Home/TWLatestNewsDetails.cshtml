@@ -1,0 +1,109 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<body id="bg">
+    @* <div class="page-wraper"> *@
+        @* <div id="loading-area"></div> *@
+        <!-- Content -->
+        @* <div class="page-content"> *@
+            <!-- inner page banner -->
+    @* <div class="dlab-bnr-inr overlay-black-middle container-fluid" style="background-image:url(~/images/banner.png);">
+                <div class="">
+                    <div class="dlab-bnr-inr-entry">
+                        <h1 class="text-white">Bike Details</h1>
+                    </div>
+                </div>
+            </div> *@
+            <!-- inner page banner END -->
+    <!-- Breadcrumb row -->
+    <div class="overlay-black-middle" style=" background:linear-gradient(#475372, #78829A, #9EA3AD, #fff); margin:0;">
+       <img src="~/images/background/bnr3.jpg" style="width:100%;height:350px;" />
+    </div>
+    @* <div class="container-fluid" style="background:linear-gradient(#23335A,#475372,#78829A,#9EA3AD);padding: 10px 0;">
+                <div class="container">
+                    <ul style="color:#fff; display:flex; list-style:none">
+                <li style="padding-left:4px;padding-right:4px;"><a href="#">Home</a></li>
+                <li style="padding-left:4px;padding-right:4px;">Latest News</li>
+                    </ul>
+                </div>
+            </div> *@
+            <!-- Breadcrumb row END -->
+            <div class="car-details-info">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <div class="nav">
+                                <ul>
+                                    <li class="active"><a href="car-details-overview.html">Overview</a></li>
+                                    <li><a href="car-detail-specifications.html">Specifications</a></li>
+                                    <li><a href="car-detail-price.html">Price</a></li>
+                                    <li><a href="car-detail-compare.html">Compare</a></li>
+                                    <li><a href="car-detail-pictures.html">Pictures</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+@*     <div class="container-fluid" style="backdrop-filter:blur(4px);height:160px;background:linear-gradient(#23335A,#475372,#78829A,#9EA3AD);background-image:src(@Model.ImageURL)"></div>
+ *@           @*  <div class="conntainer-fluid bg-black" style="height:55px; padding-top:0;">
+                <div class="container">
+            <h2 class="text-white fs-5">Latest News</h2>
+                </div>
+            </div>
+            <div class="conntainer-fluid p-t20">
+                <div class="container">
+                    <ul class="list-inline">
+                        <li><a href="#">Home</a></li>/
+                        <li>Latest News</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="car-details-info">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <div class="nav">
+                                <ul>
+                                    <li class="active"><a href="car-details-overview.html">Overview</a></li>
+                                    <li><a href="car-detail-specifications.html">Specifications</a></li>
+                                    <li><a href="car-detail-price.html">Price</a></li>
+                                    <li><a href="car-detail-compare.html">Compare</a></li>
+                                    <li><a href="car-detail-pictures.html">Pictures</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> *@
+    <div class=" p-t40">
+        <div class="upcoming-bikes-head text-center"><h1>Latest News</h1></div>
+        <div class="row">
+            <div class="col-lg-8 container">
+                <div class="p-l20 p-t20 p-b20 p-r20" style="border: 1px solid #ccc; border-radius:10px;">
+                    <h2 class="m-b20 p-b10" style="border-bottom:1.5px solid #ebecee;">@ViewBag.TWNews.NewsHeading</h2>
+                    <p>@ViewBag.TWNews.Date?.ToString("d MMM yyyy")</p>
+                    <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div>
+                    <p class="p-t50">@ViewBag.TWNews.NewsSummary</p>
+               </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="p-l20 p-t20 p-b20 p-r20" style="border: 1px solid #ccc; border-radius:10px;">
+                    <h3 class="m-b20 p-b10" style="border-bottom:4.5px solid #ebecee; font-family:Georgia, serif; border-bottom-color:red;" , sans-serif;">Bikes News</h3>
+                    @foreach (var newsdata in ViewBag.AllNews){
+                    <div class=" " style="display:flex;width:210px;">
+                            <div style="padding:5px;"><a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = newsdata.TWLatestNewsId })"><img src="@newsdata.ImageURL" /></a></div>
+                            <div><h4>@newsdata.NewsHeading</h4></div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+        @* <div class="container-fluid p-t20 car-dl-info"><p>@Model.NewsDetail</p></div> *@
+    </div>
+        @* </div>
+    </div> *@
+</body>

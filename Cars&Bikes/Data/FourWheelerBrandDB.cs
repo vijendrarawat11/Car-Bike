@@ -10,5 +10,7 @@ namespace Cars_Bikes.Data
            
         }
         public DbSet<FourWheelerBrand> FourWheelerBrands { get; set; }
+        public DbSet<FWLatestNews> FWLatestNews { get; set; }
+        public DbSet<UpcomingCar> UpcomingCars { get; set; }
     }
 }

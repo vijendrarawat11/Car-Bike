@@ -11,6 +11,21 @@ namespace Cars_Bikes.Data
         }
         public DbSet<TwoWheelerBrand> TwowheelerBrands { get; set; }
         public DbSet<TwoWheeler> Twowheelers { get; set; }
+        public DbSet<TWSpec> TWSpec { get; set; }
+        public DbSet<TWFeatures> TWFeatures { get; set; }
+        public DbSet<TWSafety> TWSafety { get; set; }
+        public DbSet<TWEngineAndTransmission> TWEngineAndTransmissions { get; set; }
+        public DbSet<TWMileageAndPerformance> TWMileageAndPerformances { get; set; }
+        public DbSet<TWChassisAndSuspension> TWChassisAndSuspensions { get; set; }
+        public DbSet<TWDimensionsAndCapacity> TWDimensionsAndCapacities { get; set; }
+        public DbSet<TWElectricals> TWElectricals { get; set; }
+        public DbSet<TWTyresAndBrakes> TWTyresAndBrakes { get; set; }
+        public DbSet<TWMotorAndBattery> TWMotorAndBatteries { get; set; }
+        public DbSet<TWUnderpinning> TWUnderpinnings { get; set; }
+        public DbSet<TWCharging> TWChargings { get; set; }
+        public DbSet<TWLatestNews> TWLatestNews { get; set; }
+        public DbSet<UpcomingBike> UpcomingBikes { get; set; }
+        public DbSet<TWVarient> TWVarients { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TwoWheelerBrand>().HasKey(t => t.TWBrandId);

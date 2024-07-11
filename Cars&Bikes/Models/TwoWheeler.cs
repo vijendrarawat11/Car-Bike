@@ -6,8 +6,10 @@ namespace Cars_Bikes.Models
     public class TwoWheeler
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int TwoWheelerId { get; set; }
         [Key]
+        public int TwoWheelerId { get; set; }
+
+        [Required]
         public string TwoWheelerName { get; set; } = null!;
 
         public string? BasePrice { get; set; }
@@ -22,5 +24,11 @@ namespace Cars_Bikes.Models
         public int TwoWBrandId { get; set; }
         [ForeignKey("TwoWBrandId")]
         public virtual TwoWheelerBrand TwoWheelerBrands { get; set; }
+        public string TWImage { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:d MMM yyyy}", ApplyFormatInEditMode = true)]
+
+        public DateTime LaunchDate { get; set; }
+        public bool IsEV {get; set;}
     }
 }
