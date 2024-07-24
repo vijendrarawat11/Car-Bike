@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Cars_Bikes.Migrations
 {
-    [DbContext(typeof(BrandDB))]
+    [DbContext(typeof(TwoWheelerDB))]
     [Migration("20240709104535_VarientFKInSpec")]
     partial class VarientFKInSpec
     {

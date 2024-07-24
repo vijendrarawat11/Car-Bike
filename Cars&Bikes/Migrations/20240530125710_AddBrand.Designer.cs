@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Cars_Bikes.Migrations
 {
-    [DbContext(typeof(BrandDB))]
+    [DbContext(typeof(TwoWheelerDB))]
     [Migration("20240530125710_AddBrand")]
     partial class AddBrand
     {

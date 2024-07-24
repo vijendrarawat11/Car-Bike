@@ -1,20 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics;
 
 namespace Cars_Bikes.Models
 {
-    public class TWTyresAndBrakes
+    public class TWImageColorPrice
     {
         [Key]
-        public int TWTyresAndBrakesId { get; set; }
+        public int TWImageColorPriceId { get; set; }
         public string? TWName { get; set; }
         public string? Varients { get; set; }
-        public decimal? FrontBrakeDiameter { get; set; }
-        public decimal? RearBrakeDiameter { get; set; }
-        public string? RadialTyre { get; set; }
-        public string? FrontSuspension { get; set; }
-        public string? RearSuspension { get; set; }
+        public int? Price { get; set; }
+        public string Color { get; set; }
+        public string ImageURL { get; set; }
         public int TwoWheelerId { get; set; }
         [ForeignKey("TwoWheelerId")]
         public virtual TwoWheeler TwoWheeler { get; set; }

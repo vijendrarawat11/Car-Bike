@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Cars_Bikes.Migrations.FourWheelerBrandDBMigrations
 {
-    [DbContext(typeof(FourWheelerBrandDB))]
+    [DbContext(typeof(FourWheelerDB))]
     [Migration("20240708034205_addFWUpcomingAndLatestNews")]
     partial class addFWUpcomingAndLatestNews
     {

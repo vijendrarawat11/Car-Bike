@@ -4,6 +4,7 @@ using Cars_Bikes.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cars_Bikes.Migrations
 {
     [DbContext(typeof(TwoWheelerDB))]
-    partial class BrandDBModelSnapshot : ModelSnapshot
+    [Migration("20240712105601_ChangeOtherTableColType")]
+    partial class ChangeOtherTableColType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -346,46 +349,6 @@ namespace Cars_Bikes.Migrations
                     b.ToTable("TWFeatures");
                 });
 
-            modelBuilder.Entity("Cars_Bikes.Models.TWImageColorPrice", b =>
-                {
-                    b.Property<int>("TWImageColorPriceId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWImageColorPriceId"));
-
-                    b.Property<string>("Color")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageURL")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("Price")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TWName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TWVarientId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TwoWheelerId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Varients")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("TWImageColorPriceId");
-
-                    b.HasIndex("TWVarientId");
-
-                    b.HasIndex("TwoWheelerId");
-
-                    b.ToTable("TWImageColorPrices");
-                });
-
             modelBuilder.Entity("Cars_Bikes.Models.TWLatestNews", b =>
                 {
                     b.Property<int>("TWLatestNewsId")
@@ -393,9 +356,6 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWLatestNewsId"));
-
-                    b.Property<string>("BrandName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("Date")
                         .HasColumnType("datetime2");
@@ -416,12 +376,7 @@ namespace Cars_Bikes.Migrations
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
-                    b.Property<int>("TwoWBrandId")
-                        .HasColumnType("int");
-
                     b.HasKey("TWLatestNewsId");
-
-                    b.HasIndex("TwoWBrandId");
 
                     b.ToTable("TWLatestNews");
                 });
@@ -748,9 +703,8 @@ namespace Cars_Bikes.Migrations
                     b.Property<bool>("IsEV")
                         .HasColumnType("bit");
 
-                    b.Property<string>("LaunchDate")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("LaunchDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Price")
                         .HasColumnType("nvarchar(max)");
@@ -797,10 +751,10 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("Discription")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("IsEV")
+                    b.Property<bool?>("EV")
                         .HasColumnType("bit");
 
-                    b.Property<bool?>("IsPetrol")
+                    b.Property<bool?>("Petrol")
                         .HasColumnType("bit");
 
                     b.HasKey("TWBrandId");
@@ -816,18 +770,12 @@ namespace Cars_Bikes.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UpcomingBikeId"));
 
-                    b.Property<string>("BrandName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime?>("ExpectedLaunchDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ImageURL")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TwoWBrandId")
-                        .HasColumnType("int");
 
                     b.Property<string>("UpcomingBikeDetails")
                         .HasColumnType("nvarchar(max)");
@@ -836,8 +784,6 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UpcomingBikeId");
-
-                    b.HasIndex("TwoWBrandId");
 
                     b.ToTable("TWUpcomingBikes");
                 });
@@ -954,36 +900,6 @@ namespace Cars_Bikes.Migrations
                     b.Navigation("TWVarients");
 
                     b.Navigation("TwoWheeler");
-                });
-
-            modelBuilder.Entity("Cars_Bikes.Models.TWImageColorPrice", b =>
-                {
-                    b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
-                        .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
-                        .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("TWVarients");
-
-                    b.Navigation("TwoWheeler");
-                });
-
-            modelBuilder.Entity("Cars_Bikes.Models.TWLatestNews", b =>
-                {
-                    b.HasOne("Cars_Bikes.Models.TwoWheelerBrand", "TwoWheelerBrands")
-                        .WithMany()
-                        .HasForeignKey("TwoWBrandId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("TwoWheelerBrands");
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWMileageAndPerformance", b =>
@@ -1116,17 +1032,6 @@ namespace Cars_Bikes.Migrations
                     b.HasOne("Cars_Bikes.Models.TwoWheelerBrand", "TwoWheelerBrands")
                         .WithMany("TwoWheelers")
                         .HasForeignKey("TwoWBrandId")
-                        .IsRequired();
-
-                    b.Navigation("TwoWheelerBrands");
-                });
-
-            modelBuilder.Entity("Cars_Bikes.Models.UpcomingBike", b =>
-                {
-                    b.HasOne("Cars_Bikes.Models.TwoWheelerBrand", "TwoWheelerBrands")
-                        .WithMany()
-                        .HasForeignKey("TwoWBrandId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("TwoWheelerBrands");

@@ -9,10 +9,10 @@ namespace Cars_Bikes.Models
         public int TWSpecId { get; set; }
         public string? TWName { get; set; }
         public string? Varients { get; set; }
-        public string? Milage { get; set; }
+        public decimal? Milage { get; set; }
         public string? FrontBrake { get; set; }
         public string? RearBrake { get; set; }
-        public string? FuelCapacity { get; set; }
+        public decimal? FuelCapacity { get; set; }
         public int TwoWheelerId { get; set; }
         [ForeignKey("TwoWheelerId")]
         public virtual TwoWheeler TwoWheeler { get; set; }

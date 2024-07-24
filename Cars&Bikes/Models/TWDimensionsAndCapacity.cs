@@ -9,15 +9,15 @@ namespace Cars_Bikes.Models
         public int TWDimensionsAndCapacityId { get; set; }
         public string? TWName { get; set; }
         public string? Varients { get; set; }
-        public string? Width { get; set; }
-        public string? Length { get; set; }
-        public string? Height { get; set; }
-        public string? FuelCapacity { get; set; }
-        public string? GroundClearance { get; set; }
-        public string? Wheelbase { get; set; }
-        public string? KerbWeight { get; set; }
-        public string? FuelReserve { get; set; }
-        public string? SaddleHeight { get; set; }
+        public decimal? Width { get; set; }
+        public decimal? Length { get; set; }
+        public decimal? Height { get; set; }
+        public decimal? FuelCapacity { get; set; }
+        public decimal? GroundClearance { get; set; }
+        public decimal? Wheelbase { get; set; }
+        public decimal? KerbWeight { get; set; }
+        public decimal? FuelReserve { get; set; }
+        public decimal? SaddleHeight { get; set; }
         public int TwoWheelerId { get; set; }
         [ForeignKey("TwoWheelerId")]
         public virtual TwoWheeler TwoWheeler { get; set; }

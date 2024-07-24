@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Cars_Bikes.Models
 {
+    [Table("TwoWheelers")]
     public class TwoWheeler
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -11,10 +12,10 @@ namespace Cars_Bikes.Models
 
         [Required]
         public string TwoWheelerName { get; set; } = null!;
+        public string? Price { get; set; }
+        public int? BasePrice { get; set; }
 
-        public string? BasePrice { get; set; }
-
-        public string TopPrice { get; set; } = null!;
+        public int? TopPrice { get; set; }
 
         public string Brand { get; set; } = null!;
 
@@ -25,10 +26,13 @@ namespace Cars_Bikes.Models
         [ForeignKey("TwoWBrandId")]
         public virtual TwoWheelerBrand TwoWheelerBrands { get; set; }
         public string TWImage { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:d MMM yyyy}", ApplyFormatInEditMode = true)]
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:d MMM yyyy}", ApplyFormatInEditMode = true)]
 
-        public DateTime LaunchDate { get; set; }
+        public string LaunchDate { get; set; }
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:d MMM yyyy}", ApplyFormatInEditMode = true)]
+        //public DateOnly Date { get; set; }
         public bool IsEV {get; set;}
     }
 }

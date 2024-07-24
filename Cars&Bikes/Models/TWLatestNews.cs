@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Cars_Bikes.Models
 {
@@ -17,5 +18,9 @@ namespace Cars_Bikes.Models
         [DisplayFormat(DataFormatString = "{0:d MMM yyyy}", ApplyFormatInEditMode = true)]
 
         public DateTime? Date { get; set; }
+        public int TwoWBrandId { get; set; }
+        [ForeignKey("TwoWBrandId")]
+        public virtual TwoWheelerBrand TwoWheelerBrands { get; set; }
+        public String? BrandName { get; set; }
     }
 }

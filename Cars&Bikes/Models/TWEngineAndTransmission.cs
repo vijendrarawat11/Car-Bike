@@ -11,11 +11,11 @@ namespace Cars_Bikes.Models
         public string? TWName { get; set; }
         public string? Varients { get; set; }
         public string? EngineType { get; set; }
-        public string? Displacement { get; set; }
+        public decimal? Displacement { get; set; }
         public string? MaxTorque { get; set; }
-        public string? NumOfCylinders { get; set; }
+        public int? NumOfCylinders { get; set; }
         public string? CoolingSystem { get; set; }
-        public string? ValvePerCylinder { get; set; }
+        public int? ValvePerCylinder { get; set; }
         public string? Starting { get; set; }
         public string? FuelSupply { get; set; }
         public string? Clutch { get; set; }

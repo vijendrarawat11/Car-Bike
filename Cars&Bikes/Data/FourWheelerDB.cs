@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Cars_Bikes.Data
 {
-    public class FourWheelerBrandDB:DbContext
+    public class FourWheelerDB:DbContext
     {
-        public FourWheelerBrandDB(DbContextOptions<FourWheelerBrandDB> options) : base(options)
+        public FourWheelerDB(DbContextOptions<FourWheelerDB> options) : base(options)
         {
            
         }

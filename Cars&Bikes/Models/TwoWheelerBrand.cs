@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Cars_Bikes.Models
 {
+    [Table("TWBrands")]
     public class TwoWheelerBrand
     {
         [Key]
@@ -9,8 +11,8 @@ namespace Cars_Bikes.Models
         public String? BrandName { get; set; }
         //public TwoWheeler twoWheelers { get; set; }
         public ICollection<TwoWheeler> TwoWheelers { get; set; }
-        public bool? Petrol { get; set; }
-        public bool? EV { get; set; }
+        public bool? IsPetrol { get; set; }
+        public bool? IsEV { get; set; }
         public String? BrandLogoURL { get; set; }
         public String? Discription { get; set; }
     }

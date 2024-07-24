@@ -6,8 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<BrandDB>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Con")));
-builder.Services.AddDbContext<FourWheelerBrandDB>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Con")));
+builder.Services.AddDbContext<TwoWheelerDB>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Con")));
+builder.Services.AddDbContext<FourWheelerDB>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Con")));
 
 var app = builder.Build();
 

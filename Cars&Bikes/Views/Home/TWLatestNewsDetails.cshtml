@@ -20,7 +20,7 @@
             <!-- inner page banner END -->
     <!-- Breadcrumb row -->
     <div class="overlay-black-middle" style=" background:linear-gradient(#475372, #78829A, #9EA3AD, #fff); margin:0;">
-       <img src="~/images/background/bnr3.jpg" style="width:100%;height:350px;" />
+        <img src="~/images/main-slider/s.png" style="width:100%;height:350px;" />
     </div>
     @* <div class="container-fluid" style="background:linear-gradient(#23335A,#475372,#78829A,#9EA3AD);padding: 10px 0;">
                 <div class="container">
@@ -36,12 +36,12 @@
                     <div class="row">
                         <div class="col-md-12 ">
                             <div class="nav">
-                                <ul>
-                                    <li class="active"><a href="car-details-overview.html">Overview</a></li>
+                                <ul><li><a></a></li>
+                                    @* <li class="active"><a href="car-details-overview.html">Overview</a></li>
                                     <li><a href="car-detail-specifications.html">Specifications</a></li>
                                     <li><a href="car-detail-price.html">Price</a></li>
                                     <li><a href="car-detail-compare.html">Compare</a></li>
-                                    <li><a href="car-detail-pictures.html">Pictures</a></li>
+                                    <li><a href="car-detail-pictures.html">Pictures</a></li> *@
                                 </ul>
                             </div>
                         </div>
@@ -79,25 +79,49 @@
                     </div>
                 </div>
             </div> *@
-    <div class=" p-t40">
-        <div class="upcoming-bikes-head text-center"><h1>Latest News</h1></div>
-        <div class="row">
-            <div class="col-lg-8 container">
-                <div class="p-l20 p-t20 p-b20 p-r20" style="border: 1px solid #ccc; border-radius:10px;">
-                    <h2 class="m-b20 p-b10" style="border-bottom:1.5px solid #ebecee;">@ViewBag.TWNews.NewsHeading</h2>
-                    <p>@ViewBag.TWNews.Date?.ToString("d MMM yyyy")</p>
-                    <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div>
-                    <p class="p-t50">@ViewBag.TWNews.NewsSummary</p>
-               </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="p-l20 p-t20 p-b20 p-r20" style="border: 1px solid #ccc; border-radius:10px;">
-                    <h3 class="m-b20 p-b10" style="border-bottom:4.5px solid #ebecee; font-family:Georgia, serif; border-bottom-color:red;" , sans-serif;">Bikes News</h3>
-                    @foreach (var newsdata in ViewBag.AllNews){
-                    <div class=" " style="display:flex;width:210px;">
-                            <div style="padding:5px;"><a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = newsdata.TWLatestNewsId })"><img src="@newsdata.ImageURL" /></a></div>
-                            <div><h4>@newsdata.NewsHeading</h4></div>
+    <div class="">
+        <div ><h1 class="latest-bike-head">Latest Bike News</h1></div>
+        <div class="div-row">
+            <div class="big-div both-div">
+                <div class=" latest-bike-container">
+                    <h2>@ViewBag.TWNews.NewsHeading</h2>
+                    @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
+                    <div class="upcoming-bikes-details-image">
+                        <img src="@ViewBag.TWNews.ImageURL" />
+                        <div class="upcoming-bikes-details-text">
+                            <p><i class="fa fa-calendar"></i> @ViewBag.TWNews.Date?.ToString("d MMM yyyy")</p>
+                            @* <p>@ViewBag.TWNews.NewsSummary</p> *@
+                        </div>
                     </div>
+                <div class="latest-bikes-details-content"> <p>@ViewBag.TWNews.NewsDetail</p></div>
+               <div class="detail-div">@foreach (var newsdata in ViewBag.AllNews){
+                    <div class="latest-bike-card">
+                            <a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = newsdata.TWLatestNewsId })">
+                                <div class="latest-allbike-image ">
+                                <img src="@newsdata.ImageURL" />
+                                <div class="latest-bikes-details-text">
+                                    <h3>@newsdata.NewsHeading</h3>
+                                    <p><i class="fa fa-calendar"></i> @newsdata.Date?.ToString("d MMM yyyy")</p>
+                                </div>
+                                </div>
+                            </a>
+                    </div>}
+               </div>
+                </div>
+            </div>
+            <div class="small-div both-div">
+                <div class="side-brand-container">
+                    <h2>Search Latest News by Brand</h2>
+                    @foreach (var brand in ViewBag.Brand)
+                    {
+                        <a href="@Url.Action("TWLatestNewsByBrand", "Home", new { Id = brand.TWBrandId })" style="text-decoration:none;">
+                            <div class="side-brand">
+                                <div class="side-brand-img">
+                                    <img src="@brand.BrandLogoURL" />
+                                </div>
+                                <div class="side-brand-text"><h4>@brand.BrandName </h4></div>
+                            </div>
+                        </a>
                     }
                 </div>
             </div>

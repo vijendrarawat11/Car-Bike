@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Cars_Bikes.Data
 {
-    public class BrandDB:DbContext
+    public class TwoWheelerDB:DbContext
     {
-        public BrandDB(DbContextOptions<BrandDB> options) : base(options)
+        public TwoWheelerDB(DbContextOptions<TwoWheelerDB> options) : base(options)
         {
 
         }
@@ -26,6 +26,7 @@ namespace Cars_Bikes.Data
         public DbSet<TWLatestNews> TWLatestNews { get; set; }
         public DbSet<UpcomingBike> UpcomingBikes { get; set; }
         public DbSet<TWVarient> TWVarients { get; set; }
+        public DbSet<TWImageColorPrice> TWImageColorPrices { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TwoWheelerBrand>().HasKey(t => t.TWBrandId);

@@ -29,13 +29,34 @@
         }
     </tbody>
 </table>  *@
-
+<div class="overlay-black-middle" style=" background:linear-gradient(#475372, #78829A, #9EA3AD, #fff); margin:0;">
+    <img src="~/images/background/banner.png" />
+</div>
+<!-- Breadcrumb row END -->
+<div class="car-details-info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class="nav">
+                    <ul>
+                        <li><a></a></li>
+                        @* <li class="active"><a href="car-details-overview.html">Overview</a></li> *@
+                        @* <li><a href="car-detail-specifications.html">Specifications</a></li> *@
+                        @*  <li><a href="car-detail-price.html">Price</a></li>
+                        <li><a href="car-detail-compare.html">Compare</a></li>
+                        <li><a href="car-detail-pictures.html">Pictures</a></li> *@
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <body id="bg">
-    <div class="page-wraper">
+   @*  <div class="page-wraper">
         <div id="loading-area"></div>
-        <div class="page-content">
+        <div class="page-content"> *@
             <!-- inner page banner -->
-            <div class="dlab-bnr-inr overlay-black-middle" style="background-image:url(images/background/bg4.jpg);">
+            @* <div class="dlab-bnr-inr overlay-black-middle" style="background-image:url(images/background/bg4.jpg);">
                 <div class="container">
                     <div class="dlab-bnr-inr-entry">
                         <h1 class="text-white">Car Details</h1>
@@ -51,13 +72,13 @@
                         <li>Car Details</li>
                     </ul>
                 </div>
-            </div>
+            </div> *@
             <!-- Breadcrumb row END -->
-            <div class="section-full content-inner bg-white">
+        @*     <div class="section-full content-inner bg-white">
                 <div class="container">
-                    <div class="row">
+                    <div class="row"> *@
                         <!-- Side bar start -->
-                        <div class="col-sm-4 col-md-4 col-lg-3">
+                       @*  <div class="col-sm-4 col-md-4 col-lg-3">
                             <aside class="side-bar">
                                 <div class="widget recent-posts-entry">
                                     <h4 class="widget-title">Advanced Search</h4>
@@ -455,10 +476,10 @@
                                 </div>
                             </aside>
                         </div>
-                        <!-- Side bar END -->
+                        <!-- Side bar END --> *@
                         <!-- left part start -->
                         
-                        <div class="col-sm-8 col-md-8 col-lg-9">
+@*                         <div class="col-sm-8 col-md-8 col-lg-9">
                             <div class="row">
                                 <div class="p-lr15 clearfix ">
                                     <div class="filter-bar clearfix m-b30 p-lr15">
@@ -511,7 +532,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                       @*  <div class="blog-post blog-md clearfix date-style-2 list-view m-b30">
+                                        <div class="blog-post blog-md clearfix date-style-2 list-view m-b30">
                                             <div class="dlab-post-media dlab-img-effect zoom-slow">
                                                 <a href="#"><img src="images/blog/grid/pic2.jpg" alt=""></a>
                                             </div>
@@ -635,7 +656,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div> *@
+                                        </div>
                                     </div>}
 
                                     <div class="modal fade car-details" id="car-details" tabindex="-1" role="dialog">
@@ -705,7 +726,7 @@
                                 </div>
                                 <!-- blog grid END -->
                                 <!-- Pagination  -->
-                               @*  <div class="pagination-bx col-lg-12 clearfix ">
+                                <div class="pagination-bx col-lg-12 clearfix ">
                                     <ul class="pagination">
                                         <li class="previous"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
                                         <li class="active"><a href="#">1</a></li>
@@ -713,7 +734,7 @@
                                         <li><a href="#">3</a></li>
                                         <li class="next"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
                                     </ul>
-                                </div> *@
+                                </div>
                                 <!-- Pagination END -->
                             </div>
                         </div>
@@ -721,9 +742,58 @@
                     </div>
                 </div>
             </div>
+        </div> *@
+
+     @*    @foreach (var brand in Model)
+                                    {
+                                        <div class="blog-post blog-md clearfix date-style-2 list-view m-b30">
+                                            <div class="dlab-post-media dlab-img-effect zoom-slow">
+                                                <a href="#"><img src="images/blog/grid/pic1.jpg" alt=""></a>
+                                            </div>
+                                            <div class="dlab-post-info">
+                                                <div class="dlab-post-title ">
+                                                        <h3 class="post-title">@brand.TwoWheelerName</h3>
+                                                </div>
+                                                <div class="dlab-post-text">
+                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy..</p>
+                                                </div>
+                                                <div class="dlab-post-readmore">
+                                                        <h3 class="m-a0 pull-left m-r15 open-sans">@brand.BasePrice - @brand.TopPrice</h3>
+                                                    <a href="#" title="READ MORE" rel="bookmark" class="site-button" data-toggle="modal" data-target="#car-details">DETAILS</a>
+                                                </div>
+                                                <div class="dlab-post-tags">
+                                                    <div class="post-tags">
+                                                        <a href="#">23.9 kmpl</a>
+                                                        <a href="#">624 cc</a>
+                                                        <a href="#">4 Seats</a>
+                                                        <a href="#">Manual</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>} *@
+    <div class="brand-container">
+        <h1 class="latest-bike-head  p-b20">Bike Brand</h1>
+        @foreach (var brand in Model)
+        {
+           
+
+        <!-- Bike 1 -->
+         
+        <div class="brand-bike-card">
+            <div class="brand-bike-image">
+                    <img src="@brand.TWImage" alt="Bike Model 1">
+            </div>
+            <div class="brand-bike-details">
+                    <h2>@brand.TwoWheelerName</h2>
+                    <h3>@brand.Price</h3>
+                    <p><i class="fa fa-calendar"></i>  @brand.LaunchDate</p>
+                    <a href="@Url.Action("TwoWheelerDetails", "Home", new { modelId =brand.TwoWheelerId })" style="text-decoration:none;" class="details-button">View Details</a>
+            </div>
         </div>
+        }</div>
+
         <!-- Content END-->
 
-        <button class="scroltop fa fa-chevron-up"></button>
-    </div>
+      @*   <button class="scroltop fa fa-chevron-up"></button>
+    </div> *@
 </body>

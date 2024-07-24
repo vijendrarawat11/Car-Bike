@@ -1,0 +1,68 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div class="overlay-black-middle" style=" background:linear-gradient(#475372, #78829A, #9EA3AD, #fff); margin:0;">
+    <img src="~/images/background/banner.png" />
+</div>
+<!-- Breadcrumb row END -->
+<div class="car-details-info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class="nav">
+                    <ul>
+                        <li><a></a></li>
+                        @* <li class="active"><a href="car-details-overview.html">Overview</a></li> *@
+                        @* <li><a href="car-detail-specifications.html">Specifications</a></li> *@
+                       @*  <li><a href="car-detail-price.html">Price</a></li>
+                        <li><a href="car-detail-compare.html">Compare</a></li>
+                        <li><a href="car-detail-pictures.html">Pictures</a></li> *@
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<body>
+    @foreach (var Upbike in ViewBag.upcomingbike)
+                {
+    <div class="TWupcoming-container">
+        <h1>Upcoming Bikes</h1>
+        
+            <div class="upcoming-bikes-details-image">
+                <img src="@Upbike.ImageURL" />
+                <div class="upcoming-bikes-details-text">
+                    <h2>@Upbike.UpcomingBikeName</h2>
+                    <p><i class="fa fa-calendar"></i>  @Upbike.ExpectedLaunchDate?.ToString("d MMM yyyy")</p>
+                </div>
+            </div>
+
+            <div class="upcoming-bikes-details-content">
+                <h2>About @Upbike.UpcomingBikeName</h2>
+                <p>@Upbike.UpcomingBikeDetails</p>
+            </div>
+        </div>
+    }
+    <!-- Bike 1 -->
+        <h1 class="for-h1" >Explore Latest & Upcoming Bikes</h1>
+    <div class="upcoming-bikes-details-row">
+        @foreach (var allUpbike in ViewBag.allupcomingbike)
+        {
+            <div class="upcoming-bikes-details-card">
+                <div class="upcoming-bikes-all-image">
+                    <img src="@allUpbike.ImageURL" alt="Bike Model 1">
+                </div>
+
+                @* <a href="@Url.Action("TWUpcomingBikeDetails", "Home", new { id = allUpbike.UpcomingBikeId })"style="text-decoration:none;"> *@
+                <div class="upcoming-allbikes-details-content">
+                    <h2>@allUpbike.UpcomingBikeName</h2>
+                    <p><i class="fa fa-calendar"></i>  @allUpbike.ExpectedLaunchDate?.ToString("d MMM yyyy")</p>
+                    <a href="@Url.Action("TWUpcomingBikeDetails", "Home", new { id = allUpbike.UpcomingBikeId })" class="details-button" style="text-decoration:none;">View Details</a>
+                </div>
+                @* </a> *@
+            </div>
+        }
+    </div>
+</body>
+

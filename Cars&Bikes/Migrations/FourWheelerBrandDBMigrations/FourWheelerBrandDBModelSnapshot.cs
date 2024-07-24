@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Cars_Bikes.Migrations.FourWheelerBrandDBMigrations
 {
-    [DbContext(typeof(FourWheelerBrandDB))]
+    [DbContext(typeof(FourWheelerDB))]
     partial class FourWheelerBrandDBModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

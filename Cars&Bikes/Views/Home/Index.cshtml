@@ -33,10 +33,10 @@
 <body id="bg">
 
     <div class="page-wraper">
-        <div id="loading-area"></div>
+        @* <div id="loading-area"></div> *@
 
         <!-- Content -->
-        <div class="page-content">
+        @* <div class="page-content"> *@
             <!-- Slider -->
             <div class="main-slider style-two default-banner">
                 <div class="tp-banner-container">
@@ -49,26 +49,26 @@
                                     <li data-index="rs-6" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="revolution/assets/100x50_3176d-road-bg.jpg"
                                         data-rotate="0" data-savepresentation="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                                         <!-- MAIN IMAGE -->
-                                        <img src="images/main-slider/slide1.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                                        <img src="images/main-slider/s.png" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                                         <!-- LAYERS -->
                                         <!-- LAYER NR. 1 -->
-                                        <div class="tp-caption   tp-resizeme" id="slide-2957-layer-5" data-x="502" data-y="center" data-voffset="130" data-width="['none','none','none','none']" data-height="['none','none','none','none']" data-transform_idle="o:1;" data-transform_in="x:50px;opacity:0;s:1500;e:Power3.easeOut;"
+                                        @* <div class="tp-caption   tp-resizeme" id="slide-2957-layer-5" data-x="502" data-y="center" data-voffset="130" data-width="['none','none','none','none']" data-height="['none','none','none','none']" data-transform_idle="o:1;" data-transform_in="x:50px;opacity:0;s:1500;e:Power3.easeOut;"
                                             data-transform_out="opacity:0;s:300;" data-start="1200" data-responsive_offset="on" style="z-index: 11;">
                                             <img src="images/car2.png" alt="" data-ww="auto" data-hh="auto" data-no-retina>
-                                        </div>
+                                        </div> *@
                                     </li>
                                     <!-- SLIDE 2 -->
                                     <!-- SLIDE  -->
                                     <li data-index="rs-5" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="revolution/assets/100x50_3176d-road-bg.jpg"
                                         data-rotate="0" data-savepresentation="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                                         <!-- MAIN IMAGE -->
-                                        <img src="images/main-slider/slide2.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                                        <img src="images/main-slider/ss.png" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                                         <!-- LAYERS -->
                                         <!-- LAYER NR. 1 -->
-                                        <div class="tp-caption   tp-resizeme" id="slide-2957-layer-4" data-x="502" data-y="center" data-voffset="130" data-width="['none','none','none','none']" data-height="['none','none','none','none']" data-transform_idle="o:1;" data-transform_in="x:50px;opacity:0;s:1500;e:Power3.easeOut;"
+                                        @* <div class="tp-caption   tp-resizeme" id="slide-2957-layer-4" data-x="502" data-y="center" data-voffset="130" data-width="['none','none','none','none']" data-height="['none','none','none','none']" data-transform_idle="o:1;" data-transform_in="x:50px;opacity:0;s:1500;e:Power3.easeOut;"
                                             data-transform_out="opacity:0;s:300;" data-start="1200" data-responsive_offset="on" style="z-index: 11;">
                                             <img src="images/car3.png" alt="" data-ww="auto" data-hh="auto" data-no-retina>
-                                        </div>
+                                        </div> *@
                                     </li>
 
                                 </ul>
@@ -88,13 +88,14 @@
                             </div>
                             <!-- TABS -->
                             <div class="form-find-area">
-                                <ul class="nav theme-tabs justify-content-center">
-                                    <li role="presentation" class="active"><a data-toggle="tab" aria-controls="new-car" href="#new-car">CAR</a></li>
-                                    <li role="presentation"><a data-toggle="tab" aria-controls="popular" href="#used-car">Bike</a></li>
+                                <ul class="nav theme-tabs justify-content-center" style="align-content:center; width:100%">
+                                    @* <li role="presentation" class="active"><a data-toggle="tab" aria-controls="new-car" href="#new-car">CAR</a></li> 
+                                    <li role="presentation"><a data-toggle="tab" aria-controls="popular" href="#used-car">Bike</a></li>*@
+                                    <li role="presentation" class="active"><a data-toggle="tab" aria-controls="popular" href="#used-car">Bike</a></li>
                                 </ul>
                                 <div class="tab-content">
                                     <!-- NEW CAR -->
-                                    <div id="new-car" class="tab-pane active clearfix">
+@*                                     <div id="new-car" class="tab-pane active clearfix">
                                         <ul class="nav text-center check-nav navbar-nav">
                                             <li>
                                                 <input id="radio1" type="radio" name="new_search" checked="checked" value="budget" />
@@ -150,23 +151,23 @@
                                         <div class="input-group">
                                             <button class="site-button button-lg btn-block" type="submit">SEARCH</button>
                                         </div>
-                                        @* <div class="input-group text-center">
+                                        <div class="input-group text-center">
                                             <a class="site-button-link" href="new-car-search.html">ADVANCED SEARCH <i class="fa fa-angle-right"></i></a>
-                                        </div> *@
+                                        </div>
                                     </div>
-                                    <!-- USED CAR -->
-                                    <div id="used-car" class="tab-pane clearfix">
-                                        <ul class="nav text-center check-nav navbar-nav">
+ *@                                    <!-- USED CAR -->
+                                    <div id="used-car" class="tab-pane active clearfix">
+                                        @* <ul class="nav text-center check-nav navbar-nav">
                                             <li>
                                                 <input id="radio3" type="radio" name="used_search" checked="checked" value="used_budget" />
                                                 <label for="radio3">BY BUDGET</label>
                                             </li>
                                             <li>
-                                                <input id="radio4" type="radio" name="used_search" value="used_model" />
+                                                <input id="radio4" type="radio" name="used_search" checked="checked" value="used_model" />
                                                 <label for="radio4">BY BRAND</label>
                                             </li>
-                                        </ul>
-                                        <div id="used_budgetDiv" class="used_form_div">
+                                        </ul> *@
+                                        @* <div id="used_budgetDiv" class="used_form_div">
                                             <div class="input-group">
                                                 <select class="form-control">
 												<option>Select Budget</option>
@@ -183,8 +184,8 @@
                                                     <option value="">Select Body Type</option>
 											</select>
                                             </div>
-                                        </div>
-                                        <div id="used_modelDiv" class="used_form_div" style="display: none;">
+                                        </div> *@
+                                        @* <div id="used_modelDiv" class="used_form_div" style="display: none;"> *@
                                             <div class="input-group">
                                                 <select id="ddlBrand" class="form-control" asp-items="ViewBag.TWLists">
                                                     <option value="">Select Brand</option>
@@ -196,7 +197,7 @@
 											</select>
                                             </div>
                                             
-                                        </div>
+                                        @* </div> *@
                                         <div class="input-group">
                                             <button class="site-button button-lg btn-block" type="button" id="searchButton">SEARCH</button>
                                         </div>
@@ -220,26 +221,31 @@
                     <img src="https://www.scopetree.com/wordpress/wp-content/uploads/2017/05/Dot_net.jpg" />
 </div>-->
             </div>
-            </div>
+            @* </div> *@
         <!-- Upcoming bikes section -->
         <div class="upcoming-bikes-section">
-            <div class="upcoming-bikes-head">
-                <h1>Upcoming Bikes</h1>
-            </div>
+                <h1 class="for-h1">Upcoming Bikes</h1>
             <button class="scroll-button left" onclick="scrollLeft()">&#9664;</button>
-            <div class="upcoming-bikes-container" id="upcomingBikesContainer">
+           <div class="upcoming-bikes-container" id="upcomingBikesContainer">
                 @foreach (var bike in ViewBag.Upcomingbike)
                 {
                     <div class="upcoming-bike-item">
+                        <section>
+                            <a href="@Url.Action("TWUpcomingBikeDetails", "Home", new { id = bike.UpcomingBikeId })" style="text-decoration:none">
                         <img src="@bike.ImageURL" alt="Bike Image">
                         <div class="upcoming-bike-name">@bike.UpcomingBikeName</div>
                         <div class="upcoming-bike-date">
-                            @bike.ExpectedLaunchDate?.ToString("d MMM yyyy")
+                                    <p><i class="fa fa-calendar"></i>  @bike.ExpectedLaunchDate?.ToString("d MMM yyyy")</p>
                         </div>
+                                <div class="ow-post-readmore">
+                                    <a href="@Url.Action("TWUpcomingBikeDetails", "Home", new { id = bike.UpcomingBikeId })" rel="bookmark"> Read More <i class="fa fa-angle-right"></i></a>
+                                </div>
                         @* <div class="upcoming-bike-details">
                     @bike.UpcomingBikeDetails
-                    </div> *@
-                    </div>
+                        </div> *@</a>
+                        </section>
+                        </div>
+                    @* </a> *@
                 }
             </div>
             <button class="scroll-button right" onclick="scrollRight()">&#9654;</button>
@@ -997,13 +1003,13 @@
             <!-- Testimonial -->
             <!-- Latest News -->
         <div class="m-b20 m-t20">
-            <div class="section-head">
-                <h3 class="h3 text-uppercase">Latest News</h3>
-                <ul class="navlatestnews theme-tabs">
+            @* <div class="latest-section-head"> *@
+                <h1 class="for-h1">Latest News</h1>
+                @* <ul class="navlatestnews theme-tabs">
                     <li role="presentation"><a href="#bikeNews" class="active" data-toggle="tab">Bikes</a></li>
-                    @* <li role="presentation"><a href="#carNews" data-toggle="tab">Cars</a></li> *@
-                </ul>
-            </div>
+                    <li role="presentation"><a href="#carNews" data-toggle="tab">Cars</a></li>
+                </ul> *@
+            @* </div> *@
 
             <div class="tab-lscontent active" id="bikeNews">
                 <div class="latest-news-container">
@@ -1013,10 +1019,10 @@
                            <div class="latest-news-item">
                             <center><img src="@news.ImageURL" alt="Bike News Image"></center>
                             <div class="latest-news-content">
-                                    <div class="latest-news-heading"><a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = news.TWLatestNewsId })" title="Bike post"><p>@news.NewsHeading</p></a> </div>
-                                <div class="latest-news-summary">@news.NewsSummary</div>
+                                    <div class="latest-news-heading"><a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = news.TWLatestNewsId })" title="Bike post" style="text-decoration:none;"><p>@news.NewsHeading</p></a> </div>
+                                    <div class="latest-news-summary"><p><i class="fa fa-calendar"></i>  @news.Date?.ToString("d MMM yyyy")</p></div>
                                 <div class="ow-post-readmore">
-                                    <a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = news.TWLatestNewsId })" rel="bookmark" class=""> Read More <i class="fa fa-angle-right"></i></a>
+                                        <a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = news.TWLatestNewsId })" rel="bookmark"> Read More <i class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>
                            </div>
@@ -1029,7 +1035,7 @@
                 </div>
             </div>
 
-            @* <div class="tab-lscontent" id="carNews">
+            <div class="tab-lscontent" id="carNews">
                 <div class="latest-news-container">
                 @foreach (var news in ViewBag.FWNews)
                 {
@@ -1049,7 +1055,7 @@
                     <button class="scroll-btn left" onclick="scrollLeft('carNews')">&lt;</button>
                     <button class="scroll-btn right" onclick="scrollRight('carNews')">&gt;</button>
                 </div>
-            </div> *@
+            </div>
         </div>
 
             @* <div class="section-full bg-white content-inner-1">
@@ -1203,6 +1209,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
+        // $("#ddlBrand").append('<option value="">Select Brand</option>');
         // alert("1");
         $("#ddlBrand").change(function () {
             // alert("2");
@@ -1236,6 +1243,9 @@
                 alert("Please select a brand.");
             }
         });
+        $("#ddlBrand").val("");
+        $("#ddlModel").empty();
+        $("#ddlModel").append('<option value="">Select Model</option>');
     });
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
