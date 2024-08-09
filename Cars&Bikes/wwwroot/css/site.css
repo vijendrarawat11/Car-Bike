@@ -84,22 +84,26 @@ body {
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     background: #f8fafb;
 }
-.upcoming-bike-item img:hover {
+.upcoming-bike-img:hover {
     background: rgba(255, 255, 255, 1);
 }
 
-.upcoming-bike-item img {
+.upcoming-bike-img img {
     max-width: 100%;
     height: auto;
+    object-fit: contain;
+}
+.upcoming-bike-img {
+    max-width: 100%;
+    height: 230px;
     background: #f0f0f0; /* Light gray background for transparency */
     padding: 10px;
     border-radius: 5px;
 }
-
 .upcoming-bike-name {
     font-size: 1.2em;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 15px;
     color: rgba(0, 0, 0, 0.8);
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -224,6 +228,7 @@ body {
 .latest-news-content {
     text-align: left;
     padding:5px;
+    margin-top:15px;
 }
 
 .latest-news-heading {
@@ -363,7 +368,7 @@ body {
     padding: 10px 20px;
     font-size: 1em;
     color: white;
-    background-color:  red;
+    background-color: #D81517;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -375,33 +380,26 @@ body {
     }
 
     .home-button:hover {
-        background-color: darkred;
+        background-color: #EA3B3D;
     }
 
 /*------------------------Upcoming bike details page-----------------------*/
 .TWupcoming-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 15px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom:30px;
+    margin-top:20px;
 }
-
-    .TWupcoming-container h1 {
-        text-align: left;
-        font-size: 2em;
-        color: #475372;
-        padding: 0 0 5px 5px;
-        letter-spacing: 0.7px;
-    }
 
 .upcoming-bikes-details-row {
     display: flex;
     /*grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));*/
     flex-wrap: wrap;
-    gap: 20px; /* Space between cards */
+    gap: 15px; /* Space between cards */
     margin: 0 auto 30px;
     max-width: 1200px;
     justify-items: center;
@@ -415,7 +413,7 @@ body {
     }
 }
 .upcoming-bikes-details-card {
-    flex: 1 1 calc(20% - 20px);
+    flex: 1 1 calc(24% - 15px);
     border: 1px solid #ddd;
     border-radius: 10px;
     background: #fff;
@@ -441,19 +439,22 @@ body {
             border-radius: 10px;
         }
 
-    .upcoming-bikes-details-text {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        text-align: left;
-        color: white;
-        background: transparent linear-gradient(180deg, rgba(0, 0, 0, 0.4) -60%, #000 100%) 0% 0%;
-        padding: 3px 0;
-        box-sizing: border-box;
-        border-bottom-left-radius: 10px; /* Optional: rounded corners for the text background */
-        border-bottom-right-radius: 10px; /* Optional: rounded corners for the text background */
-        padding: 20px;
-    }
+.upcoming-bikes-details-text {
+    position: absolute;
+    /*bottom: 0;*/
+    bottom:0;
+    /*top:0;
+    left: 70%;*/
+    width: 100%;
+    text-align: left;
+    color: white;
+    background: transparent linear-gradient(180deg, rgba(0, 0, 0, 0.4) -60%, #000 100%) 0% 0%;
+    padding: 3px 0;
+    box-sizing: border-box;
+    border-bottom-left-radius: 10px; /* Optional: rounded corners for the text background */
+    border-bottom-right-radius: 10px; /* Optional: rounded corners for the text background */
+    padding: 20px;
+}
 
         .upcoming-bikes-details-text h2 {
             margin-top: 0;
@@ -513,11 +514,16 @@ body {
         font-size: 1.2em;
         font-weight: bold;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #D81517;
     }
+    .upcoming-allbikes-details-content p {
+        color: #555;
+    }
+
     .upcoming-allbikes-details-content:hover {
-            color: white;
-            background: transparent linear-gradient(180deg, rgba(0, 0, 0, 0.3) -60%, #000 100%) 0% 0%;
-        }
+        background: transparent linear-gradient(180deg, rgba(0, 0, 0, 0.3) -60%, #000 100%) 0% 0%;
+        color: white;
+    }
 
 .details-button {
     display: inline-block;
@@ -525,7 +531,7 @@ body {
     margin-top: 5px;
     font-size: 1em;
     color: white;
-    background-color: #E82527;
+    background-color: #D81517;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -570,22 +576,27 @@ body {
 }
 .for-h1 {
     font-size: 2em;
-    color: #475372;
+    color: #000000;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     letter-spacing: 1px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align:center;
     padding:20px 0 0 0;
 }
-
+.header-img{
+    width:100%;
+}
+.header-img img{
+    width: 100%;
+}
 /*------------------------------------Latest News Details Page---------------------------------*/
 .latest-bike-head {
     font-size: 2em;
-    color: #475372;
+    color: #000000;
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     letter-spacing: 1px;
-    padding:40px 20px 0 20px;
+    padding: 30px 20px 0 30px;
 }
 .latest-bikes-details-content {
     padding: 40px 20px 20px 20px;
@@ -599,11 +610,13 @@ body {
 .latest-bike-container {
     max-width: 1200px;
     margin: 0 auto;
+    /*margin:15px;*/
     padding: 15px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
+    margin-top:20px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -613,6 +626,7 @@ body {
         padding: 0 0 5px 5px;
         font-size: 1.5em;
         font-weight: bold;
+        color: #D81517;
     }
     .latest-bike-container a{
         text-decoration:none;
@@ -623,7 +637,7 @@ body {
         flex-wrap: wrap;
         gap: 20px;
         justify-items: center;
-        padding-top: 30px;
+        padding-top: 20px;
     }
 .latest-bike-card {
     flex: 1 1 calc(50% - 20px);
@@ -640,10 +654,17 @@ body {
         min-width: 100%;
     }
 }
-.latest-allbike-image {
+
+.latest-bike-card h2 {
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 1.2em;
+    color: #D81517;
+}
+    .latest-allbike-image {
     position: relative;
     width: 100%;
-    height: 250px;
+    height: 300px;
     overflow: hidden;
 }
     .latest-allbike-image img {
@@ -659,24 +680,19 @@ body {
     text-align: left;
     color: white;
     background: transparent linear-gradient(180deg, rgba(0, 0, 0, 0.4) -60%, #000 100%) 0% 0%;
-    padding: 3px 0;
+    /*padding: 3px 0;*/
     box-sizing: border-box;
     border-bottom-left-radius: 10px; /* Optional: rounded corners for the text background */
     border-bottom-right-radius: 10px; /* Optional: rounded corners for the text background */
-    padding: 15px;
+    padding: 12px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-    .latest-bikes-details-text h3 {
-        margin-top: 0;
-        padding: 0;
-        font-size: 1.2em;
-    }
     .latest-bikes-details-text p {
         font-size: 0.8em;
-        margin: 10px 0 0 0;
+        /*margin: 10px 0 0 0;*/
         padding: 0;
     }
-.side-brand-container {
+/*.side-brand-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 15px;
@@ -692,27 +708,28 @@ body {
         padding: 0 0 5px 5px;
         font-size: 1.5em;
         font-weight: bold;
-    }
+    }*/
     .side-brand {
         float: left;
         outline: 1px solid rgba(0, 0, 0, 0.1);
-        outline-offset: -3px;
-        padding: 10px;
+        /*outline-offset: -3px;*/
+        padding: 3px;
         text-align: center;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
         width: 33.33%;
-        height: 105px;
-        margin-top: 30px;
+        height: 125px;
+        margin-top: 20px;
     }
 
-    .side-brand:hover {
-        background-color: red;
-        color: white;
-    }
+        .side-brand:hover {
+            background-color: red;
+            color: white;
+            font-size: 1.2em;
+        }
 
 .side-brand-img {
     width: 100%;
-    height: 60%;
+    height: 55%;
     overflow: hidden;
 }
 
@@ -759,11 +776,11 @@ body {
 }
 .brand-bike-image {
     flex: 1;
-    min-width: 200px;
-    max-width: 300px;
+    min-width: 250px;
+    max-width: 350px;
 }
     .brand-bike-image img {
-        max-width: 100%;
+        width: 100%;
         border-radius: 10px;
     }
 .brand-bike-details {
@@ -772,12 +789,13 @@ body {
 }
     .brand-bike-details h2 {
         margin-top: 0;
-        color: #b86770;
-        font-size:1.7em;
+        color: #D81517;
+        font-size: 1.5em;
+        font-weight:600;
     }
     .brand-bike-details h3 {
         margin-top: 0;
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
     .brand-bike-details p {
         color: #666;
@@ -791,18 +809,20 @@ body {
     padding-top: 15px;
     padding-bottom: 10px;
     border-radius: 10px;
+    padding-right:8px;
+    background:white;
 }
 
 .ddnvarient {
     border: 1.5px solid #e1e6eb;
     box-shadow: none;
-    height: 40px;
-    font-size: 14px;
+    height: 50px;
+    font-size: 15px;
     line-height: 20px;
     padding: 9px 12px;
     width: 100%;
     border-radius: 4px;
-    background-color: #fff;
+    background-color: #eee;
     color: #333;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -815,7 +835,7 @@ body {
     }
 
     .ddnvarient option {
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 500;
         padding: 5px;
     }
@@ -929,7 +949,7 @@ section {
         height: 30px;
     }
 
-/*---------------------Nav Bar------------------------*/
+/*---------------------Nav Bar/ slide part or search part------------------------*/
 .nav-header {
     position: fixed;
     width: 100%;
@@ -974,19 +994,25 @@ section {
         color: #fff;
         font-weight:600;
         font-size: 18px;
+        cursor:pointer;
     }
+        .nav-links a:hover{
+            color:#D81517;
+            text-decoration:none;
+        }
 
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    font-size:30px
-}
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            font-size: 30px
+        }
 
     .hamburger i {
-        width: 45px;
-        height: 45px;
+        width: 30px;
+        height: 30px;
         margin: 5px;
+        color:#ccc;
     }
 .overlay {
     display: none;
@@ -1084,6 +1110,7 @@ header.transparent {
     width: 90%;
     max-width: 400px;
     text-align: left;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
     .contact-form-content h2 {
@@ -1092,7 +1119,7 @@ header.transparent {
 
     .contact-form-content .close-btn {
         position: absolute;
-        top: 10px;
+        top: 1px;
         right: 10px;
         font-size: 30px;
         cursor: pointer;
@@ -1106,6 +1133,7 @@ header.transparent {
 
     .contact-form-content label {
         margin: 10px 0 5px;
+        font-size:15px;
     }
 
     .contact-form-content input,
@@ -1119,4 +1147,151 @@ header.transparent {
     .contact-form-content button {
         padding: 10px;
         border: none;
-        background:
+        background: #D81517;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .contact-form-content button:hover {
+        background: rgba(255,0,0,0.8);
+    }
+/*----------slide part-------*/
+.slider {
+    position: relative;
+    width: 100%;
+    /*max-width: 800px;*/
+    margin: auto;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    /*border-radius: 10px;*/
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* 3 images, so 300% width */
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    height: 520px;
+}
+
+    .slide img {
+        width: 100%;
+        /*border-radius: 10px;*/
+        height: 100%;
+    }
+
+/*--------------------Contact Us Page/ About Us Page------------------------------*/
+.map{
+    width:100%;
+    height:400px;
+}
+    .map iframe{
+        width:100%;
+        height:100%
+    }
+
+.contact-details-container {
+    padding: 15px;
+    margin-top: 20px;
+    justify-items: center;
+    align-items: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.contact-details-info {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin:10px;
+    text-align: center;
+}
+    .contact-details-info i {
+        font-size: 28px;
+        font-weight: 600;
+        height: 50px;
+        color: #D81517;
+    }
+    .contact-details-info h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #D81517;
+    }
+.contact-form {
+    padding: 25px;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+    .contact-form label {
+        margin: 10px 0 5px;
+        font-size: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .contact-form-button {
+        padding: 10px;
+        border: none;
+        background: #D81517;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        width:100%;
+    }
+
+        .contact-form-button:hover {
+            background: rgba(255,0,0,0.8);
+        }
+.aboutus-content {
+    position: relative;
+    width: 100%;
+    height: 550px;;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    margin-top: 20px;
+}
+@media (max-width: 768px) {
+    .aboutus-content {
+       
+        height:200vh;
+    }
+}
+    .aboutus-content img {
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+    }
+
+    .aboutus-text {
+        /*position: absolute;*/
+        /*top: 25%;
+        left: 30%;
+        transform: translate(-30%, -26%);*/
+        width: 100%;
+        padding: 20px 30px 20px 30px;
+    }
+
+        .aboutus-text p {
+            margin-bottom: 40px;
+            color: black;
+        }
+
+        .aboutus-text h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            color: #D81517;
+            font-weight:600;
+        }

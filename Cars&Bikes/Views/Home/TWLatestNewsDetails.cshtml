@@ -3,7 +3,15 @@
 *@
 @{
 }
-
+<!--For truncate-->
+@functions {
+    public string Truncate(string input, int length)
+    {
+        if (string.IsNullOrEmpty(input) || input.Length <= length)
+            return input;
+        return input.Substring(0, length) + "...";
+    }
+}
 <body id="bg">
     @* <div class="page-wraper"> *@
         @* <div id="loading-area"></div> *@
@@ -19,9 +27,7 @@
             </div> *@
             <!-- inner page banner END -->
     <!-- Breadcrumb row -->
-    <div class="overlay-black-middle" style=" background:linear-gradient(#475372, #78829A, #9EA3AD, #fff); margin:0;">
-        <img src="~/images/main-slider/s.png" style="width:100%;height:350px;" />
-    </div>
+    <div class="header-img"> <img src="~/images/main-slider/2.png" /></div>
     @* <div class="container-fluid" style="background:linear-gradient(#23335A,#475372,#78829A,#9EA3AD);padding: 10px 0;">
                 <div class="container">
                     <ul style="color:#fff; display:flex; list-style:none">
@@ -31,23 +37,23 @@
                 </div>
             </div> *@
             <!-- Breadcrumb row END -->
-            <div class="car-details-info">
+           @*  <div class="car-details-info">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 ">
                             <div class="nav">
                                 <ul><li><a></a></li>
-                                    @* <li class="active"><a href="car-details-overview.html">Overview</a></li>
+                                    <li class="active"><a href="car-details-overview.html">Overview</a></li>
                                     <li><a href="car-detail-specifications.html">Specifications</a></li>
                                     <li><a href="car-detail-price.html">Price</a></li>
                                     <li><a href="car-detail-compare.html">Compare</a></li>
-                                    <li><a href="car-detail-pictures.html">Pictures</a></li> *@
+                                    <li><a href="car-detail-pictures.html">Pictures</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> *@
 @*     <div class="container-fluid" style="backdrop-filter:blur(4px);height:160px;background:linear-gradient(#23335A,#475372,#78829A,#9EA3AD);background-image:src(@Model.ImageURL)"></div>
  *@           @*  <div class="conntainer-fluid bg-black" style="height:55px; padding-top:0;">
                 <div class="container">
@@ -81,43 +87,48 @@
             </div> *@
     <div class="">
         <div ><h1 class="latest-bike-head">Latest Bike News</h1></div>
+        <div class=" latest-bike-container">
+            <h2>@ViewBag.TWNews.NewsHeading</h2>
+            @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
+            <div class="upcoming-bikes-details-image">
+                <img src="@ViewBag.TWNews.ImageURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/Default.png")';" />
+                <div class="upcoming-bikes-details-text">
+                    <p><i class="fa fa-calendar"></i> @ViewBag.TWNews.Date?.ToString("d MMM yyyy")</p>
+                    @* <p>@ViewBag.TWNews.NewsSummary</p> *@
+                </div>
+            </div>
+            <div class="latest-bikes-details-content"> <p>@Html.Raw(@ViewBag.TWNews.NewsDetail.Replace("\n", "<br>"))</p></div>
+
+        </div>
         <div class="div-row">
             <div class="big-div both-div">
-                <div class=" latest-bike-container">
-                    <h2>@ViewBag.TWNews.NewsHeading</h2>
-                    @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
-                    <div class="upcoming-bikes-details-image">
-                        <img src="@ViewBag.TWNews.ImageURL" />
-                        <div class="upcoming-bikes-details-text">
-                            <p><i class="fa fa-calendar"></i> @ViewBag.TWNews.Date?.ToString("d MMM yyyy")</p>
-                            @* <p>@ViewBag.TWNews.NewsSummary</p> *@
-                        </div>
-                    </div>
-                <div class="latest-bikes-details-content"> <p>@ViewBag.TWNews.NewsDetail</p></div>
-               <div class="detail-div">@foreach (var newsdata in ViewBag.AllNews){
-                    <div class="latest-bike-card">
+                <div class="detail-div latest-bike-container">
+                    @foreach (var newsdata in ViewBag.AllNews)
+                    {
+                        <div class="latest-bike-card">
+                            <h2>@Truncate(@newsdata.NewsHeading, 36)</h2>
                             <a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = newsdata.TWLatestNewsId })">
                                 <div class="latest-allbike-image ">
-                                <img src="@newsdata.ImageURL" />
-                                <div class="latest-bikes-details-text">
-                                    <h3>@newsdata.NewsHeading</h3>
-                                    <p><i class="fa fa-calendar"></i> @newsdata.Date?.ToString("d MMM yyyy")</p>
-                                </div>
+                                    <img src="@newsdata.ImageURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/Default.png")';" />
+                                    <div class="latest-bikes-details-text">
+                                        <p><i class="fa fa-calendar"></i> @newsdata.Date?.ToString("d MMM yyyy")</p>
+                                        <p>@Truncate(@newsdata.NewsSummary, 170)</p>
+                                    </div>
                                 </div>
                             </a>
-                    </div>}
-               </div>
+                        </div>
+                    }
                 </div>
             </div>
             <div class="small-div both-div">
-                <div class="side-brand-container">
+                <div class="latest-bike-container">
                     <h2>Search Latest News by Brand</h2>
                     @foreach (var brand in ViewBag.Brand)
                     {
                         <a href="@Url.Action("TWLatestNewsByBrand", "Home", new { Id = brand.TWBrandId })" style="text-decoration:none;">
                             <div class="side-brand">
                                 <div class="side-brand-img">
-                                    <img src="@brand.BrandLogoURL" />
+                                    <img src="@brand.BrandLogoURL" alt="Brand Logo" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
                                 </div>
                                 <div class="side-brand-text"><h4>@brand.BrandName </h4></div>
                             </div>

@@ -27,6 +27,8 @@ namespace Cars_Bikes.Data
         public DbSet<UpcomingBike> UpcomingBikes { get; set; }
         public DbSet<TWVarient> TWVarients { get; set; }
         public DbSet<TWImageColorPrice> TWImageColorPrices { get; set; }
+        //public DbSet<TWOrFWContactUs> TWOrFWContactUs { get; set; }
+        public DbSet<NewsLetter> NewsLetters { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TwoWheelerBrand>().HasKey(t => t.TWBrandId);

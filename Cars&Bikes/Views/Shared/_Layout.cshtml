@@ -14,12 +14,12 @@
     <header id="navbar" class="nav-header">
         <div class="navbar-container">
             <nav>
-                @* <div class="logo">Logo</div> *@
+                <!-- <div class="logo">Logo</div> -->
                 <ul class="nav-links" id="nav-links">
                     <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-controller="Home" asp-action="TWCompare">Compare</a></li>
                     <li><a asp-controller="AboutUs" asp-action="Index">About Us</a></li>
-                    <li><a href="javascript:void(0);" id="contact-link">Contact</a></li>
+                    <li><a id="contact-link">Ask a Question</a></li>
                 </ul>
                 <div class="hamburger" id="hamburger">
                     <i class="bi bi-list"></i>
@@ -28,33 +28,37 @@
             <div class="overlay" id="overlay">
                 <span class="close-btn" id="closeBtn"><i class="bi bi-x"></i></span>
                 <div class="overlay-content">
-                    
                     <ul class="overlay-links">
                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                         <li><a asp-controller="Home" asp-action="TWCompare">Compare</a></li>
                         <li><a asp-controller="AboutUs" asp-action="Index">About Us</a></li>
-                        <li><a href="javascript:void(0);" id="contact-link">Contact</a></li>
+                        <li><a id="contact-link-overlay">Ask a Question</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- Contact Form Popup -->
     <div class="contact-form-popup" id="contactFormPopup">
         <div class="contact-form-content">
             <span class="close-btn" id="contactFormClose"><i class="bi bi-x"></i></span>
-            <h2>Contact Us</h2>
-            <form>
+            @* <h2>Contact Us</h2> *@
+            <form id="contactForm" method="post" asp-controller="ContactUs" asp-action="Index">
+                <input type="hidden" name="__RequestVerificationToken" value="" />
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="Name" required>
+                <label for="phoneNo">Phone No.</label>
+                <input type="text" id="phoneNo" name="PhoneNo" required>
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="Email" required>
                 <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
+                <textarea id="message" name="Message"></textarea>
                 <button type="submit">Submit</button>
             </form>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="">
         <main role="main" class="">
             @RenderBody()
         </main>
@@ -145,23 +149,23 @@
                         <h4 class="m-b15 text-uppercase">Newsletter </h4>
                         <div class="dlab-separator bg-primary"></div>
                         <p class="m-tb20">Keep up on our always evolving products features and technology. Enter your e-mail and subscribe to our newsletter.</p>
-                        <form action="script/mailchamp.php" method="post" class="dlab-subscribe-form dzSubscribe">
-                            <div class="dzSubscribeMsg"></div>
-                            <div class="input-group m-b15">
-                                <input name="dzEmail" required="required" type="email" class="form-control" placeholder="Enter Your Email">
-                            </div>
-                            <div class="input-group">
-                                <button name="submit" value="Submit" type="submit" class="site-button btn-block">
-								SUBSCRIBE <i class="fa fa-angle-right font-18 m-l10"></i>
-							</button>
-                            </div>
-                        </form>
+                            <form id="newsletterForm" method="post" class="dlab-subscribe-form dzSubscribe  m-l10 m-r10" asp-controller="Home" asp-action="NewsLetter">
+                                <div class="dzSubscribeMsg"></div>
+                                <div class="input-group m-b15">
+                                    <input name="Email" required="required" type="email" class="form-control" placeholder="Enter Your Email">
+                                </div>
+                                <div class="input-group">
+                                    <button type="submit" class="contact-form-button">
+                                        SUBSCRIBE
+                                    </button>
+                                </div>
+                            </form>
                     </div>
                     <ul style="display: flex; list-style:none; gap:20px; align-items:center">    <li><a href="#" class="site-button-link facebook hover"><i class="fa fa-facebook"></i></a></li>
-    <li><a href="#" class="site-button-link google-plus hover"><i class="fa fa-google-plus"></i></a></li>
-    <li><a href="#" class="site-button-link twitter hover"><i class="fa fa-twitter"></i></a></li>
-    <li><a href="#" class="site-button-link linkedin hover"><i class="fa fa-linkedin"></i></a></li>
-</ul>
+                        <li><a href="#" class="site-button-link google-plus hover"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" class="site-button-link twitter hover"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="site-button-link linkedin hover"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
                 </div>
             </div>
            <!-- <div class="clearfix">
@@ -186,11 +190,11 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-6 text-left"> © Copyright 2024 Voxtus Developed By <a href="https://voxtus.com/" target="_blank">Voxtus</a> </div>
+                    <div class="col-md-6 col-sm-6 text-left"> © 2024 <a href="https://voxtus.com/" target="_blank">Voxtus Technologies Pvt. Ltd.</a> All rights reserved. </div>
                 <div class="col-md-6 col-sm-6 text-right ">
-                    <a href="page-about.html"> About Us</a> |
-                    <a href="page-privacy-policy.html"> Contact Us</a> |
-                    <a href="page-about.html"> Privacy Policy</a>
+                        <a asp-controller="AboutUs" asp-action="Index"> About Us</a> |
+                    <a asp-controller="ContactUs" asp-action="Index"> Contact Us</a> @* | *@
+                    @* <a href="page-about.html"> Privacy Policy</a> *@
                 </div>
             </div>
         </div>
@@ -251,7 +255,7 @@
         dz_rev_slider_1();
     }); /*ready*/
 </script>
-
+<!--Ask a Question-->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const navbar = document.getElementById('navbar');
@@ -259,6 +263,8 @@
         const hamburger = document.getElementById('hamburger');
         const closeBtn = document.getElementById('closeBtn');
         const contactLink = document.getElementById('contact-link');
+        const contactLinkOverlay = document.getElementById('contact-link-overlay');
+        const contactForm = document.getElementById('contactForm');
         const contactFormPopup = document.getElementById('contactFormPopup');
         const contactFormClose = document.getElementById('contactFormClose');
 
@@ -273,6 +279,11 @@
 
         // Show contact form popup
         contactLink.addEventListener('click', () => {
+            contactFormPopup.style.display = 'flex';
+        });
+
+        contactLinkOverlay.addEventListener('click', () => {
+            overlay.style.display = 'none';
             contactFormPopup.style.display = 'flex';
         });
 
@@ -296,4 +307,50 @@
         if (window.scrollY <= 50) {
             navbar.classList.add('transparent');
         }
+        // Submit form via AJAX
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(contactForm);
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+            });
+            const result = await response.text(); // Use text() instead of json() for ASP.NET responses
+
+            if (response.ok) {
+                alert('Your message has been sent. Thank you!');
+                contactForm.reset();
+                contactFormPopup.style.display = 'none';
+            } else {
+                alert('There was an error. Please try again.');
+            }
+        });
     });</script>
+
+<script>
+        document.getElementById('newsletterForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Perform the actual form submission using fetch or any other method
+            const form = event.target;
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData
+            }).then(response => {
+                if (response.ok) {
+                    // If the submission is successful, clear the form
+                    form.reset();
+                    // Optionally, you can display a success message here
+                    document.querySelector('.dzSubscribeMsg').innerHTML = 'Subscription successful!';
+                } else {
+                    // Handle the error case
+                    document.querySelector('.dzSubscribeMsg').innerHTML = 'Subscription failed. Please try again.';
+                }
+            }).catch(error => {
+                // Handle network errors or other errors
+                document.querySelector('.dzSubscribeMsg').innerHTML = 'An error occurred. Please try again.';
+            });
+        });
+</script>

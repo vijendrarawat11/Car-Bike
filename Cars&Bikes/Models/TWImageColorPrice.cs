@@ -10,13 +10,15 @@ namespace Cars_Bikes.Models
         public string? TWName { get; set; }
         public string? Varients { get; set; }
         public int? Price { get; set; }
-        public string Color { get; set; }
-        public string ImageURL { get; set; }
-        public int TwoWheelerId { get; set; }
+        //[Column(TypeName = "varchar(100)")]
+        public string? Color { get; set; }
+        public string? ImageURL { get; set; }
+        public int? TwoWheelerId { get; set; }
         [ForeignKey("TwoWheelerId")]
         public virtual TwoWheeler TwoWheeler { get; set; }
-        public int TWVarientId { get; set; }
+        public int? TWVarientId { get; set; }
         [ForeignKey("TWVarientId")]
         public virtual TWVarient TWVarients { get; set; }
+        public DateTime? CreatedDateTime { get; set; } = DateTime.Now;
     }
 }

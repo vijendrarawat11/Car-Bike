@@ -15,5 +15,6 @@ namespace Cars_Bikes.Models
         public bool? IsEV { get; set; }
         public String? BrandLogoURL { get; set; }
         public String? Discription { get; set; }
+        public DateTime CreatedDateTime { get; set; } = DateTime.Now;
     }
 }

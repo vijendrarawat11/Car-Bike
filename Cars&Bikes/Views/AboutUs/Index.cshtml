@@ -1,69 +1,96 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
+@model TWOrFWContactUs
+@* @{
     Layout = "";
+} *@
+@if (TempData["success"] != null)
+{
+    @TempData["success"];
 }
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="~/css/site.css" rel="stylesheet" />
-</head>
+<div class="header-img"> <img src="~/images/main-slider/2.png" /></div>
 <body>
-    <div class="coming-soon-main-container">
-        <div class="coming-soon-container">
-            <h1>Coming Soon</h1>
-            <p>We are working hard to bring you the best experience. Stay tuned!</p>
-            @* <div class="countdown">
-                <div class="countdown-item">
-                    <span id="days">00</span>
-                    <span>Days</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="hours">00</span>
-                    <span>Hours</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="minutes">00</span>
-                    <span>Minutes</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="seconds">00</span>
-                    <span>Seconds</span>
-                </div>
+    <div>
+        <h1 class="latest-bike-head">About Us</h1>
+        <div>
+        @* <div class="aboutus-content">
+            <img src="~/images/background/about-us.jpg" />
+            <div class="aboutus-text">
+                <h2>Welcome to TheCar&Bike!</h2>
+                <p>we are passionate about all things on wheels. Whether you're a seasoned motor enthusiast or just starting your journey into the world of bikes and cars, we've got you covered. Our mission is to provide comprehensive, reliable, and up-to-date information on a wide range of bikes and cars to help you make informed decisions.</p>
+                <h2>Who We Are</h2>
+                <p>We are a team of dedicated automotive experts and enthusiasts who understand the thrill of the ride and the joy of owning a vehicle. Our diverse backgrounds in the automotive industry ensure that we bring a wealth of knowledge and expertise to our content. From the latest models and reviews to maintenance tips and buying guides, we strive to be your go-to resource for all things automotive.</p>
+                 <h2>Our Commitment</h2>
+                <p>We are committed to delivering high-quality content that you can trust. Our team continuously researches and verifies information to ensure accuracy and reliability. We believe in transparency and integrity, and we aim to empower our readers with the knowledge they need to make informed decisions.</p>
+            </div>
             </div> *@
-            <button class="home-button"><a asp-controller="Home" asp-action="Index">Back To Home</a></button>
+            <div class="aboutus-text">
+                <h2>Welcome to TheCar&Bike!</h2>
+                <p>we are passionate about all things on wheels. Whether you're a seasoned motor enthusiast or just starting your journey into the world of bikes and cars, we've got you covered. Our mission is to provide comprehensive, reliable, and up-to-date information on a wide range of bikes and cars to help you make informed decisions.</p>
+                <h2>Who We Are</h2>
+                <p>We are a team of dedicated automotive experts and enthusiasts who understand the thrill of the ride and the joy of owning a vehicle. Our diverse backgrounds in the automotive industry ensure that we bring a wealth of knowledge and expertise to our content. From the latest models and reviews to maintenance tips and buying guides, we strive to be your go-to resource for all things automotive.</p>
+                <h2>Our Commitment</h2>
+                <p>We are committed to delivering high-quality content that you can trust. Our team continuously researches and verifies information to ensure accuracy and reliability. We believe in transparency and integrity, and we aim to empower our readers with the knowledge they need to make informed decisions.</p>
+            </div>
         </div>
     </div>
-    <script>
-        debugger;
-        function countdown() {
-            const countDownDate = new Date("Dec 31, 2024 23:59:59").getTime();
-            const now = new Date().getTime();
-            const distance = countDownDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = days;
-            document.getElementById("hours").innerText = hours;
-            document.getElementById("minutes").innerText = minutes;
-            document.getElementById("seconds").innerText = seconds;
-
-            if (distance < 0) {
-                clearInterval(interval);
-                document.querySelector(".coming-soon-container").innerHTML = "<h1>We are live now!</h1>";
-            }
-        }
-
-        const interval = setInterval(countdown, 1000);
-    </script>
+       
+    <div class="row contact-details-container">
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class=" contact-details-info">
+                        <i class="bi bi-geo-alt"></i>
+                        <h3>Our Address</h3>
+                        <p>
+                            Lane No 5F, Shivraj Nagar,
+                            Badonwala, Uttarakhand, 248007
+                            India
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class=" contact-details-info">
+                        <i class="bi bi-envelope"></i>
+                        <h3>Email Us</h3>
+                        <p>info@voxtus.com</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class=" contact-details-info">
+                        <i class="bi bi-telephone"></i>
+                        <h3>Call Us</h3>
+                        <p>+918630235507<br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 p-5">
+            <p class="text-center">@TempData["success"]</p>
+            <form asp-action="Index" method="post" class="contact-form">
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PhoneNo"></label>
+                    <input asp-for="PhoneNo" class="form-control" />
+                    <span asp-validation-for="PhoneNo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Message"></label>
+                    <textarea asp-for="Message" class="form-control"></textarea>
+                    <span asp-validation-for="Message" class="text-danger"></span>
+                </div>
+                <button type="submit" class="contact-form-button">Submit</button>
+            </form>
+        </div>
+    </div>
 </body>
-</html>

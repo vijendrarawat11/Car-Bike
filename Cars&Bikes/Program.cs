@@ -1,10 +1,12 @@
 using Cars_Bikes.Data;
 using Cars_Bikes.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+//builder.Services.AddControllers();
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<TwoWheelerDB>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Con")));
 builder.Services.AddDbContext<FourWheelerDB>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Con")));

@@ -29,28 +29,10 @@
         }
     </tbody>
 </table>  *@
-<div class="overlay-black-middle" style=" background:linear-gradient(#475372, #78829A, #9EA3AD, #fff); margin:0;">
+@* <div class="overlay-black-middle" style=" background:linear-gradient(#475372, #78829A, #9EA3AD, #fff); margin:0;">
     <img src="~/images/background/banner.png" />
-</div>
-<!-- Breadcrumb row END -->
-<div class="car-details-info">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 ">
-                <div class="nav">
-                    <ul>
-                        <li><a></a></li>
-                        @* <li class="active"><a href="car-details-overview.html">Overview</a></li> *@
-                        @* <li><a href="car-detail-specifications.html">Specifications</a></li> *@
-                        @*  <li><a href="car-detail-price.html">Price</a></li>
-                        <li><a href="car-detail-compare.html">Compare</a></li>
-                        <li><a href="car-detail-pictures.html">Pictures</a></li> *@
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</div> *@
+<div class="header-img"> <img src="~/images/main-slider/2.png" /></div>
 <body id="bg">
    @*  <div class="page-wraper">
         <div id="loading-area"></div>
@@ -771,17 +753,16 @@
                                                 </div>
                                             </div>
                                         </div>} *@
+    <div><h1 class="latest-bike-head p-b20">Bike Brand</h1></div>
     <div class="brand-container">
-        <h1 class="latest-bike-head  p-b20">Bike Brand</h1>
         @foreach (var brand in Model)
         {
-           
 
         <!-- Bike 1 -->
-         
+         <a href="@Url.Action("TwoWheelerDetails", "Home", new { modelId =brand.TwoWheelerId })" style="text-decoration:none;">
         <div class="brand-bike-card">
             <div class="brand-bike-image">
-                    <img src="@brand.TWImage" alt="Bike Model 1">
+                        <img src="@brand.TWImage" alt="Bike Model" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';">
             </div>
             <div class="brand-bike-details">
                     <h2>@brand.TwoWheelerName</h2>
@@ -789,7 +770,8 @@
                     <p><i class="fa fa-calendar"></i>  @brand.LaunchDate</p>
                     <a href="@Url.Action("TwoWheelerDetails", "Home", new { modelId =brand.TwoWheelerId })" style="text-decoration:none;" class="details-button">View Details</a>
             </div>
-        </div>
+                </div>
+            </a>
         }</div>
 
         <!-- Content END-->

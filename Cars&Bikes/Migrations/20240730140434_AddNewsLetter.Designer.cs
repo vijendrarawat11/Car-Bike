@@ -4,6 +4,7 @@ using Cars_Bikes.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cars_Bikes.Migrations
 {
     [DbContext(typeof(TwoWheelerDB))]
-    partial class BrandDBModelSnapshot : ModelSnapshot
+    [Migration("20240730140434_AddNewsLetter")]
+    partial class AddNewsLetter
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +24,38 @@ namespace Cars_Bikes.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("Cars_Bikes.Models.ContactUs", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("varchar(1500)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("varchar(60)");
+
+                    b.Property<string>("PhoneNo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ContactUs");
+                });
 
             modelBuilder.Entity("Cars_Bikes.Models.NewsLetter", b =>
                 {
@@ -56,18 +91,16 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("ChargingAtHome")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedDateTime")
+                    b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("TWName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TWVarientId")
-                        .IsRequired()
+                    b.Property<int>("TWVarientId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
+                    b.Property<int>("TwoWheelerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -125,7 +158,7 @@ namespace Cars_Bikes.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWDimensionsAndCapacityId"));
 
-                    b.Property<DateTime?>("CreatedDateTime")
+                    b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<decimal?>("FuelCapacity")
@@ -152,12 +185,10 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("TWName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TWVarientId")
-                        .IsRequired()
+                    b.Property<int>("TWVarientId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
+                    b.Property<int>("TwoWheelerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -186,7 +217,7 @@ namespace Cars_Bikes.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWElectricalsId"));
 
-                    b.Property<DateTime?>("CreatedDateTime")
+                    b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("DRLs")
@@ -210,8 +241,7 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("TWName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TWVarientId")
-                        .IsRequired()
+                    b.Property<int>("TWVarientId")
                         .HasColumnType("int");
 
                     b.Property<string>("TailLight")
@@ -220,8 +250,7 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("TurnSignalLamp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
+                    b.Property<int>("TwoWheelerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -253,7 +282,7 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("CoolingSystem")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedDateTime")
+                    b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<decimal?>("Displacement")
@@ -286,12 +315,10 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("TWName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TWVarientId")
-                        .IsRequired()
+                    b.Property<int>("TWVarientId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
+                    b.Property<int>("TwoWheelerId")
                         .HasColumnType("int");
 
                     b.Property<int?>("ValvePerCylinder")
@@ -321,9 +348,11 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AdditionalFeaturesOfVariant")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AdjustableWindshield")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("BodyGraphics")
@@ -332,10 +361,11 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("Clock")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedDateTime")
+                    b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("DistanceToEmptyIndicator")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FuelGauge")
@@ -362,8 +392,7 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("TWName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TWVarientId")
-                        .IsRequired()
+                    b.Property<int>("TWVarientId")
                         .HasColumnType("int");
 
                     b.Property<string>("Tachometer")
@@ -372,8 +401,7 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("Tripmeter")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
+                    b.Property<int>("TwoWheelerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -397,12 +425,14 @@ namespace Cars_Bikes.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWImageColorPriceId"));
 
                     b.Property<string>("Color")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedDateTime")
+                    b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ImageURL")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Price")
@@ -411,12 +441,10 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("TWName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TWVarientId")
-                        .IsRequired()
+                    b.Property<int>("TWVarientId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
+                    b.Property<int>("TwoWheelerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -440,12 +468,13 @@ namespace Cars_Bikes.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWLatestNewsId"));
 
                     b.Property<string>("BrandName")
-                        .HasColumnType("varchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("Date")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ImageURL")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NewsDetail")
@@ -460,7 +489,7 @@ namespace Cars_Bikes.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<int?>("TwoWBrandId")
+                    b.Property<int>("TwoWBrandId")
                         .HasColumnType("int");
 
                     b.HasKey("TWLatestNewsId");
@@ -481,7 +510,7 @@ namespace Cars_Bikes.Migrations
                     b.Property<decimal?>("CityMileage")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime?>("CreatedDateTime")
+                    b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<decimal?>("HighwayMileage")
@@ -493,12 +522,10 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("TWName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TWVarientId")
-                        .IsRequired()
+                    b.Property<int>("TWVarientId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
+                    b.Property<int>("TwoWheelerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -524,7 +551,7 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("BatteryCapacity")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedDateTime")
+                    b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("DriveType")
@@ -536,15 +563,13 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("TWName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TWVarientId")
-                        .IsRequired()
+                    b.Property<int>("TWVarientId")
                         .HasColumnType("int");
 
                     b.Property<string>("Transmission")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
+                    b.Property<int>("TwoWheelerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -559,38 +584,6 @@ namespace Cars_Bikes.Migrations
                     b.ToTable("TWMotorAndBatteries");
                 });
 
-            modelBuilder.Entity("Cars_Bikes.Models.TWOrFWContactUs", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Message")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("varchar(60)");
-
-                    b.Property<string>("PhoneNo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TWOrFWContactUs");
-                });
-
             modelBuilder.Entity("Cars_Bikes.Models.TWSafety", b =>
                 {
                     b.Property<int>("TWSafetyId")
@@ -602,7 +595,7 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("AdditionalFeatures")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedDateTime")
+                    b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Display")
@@ -620,15 +613,13 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("TWName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TWVarientId")
-                        .IsRequired()
+                    b.Property<int>("TWVarientId")
                         .HasColumnType("int");
 
                     b.Property<string>("TractionControl")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
+                    b.Property<int>("TwoWheelerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -654,7 +645,7 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("BodyType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedDateTime")
+                    b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FrontBrake")
@@ -672,12 +663,10 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("TWName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TWVarientId")
-                        .IsRequired()
+                    b.Property<int>("TWVarientId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
+                    b.Property<int>("TwoWheelerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -700,7 +689,7 @@ namespace Cars_Bikes.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWTyresAndBrakesId"));
 
-                    b.Property<DateTime?>("CreatedDateTime")
+                    b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<decimal?>("FrontBrakeDiameter")
@@ -721,12 +710,10 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("TWName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TWVarientId")
-                        .IsRequired()
+                    b.Property<int>("TWVarientId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
+                    b.Property<int>("TwoWheelerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -755,7 +742,7 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("BrakesRear")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedDateTime")
+                    b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("SuspensionFront")
@@ -767,15 +754,13 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("TWName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TWVarientId")
-                        .IsRequired()
+                    b.Property<int>("TWVarientId")
                         .HasColumnType("int");
 
                     b.Property<string>("TubelessTyre")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
+                    b.Property<int>("TwoWheelerId")
                         .HasColumnType("int");
 
                     b.Property<string>("TyreSize")
@@ -807,14 +792,22 @@ namespace Cars_Bikes.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWVarientId"));
 
-                    b.Property<DateTime?>("CreatedDateTime")
+                    b.Property<string>("Color")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("ImageURL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Price")
+                        .HasColumnType("int");
 
                     b.Property<string>("TWName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
+                    b.Property<int>("TwoWheelerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -839,34 +832,30 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Brand")
-                        .HasColumnType("varchar(30)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedDateTime")
+                    b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool?>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool?>("IsEV")
+                    b.Property<bool>("IsEV")
                         .HasColumnType("bit");
 
                     b.Property<string>("LaunchDate")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NotesOrComments")
-                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("Price")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TWImage")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TopPrice")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TwoWBrandId")
-                        .IsRequired()
+                    b.Property<int>("TwoWBrandId")
                         .HasColumnType("int");
 
                     b.Property<string>("TwoWheelerName")
@@ -874,7 +863,8 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Type")
-                        .HasColumnType("varchar(30)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TwoWheelerId");
 
@@ -925,19 +915,20 @@ namespace Cars_Bikes.Migrations
                     b.Property<string>("BrandName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedDateTime")
+                    b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ExpectedLaunchDate")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("FilterLaunchDate")
+                    b.Property<DateTime>("FilterLaunchDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ImageURL")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TwoWBrandId")
+                    b.Property<int>("TwoWBrandId")
                         .HasColumnType("int");
 
                     b.Property<string>("UpcomingBikeDetails")
@@ -1090,7 +1081,9 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TwoWheelerBrand", "TwoWheelerBrands")
                         .WithMany()
-                        .HasForeignKey("TwoWBrandId");
+                        .HasForeignKey("TwoWBrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("TwoWheelerBrands");
                 });
@@ -1234,7 +1227,9 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TwoWheelerBrand", "TwoWheelerBrands")
                         .WithMany()
-                        .HasForeignKey("TwoWBrandId");
+                        .HasForeignKey("TwoWBrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("TwoWheelerBrands");
                 });

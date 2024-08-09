@@ -15,11 +15,12 @@ namespace Cars_Bikes.Models
         public string? RadialTyre { get; set; }
         public string? FrontSuspension { get; set; }
         public string? RearSuspension { get; set; }
-        public int TwoWheelerId { get; set; }
+        public int? TwoWheelerId { get; set; }
         [ForeignKey("TwoWheelerId")]
         public virtual TwoWheeler TwoWheeler { get; set; }
-        public int TWVarientId { get; set; }
+        public int? TWVarientId { get; set; }
         [ForeignKey("TWVarientId")]
         public virtual TWVarient TWVarients { get; set; }
+        public DateTime? CreatedDateTime { get; set; } = DateTime.Now;
     }
 }

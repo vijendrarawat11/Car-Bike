@@ -14,20 +14,25 @@ namespace Cars_Bikes.Models
         public decimal? Displacement { get; set; }
         public string? MaxTorque { get; set; }
         public int? NumOfCylinders { get; set; }
+        //[Column(TypeName = "varchar(30)")]
         public string? CoolingSystem { get; set; }
         public int? ValvePerCylinder { get; set; }
+        //[Column(TypeName = "varchar(30)")]
         public string? Starting { get; set; }
+        //[Column(TypeName = "varchar(40)")]
         public string? FuelSupply { get; set; }
         public string? Clutch { get; set; }
+        //[Column(TypeName = "varchar(10)")]
         public string? GearBox { get; set; }
         public string? EmissionType { get; set; }
         public string? CompressionRatio { get; set; }
         public string? Ignition { get; set; }
-        public int TwoWheelerId { get; set; }
+        public int? TwoWheelerId { get; set; }
         [ForeignKey("TwoWheelerId")]
         public virtual TwoWheeler TwoWheeler { get; set; }
-        public int TWVarientId { get; set; }
+        public int? TWVarientId { get; set; }
         [ForeignKey("TWVarientId")]
         public virtual TWVarient TWVarients { get; set; }
+        public DateTime? CreatedDateTime { get; set; } = DateTime.Now;
     }
 }

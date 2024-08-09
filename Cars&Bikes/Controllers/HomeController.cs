@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Cars_Bikes.Data;
 using System.Xml.Linq;
 using System.Linq;
+using System.Net;
 
 namespace Cars_Bikes.Controllers
 {
@@ -40,7 +41,7 @@ namespace Cars_Bikes.Controllers
             ViewBag.TWNews = TWNews;
             var FWNews = _fourwheeler.FWLatestNews.OrderByDescending(m => m.FWLatestNewsId).Take(5).ToList();
             ViewBag.FWNews = FWNews;
-            var UpcomingBike = _context.UpcomingBikes.OrderByDescending(m => m.ExpectedLaunchDate).Take(5).ToList();
+            var UpcomingBike = _context.UpcomingBikes.OrderByDescending(m => m.FilterLaunchDate).Take(5).ToList();
             ViewBag.Upcomingbike = UpcomingBike;
 
 
@@ -89,7 +90,7 @@ namespace Cars_Bikes.Controllers
             return View("TWBrandDetails",brand);
         }
         [HttpGet]
-        public JsonResult GetTWSpecByVarient(int varientId)
+        public JsonResult GetTWSpecByVarients(int varientId)
         {
             var specs = _context.TWSpec.Include(s => s.TwoWheeler).Where(s => s.TWVarientId == varientId).ToList();
             var features = _context.TWFeatures.Where(t => t.TWVarientId == varientId).ToList();
@@ -177,9 +178,24 @@ namespace Cars_Bikes.Controllers
         {
             var upcomingbike = _context.UpcomingBikes.Where(m=>m.UpcomingBikeId==id).ToList();
             ViewBag.upcomingbike = upcomingbike;
-            var allupcomingbike = _context.UpcomingBikes.OrderByDescending(m=>m.ExpectedLaunchDate).Take(8).ToList();
+            var allupcomingbike = _context.UpcomingBikes.OrderByDescending(m=>m.FilterLaunchDate).Take(8).ToList();
             ViewBag.allupcomingbike = allupcomingbike;
             return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult NewsLetter(Models.NewsLetter obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.NewsLetters.Add(obj);
+                _context.SaveChanges();
+                TempData["success"] = "Your message has been sent. Thank you!";
+                // Redirect to avoid resubmission on refresh
+                return Redirect(Request.Headers["Referer"].ToString());
+            }
+            // If model state is not valid, return the same view with the model to display validation errors
+            return Redirect(Request.Headers["Referer"].ToString());
         }
         public IActionResult TWCompare()
         {

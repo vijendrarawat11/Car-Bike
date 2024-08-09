@@ -18,12 +18,13 @@ namespace Cars_Bikes.Models
         public decimal? KerbWeight { get; set; }
         public decimal? FuelReserve { get; set; }
         public decimal? SaddleHeight { get; set; }
-        public int TwoWheelerId { get; set; }
+        public int? TwoWheelerId { get; set; }
         [ForeignKey("TwoWheelerId")]
         public virtual TwoWheeler TwoWheeler { get; set; }
-        public int TWVarientId { get; set; }
+        public int? TWVarientId { get; set; }
         [ForeignKey("TWVarientId")]
         public virtual TWVarient TWVarients { get; set; }
+        public DateTime? CreatedDateTime { get; set; } = DateTime.Now;
     }
 }
 
