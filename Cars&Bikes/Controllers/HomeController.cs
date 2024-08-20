@@ -35,36 +35,16 @@ namespace Cars_Bikes.Controllers
             //ViewBag.TWNames = new SelectList(TWName,"Id", "TwoWheelerName");
             //var Models = new List<TwoWheeler>();
             //ViewBag.ModelNames = new SelectList(Models, "Company", "TwoWheelerName");
-            var FourWheelerBrand = _fourwheeler.FourWheelerBrands.ToList();
-            ViewBag.FourwheelerName = new SelectList(FourWheelerBrand, "Id", "FourWheelerBrandName");
+            //var FourWheelerBrand = _fourwheeler.FourWheelerBrands.ToList();
+            //ViewBag.FourwheelerName = new SelectList(FourWheelerBrand, "Id", "FourWheelerBrandName");
             var TWNews = _context.TWLatestNews.OrderByDescending(m => m.Date).Take(5).ToList();
             ViewBag.TWNews = TWNews;
-            var FWNews = _fourwheeler.FWLatestNews.OrderByDescending(m => m.FWLatestNewsId).Take(5).ToList();
-            ViewBag.FWNews = FWNews;
+            //var FWNews = _fourwheeler.FWLatestNews.OrderByDescending(m => m.FWLatestNewsId).Take(5).ToList();
+            //ViewBag.FWNews = FWNews;
             var UpcomingBike = _context.UpcomingBikes.OrderByDescending(m => m.FilterLaunchDate).Take(5).ToList();
             ViewBag.Upcomingbike = UpcomingBike;
 
 
-            return View();
-        }
-        public IActionResult TWLatestNewsDetails(int id)
-        {
-            var newsItem = _context.TWLatestNews.FirstOrDefault(m => m.TWLatestNewsId == id);
-            if (newsItem == null)
-            {
-                return NotFound();
-            }
-            ViewBag.TWNews = newsItem;
-            var allNews = _context.TWLatestNews.OrderByDescending(m => m.Date).Take(10).ToList();
-            ViewBag.AllNews = allNews;
-            var brand = _context.TwowheelerBrands.ToList();
-            ViewBag.Brand = brand;
-            return View();
-        }
-        public IActionResult TWLatestNewsByBrand(int id)
-        {
-            var newsbybrand = _context.TWLatestNews.Where(m => m.TwoWBrandId == id).ToList();
-            ViewBag.newsbybrand = newsbybrand;
             return View();
         }
         [HttpGet]
@@ -87,6 +67,10 @@ namespace Cars_Bikes.Controllers
                                       .Where(t => t.TwoWheelerBrands.TWBrandId == brandId && t.TwoWheelerId == modelId)
                                       .ToList();
             ViewBag.TwoWheelers = twoWheelers;
+            var Allbrand = _context.TwowheelerBrands.ToList();
+            ViewBag.Brand = Allbrand;
+            //var twDetails = _context.Twowheelers.Where(t=> t.TwoWheelerId == modelId).ToList();
+            //ViewBag.twDetails = twDetails;
             return View("TWBrandDetails",brand);
         }
         [HttpGet]
@@ -174,14 +158,7 @@ namespace Cars_Bikes.Controllers
 
             return View();
         }
-        public IActionResult TWUpcomingBikeDetails(int id)
-        {
-            var upcomingbike = _context.UpcomingBikes.Where(m=>m.UpcomingBikeId==id).ToList();
-            ViewBag.upcomingbike = upcomingbike;
-            var allupcomingbike = _context.UpcomingBikes.OrderByDescending(m=>m.FilterLaunchDate).Take(8).ToList();
-            ViewBag.allupcomingbike = allupcomingbike;
-            return View();
-        }
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult NewsLetter(Models.NewsLetter obj)

@@ -10,9 +10,9 @@ namespace Cars_Bikes.Models
         public string? TWName { get; set; }
         public string? Varients { get; set; }
         public decimal? Milage { get; set; }
-        //[Column(TypeName = "varchar(10)")]
+        [Column(TypeName = "varchar(30)")]
         public string? FrontBrake { get; set; }
-        //[Column(TypeName = "varchar(10)")]
+        [Column(TypeName = "varchar(30)")]
         public string? RearBrake { get; set; }
         public decimal? FuelCapacity { get; set; }
         public int? TwoWheelerId { get; set; }

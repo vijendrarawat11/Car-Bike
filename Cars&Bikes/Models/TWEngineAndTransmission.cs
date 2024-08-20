@@ -14,15 +14,15 @@ namespace Cars_Bikes.Models
         public decimal? Displacement { get; set; }
         public string? MaxTorque { get; set; }
         public int? NumOfCylinders { get; set; }
-        //[Column(TypeName = "varchar(30)")]
+        [Column(TypeName = "varchar(30)")]
         public string? CoolingSystem { get; set; }
         public int? ValvePerCylinder { get; set; }
-        //[Column(TypeName = "varchar(30)")]
+        [Column(TypeName = "varchar(30)")]
         public string? Starting { get; set; }
-        //[Column(TypeName = "varchar(40)")]
+        [Column(TypeName = "varchar(40)")]
         public string? FuelSupply { get; set; }
         public string? Clutch { get; set; }
-        //[Column(TypeName = "varchar(10)")]
+        [Column(TypeName = "varchar(10)")]
         public string? GearBox { get; set; }
         public string? EmissionType { get; set; }
         public string? CompressionRatio { get; set; }

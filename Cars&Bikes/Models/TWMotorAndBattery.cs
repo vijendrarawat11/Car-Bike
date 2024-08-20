@@ -10,9 +10,9 @@ namespace Cars_Bikes.Models
         public string? TWName { get; set; }
         public string? Varients { get; set; }
         public string? PeakPower { get; set; }
-        //[Column(TypeName = "varchar(20)")]
+        [Column(TypeName = "varchar(20)")]
         public string? DriveType { get; set; }
-        //[Column(TypeName = "varchar(20)")]
+        [Column(TypeName = "varchar(20)")]
         public string? Transmission { get; set; }
         public string? BatteryCapacity { get; set; }
         public int? TwoWheelerId { get; set; }

@@ -32,7 +32,7 @@
 @* <div class="overlay-black-middle" style=" background:linear-gradient(#475372, #78829A, #9EA3AD, #fff); margin:0;">
     <img src="~/images/background/banner.png" />
 </div> *@
-<div class="header-img"> <img src="~/images/main-slider/2.png" /></div>
+<div class="header-img"> <img src="~/images/main-slider/header.png" /></div>
 <body id="bg">
    @*  <div class="page-wraper">
         <div id="loading-area"></div>
@@ -754,12 +754,14 @@
                                             </div>
                                         </div>} *@
     <div><h1 class="latest-bike-head p-b20">Bike Brand</h1></div>
-    <div class="brand-container">
+    <div class="div-row">
+        <div class="big-div both-div">
         @foreach (var brand in Model)
         {
 
-        <!-- Bike 1 -->
-         <a href="@Url.Action("TwoWheelerDetails", "Home", new { modelId =brand.TwoWheelerId })" style="text-decoration:none;">
+                <a href="@Url.Action("TwoWheelerDetails", "Home", new { modelId =brand.TwoWheelerId})" style="text-decoration:none;">
+
+                    <div class=" brand-container">
         <div class="brand-bike-card">
             <div class="brand-bike-image">
                         <img src="@brand.TWImage" alt="Bike Model" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';">
@@ -767,15 +769,43 @@
             <div class="brand-bike-details">
                     <h2>@brand.TwoWheelerName</h2>
                     <h3>@brand.Price</h3>
-                    <p><i class="fa fa-calendar"></i>  @brand.LaunchDate</p>
+                                <p><i class="fa fa-calendar"></i>  @brand.LaunchDate</p>
+                                @if (brand.IsActive == false)
+                            {
+                                    <p class="tw-notes">DISCONTINUED<br>@brand.NotesOrComments</p>
+                            }
                     <a href="@Url.Action("TwoWheelerDetails", "Home", new { modelId =brand.TwoWheelerId })" style="text-decoration:none;" class="details-button">View Details</a>
             </div>
-                </div>
-            </a>
-        }</div>
+         </div>
+        </div>
+                </a>
+            }
+    </div>
+        <div class="small-div both-div latest-bike-container">
+                <h2>Other Brands</h2>
+                @foreach (var brand in ViewBag.Brand)
+                {
+                    <a href="@Url.Action("TWBrandDetails", "Home", new { brandId = brand.TWBrandId })" style="text-decoration:none;">
+                        <div class="side-brand">
+                            <div class="side-brand-img">
+                            <img src="@brand.BrandLogoURL" alt="Bike Model" onerror="showFallbackIcon(this);" />
+                            <i class="bi bi-award fallback-icon"></i>
+                        </div>
+                            <div class="side-brand-text"><h4>@brand.BrandName </h4></div>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
 
         <!-- Content END-->
 
       @*   <button class="scroltop fa fa-chevron-up"></button>
     </div> *@
 </body>
+<script>
+    function showFallbackIcon(imgElement) {
+        imgElement.style.display = 'none'; // Hide the broken image
+        imgElement.nextElementSibling.style.display = 'block'; // Show the fallback icon
+    }
+</script>

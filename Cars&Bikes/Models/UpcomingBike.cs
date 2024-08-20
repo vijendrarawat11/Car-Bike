@@ -23,5 +23,6 @@ namespace Cars_Bikes.Models
         [DisplayFormat(DataFormatString = "{0:d MMM yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? FilterLaunchDate { get; set; }
         public DateTime? CreatedDateTime { get; set; } = DateTime.Now;
+        public string? ImageFolderURL { get; set; }
     }
 }

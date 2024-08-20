@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Cars_Bikes.Models
 {
+    [Table("LatestNews")]
     public class TWLatestNews
     {
         [Key]
@@ -11,7 +12,6 @@ namespace Cars_Bikes.Models
         public string? NewsHeading { get; set; }
         [MaxLength(500)]
         public string? NewsSummary { get; set; }
-        [MaxLength(2000)]
         public string? NewsDetail { get; set; }
         public string? ImageURL { get; set; }
         [DataType(DataType.Date)]
@@ -23,5 +23,7 @@ namespace Cars_Bikes.Models
         public virtual TwoWheelerBrand TwoWheelerBrands { get; set; }
         [Column(TypeName = "varchar(30)")]
         public string? BrandName { get; set; }
+        public string? ImageFolderURL { get; set; }
+        public bool? IsTwoWheeler { get; set; }
     }
 }

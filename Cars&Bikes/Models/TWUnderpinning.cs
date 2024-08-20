@@ -11,14 +11,14 @@ namespace Cars_Bikes.Models
         public string? Varients { get; set; }
         public string? SuspensionFront { get; set; }
         public string? SuspensionRear { get; set; }
-        //[Column(TypeName = "varchar(10)")]
+        [Column(TypeName = "varchar(20)")]
         public string? BrakesFront { get; set; }
-        //[Column(TypeName = "varchar(10)")]
+        [Column(TypeName = "varchar(20)")]
         public string? BrakesRear { get; set; }
         public string? TyreSize { get; set; }
         public string? WheelSize { get; set; }
         public string? WheelType { get; set; }
-        //[Column(TypeName = "varchar(10)")]
+        [Column(TypeName = "varchar(10)")]
         public string? TubelessTyre { get; set; }
         public int? TwoWheelerId { get; set; }
         [ForeignKey("TwoWheelerId")]

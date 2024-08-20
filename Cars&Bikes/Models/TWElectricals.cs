@@ -9,21 +9,20 @@ namespace Cars_Bikes.Models
         public int TWElectricalsId { get; set; }
         public string? TWName { get; set; }
         public string? Varients { get; set; }
-        //[Column(TypeName = "varchar(20)")]
         public string? Headlight { get; set; }
-       // [Column(TypeName = "varchar(20)")]
+        [Column(TypeName = "varchar(50)")]
         public string? TailLight { get; set; }
-        //[Column(TypeName = "varchar(20)")]
+        [Column(TypeName = "varchar(50)")]
         public string? TurnSignalLamp { get; set; }
-        //[Column(TypeName = "varchar(10)")]
+        [Column(TypeName = "varchar(50)")]
         public string? LEDTailLights { get; set; }
-        //[Column(TypeName = "varchar(10)")]
+        [Column(TypeName = "varchar(50)")]
         public string? LowFuelIndicato { get; set; }
-        //[Column(TypeName = "varchar(10)")]
+        [Column(TypeName = "varchar(50)")]
         public string? PilotLamps { get; set; }
-        //[Column(TypeName = "varchar(10)")]
+        [Column(TypeName = "varchar(50)")]
         public string? DistanceToEmptyIndicator { get; set; }
-        //[Column(TypeName = "varchar(10)")]
+        [Column(TypeName = "varchar(50)")]
         public string? DRLs { get; set; }
         public int? TwoWheelerId { get; set; }
         [ForeignKey("TwoWheelerId")]

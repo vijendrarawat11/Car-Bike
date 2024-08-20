@@ -19,15 +19,17 @@ namespace Cars_Bikes.Controllers.TwoWheeler.Brand
 
             return View();
         }
+        [Route("bajaj/bajaj-pulsar-150")]
         public IActionResult BajajPulsar150()
         {
             var bikeDetails = GetBikeDetails("Bajaj Pulsar 150");
-            return View(bikeDetails);
+            return View("~/Views/TwoWheeler/Brand/Bajaj/BajajPulsar150.cshtml", bikeDetails);
         }
+        [Route("bajaj/bajaj-pulsar-ns200")]
         public IActionResult BajajPulsarNS200()
         {
             var bikeDetails = GetBikeDetails("Bajaj Pulsar NS200");
-            return View(bikeDetails);
+            return View("~/Views/TwoWheeler/Brand/Bajaj/BajajPulsarNS200.cshtml", bikeDetails);
         }
         private Cars_Bikes.Models.TwoWheeler GetBikeDetails(string bikeName)
         {
@@ -73,7 +75,9 @@ namespace Cars_Bikes.Controllers.TwoWheeler.Brand
                 s.Milage,
                 s.FrontBrake,
                 s.RearBrake,
-                s.FuelCapacity
+                s.FuelCapacity,
+                s.TwoWheeler,
+                s.BodyType
             })
             .FirstOrDefault();
 

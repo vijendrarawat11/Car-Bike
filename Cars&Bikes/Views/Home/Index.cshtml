@@ -52,11 +52,11 @@
             <div class="slides">
                 <!-- Image 1 -->
                 <div class="slide">
-                    <img src="images/main-slider/s.png" alt="Slide1">
+                    <img src="images/main-slider/slide1.png" alt="Slide1">
                 </div>
                 <!-- Image 2 -->
                 <div class="slide">
-                    <img src="images/main-slider/ss.png" alt="Slide2">
+                    <img src="images/main-slider/slide2.png" alt="Slide2">
                 </div>
                 <!-- Image 3 -->
                 @* <div class="slide">
@@ -65,6 +65,7 @@
                 <div class="tp-bannertimer tp-bottom bg-primary" style="height: 5px; "></div>
 
             </div>
+
             <!--Search-->
             <div class="form-slide">
                 <div class="container">
@@ -74,11 +75,11 @@
                         </div>
                         <!-- TABS -->
                         <div class="form-find-area">
-                            <ul class="nav theme-tabs justify-content-center" style="align-content:center; width:100vh">
-                                @* <li role="presentation" class="active"><a data-toggle="tab" aria-controls="new-car" href="#new-car">CAR</a></li>
-                                <li role="presentation"><a data-toggle="tab" aria-controls="popular" href="#used-car">Bike</a></li>*@
-                                <li role="presentation" class="active"><a data-toggle="tab" aria-controls="popular" href="#used-car">Bike</a></li>
-                            </ul>
+                           @*  <ul class="nav theme-tabs justify-content-center">
+                                <li role="presentation" class="active"><a data-toggle="tab" aria-controls="new-car" href="#new-car">CAR</a></li>
+                                <li role="presentation"><a data-toggle="tab" aria-controls="popular" href="#used-car">Bike</a></li>
+                                <li role="presentation" class="active"><a data-toggle="tab" aria-controls="popular" href="#used-car" style="align-content:center; width:100%">Bike</a></li>
+                            </ul> *@
                             <div class="tab-content">
                                 <!-- NEW CAR -->
                                 @*                                     <div id="new-car" class="tab-pane active clearfix">
@@ -202,7 +203,6 @@
             </div>
             <!--Search End-->
         </div>
-        <img src="https://lh3.google.com/u/0/d/1uOa5GDdoh7YIRFOr9noPlZ0PJgmPlJXF" />
            
             @* </div> *@
         <!-- Upcoming bikes section -->
@@ -214,14 +214,14 @@
                 {
                     <div class="upcoming-bike-item">
                         <section>
-                            <a href="@Url.Action("TWUpcomingBikeDetails", "Home", new { id = bike.UpcomingBikeId })" style="text-decoration:none">
-                                <div class="upcoming-bike-img"><img src="@bike.ImageURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" /></div>
+                            <a href="@Url.Action("TWUpcomingBikeDetails", "UpcomingBike", new { id = bike.UpcomingBikeId })" style="text-decoration:none">
+                                <div class="upcoming-bike-img"><img src="@bike.ImageFolderURL" alt="Bike Image" /></div>
                                 <div class="upcoming-bike-name">@Truncate(@bike.UpcomingBikeName, 26)</div>
                         <div class="upcoming-bike-date">
                                     <p><i class="fa fa-calendar"></i>  @bike.ExpectedLaunchDate</p>
-                        </div>
+                                </div>
                                 <div class="ow-post-readmore">
-                                    <a href="@Url.Action("TWUpcomingBikeDetails", "Home", new { id = bike.UpcomingBikeId })" rel="bookmark"> Read More <i class="fa fa-angle-right"></i></a>
+                                    <a href="@Url.Action("TWUpcomingBikeDetails", "UpcomingBike", new { id = bike.UpcomingBikeId })" rel="bookmark"> Read More <i class="fa fa-angle-right"></i></a>
                                 </div>
                         @* <div class="upcoming-bike-details">
                     @bike.UpcomingBikeDetails
@@ -998,14 +998,14 @@
                 <div class="latest-news-container">
                 @foreach (var news in ViewBag.TWNews)
                 {
-                        <a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = news.TWLatestNewsId })" rel="bookmark">
+                        <a href="@Url.Action("TWLatestNewsDetails", "LatestNews", new { id = news.TWLatestNewsId })" rel="bookmark">
                            <div class="latest-news-item">
-                                <div class="upcoming-bike-img"><center><img src="@news.ImageURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';"/></center></div>
+                                <center> <div class="upcoming-bike-img"><img src="@news.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" /></div></center>
                             <div class="latest-news-content">
-                                    <div class="latest-news-heading"><a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = news.TWLatestNewsId })" title="Bike post" style="text-decoration:none;"><p>@Truncate(news.NewsHeading, 34)</p></a> </div>
+                                    <div class="latest-news-heading"><a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = news.TWLatestNewsId })" title="Bike post" style="text-decoration:none;"><p>@Truncate(news.NewsHeading, 97)</p></a> </div>
                                     <div class="latest-news-summary"><p><i class="fa fa-calendar"></i>  @news.Date?.ToString("d MMM yyyy")</p></div>
                                 <div class="ow-post-readmore">
-                                        <a href="@Url.Action("TWLatestNewsDetails", "Home", new { id = news.TWLatestNewsId })" rel="bookmark"> Read More <i class="fa fa-angle-right"></i></a>
+                                        <a href="@Url.Action("TWLatestNewsDetails", "LatestNews", new { id = news.TWLatestNewsId })" rel="bookmark"> Read More <i class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>
                            </div>
@@ -1013,12 +1013,12 @@
                 }
                 </div>
                 <div class="scroll-btns">
-                    <button class="scroll-btn left" onclick="scrollLeft('bikeNews')">&lt;</button>
-                    <button class="scroll-btn right" onclick="scrollRight('bikeNews')">&gt;</button>
+                    <button class="scroll-btn left" onclick="scrollLeft('bikeNews')">&#9664;</button>
+                    <button class="scroll-btn right" onclick="scrollRight('bikeNews')">&#9654;</button>
                 </div>
             </div>
 
-            <div class="tab-lscontent" id="carNews">
+            @* <div class="tab-lscontent" id="carNews">
                 <div class="latest-news-container">
                 @foreach (var news in ViewBag.FWNews)
                 {
@@ -1038,7 +1038,7 @@
                     <button class="scroll-btn left" onclick="scrollLeft('carNews')">&lt;</button>
                     <button class="scroll-btn right" onclick="scrollRight('carNews')">&gt;</button>
                 </div>
-            </div>
+            </div> *@
         </div>
 
             @* <div class="section-full bg-white content-inner-1">
@@ -1193,12 +1193,12 @@
 <script>
     $(document).ready(function () {
         // $("#ddlBrand").append('<option value="">Select Brand</option>');
-        // alert("1");
+       // alert("1");
         $("#ddlBrand").change(function () {
             // alert("2");
             var url = "@Url.Action("GetModelsByBrand", "Home")";
             $.getJSON(url, { Id: $("#ddlBrand").val() }, function (data) {
-                // alert(JSON.stringify(data));
+                 //alert(JSON.stringify(data));
                 $("#ddlModel").empty(); // Clear existing options
                 $("#ddlModel").append('<option value="">Select Model</option>');
                 $.each(data, function (index, item) {

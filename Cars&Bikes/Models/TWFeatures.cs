@@ -10,28 +10,28 @@ namespace Cars_Bikes.Models
         public int TWFeaturesId { get; set; }
         public string? TWName { get; set; }
         public string? Varients { get; set; }
-        //[Column(TypeName = "varchar(50)")]
+        [Column(TypeName = "varchar(50)")]
         public string? ABS { get; set; }
-        //[Column(TypeName = "varchar(20)")]
+        [Column(TypeName = "varchar(20)")]
         public string? Speedometer { get; set; }
-        //[Column(TypeName = "varchar(20)")]
+        [Column(TypeName = "varchar(20)")]
         public string? Tripmeter { get; set; }
-        //[Column(TypeName = "varchar(20)")]
+        [Column(TypeName = "varchar(20)")]
         public string? Tachometer { get; set; }
         public string? LEDTailLight { get; set; }
-        //[Column(TypeName = "varchar(20)")]
+        [Column(TypeName = "varchar(20)")]
         public string? Odometer { get; set; }
-        //[Column(TypeName = "varchar(10)")]
+        [Column(TypeName = "varchar(10)")]
         public string? FuelGauge { get; set; }
-        //[Column(TypeName = "varchar(30)")]
+        [Column(TypeName = "varchar(30)")]
         public string? InstrumentConsole { get; set; }
-        //[Column(TypeName = "varchar(20)")]
+        [Column(TypeName = "varchar(20)")]
         public string? SeatType { get; set; }
-        //[Column(TypeName = "varchar(20)")]
+        [Column(TypeName = "varchar(20)")]
         public string? BodyGraphics { get; set; }
-        //[Column(TypeName = "varchar(20)")]
+        [Column(TypeName = "varchar(20)")]
         public string? Clock { get; set; }
-        //[Column(TypeName = "varchar(10)")]
+        [Column(TypeName = "varchar(10)")]
         public string? PassengerFootrest { get; set; }
         public int? TwoWheelerId { get; set; }
         [ForeignKey("TwoWheelerId")]

@@ -17,7 +17,7 @@
     @* <div class="page-wraper"> *@
         @* <div id="loading-area"></div> *@
         <!-- Content -->
-        <div class=" page-content">
+        @* <div class=" page-content"> *@
             <!-- inner page banner -->
        @*  <div class="dlab-bnr-inr overlay-black-middle container-fluid" style="background-image:url(images/banner/bnr3.jpg);">
             <center> <img src="~/images/car2.png" style="height:170px; margin:0;" /><img src="~/images/car3.png" style="height:170px; margin:0;" /></center>
@@ -38,9 +38,8 @@
                     </ul>
                 </div>
             </div> *@
-        <div class="header-img"> <img src="~/images/main-slider/2.png" /></div>
+        <div class="header-img"> <img src="~/images/main-slider/header.png" /></div>
             <!-- Breadcrumb row END -->
-        <div class="car-details-info">
             @* <div class="container">
                 <div class="row">
                         <div class="col-md-12 ">
@@ -73,21 +72,21 @@
                             @* @foreach (var twoWheeler in ViewBag.TwoWheelers)
                                 {  *@
                             <div class="car-dl-info m-b30">
-                            <h1 class="h3 m-t0 price" id="IdTWName"> </h1>
+                            <h1 class="h3 m-t0 price IdTWName" id=""> </h1>
                                 <ul class="used-car-dl-info">
                                 <li id="IdTWBrand"><i class="fa fa-bank"></i>  </li>
                                     @* <li><i class="fa fa-calendar"></i> @twoWheeler.LaunchDate?.ToString("d MMM yyyy")</li> *@
-                                <li id="IdTWlaunchdate"><i class="fa fa-calendar"></i></li>
+                                <li id="IdTWLaunchdate"><i class="fa fa-calendar"></i></li>
                                 <li id="IdTWMileage"><i class="fa fa-list"></i></li>
                                 </ul>
-                                @* @foreach (var item in ViewBag.TwoWheelers)
+                                @foreach (var item in ViewBag.TwoWheelers)
                                 {
                                 if (item.IsActive == false)
                                 {
-                                        <h5>DISCONTINUED</h5>
-                                <p>@item.NotesOrComments</p>
-                                }} *@
-                                <div class="car-dl-info m-t20"><center><img id="IdTWimage" src="" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" class="img-fluid" style="width:70%; height:70%;" /></center></div>
+                                        <p class="tw-notes">DISCONTINUED<br>@item.NotesOrComments</p>
+                                }
+                                }
+                                <div class="tw-img m-t20"><center><img id="IdTWimage" src="" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" class="img-fluid" /></center></div>
                         </div>
 
 
@@ -139,12 +138,13 @@
                         <!-- Side bar END -->
                         <div class="col-md-4 ">
                             <div class="car-dl-info m-b30">
-                                    @foreach (var twoWheeler in ViewBag.TwoWheelers)
-                                {
+                                   @*  @foreach (var twoWheeler in ViewBag.TwoWheelers)
+                                { *@
                                 <div class="price">
-                                        <h3 class="m-t0 m-b5">@twoWheeler.Price</h3>
-                                        <span>@twoWheeler.TwoWheelerName</span>
-                                </div>}
+                                    <h3 class="m-t0 m-b5" id="Idprice"></h3>
+                                    <span class="IdTWName"></span>
+                                </div>
+                                @* } *@
                                 @* <form>
                                     <p class="m-t0 m-b5">Ex-showroom Price</p>
                                     <div class="form-group">
@@ -158,37 +158,59 @@
                                         <button type="button" class="btn-primary site-button btn-block" title="READ MORE" rel="bookmark" data-toggle="modal" data-target="#car-details">View On Road Price </button>
                                     </div>
                                 </form> *@
+                        
                         </div>
+                    <div class="clearfix m-b30 m-t30">
+                        <div class="sideboxdetails">
+                            <h6>Brand</h6>
+                            <i class="bi bi-award"></i>
+                            <h5 id="IdTWbrand"></h5>
+                        </div>
+                        <div class="sideboxdetails">
+                            <h6>Launch Year</h6>
+                            <i class="bi bi-calendar-event"></i>
+                            <h5 id="IdTWlaunchdate"></h5>
+                        </div>
+                        <div class="sideboxdetails">
+                            <h6>Mileage</h6>
+                            <i class="bi bi-speedometer"></i>
+                            <h5 id="IdTWmileage"></h5>
+                        </div>
+                        <div class="sideboxdetails">
+                            <h6>Body Type</h6>
+                            <i class="bi bi-scooter"></i>
+                            <h5 id="IdTWbodytype"></h5>
+                        </div>
+
+                        <div class="sideboxdetails">
+                            <h6>Fuel Capacity</h6>
+                            <i class="bi bi-fuel-pump"></i>
+                            <h5 id="IdTWfuelCapacity"></h5>
+                        </div>
+                        <div class="sideboxdetails">
+                            <h6>Starting</h6>
+                            <i class="bi bi-tools"></i>
+                            <h5 id="Idstarting"></h5>
+                        </div>
+                        <div class="sideboxdetails">
+                            <h6>Displacement</h6>
+                            <i class="bi bi-arrows-move"></i>
+                            <h5 id="Iddisplacement"></h5>
+                        </div>
+                        <div class="sideboxdetails">
+                            <h6>Fuel Supply</h6>
+                            <i class="bi bi-truck"></i>
+                            <h5 id="IdfuelSupply"></h5>
+                        </div>
+                        <div class="sideboxdetails">
+                            <h6>Gear Box</h6>
+                            <i class="bi bi-gear-wide-connected"></i>
+                            <h5 id="IdgearBox"></h5>
+                        </div>
+                    </div>
                         @* @foreach (var twoWheeler in ViewBag.Specs)
                         { *@
-                            <div class="  clearfix m-b30">
-                                <div class="sideboxdetails">
-                                    <h6>Brand</h6>
-                                <i class="bi bi-award"></i>
-                                    <h5 id="IdTWbrand"></h5>
-                                </div>
-                            <div class="sideboxdetails">
-                                    <h6>Launch Year</h6>
-                                <i class="bi bi-calendar-event"></i>
-                                <h5 id="IdTWlaunchdate"></h5>
-                                </div>
-                            <div class="sideboxdetails">
-                                <h6>Mileage</h6>
-                                <i class="bi bi-speedometer"></i>
-                                <h5 id="IdTWmileage"></h5>
-                            </div>
-                            <div class="sideboxdetails">
-                                    <h6>Body Type</h6>
-                                <i class="bi bi-scooter"></i>
-                                    <h5 id="IdTWbodytype"></h5>
-                                </div>
                             
-                            <div class="sideboxdetails">
-                                <h6>Fuel Capacity</h6>
-                                <i class="bi bi-fuel-pump"></i>
-                                <h5 id="IdTWfuelCapacity"></h5>
-                                </div>
-                            </div>
                             @* } *@
 
                             @* <div class="widget client-logo-wg">
@@ -344,7 +366,7 @@
             }
         </select>
     </div>
-} *@
+    } *@
         <div class="linkmaincontainer">
             <select class="ddnvarient" asp-items="ViewBag.Varient" id="varientId">
                 <option value="" disabled>Select Varient</option>
@@ -352,7 +374,7 @@
             <div class="linkcontainer shadow rounded-6">
             
             
-                <div class="highlight nav">
+                <div class="highlight">
                 
                     <ul>
                         <li data-target="specifications">Specifications</li>
@@ -366,7 +388,12 @@
                         <li data-target="tyresAndBrakes">Tyres & Brakes</li>
                         <li data-target="motorAndBatteries">Motor & Battery</li>
                         <li data-target="underpinnings">Underpinnings</li>
+                        @foreach (var item in ViewBag.TwoWheelers)
+                                {
+                                if (item.IsEV == true)
+                                {
                         <li data-target="chargings">Chargings</li>
+                                }}
                     </ul>
                 </div>
                 <div class="content" id="content">
@@ -823,6 +850,10 @@
                         @* } *@
                         </div>
                     </section>
+                    @foreach (var item in ViewBag.TwoWheelers)
+                                {
+                                if (item.IsEV == true)
+                                {
                     <section id="chargings">
                         <h4 class="contentheading">chargings</h4>
                         <div id="chargingContainer">
@@ -846,11 +877,10 @@
                                 </div>
                         @* } *@
                     </div>
-                    </section>
+                    </section>}}
                 </div>
             </div>
             </div>
-        </div>
         <!-- Content END-->
         <button class="scroltop fa fa-chevron-up"></button>
     @* </div> *@
@@ -1352,9 +1382,10 @@
                     if (data.specs && data.specs.length > 0) {
                         var item = data.specs[0]; // Assuming the data array contains one object
                         $('#IdTWbrand').text(item.twoWheeler.brand || 'N/A');
+                        $('#Idprice').text(item.twoWheeler.price || 'N/A');
                         $('#IdTWmileage').text(item.milage ? item.milage + ' kmpl' : 'N/A');
                         $('#IdTWbodytype').text(item.bodyType || 'N/A');
-
+                        
                         // Format launch date
                         if (item.twoWheeler && item.twoWheeler.launchDate) {
                             var launchDate = new Date(item.twoWheeler.launchDate);
@@ -1363,32 +1394,37 @@
                                 month: 'short',
                                 year: 'numeric'
                             });
-                            $('#IdTWlaunchdate').text(formattedDate);
+                                $('#IdTWlaunchdate').text(formattedDate);
                         } else {
                             $('#IdTWlaunchdate').text('N/A');
                         }
 
                         $('#IdTWfuelCapacity').text(item.fuelCapacity ? item.fuelCapacity + ' L' : 'N/A');
-                        $('#IdTWMileage').html('<i class="bi bi-speedometer"></i> ' + item.milage || 'N/A');
-                        $('#IdTWName').text(item.twoWheeler.twoWheelerName || 'N/A');
-                        $('#IdTWBrand').html('<i class="bi bi-award"></i> ' + item.twoWheeler.brand || 'N/A');
+                            $('#IdTWMileage').html('<i class="bi bi-speedometer"></i> ' + (item.milage ? item.milage + ' kmpl' : 'N/A'));
+                        $('.IdTWName').text(item.twoWheeler.twoWheelerName || 'N/A');
+                            $('#IdTWBrand').html('<i class="bi bi-award"></i> ' + item.twoWheeler.brand || 'N/A');
+                            $('#IdTWimage').attr('src', item.twoWheeler.twImage || 'N/A');
                     } else {
                         // Handle case where no data is returned
                         $('#IdTWbrand').text('N/A');
+                        $('#Idprice').text('N/A');
                         $('#IdTWmileage').text('N/A');
                         $('#IdTWbodytype').text('N/A');
                         $('#IdTWlaunchdate').text('N/A');
                         $('#IdTWfuelCapacity').text('N/A');
                         $('#IdTWMileage').text('N/A');
                         $('#IdTWName').text('N/A');
-                        $('#IdTWBrand').html('N/A');
-                    } 
+                            $('#IdTWBrand').html('N/A');
+                            $('#IdTWimage').attr('src', ''); // Set to a default or empty image
+                        }
 
-                    // display Image, Color, Price
-                    if (data.imageColor && data.imageColor.length > 0) {
-                        var item = data.imageColor[0]; // Assuming the data array contains one object
-                        $('#IdTWimage').attr('src', item.imageURL || 'N/A');
-                        $('#IdTWcolor').text(item.color || 'N/A');
+                        // display engine
+                        if (data.engine && data.engine.length > 0) {
+                            var item = data.engine[0]; // Assuming the data array contains one object
+                            $('#Idstarting').text(item.starting || 'N/A');
+                            $('#Iddisplacement').text(item.displacement ? item.displacement + 'cc' : 'N/A');
+                            $('#IdfuelSupply').text(item.fuelSupply || 'N/A');
+                            $('#IdgearBox').text(item.gearBox || 'N/A');
 
                         // Format launch date
                         if (item.twoWheeler && item.twoWheeler.launchDate) {
@@ -1404,8 +1440,7 @@
                         }
                     } else {
                         // Handle case where no data is returned
-                        $('#IdTWimage').attr('src', ''); // Set to a default or empty image
-                        $('#IdTWcolor').text('N/A');
+                            $('#engineType').text('N/A');
                         $('#IdTWLaunchdate').html('N/A');
                     }
                 }).fail(function (xhr, status, error) {

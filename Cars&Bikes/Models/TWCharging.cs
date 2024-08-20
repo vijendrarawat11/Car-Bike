@@ -9,9 +9,9 @@ namespace Cars_Bikes.Models
         public int TWChargingId { get; set; }
         public string? TWName { get; set; }
         public string? Varients { get; set; }
-        //[Column(TypeName = "varchar(5)")]
+        [Column(TypeName = "varchar(30)")]
         public string? ChargingAtHome { get; set; }
-        //[Column(TypeName = "varchar(5)")]
+        [Column(TypeName = "varchar(30)")]
         public string? ChargingAtChargingStation { get; set; }
         public int? TwoWheelerId { get; set; }
         [ForeignKey("TwoWheelerId")]

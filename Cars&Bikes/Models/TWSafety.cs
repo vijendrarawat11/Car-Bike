@@ -9,9 +9,9 @@ namespace Cars_Bikes.Models
         public int TWSafetyId { get; set; }
         public string? TWName { get; set; }
         public string? Varients { get; set; }
-        //[Column(TypeName = "varchar(10)")]
+        [Column(TypeName = "varchar(10)")]
         public string? PassSwitch { get; set; }
-        //[Column(TypeName = "varchar(10)")]
+        [Column(TypeName = "varchar(10)")]
         public string? EngineKillSwitch { get; set; }
         public string? Display { get; set; }
         public int? TwoWheelerId { get; set; }
