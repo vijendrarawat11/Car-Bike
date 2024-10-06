@@ -38,5 +38,9 @@ namespace Cars_Bikes.Models
         public DateTime? CreatedDateTime { get; set; } = DateTime.Now;
         public virtual ICollection<TWVarient> TWVarients { get; set; } = new List<TWVarient>();
         //public virtual ICollection<TWSpec> TWSpecs { get; set; } = new List<TWSpec>();
+        //public static string GenerateSlug(string name)
+        //{
+        //    return name.ToLower().Replace(" ", "-").Replace("/", "-");
+        //}
     }
 }

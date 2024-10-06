@@ -17,7 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\TwoWheeler\LatestNews\2024\Aug\" />
+    <Folder Include="Views\Bajaj\" />
+    <Folder Include="Views\LatestNews\" />
+    <Folder Include="Views\RoyalEnfield\" />
+    <Folder Include="wwwroot\.well-known\pki-validation\" />
   </ItemGroup>
 
 </Project>

@@ -20,5 +20,10 @@ namespace Cars_Bikes.Models
         [ForeignKey("TWVarientId")]
         public virtual TWVarient TWVarients { get; set; }
         public DateTime? CreatedDateTime { get; set; } = DateTime.Now;
+        [MaxLength(50)]
+        public string? TopColorCode { get; set; }
+        [MaxLength(50)]
+        public string? BottomColorCode { get; set; }
+        public string? ImageAltTag { get; set; }
     }
 }

@@ -3,7 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Cars_Bikes</title>
+    <title>@ViewData["Title"] BikeCarhub</title>
+    <!--For MetaTags-->
+    @RenderSection("MetaTags", required: false)
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="~/css/site.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -14,16 +17,23 @@
     @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
     <!--<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />-->
     <!--<link rel="stylesheet" href="~/Cars_Bikes.styles.css" asp-append-version="true" />-->
+    <!-- Favicons -->
+    <link href="~/images/main logo1.png" rel="icon">
 </head>
 <body>
     <header id="navbar" class="nav-header">
         <div class="navbar-container">
             <nav>
+                @* <div class="logo">
+                    <img src="~/images/main logo1.png" />
+                </div> *@
+                <div class="search-div"><input type="text" id="searchTwoWheeler" placeholder="Search" class="for-search" /><i class="bi bi-search search-icon"></i></div>
                 <!-- <div class="logo">Logo</div> -->
                 <ul class="nav-links" id="nav-links">
                     <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-controller="Home" asp-action="TWCompare">Compare</a></li>
                     <li><a asp-controller="AboutUs" asp-action="Index">About Us</a></li>
+                    @* <li><a asp-controller="LatestNews" asp-action="Sep22024NewsDetails1">Aug282024NewsDetails1</a></li> *@
                     <li><a id="contact-link">Ask a Question</a></li>
                 </ul>
                 <div class="hamburger" id="hamburger">
@@ -354,4 +364,53 @@
                 document.querySelector('.dzSubscribeMsg').innerHTML = 'An error occurred. Please try again.';
             });
         });
+</script>
+
+<!---------------------Search--------------------------->
+
+<link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#searchTwoWheeler").val("");
+        $("#searchTwoWheeler").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: '@Url.Action("GetTwoWheelerNames", "Home")',
+                    data: { term: request.term },
+                    success: function (data) {
+                        // Process the data
+                        response($.map(data, function (item) {
+                            return {
+                                label: item,  // Display name in the dropdown
+                                value: item   // Selected value
+                            };
+                        }));
+
+                        // Automatically select the first item from the list
+                        if (data.length > 0) {
+                            $("#searchTwoWheeler").autocomplete("option", "autoFocus", true);
+                            // $("#searchTwoWheeler").val(data[0]); // Set the input field to the first result
+
+                            // Trigger the select event automatically for the first item
+                            // $("#searchTwoWheeler").data("ui-autocomplete")._trigger("select", null, { item: { value: data[0] } });
+                        }
+                    }
+                });
+            },
+            select: function (event, ui) {
+                // When an item is selected (either manually or automatically)
+                $.ajax({
+                    url: '@Url.Action("GetTwoWheelerDetailsByName", "Home")',
+                    data: { twoWheelerName: ui.item.value },
+                    success: function (data) {
+                        // Redirect to the details page using the slug
+                        window.location.href = '/' + data.brandName + '/' + data.twName;
+                    }
+                });
+            },
+            minLength: 2 // Start searching after 2 characters
+        });
+    });
 </script>

@@ -361,11 +361,18 @@ namespace Cars_Bikes.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWImageColorPriceId"));
 
+                    b.Property<string>("BottomColorCode")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.Property<string>("Color")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("CreatedDateTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("ImageAltTag")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageURL")
                         .HasColumnType("nvarchar(max)");
@@ -379,6 +386,10 @@ namespace Cars_Bikes.Migrations
                     b.Property<int?>("TWVarientId")
                         .IsRequired()
                         .HasColumnType("int");
+
+                    b.Property<string>("TopColorCode")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int?>("TwoWheelerId")
                         .IsRequired()
@@ -423,12 +434,12 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NewsHeading")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("NewsSummary")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("NewsSummary")
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
 
                     b.Property<int?>("TwoWBrandId")
                         .HasColumnType("int");
@@ -876,7 +887,13 @@ namespace Cars_Bikes.Migrations
                     b.Property<bool?>("IsEV")
                         .HasColumnType("bit");
 
+                    b.Property<bool?>("IsFWBrand")
+                        .HasColumnType("bit");
+
                     b.Property<bool?>("IsPetrol")
+                        .HasColumnType("bit");
+
+                    b.Property<bool?>("IsTWBrand")
                         .HasColumnType("bit");
 
                     b.HasKey("TWBrandId");

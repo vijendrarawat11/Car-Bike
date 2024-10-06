@@ -8,9 +8,9 @@ namespace Cars_Bikes.Models
     {
         [Key]
         public int TWLatestNewsId { get; set; }
-        [MaxLength(100)]
-        public string? NewsHeading { get; set; }
         [MaxLength(500)]
+        public string? NewsHeading { get; set; }
+        [MaxLength(2000)]
         public string? NewsSummary { get; set; }
         public string? NewsDetail { get; set; }
         public string? ImageURL { get; set; }

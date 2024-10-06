@@ -24,9 +24,9 @@
         {
             <div class="latest-bike-card">
                 <h2>@Truncate(@newsdata.NewsHeading, 36)</h2>
-                <a href="@Url.Action("TWLatestNewsDetails", "LatestNews", new { id = newsdata.TWLatestNewsId })">
+                <a href="/@newsdata.ImageURL">
                     <div class="latest-allbike-image ">
-                        <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                        <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("/images/twowheeler/default.jpg")';" />
                         <div class="latest-bikes-details-text">
                             <p><i class="fa fa-calendar"></i> @newsdata.Date?.ToString("d MMM yyyy")</p>
                             <p>@Truncate(@newsdata.NewsSummary, 170)</p>

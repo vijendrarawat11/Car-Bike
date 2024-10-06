@@ -16,5 +16,7 @@ namespace Cars_Bikes.Models
         public String? BrandLogoURL { get; set; }
         public String? Discription { get; set; }
         public DateTime CreatedDateTime { get; set; } = DateTime.Now;
+        public bool? IsTWBrand { get; set; }
+        public bool? IsFWBrand { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace Cars_Bikes.Controllers
         }
         public IActionResult Index()
         {
-            var TWList = _context.TwowheelerBrands.ToList();
+            var TWList = _context.TwowheelerBrands.OrderBy(tw => tw.BrandName).ToList();
             ViewBag.TWLists = new SelectList(TWList, "TWBrandId", "BrandName");
             var MList = _context.Twowheelers.Select(t => t.Type)
                                             .Distinct().ToList();
@@ -54,7 +54,7 @@ namespace Cars_Bikes.Controllers
             {
                 u.TwoWheelerId,
                 u.TwoWheelerName
-            }).ToList();
+            }).OrderBy(tw => tw.TwoWheelerName).ToList();
             return Json(ListModel);
         }
         public IActionResult TWBrandDetails(int brandId,int modelId)
@@ -102,11 +102,11 @@ namespace Cars_Bikes.Controllers
 
             return Json(new { specs, features, safety, mileageAndPerformance, engine, dimensionsAndCapacity, electricals, tyresAndBrakes, motorAndBattery, underpinning, charging, imageColor });
         }
-        public ActionResult TwoWheelerDetails(int brandId, int modelId,int? varientId)
+        public ActionResult TwoWheelerDetails(int brandId, int modelId,int? varientId, string brandName, string twName )
         {
             //Item1
             var twoWheelers = _context.Twowheelers
-                                      .Where(t => t.TwoWheelerBrands.TWBrandId == brandId && t.TwoWheelerId == modelId)
+                                      .Where(t => t.TwoWheelerBrands.TWBrandId == brandId && t.TwoWheelerId == modelId && t.Brand ==brandName && t.TwoWheelerName==twName)
                                       .ToList();
             var varient =_context.TWVarients.Where(t => t.TwoWheelerId == modelId).ToList();
             ViewBag.varient = new SelectList(varient, "TWVarientId", "Varients");
@@ -174,6 +174,39 @@ namespace Cars_Bikes.Controllers
             // If model state is not valid, return the same view with the model to display validation errors
             return Redirect(Request.Headers["Referer"].ToString());
         }
+        [HttpGet]
+        public JsonResult GetTwoWheelerNames(string term)
+        {
+            var suggestions = _context.Twowheelers
+                .Where(tw => tw.TwoWheelerName.Contains(term) && tw.IsActive == true)
+                .Select(tw => tw.TwoWheelerName)
+                .Take(10) // limit results
+                .ToList();
+
+            return Json(suggestions);
+        }
+        [HttpGet]
+        public JsonResult GetTwoWheelerDetailsByName(string twoWheelerName)
+        {
+            var twoWheeler = _context.Twowheelers
+                .Where(t => t.TwoWheelerName == twoWheelerName && t.IsActive == true)
+                .Select(t => new
+                {
+                    brandId = t.TwoWheelerBrands.TWBrandId,
+                    modelId = t.TwoWheelerId,
+                    brandName = t.Brand.ToLower().Replace(" ", "-"), // Slugify brandName
+                    twName = t.TwoWheelerName.ToLower().Replace(" ", "-") // Slugify twName
+                })
+                .FirstOrDefault();
+
+            if (twoWheeler != null)
+            {
+                return Json(twoWheeler);
+            }
+
+            return Json(null); // Return null or handle not found case
+        }
+
         public IActionResult TWCompare()
         {
             return View();
