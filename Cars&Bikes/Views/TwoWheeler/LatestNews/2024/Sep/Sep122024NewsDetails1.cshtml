@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Demerits of Hyundai Alcazar: Key Drawbacks & Comparisons with Rivals";
+    ViewData["Title"] = "Demerits of Hyundai Alcazar: Key Drawbacks & Comparisons with Rivals | ";
 }
 @section MetaTags{
     <meta name="keywords" content="Hyundai Alcazar drawbacks, Hyundai Alcazar demerits, Alcazar SUV disadvantages, Hyundai Alcazar engine performance, Hyundai Alcazar cramped seating, Alcazar vs Tata Safari, Hyundai Alcazar third-row space, Hyundai Alcazar review, Hyundai Alcazar diesel engine noise, Hyundai Alcazar vs Mahindra XUV700, Hyundai Alcazar expensive variants, Hyundai Alcazar no AWD, Hyundai Alcazar issues, Hyundai Alcazar handling flaws, Alcazar SUV comparison" />
@@ -33,7 +33,6 @@
             </div>
             <div class="latest-bikes-details-content">
                 @* <p>@Html.Raw(@Model.NewsDetail.Replace("\n", "<br>"))</p> *@
-                <p>@Model.NewsSummary</p>
                 <p>The Hyundai Alcazar, known for its premium appeal and feature-rich cabin, competes in the mid-size SUV segment with rivals like the Tata Safari and Mahindra XUV700. However, several factors may hinder its success in this highly competitive market:</p>
                 <ol>
                     <li>
@@ -76,7 +75,7 @@
             @foreach (var newsdata in ViewBag.AllNews)
             {
                 <div class="latest-bike-card">
-                    <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
+                    <h2>@Truncate(@newsdata.NewsHeading, 36)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
                             <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />

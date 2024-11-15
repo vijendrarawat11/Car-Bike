@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Skoda Elroq Electric SUV Launching October 1 | Features & Specs";
+    ViewData["Title"] = "Skoda Elroq Electric SUV Launching October 1 | Features & Specs | ";
 }
 @section MetaTags{
     <meta name="keywords" content="Skoda Elroq, electric SUV, launch, features, specifications, Skoda electric vehicles, eco-friendly SUV, October 1, new car release" />
@@ -33,7 +33,6 @@
             </div>
             <div class="latest-bikes-details-content">
                 @* <p>@Html.Raw(@Model.NewsDetail.Replace("\n", "<br>"))</p> *@
-                <p>@Model.NewsSummary</p>
                 <p>On October 1, Skoda is poised to launch the Elroq, its eagerly awaited electric SUV that promises to redefine the brand’s electric offerings. Designed for versatility and performance, the Elroq is ideal for both urban commuting and weekend adventures, making it a compelling choice for a wide range of drivers.</p>
                 <p>The Elroq features a striking exterior with a dynamic silhouette, highlighted by bold lines and an athletic stance. Its modern design not only enhances its aesthetic appeal but also contributes to improved aerodynamics. Inside, the SUV boasts a spacious cabin, outfitted with high-quality, sustainable materials. The infotainment system is state-of-the-art, offering seamless smartphone integration and a host of connectivity options, ensuring that passengers remain entertained and informed on the go.</p>
                 <div class="row  m-b10">
@@ -60,7 +59,7 @@
             @foreach (var newsdata in ViewBag.AllNews)
             {
                 <div class="latest-bike-card">
-                    <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
+                    <h2>@Truncate(@newsdata.NewsHeading, 36)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
                             <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />

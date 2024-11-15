@@ -42,6 +42,5 @@ namespace Cars_Bikes.Models
         //{
         //    return name.ToLower().Replace(" ", "-").Replace("/", "-");
         //}
-        public string? Discription { get; set; }
     }
 }

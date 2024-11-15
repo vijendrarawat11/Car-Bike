@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] | BCH</title>
+    <title>@ViewData["Title"] BikeCarhub</title>
     <!--For MetaTags-->
     @RenderSection("MetaTags", required: false)
 
@@ -17,27 +17,21 @@
     @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
     <!--<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />-->
     <!--<link rel="stylesheet" href="~/Cars_Bikes.styles.css" asp-append-version="true" />-->
-
-    <link rel="canonical" href="https://www.bikecarhub.com/" />
-    @* <a href="https://www.bikecarhub.com" hreflang="en">bikecarhub</a>
-    <a href="https://www.bikecarhub.com" hreflang="hi">bikecarhub</a> *@
     <!-- Favicons -->
-    <link href="~/images/favicon.png" rel="icon">
+    <link href="~/images/main logo1.png" rel="icon">
 </head>
 <body>
     <header id="navbar" class="nav-header">
         <div class="navbar-container">
             <nav>
-                <div class="logo">
-                    @* <img src="~/images/logo new.png" /> *@
-                    @* <img src="~/images/logo new name.png" /> *@
-                    <a asp-controller="Home" asp-action="Index"><img src="~/images/logo newname psd 2.png" alt="BCH Logo" /></a>
-                </div>
+                @* <div class="logo">
+                    <img src="~/images/main logo1.png" />
+                </div> *@
                 <div class="search-div"><input type="text" id="searchTwoWheeler" placeholder="Search" class="for-search" /><i class="bi bi-search search-icon"></i></div>
                 <!-- <div class="logo">Logo</div> -->
                 <ul class="nav-links" id="nav-links">
                     <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-controller="Compare" asp-action="TWCompare">Compare</a></li>
+                    <li><a asp-controller="Home" asp-action="TWCompare">Compare</a></li>
                     <li><a asp-controller="AboutUs" asp-action="Index">About Us</a></li>
                     @* <li><a asp-controller="LatestNews" asp-action="Sep22024NewsDetails1">Aug282024NewsDetails1</a></li> *@
                     <li><a id="contact-link">Ask a Question</a></li>
@@ -51,7 +45,7 @@
                 <div class="overlay-content">
                     <ul class="overlay-links">
                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-controller="Compare" asp-action="TWCompare">Compare</a></li>
+                        <li><a asp-controller="Home" asp-action="TWCompare">Compare</a></li>
                         <li><a asp-controller="AboutUs" asp-action="Index">About Us</a></li>
                         <li><a id="contact-link-overlay">Ask a Question</a></li>
                     </ul>
@@ -107,10 +101,10 @@
                         <div class="dlab-separator bg-primary"></div>
                         <ul>
                             @* <li><a href="new-car-latest.html">News</a></li> *@
-                                <li><a asp-controller="UpcomingBike" asp-action="TWUpcomingBikeDetails">Upcoming Bikes & Cars</a></li>
+                                <li><a asp-controller="Home" asp-action="TWUpcomingBikeDetails">Upcoming Cars</a></li>
                             @* <li><a href="used-car-search.html">Review</a></li> *@
                             <!--<li><a href="used-car-sell.html">Car Sell</a></li>-->
-                                <li><a asp-controller="Compare" asp-action="TWCompare">Compare</a></li>
+                                <li><a asp-controller="Home" asp-action="TWCompare">Compare</a></li>
                                 <li><a asp-controller="AboutUs" asp-action="Index">About Us</a></li>
                         </ul>
                     </div>

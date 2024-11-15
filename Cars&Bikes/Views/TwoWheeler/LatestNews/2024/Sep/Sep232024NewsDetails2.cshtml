@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Best Indian Cars Under ₹8 Lakh On-Road Price (2024) – Top Affordable Picks";
+    ViewData["Title"] = "Best Indian Cars Under ₹8 Lakh On-Road Price (2024) – Top Affordable Picks | ";
 }
 @section MetaTags{
     <meta name="keywords" content="Best cars under ₹8 lakh, Affordable cars India 2024, Top cars below 8 lakh, Budget cars India, Best hatchbacks under ₹8 lakh, Best sedans under ₹8 lakh, Compact SUVs under 8 lakh, Maruti Suzuki Swift VXI, Tata Punch Adventure, Hyundai Grand i10 Nios" />
@@ -33,7 +33,6 @@
             </div>
             <div class="latest-bikes-details-content">
                 @* <p>@Html.Raw(@Model.NewsDetail.Replace("\n", "<br>"))</p> *@
-                <p>@Model.NewsSummary</p>
                 <div class="row d-flex justify-content-center align-items-center m-b10">
                     <div class="col-lg-6 col-md-6">
                 <h3 class="subheading">1. Maruti Suzuki Swift VXI</h3>
@@ -221,7 +220,7 @@
             @foreach (var newsdata in ViewBag.AllNews)
             {
                 <div class="latest-bike-card">
-                    <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
+                    <h2>@Truncate(@newsdata.NewsHeading, 36)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
                             <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />

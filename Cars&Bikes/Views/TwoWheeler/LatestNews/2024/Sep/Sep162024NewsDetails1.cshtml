@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "JSW MG Announces 'MG Select' Outlets for Premium Car Sales Starting 2025";
+    ViewData["Title"] = "JSW MG Announces 'MG Select' Outlets for Premium Car Sales Starting 2025 | ";
 }
 @section MetaTags{
     <meta name="keywords" content="JSW MG, MG Select, premium vehicles, luxury cars, new outlets 2025, MG automotive, high-end car sales, luxury vehicle showrooms" />
@@ -33,7 +33,6 @@
             </div>
             <div class="latest-bikes-details-content">
                 @* <p>@Html.Raw(@Model.NewsDetail.Replace("\n", "<br>"))</p> *@
-                <p>@Model.NewsSummary</p>
                 <p>
                     JSW MG is making a significant shift in its approach to premium vehicle sales with the introduction of <span class="font-weight-700">'MG Select'</span> outlets, which are scheduled to launch in 2025. This new initiative represents a strategic enhancement aimed at providing an upscale and specialized experience for customers seeking high-end MG models.
                 </p>
@@ -51,7 +50,7 @@
             @foreach (var newsdata in ViewBag.AllNews)
             {
                 <div class="latest-bike-card">
-                    <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
+                    <h2>@Truncate(@newsdata.NewsHeading, 36)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
                             <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />

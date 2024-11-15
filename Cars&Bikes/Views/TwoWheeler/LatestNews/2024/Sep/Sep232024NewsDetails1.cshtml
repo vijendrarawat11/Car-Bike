@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "TVS Apache RR 310 Variants Launch - Performance and Style Redefined";
+    ViewData["Title"] = "TVS Apache RR 310 Variants Launch - Performance and Style Redefined | ";
 }
 @section MetaTags{
     <meta name="keywords" content="TVS Apache RR 310, new variants, sports bike, motorcycle launch, performance upgrade, motorcycle features, TVS Motors" />
@@ -33,7 +33,6 @@
             </div>
             <div class="latest-bikes-details-content">
                 @* <p>@Html.Raw(@Model.NewsDetail.Replace("\n", "<br>"))</p> *@
-                <p>@Model.NewsSummary</p>
                 <p>TVS Motors has officially launched new variants of the Apache RR 310, the brand's premium sports motorcycle, designed to elevate both performance and visual appeal. The Apache RR 310 has been a popular choice among biking enthusiasts since its inception, and the latest updates promise to enhance the riding experience even further.</p>
                 <p>The new variants feature a refined engine, retaining the 312.2cc single-cylinder unit, but now tuned for better performance and efficiency. The peak power output remains at 34 PS, but torque delivery has been optimized, resulting in smoother acceleration and enhanced throttle response. This makes the bike not only suitable for spirited rides but also practical for daily commuting.</p>
                 <p>In terms of design, the Apache RR 310 boasts a more aggressive stance with sharper lines and new color schemes that add to its sporty character. The updated variant includes an adjustable windscreen, improving aerodynamics and rider comfort during high-speed rides. TVS has also introduced a new fully digital TFT display that provides comprehensive ride data, including navigation, which is a first for this model.</p>
@@ -60,7 +59,7 @@
             @foreach (var newsdata in ViewBag.AllNews)
             {
                 <div class="latest-bike-card">
-                    <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
+                    <h2>@Truncate(@newsdata.NewsHeading, 36)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
                             <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />

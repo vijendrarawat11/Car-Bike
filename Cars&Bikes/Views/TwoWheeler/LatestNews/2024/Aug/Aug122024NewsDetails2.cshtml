@@ -26,10 +26,7 @@
                     @* <p>@ViewBag.TWNews.NewsSummary</p> *@
                 </div>
             </div>
-            <div class="latest-bikes-details-content">
-                <p>@Model.NewsSummary</p> 
-                <p>@Html.Raw(@Model.NewsDetail.Replace("\n", "<br>"))</p>
-            </div>
+            <div class="latest-bikes-details-content"> <p>@Html.Raw(@Model.NewsDetail.Replace("\n", "<br>"))</p></div>
 
         </div>
         @* <div class="div-row"> *@
@@ -38,7 +35,7 @@
                     @foreach (var newsdata in ViewBag.AllNews)
                     {
                         <div class="latest-bike-card">
-                            <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
+                            <h2>@Truncate(@newsdata.NewsHeading, 36)</h2>
                             <a href="/@newsdata.ImageURL">
                                 <div class="latest-allbike-image ">
                                     <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
