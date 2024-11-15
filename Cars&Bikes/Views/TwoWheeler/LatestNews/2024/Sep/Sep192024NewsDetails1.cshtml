@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "BYD eMAX 7 Electric MPV Launch in India on October 8 | ";
+    ViewData["Title"] = "BYD eMAX 7 Electric MPV Launch in India on October 8";
 }
 @section MetaTags{
     <meta name="keywords" content="BYD eMAX 7, electric MPV, India launch, electric vehicle news, BYD India, eco-friendly transportation, electric mobility" />
@@ -33,6 +33,7 @@
             </div>
             <div class="latest-bikes-details-content">
                 @* <p>@Html.Raw(@Model.NewsDetail.Replace("\n", "<br>"))</p> *@
+                <p>@Model.NewsSummary</p>
                 <p>BYD, a leader in electric vehicle manufacturing, is poised to launch its eMAX 7 electric MPV in India on October 8, 2023. This move is expected to enhance BYD's presence in the Indian automotive market, which is increasingly leaning towards electric mobility solutions.</p>
                 <h5 class="subheading">Features and Specifications</h5>
                 <p>The eMAX 7 is designed with family-friendly features and ample space, accommodating up to seven passengers. It boasts a modern aesthetic and is equipped with cutting-edge technology, including a high-definition infotainment system and advanced driver-assistance features. The vehicle will also offer significant battery capacity, promising an impressive range suitable for both urban and long-distance travel.</p>
@@ -55,7 +56,7 @@
             @foreach (var newsdata in ViewBag.AllNews)
             {
                 <div class="latest-bike-card">
-                    <h2>@Truncate(@newsdata.NewsHeading, 36)</h2>
+                    <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
                             <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />

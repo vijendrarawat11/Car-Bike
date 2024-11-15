@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Suzuki GSX-8R Launched in India at ₹9.25 Lakh - Features & Specifications | ";
+    ViewData["Title"] = "Suzuki GSX-8R Launched in India at ₹9.25 Lakh - Features & Specifications";
 }
 @section MetaTags{
     <meta name="keywords" content="Suzuki GSX-8R India, Suzuki GSX-8R price, GSX-8R features, Suzuki sportbike launch, GSX-8R specifications, Suzuki motorcycle India, GSX-8R middleweight bike, new Suzuki bike 2025, GSX-8R India launch." />
@@ -33,6 +33,7 @@
             </div>
             <div class="latest-bikes-details-content">
                 @* <p>@Html.Raw(@Model.NewsDetail.Replace("\n", "<br>"))</p> *@
+                <p>@Model.NewsSummary</p>
                 <p>Suzuki Motorcycle India has officially launched the new GSX-8R at a price of ₹9.25 lakh (ex-showroom). The GSX-8R is a middleweight sportbike designed for those seeking a blend of daily usability and high-performance thrills. As part of Suzuki’s iconic GSX lineup, this latest addition aims to appeal to sportbike enthusiasts who value technology, performance, and sleek design.</p>
                 <p>The Suzuki GSX-8R comes with an 800cc parallel-twin engine capable of delivering impressive power, ensuring an exhilarating riding experience. The engine produces around 82 PS of peak power at 8500 rpm and a maximum torque of 78 Nm at 6800 rpm. The bike is equipped with a 6-speed manual transmission featuring a bi-directional quick-shifter for a smooth and engaging ride.</p>
                 <p>In terms of design, the GSX-8R embodies Suzuki’s aggressive sports styling with sharp aerodynamic fairings, a split LED headlamp setup, and an aerodynamic windshield for reduced wind resistance. The digital instrument cluster provides a range of useful data, including speed, fuel levels, gear position, and more, contributing to a highly user-friendly experience. With its fully-adjustable KYB front forks and a monoshock rear suspension, the GSX-8R is built for stability, performance, and comfort, both on the track and regular roads.</p>
@@ -60,7 +61,7 @@
             @foreach (var newsdata in ViewBag.AllNews)
             {
                 <div class="latest-bike-card">
-                    <h2>@Truncate(@newsdata.NewsHeading, 36)</h2>
+                    <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
                             <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />

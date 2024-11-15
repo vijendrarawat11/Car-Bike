@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "BMW M4 CS Launching in India on October 4: Specifications and Features | ";
+    ViewData["Title"] = "BMW M4 CS Launching in India on October 4: Specifications and Features";
 }
 @section MetaTags{
     <meta name="keywords" content="BMW M4 CS, India launch, October 4, specifications, features, sports car, luxury coupe, automotive news" />
@@ -33,6 +33,7 @@
             </div>
             <div class="latest-bikes-details-content">
                 @* <p>@Html.Raw(@Model.NewsDetail.Replace("\n", "<br>"))</p> *@
+                <p>@Model.NewsSummary</p>
                 <p>BMW is gearing up for the launch of the M4 CS in India on October 4, and automotive enthusiasts are buzzing with excitement. Positioned between the M4 Competition and the M4 GTR, the M4 CS aims to deliver an unmatched performance experience, combining everyday usability with race-inspired engineering.</p>
                 <p>The M4 CS is powered by a formidable 3.0-liter inline-six twin-turbocharged engine that produces approximately 543 horsepower and 650 Nm of torque. This engine is mated to an 8-speed automatic transmission, enabling the car to accelerate from 0 to 100 km/h in just 3.7 seconds. With a top speed of 302 km/h, the M4 CS promises thrilling drives on both the road and the track.</p>
                 <p>In terms of design, the M4 CS features a more aggressive stance with enhanced aerodynamics, including a prominent front splitter and rear spoiler. The lightweight carbon fiber components not only reduce weight but also enhance rigidity. Inside, the M4 CS offers a driver-focused cockpit with high-quality materials, sport seats, and an advanced infotainment system that includes a premium sound system and connectivity options.</p>
@@ -63,7 +64,7 @@
             @foreach (var newsdata in ViewBag.AllNews)
             {
                 <div class="latest-bike-card">
-                    <h2>@Truncate(@newsdata.NewsHeading, 36)</h2>
+                    <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
                             <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />

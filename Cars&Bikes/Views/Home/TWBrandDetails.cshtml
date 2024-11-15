@@ -1,8 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
-}
+
 @* @model TwoWheeler *@
 @* <table class="table">
     <thead>
@@ -32,6 +31,35 @@
 @* <div class="overlay-black-middle" style=" background:linear-gradient(#475372, #78829A, #9EA3AD, #fff); margin:0;">
     <img src="~/images/background/banner.png" />
 </div> *@
+@{
+    @foreach (var brand in ViewBag.Tag)
+    {
+        ViewData["Title"] = @brand.TitleTag;
+    }
+}
+
+@section MetaTags {
+    @foreach (var brand in ViewBag.Tag)
+{
+        <meta name="keywords" content="@brand.MetaKeywords" />
+        <meta name="description" content="@brand.MetaDescription" />
+}
+}
+@* @{
+    var brand = Model; // Get the first brand
+    if (brand != null)
+    {
+        ViewData["Title"] = brand.TwoWheelerBrands.TitleTag;
+    }
+}
+
+@section MetaTags {
+    @if (brand != null)
+    {
+        <meta name="keywords" content="@brand.TwoWheelerBrands.MetaKeywords" />
+        <meta name="description" content="@brand.TwoWheelerBrands.MetaDescription" />
+    }
+} *@
 <div class="header-img"> <img src="~/images/main-slider/header.png" /></div>
 <body id="bg">
    @*  <div class="page-wraper">
@@ -753,7 +781,13 @@
                                                 </div>
                                             </div>
                                         </div>} *@
-    <div><h1 class="latest-bike-head p-b20">Bike Brand</h1></div>
+    @foreach (var brand in ViewBag.Tag)
+    {
+        <div>
+            <h1 class="latest-bike-head">@brand.BrandName Bikes</h1>
+            <h2 class="latest-bike-description p-b20">@brand.Discription</h2>
+        </div>
+    } 
     <div class="div-row">
         <div class="big-div both-div">
         @foreach (var brand in Model)
@@ -797,7 +831,7 @@
                     </a>
                 }
             </div>
-        </div>
+     </div>
 
         <!-- Content END-->
 
