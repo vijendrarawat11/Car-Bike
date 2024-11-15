@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "2025 Triumph Scrambler 400 X Launching Soon in India | Specifications & Details | ";
+    ViewData["Title"] = "2025 Triumph Scrambler 400 X Launching Soon in India | Specifications & Details";
 }
 @section MetaTags{
     <meta name="keywords" content="2025 Triumph Scrambler 400 X, Triumph motorcycles India, scrambler bikes, motorcycle launch, bike specifications, adventure motorcycles" />
@@ -33,6 +33,7 @@
             </div>
             <div class="latest-bikes-details-content">
                 @* <p>@Html.Raw(@Model.NewsDetail.Replace("\n", "<br>"))</p> *@
+                <p>@Model.NewsSummary</p>
                 <p>Triumph Motorcycles is poised to introduce the 2025 Scrambler 400 X in the Indian market, marking a significant expansion in its popular scrambler lineup. The launch is eagerly awaited by biking aficionados, as this model promises a blend of rugged performance and stylish aesthetics.</p>
                 <p>The Scrambler 400 X features a striking design with a classic scrambler silhouette, including a round headlamp, high-mounted exhaust, and a rugged stance. Built for versatility, it is equipped with a lightweight chassis and long-travel suspension, making it suitable for both on-road cruising and off-road adventures.</p>
                 <div class="row  m-b20">
@@ -64,7 +65,7 @@
             @foreach (var newsdata in ViewBag.AllNews)
             {
                 <div class="latest-bike-card">
-                    <h2>@Truncate(@newsdata.NewsHeading, 36)</h2>
+                    <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
                             <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />

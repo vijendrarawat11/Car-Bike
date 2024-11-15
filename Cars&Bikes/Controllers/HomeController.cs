@@ -69,6 +69,8 @@ namespace Cars_Bikes.Controllers
             ViewBag.TwoWheelers = twoWheelers;
             var Allbrand = _context.TwowheelerBrands.ToList();
             ViewBag.Brand = Allbrand;
+            var tag = _context.TwowheelerBrands.Where(t => t.TWBrandId == brandId).ToList();
+            ViewBag.Tag = tag;
             //var twDetails = _context.Twowheelers.Where(t=> t.TwoWheelerId == modelId).ToList();
             //ViewBag.twDetails = twDetails;
             return View("TWBrandDetails",brand);

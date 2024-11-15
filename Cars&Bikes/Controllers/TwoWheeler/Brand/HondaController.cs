@@ -27,7 +27,7 @@ namespace Cars_Bikes.Controllers.TwoWheeler.Brand
             var bikeDetails = GetBikeDetails("Honda CB350");
             return View("~/Views/TwoWheeler/Brand/Honda/HondaCB350.cshtml", bikeDetails);
         }
-        [Route("honda/honda-cb350rs")]
+        [Route("honda/honda-cb350-rs")]
         public IActionResult HondaCB350RS()
         {
             var bikeDetails = GetBikeDetails("Honda CB350 RS");

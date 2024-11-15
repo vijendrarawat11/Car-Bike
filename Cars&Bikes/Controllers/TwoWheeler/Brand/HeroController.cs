@@ -124,11 +124,11 @@ namespace Cars_Bikes.Controllers.TwoWheeler.Brand
             var bikeDetails = GetBikeDetails("Hero HF 100");
             return View("~/Views/TwoWheeler/Brand/Hero/HeroHF100.cshtml", bikeDetails);
         }
-        [Route("hero/hero-passion+")]
-        public IActionResult HeroPASSION()
+        [Route("hero/hero-passion-plus")]
+        public IActionResult HeroPASSIONPlus()
         {
-            var bikeDetails = GetBikeDetails("Hero PASSION+");
-            return View("~/Views/TwoWheeler/Brand/Hero/HeroPASSION.cshtml", bikeDetails);
+            var bikeDetails = GetBikeDetails("Hero PASSION Plus");
+            return View("~/Views/TwoWheeler/Brand/Hero/HeroPASSIONPlus.cshtml", bikeDetails);
         }
         [Route("hero/hero-glamour-xtec")]
         public IActionResult HeroGLAMOURXTEC()

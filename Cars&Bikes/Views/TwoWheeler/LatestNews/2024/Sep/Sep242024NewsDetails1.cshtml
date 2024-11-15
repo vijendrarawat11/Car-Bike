@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Top Indian Cars Under ₹10 Lakh On-Road Price (2024) – Best Picks for Your Budget | ";
+    ViewData["Title"] = "Top Indian Cars Under ₹10 Lakh On-Road Price (2024) – Best Picks for Your Budget";
 }
 @section MetaTags{
     <meta name="keywords" content="Best cars under ₹10 lakh, Affordable cars India 2024, Top cars below 10 lakh, Budget cars India, Best hatchbacks under ₹10 lakh, Best sedans under ₹10 lakh, Best SUVs under ₹10 lakh, Tata Nexon XM, Maruti Suzuki Brezza LXI, Hyundai i20 Sportz" />
@@ -33,6 +33,7 @@
             </div>
             <div class="latest-bikes-details-content">
                 @* <p>@Html.Raw(@Model.NewsDetail.Replace("\n", "<br>"))</p> *@
+                <p>@Model.NewsSummary</p>
                 <p>Best cars under ₹10 lakh on-road price in India for 2024, with specific variants that offer the best features and value within this budget:</p>
                 <div class="div-line"></div>
                 <div class="row d-flex justify-content-center align-items-center m-b10">
@@ -231,7 +232,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/latestnews/2024/sep/best indian cars to buy under 10 lakh on-road price (2024)/mahindra xuv300 w4.webp" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/latestnews/2024/sep/best indian cars to buy under 10 lakh on-road price (2024)/mahindra xuv300 w4.jpg" /></center></div>
                 </div>
                 <p>The <span class="font-weight-700">Mahindra XUV300 W4</span> offers excellent safety and performance. With a powerful turbocharged engine and solid build quality, it’s perfect for those seeking a premium feel in a compact SUV.</p>
                 <div class="div-line"></div>
@@ -248,7 +249,7 @@
             @foreach (var newsdata in ViewBag.AllNews)
             {
                 <div class="latest-bike-card">
-                    <h2>@Truncate(@newsdata.NewsHeading, 36)</h2>
+                    <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
                             <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />

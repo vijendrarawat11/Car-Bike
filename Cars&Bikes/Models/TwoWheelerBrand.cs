@@ -18,5 +18,8 @@ namespace Cars_Bikes.Models
         public DateTime CreatedDateTime { get; set; } = DateTime.Now;
         public bool? IsTWBrand { get; set; }
         public bool? IsFWBrand { get; set; }
+        public string? TitleTag { get; set; }
+        public string? MetaDescription { get; set; }
+        public string? MetaKeywords { get; set; }
     }
 }

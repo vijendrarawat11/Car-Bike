@@ -825,6 +825,9 @@ namespace Cars_Bikes.Migrations
                     b.Property<DateTime?>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Discription")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool?>("IsActive")
                         .HasColumnType("bit");
 
@@ -895,6 +898,15 @@ namespace Cars_Bikes.Migrations
 
                     b.Property<bool?>("IsTWBrand")
                         .HasColumnType("bit");
+
+                    b.Property<string>("MetaDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MetaKeywords")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TitleTag")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TWBrandId");
 

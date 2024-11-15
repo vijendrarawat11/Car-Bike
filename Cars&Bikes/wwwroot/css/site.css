@@ -259,8 +259,9 @@ body {
 
     .ow-post-readmore a {
         text-decoration: none;
-        color: #D81517;
-        font-size:16px;
+        /*color: #D81517;*/
+        color: #4fa6d5;
+        font-size: 16px;
         font-weight: bold;
         transition: color 0.3s ease;
     }
@@ -481,10 +482,40 @@ body {
     padding: 40px 15px 20px 15px;
     border: 1px solid #ddd;
 }
+    .upcoming-bikes-details-content p {
+        line-height: 1.6;
+        flex-grow: 1;
+        font-size: 1.1em;
+        color: black;
+        margin-bottom: 20px;
+    }
+
+    .upcoming-bikes-details-content ol {
+        line-height: 1.6;
+        flex-grow: 1;
+        font-size: 1.1em;
+        color: black;
+        padding: 10px;
+        margin-left: 30px;
+    }
+
+    .upcoming-bikes-details-content ul {
+        line-height: 1.6;
+        flex-grow: 1;
+        font-size: 1.1em;
+        color: black;
+        padding: 10px;
+        margin-left: 30px;
+    }
+
+    .upcoming-bikes-details-content li {
+        padding: 2px 0 10px 0;
+    }
 
     .upcoming-bikes-details-content h2 {
         margin-top: 0;
-        color: #D81517;
+        /*color: #D81517;*/
+        color: #175678;
         font-size: 1.5em;
         font-weight: bold;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -520,6 +551,7 @@ body {
         font-weight: bold;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: #D81517;
+        color: #175678;
     }
     .upcoming-allbikes-details-content p {
         color: #555;
@@ -536,7 +568,8 @@ body {
     margin-top: 5px;
     font-size: 1em;
     color: white;
-    background-color: #D81517;
+    /*background-color: #D81517;*/
+    background-color: #175678;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -544,10 +577,11 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-        .details-button:hover {
-            background-color: #EA3B3D;
-            color: white;
-        }
+    .details-button:hover {
+        /*background-color: #EA3B3D;*/
+        background-color: #68A4C4;
+        color: white;
+    }
 
 
 /*<!-------------------Bootstrap row wali property------------------------------------>*/
@@ -603,6 +637,13 @@ body {
     letter-spacing: 1px;
     padding: 30px 20px 0 20px;
 }
+.latest-bike-description {
+    font-size: 1.4em;
+    /*color: #000000;*/
+    margin: 0;
+    letter-spacing: 1px;
+    padding: 30px 20px 0 20px;
+}
 .latest-bikes-details-content {
     padding: 40px 20px 20px 20px;
     border: 1px solid #ddd;
@@ -647,12 +688,53 @@ body {
     width:100%;
     height:70%;
 }
+.heading {
+    font-size: 1.7em;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
 .subheading{
     font-size:1.4em;
     font-weight:600;
     margin-bottom:15px;
     /*padding-top:20px;*/
 }
+.for-link {
+    font-weight: 700;
+    color: #4fa6d5;
+    text-decoration: none;
+}
+    .for-link:hover {
+        font-weight: 700;
+        color: #0d6efd;
+        text-decoration: none;
+    }
+.news-table {
+    border-bottom: 1px solid #ccc;
+}
+    .news-table thead th {
+        padding: 8px;
+        font-weight: 500;
+        background-color: #191F23;
+        color: #A7A7A7;
+        font-size: 16px;
+        border-top: 0.4px solid #eee;
+        width: 26.66%;
+    }
+    .news-table tbody th {
+        padding: 8px;
+        font-weight: 500;
+        border-right: 2px solid #eee;
+        font-size: 16px;
+        width: 30%;
+    }
+    .news-table tbody td {
+        margin-bottom: 20px;
+        width: 70%;
+        border-right: 2px solid #eee;
+        margin-left: 10px;
+        font-size: 16px;
+    }
 .latest-bike-container {
     max-width: 100%;
     margin: 0 auto;
@@ -672,7 +754,8 @@ body {
         padding: 0 0 5px 5px;
         font-size: 1.5em;
         font-weight: bold;
-        color: #D81517;
+        /*color: #D81517;*/
+        color: #175678;
     }
     .latest-bike-container a{
         text-decoration:none;
@@ -705,8 +788,10 @@ body {
     margin-top: 10px;
     padding: 15px;
     font-size: 1.2em;
-    color: #D81517;
-    height:60px;
+    /*color: #D81517;*/
+    color: #175678;
+    height: 80px;
+    text-align: center;
 }
     .latest-allbike-image {
     position: relative;
@@ -770,7 +855,8 @@ body {
     }
 
         .side-brand:hover {
-            background-color: red;
+            /*background-color: red;*/
+            background-color: #68A4C4;
             color: white;
             font-size: 1.2em;
         }
@@ -842,9 +928,10 @@ body {
 }
     .brand-bike-details h2 {
         margin-top: 0;
-        color: #D81517;
+        /*color: #D81517;*/
+        color: #175678;
         font-size: 1.5em;
-        font-weight:600;
+        font-weight: 600;
     }
     .brand-bike-details h3 {
         margin-top: 0;
@@ -938,7 +1025,8 @@ body {
     }
 
         .highlight li.active {
-            background-color: #e82527;
+            /*background-color: #e82527;*/
+            background-color: #68A4C4;
             color: #fff;
         }
 
@@ -988,7 +1076,8 @@ section {
 }
 
     .sideboxdetails:hover {
-        background: red;
+        /*background: red;*/
+        background: #68A4C4;
         color: white;
         cursor: pointer;
     }
@@ -1032,14 +1121,15 @@ section {
         color: #D81517;
     }
     /*---------------------Nav Bar/ slide part or search part------------------------*/
-    .nav-header {
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-        transition: background-color 0.3s;
-    }
+.nav-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    /*transition: background-color 0.3s;*/
+    background-color: #1e4356;
+}
 
     .navbar-container {
         display: flex;
@@ -1057,7 +1147,9 @@ section {
     .logo {
         font-size: 24px;
         font-weight: bold;
-        width:90px;
+        width:80px;
+        height:40px;
+        /*width:90px;*/
         /*height:70px;*/
     }
 /*@media (max-width: 768px) {
@@ -1067,11 +1159,16 @@ section {
         position: relative;
     }
 }*/
-
+@media (max-width: 767px) {
+    .search-div {
+        width: 85%;
+    }
+}
     .search-div {
         width: 52%;
-        margin-left: auto;
+        /*margin-left: auto;*/
         position: relative;
+        margin:auto;
     }
 
     .for-search {
@@ -1118,7 +1215,8 @@ section {
         }
 
             .nav-links a:hover {
-                color: #D81517;
+                /*color: #D81517;*/
+                color: #68A4C4;
                 text-decoration: none;
             }
 
@@ -1126,7 +1224,8 @@ section {
         display: none;
         flex-direction: column;
         cursor: pointer;
-        font-size: 30px
+        font-size: 30px;
+        margin-left: auto;
     }
 
         .hamburger i {
@@ -1182,9 +1281,10 @@ section {
         cursor: pointer;
     }
 
-    header.transparent {
-        background-color: rgba(255, 255, 255, 0);
-    }
+header.transparent {
+    background-color: rgba(255, 255, 255, 0);
+    /*background-color: #175678;*/
+}
 
     @media (max-width: 768px) {
         .nav-links {
@@ -1204,21 +1304,29 @@ section {
         display: flex;
     }
 
-    .transparent {
-        background-color: transparent;
-    }
+.transparent {
+    /*background-color: transparent;*/
+    background-color: #2b6482;
+}
 
-    .white-bg {
-        background-color: rgba(0, 0, 0, 0.4);
-        box-shadow: 0 4px 2px -2px gray;
-    }
-
-    .search-container {
-        background-color: rgba(255, 255, 255, .95);
-        max-width: 360px;
-        box-shadow: 0 0 5px 0 rgba(0, 0, 0, .3);
-        overflow: hidden;
-    }
+.white-bg {
+    /*background-color: rgba(0, 0, 0, 0.4);
+        box-shadow: 0 4px 2px -2px gray;*/
+    background-color: rgba(30, 67, 86, 0.8);
+    box-shadow: 0 4px 2px -2px gray;
+}
+.search-main-container{
+    position: absolute;
+    top: 30%;
+    left:5%;
+    /*width: 100%;*/
+}
+.search-container {
+    background-color: rgba(255, 255, 255, .95);
+    max-width: 360px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .3);
+    overflow: hidden;
+}
 
     .search-head {
         background-color: #68A4C4;
@@ -1303,7 +1411,8 @@ section {
         .contact-form-content button {
             padding: 10px;
             border: none;
-            background: #D81517;
+            /*background: #D81517;*/
+            background: #175678;
             color: white;
             font-size: 16px;
             border-radius: 5px;
@@ -1311,7 +1420,8 @@ section {
         }
 
             .contact-form-content button:hover {
-                background: rgba(255,0,0,0.8);
+                /*background: rgba(255,0,0,0.8);*/
+                background: #68A4C4;
             }
     /*----------slide part-------*/
     .slider {
@@ -1373,13 +1483,15 @@ section {
             font-size: 28px;
             font-weight: 600;
             height: 50px;
-            color: #D81517;
+            /*color: #D81517;*/
+            color: #175678;
         }
 
         .contact-details-info h3 {
             font-size: 18px;
             font-weight: 600;
-            color: #D81517;
+            /*color: #D81517;*/
+            color: #175678;
         }
 
     .contact-form {
@@ -1405,8 +1517,8 @@ section {
 .contact-form-button {
     padding: 10px;
     border: none;
-    background: #D81517;
-    /*background: #175678;*/
+    /*background: #D81517;*/
+    background: #175678;
     color: white;
     font-size: 16px;
     border-radius: 5px;
@@ -1415,8 +1527,8 @@ section {
 }
 
     .contact-form-button:hover {
-        background: rgba(255,0,0,0.8);
-        /*background: #68A4C4;*/
+        /*background: rgba(255,0,0,0.8);*/
+        background: #68A4C4;
     }
 
     .aboutus-content {
@@ -1459,7 +1571,8 @@ section {
             font-size: 1.5em;
             margin-bottom: 20px;
             margin-top: 20px;
-            color: #D81517;
+            /*color: #D81517;*/
+            color: #175678;
             font-weight: 600;
         }
 /*--------------------Compare Page------------------------------*/
@@ -1479,8 +1592,9 @@ section {
 }
     .compare-container h3 {
         margin: 20px;
-        color: #D81517;
-        font-weight:600;
+        /*color: #D81517;*/
+        color: #175678;
+        font-weight: 600;
     }
 .compare-box {
     display: flex;
@@ -1509,7 +1623,7 @@ section {
 @media (max-width: 767px) {
     .compare-card {
         flex: 0 0 45%;
-        padding: 6px;
+        padding: 10px;
         margin: 2px;
     }
 }
@@ -1625,7 +1739,7 @@ section {
     }*/
     .Compare-img {
     max-width: 100%;
-    height: 100%;
+    height: 90%;
     /*margin: 10px;*/
     border-radius: 5px;
 }

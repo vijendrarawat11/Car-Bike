@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Tata Nexon iCNG Launch in India - Priced at ₹8.99 Lakh with 24 km/kg Mileage | ";
+    ViewData["Title"] = "Tata Nexon iCNG Launch in India - Priced at ₹8.99 Lakh with 24 km/kg Mileage";
 }
 @section MetaTags{
     <meta name="keywords" content="Tata Nexon iCNG, Tata Motors, CNG vehicles, eco-friendly SUV, 24 km/kg mileage, compact SUV launch, Indian market" />
@@ -33,7 +33,7 @@
             </div>
             <div class="latest-bikes-details-content">
                 @* <p>@Html.Raw(@Model.NewsDetail.Replace("\n", "<br>"))</p> *@
-                
+                <p>@Model.NewsSummary</p>
                 <p>Tata Motors has introduced the Nexon iCNG, an innovative addition to its popular Nexon lineup, designed to meet the increasing demand for environmentally friendly vehicles in India. Priced at ₹8.99 lakh, the Nexon iCNG aims to provide both performance and efficiency, with a claimed mileage of 24 kilometers per kg, appealing to cost-conscious and eco-aware consumers alike.</p>
                 <p>The Nexon iCNG retains the stylish design and robust build that have made the Nexon a favorite among compact SUV buyers. It features a bold front grille, striking LED headlights, and sporty alloy wheels, giving it a modern and aggressive stance on the road. Inside, the Nexon iCNG boasts a well-appointed cabin with premium materials, advanced infotainment options, and a spacious layout, ensuring comfort for both drivers and passengers</p>
                 <div class="row  m-b10">
@@ -54,7 +54,7 @@
             @foreach (var newsdata in ViewBag.AllNews)
             {
                 <div class="latest-bike-card">
-                    <h2>@Truncate(@newsdata.NewsHeading, 36)</h2>
+                    <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
                             <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />

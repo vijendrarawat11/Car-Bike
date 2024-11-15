@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Kia Carnival Launch: Over 1,800 Bookings in First Day | ";
+    ViewData["Title"] = "Kia Carnival Launch: Over 1,800 Bookings in First Day";
 }
 @section MetaTags{
     <meta name="keywords" content="Kia Carnival, Kia Carnival bookings, new Kia model, multi-purpose vehicle, family car, car launch news, vehicle features, Kia news, automotive industry trends" />
@@ -33,6 +33,7 @@
             </div>
             <div class="latest-bikes-details-content">
                 @* <p>@Html.Raw(@Model.NewsDetail.Replace("\n", "<br>"))</p> *@
+                <p>@Model.NewsSummary</p>
                 <p>The <span class="font-weight-700">Kia Carnival</span> has officially hit the market and already made headlines by securing more than <span class="font-weight-700">1,800 bookings</span> on its first day. This impressive number underscores the vehicle’s strong appeal in the increasingly competitive multi-purpose vehicle (MPV) segment, particularly among families and individuals looking for spacious, comfortable, and technologically advanced options.</p>
                 <div class="image-box"><img src="~/images/latestnews/2024/sep/kia carnival launches with 1,800 first-day bookings/2.png" /></div>
                 <p>Kia’s latest model is designed to cater to the diverse needs of modern consumers, offering a blend of style, functionality, and cutting-edge features. The Carnival showcases a bold exterior design, complemented by a well-appointed interior that prioritizes passenger comfort and convenience. The vehicle offers seating for up to eight occupants, with configurable seating arrangements that can easily accommodate both passengers and cargo.</p>
@@ -52,7 +53,7 @@
             @foreach (var newsdata in ViewBag.AllNews)
             {
                 <div class="latest-bike-card">
-                    <h2>@Truncate(@newsdata.NewsHeading, 36)</h2>
+                    <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
                             <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />

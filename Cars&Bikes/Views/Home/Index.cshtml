@@ -28,7 +28,14 @@
     <!-- Favicons Icon -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <!-- Page Title Here -->
-    <title>BikeCarhub - Car Dealer Automotive Responsive HTML5 Template</title>
+    @* <title>bikecarhub - New Bikes & Cars, Scooters, Bike & Car Prices, E-Vehicle</title> *@
+    @{
+        ViewData["Title"] = "New Bikes, Cars & Scooters - Prices, E-Vehicles & More | bikecarhub";
+    }
+    @section MetaTags{
+        <meta name="keywords" content="bike, new bikes, bike comparison, bikes prices, reviews, Images, news, compare bikes, Instant Bike On-Road Price, Upcoming bikes, Latest News, Ask a Question" />
+        <meta name="description" content="Discover your ideal bike or scooter at BikeCarHub. Check on-road prices, colors, reviews, comparisons, latest news, and upcoming bikes & cars in one place." />
+    }
     <!-- Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--[if lt IE 9]>
@@ -52,192 +59,59 @@
             <div class="slides">
                 <!-- Image 1 -->
                 <div class="slide">
-                    <img src="images/main-slider/slide1.png" alt="Slide1">
+                    <img src="~/images/main-slider/Slide_1.png" alt="Slide1">
                 </div>
                 <!-- Image 2 -->
                 <div class="slide">
-                    <img src="images/main-slider/slide2.png" alt="Slide2">
+                    <img src="~/images/main-slider/Slide_2.png" alt="Slide2">
                 </div>
                 <!-- Image 3 -->
-                @* <div class="slide">
-                    <img src="images/main-slider/s.png" alt="Image 3">
-                </div> *@
+                <div class="slide">
+                    <img src="~/images/main-slider/Slide_3.png" alt="Slide3">
+                </div>
                 <div class="tp-bannertimer tp-bottom bg-primary" style="height: 5px; "></div>
-
-            </div>
+        </div>
 
             <!--Search-->
-            <div class="form-slide">
-                @* <div class="search-container">
-                    <div class="search-head"><h2>Search the right vehicle</h2></div>
-                    <div class="search-bottom">
-                    <div class="search-ddn">
-                        <select id="ddlBrand" class="ddnvarient" asp-items="ViewBag.TWLists">
-                            <option value="">Select Brand</option>
-                        </select>
-                    </div>
-                        <div class="search-ddn">
-                        <select id="ddlModel" asp-for="TwoWheelerName" class="ddnvarient">
-                            <option value="">Select Model</option>
-                        </select>
-                    </div>
-                    <button class="contact-form-button" type="button" id="searchButton">SEARCH</button>
+            <div class="search-main-container">
+                <div class="search-container">
+                <div class="search-head"><h2>Search the right vehicle</h2></div>
+                <div class="search-bottom">
+                <div class="search-ddn">
+                <select id="ddlBrand" class="ddnvarient" asp-items="ViewBag.TWLists">
+                <option value="">Select Brand</option>
+                </select>
                 </div>
-                </div> *@
-                <div class="container">
-                    <form class="search-car" action="" method="post">
-                        <div class="form-head">
-                            <h2>Search the right vehicle</h2>
-                        </div>
-                        <!-- TABS -->
-                        <div class="form-find-area">
-                           @*  <ul class="nav theme-tabs justify-content-center">
-                                <li role="presentation" class="active"><a data-toggle="tab" aria-controls="new-car" href="#new-car">CAR</a></li>
-                                <li role="presentation"><a data-toggle="tab" aria-controls="popular" href="#used-car">Bike</a></li>
-                                <li role="presentation" class="active"><a data-toggle="tab" aria-controls="popular" href="#used-car" style="align-content:center; width:100%">Bike</a></li>
-                            </ul> *@
-                            <div class="tab-content">
-                                <!-- NEW CAR -->
-                                @*                                     <div id="new-car" class="tab-pane active clearfix">
-                                <ul class="nav text-center check-nav navbar-nav">
-                                <li>
-                                <input id="radio1" type="radio" name="new_search" checked="checked" value="budget" />
-                                <label for="radio1">BY BUDGET</label>
-                                </li>
-                                <li>
-                                <input id="radio2" type="radio" name="new_search" value="brand" />
-                                <label for="radio2">BY BRAND</label>
-                                </li>
-                                </ul>
-                                <div id="budgetDiv" class="new_form_div">
-                                <div class="input-group">
-                                <select class="form-control">
-                                <option>Select Budget</option>
-                                <option>Below 5 Lakh</option>
-                                <option>5 Lakh - 10 Lakh</option>
-                                <option>10 Lakh - 20 Lakh</option>
-                                <option>20 Lakh - 50 Lakh</option>
-                                <option>50 Lakh - 1 Crore</option>
-                                <option>Above 1 Crore</option>
-                                </select>
-                                </div>
-                                <div class="input-group">
-                                <select class="form-control">
-                                <option>All Vehicle Types</option>
-                                <option>SUV</option>
-                                <option>Sedans</option>
-                                <option>Coupe</option>
-                                <option>Hatchback</option>
-                                <option>MUV</option>
-                                <option>Convertible</option>
-                                <option>Crossover</option>
-                                <option>Quadricycle</option>
-                                </select>
-                                </div>
-                                </div>
-                                <div id="brandDiv" class="new_form_div" style="display: none;">
-                                <div class="input-group">
-                                <select class="form-control" asp-items="ViewBag.FourwheelerName">
-                                <option value="">Select Brand</option>
-                                </select>
-                                </div>
-                                <div class="input-group">
-                                <select class="form-control">
-                                <option>Select Model</option>
-                                <option>Hatchback</option>
-                                <option>Sedans</option>
-                                <option>MUV</option>
-                                </select>
-                                </div>
-                                </div>
-
-                                <div class="input-group">
-                                <button class="site-button button-lg btn-block" type="submit">SEARCH</button>
-                                </div>
-                                <div class="input-group text-center">
-                                <a class="site-button-link" href="new-car-search.html">ADVANCED SEARCH <i class="fa fa-angle-right"></i></a>
-                                </div>
-                                </div>
-                                *@                                    <!-- USED CAR -->
-                                <div id="used-car" class="tab-pane active clearfix">
-                                    @* <ul class="nav text-center check-nav navbar-nav">
-                                    <li>
-                                    <input id="radio3" type="radio" name="used_search" checked="checked" value="used_budget" />
-                                    <label for="radio3">BY BUDGET</label>
-                                    </li>
-                                    <li>
-                                    <input id="radio4" type="radio" name="used_search" checked="checked" value="used_model" />
-                                    <label for="radio4">BY BRAND</label>
-                                    </li>
-                                    </ul> *@
-                                    @* <div id="used_budgetDiv" class="used_form_div">
-                                    <div class="input-group">
-                                    <select class="form-control">
-                                    <option>Select Budget</option>
-                                    <option>Upto 50,000</option>
-                                    <option>50,000 - 75,000</option>
-                                    <option>75,000 - 1 Lakh</option>
-                                    <option>1 Lakh - 2 Lakh</option>
-                                    <option>2 Lakh - 3 Lakh</option>
-                                    <option>Above 3 Lakh</option>
-                                    </select>
-                                    </div>
-                                    <div class="input-group">
-                                    <select class="form-control" asp-items="ViewBag.Mlists">
-                                    <option value="">Select Body Type</option>
-                                    </select>
-                                    </div>
-                                    </div> *@
-                                    @* <div id="used_modelDiv" class="used_form_div" style="display: none;"> *@
-                                    <div class="input-group">
-                                        <select id="ddlBrand" class="ddnvarient" asp-items="ViewBag.TWLists">
-                                            <option value="">Select Brand</option>
-                                        </select>
-                                    </div>
-                                    <div class="input-group">
-                                        <select id="ddlModel" asp-for="TwoWheelerName" class="ddnvarient">
-                                            <option value="">Select Model</option>
-                                        </select>
-                                    </div>
-
-                                    @* </div> *@
-                                    @* <div class="contact-form"> *@
-                                        @* <button class="site-button button-lg btn-block" type="button" id="searchButton">SEARCH</button> *@
-                                        <button class="contact-form-button" type="button" id="searchButton">SEARCH</button>
-                                    @* </div> *@
-                                    @* <div class="input-group">
-                                    <button class="site-button button-lg btn-block" type="submit" id="searchButton" onclick="window.location.href='sed-car-search.html'">SEARCH</button>
-                                    </div> *@
-                                    @* <div class="input-group text-center">
-                                    <a class="site-button-link" href="new-car-search.html">ADVANCED SEARCH <i class="fa fa-angle-right"></i></a>
-                                    </div> *@
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                <div class="search-ddn">
+                <select id="ddlModel" asp-for="TwoWheelerName" class="ddnvarient">
+                <option value="">Select Model</option>
+                </select>
                 </div>
-            </div>
+                <button class="contact-form-button" type="button" id="searchButton">SEARCH</button>
+                </div>
+                </div>
+                </div>
             <!--Search End-->
         </div>
            
             @* </div> *@
         <!-- Upcoming bikes section -->
         <div class="upcoming-bikes-section">
-                <h1 class="for-h1">Upcoming Bikes</h1>
+                <h2 class="for-h1">Upcoming Bikes</h2>
             <button class="scroll-button left" onclick="scrollLeft()">&#9664;</button>
            <div class="upcoming-bikes-container" id="upcomingBikesContainer">
-                @foreach (var bike in ViewBag.Upcomingbike)
+                @foreach (var bike in ViewBag.upcomingbike)
                 {
                     <div class="upcoming-bike-item">
                         <section>
-                            <a href="@Url.Action("TWUpcomingBikeDetails", "UpcomingBike", new { id = bike.UpcomingBikeId })" style="text-decoration:none">
+                            <a href="/@bike.ImageURL" style="text-decoration:none">
                                 <div class="upcoming-bike-img"><img src="@bike.ImageFolderURL" alt="Bike Image" /></div>
                                 <div class="upcoming-bike-name">@Truncate(@bike.UpcomingBikeName, 26)</div>
                         <div class="upcoming-bike-date">
                                     <p><i class="fa fa-calendar"></i>  @bike.ExpectedLaunchDate</p>
                                 </div>
                                 <div class="ow-post-readmore">
-                                    <a href="@Url.Action("TWUpcomingBikeDetails", "UpcomingBike", new { id = bike.UpcomingBikeId })" rel="bookmark"> Read More <i class="fa fa-angle-right"></i></a>
+                                    <a href="/@bike.ImageURL" rel="bookmark"> Read More <i class="fa fa-angle-right"></i></a>
                                 </div>
                         @* <div class="upcoming-bike-details">
                     @bike.UpcomingBikeDetails
@@ -1003,7 +877,7 @@
             <!-- Latest News -->
         <div class="m-b20 m-t20">
             @* <div class="latest-section-head"> *@
-                <h1 class="for-h1">Latest News</h1>
+                <h2 class="for-h1">Latest News</h2>
                 @* <ul class="navlatestnews theme-tabs">
                     <li role="presentation"><a href="#bikeNews" class="active" data-toggle="tab">Bikes</a></li>
                     <li role="presentation"><a href="#carNews" data-toggle="tab">Cars</a></li>
@@ -1227,6 +1101,7 @@
         $('#searchButton').click(function () {
             //debugger;
             var brandId = $('#ddlBrand').val();
+            // var brandName = $('#ddlBrand option:selected').text().replace(/ /g, "-").toLowerCase();
             var modelId = $('#ddlModel').val();
             // if (brandId && modelId) {
             //     window.location.href = '@Url.Action("TwoWheelerDetails")?brandId=' + brandId + '&modelId=' + modelId;
@@ -1236,6 +1111,7 @@
             if (brandId && !modelId) {
                 // If only brand is selected, navigate to the first view
                 window.location.href = '@Url.Action("TWBrandDetails")?brandId=' + brandId;
+                // window.location.href = '/' + brandName;
             } else if (brandId && modelId) {
                 // If both brand and model are selected, navigate to the second view
                 window.location.href = '@Url.Action("TwoWheelerDetails")?brandId=' + brandId + '&modelId=' + modelId;
