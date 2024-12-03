@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Hero Xtreme 160R 4V Price - Mileage, Images, Colours |";
+    ViewData["Title"] = "Hero Xtreme 160R 4V Price - Mileage, Images, Colours";
 }
 @section MetaTags{
     <meta name="keywords" content="Hero Xtreme 160R 4V, Hero Xtreme 160R 4V Bike, Hero Xtreme 160R 4V Price, Xtreme 160R 4V, xtreme 160r 4v bike, xtreme 160r 4v price, xtreme 160r 4v on road price, hero xtreme 160r 4v on road price" />
@@ -26,7 +26,7 @@
                     {
                         <p class="tw-notes">DISCONTINUED<br>@Model.NotesOrComments</p>
                     }
-                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" class="img-fluid" /></center></div>
+                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="@Model.TwoWheelerName" title="@Model.TwoWheelerName" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" class="img-fluid" /></center></div>
                 </div>
             </div>
             <div class="col-md-4 ">

@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Triumph All-New Daytona 660 – Milage, Price, features & Specifications |";
+    ViewData["Title"] = "Triumph All-New Daytona 660 – Milage, Price, features & Specifications";
 }
 @section MetaTags{
     <meta name="keywords" content="Triumph All-New Daytona 660, Daytona motorcycle, sport bike, Triumph performance, agile handling, high-performance motorcycle, modern design, triumph all-new daytona 660, triumph all-new daytona 660 price, triumph all-new daytona 660 price in india, triumph all-new daytona 660 specs, triumph all-new daytona 660 specifications, triumph all-new daytona 660 milage, triumph all-new daytona 660 features" />
@@ -26,7 +26,7 @@
                     {
                         <p class="tw-notes">DISCONTINUED<br>@Model.NotesOrComments</p>
                     }
-                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" class="img-fluid" /></center></div>
+                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="@Model.TwoWheelerName" title="@Model.TwoWheelerName" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" class="img-fluid" /></center></div>
                 </div>
             </div>
             <div class="col-md-4 ">

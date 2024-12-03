@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Triumph Trident 660 – Milage, Varient, Specs, & Price |";
+    ViewData["Title"] = "Triumph Trident 660 – Milage, Varient, Specs, & Price";
 }
 @section MetaTags{
     <meta name="keywords" content="Triumph Trident 660, Trident motorcycle, modern roadster, Triumph performance, agile handling, versatile motorcycle, entry-level bike, triumph trident 660, triumph trident 660 price, triumph trident 660 price in india, triumph trident 660 specs, triumph trident 660 features, triumph trident 660 specifications, triumph trident 660 colours" />
@@ -26,7 +26,7 @@
                     {
                         <p class="tw-notes">DISCONTINUED<br>@Model.NotesOrComments</p>
                     }
-                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" class="img-fluid" /></center></div>
+                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="@Model.TwoWheelerName" title="@Model.TwoWheelerName" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" class="img-fluid" /></center></div>
                 </div>
             </div>
             <div class="col-md-4 ">

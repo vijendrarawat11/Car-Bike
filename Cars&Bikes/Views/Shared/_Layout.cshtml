@@ -31,17 +31,20 @@
                 <div class="logo">
                     @* <img src="~/images/logo new.png" /> *@
                     @* <img src="~/images/logo new name.png" /> *@
-                    <a asp-controller="Home" asp-action="Index"><img src="~/images/logo newname psd 2.png" alt="BCH Logo" /></a>
+                    <a asp-controller="Home" asp-action="Index"><img src="~/images/white logo.png" /> @* <img src="~/images/new logo white bg.png" /> *@@* <img src="~/images/logo newname psd 2.png" alt="BCH Logo" /> *@</a>
                 </div>
                 <div class="search-div"><input type="text" id="searchTwoWheeler" placeholder="Search" class="for-search" /><i class="bi bi-search search-icon"></i></div>
                 <!-- <div class="logo">Logo</div> -->
                 <ul class="nav-links" id="nav-links">
                     <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-controller="Compare" asp-action="TWCompare">Compare</a></li>
+                    <li><a asp-controller="Blogs" asp-action="Index">Blogs</a></li>
                     <li><a asp-controller="AboutUs" asp-action="Index">About Us</a></li>
                     @* <li><a asp-controller="LatestNews" asp-action="Sep22024NewsDetails1">Aug282024NewsDetails1</a></li> *@
                     <li><a id="contact-link">Ask a Question</a></li>
+                    @* <li><a id="loginButton" class="btn btn-primary" onclick="openLoginModal()">Login</a></li> *@
                 </ul>
+
                 <div class="hamburger" id="hamburger">
                     <i class="bi bi-list"></i>
                 </div>
@@ -52,8 +55,10 @@
                     <ul class="overlay-links">
                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                         <li><a asp-controller="Compare" asp-action="TWCompare">Compare</a></li>
+                        <li><a asp-controller="Blogs" asp-action="Index">Blogs</a></li>
                         <li><a asp-controller="AboutUs" asp-action="Index">About Us</a></li>
                         <li><a id="contact-link-overlay">Ask a Question</a></li>
+                        @* <li><a id="loginButton" class="btn btn-primary" onclick="openLoginModal()">Login</a></li> *@
                     </ul>
                 </div>
             </div>
@@ -77,6 +82,29 @@
                 <textarea id="message" name="Message"></textarea>
                 <button type="submit">Submit</button>
             </form>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Login</h2>
+            @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "loginForm" }))
+            {
+                <div>
+                    @Html.Label("Username")
+                    @Html.TextBox("Username", null, new { @class = "form-control", required = "required" })
+                </div>
+                <div>
+                    @Html.Label("Password")
+                    @Html.Password("Password", null, new { @class = "form-control", required = "required" })
+                </div>
+                <div style="margin-top: 10px;">
+                    <button type="submit" class="btn btn-success">Login</button>
+                </div>
+                <div id="errorMessage" style="color:red; margin-top:10px;"></div>
+            }
         </div>
     </div>
     <div class="">
@@ -420,3 +448,22 @@
         });
     });
 </script>
+@* -----------------------------------Login pages---------------------------------- *@
+<script>
+    function openLoginModal() {
+        document.getElementById('loginModal').style.display = 'flex';
+    }
+
+    function closeLoginModal() {
+        document.getElementById('loginModal').style.display = 'none';
+    }
+</script>
+@* @if (Session["Username"] != null)
+{
+    <span>Welcome, @Session["Username"]!</span>
+    <a href="/Account/Logout" class="btn btn-danger">Logout</a>
+}
+else
+{
+    <button id="loginButton" class="btn btn-primary" onclick="openLoginModal()">Login</button>
+} *@

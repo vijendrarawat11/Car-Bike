@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Triumph Street Triple 765 –  Varient, Specs, Milage, & Price |";
+    ViewData["Title"] = "Triumph Street Triple 765 –  Varient, Specs, Milage, & Price";
 }
 @section MetaTags{
     <meta name="keywords" content="Triumph Street Triple 765, Street Triple motorcycle, naked sport bike, Triumph performance, agile handling, high-performance motorcycle, road bike, triumph street triple 765, triumph street triple 765 price, triumph street triple 765 price in india, triumph street triple 765 milage, triumph street triple 765 specs, triumph street triple 765 specifications, triumph street triple 765 colours" />
@@ -26,7 +26,7 @@
                     {
                         <p class="tw-notes">DISCONTINUED<br>@Model.NotesOrComments</p>
                     }
-                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" class="img-fluid" /></center></div>
+                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="@Model.TwoWheelerName" title="@Model.TwoWheelerName" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" class="img-fluid" /></center></div>
                 </div>
             </div>
             <div class="col-md-4 ">

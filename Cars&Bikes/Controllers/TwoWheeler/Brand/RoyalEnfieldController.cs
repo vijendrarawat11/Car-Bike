@@ -16,64 +16,64 @@ namespace Cars_Bikes.Controllers.TwoWheeler.Brand
         {
             return View();
         }
-        [Route("royal-enfield/re-shotgun-650")]
+        [Route("royal-enfield/royal-enfield-shotgun-650")]
         public IActionResult REShotgun650()
         {
-            var bikeDetails = GetBikeDetails("RE Shotgun 650");
+            var bikeDetails = GetBikeDetails("Royal Enfield Shotgun 650");
             return View("~/Views/TwoWheeler/Brand/RoyalEnfield/REShotgun650.cshtml", bikeDetails);
         }
-        [Route("royal-enfield/re-himalyan")]
+        [Route("royal-enfield/royal-enfield-himalyan")]
         public IActionResult REHimalyan()
         {
-            var bikeDetails = GetBikeDetails("RE Himalyan");
+            var bikeDetails = GetBikeDetails("Royal Enfield Himalyan");
             return View("~/Views/TwoWheeler/Brand/RoyalEnfield/REHimalyan.cshtml", bikeDetails);
         }
-        [Route("royal-enfield/re-bullet-350")]
+        [Route("royal-enfield/royal-enfield-bullet-350")]
         public IActionResult REBullet350()
         {
-            var bikeDetails = GetBikeDetails("RE Bullet 350");
+            var bikeDetails = GetBikeDetails("Royal Enfield Bullet 350");
             return View("~/Views/TwoWheeler/Brand/RoyalEnfield/REBullet350.cshtml", bikeDetails);
         }
-        [Route("royal-enfield/re-super-meteor-650")]
+        [Route("royal-enfield/royal-enfield-super-meteor-650")]
         public IActionResult RESuperMeteor650()
         {
-            var bikeDetails = GetBikeDetails("RE Super Meteor 650");
+            var bikeDetails = GetBikeDetails("Royal Enfield Super Meteor 650");
             return View("~/Views/TwoWheeler/Brand/RoyalEnfield/RESuperMeteor650.cshtml", bikeDetails);
         }
-        [Route("royal-enfield/re-hunter-350")]
+        [Route("royal-enfield/royal-enfield-hunter-350")]
         public IActionResult REHunter350()
         {
-            var bikeDetails = GetBikeDetails("RE Hunter 350");
+            var bikeDetails = GetBikeDetails("Royal Enfield Hunter 350");
             return View("~/Views/TwoWheeler/Brand/RoyalEnfield/REHunter350.cshtml", bikeDetails);
         }
-        [Route("royal-enfield/re-scram-411")]
+        [Route("royal-enfield/royal-enfield-scram-411")]
         public IActionResult REScram411()
         {
-            var bikeDetails = GetBikeDetails("RE Scram 411");
+            var bikeDetails = GetBikeDetails("Royal Enfield Scram 411");
             return View("~/Views/TwoWheeler/Brand/RoyalEnfield/REScram411.cshtml", bikeDetails);
         }
-        [Route("royal-enfield/re-classic-350")]
+        [Route("royal-enfield/royal-enfield-classic-350")]
         public IActionResult REClassic350()
         {
-            var bikeDetails = GetBikeDetails("RE Classic 350");
+            var bikeDetails = GetBikeDetails("Royal Enfield Classic 350");
             return View("~/Views/TwoWheeler/Brand/RoyalEnfield/REClassic350.cshtml", bikeDetails);
         }
-        [Route("royal-enfield/re-meteor-350")]
+        [Route("royal-enfield/royal-enfield-meteor-350")]
         public IActionResult REMeteor350()
         {
-            var bikeDetails = GetBikeDetails("RE Meteor 350");
+            var bikeDetails = GetBikeDetails("Royal Enfield Meteor 350");
             return View("~/Views/TwoWheeler/Brand/RoyalEnfield/REMeteor350.cshtml", bikeDetails);
         }
-        [Route("royal-enfield/re-interceptor-650")]
+        [Route("royal-enfield/royal-enfield-interceptor-650")]
         public IActionResult REInterceptor650()
         {
-            var bikeDetails = GetBikeDetails("RE Interceptor 650");
+            var bikeDetails = GetBikeDetails("Royal Enfield Interceptor 650");
             return View("~/Views/TwoWheeler/Brand/RoyalEnfield/REInterceptor650.cshtml", bikeDetails);
         }
-        [Route("royal-enfield/re-continental-gt-650")]
+        [Route("royal-enfield/royal-enfield-continental-gt-650")]
         public IActionResult REContinentalGT650()
         {
-            var bikeDetails = GetBikeDetails("RE Continental GT 650");
+            var bikeDetails = GetBikeDetails("Royal Enfield Continental GT 650");
             return View("~/Views/TwoWheeler/Brand/RoyalEnfield/REContinentalGT650.cshtml", bikeDetails);
         }
         private Cars_Bikes.Models.TwoWheeler GetBikeDetails(string bikeName)

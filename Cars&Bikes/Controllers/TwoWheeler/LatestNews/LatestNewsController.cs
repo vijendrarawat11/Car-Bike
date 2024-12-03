@@ -98,16 +98,16 @@ namespace Cars_Bikes.Controllers.TwoWheeler.LatestNews
             }
             return View("~/Views/TwoWheeler/LatestNews/2024/Aug/Aug262024NewsDetails2.cshtml", newsDetails);
         }
-        [Route("latestnews/mg-car-discounts")]
-        public IActionResult Aug272024NewsDetails1()
-        {
-            var newsDetails = GetNewsDetails("MG Car Discounts");
-            //if (newsDetails == null)
-            //{
-            //    return NotFound(); // Return 404 if news item is not found
-            //}
-            return View("~/Views/TwoWheeler/LatestNews/2024/Aug/Aug272024NewsDetails1.cshtml", newsDetails);
-        }
+        //[Route("latestnews/mg-car-discounts")]
+        //public IActionResult Aug272024NewsDetails1()
+        //{
+        //    var newsDetails = GetNewsDetails("MG Car Discounts");
+        //    //if (newsDetails == null)
+        //    //{
+        //    //    return NotFound(); // Return 404 if news item is not found
+        //    //}
+        //    return View("~/Views/TwoWheeler/LatestNews/2024/Aug/Aug272024NewsDetails1.cshtml", newsDetails);
+        //}
         [Route("latestnews/honda-unveils-affordable-shine:125-a-budget-friendly-commuter-under-₹1-lakh")]
         public IActionResult Aug282024NewsDetails1()
         {
@@ -282,26 +282,26 @@ namespace Cars_Bikes.Controllers.TwoWheeler.LatestNews
             }
             return View("~/Views/TwoWheeler/LatestNews/2024/Sep/Sep232024NewsDetails1.cshtml", newsDetails);
         }
-        [Route("latestnews/best-indian-cars-under-₹8-lakh-on-road-price-(2024)")]
-        public IActionResult Sep232024NewsDetails2()
-        {
-            var newsDetails = GetNewsDetails("Best Indian Cars Under ₹8 Lakh On-Road Price (2024)");
-            if (newsDetails == null)
-            {
-                return NotFound(); // Return 404 if news item is not found
-            }
-            return View("~/Views/TwoWheeler/LatestNews/2024/Sep/Sep232024NewsDetails2.cshtml", newsDetails);
-        }
-        [Route("latestnews/best-indian-cars-to-buy-under-₹8-lakh-on-road-price-(2024)")]
-        public IActionResult Sep242024NewsDetails1()
-        {
-            var newsDetails = GetNewsDetails("Best Indian Cars to Buy Under ₹10 Lakh On-Road Price (2024)");
-            if (newsDetails == null)
-            {
-                return NotFound(); // Return 404 if news item is not found
-            }
-            return View("~/Views/TwoWheeler/LatestNews/2024/Sep/Sep242024NewsDetails1.cshtml", newsDetails);
-        }
+        //[Route("latestnews/best-indian-cars-under-₹8-lakh-on-road-price-(2024)")]
+        //public IActionResult Sep232024NewsDetails2()
+        //{
+        //    var newsDetails = GetNewsDetails("Best Indian Cars Under ₹8 Lakh On-Road Price (2024)");
+        //    if (newsDetails == null)
+        //    {
+        //        return NotFound(); // Return 404 if news item is not found
+        //    }
+        //    return View("~/Views/TwoWheeler/LatestNews/2024/Sep/Sep232024NewsDetails2.cshtml", newsDetails);
+        //}
+        //[Route("latestnews/best-indian-cars-to-buy-under-₹10-lakh-on-road-price-(2024)")]
+        //public IActionResult Sep242024NewsDetails1()
+        //{
+        //    var newsDetails = GetNewsDetails("Best Indian Cars to Buy Under ₹10 Lakh On-Road Price (2024)");
+        //    if (newsDetails == null)
+        //    {
+        //        return NotFound(); // Return 404 if news item is not found
+        //    }
+        //    return View("~/Views/TwoWheeler/LatestNews/2024/Sep/Sep242024NewsDetails1.cshtml", newsDetails);
+        //}
         [Route("latestnews/tata-nexon-icng-debuts-in-india-at-₹8.99-lakh-promising-24-km/kg-mileage")]
         public IActionResult Sep252024NewsDetails1()
         {
@@ -462,36 +462,36 @@ namespace Cars_Bikes.Controllers.TwoWheeler.LatestNews
             }
             return View("~/Views/TwoWheeler/LatestNews/2024/Oct/Oct182024NewsDetails1.cshtml", newsDetails);
         }
-        [Route("latestnews/here-are-the-best-indian-bikes-under-150cc-segments")]
-        public IActionResult Oct222024NewsDetails1()
-        {
-            var newsDetails = GetNewsDetails("Here are the best Indian Bikes under 150cc segments.");
-            if (newsDetails == null)
-            {
-                return NotFound(); // Return 404 if news item is not found
-            }
-            return View("~/Views/TwoWheeler/LatestNews/2024/Oct/Oct222024NewsDetails1.cshtml", newsDetails);
-        }
-        [Route("latestnews/top-5-longest-range-electric-scooters-in-india-for-2024")]
-        public IActionResult Oct232024NewsDetails1()
-        {
-            var newsDetails = GetNewsDetails("Top 5 Longest Range Electric Scooters in India for 2024");
-            if (newsDetails == null)
-            {
-                return NotFound(); // Return 404 if news item is not found
-            }
-            return View("~/Views/TwoWheeler/LatestNews/2024/Oct/Oct232024NewsDetails1.cshtml", newsDetails);
-        }
-        [Route("latestnews/news-best-cars-under-₹11-lakh-in-india-specific-variants-Offering-great-value-in-2024")]
-        public IActionResult Oct242024NewsDetails1()
-        {
-            var newsDetails = GetNewsDetails("News: Best Cars Under ₹11 Lakh in India – Specific Variants Offering Great Value in 2024");
-            if (newsDetails == null)
-            {
-                return NotFound(); // Return 404 if news item is not found
-            }
-            return View("~/Views/TwoWheeler/LatestNews/2024/Oct/Oct242024NewsDetails1.cshtml", newsDetails);
-        }
+        //[Route("latestnews/here-are-the-best-indian-bikes-under-150cc-segments")]
+        //public IActionResult Oct222024NewsDetails1()
+        //{
+        //    var newsDetails = GetNewsDetails("Here are the best Indian Bikes under 150cc segments.");
+        //    if (newsDetails == null)
+        //    {
+        //        return NotFound(); // Return 404 if news item is not found
+        //    }
+        //    return View("~/Views/TwoWheeler/LatestNews/2024/Oct/Oct222024NewsDetails1.cshtml", newsDetails);
+        //}
+        //[Route("latestnews/top-5-longest-range-electric-scooters-in-india-for-2024")]
+        //public IActionResult Oct232024NewsDetails1()
+        //{
+        //    var newsDetails = GetNewsDetails("Top 5 Longest Range Electric Scooters in India for 2024");
+        //    if (newsDetails == null)
+        //    {
+        //        return NotFound(); // Return 404 if news item is not found
+        //    }
+        //    return View("~/Views/TwoWheeler/LatestNews/2024/Oct/Oct232024NewsDetails1.cshtml", newsDetails);
+        //}
+        //[Route("latestnews/news-best-cars-under-₹11-lakh-in-india-specific-variants-Offering-great-value-in-2024")]
+        //public IActionResult Oct242024NewsDetails1()
+        //{
+        //    var newsDetails = GetNewsDetails("News: Best Cars Under ₹11 Lakh in India – Specific Variants Offering Great Value in 2024");
+        //    if (newsDetails == null)
+        //    {
+        //        return NotFound(); // Return 404 if news item is not found
+        //    }
+        //    return View("~/Views/TwoWheeler/LatestNews/2024/Oct/Oct242024NewsDetails1.cshtml", newsDetails);
+        //}
         [Route("latestnews/kawasaki-klx-230-vs-hero-xpulse-200-4v—a-complete-specifications-features-and-cost-comparison-in-india")]
         public IActionResult Oct242024NewsDetails2()
         {
@@ -512,16 +512,16 @@ namespace Cars_Bikes.Controllers.TwoWheeler.LatestNews
             }
             return View("~/Views/TwoWheeler/LatestNews/2024/Oct/Oct252024NewsDetails1.cshtml", newsDetails);
         }
-        [Route("latestnews/top-5-best-selling-royal-enfield-bikes-in-india-(2024)")]
-        public IActionResult Oct282024NewsDetails1()
-        {
-            var newsDetails = GetNewsDetails("Top 5 Best-Selling Royal Enfield Bikes in India (2024)");
-            if (newsDetails == null)
-            {
-                return NotFound(); // Return 404 if news item is not found
-            }
-            return View("~/Views/TwoWheeler/LatestNews/2024/Oct/Oct282024NewsDetails1.cshtml", newsDetails);
-        }
+        //[Route("latestnews/top-5-best-selling-royal-enfield-bikes-in-india-(2024)")]
+        //public IActionResult Oct282024NewsDetails1()
+        //{
+        //    var newsDetails = GetNewsDetails("Top 5 Best-Selling Royal Enfield Bikes in India (2024)");
+        //    if (newsDetails == null)
+        //    {
+        //        return NotFound(); // Return 404 if news item is not found
+        //    }
+        //    return View("~/Views/TwoWheeler/LatestNews/2024/Oct/Oct282024NewsDetails1.cshtml", newsDetails);
+        //}
         [Route("latestnews/indian-government-mandates-isi-certified-helmets-and-promotes-biker-safety-gear-through-subsidies")]
         public IActionResult Oct292024NewsDetails1()
         {
@@ -532,16 +532,16 @@ namespace Cars_Bikes.Controllers.TwoWheeler.LatestNews
             }
             return View("~/Views/TwoWheeler/LatestNews/2024/Oct/Oct292024NewsDetails1.cshtml", newsDetails);
         }
-        [Route("latestnews/top-5-adventure-bikes-for-indian-terrain:specifications-features-and-costs-in-india")]
-        public IActionResult Nov12024NewsDetails1()
-        {
-            var newsDetails = GetNewsDetails("Top 5 Adventure Bikes for Indian Terrain: Specifications, Features, and Costs in India");
-            if (newsDetails == null)
-            {
-                return NotFound(); // Return 404 if news item is not found
-            }
-            return View("~/Views/TwoWheeler/LatestNews/2024/Nov/Nov12024NewsDetails1.cshtml", newsDetails);
-        }
+        //[Route("latestnews/top-5-adventure-bikes-for-indian-terrain:specifications-features-and-costs-in-india")]
+        //public IActionResult Nov12024NewsDetails1()
+        //{
+        //    var newsDetails = GetNewsDetails("Top 5 Adventure Bikes for Indian Terrain: Specifications, Features, and Costs in India");
+        //    if (newsDetails == null)
+        //    {
+        //        return NotFound(); // Return 404 if news item is not found
+        //    }
+        //    return View("~/Views/TwoWheeler/LatestNews/2024/Nov/Nov12024NewsDetails1.cshtml", newsDetails);
+        //}
         [Route("latestnews/royal-enfield-bear-650-to-launch-tomorrow:price-specs-revealed")]
         public IActionResult Nov42024NewsDetails1()
         {
@@ -602,26 +602,26 @@ namespace Cars_Bikes.Controllers.TwoWheeler.LatestNews
             }
             return View("~/Views/TwoWheeler/LatestNews/2024/Nov/Nov72024NewsDetails2.cshtml", newsDetails);
         }
-        [Route("latestnews/top-5-bikes-under-2-lakh-in-india-for-performance-style-and-value")]
-        public IActionResult Nov82024NewsDetails1()
-        {
-            var newsDetails = GetNewsDetails("Top 5 Bikes Under 2 Lakh in India for Performance, Style, and Value");
-            if (newsDetails == null)
-            {
-                return NotFound(); // Return 404 if news item is not found
-            }
-            return View("~/Views/TwoWheeler/LatestNews/2024/Nov/Nov82024NewsDetails1.cshtml", newsDetails);
-        }
-        [Route("latestnews/top-five-selling-bikes-in-india-november-2024-overview")]
-        public IActionResult Nov112024NewsDetails1()
-        {
-            var newsDetails = GetNewsDetails("Top Five Selling Bikes in India: November 2024 Overview");
-            if (newsDetails == null)
-            {
-                return NotFound(); // Return 404 if news item is not found
-            }
-            return View("~/Views/TwoWheeler/LatestNews/2024/Nov/Nov112024NewsDetails1.cshtml", newsDetails);
-        }
+        //[Route("latestnews/top-5-bikes-under-2-lakh-in-india-for-performance-style-and-value")]
+        //public IActionResult Nov82024NewsDetails1()
+        //{
+        //    var newsDetails = GetNewsDetails("Top 5 Bikes Under 2 Lakh in India for Performance, Style, and Value");
+        //    if (newsDetails == null)
+        //    {
+        //        return NotFound(); // Return 404 if news item is not found
+        //    }
+        //    return View("~/Views/TwoWheeler/LatestNews/2024/Nov/Nov82024NewsDetails1.cshtml", newsDetails);
+        //}
+        //[Route("latestnews/top-five-selling-bikes-in-india-november-2024-overview")]
+        //public IActionResult Nov112024NewsDetails1()
+        //{
+        //    var newsDetails = GetNewsDetails("Top Five Selling Bikes in India: November 2024 Overview");
+        //    if (newsDetails == null)
+        //    {
+        //        return NotFound(); // Return 404 if news item is not found
+        //    }
+        //    return View("~/Views/TwoWheeler/LatestNews/2024/Nov/Nov112024NewsDetails1.cshtml", newsDetails);
+        //}
         [Route("latestnews/hero-karizma-xmr-210-unveiled-at-eicma-2024-with-enhanced-specs-and-features")]
         public IActionResult Nov112024NewsDetails2()
         {
@@ -652,6 +652,66 @@ namespace Cars_Bikes.Controllers.TwoWheeler.LatestNews
             }
             return View("~/Views/TwoWheeler/LatestNews/2024/Nov/Nov142024NewsDetails1.cshtml", newsDetails);
         }
+        [Route("latestnews/tvs-apache-rtr-160-4v-updated-with-usd-forks-and-new-features")]
+        public IActionResult Nov192024NewsDetails1()
+        {
+            var newsDetails = GetNewsDetails("TVS Apache RTR 160 4V Updated with USD Forks and New Features");
+            if (newsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/LatestNews/2024/Nov/Nov192024NewsDetails1.cshtml", newsDetails);
+        }
+        [Route("latestnews/royal-enfield-reveals-the-all-new-goan-classic-350-bobber")]
+        public IActionResult Nov212024NewsDetails1()
+        {
+            var newsDetails = GetNewsDetails("Royal Enfield Reveals the All-New Goan Classic 350 Bobber");
+            if (newsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/LatestNews/2024/Nov/Nov212024NewsDetails1.cshtml", newsDetails);
+        }
+        [Route("latestnews/kawasaki-launches-2025-ninja-zx-4r-in-india-at-₹8.79-lakh")]
+        public IActionResult Nov222024NewsDetails1()
+        {
+            var newsDetails = GetNewsDetails("Kawasaki Launches 2025 Ninja ZX-4R in India at ₹8.79 Lakh");
+            if (newsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/LatestNews/2024/Nov/Nov222024NewsDetails1.cshtml", newsDetails);
+        }
+        [Route("latestnews/suzuki-unveils-the-all-new-v-strom-800de-adventure-motorcycle")]
+        public IActionResult Nov282024NewsDetails1()
+        {
+            var newsDetails = GetNewsDetails("Suzuki Unveils the All-New V-Strom 800DE Adventure Motorcycle");
+            if (newsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/LatestNews/2024/Nov/Nov282024NewsDetails1.cshtml", newsDetails);
+        }
+        [Route("latestnews/honda-unveils-activa-e-and-qc1-electric-scooters-in-india-details-on-range-features-and-pricing")]
+        public IActionResult Nov292024NewsDetails1()
+        {
+            var newsDetails = GetNewsDetails("Honda Unveils Activa E and QC1 Electric Scooters in India: Details on Range, Features, and Pricing");
+            if (newsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/LatestNews/2024/Nov/Nov292024NewsDetails1.cshtml", newsDetails);
+        }
+        [Route("latestnews/ktm-250-duke-price-slashed-by-₹20,000-now-₹2.25-lakh")]
+        public IActionResult Dec22024NewsDetails1()
+        {
+            var newsDetails = GetNewsDetails("KTM 250 Duke Price Slashed by ₹20,000: Now ₹2.25 Lakh");
+            if (newsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/LatestNews/2024/Dec/Dec22024NewsDetails1.cshtml", newsDetails);
+        }
         private Cars_Bikes.Models.TWLatestNews GetNewsDetails(string newsHeading)
         {
             var newsItem = _context.TWLatestNews
@@ -662,7 +722,7 @@ namespace Cars_Bikes.Controllers.TwoWheeler.LatestNews
                 return null;
             }
             //var newsItem = _context.TWLatestNews.Where(n => n.NewsHeading == newsHeading).ToList();
-            var allNews = _context.TWLatestNews.OrderByDescending(m => m.Date).Take(15).ToList();
+            var allNews = _context.TWLatestNews.OrderByDescending(m => m.Date).Take(20).ToList();
             ViewBag.AllNews = allNews;
             var brand = _context.TwowheelerBrands.ToList();
             ViewBag.Brand = brand;

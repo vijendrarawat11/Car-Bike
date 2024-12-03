@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Honda Dio 125 Price-Mileage, Images, Colours, Explore Its Features and Performance |";
+    ViewData["Title"] = "Honda Dio 125 Price - Mileage, Images, Colours";
 }
 @section MetaTags{
     <meta name="keywords" content="Honda Dio 125, Honda Dio 125 Bike, Honda Dio 125 Price, Dio 125, dio 125 bike, dio 125 price, dio 125 on road price, honda dio 125 on road price" />
@@ -26,7 +26,7 @@
                     {
                         <p class="tw-notes">DISCONTINUED<br>@Model.NotesOrComments</p>
                     }
-                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" class="img-fluid" /></center></div>
+                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="@Model.TwoWheelerName" title="@Model.TwoWheelerName" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" class="img-fluid" /></center></div>
                 </div>
             </div>
             <div class="col-md-4 ">

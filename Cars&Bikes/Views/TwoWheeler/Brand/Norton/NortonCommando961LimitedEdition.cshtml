@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Norton Commando 961 Limited Edition – Specification, Details, colour, & Price |";
+    ViewData["Title"] = "Norton Commando 961 Limited Edition – Specification, Details, colour, & Price";
 }
 @section MetaTags{
     <meta name="keywords" content="Norton Commando 961 Limited Edition, limited edition motorcycle, Norton performance, classic bike, British motorcycle, exclusive ride, V-twin engine, norton bikes, Norton Commando 961 Limited Edition Specifications, Norton Commando 961 Limited Edition Features, colur & Prices" />
@@ -26,7 +26,7 @@
                     {
                         <p class="tw-notes">DISCONTINUED<br>@Model.NotesOrComments</p>
                     }
-                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" class="img-fluid" /></center></div>
+                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="@Model.TwoWheelerName" title="@Model.TwoWheelerName" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" class="img-fluid" /></center></div>
                 </div>
             </div>
             <div class="col-md-4 ">

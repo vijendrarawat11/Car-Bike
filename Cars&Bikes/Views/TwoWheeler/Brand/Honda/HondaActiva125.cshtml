@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Honda Activa 125 Price-Mileage, Images, Colours, Discover Bike Details & Specs |";
+    ViewData["Title"] = "Honda Activa 125 Price - Mileage, Images, Colours";
 }
 @section MetaTags{
     <meta name="keywords" content="Honda Activa 125, Honda Activa 125 Bike, Honda Activa 125 Price, Activa 125, activa 125 bike, activa 125 price, activa 125 on road price, honda activa 125 on road price" />
@@ -26,7 +26,7 @@
                     {
                         <p class="tw-notes">DISCONTINUED<br>@Model.NotesOrComments</p>
                     }
-                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" class="img-fluid" /></center></div>
+                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="@Model.TwoWheelerName" title="@Model.TwoWheelerName" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" class="img-fluid" /></center></div>
                 </div>
             </div>
             <div class="col-md-4 ">

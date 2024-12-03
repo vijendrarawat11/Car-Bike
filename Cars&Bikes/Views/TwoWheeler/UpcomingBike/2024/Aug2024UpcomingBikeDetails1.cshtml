@@ -45,7 +45,7 @@
     <h1 class="latest-bike-head">Upcoming Bikes</h1>
         <div class="TWupcoming-container">
             <div class="upcoming-bikes-details-image">
-            <img src="@Model.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" />
+            <img src="@Model.ImageFolderURL" alt="@Model.UpcomingBikeName" title="@Model.UpcomingBikeName" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" />
                 <div class="upcoming-bikes-details-text">
                 <h2>@Model.UpcomingBikeName</h2>
                 <p><i class="fa fa-calendar"></i>  @Model.ExpectedLaunchDate</p>
@@ -71,7 +71,7 @@
             <a href="/@allUpbike.ImageURL" style="text-decoration:none;">
                 <div class="upcoming-bikes-details-card">
                     <div class="upcoming-bikes-all-image">
-                        <img src="@allUpbike.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" />
+                        <img src="@allUpbike.ImageFolderURL" alt="@allUpbike.UpcomingBikeName" title="@allUpbike.UpcomingBikeName" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" />
                     </div>
 
                     <div class="upcoming-allbikes-details-content">

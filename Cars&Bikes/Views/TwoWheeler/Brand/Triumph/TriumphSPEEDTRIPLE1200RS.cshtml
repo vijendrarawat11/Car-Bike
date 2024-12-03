@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Triumph Speed Triple 1200 RS – Milage, Price & Specifications |";
+    ViewData["Title"] = "Triumph Speed Triple 1200 RS – Milage, Price & Specifications";
 }
 @section MetaTags{
     <meta name="keywords" content="Triumph Speed Triple 1200 RS, Speed Triple motorcycle, naked sport bike, Triumph performance, high-performance motorcycle, agile handling, advanced technology, triumph speed triple 1200 rs, triumph speed triple 1200 rs price, triumph speed triple 1200 rs price in india, triumph speed triple 1200 rs milage, triumph speed triple 1200 rs colour, triumph speed triple 1200 rs specs, triumph speed triple 1200 rs specification" />
@@ -26,7 +26,7 @@
                     {
                         <p class="tw-notes">DISCONTINUED<br>@Model.NotesOrComments</p>
                     }
-                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" class="img-fluid" /></center></div>
+                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="@Model.TwoWheelerName" title="@Model.TwoWheelerName" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" class="img-fluid" /></center></div>
                 </div>
             </div>
             <div class="col-md-4 ">

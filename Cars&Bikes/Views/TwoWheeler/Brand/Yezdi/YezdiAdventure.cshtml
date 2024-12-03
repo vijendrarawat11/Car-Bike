@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Yezdi Adventure – Milage, Price, features & Specifications |";
+    ViewData["Title"] = "Yezdi Adventure – Milage, Price, features & Specifications";
 }
 @section MetaTags{
     <meta name="keywords" content="Yezdi Adventure, Yezdi motorcycle, adventure bike, off-road capabilities, rugged design, high-performance motorcycle, touring bike, yezdi adventure, yezdi adventure price, yezdi adventure price in india, yezdi adventure specs, yezdi adventure specifications, yezdi adventure colours, yezdi adventure milage" />
@@ -26,7 +26,7 @@
                     {
                         <p class="tw-notes">DISCONTINUED<br>@Model.NotesOrComments</p>
                     }
-                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" class="img-fluid" /></center></div>
+                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="@Model.TwoWheelerName" title="@Model.TwoWheelerName" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" class="img-fluid" /></center></div>
                 </div>
             </div>
             <div class="col-md-4 ">

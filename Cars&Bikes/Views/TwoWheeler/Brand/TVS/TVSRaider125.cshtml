@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "TVS Raider 125 BS6: Price, Features & Images |";
+    ViewData["Title"] = "TVS Raider 125 BS6: Price, Features & Images";
 }
 @section MetaTags{
     <meta name="keywords" content="TVS Raider 125, TVS Raider 125 Bike, TVS Raider 125 Price, Raider 125, raider 125 bike, raider 125 price, raider 125 on road price, tvs raider 125 on road price, TVS Raider, TVS Raider Bike, TVS Raider Price, Raider" />
@@ -26,7 +26,7 @@
                     {
                         <p class="tw-notes">DISCONTINUED<br>@Model.NotesOrComments</p>
                     }
-                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" class="img-fluid" /></center></div>
+                    <div class="tw-img m-t20"><center><img src="@Model.TWImage" alt="@Model.TwoWheelerName" title="@Model.TwoWheelerName" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" class="img-fluid" /></center></div>
                 </div>
             </div>
             <div class="col-md-4 ">

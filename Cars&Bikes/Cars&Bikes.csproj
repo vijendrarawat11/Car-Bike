@@ -8,11 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\LatestNews\Nov292024NewsDetails1.cshtml" />
     <Content Remove="Views\LatestNews\Nov52024NewsDetails1.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Google.Apis.Drive.v3" Version="1.68.0.3428" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.19" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.19">
       <PrivateAssets>all</PrivateAssets>
@@ -31,11 +34,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\LatestNews\Nov292024NewsDetails1.cshtml" />
     <_ContentIncludedByDefault Remove="Views\LatestNews\Nov52024NewsDetails1.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\TwoWheeler\LatestNews\2024\Nov\Nov292024NewsDetails1.cshtml" />
     <None Include="Views\TwoWheeler\LatestNews\2024\Nov\Nov52024NewsDetails1.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\LatestNews\Nov292024NewsDetails1.cshtml" />
   </ItemGroup>
 
 </Project>
