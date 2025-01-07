@@ -1010,6 +1010,35 @@ namespace Cars_Bikes.Migrations
                     b.ToTable("TWUpcomingBikes");
                 });
 
+            modelBuilder.Entity("Cars_Bikes.Models.ValueForMoney", b =>
+                {
+                    b.Property<int>("VFMId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VFMId"));
+
+                    b.Property<DateTime?>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ImageURL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("IsTwoWheeler")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("URL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VFMHeading")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.HasKey("VFMId");
+
+                    b.ToTable("ValueForMoney");
+                });
+
             modelBuilder.Entity("Cars_Bikes.Models.TWCharging", b =>
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")

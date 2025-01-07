@@ -98,6 +98,16 @@ namespace Cars_Bikes.Controllers.TwoWheeler.LatestNews
             }
             return View("~/Views/TwoWheeler/LatestNews/2024/Aug/Aug262024NewsDetails2.cshtml", newsDetails);
         }
+        [Route("latestnews/upcoming-mg-cyberster-the-electric-convertible-revolution")]
+        public IActionResult Jan62025NewsDetails1()
+        {
+            var newsDetails = GetNewsDetails("Upcoming MG Cyberster: The Electric Convertible Revolution");
+            if (newsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/LatestNews/2025/Jan/Jan62025NewsDetails1.cshtml", newsDetails);
+        }
         //[Route("latestnews/mg-car-discounts")]
         //public IActionResult Aug272024NewsDetails1()
         //{
@@ -711,6 +721,36 @@ namespace Cars_Bikes.Controllers.TwoWheeler.LatestNews
                 return NotFound(); // Return 404 if news item is not found
             }
             return View("~/Views/TwoWheeler/LatestNews/2024/Dec/Dec22024NewsDetails1.cshtml", newsDetails);
+        }
+        [Route("latestnews/bajaj-freedom-125-cng-sees-price-drop-new-affordable-pricing-announced")]
+        public IActionResult Dec52024NewsDetails1()
+        {
+            var newsDetails = GetNewsDetails("Bajaj Freedom 125 CNG Sees Price Drop: New Affordable Pricing Announced");
+            if (newsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/LatestNews/2024/Dec/Dec52024NewsDetails1.cshtml", newsDetails);
+        }
+        [Route("latestnews/triumph-speed-t4-receives-₹18,000-discount-for-limited-time")]
+        public IActionResult Dec162024NewsDetails1()
+        {
+            var newsDetails = GetNewsDetails("Triumph Speed T4 Receives ₹18,000 Discount for Limited Time");
+            if (newsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/LatestNews/2024/Dec/Dec162024NewsDetails1.cshtml", newsDetails);
+        }
+        [Route("latestnews/latest-updates-in-the-automotive-industry")]
+        public IActionResult Dec192024NewsDetails1()
+        {
+            var newsDetails = GetNewsDetails("Latest Updates in the Automotive Industry");
+            if (newsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/LatestNews/2024/Dec/Dec192024NewsDetails1.cshtml", newsDetails);
         }
         private Cars_Bikes.Models.TWLatestNews GetNewsDetails(string newsHeading)
         {

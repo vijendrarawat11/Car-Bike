@@ -820,8 +820,9 @@
                 <h2>Other Brands</h2>
                 @foreach (var brand in ViewBag.Brand)
                 {
-                    <a href="@Url.Action("TWBrandDetails", "Home", new { brandId = brand.TWBrandId })" style="text-decoration:none;">
-                        <div class="side-brand">
+                    @* <a href="@Url.Action("TWBrandDetails", "Home", new { brandId = brand.TWBrandId })" style="text-decoration:none;"> *@
+                <a href="/@brand.BrandName.Replace(" ", "-").ToLower()" style="text-decoration:none;">
+                    <div class="side-brand">
                             <div class="side-brand-img">
                             <img src="@brand.BrandLogoURL" alt="@brand.BrandName" title="@brand.BrandName" onerror="showFallbackIcon(this);" />
                             <i class="bi bi-award fallback-icon"></i>

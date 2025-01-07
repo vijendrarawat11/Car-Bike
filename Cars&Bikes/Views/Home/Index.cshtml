@@ -90,11 +90,56 @@
                 <button class="contact-form-button" type="button" id="searchButton">SEARCH</button>
                 </div>
                 </div>
-                </div>
+            </div>
             <!--Search End-->
         </div>
            
             @* </div> *@
+            <div class="blogs-section">
+                <div class="row">
+                <div class="col-lg-2 col-md-2 blog-head-box">
+                    <div class=" blog-head ">
+                    <h1 class="">Blogs</h1>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-10 blogs-section">
+                    <button class="scroll-button left" onclick="scrollLeft()">&#9664;</button>
+                    <div class=" blogs-container" id="blogsContainer">
+                        @foreach (var blogs in ViewBag.Blogs)
+                {
+                            <div class="blogs-item">
+                                <section>
+                                    <a href="/@blogs.URL" style="text-decoration:none">
+                            <div class="blog-img"><img src="@blogs.ImageURL" alt="@blogs.BlogHeading" title="@blogs.BlogHeading" /></div>
+                            <div class="upcoming-bike-name">@Truncate(@blogs.BlogHeading, 56)</div>
+                            </a>
+                            </section>
+                        </div>
+                }
+                    </div><button class="scroll-button right" onclick="scrollRight()">&#9654;</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Value For Money -->
+        <div class="blogs-section">
+                <h2 class="for-h1">Value For Money</h2>
+                <div class="blogs-section">
+                    <button class="scroll-button left" onclick="scrollLeft()">&#9664;</button>
+                    <div class=" blogs-container" id="VFMContainer">
+                        @foreach (var VFM in ViewBag.VFM)
+                        {
+                            <div class="blogs-item">
+                                <section>
+                                    <a href="/@VFM.URL" style="text-decoration:none">
+                                    <div class="upcoming-bike-img"><img src="@VFM.ImageURL" alt="@VFM.VFMHeading" title="@VFM.VFMHeading" /></div>
+                                        <div class="upcoming-bike-name">@Truncate(@VFM.VFMHeading, 56)</div>
+                                    </a>
+                                </section>
+                            </div>
+                        }
+                    </div><button class="scroll-button right" onclick="scrollRight()">&#9654;</button>
+                </div>
+        </div>
         <!-- Upcoming bikes section -->
         <div class="upcoming-bikes-section">
                 <h2 class="for-h1">Upcoming Bikes</h2>
@@ -885,7 +930,7 @@
             @* </div> *@
 
             <div class="tab-lscontent active" id="bikeNews">
-                <div class="latest-news-container">
+                <div class="latest-news-container" id="latestNewsContainer">
                 @foreach (var news in ViewBag.TWNews)
                 {
                         @* <a href="@Url.Action("TWLatestNewsDetails", "LatestNews", new { id = news.NewsHeading })" rel="bookmark"> *@
@@ -1101,20 +1146,16 @@
         $('#searchButton').click(function () {
             //debugger;
             var brandId = $('#ddlBrand').val();
-            // var brandName = $('#ddlBrand option:selected').text().replace(/ /g, "-").toLowerCase();
             var modelId = $('#ddlModel').val();
-            // if (brandId && modelId) {
-            //     window.location.href = '@Url.Action("TwoWheelerDetails")?brandId=' + brandId + '&modelId=' + modelId;
-            // } else {
-            //     alert("Please select both brand and model.");
-            // }
+            var brandName = $('#ddlBrand option:selected').text().replace(/ /g, "-").toLowerCase();
+            var modelName = $('#ddlModel option:selected').text().replace(/ /g, "-").toLowerCase();
+
             if (brandId && !modelId) {
-                // If only brand is selected, navigate to the first view
-                window.location.href = '@Url.Action("TWBrandDetails")?brandId=' + brandId;
-                // window.location.href = '/' + brandName;
+                // Redirect with only brandName
+                window.location.href = '/' + brandName;
             } else if (brandId && modelId) {
-                // If both brand and model are selected, navigate to the second view
-                window.location.href = '@Url.Action("TwoWheelerDetails")?brandId=' + brandId + '&modelId=' + modelId;
+                // Redirect with brandName and modelName
+                window.location.href = '/' + brandName + '/' + modelName;
             } else {
                 alert("Please select a brand.");
             }
@@ -1132,27 +1173,191 @@
     document.addEventListener("DOMContentLoaded", function () {
         const container = document.getElementById('upcomingBikesContainer');
         const itemWidth = container.querySelector('.upcoming-bike-item').offsetWidth;
+        const scrollSpeed = 2; // Pixels per frame
+        let scrollPosition = 0;
+        let isManualScrolling = false;
+        let autoScrollTimeout;
 
+        function continuousScroll() {
+            if (!isManualScrolling) {
+                scrollPosition += scrollSpeed;
+
+                // If we've reached the end, reset to the start
+                if (scrollPosition >= container.scrollWidth - container.offsetWidth) {
+                    scrollPosition = 0; // Reset scroll to the beginning
+                }
+
+                container.scrollLeft = scrollPosition; // Update scroll position
+            }
+
+            requestAnimationFrame(continuousScroll); // Keep scrolling
+        }
+
+        // Start the continuous scrolling
+        continuousScroll();
+
+        // Manual scroll functions
         function scrollLeft() {
-            container.scrollBy({
-                left: -itemWidth,
-                behavior: 'smooth'
-            });
+            isManualScrolling = true;
+            clearTimeout(autoScrollTimeout);
+            container.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+            resumeAutoScroll();
         }
 
         function scrollRight() {
-            container.scrollBy({
-                left: itemWidth,
-                behavior: 'smooth'
-            });
+            isManualScrolling = true;
+            clearTimeout(autoScrollTimeout);
+            container.scrollBy({ left: itemWidth, behavior: 'smooth' });
+            resumeAutoScroll();
         }
 
-        document.querySelector('.scroll-button.left').addEventListener('click', scrollLeft);
-        document.querySelector('.scroll-button.right').addEventListener('click', scrollRight);
+        // Resume auto-scroll after a delay
+        function resumeAutoScroll() {
+            autoScrollTimeout = setTimeout(() => {
+                isManualScrolling = false;
+            }, 11000); // Resume after 3 seconds of inactivity
+        }
+
+        // Attach event listeners to buttons
+        document.querySelector('.scroll-btn.left').addEventListener('click', scrollLeft);
+        document.querySelector('.scroll-btn.right').addEventListener('click', scrollRight);
+    });
+</script>
+<!--Blogs Bike-->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById('blogsContainer');
+        const itemWidth = container.querySelector('.blogs-item').offsetWidth;
+        const scrollSpeed = 2; // Pixels per frame
+        let scrollPosition = 0;
+        let isManualScrolling = false;
+        let autoScrollTimeout;
+
+        function continuousScroll() {
+            if (!isManualScrolling) {
+                scrollPosition += scrollSpeed;
+
+                // If we've reached the end, reset to the start
+                if (scrollPosition >= container.scrollWidth - container.offsetWidth) {
+                    scrollPosition = 0; // Reset scroll to the beginning
+                }
+
+                container.scrollLeft = scrollPosition; // Update scroll position
+            }
+
+            requestAnimationFrame(continuousScroll); // Keep scrolling
+        }
+
+        // Start continuous scrolling
+        continuousScroll();
+
+        // Manual scroll functions
+        function scrollLeft() {
+            isManualScrolling = true;
+            clearTimeout(autoScrollTimeout);
+            container.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+            resumeAutoScroll();
+        }
+
+        function scrollRight() {
+            isManualScrolling = true;
+            clearTimeout(autoScrollTimeout);
+            container.scrollBy({ left: itemWidth, behavior: 'smooth' });
+            resumeAutoScroll();
+        }
+
+        // Resume auto-scroll after a delay
+        function resumeAutoScroll() {
+            autoScrollTimeout = setTimeout(() => {
+                isManualScrolling = false;
+            }, 19000); // Resume after 3 seconds of inactivity
+        }
+
+        // Attach event listeners to manual scroll buttons
+        document.querySelector('.scroll-btn.left').addEventListener('click', scrollLeft);
+        document.querySelector('.scroll-btn.right').addEventListener('click', scrollRight);
+    });
+</script>
+<!--Value For Money Bike-->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById('VFMContainer');
+        const itemWidth = container.querySelector('.blogs-item').offsetWidth;
+        const scrollSpeed = 2; // Pixels per frame
+        let scrollPosition = 0;
+        let isManualScrolling = false;
+        let autoScrollTimeout;
+
+        function continuousScroll() {
+            if (!isManualScrolling) {
+                scrollPosition += scrollSpeed;
+
+                // If we've reached the end, reset to the start
+                if (scrollPosition >= container.scrollWidth - container.offsetWidth) {
+                    scrollPosition = 0; // Reset scroll to the beginning
+                }
+
+                container.scrollLeft = scrollPosition; // Update scroll position
+            }
+
+            requestAnimationFrame(continuousScroll); // Keep scrolling
+        }
+
+        // Start continuous scrolling
+        continuousScroll();
+
+        // Manual scroll functions
+        function scrollLeft() {
+            isManualScrolling = true;
+            clearTimeout(autoScrollTimeout);
+            container.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+            resumeAutoScroll();
+        }
+
+        function scrollRight() {
+            isManualScrolling = true;
+            clearTimeout(autoScrollTimeout);
+            container.scrollBy({ left: itemWidth, behavior: 'smooth' });
+            resumeAutoScroll();
+        }
+
+        // Resume auto-scroll after a delay
+        function resumeAutoScroll() {
+            autoScrollTimeout = setTimeout(() => {
+                isManualScrolling = false;
+            }, 19000); // Resume after 3 seconds of inactivity
+        }
+
+        // Attach event listeners to manual scroll buttons
+        document.querySelector('.scroll-btn.left').addEventListener('click', scrollLeft);
+        document.querySelector('.scroll-btn.right').addEventListener('click', scrollRight);
     });
 </script>
 <!--Latest New-->
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById('latestNewsContainer');
+        const itemWidth = container.querySelector('.latest-news-item').offsetWidth;
+        const scrollSpeed = 2; // Pixels per frame
+        let scrollPosition = 0;
+
+        function continuousScroll() {
+            scrollPosition += scrollSpeed;
+
+            // If we've reached the end, reset to the start
+            if (scrollPosition >= container.scrollWidth - container.offsetWidth) {
+                scrollPosition = 0; // Reset scroll to the beginning
+            }
+
+            container.scrollLeft = scrollPosition; // Update scroll position
+            requestAnimationFrame(continuousScroll); // Keep scrolling
+        }
+
+        // Start the continuous scrolling
+        continuousScroll();
+    });
+</script>
+@* <script>
     document.addEventListener("DOMContentLoaded", function () {
         function scrollLeft(containerId) {
             const container = document.querySelector(`#${containerId} .latest-news-container`);
@@ -1205,7 +1410,7 @@
             });
         });
     });
-</script>
+</script> *@
 @*--------Slide-------- *@
 <script>
     let currentIndex = 0;

@@ -157,6 +157,96 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2024/Nov282024BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/top-5-best-selling-bajaj-motorcycles-in-india")]
+        public IActionResult Dec32024BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Top 5 Best-Selling Bajaj Motorcycles in India");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2024/Dec32024BlogDetails1.cshtml", blogsDetails);
+        }
+        [Route("blogs/top-5-sports-bikes-under-₹4-lakh-in-india-features-specs-and-prices")]
+        public IActionResult Dec42024BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Top 5 Sports Bikes Under ₹4 Lakh in India: Features, Specs, and Prices");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2024/Dec42024BlogDetails1.cshtml", blogsDetails);
+        }
+        [Route("blogs/the-all-new-honda-amaze-a-perfect-blend-of-style-comfort-and-performance")]
+        public IActionResult Dec42024BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("The All-New Honda Amaze: A Perfect Blend of Style, Comfort, and Performance");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2024/Dec42024BlogDetails2.cshtml", blogsDetails);
+        }
+        [Route("blogs/indias-top-5-most-expensive-motorcycles-a-luxury-on-two-wheels")]
+        public IActionResult Dec62024BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("India’s Top 5 Most Expensive Motorcycles: A Luxury on Two Wheels");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2024/Dec62024BlogDetails1.cshtml", blogsDetails);
+        }
+        [Route("blogs/electric-vs-petrol-two-wheelers-which-is-better-for-you")]
+        public IActionResult Dec182024BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Electric vs Petrol Two-Wheelers: Which is Better for You?");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2024/Dec182024BlogDetails1.cshtml", blogsDetails);
+        }
+        [Route("blogs/top-10-affordable-two-wheelers-under-₹1-lakh-in-india")]
+        public IActionResult Dec202024BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Top 10 Affordable Two-Wheelers Under ₹1 Lakh in India");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2024/Dec202024BlogDetails1.cshtml", blogsDetails);
+        }
+        [Route("blogs/top-five-cruiser-bikes-in-india-for-long-distance-riders")]
+        public IActionResult Dec232024BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Top Five Cruiser Bikes in India for Long-Distance Riders");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2024/Dec232024BlogDetails1.cshtml", blogsDetails);
+        }
+        [Route("blogs/top-five-two-wheeler-electric-vehicles-under-2-lakh-in-india")]
+        public IActionResult Dec252024BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Top Five Two Wheeler Electric Vehicles under 2 Lakh in India.");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2024/Dec252024BlogDetails1.cshtml", blogsDetails);
+        }
+        [Route("blogs/the-all-new-kia-syros-a-comprehensive-review")]
+        public IActionResult Dec262024BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("The All-New Kia Syros: A Comprehensive Review");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2024/Dec262024BlogDetails1.cshtml", blogsDetails);
+        }
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
@@ -167,10 +257,10 @@ namespace Cars_Bikes.Controllers
                 return null;
             }
             //var newsItem = _context.TWLatestNews.Where(n => n.NewsHeading == newsHeading).ToList();
-            var allNews = _context.TWLatestNews.OrderByDescending(m => m.Date).Take(90).ToList();
-            ViewBag.AllNews = allNews;
-            var brand = _context.TwowheelerBrands.ToList();
-            ViewBag.Brand = brand;
+            //var allNews = _context.TWLatestNews.OrderByDescending(m => m.Date).Take(90).ToList();
+            //ViewBag.AllNews = allNews;
+            //var brand = _context.TwowheelerBrands.ToList();
+            //ViewBag.Brand = brand;
             return blogsItem;
         }
     }

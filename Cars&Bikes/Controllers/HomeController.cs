@@ -43,6 +43,10 @@ namespace Cars_Bikes.Controllers
             //ViewBag.FWNews = FWNews;
             var UpcomingBike = _context.UpcomingBikes.OrderByDescending(m => m.FilterLaunchDate).Take(5).ToList();
             ViewBag.Upcomingbike = UpcomingBike;
+            var Blogs = _context.Blogs.OrderByDescending(m => m.Date).Take(10).ToList();
+            ViewBag.Blogs = Blogs;
+            var VFM = _context.ValueForMoney.OrderByDescending(m => m.Date).Take(10).ToList();
+            ViewBag.VFM = VFM;
 
 
             return View();

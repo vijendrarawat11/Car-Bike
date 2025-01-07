@@ -31,6 +31,7 @@ namespace Cars_Bikes.Data
         public DbSet<NewsLetter> NewsLetters { get; set; }
         public DbSet<Blogs> Blogs { get; set; }
         public DbSet<LoginModel> LoginModel { get; set; }
+        public DbSet<ValueForMoney> ValueForMoney { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TwoWheelerBrand>().HasKey(t => t.TWBrandId);
