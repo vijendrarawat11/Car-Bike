@@ -247,6 +247,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2024/Dec262024BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/honda-qC1-electric-scooter-the-future-of-green-mobility")]
+        public IActionResult Jan72025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Honda QC1 Electric Scooter: The Future of Green Mobility");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Jan72025BlogDetails1.cshtml", blogsDetails);
+        }
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
