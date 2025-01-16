@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <Folder Include="Views\Brand\" />
-    <Folder Include="Views\LatestNews\" />
     <Folder Include="Views\UpcomingBike\" />
     <Folder Include="wwwroot\.well-known\pki-validation\" />
   </ItemGroup>

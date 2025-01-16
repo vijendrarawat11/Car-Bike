@@ -1,0 +1,171 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = ": Kia Syros Mid Diesel Automatic: The Value-for-Money Champion";
+}
+@section MetaTags {
+    <meta name="keywords" content="Kia Syros, Kia Syros Mid Diesel Automatic, value-for-money SUV, best compact SUV, Kia Syros pricing, diesel SUV India" />
+    <meta name="description" content="Discover why the Kia Syros Mid Diesel Automatic is the best value-for-money variant. Dive into its features, performance, and pricing to see what makes it a standout choice in the compact SUV segment." />
+}
+<!--For truncate-->
+@functions {
+    public string Truncate(string input, int length)
+    {
+        if (string.IsNullOrEmpty(input) || input.Length <= length)
+            return input;
+        return input.Substring(0, length) + "...";
+    }
+}
+<body id="bg">
+    <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
+    <div class="">
+        <div><h1 class="latest-bike-head">Latest Bike News</h1></div>
+        <div class=" latest-bike-container">
+            <h2>@Model.NewsHeading</h2>
+            @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
+            <div class="upcoming-bikes-details-image">
+                <img src="@Model.ImageFolderURL" alt="@Model.NewsHeading" title="@Model.NewsHeading" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" />
+                <div class="upcoming-bikes-details-text">
+                    <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
+                    @* <p>@ViewBag.TWNews.NewsSummary</p> *@
+                </div>
+            </div>
+            <div class="latest-bikes-details-content">
+                @* <p>@Html.Raw(@Model.NewsDetail.Replace("\n", "<br>"))</p> *@
+                <p>@Html.Raw(@Model.NewsSummary.Replace("\n", "<br>"))</p>
+                <div class="div-line"></div>
+                <img src="~/wwwroot/images/LatestNews/2025/Jan/KiaSyrosSpecs/02.png"alt="headerimage" title="headerimage"/>
+                <h3 class="subheading">Value-for-Money Variant</h3>
+                <img src="~/wwwroot/images/LatestNews/2025/Jan/KiaSyrosSpecs/04.jpg"alt="headerimage" title="headerimage2"/>
+                <img src="~/images/latestnews/2025/jan/kiasyrosspecs/12.png" alt="features" title="features" />
+                <p>After analyzing the features and price, the <b>Mid Diesel Automatic</b> variant stands out as the value-for-money option. Priced at <b>₹11,49,000,</b> it offers a balanced mix of premium features like the 10.25-inch infotainment system, advanced safety features, and exceptional mileage of 21 km/l, making it an excellent choice for families and frequent travelers.</p>
+                <h3 class="subheading">Key Highlights of the Mid Diesel Automatic Variant</h3>
+
+                <div>
+                    <ol>
+                        <li>
+                            <img src="~/wwwroot/images/LatestNews/2025/Jan/KiaSyrosSpecs/13.jpg" alt="engine"title="engine" />
+                            <h4>Power and Performance</h4>
+                            <p>Equipped with a 1.5L diesel engine, this variant delivers an impressive<b> 120 PS of power</b> and<b> 250 Nm of torque.</b> The 6-speed automatic transmission ensures a smooth driving experience, whether in city traffic or on highways.</p>
+                        </li>
+                        <li>
+                            <h4>Outstanding Fuel Efficiency</h4>
+                            <p>With an ARAI-certified mileage of<b> 21 km/l,</b> this variant is ideal for those seeking cost-effective long drives without compromising on performance.</p>
+                        </li>
+                        <li>
+                            <h4>Advanced Safety Features</h4>
+                            <p>Safety remains a priority with features like:</p>
+                            <ul>
+                                <li>Airbags</li>
+                                <li>ABS with EBD</li>
+                                <li>Electronic Stability Control (ESC)</li>
+                                <li>Hill Start Assist</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>Infotainment and Connectivity</h4>
+                            <p>The 10.25-inch touchscreen infotainment system with <b>Android Auto </b> and <b>Apple CarPlay </b> ensures seamless connectivity and entertainment during your journeys.</p>
+                        </li>
+                        <li>
+                            <img src="~/wwwroot/images/LatestNews/2025/Jan/KiaSyrosSpecs/09.jpg" alt="seats" title="seats" />
+                            <h4>Comfort and Convenience</h4>
+                            <p>Enjoy features like:</p>
+                            <ul>
+                                <li><b>Ventilated Seats</b> for enhanced comfort in all seasons.</li>
+                                <li><b>Automatic Climate Control</b> to maintain an ideal cabin temperature.</li>
+                                <li><b>Premium Upholstery </b>that adds a touch of luxury.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="div-line"></div>
+                <h3 class="subheading">Price Comparison</h3>
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table-content">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Variant</th>
+                                <th class="text-center">Price (Ex-showroom)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="compare-head-text">
+                                <td>Base Diesel Manual</td>
+                                <td>₹9,49,000</td>
+                            </tr>
+                            <tr class="compare-head-text">
+                                <td><b>Mid Diesel Automatic</b></td>
+                                <td><b>₹11,49,000</b></td>
+                            </tr>
+                            <tr class="compare-head-text">
+                                <td>Top Diesel Automatic</td>
+                                <td>₹12,99,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>For just <b>₹2,00,000</b> more than the base diesel manual, the mid variant offers automatic transmission and several additional features, making it a smart investment.</p>
+                </div>
+                <h3 class="subheading">Why Choose the Mid Diesel Automatic?</h3>
+                <div>
+                    <ul>
+                        <li>
+                            <b>Ideal for Families and Frequent Travelers:</b> The spacious cabin, excellent fuel economy, and advanced safety features make it perfect for long-distance journeys.
+                        </li>
+                        <li>
+                            <b>Value-Packed Features:</b> It includes premium amenities typically reserved for higher variants at a much more affordable price.
+                        </li>
+                        <li>
+                            <b>Low Maintenance Costs:</b> Diesel engines are known for their durability and cost efficiency, adding to the long-term value of this variant.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        @* <div class="div-row"> *@
+        @* <div class="big-div both-div"> *@
+        <div class="detail-div latest-bike-container">
+            @foreach (var newsdata in ViewBag.AllNews)
+            {
+                <div class="latest-bike-card">
+                    <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
+                    <a href="/@newsdata.ImageURL">
+                        <div class="latest-allbike-image ">
+                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                            <div class="latest-bikes-details-text">
+                                <p><i class="fa fa-calendar"></i> @newsdata.Date?.ToString("d MMM yyyy")</p>
+                                <p>@Truncate(@newsdata.NewsSummary, 170)</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+        @* </div> *@
+        @*  <div class="small-div both-div latest-bike-container">
+        <h2>Search Latest News by Brand</h2>
+        @foreach (var brand in ViewBag.Brand)
+        {
+        <a href="@Url.Action("TWLatestNewsByBrand", "LatestNews", new { Id = brand.TWBrandId })" style="text-decoration:none;">
+        <div class="side-brand">
+        <div class="side-brand-img">
+        <img src="@brand.BrandLogoURL" alt="Bike Model" onerror="showFallbackIcon(this);" />
+        <i class="bi bi-award fallback-icon"></i>
+        </div>
+        <div class="side-brand-text"><h4>@brand.BrandName </h4></div>
+        </div>
+        </a>
+        }
+        </div> *@
+    </div>
+    @* </div> *@
+    @* </div>
+    </div> *@
+</body>
+<script>
+    function showFallbackIcon(imgElement) {
+        imgElement.style.display = 'none'; // Hide the broken image
+        imgElement.nextElementSibling.style.display = 'block'; // Show the fallback icon
+    }
+</script>

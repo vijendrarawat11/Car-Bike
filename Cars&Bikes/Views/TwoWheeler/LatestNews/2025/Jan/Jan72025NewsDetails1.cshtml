@@ -1,0 +1,225 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Kia Syros: A Game-Changer in the Compact SUV Segment";
+}
+@section MetaTags {
+    <meta name="keywords" content="Kia Syros: A Game-Changer in the Compact SUV Segment" />
+    <meta name="description" content="Explore the features, specifications, dimensions, and pricing of the newly launched Kia Syros. Learn about its standout attributes and why it’s poised to disrupt the compact SUV market." />
+}
+<!--For truncate-->
+@functions {
+    public string Truncate(string input, int length)
+    {
+        if (string.IsNullOrEmpty(input) || input.Length <= length)
+            return input;
+        return input.Substring(0, length) + "...";
+    }
+}
+<body id="bg">
+    <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
+    <div class="">
+        <div><h1 class="latest-bike-head">Latest Bike News</h1></div>
+        <div class=" latest-bike-container">
+            <h2>@Model.NewsHeading</h2>
+            @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
+            <div class="upcoming-bikes-details-image">
+                <img src="@Model.ImageFolderURL" alt="@Model.NewsHeading" title="@Model.NewsHeading" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" />
+                <div class="upcoming-bikes-details-text">
+                    <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
+                    @* <p>@ViewBag.TWNews.NewsSummary</p> *@
+                </div>
+            </div>
+            <div class="latest-bikes-details-content">
+                @* <p>@Html.Raw(@Model.NewsDetail.Replace("\n", "<br>"))</p> *@
+                <p>@Html.Raw(@Model.NewsSummary.Replace("\n", "<br>"))</p>
+                <div class="div-line"></div>
+                <div class="row m-b20">
+                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/latestnews/2025/jan/kiasyrosspecs/01.png" alt="headerimage" title="headerimage" /></div>
+                    <div class="col-lg-6 col-md-6 text-center"></div>
+                </div>
+                
+                <h3 class="subheading">Features and Specifications</h3>
+				<img src="~/images/latestnews/2025/jan/kiasyrosspecs/12.png" alt="features" title="features" />
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table-content">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Feature</th>
+                                <th class="text-center">Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="compare-head-text">
+                                <td>Engine Type</td>
+                                <td>1.5L Petrol / 1.5L Diesel</td>
+                            </tr>
+                            <tr>
+                                <td>Power Output</td>
+                                <td>Petrol: 115 PS, Diesel: 120 PS</td>
+                            </tr>
+                            <tr class="compare-head-text">
+                                <td>Torque</td>
+                                <td>Petrol: 144 Nm, Diesel: 250 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>Drive Type</td>
+                                <td>Front-Wheel Drive (FWD)</td>
+                            </tr>
+                            <tr class="compare-head-text">
+                                <td>Infotainment System</td>
+                                <td>10.25-inch Touchscreen, Android Auto, Apple CarPlay</td>
+                            </tr>
+                            <tr>
+                                <td>Safety Features</td>
+                                <td>6 Airbags, ABS with EBD, ESC, Hill Start Assist</td>
+                            </tr>
+                            <tr class="compare-head-text">
+                                <td>Comfort Features</td>
+                                <td>Ventilated Seats, Automatic Climate Control</td>
+                            </tr>
+                            <tr>
+                                <td>Mileage</td>
+                                <td>Petrol: 18 km/l, Diesel: 21 km/l</td>
+                            </tr>
+                            <tr class="compare-head-text">
+                                <td>Boot Space</td>
+                                <td>400 Liters</td>
+                            </tr>
+                            <tr>
+                                <td>Warranty</td>
+                                <td>3 years/Unlimited kilometers</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="div-line"></div>
+                <h3 class="subheading">Dimensions</h3>
+				<img src="~/images/latestnews/2025/jan/kiasyrosspecs/02.png" alt="dimension" title="dimension"/>
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table-content">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Parameter</th>
+                                <th class="text-center">Measurement</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="compare-head-text">
+                                <td>Length</td>
+                                <td>4,315 mm</td>
+                            </tr>
+                            <tr class="compare-head-text">
+                                <td>Width</td>
+                                <td>1,800 mm</td>
+                            </tr>
+                            <tr class="compare-head-text">
+                                <td>Length</td>
+                                <td>4,315 mm</td>
+                            </tr>
+                            <tr class="compare-head-text">
+                                <td>Height</td>
+                                <td>1,620 mm</td>
+                            </tr>
+                            <tr class="compare-head-text">
+                                <td>Wheelbase</td>
+                                <td>2,600 mm</td>
+                            </tr>
+                            <tr class="compare-head-text">
+                                <td>Ground Clearance</td>
+                                <td>190 mm</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="div-line"></div>
+                <h3 class="subheading">Price of All Variants</h3>
+				<img src="~/images/latestnews/2025/jan/kiasyrosspecs/06.jpg" alt="price" title="price"/>
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table-content">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Variant</th>
+                                <th class="text-center">Price(Ex-showroom)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="compare-head-text">
+                                <td>Base Petrol Manual</td>
+                                <td>₹8,99,000</td>
+                            </tr>
+                            <tr class="compare-head-text">
+                                <td>Mid Petrol Automatic</td>
+                                <td>₹10,49,000</td>
+                            </tr>
+                            <tr class="compare-head-text">
+                                <td>Top Petrol Automatic</td>
+                                <td>₹11,99,000</td>
+                            </tr>
+                            <tr class="compare-head-text">
+                                <td>Base Diesel Manual</td>
+                                <td>₹9,49,000</td>
+                            </tr>
+                            <tr class="compare-head-text">
+                                <td>Mid Diesel Automatic</td>
+                                <td>₹11,49,000</td>
+                            </tr>
+                            <tr class="compare-head-text">
+                                <td>Top Diesel Automatic</td>
+                                <td>₹12,99,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                </div>
+        </div>
+        @* <div class="div-row"> *@
+        @* <div class="big-div both-div"> *@
+        <div class="detail-div latest-bike-container">
+            @foreach (var newsdata in ViewBag.AllNews)
+            {
+                    <div class="latest-bike-card">
+                        <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
+                        <a href="/@newsdata.ImageURL">
+                            <div class="latest-allbike-image ">
+                                <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                                <div class="latest-bikes-details-text">
+                                    <p><i class="fa fa-calendar"></i> @newsdata.Date?.ToString("d MMM yyyy")</p>
+                                    <p>@Truncate(@newsdata.NewsSummary, 170)</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+            }
+        </div>
+        @* </div> *@
+        @*  <div class="small-div both-div latest-bike-container">
+        <h2>Search Latest News by Brand</h2>
+        @foreach (var brand in ViewBag.Brand)
+        {
+        <a href="@Url.Action("TWLatestNewsByBrand", "LatestNews", new { Id = brand.TWBrandId })" style="text-decoration:none;">
+        <div class="side-brand">
+        <div class="side-brand-img">
+        <img src="@brand.BrandLogoURL" alt="Bike Model" onerror="showFallbackIcon(this);" />
+        <i class="bi bi-award fallback-icon"></i>
+        </div>
+        <div class="side-brand-text"><h4>@brand.BrandName </h4></div>
+        </div>
+        </a>
+        }
+        </div> *@
+    </div>
+    @* </div> *@
+    @* </div>
+    </div> *@
+</body>
+<script>
+    function showFallbackIcon(imgElement) {
+        imgElement.style.display = 'none'; // Hide the broken image
+        imgElement.nextElementSibling.style.display = 'block'; // Show the fallback icon
+    }
+</script>
