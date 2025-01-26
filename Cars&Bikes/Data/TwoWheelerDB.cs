@@ -1,4 +1,5 @@
 ﻿using Cars_Bikes.Models;
+using Google.Apis.Discovery;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cars_Bikes.Data
@@ -32,6 +33,19 @@ namespace Cars_Bikes.Data
         public DbSet<Blogs> Blogs { get; set; }
         public DbSet<LoginModel> LoginModel { get; set; }
         public DbSet<ValueForMoney> ValueForMoney { get; set; }
+        public DbSet<TWEVEngineAndTransmission> TWEVEngineAndTransmissions { get; set; }
+        public DbSet<TWEVFeatures> TWEVFeatures { get; set; }
+        public DbSet<TWEVSafety> TWEVSafety { get; set; }
+        public DbSet<TWEVChassisAndSuspension> TWEVChassisAndSuspensions { get; set; }
+        public DbSet<TWEVDimensionsAndCapacity> TWEVDimensionsAndCapacities { get; set; }
+        public DbSet<TWEVElectricals> TWEVElectricals { get; set; }
+        public DbSet<TWEVTyresAndBrakes> TWEVTyresAndBrakes { get; set; }
+        public DbSet<TWEVPerformance> TWEVPerformances { get; set; }
+        public DbSet<TWEVMotorAndBattery> TWEVMotorAndBatteries { get; set; }
+        public DbSet<TWEVRange> TWEVRanges { get; set; }
+        public DbSet<TWEVCharging> TWEVChargings { get; set; }
+        public DbSet<TWEVUnderpinning> TWEVUnderpinnings { get; set; }
+        public DbSet<TWEVAppFeatures> TWEVAppFeatures { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TwoWheelerBrand>().HasKey(t => t.TWBrandId);
