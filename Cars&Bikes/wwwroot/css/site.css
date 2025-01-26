@@ -1173,11 +1173,12 @@ section {
     }
 }
     .search-div {
-        width: 44%;
+        width:34%;
+        /*        width: 44%;*/
         /*margin-left: auto;*/
         position: relative;
-        margin:auto;
-    }
+        margin: auto;
+}
 
     .for-search {
         display: block;
@@ -1829,3 +1830,204 @@ header.transparent {
 .blog-main-container{
     padding:15px;
 }
+
+
+
+/*EMI Calculator*/
+
+
+
+.main-content {
+    display: flex;   
+    justify-content: space-around; 
+    align-items: center;
+   
+    background: #f5f5f5;
+    padding: 5px;
+}
+
+
+
+.loan-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    max-width: 400px;
+    box-sizing: border-box;
+    float:left;
+}
+
+    .loan-card h2 {
+        margin-bottom: 20px;
+        text-align: center;
+        color: #4a90e2;
+    }
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-group input[type="range"],
+    .form-group input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+        .form-group input[type="number"]::-webkit-inner-spin-button,
+        .form-group input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+.slider-scale {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #666;
+    margin-top: -8px;
+    margin-bottom: 5px;
+}
+
+.selected-text {
+    margin-top: 5px;
+    font-size: 14px;
+    color: green;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+
+.results-card {
+    background: #e6f7ff;
+    width: 100%;
+    max-width: 400px;
+ 
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+ 
+}
+
+
+    .results-card h2 {
+        font-size: 26px;
+        color: #d9534f;
+        
+    }
+    .results-card h6 {
+        font-size: 24px;
+        color: #ff5722;
+        
+    }
+    .results-card .loanhighlight {
+
+        color: #ff5722;
+        text-align: center;
+      
+    }
+
+    .results-card p {
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        margin: 10px 0; 
+    }
+
+        .results-card p strong {
+            margin-right: 10px; 
+        }
+
+    .results-card span {
+
+        white-space: nowrap;
+    }
+
+#resultEMI {
+    font-weight: bold;
+    font-size:45px;
+   
+    padding: 5px 10px;
+   
+    display: inline-block;
+}
+
+
+.fixed-textbox-container {
+    display: flex;
+    align-items: center;
+}
+
+    .fixed-textbox-container input {
+        flex: 1;
+    }
+
+    .fixed-textbox-container span {
+        margin-left: 5px;
+        font-weight: bold;
+    }
+
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+    .input-wrapper input {
+        padding-left: 10px; 
+
+        flex:1;
+       
+    }
+
+.percent-postfix,
+.year-postfix {
+        position: absolute;
+
+    font-size: 14px;
+    color: black;
+    pointer-events: none;
+}
+
+.currency-prefix {
+    position: static;
+    left: 10px;
+    font-size: 14px;
+    color: black;
+    pointer-events: none;
+}
+.percent-postfix,
+.year-postfix {
+    right: 10px; 
+}
+
+
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .loan-card, .results-card {
+        width: 100%; 
+    }
+}
+
+

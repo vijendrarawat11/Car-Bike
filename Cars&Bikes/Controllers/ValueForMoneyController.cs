@@ -54,6 +54,28 @@ namespace Cars_Bikes.Controllers
             }
             return View(vfmDetails);
         }
+        [Route("value-for-money/kia-syros-value-for-money-varient")]
+        public IActionResult KiaSyros_1()
+        {
+            var vfmDetails = GetVFMDetails("Kia Syros : Value for Money Varient");
+            if (vfmDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View(vfmDetails);
+        }
+
+        [Route("kia-syros-features-and-specifications")]
+        public IActionResult KiaSyros_2()
+        {
+            var vfmDetails = GetVFMDetails("Kia Syros : Value for Money Varient");
+            if (vfmDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View(vfmDetails);
+        }
+
         private Cars_Bikes.Models.ValueForMoney GetVFMDetails(string vfmHeading)
         {
             var vfmItem = _context.ValueForMoney

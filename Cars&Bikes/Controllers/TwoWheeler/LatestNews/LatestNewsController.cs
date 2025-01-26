@@ -752,26 +752,7 @@ namespace Cars_Bikes.Controllers.TwoWheeler.LatestNews
             }
             return View("~/Views/TwoWheeler/LatestNews/2025/Jan/Jan62025NewsDetails1.cshtml", newsDetails);
         }
-        [Route("latestnews/kia-syros-a-game-changer-in-the-compact-suv-segment")]
-        public IActionResult Jan72025NewsDetails1()
-        {
-            var newsDetails = GetNewsDetails("Kia Syros: A Game-Changer in the Compact SUV Segment");
-            if (newsDetails == null)
-            {
-                return NotFound(); // Return 404 if news item is not found
-            }
-            return View("~/Views/TwoWheeler/LatestNews/2025/Jan/Jan72025NewsDetails1.cshtml", newsDetails);
-        }
-        [Route("latestnews/kia-syros-mid-diesel-automatic-the-value-for-money-champion")]
-        public IActionResult Jan82025NewsDetails1()
-        {
-            var newsDetails = GetNewsDetails("Kia Syros Mid Diesel Automatic: The Value-for-Money Champion");
-            if (newsDetails == null)
-            {
-                return NotFound(); // Return 404 if news item is not found
-            }
-            return View("~/Views/TwoWheeler/LatestNews/2025/Jan/Jan82025NewsDetails1.cshtml", newsDetails);
-        }
+    
         [Route("latestnews/exploring-the-future-the-all-new-hyundai-creta-ev")]
         public IActionResult Jan102025NewsDetails1()
         {
@@ -782,6 +763,18 @@ namespace Cars_Bikes.Controllers.TwoWheeler.LatestNews
             }
             return View("~/Views/TwoWheeler/LatestNews/2025/Jan/Jan102025NewsDetails1.cshtml", newsDetails);
         }
+
+        [Route("latestnews/tvs-jupiter-cng-scooter-launched-with-140-mile-range")]
+        public IActionResult Jan212025NewsDetails1()
+        {
+            var newsDetails = GetNewsDetails("TVS Jupiter CNG Scooter Launched with 140-Mile Range");
+            if (newsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/LatestNews/2025/Jan/Jan212025NewsDetails1.cshtml", newsDetails);
+        }
+
 
         private Cars_Bikes.Models.TWLatestNews GetNewsDetails(string newsHeading)
         {

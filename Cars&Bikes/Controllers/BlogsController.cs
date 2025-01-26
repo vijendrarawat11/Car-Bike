@@ -257,6 +257,38 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Jan72025BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/top-10-two-wheeler-brands-for-commuters-in-2025")]
+        public IActionResult Jan162025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Top 10 Two-Wheeler Brands for Commuters in 2025");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Jan162025BlogDetails1.cshtml", blogsDetails);
+        }
+        [Route("blogs/toyota-taisor-vs-maruti-fronx-a-detailed-comparison")]
+        public IActionResult Jan172025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Toyota Taisor vs Maruti Fronx: A Detailed Comparison");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Jan172025BlogDetails1.cshtml", blogsDetails);
+        }
+
+
+        [Route("blogs/hyundai-creta-ev-vs-maruti-suzuki-e-vitara-a-comprehensive-comparison")]
+        public IActionResult Jan222025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Hyundai Creta EV vs. Maruti Suzuki e-Vitara: A Comprehensive Comparison");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Jan222025BlogDetails1.cshtml", blogsDetails);
+        }
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
