@@ -33,20 +33,9 @@
             </div>
             <div class="latest-bikes-details-content">
                 @* <p>@Html.Raw(@Model.NewsDetail.Replace("\n", "<br>"))</p> *@
-                <img src="~/images/latestnews/2025/jan/tvsjupitercngscooterlaunchedwith140milerange/header.webp" alt="header" title="header" />
                 <p>@Html.Raw(@Model.NewsSummary.Replace("\n", "<br>"))</p>
-                <div class="div-line"></div>
-                <h3 class="subheading">News Details</h3>
                 <p>We saw the world’s first CNG motorcycle in the  <a class="for-link" asp-controller="Brand" asp-action="Bajaj">Bajaj Freedom 125</a> last year. Now, we see the tech carried over to the world’s first CNG scooter by TVS. TVS Motor Company has introduced the world’s first CNG-powered scooter, the<span class="font-weight-700"> TVS Jupiter CNG,</span> aimed at addressing the need for sustainable mobility solutions in India. This revolutionary scooter combines practicality with eco-friendliness, offering a claimed range of approximately <span class="font-weight-700">140 miles (226 kilometers)</span> on a single CNG fill.</p>
                 <h3 class="subheading">Specifications</h3>
-                
-                <div class="row m-b20">
-                    <div class="col-lg-12 col-md-12 text-center">
-
-                        <img src="~/images/latestnews/2025/jan/tvsjupitercngscooterlaunchedwith140milerange/side.webp" alt="side" title="side" />
-                    </div>
-                </div>
-                
                 <ul>
                     <li>
                         <span class="font-weight-700">Engine:</span> 124.8cc, single-cylinder, air-cooled engine modified for CNG.
@@ -68,15 +57,16 @@
                         <span class="font-weight-700">Emissions:</span> Up to 20% lower than petrol variants.
                     </li>
                 </ul>
-
-                <h3 class="subheading">Features</h3>
                 <div class="row m-b20">
-                    <div class="col-lg-12 col-md-12 text-center">
+                    <div class="col-lg-6 col-md-6 text-center">
                         <img src="~/images/latestnews/2025/jan/tvsjupitercngscooterlaunchedwith140milerange/back.webp" alt="back" title="back" />
-
+                    </div>
+                    <div class="col-lg-6 col-md-6 text-center">
+                        <img src="~/images/latestnews/2025/jan/tvsjupitercngscooterlaunchedwith140milerange/side.webp" alt="side" title="side" />
                     </div>
                 </div>
-                               <ul>
+                <h3 class="subheading">Features</h3>
+                <ul>
                     <li>
                         <span class="font-weight-700">Dual-Fuel Technology: </span>Allows switching between petrol and CNG for flexibility.
                     </li>
@@ -93,10 +83,9 @@
                         <span class="font-weight-700">Braking: </span> Integrated braking system (IBS) for safety.
                     </li>
                 </ul>
-
                 <h3 class="subheading">Price in India</h3>
                 <p>
-                    The  <a class="for-link" asp-controller="Brand" asp-action="TVS">TVS Jupiter</a> CNG starts at <span class="font-weight-700">₹90,000.00 to ₹1,00,000 (ex-showroom),</span> making it an economical choice for urban commuters.
+                    The  <a class="for-link" asp-controller="TVS" asp-action="TVSJupiter">TVS Jupiter</a> CNG starts at <span class="font-weight-700">₹90,000.00 to ₹1,00,000 (ex-showroom),</span> making it an economical choice for urban commuters.
                 </p>
                 <p>
                     With rising fuel prices and environmental concerns, the Jupiter CNG offers an ideal balance of affordability and sustainability, appealing to budget-conscious riders.
