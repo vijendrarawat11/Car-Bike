@@ -289,6 +289,17 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Jan222025BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/how-to-choose-the-best-two-wheeler-for-your-daily-commute")]
+        public IActionResult Jan242025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("How to Choose the Best Two-Wheeler for Your Daily Commute");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Jan242025BlogDetails1.cshtml", blogsDetails);
+        }
+
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
