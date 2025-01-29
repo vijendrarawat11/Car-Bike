@@ -99,7 +99,7 @@
                 <div class="row">
                 <div class="col-lg-2 col-md-2 blog-head-box">
                     <div class=" blog-head ">
-                    <h1 class="">Blogs</h1>
+                    <h1 class=""><a asp-controller="Blogs" asp-action="Index">Blogs</a></h1>
                     </div>
                 </div>
                 <div class="col-lg-10 col-md-10 blogs-section">
@@ -124,7 +124,7 @@
         <div class="blogs-section">
                 <h2 class="for-h1">Value For Money</h2>
                 <div class="blogs-section">
-                    <button class="scroll-button left" onclick="scrollLeft()">&#9664;</button>
+                    <button class="scroll-button left" onclick="Leftscroll()">&#9664;</button>
                     <div class=" blogs-container" id="VFMContainer">
                         @foreach (var VFM in ViewBag.VFM)
                         {
@@ -137,12 +137,12 @@
                                 </section>
                             </div>
                         }
-                    </div><button class="scroll-button right" onclick="scrollRight()">&#9654;</button>
+                    </div><button class="scroll-button right" onclick="Rightscroll()">&#9654;</button>
                 </div>
         </div>
         <!-- Upcoming bikes section -->
         <div class="upcoming-bikes-section">
-                <h2 class="for-h1">Upcoming Bikes</h2>
+                <h2 class="for-h1"><a asp-controller="UpcomingBike" asp-action="TWUpcomingBikeDetails">Upcoming Bikes</a></h2>
             <button class="scroll-button left" onclick="scrollLeft()">&#9664;</button>
            <div class="upcoming-bikes-container" id="upcomingBikesContainer">
                 @foreach (var bike in ViewBag.upcomingbike)
@@ -1283,37 +1283,35 @@
     document.addEventListener("DOMContentLoaded", function () {
         const container = document.getElementById('VFMContainer');
         const itemWidth = container.querySelector('.blogs-item').offsetWidth;
-        const scrollSpeed = 2; // Pixels per frame
+        const scrollSpeed = 2; //Pixels per frame
         let scrollPosition = 0;
         let isManualScrolling = false;
         let autoScrollTimeout;
-        console.log("Itemwidth");
-        console.log(itemwidth);
+       
 
         function continuousScroll() {
             if (!isManualScrolling) {
                 scrollPosition += scrollSpeed;
 
-                // If we've reached the end, reset to the start
+               // If we've reached the end, reset to the start
                 if (scrollPosition >= container.scrollWidth - container.offsetWidth) {
-                    scrollPosition = 0; // Reset scroll to the beginning
+                    scrollPosition = 0; Reset scroll to the beginning
                 }
 
-                container.scrollLeft = scrollPosition; // Update scroll position
+                container.scrollLeft = scrollPosition;// Update scroll position
             }
 
-            requestAnimationFrame(continuousScroll); // Keep scrolling
+            requestAnimationFrame(continuousScroll); Keep scrolling
         }
 
-        // Start continuous scrolling
+        //Start continuous scrolling
         continuousScroll();
 
-        // Manual scroll functions
+        //Manual scroll functions
         function scrollLeft() {
             isManualScrolling = true;
             clearTimeout(autoScrollTimeout);
-            console.log("Left Button itemwidth");
-            console.log(itemwidth);
+           
             container.scrollBy({ left: -itemWidth, behavior: 'smooth' });
             resumeAutoScroll();
         }
@@ -1321,23 +1319,73 @@
         function scrollRight() {
             isManualScrolling = true;
             clearTimeout(autoScrollTimeout);
-            console.log("Right Button itemwidth");
-            console.log(itemwidth);
+           
             container.scrollBy({ left: itemWidth, behavior: 'smooth' });
             resumeAutoScroll();
         }
 
-        // Resume auto-scroll after a delay
+       // Resume auto-scroll after a delay
         function resumeAutoScroll() {
             autoScrollTimeout = setTimeout(() => {
                 isManualScrolling = false;
-            }, 21000); // Resume after 3 seconds of inactivity
+            }, 21000); //Resume after 3 seconds of inactivity
         }
 
-        // Attach event listeners to manual scroll buttons
-        document.querySelector('.scroll-btn.left').addEventListener('click', scrollLeft);
-        document.querySelector('.scroll-btn.right').addEventListener('click', scrollRight);
+       // Attach event listeners to manual scroll buttons
+        document.querySelector('.scroll-button.left').addEventListener('click', Leftscroll);
+        document.querySelector('.scroll-button.right').addEventListener('click', Rightscroll);
+
     });
+
+    //     document.addEventListener("DOMContentLoaded", function () {
+    //     const container = document.getElementById('upcomingBikesContainer');
+    //     const itemWidth = container.querySelector('.upcoming-bike-item').offsetWidth;
+    //     const scrollSpeed = 2; Pixels per frame
+    //     let scrollPosition = 0;
+    //     let isManualScrolling = false;
+    //     let autoScrollTimeout;
+
+    //     function continuousScroll() {
+    //         if (!isManualScrolling) {
+    //             scrollPosition += scrollSpeed;
+
+    //             if (scrollPosition >= container.scrollWidth - container.offsetWidth) {
+    //                 scrollPosition = 0; Reset scroll to the beginning
+    //             }
+
+    //             container.scrollLeft = scrollPosition;
+    //         }
+
+    //         requestAnimationFrame(continuousScroll);
+    //     }
+
+    //     continuousScroll();
+
+ 
+    //     window.scrollLeft = function() {
+    //         isManualScrolling = true;
+    //         clearTimeout(autoScrollTimeout);
+    //         container.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+    //         resumeAutoScroll();
+    //     };
+
+    //     window.scrollRight = function() {
+    //         isManualScrolling = true;
+    //         clearTimeout(autoScrollTimeout);
+    //         container.scrollBy({ left: itemWidth, behavior: 'smooth' });
+    //         resumeAutoScroll();
+    //     };
+
+    //     function resumeAutoScroll() {
+    //         autoScrollTimeout = setTimeout(() => {
+    //             isManualScrolling = false;
+    //         }, 3000);
+    //     }
+
+    //     document.querySelector('.scroll-btn.left').addEventListener('click', scrollLeft);
+    //     document.querySelector('.scroll-btn.right').addEventListener('click', scrollRight);
+    // });
+
 </script> 
 <!--Latest New-->
 <script>
