@@ -1,6 +1,7 @@
 ﻿using Cars_Bikes.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Cars_Bikes.Controllers.TwoWheeler.Brand
 {
@@ -135,6 +136,18 @@ namespace Cars_Bikes.Controllers.TwoWheeler.Brand
         {
             var bikeDetails = GetBikeDetails("Honda Dio 125");
             return View("~/Views/TwoWheeler/Brand/Honda/HondaDio125.cshtml", bikeDetails);
+        }
+        [Route("honda/honda-activa-e")]
+        public IActionResult HondaActivaE()
+        {
+            var bikeDetails = GetBikeDetails("Honda Activa E");
+            return View("~/Views/TwoWheeler/Brand/Honda/HondaActivaE.cshtml", bikeDetails);
+        }
+        [Route("honda/honda-qc1")]
+        public IActionResult HondaQC1()
+        {
+            var bikeDetails = GetBikeDetails("Honda QC1");
+            return View("~/Views/TwoWheeler/Brand/Honda/HondaQC1.cshtml", bikeDetails);
         }
         private Cars_Bikes.Models.TwoWheeler GetBikeDetails(string bikeName)
         {

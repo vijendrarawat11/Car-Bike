@@ -76,6 +76,12 @@ namespace Cars_Bikes.Controllers.TwoWheeler.Brand
             var bikeDetails = GetBikeDetails("Royal Enfield Continental GT 650");
             return View("~/Views/TwoWheeler/Brand/RoyalEnfield/REContinentalGT650.cshtml", bikeDetails);
         }
+        [Route("royal-enfield/flying-flea")]
+        public IActionResult FlyingFlea()
+        {
+            var bikeDetails = GetBikeDetails("Flying Flea");
+            return View("~/Views/TwoWheeler/Brand/RoyalEnfield/FlyingFlea.cshtml", bikeDetails);
+        }
         private Cars_Bikes.Models.TwoWheeler GetBikeDetails(string bikeName)
         {
             var bike = _context.Twowheelers.Include(b => b.TWVarients)

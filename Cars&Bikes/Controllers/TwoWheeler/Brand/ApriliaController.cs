@@ -142,6 +142,7 @@ namespace Cars_Bikes.Controllers.TwoWheeler.Brand
                     s.AdditionalFeatures
                 })
                 .FirstOrDefault();
+
             var mileageAndPerformance = _context.TWMileageAndPerformances
             .Where(mp => mp.TWVarientId == variantId)
             .Select(mp => new

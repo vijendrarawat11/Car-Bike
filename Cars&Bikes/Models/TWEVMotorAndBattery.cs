@@ -18,7 +18,7 @@ namespace Cars_Bikes.Models
         public decimal? BatteryCapacity { get; set; }
         [Column(TypeName = "varchar(50)")]
         public string? BatteryWarranty { get; set; }
-        [Column(TypeName = "varchar(50)")]
+        [Column(TypeName = "varchar(80)")]
         public string? WaterProofRating { get; set; }
         [Column(TypeName = "varchar(20)")]
         public string? ReverseAssist { get; set; }

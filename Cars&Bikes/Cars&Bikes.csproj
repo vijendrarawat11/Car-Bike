@@ -24,8 +24,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\AtherEnergy\" />
+    <Folder Include="Views\Bajaj\" />
     <Folder Include="Views\Brand\" />
+    <Folder Include="Views\Honda\" />
     <Folder Include="Views\LatestNews\" />
+    <Folder Include="Views\RoyalEnfield\" />
+    <Folder Include="Views\TVS\" />
     <Folder Include="Views\UpcomingBike\" />
     <Folder Include="wwwroot\.well-known\pki-validation\" />
   </ItemGroup>

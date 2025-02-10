@@ -12,7 +12,7 @@ namespace Cars_Bikes.Models
         public string? Varients { get; set; }
         [Column(TypeName = "varchar(30)")]
         public string? InstrumentConsole { get; set; }
-        [Column(TypeName = "varchar(30)")]
+        [Column(TypeName = "varchar(60)")]
         public string? BluetoothConnectivity { get; set; }
         [Column(TypeName = "varchar(30)")]
         public string? Navigation { get; set; }
