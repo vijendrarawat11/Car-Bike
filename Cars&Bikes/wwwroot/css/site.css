@@ -200,6 +200,7 @@ body {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    flex-wrap: nowrap;
 }
 
     .latest-news-container::-webkit-scrollbar {
@@ -207,7 +208,8 @@ body {
     }
 
 .latest-news-item {
-    flex: 0 0 100%;
+    /*    flex: 0 0 100%;*/
+    flex: 0 0 300px; /* Or a percentage if you prefer */
     scroll-snap-align: start;
     background: #fff;
     margin: 10px;
@@ -218,6 +220,10 @@ body {
     /*display: flex;
     flex-direction: column;
     align-items: center;*/
+    display: inline-block;
+    width: 300px; /* Adjust as needed */
+    /*margin-right: 10px;*/ /* Optional spacing */
+    vertical-align: top;
 }
 
     .latest-news-item img {

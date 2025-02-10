@@ -95,7 +95,26 @@ namespace Cars_Bikes.Controllers
             }
             return View(vfmDetails);
         }
-
+        [Route("value-for-money/maruti-suzuki-wagonR-2025-the-value-for-money-variant")]
+        public IActionResult MarutiSuzukiWagonR2025_1()
+        {
+            var vfmDetails = GetVFMDetails("Maruti Suzuki WagonR 2025: The Value-for-Money Variant");
+            if (vfmDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View(vfmDetails);
+        }
+        [Route("maruti-suzuki-wagonR-2025-features-and-specifications")]
+        public IActionResult MarutiSuzukiWagonR2025_2()
+        {
+            var vfmDetails = GetVFMDetails("Maruti Suzuki WagonR 2025: The Value-for-Money Variant");
+            if (vfmDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View(vfmDetails);
+        }
         private Cars_Bikes.Models.ValueForMoney GetVFMDetails(string vfmHeading)
         {
             var vfmItem = _context.ValueForMoney

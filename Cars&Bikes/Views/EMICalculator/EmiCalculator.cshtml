@@ -15,19 +15,15 @@
     }
 }
 <link href="~/css/site.css" rel="stylesheet" />
-
 <body id="loan-body">
     <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
-  
 <div class=" row main-content">
- 
     <div class=" col-lg-6 loan-card">
       <h2>Loan Calculator</h2>
       <div class="form-group">
         <label for="principal">Principal Amount (₹50,000 to ₹1,00,00,000):</label>
         <div class="input-wrapper">
             <span class="currency-prefix">₹</span>
-          
         <input type="text" id="principal" value="100000" oninput="validatePrincipal()">
         </div>
         <p id="principalError" class="error-message">Please enter a value between ₹50,000 and ₹1,00,00,000.</p>
@@ -39,17 +35,16 @@
         <label for="rateInput">Rate of Interest (1% to 18%):</label>
 	<div class="input-wrapper">
         @* <div class="fixed-textbox-container"> *@
-          <input type="text" id="rateInput" step="0.01" min="1.00" max="18.00" value="5" oninput="updateRateFromInput()">
+          <input type="text" id="rateInput" step="0.01" min="1.00" max="18.00" value="10" oninput="updateRateFromInput()">
                         <span class="percent-postfix">%</span>
         </div>
         <p id="rateError" class="error-message">Please enter a value between 1% and 18%.</p>
-        <input type="range" id="rate" step="0.01"  min="1.00" max="18.00" value="5" oninput="updateRateFromSlider(this.value)">
+        <input type="range" id="rate" step="0.01"  min="1.00" max="18.00" value="10" oninput="updateRateFromSlider(this.value)">
         <div class="slider-scale">
           <span>1%</span>
-        
           <span>18%</span>
         </div>
-        <p>Selected Rate of Interest: <span id="selectedRate">5%</span></p>
+        <p>Selected Rate of Interest: <span id="selectedRate">10%</span></p>
       </div>
 
      
@@ -189,10 +184,15 @@
       const totalInterest = totalAmount - principal;
 
 
-     document.getElementById("resultPrincipal").textContent = `₹${principal.toLocaleString('en-IN')}`;
-    document.getElementById("resultInterest").textContent = `₹${totalInterest.toLocaleString('en-IN')}`;
-    document.getElementById("resultTotal").textContent = `₹${totalAmount.toLocaleString('en-IN')}`;
-    document.getElementById("resultEMI").textContent = `₹${monthlyEMI.toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
+    // document.getElementById("resultPrincipal").textContent = `₹${principal.toLocaleString('en-IN')}`;
+    // document.getElementById("resultInterest").textContent = `₹${totalInterest.toLocaleString('en-IN')}`;
+    // document.getElementById("resultTotal").textContent = `₹${totalAmount.toLocaleString('en-IN')}`;
+    // document.getElementById("resultEMI").textContent = `₹${monthlyEMI.toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
+    document.getElementById("resultPrincipal").textContent = `₹${Math.round(principal).toLocaleString('en-IN')}`;
+    document.getElementById("resultInterest").textContent = `₹${Math.round(totalInterest).toLocaleString('en-IN')}`;
+   document.getElementById("resultTotal").textContent = `₹${Math.round(totalAmount).toLocaleString('en-IN')}`;
+   document.getElementById("resultEMI").textContent = `₹${Math.round(monthlyEMI).toLocaleString('en-IN')}`;
+
 
     }
 
