@@ -21,7 +21,7 @@ namespace Cars_Bikes.Models
         public string? WheelSize { get; set; }
         [Column(TypeName = "varchar(50)")]
         public string? WheelType { get; set; }
-        [Column(TypeName = "varchar(50)")]
+        [Column(TypeName = "varchar(100)")]
         public string? Frame { get; set; }
         [Column(TypeName = "varchar(20)")]
         public string? TubelessTyre { get; set; }

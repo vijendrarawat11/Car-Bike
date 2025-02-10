@@ -11,6 +11,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<TwoWheelerDB>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Con")));
 builder.Services.AddDbContext<FourWheelerDB>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Con")));
 
+builder.Services.AddSession(); // Add session service
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -28,11 +30,15 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.UseSession(); // Enable session
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(

@@ -13,7 +13,6 @@ namespace Cars_Bikes.Models
         public string? BrakingType { get; set; }
         [Column(TypeName = "varchar(10)")]
         public string? ChargingPoint { get; set; }
-        [Column(TypeName = "varchar(10)")]
         public string? FastCharging { get; set; }
         [Column(TypeName = "varchar(10)")]
         public string? MobileApplication { get; set; }

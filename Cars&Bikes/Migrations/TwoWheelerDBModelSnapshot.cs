@@ -198,6 +198,740 @@ namespace Cars_Bikes.Migrations
                     b.ToTable("TWDimensionsAndCapacities");
                 });
 
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVAppFeatures", b =>
+                {
+                    b.Property<int>("TWEVAppFeaturesId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWEVAppFeaturesId"));
+
+                    b.Property<string>("AntiTheftAlarm")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("CallsAndMessaging")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("ChargingStationLocate")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<DateTime?>("CreatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Geofencing")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("LowBatteryAlert")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("NavigationAssis")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("TWName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TWVarientId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TwoWheelerId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Varients")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TWEVAppFeaturesId");
+
+                    b.HasIndex("TWVarientId");
+
+                    b.HasIndex("TwoWheelerId");
+
+                    b.ToTable("TWEVAppFeatures");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVCharging", b =>
+                {
+                    b.Property<int>("TWEVChargingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWEVChargingId"));
+
+                    b.Property<string>("ChargingAtChargingStation")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("ChargingAtHome")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("ChargingNetworkBatterySwappingNetwork")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("ChargingTimeZeroTo100Percent")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("ChargingTimeZeroTo80Percent")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<DateTime?>("CreatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("TWName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TWVarientId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TwoWheelerId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Varients")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TWEVChargingId");
+
+                    b.HasIndex("TWVarientId");
+
+                    b.HasIndex("TwoWheelerId");
+
+                    b.ToTable("TWEVChargings");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVChassisAndSuspension", b =>
+                {
+                    b.Property<int>("TWEVChassisAndSuspensionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWEVChassisAndSuspensionId"));
+
+                    b.Property<string>("BodyType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TWName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TWVarientId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TwoWheelerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Varients")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TWEVChassisAndSuspensionId");
+
+                    b.HasIndex("TWVarientId");
+
+                    b.HasIndex("TwoWheelerId");
+
+                    b.ToTable("TWEVChassisAndSuspensions");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVDimensionsAndCapacity", b =>
+                {
+                    b.Property<int>("TWEVDimensionsAndCapacityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWEVDimensionsAndCapacityId"));
+
+                    b.Property<string>("AdditionalStorage")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<DateTime?>("CreatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal?>("GroundClearance")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("Height")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("KerbWeight")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("Length")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("SaddleHeight")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("TWName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TWVarientId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TwoWheelerId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Varients")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("Wheelbase")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("Width")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("TWEVDimensionsAndCapacityId");
+
+                    b.HasIndex("TWVarientId");
+
+                    b.HasIndex("TwoWheelerId");
+
+                    b.ToTable("TWEVDimensionsAndCapacities");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVElectricals", b =>
+                {
+                    b.Property<int>("TWEVElectricalsId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWEVElectricalsId"));
+
+                    b.Property<DateTime?>("CreatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Headlight")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("LEDTailLights")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("LowBatteryIndicator")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("TWName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TWVarientId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<string>("TailLight")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("TurnSignalLamp")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<int?>("TwoWheelerId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Varients")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TWEVElectricalsId");
+
+                    b.HasIndex("TWVarientId");
+
+                    b.HasIndex("TwoWheelerId");
+
+                    b.ToTable("TWEVElectricals");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVEngineAndTransmission", b =>
+                {
+                    b.Property<int>("TWEVEngineAndTransmissionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWEVEngineAndTransmissionId"));
+
+                    b.Property<string>("CoolingSystem")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<DateTime?>("CreatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EVName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MotorIPRating")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<decimal?>("MotorPower")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int?>("NumOfBattries")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RangeEcoMode")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("RangeNormalMode")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("RangeSportsMode")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("Starting")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<int?>("TWVarientId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TwoWheelerId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Varients")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TWEVEngineAndTransmissionId");
+
+                    b.HasIndex("TWVarientId");
+
+                    b.HasIndex("TwoWheelerId");
+
+                    b.ToTable("TWEVEngineAndTransmissions");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVFeatures", b =>
+                {
+                    b.Property<int>("TWEVFeaturesId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWEVFeaturesId"));
+
+                    b.Property<string>("AdditionalFeaturesOfVariant")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AntiTheftAlarm")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("BluetoothConnectivity")
+                        .HasColumnType("varchar(60)");
+
+                    b.Property<string>("CallSMSAlerts")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("CarryHook")
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("ChargerOutput")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("Clock")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<DateTime?>("CreatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EVName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HillHold")
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("InstrumentConsole")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("KeylessIgnition")
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("MusicControl")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("Navigation")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("OTA")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("Odometer")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("PassengerFootrest")
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("RegenerativeBraking")
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("RoadsideAssistance")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("SeatType")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("Speedometer")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<int?>("TWVarientId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Tripmeter")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<int?>("TwoWheelerId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<string>("USBChargingPort")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<decimal?>("UnderseatStorage")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Varients")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TWEVFeaturesId");
+
+                    b.HasIndex("TWVarientId");
+
+                    b.HasIndex("TwoWheelerId");
+
+                    b.ToTable("TWEVFeatures");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVMotorAndBattery", b =>
+                {
+                    b.Property<int>("TWEVMotorAndBatteryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWEVMotorAndBatteryId"));
+
+                    b.Property<decimal?>("BatteryCapacity")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("BatteryType")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("BatteryWarranty")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime?>("CreatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MotorType")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<decimal?>("PeakPower")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("ReverseAssist")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("TWName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TWVarientId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("TorqueMotor")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Transmission")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<int?>("TwoWheelerId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Varients")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WaterProofRating")
+                        .HasColumnType("varchar(80)");
+
+                    b.HasKey("TWEVMotorAndBatteryId");
+
+                    b.HasIndex("TWVarientId");
+
+                    b.HasIndex("TwoWheelerId");
+
+                    b.ToTable("TWEVMotorAndBatteries");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVPerformance", b =>
+                {
+                    b.Property<int>("TWEVPerformanceId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWEVPerformanceId"));
+
+                    b.Property<DateTime?>("CreatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ScooterSpeed")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("TWName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TWVarientId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("TopSpeed")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int?>("TwoWheelerId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Varients")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("ZeroTo100Kmphsec")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("ZeroTo40Kmphsec")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("TWEVPerformanceId");
+
+                    b.HasIndex("TWVarientId");
+
+                    b.HasIndex("TwoWheelerId");
+
+                    b.ToTable("TWEVPerformances");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVRange", b =>
+                {
+                    b.Property<int>("TWEVRangeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWEVRangeId"));
+
+                    b.Property<string>("ClaimedRange")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<DateTime?>("CreatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("TWName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TWVarientId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TwoWheelerId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Varients")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TWEVRangeId");
+
+                    b.HasIndex("TWVarientId");
+
+                    b.HasIndex("TwoWheelerId");
+
+                    b.ToTable("TWEVRanges");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVSafety", b =>
+                {
+                    b.Property<int>("TWEVSafetyId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWEVSafetyId"));
+
+                    b.Property<string>("BrakingType")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("ChargingPoint")
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<DateTime?>("CreatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Display")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EBS")
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("FastCharging")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("Gradeability")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("InternetConnectivity")
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("MobileApplication")
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("OperatingSystem")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("Processor")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("RidingModes")
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("SeatOpeningSwitch")
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("ServiceDueIndicator")
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("SwitchableABS")
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("TWName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TWVarientId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TwoWheelerId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Varients")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TWEVSafetyId");
+
+                    b.HasIndex("TWVarientId");
+
+                    b.HasIndex("TwoWheelerId");
+
+                    b.ToTable("TWEVSafety");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVTyresAndBrakes", b =>
+                {
+                    b.Property<int>("TWEVTyresAndBrakesId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWEVTyresAndBrakesId"));
+
+                    b.Property<DateTime?>("CreatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal?>("FrontBrakeDiameter")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("FrontTyrePressureRider")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("FrontTyrePressureRiderAndPillion")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("RearBrakeDiameter")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("RearTyrePressureRider")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("RearTyrePressureRiderAndPillion")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("TWName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TWVarientId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TwoWheelerId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Varients")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TWEVTyresAndBrakesId");
+
+                    b.HasIndex("TWVarientId");
+
+                    b.HasIndex("TwoWheelerId");
+
+                    b.ToTable("TWEVTyresAndBrakes");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVUnderpinning", b =>
+                {
+                    b.Property<int>("TWEVUnderpinningId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TWEVUnderpinningId"));
+
+                    b.Property<string>("ABS")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("BrakesFront")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("BrakesRear")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<DateTime?>("CreatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Frame")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("SuspensionFront")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SuspensionRear")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TWName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TWVarientId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<string>("TubelessTyre")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<int?>("TwoWheelerId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<string>("TyreSize")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Varients")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WheelSize")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WheelType")
+                        .HasColumnType("varchar(50)");
+
+                    b.HasKey("TWEVUnderpinningId");
+
+                    b.HasIndex("TWVarientId");
+
+                    b.HasIndex("TwoWheelerId");
+
+                    b.ToTable("TWEVUnderpinnings");
+                });
+
             modelBuilder.Entity("Cars_Bikes.Models.TWElectricals", b =>
                 {
                     b.Property<int>("TWElectricalsId")
@@ -1059,6 +1793,253 @@ namespace Cars_Bikes.Migrations
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWDimensionsAndCapacity", b =>
+                {
+                    b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
+                        .WithMany()
+                        .HasForeignKey("TWVarientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
+                        .WithMany()
+                        .HasForeignKey("TwoWheelerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TWVarients");
+
+                    b.Navigation("TwoWheeler");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVAppFeatures", b =>
+                {
+                    b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
+                        .WithMany()
+                        .HasForeignKey("TWVarientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
+                        .WithMany()
+                        .HasForeignKey("TwoWheelerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TWVarients");
+
+                    b.Navigation("TwoWheeler");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVCharging", b =>
+                {
+                    b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
+                        .WithMany()
+                        .HasForeignKey("TWVarientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
+                        .WithMany()
+                        .HasForeignKey("TwoWheelerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TWVarients");
+
+                    b.Navigation("TwoWheeler");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVChassisAndSuspension", b =>
+                {
+                    b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
+                        .WithMany()
+                        .HasForeignKey("TWVarientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
+                        .WithMany()
+                        .HasForeignKey("TwoWheelerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TWVarients");
+
+                    b.Navigation("TwoWheeler");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVDimensionsAndCapacity", b =>
+                {
+                    b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
+                        .WithMany()
+                        .HasForeignKey("TWVarientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
+                        .WithMany()
+                        .HasForeignKey("TwoWheelerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TWVarients");
+
+                    b.Navigation("TwoWheeler");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVElectricals", b =>
+                {
+                    b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
+                        .WithMany()
+                        .HasForeignKey("TWVarientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
+                        .WithMany()
+                        .HasForeignKey("TwoWheelerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TWVarients");
+
+                    b.Navigation("TwoWheeler");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVEngineAndTransmission", b =>
+                {
+                    b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
+                        .WithMany()
+                        .HasForeignKey("TWVarientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
+                        .WithMany()
+                        .HasForeignKey("TwoWheelerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TWVarients");
+
+                    b.Navigation("TwoWheeler");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVFeatures", b =>
+                {
+                    b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
+                        .WithMany()
+                        .HasForeignKey("TWVarientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
+                        .WithMany()
+                        .HasForeignKey("TwoWheelerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TWVarients");
+
+                    b.Navigation("TwoWheeler");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVMotorAndBattery", b =>
+                {
+                    b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
+                        .WithMany()
+                        .HasForeignKey("TWVarientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
+                        .WithMany()
+                        .HasForeignKey("TwoWheelerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TWVarients");
+
+                    b.Navigation("TwoWheeler");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVPerformance", b =>
+                {
+                    b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
+                        .WithMany()
+                        .HasForeignKey("TWVarientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
+                        .WithMany()
+                        .HasForeignKey("TwoWheelerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TWVarients");
+
+                    b.Navigation("TwoWheeler");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVRange", b =>
+                {
+                    b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
+                        .WithMany()
+                        .HasForeignKey("TWVarientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
+                        .WithMany()
+                        .HasForeignKey("TwoWheelerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TWVarients");
+
+                    b.Navigation("TwoWheeler");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVSafety", b =>
+                {
+                    b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
+                        .WithMany()
+                        .HasForeignKey("TWVarientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
+                        .WithMany()
+                        .HasForeignKey("TwoWheelerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TWVarients");
+
+                    b.Navigation("TwoWheeler");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVTyresAndBrakes", b =>
+                {
+                    b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
+                        .WithMany()
+                        .HasForeignKey("TWVarientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
+                        .WithMany()
+                        .HasForeignKey("TwoWheelerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TWVarients");
+
+                    b.Navigation("TwoWheeler");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.TWEVUnderpinning", b =>
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()

@@ -139,6 +139,30 @@ namespace Cars_Bikes.Controllers.TwoWheeler.Brand
             var bikeDetails = GetBikeDetails("Bajaj CT 110X");
             return View("~/Views/TwoWheeler/Brand/Bajaj/BajajCT110X.cshtml", bikeDetails);
         }
+        [Route("bajaj/bajaj-chetak-3501")]
+        public IActionResult BajajChetak3501()
+        {
+            var bikeDetails = GetBikeDetails("Bajaj Chetak 3501");
+            return View("~/Views/TwoWheeler/Brand/Bajaj/BajajChetak3501.cshtml", bikeDetails);
+        }
+        [Route("bajaj/bajaj-chetak-3502")]
+        public IActionResult BajajChetak3502()
+        {
+            var bikeDetails = GetBikeDetails("Bajaj Chetak 3502");
+            return View("~/Views/TwoWheeler/Brand/Bajaj/BajajChetak3502.cshtml", bikeDetails);
+        }
+        [Route("bajaj/bajaj-chetak-2903")]
+        public IActionResult BajajChetak2903()
+        {
+            var bikeDetails = GetBikeDetails("Bajaj Chetak 2903");
+            return View("~/Views/TwoWheeler/Brand/Bajaj/BajajChetak2903.cshtml", bikeDetails);
+        }
+        [Route("bajaj/bajaj-chetak-3202")]
+        public IActionResult BajajChetak3202()
+        {
+            var bikeDetails = GetBikeDetails("Bajaj Chetak 3202");
+            return View("~/Views/TwoWheeler/Brand/Bajaj/BajajChetak3202.cshtml", bikeDetails);
+        }
         private Cars_Bikes.Models.TwoWheeler GetBikeDetails(string bikeName)
         {
             var bike = _context.Twowheelers.Include(b => b.TWVarients)

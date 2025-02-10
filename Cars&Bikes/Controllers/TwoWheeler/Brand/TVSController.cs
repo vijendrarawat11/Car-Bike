@@ -117,6 +117,18 @@ namespace Cars_Bikes.Controllers.TwoWheeler.Brand
             var bikeDetails = GetBikeDetails("TVS Zest 110");
             return View("~/Views/TwoWheeler/Brand/TVS/TVSZest110.cshtml", bikeDetails);
         }
+        [Route("tvs/tvs-x")]
+        public IActionResult TVSX()
+        {
+            var bikeDetails = GetBikeDetails("TVS X");
+            return View("~/Views/TwoWheeler/Brand/TVS/TVSX.cshtml", bikeDetails);
+        }
+        [Route("tvs/tvs-iqube")]
+        public IActionResult TVSiQube()
+        {
+            var bikeDetails = GetBikeDetails("TVS iQube");
+            return View("~/Views/TwoWheeler/Brand/TVS/TVSiQube.cshtml", bikeDetails);
+        }
         private Cars_Bikes.Models.TwoWheeler GetBikeDetails(string bikeName)
         {
             var bike = _context.Twowheelers.Include(b => b.TWVarients)
