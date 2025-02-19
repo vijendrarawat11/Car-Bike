@@ -124,7 +124,7 @@
         <div class="blogs-section">
                 <h2 class="for-h1">Value For Money</h2>
                 <div class="blogs-section">
-                    <button class="scroll-button left" onclick="scrollLeftVFM()">&#9664;</button>
+                    <button class="scroll-button-vfm left-vfm" onclick="scrollLeftVFM()">&#9664;</button>
                     <div class=" blogs-container" id="VFMContainer">
                         @foreach (var VFM in ViewBag.VFM)
                         {
@@ -137,13 +137,13 @@
                                 </section>
                             </div>
                         }
-                </div><button class="scroll-button right" onclick="scrollRightVFM()">&#9654;</button>
+                </div><button class="scroll-button-vfm right-vfm" onclick="scrollRightVFM()">&#9654;</button>
                 </div>
         </div>
         <!-- Upcoming bikes section -->
         <div class="upcoming-bikes-section">
                 <h2 class="for-h1"><a asp-controller="UpcomingBike" asp-action="TWUpcomingBikeDetails">Upcoming Bikes</a></h2>
-            <button class="scroll-button left" onclick="scrollLeftUB()">&#9664;</button>
+            <button class="scroll-button-ub left-ub" onclick="scrollLeftUB()">&#9664;</button>
            <div class="upcoming-bikes-container" id="upcomingBikesContainer">
                 @foreach (var bike in ViewBag.upcomingbike)
                 {
@@ -166,7 +166,7 @@
                     @* </a> *@
                 }
             </div>
-            <button class="scroll-button right" onclick="scrollRightUB()">&#9654;</button>
+            <button class="scroll-button-ub right-ub" onclick="scrollRightUB()">&#9654;</button>
         </div>
             <!-- Slider END -->
             <!-- New Car -->
@@ -930,7 +930,7 @@
             <div class="blogs-section">
                 <h2 class="for-h1">Latest News</h2>
                 <div class="blogs-section">
-                    <button class="scroll-button left" onclick="scrollLeftLN()">&#9664;</button>
+                    <button class="scroll-button-ln left-ln" onclick="scrollLeftLN()">&#9664;</button>
             @* <div class="tab-lscontent active" id="bikeNews"> *@
             @*     <button class="scroll-button left" onclick="scrollLeftLN()">&#9664;</button> *@
                 <div class="latest-news-container" id="latestNewsContainer">
@@ -975,7 +975,7 @@
                 @*     <button class="scroll-btn left" onclick="scrollLeftLN('bikeNews')">&#9664;</button>  *@
                 @*      <button class="scroll-btn right" onclick="scrollRightLN('bikeNews')">&#9654;</button> *@
                     
-                 <button class="scroll-button right" onclick="scrollRightLN()">&#9654;</button>
+                 <button class="scroll-button-ln right-ln" onclick="scrollRightLN()">&#9654;</button>
                 @* </div> *@
                 
             </div>
@@ -1204,51 +1204,51 @@
         let isManualScrollingUB = false;
         let autoScrollTimeoutUB;
 
-        function continuousScrollUB() {
-            if (!isManualScrollingUB) {
-                scrollPositionUB += scrollSpeedUB;
+        @* function continuousScrollUB() { *@
+        @*     if (!isManualScrollingUB) { *@
+        @*         scrollPositionUB += scrollSpeedUB; *@
 
-                // If we've reached the end, reset to the start
-                if (scrollPositionUB >= containerUB.scrollWidth - containerUB.offsetWidth) {
-                    scrollPositionUB = 0; // Reset scroll to the beginning
-                }
+        @*         // If we've reached the end, reset to the start *@
+        @*         if (scrollPositionUB >= containerUB.scrollWidth - containerUB.offsetWidth) { *@
+        @*             scrollPositionUB = 0; // Reset scroll to the beginning *@
+        @*         } *@
 
-                containerUB.scrollLeft = scrollPositionUB; // Update scroll position
-            }
+        @*         containerUB.scrollLeft = scrollPositionUB; // Update scroll position *@
+        @*     } *@
 
-            requestAnimationFrame(continuousScrollUB); // Keep scrolling
-        }
+        @*     requestAnimationFrame(continuousScrollUB); // Keep scrolling *@
+        @* } *@
 
-        // Start the continuous scrolling
-        continuousScrollUB();
+        @* // Start the continuous scrolling *@
+        @* continuousScrollUB(); *@
 
         // Manual scroll functions
        //function scrollLeftUB() {
        window.scrollLeftUB = function(){
             isManualScrollingUB = true;
-            clearTimeout(autoScrollTimeoutUB);
+            //clearTimeout(autoScrollTimeoutUB);
             containerUB.scrollBy({ left: -itemWidthUB, behavior: 'smooth' });
-            resumeAutoScrollUB();
+            //resumeAutoScrollUB();
         }
 
         //function scrollRightUB() {
             window.scrollRightUB = function(){
             isManualScrollingUB = true;
-            clearTimeout(autoScrollTimeoutUB);
+            //clearTimeout(autoScrollTimeoutUB);
             containerUB.scrollBy({ left: itemWidthUB, behavior: 'smooth' });
-            resumeAutoScrollUB();
+            //resumeAutoScrollUB();
         }
 
         // Resume auto-scroll after a delay
-        function resumeAutoScrollUB() {
-            autoScrollTimeoutUB = setTimeout(() => {
-                isManualScrollingUB = false;
-            }, 11000); // Resume after 3 seconds of inactivity
-        }
+        // function resumeAutoScrollUB() {
+        //     autoScrollTimeoutUB = setTimeout(() => {
+        //         isManualScrollingUB = false;
+        //     }, 11000); Resume after 3 seconds of inactivity
+        // }
 
         // Attach event listeners to buttons
-        document.querySelector('.scroll-button.left').addEventListener('click', window.scrollLeftUB);
-        document.querySelector('.scroll-button.right').addEventListener('click', window.scrollRightUB);
+        document.querySelector('.scroll-button-ub.left-ub').addEventListener('click', window.scrollLeftUB);
+        document.querySelector('.scroll-button-ub.right-ub').addEventListener('click', window.scrollRightUB);
     });
 </script>
 <!--Blogs Bike-->
@@ -1261,47 +1261,47 @@
         let isManualScrolling = false;
         let autoScrollTimeout;
 
-        function continuousScroll() {
-            if (!isManualScrolling) {
-                scrollPosition += scrollSpeed;
+        // function continuousScroll() {
+        //     if (!isManualScrolling) {
+        //         scrollPosition += scrollSpeed;
 
-                // If we've reached the end, reset to the start
-                if (scrollPosition >= container.scrollWidth - container.offsetWidth) {
-                    scrollPosition = 0; // Reset scroll to the beginning
-                }
+        //         If we've reached the end, reset to the start
+        //         if (scrollPosition >= container.scrollWidth - container.offsetWidth) {
+        //             scrollPosition = 0; Reset scroll to the beginning
+        //         }
 
-                container.scrollLeft = scrollPosition; // Update scroll position
-            }
+        //         container.scrollLeft = scrollPosition; Update scroll position
+        //     }
 
-            requestAnimationFrame(continuousScroll); // Keep scrolling
-        }
+        //     requestAnimationFrame(continuousScroll); Keep scrolling
+        // }
 
         // Start continuous scrolling
-        continuousScroll();
+        // continuousScroll();
 
         // Manual scroll functions
         //function scrollLeft() {
         window.scrollLeft = function() {
             isManualScrolling = true;
-            clearTimeout(autoScrollTimeout);
+            //clearTimeout(autoScrollTimeout);
             container.scrollBy({ left: -itemWidth, behavior: 'smooth' });
-            resumeAutoScroll();           
+            // resumeAutoScroll();           
         }
 
         //function scrollRight() {
         window.scrollRight = function() {
             isManualScrolling = true;
-            clearTimeout(autoScrollTimeout);
+            //clearTimeout(autoScrollTimeout);
             container.scrollBy({ left: itemWidth, behavior: 'smooth' });
-            resumeAutoScroll();
+            // resumeAutoScroll();
         }
 
         // Resume auto-scroll after a delay
-        function resumeAutoScroll() {
-            autoScrollTimeout = setTimeout(() => {
-                isManualScrolling = false;
-            }, 19000); // Resume after 3 seconds of inactivity
-        }
+        // function resumeAutoScroll() {
+        //     autoScrollTimeout = setTimeout(() => {
+        //         isManualScrolling = false;
+        //     }, 19000); Resume after 3 seconds of inactivity
+        // }
 
         // Attach event listeners to manual scroll buttons
         document.querySelector('.scroll-button.left').addEventListener('click', window.scrollLeft);
@@ -1320,53 +1320,53 @@
         let autoScrollTimeoutVFM;
        
 
-        function continuousScrollVFM() {
-            if (!isManualScrollingVFM) {
-                scrollPositionVFM += scrollSpeedVFM;
+        // function continuousScrollVFM() {
+        //     if (!isManualScrollingVFM) {
+        //         scrollPositionVFM += scrollSpeedVFM;
 
-               // If we've reached the end, reset to the start
-                if (scrollPositionVFM >= containerVFM.scrollWidth - containerVFM.offsetWidth) {
-                    scrollPositionVFM = 0; //Reset scroll to the beginning
-                }
+        //        If we've reached the end, reset to the start
+        //         if (scrollPositionVFM >= containerVFM.scrollWidth - containerVFM.offsetWidth) {
+        //             scrollPositionVFM = 0; Reset scroll to the beginning
+        //         }
 
-                containerVFM.scrollLeft = scrollPositionVFM;// Update scroll position
-            }
+        //         containerVFM.scrollLeft = scrollPositionVFM;Update scroll position
+        //     }
 
-            requestAnimationFrame(continuousScrollVFM); //Keep scrolling
-        }
+        //     requestAnimationFrame(continuousScrollVFM); Keep scrolling
+        // }
 
-        //Start continuous scrolling
-        continuousScrollVFM();
+        // Start continuous scrolling
+        // continuousScrollVFM();
 
         //Manual scroll functions
        //function scrollLeft() {
         window.scrollLeftVFM  = function(){
             isManualScrollingVFM = true;
-            clearTimeout(autoScrollTimeoutVFM);
+            //clearTimeout(autoScrollTimeoutVFM);
             containerVFM.scrollBy({ left: -itemWidthVFM, behavior: 'smooth' });
-            resumeAutoScrollVFM();
+            // resumeAutoScrollVFM();
         }
       
         // function scrollRight() {
          window.scrollRightVFM = function(){
             isManualScrollingVFM = true;
-            clearTimeout(autoScrollTimeoutVFM);
+            //clearTimeout(autoScrollTimeoutVFM);
             containerVFM.scrollBy({ left: itemWidthVFM, behavior: 'smooth' });
-            resumeAutoScrollVFM();
+            // resumeAutoScrollVFM();
         }
 
        // Resume auto-scroll after a delay
-        function resumeAutoScrollVFM() {
-            autoScrollTimeoutVFM = setTimeout(() => {
-                isManualScrollingVFM = false;
-            }, 21000); //Resume after 3 seconds of inactivity
-        }
+        // function resumeAutoScrollVFM() {
+        //     autoScrollTimeoutVFM = setTimeout(() => {
+        //         isManualScrollingVFM = false;
+        //     }, 21000); Resume after 3 seconds of inactivity
+        // }
 
        // Attach event listeners to manual scroll buttons
         // document.querySelector('.scroll-button.left').addEventListener('click',scrollLeft);
         // document.querySelector('.scroll-button.right').addEventListener('click',scrollRight);
-       document.querySelector('.scroll-button.left').addEventListener('click', window.scrollLeftVFM);
-       document.querySelector('.scroll-button.right').addEventListener('click', window.scrollRightVFM);
+       document.querySelector('.scroll-button-vfm.left-vfm').addEventListener('click', window.scrollLeftVFM);
+       document.querySelector('.scroll-button-vfm.right-vfm').addEventListener('click', window.scrollRightVFM);
     });
 
 </script> 
@@ -1380,59 +1380,49 @@
         let isManualScrollingLN = false; 
         let autoScrollTimeoutLN; 
 
-        function continuousScrollLN() {
-            scrollPositionLN += scrollSpeedLN;
-            console.log("scroll");
-            // If we've reached the end, reset to the start
-            if (scrollPositionLN >= containerLN.scrollWidth - containerLN.offsetWidth) {
-                scrollPositionLN = 0; // Reset scroll to the beginning
-            }
+        // function continuousScrollLN() {
+        //     scrollPositionLN += scrollSpeedLN;
+        //     console.log("scroll");
+        //     If we've reached the end, reset to the start
+        //     if (scrollPositionLN >= containerLN.scrollWidth - containerLN.offsetWidth) {
+        //         scrollPositionLN = 0; Reset scroll to the beginning
+        //     }
 
-            containerLN.scrollLeft = scrollPositionLN; // Update scroll position
-            requestAnimationFrame(continuousScrollLN); // Keep scrolling
-        }
+        //     containerLN.scrollLeft = scrollPositionLN; Update scroll position
+        //     requestAnimationFrame(continuousScrollLN); Keep scrolling
+        // }
 
         // Start the continuous scrolling
-        continuousScrollLN();
+        // continuousScrollLN();
        //  function scrollLeftLN = {
         window.scrollLeftLN  = function(){
-            console.log("left button");
             isManualScrollingLN = true;
-               console.log("left timout set ");
-            clearTimeout(autoScrollTimeoutLN);
-                console.log("left timeout clear");
+            //clearTimeout(autoScrollTimeoutLN);
             containerLN.scrollBy({ left: -itemWidthLN, behavior: 'smooth' });
-             console.log("left scrolling done");
-            resumeAutoScrollLN();
-            console.log("lefft resume");
+            // resumeAutoScrollLN();
         }
 
        //  function scrollRight() {
          window.scrollRightLN = function(){
-             console.log("right button");
             isManualScrollingLN = true;
-            console.log("riight timout set ");
-            clearTimeout(autoScrollTimeoutLN);
-                console.log("right timeout clear");
+            //clearTimeout(autoScrollTimeoutLN);
             containerLN.scrollBy({ left: itemWidthLN, behavior: 'smooth' });
-             console.log("right scrolling done");
-            resumeAutoScrollLN();
-            console.log(" right resume");
+            // resumeAutoScrollLN();
         }
 
        // Resume auto-scroll after a delay
-        function resumeAutoScrollLN() {
-            console.log("resume");
-            autoScrollTimeoutLN = setTimeout(() => {
-                isManualScrollingLN = false;
-            }, 21000);// Resume after 3 seconds of inactivity
-        }
+        // function resumeAutoScrollLN() {
+        //     console.log("resume");
+        //     autoScrollTimeoutLN = setTimeout(() => {
+        //         isManualScrollingLN = false;
+        //     }, 21000);Resume after 3 seconds of inactivity
+        // }
 
        // Attach event listeners to manual scroll buttons
        //  document.querySelector('.scroll-button.left').addEventListener('click',scrollLeft);
        //  document.querySelector('.scroll-button.right').addEventListener('click',scrollRight);
-       document.querySelector('.scroll-button.left').addEventListener('click', window.scrollLeftLN);
-       document.querySelector('.scroll-button.right').addEventListener('click', window.scrollRightLN);
+       document.querySelector('.scroll-button-ln.left-ln').addEventListener('click', window.scrollLeftLN);
+       document.querySelector('.scroll-button-ln.right-ln').addEventListener('click', window.scrollRightLN);
 
     });
 </script>
