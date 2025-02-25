@@ -122,7 +122,7 @@ body {
     font-size: 14px;
 }
 
-.scroll-button {
+.scroll-button, .scroll-button-vfm, .scroll-button-ub, .scroll-button-ln{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -134,17 +134,17 @@ body {
     transition: background 0.3s ease;
 }
 
-    .scroll-button.left {
-        left: 0;
-    }
+.scroll-button.left, .scroll-button-vfm.left-vfm, .scroll-button-ub.left-ub, .scroll-button-ln.left-ln {
+    left: 0;
+}
 
-    .scroll-button.right {
-        right: 0;
-    }
+.scroll-button.right, .scroll-button-vfm.right-vfm, .scroll-button-ub.right-ub, .scroll-button-ln.right-ln {
+    right: 0;
+}
 
-    .scroll-button:hover {
-        background: rgba(255, 255, 255, 1);
-    }
+.scroll-button:hover, .scroll-button-vfm:hover, .scroll-button-ub:hover, .scroll-button-ln:hover {
+    background: rgba(255, 255, 255, 1);
+}
 
  /*--------Latest News Style-------------*/
 /*.latest-section-head {
