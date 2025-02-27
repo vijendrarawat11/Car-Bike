@@ -115,6 +115,46 @@ namespace Cars_Bikes.Controllers
             }
             return View(vfmDetails);
         }
+        [Route("value-for-money/maruti-suzuki-dzire-2025-the-value-for-money-variant")]
+        public IActionResult MarutiSuzukiDzire2025_1()
+        {
+            var vfmDetails = GetVFMDetails("Maruti Suzuki Dzire 2025: The Value-for-Money Variant");
+            if (vfmDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View(vfmDetails);
+        }
+        [Route("maruti-suzuki-dzire-2025-features-and-specifications")]
+        public IActionResult MarutiSuzukiDzire2025_2()
+        {
+            var vfmDetails = GetVFMDetails("Maruti Suzuki Dzire 2025: The Value-for-Money Variant");
+            if (vfmDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View(vfmDetails);
+        }
+        [Route("value-for-money/maruti-suzuki-ertiga-zXIO-the-value-for-money-variant")]
+        public IActionResult MarutiSuzukiErtigaZXIO_1()
+        {
+            var vfmDetails = GetVFMDetails("Maruti Suzuki Ertiga ZXIO: The Value-for-Money Variant");
+            if (vfmDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View(vfmDetails);
+        }
+        [Route("maruti-suzuki-ertiga-zXIO-features-and-specifications")]
+        public IActionResult MarutiSuzukiErtigaZXIO_2()
+        {
+            var vfmDetails = GetVFMDetails("Maruti Suzuki Ertiga ZXIO: The Value-for-Money Variant");
+            if (vfmDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View(vfmDetails);
+        }
         private Cars_Bikes.Models.ValueForMoney GetVFMDetails(string vfmHeading)
         {
             var vfmItem = _context.ValueForMoney
