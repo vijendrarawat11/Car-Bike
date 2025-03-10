@@ -155,6 +155,46 @@ namespace Cars_Bikes.Controllers
             }
             return View(vfmDetails);
         }
+        [Route("value-for-money/maruti-suzuki-brezza-the-value-for-money-variant")]
+        public IActionResult MarutiSuzukiBrezza_1()
+        {
+            var vfmDetails = GetVFMDetails("Maruti Suzuki Brezza: The Value-for-Money Variant");
+            if (vfmDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View(vfmDetails);
+        }
+        [Route("maruti-suzuki-brezza-features-and-specifications")]
+        public IActionResult MarutiSuzukiBrezza_2()
+        {
+            var vfmDetails = GetVFMDetails("Maruti Suzuki Brezza: The Value-for-Money Variant");
+            if (vfmDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View(vfmDetails);
+        }
+        [Route("value-for-money/maruti-suzuki-celerio-the-value-for-money-variant")]
+        public IActionResult MarutiSuzukiCelerio_1()
+        {
+            var vfmDetails = GetVFMDetails("Maruti Suzuki Celerio: The Value-for-Money Variant");
+            if (vfmDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View(vfmDetails);
+        }
+        [Route("maruti-suzuki-celerio-features-and-specifications")]
+        public IActionResult MarutiSuzukiCelerio_2()
+        {
+            var vfmDetails = GetVFMDetails("Maruti Suzuki Celerio: The Value-for-Money Variant");
+            if (vfmDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View(vfmDetails);
+        }
         private Cars_Bikes.Models.ValueForMoney GetVFMDetails(string vfmHeading)
         {
             var vfmItem = _context.ValueForMoney
