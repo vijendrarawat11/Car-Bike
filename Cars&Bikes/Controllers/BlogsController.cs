@@ -309,6 +309,49 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Feb62025BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/top-5-two-wheeler-electric-vehicles-under-₹1-5-lakh-in-india")]
+        public IActionResult Mar192025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Top 5 Two-Wheeler Electric Vehicles Under ₹1.5 Lakh in India");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Mar192025BlogDetails1.cshtml", blogsDetails);
+        }
+        [Route("blogs/top-5-electric-scooters-in-india-based-on-battery-capacity-&-highest-range-per-charge")]
+        public IActionResult Mar202025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Top 5 Electric Scooters in India Based on Battery Capacity & Highest Range Per Charge");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Mar202025BlogDetails1.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/best-5-electric-scooters-in-india-with-200-km-range")]
+        public IActionResult Mar212025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Best 5 Electric Scooters in India With 200+ km Range");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Mar212025BlogDetails1.cshtml", blogsDetails);
+        }
+        [Route("blogs/komaki-hi-speed-electric-scooters-best-models-&-prices")]
+        public IActionResult Mar222025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Komaki Hi-Speed Electric Scooters: Best Models & Prices");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Mar222025BlogDetails1.cshtml", blogsDetails);
+        }
+
+
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
