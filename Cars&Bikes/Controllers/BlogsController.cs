@@ -350,6 +350,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Mar222025BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/the-10L-boosterjet-turbo-engine-the-heart-of-maruti-suzukis-sporty-side")]
+        public IActionResult Apr142025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("The 1.0L Boosterjet Turbo Engine: The Heart of Maruti Suzuki’s Sporty Side");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Apr142025BlogDetails1.cshtml", blogsDetails);
+        }
 
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
