@@ -360,6 +360,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Apr142025BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/cFMoto-450MT-expected-launch-date-specifications-best-price-in-india")]
+        public IActionResult Apr172025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("CFMoto 450MT: Expected Launch Date, Specifications & Best Price in India");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Apr172025BlogDetails1.cshtml", blogsDetails);
+        }
 
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
