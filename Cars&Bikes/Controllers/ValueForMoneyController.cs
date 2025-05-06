@@ -195,6 +195,46 @@ namespace Cars_Bikes.Controllers
             }
             return View(vfmDetails);
         }
+        [Route("value-for-money/best-value-for-money-variant-of-the-maruti-suzuki-s-presso")]
+        public IActionResult MarutiSuzukiSPresso_1()
+        {
+            var vfmDetails = GetVFMDetails("Maruti Suzuki S-Presso: The Value-for-Money Variant");
+            if (vfmDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View(vfmDetails);
+        }
+        [Route("maruti-suzuki-s-presso-features-and-specifications")]
+        public IActionResult MarutiSuzukiSPresso_2()
+        {
+            var vfmDetails = GetVFMDetails("Maruti Suzuki S-Presso: The Value-for-Money Variant");
+            if (vfmDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View(vfmDetails);
+        }
+        [Route("value-for-money/best-value-for-money-variant-of-maruti-suzuki-nexa-ignis")]
+        public IActionResult MarutiSuzukiNexaIgnis_1()
+        {
+            var vfmDetails = GetVFMDetails("Maruti Suzuki Nexa Ignis: The Value-for-Money Variant");
+            if (vfmDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View(vfmDetails);
+        }
+        [Route("maruti-suzuki-nexa-ignis-features-and-specifications")]
+        public IActionResult MarutiSuzukiNexaIgnis_2()
+        {
+            var vfmDetails = GetVFMDetails("Maruti Suzuki Nexa Ignis: The Value-for-Money Variant");
+            if (vfmDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View(vfmDetails);
+        }
         private Cars_Bikes.Models.ValueForMoney GetVFMDetails(string vfmHeading)
         {
             var vfmItem = _context.ValueForMoney

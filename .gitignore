@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Cars&Bikes/Views/AdminLogin
+/Cars&Bikes/Migrations
+/Cars&Bikes/Controllers
