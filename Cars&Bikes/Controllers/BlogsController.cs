@@ -381,6 +381,17 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2025/May122025BlogDetails1.cshtml", blogsDetails);
         }
 
+        [Route("blogs/best-bikes-in-the-150cc-segment-in-india")]
+        public IActionResult May232025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Best Bikes in the 150cc Segment in India");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/May232025BlogDetails1.cshtml", blogsDetails);
+        }
+
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
