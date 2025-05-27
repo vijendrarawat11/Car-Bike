@@ -31,12 +31,12 @@ namespace Cars_Bikes.Controllers.TwoWheeler.LatestNews
             ViewBag.Brand = brand;
             return View("~/Views/TwoWheeler/LatestNews/TWLatestNewsDetails.cshtml");
         }
-        public IActionResult TWLatestNewsByBrand(int id)
-        {
-            var newsbybrand = _context.TWLatestNews.Where(m => m.TwoWBrandId == id).ToList();
-            ViewBag.newsbybrand = newsbybrand;
-            return View("~/Views/TwoWheeler/LatestNews/TWLatestNewsByBrand.cshtml");
-        }
+        //public IActionResult TWLatestNewsByBrand(int id)
+        //{
+        //    var newsbybrand = _context.TWLatestNews.Where(m => m.TwoWBrandId == id).ToList();
+        //    ViewBag.newsbybrand = newsbybrand;
+        //    return View("~/Views/TwoWheeler/LatestNews/TWLatestNewsByBrand.cshtml");
+        //}
         //Single page for News
         [Route("latestnews/bajaj-freedom-125-cng")]
         public IActionResult Aug122024NewsDetails1()
