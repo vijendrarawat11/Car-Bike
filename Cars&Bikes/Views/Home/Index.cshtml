@@ -30,11 +30,11 @@
     <!-- Page Title Here -->
     @* <title>bikecarhub - New Bikes & Cars, Scooters, Bike & Car Prices, E-Vehicle</title> *@
     @{
-        ViewData["Title"] = "New Bikes, Cars & Scooters - Prices, E-Vehicles & More";
+        ViewData["Title"] = "New Bikes, Cars & Scooters & New EVs- Prices & More";
     }
     @section MetaTags{
-        <meta name="keywords" content="bike, new bikes, bike comparison, bikes prices, reviews, Images, news, compare bikes, Instant Bike On-Road Price, Upcoming bikes, Latest News, Ask a Question" />
-        <meta name="description" content="Discover your ideal bike or scooter at BikeCarHub. Check on-road prices, colors, reviews, comparisons, latest news, and upcoming bikes & cars in one place." />
+        <meta name="keywords" content="bikecarhub, bike, new bikes, bike comparison, bikes prices, reviews, Images, news, compare bikes, Instant Bike On-Road Price, Upcoming bikes, Latest News, Ask a Question" />
+        <meta name="description" content="Discover your ideal bike or scooter at BikeCarHub. Check on-road prices, colors, reviews, comparisons, latest news, and upcoming bikes & cars in one place at BikeCarHub." />
     }
     <!-- Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,15 +59,15 @@
             <div class="slides">
                 <!-- Image 1 -->
                 <div class="slide">
-                    <img src="~/images/main-slider/Slide_1.png" alt="Slide1">
+                    <img src="~/images/main-slider/Slide_1.png" alt="bikecarhubslider1image" title="bikecarhubslider1image">
                 </div>
                 <!-- Image 2 -->
                 <div class="slide">
-                    <img src="~/images/main-slider/Slide_4.png" alt="Slide2">
+                    <img src="~/images/main-slider/Slide_4.png" alt="bikecarhubslider2image" title="bikecarhubslider2image">
                 </div>
                 <!-- Image 3 -->
                 <div class="slide">
-                    <img src="~/images/main-slider/Slide_3.png" alt="Slide3">
+                    <img src="~/images/main-slider/Slide_3.png" alt="bikecarhubslider3image" title="bikecarhubslider3image">
                 </div>
                 <div class="tp-bannertimer tp-bottom bg-primary" style="height: 5px; "></div>
         </div>
@@ -75,7 +75,7 @@
             <!--Search-->
             <div class="search-main-container">
                 <div class="search-container">
-                <div class="search-head"><h2>Search the right vehicle</h2></div>
+                <div class="search-head"><h2>Search Bikes or Cars</h2></div>
                 <div class="search-bottom">
                 <div class="search-ddn">
                 <select id="ddlBrand" class="ddnvarient" asp-items="ViewBag.TWLists">
@@ -133,7 +133,9 @@
                                     <a href="/@VFM.URL" style="text-decoration:none">
                                     <div class="upcoming-bike-img"><img src="@VFM.ImageURL" alt="@VFM.VFMHeading" title="@VFM.VFMHeading" /></div>
                                         <div class="upcoming-bike-name">@Truncate(@VFM.VFMHeading, 56)</div>
+                                    <span>By : BikeCarHub Team</span>
                                     </a>
+                                
                                 </section>
                             </div>
                         }
@@ -153,7 +155,7 @@
                                 <div class="upcoming-bike-img"><img src="@bike.ImageFolderURL" alt="@bike.UpcomingBikeName" title="@bike.UpcomingBikeName" /></div>
                                 <div class="upcoming-bike-name">@Truncate(@bike.UpcomingBikeName, 26)</div>
                         <div class="upcoming-bike-date">
-                                    <p><i class="fa fa-calendar"></i>  @bike.ExpectedLaunchDate</p>
+                                    <p>BikeCarHub | <i class="fa fa-calendar"></i>  @bike.ExpectedLaunchDate</p>
                                 </div>
                                 <div class="ow-post-readmore">
                                     <a href="/@bike.ImageURL" rel="bookmark"> Read More <i class="fa fa-angle-right"></i></a>
@@ -945,7 +947,7 @@
                                     <center> <div class="upcoming-bike-img"><img src="@news.ImageFolderURL" alt="@news.NewsHeading" title="@news.NewsHeading" onerror="this.onerror=null; this.src='@Url.Content("/images/twowheeler/default.jpg")';" /></div></center>
                                 <div class="latest-news-content">
                                   <div class="latest-news-heading"><a href="/@news.ImageURL" title="Bike post" style="text-decoration:none;"><p>@Truncate(news.NewsHeading, 77)</p></a> </div> 
-                                  <div class="latest-news-summary"><p><i class="fa fa-calendar"></i>  @news.Date?.ToString("d MMM yyyy")</p></div> 
+                                  <div class="latest-news-summary"><p>BikeCarHub | <i class="fa fa-calendar"></i>  @news.Date?.ToString("d MMM yyyy")</p></div> 
                                         <div class="ow-post-readmore">
                                        <a href="/@news.ImageURL" rel="bookmark"> Read More <i class="fa fa-angle-right"></i></a> 
                                     </div> 

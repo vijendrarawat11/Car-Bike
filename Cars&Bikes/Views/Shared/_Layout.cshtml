@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] | BCH</title>
+    <title>@ViewData["Title"] | bikecarhub</title>
     <!--For MetaTags-->
     @RenderSection("MetaTags", required: false)
 
@@ -37,7 +37,7 @@
                 <div class="logo">
                     @* <img src="~/images/logo new.png" /> *@
                     @* <img src="~/images/logo new name.png" /> *@
-                    <a asp-controller="Home" asp-action="Index"><img src="~/images/white logo.png" /> @* <img src="~/images/new logo white bg.png" /> *@@* <img src="~/images/logo newname psd 2.png" alt="BCH Logo" /> *@</a>
+                    <a asp-controller="Home" asp-action="Index"><img src="~/images/white logo.png" alt="bikecarhublogo" title="bikecarhublogo" /> @* <img src="~/images/new logo white bg.png" /> *@@* <img src="~/images/logo newname psd 2.png" alt="BCH Logo" /> *@</a>
                 </div>
                 <div class="search-div"><input type="text" id="searchTwoWheeler" placeholder="Search" class="for-search" /><i class="bi bi-search search-icon"></i></div>
                 <!-- <div class="logo">Logo</div> -->
@@ -147,7 +147,7 @@
                             @* <li><a href="used-car-search.html">Review</a></li> *@
                             <!--<li><a href="used-car-sell.html">Car Sell</a></li>-->
                                 <li><a asp-controller="Compare" asp-action="TWCompare">Compare</a></li>
-                                <li><a asp-controller="AboutUs" asp-action="Index">About Us</a></li>
+                                <li><a asp-controller="AboutUs" asp-action="Index">About BikeCarHub</a></li>
                         </ul>
                     </div>
                 </div>
@@ -213,7 +213,7 @@
                                 </div>
                                 <div class="input-group">
                                     <button type="submit" class="contact-form-button">
-                                        SUBSCRIBE
+                                        SUBSCRIBE TO BIKECARHUB
                                     </button>
                                 </div>
                             </form>
@@ -249,8 +249,8 @@
             <div class="row">
                     <div class="col-md-6 col-sm-6 text-left"> © 2024 <a href="https://voxtus.com/" target="_blank">Voxtus Technologies Pvt. Ltd.</a> All rights reserved. </div>
                 <div class="col-md-6 col-sm-6 text-right ">
-                        <a asp-controller="AboutUs" asp-action="Index"> About Us</a> |
-                    <a asp-controller="ContactUs" asp-action="Index"> Contact Us</a> @* | *@
+                        <a asp-controller="AboutUs" asp-action="Index"> About BikeCarHub</a> |
+                        <a asp-controller="ContactUs" asp-action="Index"> Contact BikeCarHub</a> @* | *@
                     @* <a href="page-about.html"> Privacy Policy</a> *@
                 </div>
             </div>

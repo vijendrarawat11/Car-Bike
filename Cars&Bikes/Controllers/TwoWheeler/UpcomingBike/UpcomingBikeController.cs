@@ -163,6 +163,16 @@ namespace Cars_Bikes.Controllers.TwoWheeler.UpcomingBike
             }
             return View("~/Views/TwoWheeler/UpcomingBike/2025/May2025UpcomingBikeDetails2.cshtml", upcomingDetails);
         }
+        [Route("upcoming-bike/husqvarna-vitpilen")]
+        public IActionResult May2025UpcomingBikeDetails3()
+        {
+            var upcomingDetails = GetUpcomingBikeDetails("Husqvarna Vitpilen");
+            if (upcomingDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/UpcomingBike/2025/May2025UpcomingBikeDetails3.cshtml", upcomingDetails);
+        }
         private Cars_Bikes.Models.UpcomingBike GetUpcomingBikeDetails(string upcomingBikeName)
         {
             var upcomingItem = _context.UpcomingBikes

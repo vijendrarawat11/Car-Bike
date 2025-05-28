@@ -1,0 +1,170 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Top 5 Royal Enfield Bikes in India (2025 Edition)";
+}
+@section MetaTags {
+    <meta name="keywords" content="bikecarhub,  Royal Enfield Classic 350, Royal Enfield Hunter 350, Royal Enfield Bullet 350, Royal Enfield Meteor 350, Royal Enfield Himalayan 450, Top Royal Enfield bikes 2025, Royal Enfield bike prices India, Best Royal Enfield motorcycles, Royal Enfield specifications, Royal Enfield comparison 2025" />
+    <meta name="description" content=" Discover the top 5 Royal Enfield bikes at bikecarhub for 2025, featuring models like Classic 350, Hunter 350, and Himalayan 450 with specs and prices. " />
+}
+<!--For truncate-->
+@functions {
+    public string Truncate(string input, int length)
+    {
+        if (string.IsNullOrEmpty(input) || input.Length <= length)
+            return input;
+        return input.Substring(0, length) + "...";
+    }
+}
+<body id="bg">
+    <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
+    <div class="">
+        <div><h1 class="latest-bike-head">@Model.BlogHeading</h1></div>
+        <div class=" latest-bike-container">
+            @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
+            <div class="upcoming-bikes-details-image">
+                <img src="@Model.ImageURL" alt="@Model.BlogHeading" title="@Model.BlogHeading" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                <div class="upcoming-bikes-details-text">
+                    <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
+                    @* <p>@ViewBag.TWNews.NewsSummary</p> *@
+                </div>
+            </div>
+            <div class="latest-bikes-details-content">
+                <h3 class="subheading">Top 5 Royal Enfield Bikes in India (2025 Edition)</h3>
+                <p>@Html.Raw(@Model.BlogSummary.Replace("\n", "<br>"))</p>
+                <div class="div-line"></div>
+                <h3 class="subheading">1. Royal Enfield Classic 350</h3>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center"><img src="~/images/blogs/2025/may/top5royalenfieldbikesinindia/reclassic350.png" alt="bikecarhubreclassic350" title="bikecarhubreclassic350" /></div>
+                </div>
+                <p>The Royal Enfield Classic 350 remains a quintessential choice for riders seeking a blend of heritage and contemporary performance. Equipped with a 349.34cc air-cooled engine, it delivers approximately 20.2 bhp and 27 Nm of torque. Its retro design, combined with modern features like dual-channel ABS and a semi-digital instrument cluster, offers a nostalgic yet practical riding experience. The Classic 350 is available in multiple variants, with ex-showroom prices ranging from ₹1.93 lakh to ₹2.25 lakh</p>
+                <h5 class="subheading">Specification & Features</h5>
+				<ul>
+                    <li>Engine Type: 349.34 cc, air-cooled engine</li>
+                    <li>Mileage: 41.5 kmpl</li>
+                    <li>Max Power: 20.21 PS@6100 rpm</li>
+                    <li>Fuel Capacity: 13 L</li>
+                    <li>Max Torque: 27 Nm@4000 rpm</li>
+                </ul>
+                <div class="div-line"></div>
+                <h3 class="subheading">2. Royal Enfield Hunter 350</h3>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center"><img src="~/images/blogs/2025/may/top5royalenfieldbikesinindia/rehunter350.webp" alt="bikecarhubrehunter350" title="bikecarhubrehunter350" /></div>
+                </div>
+                <p>Targeting urban riders, the Hunter 350 is Royal Enfield's most affordable offering, starting at ₹1.50 lakh (ex-showroom). Powered by the same 349.34cc engine as the Classic 350, it produces around 20.4 bhp and 27 Nm of torque. Its lightweight design and agile handling make it ideal for city commuting, while its modern-retro styling appeals to younger audiences.</p>
+                <h5 class="subheading">Specification & Features</h5>
+                <ul>
+                    <li>Engine Type: 349.34 cc, Single cylinder, 4 stroke, SOHC Engine</li>
+                    <li>Mileage: 36.2 kmpl</li>
+                    <li>Max Power: 20.4 PS@6100 rpm</li>
+                    <li>Fuel Capacity: 13 L</li>
+                    <li>Max Torque: 27 Nm@4000 rpm</li>
+                </ul>
+                <div class="div-line"></div>
+                <h3 class="subheading">3. Royal Enfield Bullet 350</h3>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center"><img src="~/images/blogs/2025/may/top5royalenfieldbikesinindia/rebullet350.webp" alt="bikecarhubrebullet350" title="bikecarhubrebullet350" /></div>
+                </div>
+                <p>An icon in its own right, the Bullet 350 carries forward Royal Enfield's legacy with its timeless design and characteristic thump. The 2025 model features the updated 349cc engine, ensuring smoother performance and compliance with current emission norms. Priced between ₹1.74 lakh and ₹2.16 lakh (ex-showroom), the Bullet 350 continues to be a favorite among purists.</p>
+                <h5 class="subheading">Specification & Features</h5>
+                <ul>
+                    <li>Engine Type: 349 cc, Single cylinder, 4 stroke, Air-Oil cooled</li>
+                    <li>Mileage: 37 kmpl</li>
+                    <li>Max Power: 20.4 PS@6100 rpm</li>
+                    <li>Fuel Capacity: 13 L</li>
+                    <li>Max Torque: 27 Nm@4000 rpm</li>
+                </ul>
+                <div class="div-line"></div>
+                <h3 class="subheading">4. Royal Enfield Meteor 350</h3>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center"><img src="~/images/blogs/2025/may/top5royalenfieldbikesinindia/remeteor350.webp" alt="bikecarhubremeteor350" title="bikecarhubremeteor350" /></div>
+                </div>
+                <p>For those inclined towards cruising, the Meteor 350 offers a comfortable ride with its relaxed ergonomics and long wheelbase. It houses the 349cc engine, delivering about 20.4 bhp and 27 Nm of torque. Features like the Tripper navigation system and a comfortable seat make it suitable for long-distance touring. The Meteor 350 is priced between ₹2.06 lakh and ₹2.30 lakh (ex-showroom). </p>
+                <h5 class="subheading">Specification & Features</h5>
+                <ul>
+                    <li>Engine Type: 349 cc, Single cylinder, 4 stroke, Air-Oil cooled</li>
+                    <li>Mileage: 41.88 kmpl</li>
+                    <li>Max Power: 20.4 PS@6100 rpm</li>
+                    <li>Fuel Capacity: 15 L</li>
+                    <li>Max Torque: 27Nm@4000 rpm</li>
+                </ul>
+                <div class="div-line"></div>
+                <h3 class="subheading">5. Royal Enfield Himalayan 450</h3>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center"><img src="~/images/blogs/2025/may/top5royalenfieldbikesinindia/rehimalayan450.webp" alt="bikecarhubrehimalayan450" title="bikecarhubrehimalayan450" /></div>
+                </div>
+                <p>Catering to adventure enthusiasts, the Himalayan 450 is built to tackle diverse terrains. It boasts a 452cc engine, producing approximately 39.5 bhp and 40 Nm of torque, offering enhanced performance over its predecessor. With features like switchable ABS, long-travel suspension, and a robust frame, it's designed for both on-road comfort and off-road prowess. The Himalayan 450 is priced between ₹2.85 lakh and ₹2.98 lakh (ex-showroom). </p>
+                <h5 class="subheading">Specification & Features</h5>
+                <ul>
+                    <li>Engine Type: 452 cc, Liquid Cooled, Single Cylinder, 4 Valves, DOHC</li>
+                    <li>Mileage: 30 kmpl</li>
+                    <li>Max Power: 40.02 PS@8000 rpm</li>
+                    <li>Fuel Capacity: 17 L</li>
+                    <li>Max Torque: 40 Nm@5500 rpm</li>
+                </ul>
+                <div class="div-line"></div>
+                <h3 class="subheading">Comparison Table</h3>
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table-content">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Model</th>
+                                <th class="text-center">Engine (cc)</th>
+                                <th class="text-center">Power (bhp)</th>
+                                <th class="text-center">Torque (Nm)</th>
+                                <th class="text-center">Price Range (₹, ex-showroom)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="compare-head-text">
+                                <td>Classic 350</td>
+                                <td>349.34</td>
+                                <td>20.2</td>
+                                <td>27</td>
+                                <td>1.93 – 2.25 lakh</td>
+                            </tr>
+                            <tr>				
+                                <td>Hunter 350</td>
+                                <td>349.34</td>
+                                <td>20.4</td>
+                                <td>27</td>
+                                <td>1.50 – 1.75 lakh</td>
+                            </tr>	
+                            <tr class="compare-head-text">
+                                <td>Bullet 350</td>
+                                <td>349</td>
+                                <td>20.4</td>
+                                <td>27</td>
+                                <td>1.74 – 2.16 lakh</td>
+                            </tr>
+                            <tr>	
+                            <tr class="compare-head-text">
+                                <td>Meteor 350</td>
+                                <td>349</td>
+                                <td>20.4</td>
+                                <td>27</td>
+                                <td>2.05 – 2.29 lakh</td>
+                            </tr>
+                            <tr class="compare-head-text">
+                                <td>Himalayan 450</td>
+                                <td>452</td>
+                                <td>40.02</td>
+                                <td>40</td>
+                                <td>2.85 – 2.98 lakh</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="div-line"></div>
+                <p>Royal Enfield's 2025 lineup showcases a harmonious blend of tradition and innovation. Whether it's the timeless appeal of the Classic 350, the urban agility of the Hunter 350, or the adventurous spirit of the Himalayan 450, there's a Royal Enfield motorcycle tailored for every rider's preference. These models not only uphold the brand's storied legacy but also cater to the evolving demands of modern motorcyclists</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function showFallbackIcon(imgElement) {
+        imgElement.style.display = 'none'; // Hide the broken image
+        imgElement.nextElementSibling.style.display = 'block'; // Show the fallback icon
+    }
+</script>

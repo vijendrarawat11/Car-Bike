@@ -391,6 +391,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/May232025BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/top-5-royal-enfield-bikes-in-india-2025-edition")]
+        public IActionResult May282025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Top 5 Royal Enfield Bikes in India 2025 Edition");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/May282025BlogDetails1.cshtml", blogsDetails);
+        }
 
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)

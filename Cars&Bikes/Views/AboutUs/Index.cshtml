@@ -5,15 +5,22 @@
 @* @{
     Layout = "";
 } *@
+@{
+    ViewData["Title"] = "Get the details about BikeCarHub";
+}
+@section MetaTags {
+    <meta name="keywords" content="about bikecarhub, about bike,about new bikes,about bike comparison,about bikes prices" />
+    <meta name="description" content="If you want to know about the BikeCarHub contact us." />
+    }
 @if (TempData["success"] != null)
 {
     @TempData["success"];
 }
 
 <body>
-    <div class="header-img"> <img src="~/images/main-slider/header.png" /></div>
+    <div class="header-img"> <img src="~/images/main-slider/header.png" alt="bikecarhubheaderimage" title="bikecarhubheaderimage" /></div>
     <div>
-        <h1 class="latest-bike-head">About Us</h1>
+        <h1 class="latest-bike-head">About BikeCarHub</h1>
         <div>
         @* <div class="aboutus-content">
             <img src="~/images/background/about-us.jpg" />
@@ -27,7 +34,7 @@
             </div>
             </div> *@
             <div class="aboutus-text">
-                <h2>Welcome to TheCar&Bike!</h2>
+                <h2>Welcome to BikeCarHub</h2>
                 <p>we are passionate about all things on wheels. Whether you're a seasoned motor enthusiast or just starting your journey into the world of bikes and cars, we've got you covered. Our mission is to provide comprehensive, reliable, and up-to-date information on a wide range of bikes and cars to help you make informed decisions.</p>
                 <h2>Who We Are</h2>
                 <p>We are a team of dedicated automotive experts and enthusiasts who understand the thrill of the ride and the joy of owning a vehicle. Our diverse backgrounds in the automotive industry ensure that we bring a wealth of knowledge and expertise to our content. From the latest models and reviews to maintenance tips and buying guides, we strive to be your go-to resource for all things automotive.</p>
