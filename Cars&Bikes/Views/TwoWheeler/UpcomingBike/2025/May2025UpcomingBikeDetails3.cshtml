@@ -5,8 +5,8 @@
     ViewData["Title"] = "Husqvarna Vitpilen 401 India Launch in June 2025 bikecarhub";
 }
 @section MetaTags {
-    <meta name="keywords" content="bikecarhub,Husqvarna Vitpilen 401, Vitpilen 401 launch date India, Husqvarna bikes 2025, Neo-retro bikes in India, 373cc street bikes, Vitpilen 401 specifications, Husqvarna Vitpilen features, Upcoming bikes in India 2025, OBD-2B compliant motorcycles, Best street bikes under 3 lakh, Husqvarna Vitpilen 401 price India, KTM engine Husqvarna Vitpilen" />
-    <meta name="description" content="Husqvarna Vitpilen 401 to launch in June 2025 with 373cc engine, neo-retro design, premium features, and OBD-2 compliance. Check specs and price on bikcarhub." />
+        <meta name="keywords" content="bikecarhub,Husqvarna Vitpilen 401, Vitpilen 401 launch date India, Husqvarna bikes 2025, Neo-retro bikes in India, 373cc street bikes, Vitpilen 401 specifications, Husqvarna Vitpilen features, Upcoming bikes in India 2025, OBD-2B compliant motorcycles, Best street bikes under 3 lakh, Husqvarna Vitpilen 401 price India, KTM engine Husqvarna Vitpilen" />
+        <meta name="description" content="Husqvarna Vitpilen 401 to launch in June 2025 with 373cc engine, neo-retro design, premium features, and OBD-2 compliance. Check specs and price on bikcarhub." />
 }
 <!--For truncate-->
 @functions {
@@ -122,19 +122,19 @@
     <div class="upcoming-bikes-details-row">
         @foreach (var allUpbike in ViewBag.allupcomingbike)
         {
-            <a href="/@allUpbike.ImageURL" style="text-decoration:none;">
-                <div class="upcoming-bikes-details-card">
-                    <div class="upcoming-bikes-all-image">
-                        <img src="@allUpbike.ImageFolderURL" alt="@allUpbike.UpcomingBikeName" title="@allUpbike.UpcomingBikeName" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" />
-                    </div>
+                <a href="/@allUpbike.ImageURL" style="text-decoration:none;">
+                    <div class="upcoming-bikes-details-card">
+                        <div class="upcoming-bikes-all-image">
+                            <img src="@allUpbike.ImageFolderURL" alt="@allUpbike.UpcomingBikeName" title="@allUpbike.UpcomingBikeName" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" />
+                        </div>
 
-                    <div class="upcoming-allbikes-details-content">
-                        <h2>@Truncate(@allUpbike.UpcomingBikeName, 22)</h2>
-                        <p><i class="fa fa-calendar"></i>  @allUpbike.ExpectedLaunchDate</p>
-                        <a href="/@allUpbike.ImageURL" class="details-button" style="text-decoration:none;">View Details</a>
+                        <div class="upcoming-allbikes-details-content">
+                            <h2>@Truncate(@allUpbike.UpcomingBikeName, 22)</h2>
+                            <p><i class="fa fa-calendar"></i>  @allUpbike.ExpectedLaunchDate</p>
+                            <a href="/@allUpbike.ImageURL" class="details-button" style="text-decoration:none;">View Details</a>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
         }
     </div>
 </body>
