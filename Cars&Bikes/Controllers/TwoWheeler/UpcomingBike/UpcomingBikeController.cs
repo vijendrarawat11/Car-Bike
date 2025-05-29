@@ -166,7 +166,7 @@ namespace Cars_Bikes.Controllers.TwoWheeler.UpcomingBike
         [Route("upcoming-bike/husqvarna-vitpilen")]
         public IActionResult May2025UpcomingBikeDetails3()
         {
-            var upcomingDetails = GetUpcomingBikeDetails("Husqvarna Vitpilen");
+            var upcomingDetails = GetUpcomingBikeDetails("Husqvarna Vitpilen 401");
             if (upcomingDetails == null)
             {
                 return NotFound(); // Return 404 if news item is not found
