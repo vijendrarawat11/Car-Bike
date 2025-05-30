@@ -39,7 +39,7 @@
                         <span class="percent-postfix">%</span>
         </div>
         <p id="rateError" class="error-message">Please enter a value between 1% and 18%.</p>
-        <input type="range" id="rate" step="0.01"  min="1.00" max="18.00" value="10" oninput="updateRateFromSlider(this.value)">
+                <input type="range" id="rate" step="0.01" min="1.00" max="18.00" value="10" oninput="updateRateFromSlider(this.value)" class="slider-color">
         <div class="slider-scale">
           <span>1%</span>
           <span>18%</span>
@@ -62,7 +62,7 @@
                     </div>
                     <p id="timeError" class="error-message">Please enter a value between 1 and 7.</p>
         @* <label for="period">Loan Period (1 to 7 years):</label> *@
-        <input type="range" id="period" min="1" max="7" step="1" value="3" oninput="updatePeriodValue(this.value)">
+                <input type="range" id="period" min="1" max="7" step="1" value="3" oninput="updatePeriodValue(this.value)" class="slider-color">
         <div class="slider-scale">
           <span>1</span>
           <span>2</span>

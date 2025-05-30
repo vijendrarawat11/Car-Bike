@@ -235,6 +235,26 @@ namespace Cars_Bikes.Controllers
             }
             return View(vfmDetails);
         }
+        [Route("value-for-money/best-value-for-money-variant-of-tata-altroz-facelift")]
+        public IActionResult TataAltrozFacelift_1()
+        {
+            var vfmDetails = GetVFMDetails("Tata Altroz Facelift : The Value-for-Money Variant");
+            if (vfmDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View(vfmDetails);
+        }
+        [Route("tata-altroz-facelift-features-and-specifications")]
+        public IActionResult TataAltrozFacelift_2()
+        {
+            var vfmDetails = GetVFMDetails("Tata Altroz Facelift : The Value-for-Money Variant");
+            if (vfmDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View(vfmDetails);
+        }
         private Cars_Bikes.Models.ValueForMoney GetVFMDetails(string vfmHeading)
         {
             var vfmItem = _context.ValueForMoney
