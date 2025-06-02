@@ -401,6 +401,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/May282025BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/suzuki-e-access-a-trusted-name-electrified-for-the-future")]
+        public IActionResult June022025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Suzuki e-Access A Trusted Name Electrified for the Future");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June022025BlogDetails1.cshtml", blogsDetails);
+        }
 
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
