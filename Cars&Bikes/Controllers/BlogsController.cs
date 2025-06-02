@@ -404,7 +404,7 @@ namespace Cars_Bikes.Controllers
         [Route("blogs/suzuki-e-access-a-trusted-name-electrified-for-the-future")]
         public IActionResult June022025BlogDetails1()
         {
-            var blogsDetails = GetBlogDetails("Suzuki e-Access A Trusted Name Electrified for the Future");
+            var blogsDetails = GetBlogDetails("Suzuki e Access A Trusted Name Electrified for the Future");
             if (blogsDetails == null)
             {
                 return NotFound(); // Return 404 if news item is not found
