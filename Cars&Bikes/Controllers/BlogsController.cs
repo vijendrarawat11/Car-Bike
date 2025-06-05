@@ -431,17 +431,6 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/June042025BlogDetails1.cshtml", blogsDetails);
         }
-
-
-
-
-
-
-
-
-
-
-
         [Route("blogs/tata-harrier-eV")]
         public IActionResult June042025BlogDetails2()
         {
