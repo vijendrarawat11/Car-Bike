@@ -234,5 +234,13 @@ namespace Cars_Bikes.Controllers
 
             return Json(results);
         }
+
+        [Route("compare-bikes")]
+        public IActionResult CompareBikes()
+        {
+
+            return View();
+
+        }
     }
 }
