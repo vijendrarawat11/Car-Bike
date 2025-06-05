@@ -423,6 +423,25 @@ namespace Cars_Bikes.Controllers
         }
 
 
+
+
+
+
+
+
+
+
+
+        [Route("blogs/tata-harrier-eV")]
+        public IActionResult June042025BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("Tata Harrier EV: Everything You Need to Know About the Upcoming Electric SUV");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June042025BlogDetails2.cshtml", blogsDetails);
+        }
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
