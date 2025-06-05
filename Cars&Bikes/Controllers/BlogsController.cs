@@ -421,6 +421,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/June022025BlogDetails2.cshtml", blogsDetails);
         }
+        [Route("blogs/tata-altroz-facelift-2025-what’s-new")]
+        public IActionResult June042025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Tata Altroz Facelift 2025 – What’s New?");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June042025BlogDetails1.cshtml", blogsDetails);
+        }
 
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
