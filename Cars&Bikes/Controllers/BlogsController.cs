@@ -441,6 +441,17 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/June042025BlogDetails2.cshtml", blogsDetails);
         }
+        [Route("blogs/kawasaki-z900")]
+        public IActionResult June052025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("2025 Kawasaki Z900: What’s New in the King of Streetfighters");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June052025BlogDetails1.cshtml", blogsDetails);
+        }
+
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
