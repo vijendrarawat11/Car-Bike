@@ -907,3 +907,49 @@
         }
     }
 </script>
+<!--For comparing 2 bikes -->
+<script>
+        function setDropdownAndTrigger(variantId, variantDropdownId, twoWheelerDropdownId, brandDropdownId, imageClass, nameClass, milageClass, fuelClass, bodyClass, columnId) {
+        if (!variantId) return;
+
+        $.ajax({
+            url: '@Url.Action("TWCompareTwoBike", "Compare")',
+            type: 'GET',
+            data: { variantId: variantId },
+            success: function (data) {
+                // Set Brand
+                $(brandDropdownId).val(data.brandId).trigger('change');
+
+                // Wait for model dropdown to populate
+                setTimeout(function () {
+                    $(twoWheelerDropdownId).val(data.modelId).trigger('change');
+
+                    // Wait for variant dropdown to populate
+                    setTimeout(function () {
+                        $(variantDropdownId).val(variantId);
+                        // Fill comparison section if needed
+                        $(imageClass).attr("src", data.imageUrl);
+                        $(nameClass).text(data.modelName);
+                        $(milageClass).text(data.milage);
+                        $(fuelClass).text(data.fuelCapacity);
+                        $(bodyClass).text(data.bodyType);
+                        $(columnId).show();
+                        $('#comparisonTable').show();
+                    }, 1000);
+                }, 1000);
+            }
+        });
+    }
+
+    // Call this on page load if query params exist
+    $(function () {
+        var variant1 = '@ViewBag.Variant1';
+        var variant2 = '@ViewBag.Variant2';
+
+        if (variant1 && variant2) {
+            setDropdownAndTrigger(variant1, '#variantDropdown1', '#twoWheelerDropdown1', '#brandDropdown1', '.twImage1', '.IdTWName1', '.milageColumn1', '.fuelCapacity1', '.bodyType1', '#comparisonColumn1');
+            setDropdownAndTrigger(variant2, '#variantDropdown2', '#twoWheelerDropdown2', '#brandDropdown2', '.twImage2', '.IdTWName2', '.milageColumn2', '.fuelCapacity2', '.bodyType2', '#comparisonColumn2');
+        }
+    });
+
+</script>

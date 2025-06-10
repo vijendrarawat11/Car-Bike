@@ -1,4 +1,5 @@
 ﻿using Cars_Bikes.Data;
+using Cars_Bikes.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -242,5 +243,92 @@ namespace Cars_Bikes.Controllers
             return View();
 
         }
+        //public IActionResult TWCompareTwoBikes(int? variant1, int? variant2)
+        //{
+        //    var TWList = _context.Twowheelers.ToList();
+        //    var BrandList = _context.TwowheelerBrands.ToList();
+
+        //    ViewBag.TWList = new SelectList(TWList, "TwoWheelerId", "TwoWheelerName");
+        //    ViewBag.BrandList = new SelectList(BrandList, "TWBrandId", "BrandName");
+
+        //    ViewBag.Variant1 = variant1;
+        //    ViewBag.Variant2 = variant2;
+
+        //    return View();
+        //}
+        public IActionResult TWCompareTwoBikes(int variant1, int variant2)
+        {
+            var v1 = _context.TWVarients
+                             .Include(v => v.TwoWheeler)
+                             .ThenInclude(w => w.TwoWheelerBrands)
+                             .FirstOrDefault(v => v.TWVarientId == variant1);
+
+            var v2 = _context.TWVarients
+                             .Include(v => v.TwoWheeler)
+                             .ThenInclude(w => w.TwoWheelerBrands)
+                             .FirstOrDefault(v => v.TWVarientId == variant2);
+
+            if (v1 == null || v2 == null)
+            {
+                return NotFound();
+            }
+
+            //var model = new TwoWheeler
+            //{
+            //    Variant1 = v1,
+            //    Variant2 = v2
+            //};
+
+            //return View(model);
+            return View();
+        }
+
+        [HttpGet]
+        public JsonResult GetVariantDetails(int variantId)
+        {
+            var variant = _context.TWVarients.Include(v => v.TwoWheeler).ThenInclude(t => t.Brand)
+                            .FirstOrDefault(v => v.TWVarientId == variantId);
+
+            var spec = _context.TWSpec.FirstOrDefault(s => s.TWVarientId == variantId);
+
+            if (variant == null || spec == null)
+                return Json(null);
+
+            return Json(new
+            {
+                brandId = variant.TwoWheeler.TwoWBrandId,
+                modelId = variant.TwoWheelerId,
+                modelName = variant.Varients,
+                //imageUrl = variant.ImagePath, // Adjust if different
+                milage = spec.Milage,
+                fuelCapacity = spec.FuelCapacity,
+                bodyType = spec.BodyType
+            });
+        }
+        [HttpGet]
+        public IActionResult GetVariantIdsByNames(string name1, string name2)
+        {
+            var v1 = _context.TWVarients
+                .Include(v => v.TwoWheeler)
+                .FirstOrDefault(v => v.TwoWheeler.TwoWheelerName == name1);
+
+            var v2 = _context.TWVarients
+                .Include(v => v.TwoWheeler)
+                .FirstOrDefault(v => v.TwoWheeler.TwoWheelerName == name2);
+
+            if (v1 == null || v2 == null)
+            {
+                return Json(new { success = false });
+            }
+
+            return Json(new
+            {
+                success = true,
+                variantId1 = v1.TWVarientId,
+                variantId2 = v2.TWVarientId
+            });
+        }
+
+
     }
 }

@@ -58,7 +58,8 @@
     <div class="upcoming-bikes-details-row">
         @foreach (var allUpbike in ViewBag.allupcomingbike)
         {
-            <a href="@Url.Action("TWUpcomingBikeDetails", "UpcomingBike", new { id = allUpbike.UpcomingBikeId })" style="text-decoration:none;">
+            @* <a href="@Url.Action("TWUpcomingBikeDetails", "UpcomingBike", new { id = allUpbike.UpcomingBikeId })" style="text-decoration:none;"> *@
+            <a href="/@allUpbike.ImageURL" style="text-decoration:none">
                 <div class="upcoming-bikes-details-card">
                     <div class="upcoming-bikes-all-image">
                         <img src="@allUpbike.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
@@ -68,7 +69,7 @@
                     <div class="upcoming-allbikes-details-content">
                         <h2>@Truncate(@allUpbike.UpcomingBikeName, 22)</h2>
                         <p><i class="fa fa-calendar"></i>  @allUpbike.ExpectedLaunchDate</p>
-                        <a href="@Url.Action("TWUpcomingBikeDetails", "UpcomingBike", new { id = allUpbike.UpcomingBikeId })" class="details-button" style="text-decoration:none;">View Details</a>
+                        <a href="/@allUpbike.ImageURL" style="text-decoration:none">
                     </div>
                     @* </a> *@
                 </div>
