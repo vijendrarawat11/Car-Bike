@@ -47,6 +47,8 @@ namespace Cars_Bikes.Controllers
             ViewBag.Blogs = Blogs;
             var VFM = _context.ValueForMoney.OrderByDescending(m => m.Date).Take(10).ToList();
             ViewBag.VFM = VFM;
+            var Allbrand = _context.TwowheelerBrands.ToList();
+            ViewBag.AllBrand = Allbrand;
 
 
             return View();

@@ -955,16 +955,94 @@ body {
         color: #666;
         line-height: 1.6;
     }
+/*.all-brand-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;*/ /* Adjust spacing between brand cards */
+    /*padding: 20px 0;
+}*/
+.all-brand-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    transition: max-height 0.4s ease;
+    padding:20px 0 20px 0;
+    overflow: hidden;
+}
+.all-brand-grid-wrapper.collapsed .all-brand-grid {
+    max-height: 350px; /* Adjust to fit ~2 rows */
+}
 
-/*---------------------------TwoWheeler Details Page--------------------------*/
-.linkmaincontainer {
+.view-more-container {
+    text-align: start;
+    margin-top: 25px;
+    padding:10px;
+}
+
+.view-more-text {
+    color: #4fa6d5;
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+    .view-more-text:hover {
+        color: #78829A;
+    }
+   
+@media (max-width: 1024px) {
+    .all-brand-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .all-brand-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.All-brand-container {
+    /* Optional: add styling */
+    text-align: center;
+}
+
+.All-brand {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.2s ease;
+    height: 155px;
+}
+
+    .All-brand:hover {
+        transform: scale(1.05);
+        background-color: #68A4C4;
+        color: white;
+    }
+
+.side-all-brand-text {
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 5px;
+}
+
+    .side-all-brand-text h4 {
+        font-size: 1.1em;
+        font-weight: 700;
+        align-items: center;
+    }
+
+        /*---------------------------TwoWheeler Details Page--------------------------*/
+        .linkmaincontainer {
     border: 1px solid #ccc;
     padding-left: 15px;
     padding-top: 15px;
     padding-bottom: 10px;
     border-radius: 10px;
-    padding-right:8px;
-    background:white;
+    padding-right: 8px;
+    background: white;
 }
 
 .ddnvarient {

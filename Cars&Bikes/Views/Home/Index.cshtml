@@ -110,7 +110,7 @@
                             <div class="blogs-item">
                                 <section>
                                     <a href="/@blogs.URL" style="text-decoration:none">
-                            <div class="blog-img"><img src="@blogs.ImageURL" alt="@blogs.BlogHeading" title="@blogs.BlogHeading" /></div>
+                                        <div class="blog-img"><img src="@blogs.ImageURL" alt="@blogs.BlogHeading" loading="lazy" title="@blogs.BlogHeading" /></div>
                             <div class="upcoming-bike-name">@Truncate(@blogs.BlogHeading, 56)</div>
                             </a>
                             </section>
@@ -131,7 +131,7 @@
                             <div class="blogs-item">
                                 <section>
                                     <a href="/@VFM.URL" style="text-decoration:none">
-                                    <div class="upcoming-bike-img"><img src="@VFM.ImageURL" alt="@VFM.VFMHeading" title="@VFM.VFMHeading" /></div>
+                                    <div class="upcoming-bike-img"><img src="@VFM.ImageURL" alt="@VFM.VFMHeading" loading="lazy" title="@VFM.VFMHeading" /></div>
                                         <div class="upcoming-bike-name">@Truncate(@VFM.VFMHeading, 56)</div>
                                     <span class="text-black">By : BikeCarHub Team</span>
                                     </a>
@@ -142,6 +142,7 @@
                 </div><button class="scroll-button-vfm right-vfm" onclick="scrollRightVFM()">&#9654;</button>
                 </div>
         </div>
+
         <!-- Upcoming bikes section -->
         <div class="upcoming-bikes-section">
                 <h2 class="for-h1"><a asp-controller="UpcomingBike" asp-action="TWUpcomingBikeDetails">Upcoming Bikes</a></h2>
@@ -152,7 +153,7 @@
                     <div class="upcoming-bike-item">
                         <section>
                             <a href="/@bike.ImageURL" style="text-decoration:none">
-                                <div class="upcoming-bike-img"><img src="@bike.ImageFolderURL" alt="@bike.UpcomingBikeName" title="@bike.UpcomingBikeName" /></div>
+                                <div class="upcoming-bike-img"><img src="@bike.ImageFolderURL" alt="@bike.UpcomingBikeName" loading="lazy" title="@bike.UpcomingBikeName" /></div>
                                 <div class="upcoming-bike-name">@Truncate(@bike.UpcomingBikeName, 26)</div>
                         <div class="upcoming-bike-date">
                                     <p>BikeCarHub | <i class="fa fa-calendar"></i>  @bike.ExpectedLaunchDate</p>
@@ -170,6 +171,7 @@
             </div>
             <button class="scroll-button-ub right-ub" onclick="scrollRightUB()">&#9654;</button>
         </div>
+
 
             <!-- Slider END -->
             <!-- New Car -->
@@ -337,6 +339,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- About Us END -->
             <!-- For Your Quick Look -->
            <!-- <div class="section-full bg-white content-inner car-listing">
@@ -945,7 +948,7 @@
                                 @* <a href="/@news.ImageURL" title="Bike post" style="text-decoration:none;"> *@
                                 @*     <div class="upcoming-bike-img"><img src="@VFM.ImageURL" alt="@VFM.VFMHeading" title="@VFM.VFMHeading" /></div> 
                                 @*     <div class="upcoming-bike-name">@Truncate(@VFM.VFMHeading, 56)</div> *@
-                                    <center> <div class="upcoming-bike-img"><img src="@news.ImageFolderURL" alt="@news.NewsHeading" title="@news.NewsHeading" onerror="this.onerror=null; this.src='@Url.Content("/images/twowheeler/default.jpg")';" /></div></center>
+                                <center> <div class="upcoming-bike-img"><img src="@news.ImageFolderURL" alt="@news.NewsHeading" loading="lazy" title="@news.NewsHeading" onerror="this.onerror=null; this.src='@Url.Content("/images/twowheeler/default.jpg")';" /></div></center>
                                 <div class="latest-news-content">
                                   <div class="latest-news-heading"><a href="/@news.ImageURL" title="Bike post" style="text-decoration:none;"><p>@Truncate(news.NewsHeading, 77)</p></a> </div> 
                                   <div class="latest-news-summary"><p>BikeCarHub | <i class="fa fa-calendar"></i>  @news.Date?.ToString("d MMM yyyy")</p></div> 
@@ -1146,7 +1149,13 @@
 
         <!-- scroll top button -->
         <button class="scroltop fa fa-chevron-up"></button>
-    </div>
+
+        </div>
+
+        <!--All Brand Component-->
+    @await Html.PartialAsync("_AllBrandComponent")
+
+
 @* </div> *@
    </div>
     
