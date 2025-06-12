@@ -18,13 +18,13 @@
     }
 }
 <body id="bg">
-    <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
-    <div class="">
+    @* <div class="header-img"><img src="~/images/main-slider/header.png" /></div> *@
+    <div class="m-t90">
         <div><h1 class="latest-bike-head">@Model.BlogHeading</h1></div>
         <div class=" latest-bike-container">
             @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
             <div class="upcoming-bikes-details-image">
-                <img src="@Model.ImageURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                <img src="@Model.ImageURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                 <div class="upcoming-bikes-details-text">
                     <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
                     @* <p>@ViewBag.TWNews.NewsSummary</p> *@
@@ -51,7 +51,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/topfivesellingbikesinindianovember2024overview/hero splendor plus.png" alt="Hero Splendor Plus" title="Hero Splendor Plus" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/topfivesellingbikesinindianovember2024overview/hero splendor plus.webp" alt="Hero Splendor Plus" title="Hero Splendor Plus" /></center></div>
                 </div>
                 <p><span class="font-weight-700">2. Honda Shine:</span> The <a class="for-link" asp-controller="Honda" asp-action="HondaShine100">Honda Shine</a> has gained popularity due to its refined performance and stylish design. Equipped with a 123.94 cc engine producing 10.74 PS, it caters to a broad range of riders. The price ranges from ₹80,250 to ₹84,2507. </p>
                 <div class="row d-flex justify-content-center align-items-center m-b10">
@@ -70,7 +70,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/topfivesellingbikesinindianovember2024overview/honda shine.png" alt="Honda Shine" title="Honda Shine" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/topfivesellingbikesinindianovember2024overview/honda shine.webp" alt="Honda Shine" title="Honda Shine" /></center></div>
                 </div>
                 <p><span class="font-weight-700">3. Bajaj Pulsar 125:</span> With its sporty design and performance, the <a class="for-link" asp-controller="Bajaj" asp-action="BajajPulsar125">Bajaj Pulsar 125</a> appeals to younger riders and performance enthusiasts. Its 124.4 cc engine generates 11.8 PS of power. The price ranges from ₹92,883.</p>
                 <div class="row d-flex justify-content-center align-items-center m-b10">
@@ -89,7 +89,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/topfivesellingbikesinindianovember2024overview/bajaj pulsar 125.png" alt="Bajaj Pulsar 125" title="Bajaj Pulsar 125" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/topfivesellingbikesinindianovember2024overview/bajaj pulsar 125.webp" alt="Bajaj Pulsar 125" title="Bajaj Pulsar 125" /></center></div>
                 </div>
                 <p><span class="font-weight-700">4. TVS Raider 125:</span> Noted for its stylish design and advanced features, the <a class="for-link" asp-controller="TVS" asp-action="TVSRaider125">TVS Raider 125</a> caters to riders seeking a modern and feature-rich motorcycle. It is powered by a 124.8 cc engine delivering 11.38 PS. The price ranges from ₹84,869 to ₹1,04,334 lakh.</p>
                 <div class="row d-flex justify-content-center align-items-center m-b10">
@@ -108,7 +108,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/topfivesellingbikesinindianovember2024overview/tvs raider 125.png" alt="TVS Raider 125" title="TVS Raider 125" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/topfivesellingbikesinindianovember2024overview/tvs raider 125.webp" alt="TVS Raider 125" title="TVS Raider 125" /></center></div>
                 </div>
                 <p><span class="font-weight-700">5. Royal Enfield Classic 350:</span> Combining classic design with modern engineering, the <a class="for-link" asp-controller="RoyalEnfield" asp-action="REClassic350">Royal Enfield Classic 350</a> continues to attract enthusiasts. Its 349 cc engine produces 20.2 BHP of power. The price ranges from ₹1,95,919 lakh to ₹ 2,30,000 lakh. </p>
                 <div class="row d-flex justify-content-center align-items-center m-b10">
@@ -127,7 +127,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/topfivesellingbikesinindianovember2024overview/royal enfield classic 350.png" alt="Royal Enfield Classic 350" title="Royal Enfield Classic 350" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/topfivesellingbikesinindianovember2024overview/royal enfield classic 350.webp" alt="Royal Enfield Classic 350" title="Royal Enfield Classic 350" /></center></div>
                 </div>
                 <p>These motorcycles have consistently met the diverse needs of Indian riders, from daily commuting to leisure riding. Their popularity is a testament to their quality, performance, and the trust they have built among consumers.</p>
             </div>

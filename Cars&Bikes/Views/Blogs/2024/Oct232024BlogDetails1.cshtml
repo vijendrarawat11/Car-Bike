@@ -18,13 +18,13 @@
     }
 }
 <body id="bg">
-    <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
-    <div class="">
+    @* <div class="header-img"><img src="~/images/main-slider/header.webp" /></div> *@
+    <div class="m-t90">
         <div><h1 class="latest-bike-head">@Model.BlogHeading</h1></div>
         <div class=" latest-bike-container">
             @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
             <div class="upcoming-bikes-details-image">
-                <img src="@Model.ImageURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                <img src="@Model.ImageURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                 <div class="upcoming-bikes-details-text">
                     <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
                     @* <p>@ViewBag.TWNews.NewsSummary</p> *@
@@ -67,7 +67,7 @@
                             <li>Voice-activated controls</li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5longestrangeelectricscootersinindiafor2024/ola s1 pro.png" alt="Ola S1 Pro" title="Ola S1 Pro" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5longestrangeelectricscootersinindiafor2024/ola s1 pro.webp" alt="Ola S1 Pro" title="Ola S1 Pro" /></center></div>
                 </div>
                 <p>The Ola S1 Pro is a performance-packed electric scooter offering one of the best ranges in the market. It's perfect for those looking for a premium experience with a plethora of features.</p>
                 <div class="row d-flex justify-content-center align-items-center m-b10">
@@ -105,7 +105,7 @@
                             <li>Removable battery pack</li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5longestrangeelectricscootersinindiafor2024/simple one.png" alt="Simple One" title="Simple One" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5longestrangeelectricscootersinindiafor2024/simple one.webp" alt="Simple One" title="Simple One" /></center></div>
                 </div>
                 <p>The Simple One is currently the electric scooter with the longest range in India. It stands out with its removable battery pack for easy home charging and an advanced TFT display.</p>
                 <div class="row d-flex justify-content-center align-items-center m-b10">
@@ -143,7 +143,7 @@
                             <li>Warp mode for high-speed riding</li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5longestrangeelectricscootersinindiafor2024/ather 450x gen 3.png" alt="Ather 450X Gen 3" title="Ather 450X Gen 3" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5longestrangeelectricscootersinindiafor2024/ather 450x gen 3.webp" alt="Ather 450X Gen 3" title="Ather 450X Gen 3" /></center></div>
                 </div>
                 <p>The Ather 450X Gen 3 is known for its tech-savvy features and excellent build quality. It also includes over-the-air software updates, ensuring it stays up to date with the latest features.</p>
                 <div class="row d-flex justify-content-center align-items-center m-b10">
@@ -181,7 +181,7 @@
                             <li>Multiple ride modes (Eco, Power)</li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5longestrangeelectricscootersinindiafor2024/tvs iqube st.png" alt="TVS iQube ST" title="TVS iQube ST" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5longestrangeelectricscootersinindiafor2024/tvs iqube st.webp" alt="TVS iQube ST" title="TVS iQube ST" /></center></div>
                 </div>
                 <p>The TVS iQube ST brings an excellent combination of range and smart connectivity features, making it a top choice for riders seeking a reliable, feature-rich electric scooter.</p>
                 <div class="row d-flex justify-content-center align-items-center m-b10">
@@ -219,7 +219,7 @@
                             <li>High-quality metal body panels</li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5longestrangeelectricscootersinindiafor2024/bajaj chetak electric.png" alt="Bajaj Chetak Electric" title="Bajaj Chetak Electric" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5longestrangeelectricscootersinindiafor2024/bajaj chetak electric.webp" alt="Bajaj Chetak Electric" title="Bajaj Chetak Electric" /></center></div>
                 </div>
                 <p>The Bajaj Chetak Electric offers a retro charm with modern electric performance. Its metal body gives it a solid, premium feel, and it's great for urban commutes with a respectable range.</p>
             </div>
@@ -234,7 +234,7 @@
                     <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
-                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                             <div class="latest-bikes-details-text">
                                 <p><i class="fa fa-calendar"></i> @newsdata.Date?.ToString("d MMM yyyy")</p>
                                 <p>@Truncate(@newsdata.NewsSummary, 170)</p>

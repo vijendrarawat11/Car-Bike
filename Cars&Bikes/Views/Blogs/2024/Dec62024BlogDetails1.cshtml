@@ -18,13 +18,13 @@
     }
 }
 <body id="bg">
-    <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
-    <div class="">
+    @* <div class="header-img"><img src="~/images/main-slider/header.png" /></div> *@
+    <div class="m-t90">
         <div><h1 class="latest-bike-head">@Model.BlogHeading</h1></div>
         <div class=" latest-bike-container">
             @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
             <div class="upcoming-bikes-details-image">
-                <img src="@Model.ImageURL" alt="@Model.BlogHeading" title="@Model.BlogHeading" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                <img src="@Model.ImageURL" alt="@Model.BlogHeading" title="@Model.BlogHeading" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                 <div class="upcoming-bikes-details-text">
                     <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
                     @* <p>@ViewBag.TWNews.NewsSummary</p> *@
@@ -78,7 +78,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/indiatop5mostexpensivemotorcyclesaluxuryontwo wheels/kawasaki ninja h2r.jpg" alt="Kawasaki Ninja H2R" title="Kawasaki Ninja H2R" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/indiatop5mostexpensivemotorcyclesaluxuryontwo wheels/kawasaki ninja h2r.webp" alt="Kawasaki Ninja H2R" title="Kawasaki Ninja H2R" /></center></div>
                 </div>
                 <h3 class="subheading">3. BMW M 1000 RR</h3>
                 <p>The BMW M 1000 RR is a standout in the world of high-performance motorcycles, celebrated for its exclusivity and exceptional craftsmanship. Designed with top-tier engineering, it blends unparalleled performance, advanced electronics, and striking aesthetics, making it a dream bike for enthusiasts. As a product of German precision, the M 1000 RR showcases impeccable quality and durability. However, as a Completely Built Unit (CBU) and a limited-edition motorcycle, its premium pricing places it out of reach for many, especially in the Indian market. This exclusivity, however, adds to its allure for collectors and passionate riders.</p>
@@ -150,7 +150,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/indiatop5mostexpensivemotorcyclesaluxuryontwo wheels/indian pursuit dark horse.jpg" alt="Indian Pursuit Dark Horse" title="Indian Pursuit Dark Horse" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/indiatop5mostexpensivemotorcyclesaluxuryontwo wheels/indian pursuit dark horse.webp" alt="Indian Pursuit Dark Horse" title="Indian Pursuit Dark Horse" /></center></div>
                 </div>               
             </div>
         </div>

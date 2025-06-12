@@ -18,13 +18,13 @@
     }
 }
 <body id="bg">
-    <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
-    <div class="">
+    @* <div class="header-img"><img src="~/images/main-slider/header.png" /></div> *@
+    <div class="m-t90">
         <div><h1 class="latest-bike-head">@Model.BlogHeading</h1></div>
         <div class=" latest-bike-container">
             @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
             <div class="upcoming-bikes-details-image">
-                <img src="@Model.ImageURL" alt="@Model.BlogHeading" title="@Model.BlogHeading" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                <img src="@Model.ImageURL" alt="@Model.BlogHeading" title="@Model.BlogHeading" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                 <div class="upcoming-bikes-details-text">
                     <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
                     @* <p>@ViewBag.TWNews.NewsSummary</p> *@
@@ -45,7 +45,7 @@
                     <li>Conclusion</li>
                 </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/theallnewkiasyrosacomprehensivereview/main.png" alt="Kia Syros" title="Kia Syros" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/theallnewkiasyrosacomprehensivereview/main.webp" alt="Kia Syros" title="Kia Syros" /></center></div>
                 </div>
                 <div class="div-line"></div>
                 <h3 class="subheading">1. Introduction</h3>
@@ -54,21 +54,21 @@
                 <h3 class="subheading">2. Exterior Design</h3>
                 <p>The Kia Syros features a bold and futuristic design. Its signature tiger-nose grille, coupled with sleek LED headlamps and dynamic lines, makes a striking first impression. The SUV also boasts 18-inch alloy wheels, a panoramic sunroof, and sporty accents that give it a premium look. With multiple color options, including metallic and dual-tone finishes, the Syros is designed to turn heads on every road.</p>
                 <div class="row m-b20">
-                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/blogs/2024/theallnewkiasyrosacomprehensivereview/exterior design.jpg" alt="Exterior Design" title="Exterior Design" /></div>
-                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/blogs/2024/theallnewkiasyrosacomprehensivereview/sunroof.jpg" alt="Sunroof" title="Sunroof" /></div>
+                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/blogs/2024/theallnewkiasyrosacomprehensivereview/exterior design.webp" alt="Exterior Design" title="Exterior Design" /></div>
+                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/blogs/2024/theallnewkiasyrosacomprehensivereview/sunroof.webp" alt="Sunroof" title="Sunroof" /></div>
                 </div>
                 <div class="div-line"></div>
                 <h3 class="subheading">3. Interior Features</h3>
                 <p>Step inside the Kia Syros, and you’re greeted with a spacious, luxurious cabin. The SUV is equipped with plush leather seats, ambient lighting, and a customizable infotainment system. Key features include a 10.25-inch touchscreen display, Apple CarPlay, Android Auto, and wireless charging. With ample legroom and cargo space, the Syros ensures comfort for long journeys and daily commutes alike.</p>
                 <div class="row m-b20">
-                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/blogs/2024/theallnewkiasyrosacomprehensivereview/interior features1.jpg" alt="Interior Features1" title="Interior Features1" /></div>
-                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/blogs/2024/theallnewkiasyrosacomprehensivereview/interior features2.jpg" alt="Interior Features2" title="Interior Features2" /></div>
+                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/blogs/2024/theallnewkiasyrosacomprehensivereview/interior features1.webp" alt="Interior Features1" title="Interior Features1" /></div>
+                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/blogs/2024/theallnewkiasyrosacomprehensivereview/interior features2.webp" alt="Interior Features2" title="Interior Features2" /></div>
                 </div>
                 <div class="div-line"></div>
                 <h3 class="subheading">4. Performance and Engine Options</h3>
                 <p>Under the hood, the Kia Syros offers multiple engine options to cater to varied driving preferences. The base variant comes with a 1.5L petrol engine, while the higher trims offer a 1.4L turbocharged petrol and a 1.6L diesel engine. Both manual and automatic transmission options are available, ensuring a seamless driving experience. The Syros also includes driving modes such as Eco, Sport, and Comfort to adapt to different terrains and conditions.</p>
                 <div class="row m-b20">
-                    <div class="col-lg-12 col-md-12 text-center"><img src="~/images/blogs/2024/theallnewkiasyrosacomprehensivereview/performance and engine options.jpg" alt="Performance and Engine Options" title="Performance and Engine Options" /></div>
+                    <div class="col-lg-12 col-md-12 text-center"><img src="~/images/blogs/2024/theallnewkiasyrosacomprehensivereview/performance and engine options.webp" alt="Performance and Engine Options" title="Performance and Engine Options" /></div>
                 </div>
                 <div class="div-line"></div>
                 <h3 class="subheading">5. Safety and Technology</h3>
@@ -82,9 +82,9 @@
                 </ul>
                 <p>Additionally, the Syros incorporates cutting-edge technology, including a voice command system, adaptive cruise control, and over-the-air software updates.</p>
                 <div class="row m-b20">
-                    <div class="col-lg-4 col-md-4 text-center"><img src="~/images/blogs/2024/theallnewkiasyrosacomprehensivereview/safety and technology1.jpg" alt="Safety and Technology1" title="Safety and Technology1" /></div>
-                    <div class="col-lg-4 col-md-4 text-center"><img src="~/images/blogs/2024/theallnewkiasyrosacomprehensivereview/safety and technology2.jpg" alt="Safety and Technology2" title="Safety and Technology2" /></div>
-                    <div class="col-lg-4 col-md-4 text-center"><img src="~/images/blogs/2024/theallnewkiasyrosacomprehensivereview/safety and technology3.jpg" alt="Safety and Technology3" title="Safety and Technology3" /></div>
+                    <div class="col-lg-4 col-md-4 text-center"><img src="~/images/blogs/2024/theallnewkiasyrosacomprehensivereview/safety and technology1.webp" alt="Safety and Technology1" title="Safety and Technology1" /></div>
+                    <div class="col-lg-4 col-md-4 text-center"><img src="~/images/blogs/2024/theallnewkiasyrosacomprehensivereview/safety and technology2.webp" alt="Safety and Technology2" title="Safety and Technology2" /></div>
+                    <div class="col-lg-4 col-md-4 text-center"><img src="~/images/blogs/2024/theallnewkiasyrosacomprehensivereview/safety and technology3.webp" alt="Safety and Technology3" title="Safety and Technology3" /></div>
                 </div>
                 <div class="div-line"></div>
                 <h3 class="subheading">6. Fuel Efficiency</h3>

@@ -18,13 +18,13 @@
     }
 }
 <body id="bg">
-    <div class="header-img"><img src="~/images/main-slider/header.png" alt="bikecarhubheaderimage" title="bikecarhubheaderimage" /></div>
-    <div class="">
+    @* <div class="header-img"><img src="~/images/main-slider/header.png" alt="bikecarhubheaderimage" title="bikecarhubheaderimage" /></div> *@
+    <div class="m-t90">
         <div><h1 class="latest-bike-head">@Model.BlogHeading</h1></div>
         <div class=" latest-bike-container">
             @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
             <div class="upcoming-bikes-details-image">
-                <img src="@Model.ImageURL" alt="@Model.BlogHeading" title="@Model.BlogHeading" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                <img src="@Model.ImageURL" alt="@Model.BlogHeading" title="@Model.BlogHeading" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                 <div class="upcoming-bikes-details-text">
                     <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
                     @* <p>@ViewBag.TWNews.NewsSummary</p> *@
@@ -33,7 +33,7 @@
             <div class="latest-bikes-details-content">
                 <p>@Html.Raw(@Model.BlogSummary.Replace("\n", "<br>"))</p>
 				<div class="row m-b20">					
-                    <div class="col-lg-12 col-md-12 text-center"><img src="~/images/blogs/2025/may/tatasierra/tatasierra.png" alt="bikecarhubtatasierra" title="bikecarhubtatasierra" /></div>
+                    <div class="col-lg-12 col-md-12 text-center"><img src="~/images/blogs/2025/may/tatasierra/tatasierra.webp" alt="bikecarhubtatasierra" title="bikecarhubtatasierra" /></div>
 				</div>
                 <h3 class="subheading">Tata Sierra EV: The Electric Renaissance</h3>
                 <h5 class="subheading">Launch & Pricing</h5>
