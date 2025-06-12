@@ -451,6 +451,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/June052025BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/royal-enfield-guerrilla-450-launch-date-price-features-specs-more")]
+        public IActionResult June112025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Royal Enfield Guerrilla 450: Launch Date, Price, Features, Specs & More");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June112025BlogDetails1.cshtml", blogsDetails);
+        }
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
