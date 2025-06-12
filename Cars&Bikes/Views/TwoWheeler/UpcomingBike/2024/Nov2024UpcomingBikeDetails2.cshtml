@@ -20,7 +20,7 @@
 @* <div class="overlay-black-middle" style=" background:linear-gradient(#475372, #78829A, #9EA3AD, #fff); margin:0;">
     <img src="~/images/background/banner.png" />
 </div> *@
-<div class="header-img"> <img src="~/images/main-slider/header.png" /></div>
+@* <div class="header-img"> <img src="~/images/main-slider/header.png" /></div> *@
 <!-- Breadcrumb row END -->
 @* <div class="car-details-info">
     <div class="container">
@@ -42,10 +42,11 @@
 </div> *@
 
 <body>
+    <div class="m-t90">
     <h1 class="latest-bike-head">Upcoming Bikes</h1>
     <div class="TWupcoming-container">
         <div class="upcoming-bikes-details-image">
-            <img src="@Model.ImageFolderURL" alt="@Model.UpcomingBikeName" title="@Model.UpcomingBikeName" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" />
+            <img src="@Model.ImageFolderURL" alt="@Model.UpcomingBikeName" title="@Model.UpcomingBikeName" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.webp")';" />
             <div class="upcoming-bikes-details-text">
                 <h2>@Model.UpcomingBikeName</h2>
                 <p><i class="fa fa-calendar"></i>  @Model.ExpectedLaunchDate</p>
@@ -103,5 +104,6 @@
                 </div>
             </a>
         }
+    </div>
     </div>
 </body>

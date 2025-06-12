@@ -18,13 +18,13 @@
     }
 }
 <body id="bg">
-    <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
-    <div class="">
+    @* <div class="header-img"><img src="~/images/main-slider/header.png" /></div> *@
+    <div class="m-t90">
         <div><h1 class="latest-bike-head">@Model.BlogHeading</h1></div>
         <div class=" latest-bike-container">
             @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
             <div class="upcoming-bikes-details-image">
-                <img src="@Model.ImageURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                <img src="@Model.ImageURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                 <div class="upcoming-bikes-details-text">
                     <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
                     @* <p>@ViewBag.TWNews.NewsSummary</p> *@
@@ -97,16 +97,16 @@
                 </div>
                 <p><span class="font-weight-700">5.	Eco-Friendly Efficiency</span> With improved fuel efficiency and lower emissions, the Amaze remains a reliable choice for eco-conscious buyers without compromising performance.</p>
                 <div class="row m-b20">
-                    <div class="col-lg-6 col-md-6 text-center"><p class="font-weight-700">For Manual</p><img src="~/images/blogs/2024/theallnewhondaamazeaperfectblendofstylecomfortandperformance/manual milage.png" alt="Manual Milage" title="Manual Milage" /></div>
-                    <div class="col-lg-6 col-md-6 text-center"><p class="font-weight-700">For Automatic </p><img src="~/images/blogs/2024/theallnewhondaamazeaperfectblendofstylecomfortandperformance/auto milage.png" alt="Auto Milage" title="Auto Milage" /></div>
+                    <div class="col-lg-6 col-md-6 text-center"><p class="font-weight-700">For Manual</p><img src="~/images/blogs/2024/theallnewhondaamazeaperfectblendofstylecomfortandperformance/manual milage.webp" alt="Manual Milage" title="Manual Milage" /></div>
+                    <div class="col-lg-6 col-md-6 text-center"><p class="font-weight-700">For Automatic </p><img src="~/images/blogs/2024/theallnewhondaamazeaperfectblendofstylecomfortandperformance/auto milage.webp" alt="Auto Milage" title="Auto Milage" /></div>
                 </div>
                 <h3 class="subheading">Pricing and Variants</h3>
                 <p>The new Amaze is offered in multiple variants to cater to diverse customer needs. Starting at an introductory price of <span class="text-color">₹6.99 lakh (ex-showroom)</span>, it represents outstanding value for money.</p>
                 <h3 class="subheading">Why Choose the Honda Amaze?</h3>
                 <p>Honda has designed the Amaze to appeal to young professionals and families looking for an all-rounder car that blends style, practicality, and affordability. Whether it’s your daily city commute or a weekend getaway, the Amaze promises a comfortable, fuel-efficient ride.</p>
                 <div class="row m-b20">
-                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/blogs/2024/theallnewhondaamazeaperfectblendofstylecomfortandperformance/front.png" alt="Front" title="Front" /></div>
-                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/blogs/2024/theallnewhondaamazeaperfectblendofstylecomfortandperformance/additional benefits.jpg" alt="Additional Benefits" title="Additional Benefits" /></div>
+                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/blogs/2024/theallnewhondaamazeaperfectblendofstylecomfortandperformance/front.webp" alt="Front" title="Front" /></div>
+                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/blogs/2024/theallnewhondaamazeaperfectblendofstylecomfortandperformance/additional benefits.webp" alt="Additional Benefits" title="Additional Benefits" /></div>
                 </div>
             </div>
         </div>

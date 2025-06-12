@@ -18,13 +18,13 @@
     }
 }
 <body id="bg">
-    <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
-    <div class="">
+    @* <div class="header-img"><img src="~/images/main-slider/header.webp" /></div> *@
+    <div class="m-t90">
         <div><h1 class="latest-bike-head">@Model.BlogHeading</h1></div>
         <div class=" latest-bike-container">
             @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
             <div class="upcoming-bikes-details-image">
-                <img src="@Model.ImageURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                <img src="@Model.ImageURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                 <div class="upcoming-bikes-details-text">
                     <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
                     @* <p>@ViewBag.TWNews.NewsSummary</p> *@
@@ -54,7 +54,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5bikesunder2lakhinindiaforperformancestyleandvalue/bajaj pulsar ns200.png" alt="Bajaj Pulsar NS200" title="Bajaj Pulsar NS200" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5bikesunder2lakhinindiaforperformancestyleandvalue/bajaj pulsar ns200.webp" alt="Bajaj Pulsar NS200" title="Bajaj Pulsar NS200" /></center></div>
                 </div>
                 <h3 class="subheading">2. TVS Apache RTR 200 4V</h3>
                 <p>
@@ -80,7 +80,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5bikesunder2lakhinindiaforperformancestyleandvalue/tvs apache rtr 200 4v.png" alt="TVS Apache RTR 200 4V" title="TVS Apache RTR 200 4V" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5bikesunder2lakhinindiaforperformancestyleandvalue/tvs apache rtr 200 4v.webp" alt="TVS Apache RTR 200 4V" title="TVS Apache RTR 200 4V" /></center></div>
                 </div>
                 <h3 class="subheading">3. Yamaha FZ25</h3>
                 <p>
@@ -106,7 +106,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5bikesunder2lakhinindiaforperformancestyleandvalue/yamaha fz25.png" alt="Yamaha FZ25" title="Yamaha FZ25" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5bikesunder2lakhinindiaforperformancestyleandvalue/yamaha fz25.webp" alt="Yamaha FZ25" title="Yamaha FZ25" /></center></div>
                 </div>
                 <h3 class="subheading">4. Royal Enfield Bullet 350</h3>
                 <p>
@@ -131,7 +131,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5bikesunder2lakhinindiaforperformancestyleandvalue/royal enfield bullet 350.png" alt="Royal Enfield Bullet 350" title="Royal Enfield Bullet 350" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5bikesunder2lakhinindiaforperformancestyleandvalue/royal enfield bullet 350.webp" alt="Royal Enfield Bullet 350" title="Royal Enfield Bullet 350" /></center></div>
                 </div>
                 <h3 class="subheading">5. Honda Hornet 2.0</h3>
                 <p>
@@ -156,7 +156,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5bikesunder2lakhinindiaforperformancestyleandvalue/honda hornet 2.0.png" alt="Honda Hornet 2.0" title="Honda Hornet 2.0" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/top5bikesunder2lakhinindiaforperformancestyleandvalue/honda hornet 2.0.webp" alt="Honda Hornet 2.0" title="Honda Hornet 2.0" /></center></div>
                 </div>
             </div>
         </div>
@@ -169,7 +169,7 @@
                     <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
-                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                             <div class="latest-bikes-details-text">
                                 <p><i class="fa fa-calendar"></i> @newsdata.Date?.ToString("d MMM yyyy")</p>
                                 <p>@Truncate(@newsdata.NewsSummary, 170)</p>

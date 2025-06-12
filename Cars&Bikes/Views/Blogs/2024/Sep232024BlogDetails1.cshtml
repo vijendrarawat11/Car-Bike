@@ -18,13 +18,13 @@
     }
 }
 <body id="bg">
-    <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
-    <div class="">
+    @* <div class="header-img"><img src="~/images/main-slider/header.webp" /></div> *@
+    <div class="m-t90">
         <div><h1 class="latest-bike-head">@Model.BlogHeading</h1></div>
         <div class=" latest-bike-container">
             @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
             <div class="upcoming-bikes-details-image">
-                <img src="@Model.ImageURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                <img src="@Model.ImageURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                 <div class="upcoming-bikes-details-text">
                     <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
                     @* <p>@ViewBag.TWNews.NewsSummary</p> *@
@@ -103,7 +103,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/bestindiancarsunder8lakhonroadprice(2024)/hyundai grand i10 nios magna.png" alt="Hyundai Grand i10 Nios Magna" title="Hyundai Grand i10 Nios Magna" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/bestindiancarsunder8lakhonroadprice(2024)/hyundai grand i10 nios magna.webp" alt="Hyundai Grand i10 Nios Magna" title="Hyundai Grand i10 Nios Magna" /></center></div>
                 </div>
                 <p>The <span class="font-weight-700">Grand i10 Nios Magna</span> offers solid tech features and premium interiors, making it an excellent choice for city commuters.</p>
                 <div class="div-line"></div>
@@ -128,7 +128,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/bestindiancarsunder8lakhonroadprice(2024)/renault kiger rxe.jpg" alt="Renault Kiger RXE" title="Renault Kiger RXE" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/bestindiancarsunder8lakhonroadprice(2024)/renault kiger rxe.webp" alt="Renault Kiger RXE" title="Renault Kiger RXE" /></center></div>
                 </div>
                 <p>The <span class="font-weight-700">Kiger RXE</span> gives you the feel of an SUV at a very affordable price, making it a top choice for budget-conscious SUV enthusiasts.</p>
                 <div class="div-line"></div>
@@ -178,7 +178,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/bestindiancarsunder8lakhonroadprice(2024)/nissan magnite xe.jpg" alt="Nissan Magnite XE" title="Nissan Magnite XE" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/bestindiancarsunder8lakhonroadprice(2024)/nissan magnite xe.webp" alt="Nissan Magnite XE" title="Nissan Magnite XE" /></center></div>
                 </div>
                 <p>The <span class="font-weight-700">Magnite XE</span> is the most affordable SUV in its class with excellent features for its price, making it ideal for those looking for a budget-friendly compact SUV.</p>
                 <div class="div-line"></div>
@@ -203,7 +203,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/bestindiancarsunder8lakhonroadprice(2024)/honda amaze e.png" alt="Honda Amaze E" title="Honda Amaze E" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/bestindiancarsunder8lakhonroadprice(2024)/honda amaze e.webp" alt="Honda Amaze E" title="Honda Amaze E" /></center></div>
                 </div>
                 <p>The <span class="font-weight-700">Honda Amaze E</span> is a compact sedan that offers reliability, a premium feel, and a good balance of performance and fuel efficiency within your budget.</p>
                 <div class="div-line"></div>
@@ -223,7 +223,7 @@
                     <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
-                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                             <div class="latest-bikes-details-text">
                                 <p><i class="fa fa-calendar"></i> @newsdata.Date?.ToString("d MMM yyyy")</p>
                                 <p>@Truncate(@newsdata.NewsSummary, 170)</p>

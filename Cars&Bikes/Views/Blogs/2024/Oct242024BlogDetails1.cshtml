@@ -18,13 +18,13 @@
     }
 }
 <body id="bg">
-    <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
-    <div class="">
+    @* <div class="header-img"><img src="~/images/main-slider/header.webp" /></div> *@
+    <div class="m-t90">
         <div><h1 class="latest-bike-head">@Model.BlogHeading</h1></div>
         <div class=" latest-bike-container">
             @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
             <div class="upcoming-bikes-details-image">
-                <img src="@Model.ImageURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                <img src="@Model.ImageURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                 <div class="upcoming-bikes-details-text">
                     <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
                     @* <p>@ViewBag.TWNews.NewsSummary</p> *@
@@ -71,7 +71,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/newsbestcarsunder11lakhinindiaspecificvariantsofferinggreatvaluein2024/hyundai venue.png" alt="Hyundai Venue (S+ Diesel)" title="Hyundai Venue (S+ Diesel)" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/newsbestcarsunder11lakhinindiaspecificvariantsofferinggreatvaluein2024/hyundai venue.webp" alt="Hyundai Venue (S+ Diesel)" title="Hyundai Venue (S+ Diesel)" /></center></div>
                 </div>
                 <div class="row d-flex justify-content-center align-items-center m-b10">
                     <div class="col-lg-6 col-md-6">
@@ -111,7 +111,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/newsbestcarsunder11lakhinindiaspecificvariantsofferinggreatvaluein2024/kia sonet.png" alt="Kia Sonet (HTX iMT Petrol)" title="Kia Sonet (HTX iMT Petrol)" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/newsbestcarsunder11lakhinindiaspecificvariantsofferinggreatvaluein2024/kia sonet.webp" alt="Kia Sonet (HTX iMT Petrol)" title="Kia Sonet (HTX iMT Petrol)" /></center></div>
                 </div>
                 <div class="row d-flex justify-content-center align-items-center m-b10">
                     <div class="col-lg-6 col-md-6">
@@ -131,7 +131,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/newsbestcarsunder11lakhinindiaspecificvariantsofferinggreatvaluein2024/mahindra xuv3x0.jpg" alt="Mahindra XUV3X0 (W6 Petrol)" title="Mahindra XUV3X0 (W6 Petrol)" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/newsbestcarsunder11lakhinindiaspecificvariantsofferinggreatvaluein2024/mahindra xuv3x0.webp" alt="Mahindra XUV3X0 (W6 Petrol)" title="Mahindra XUV3X0 (W6 Petrol)" /></center></div>
                 </div>
                 <div class="row d-flex justify-content-center align-items-center m-b10">
                     <div class="col-lg-6 col-md-6">
@@ -151,7 +151,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/newsbestcarsunder11lakhinindiaspecificvariantsofferinggreatvaluein2024/toyota glanza.jpg" alt="Toyota Glanza (G Hybrid)" title="Toyota Glanza (G Hybrid)" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/newsbestcarsunder11lakhinindiaspecificvariantsofferinggreatvaluein2024/toyota glanza.webp" alt="Toyota Glanza (G Hybrid)" title="Toyota Glanza (G Hybrid)" /></center></div>
                 </div>
                 <div class="row d-flex justify-content-center align-items-center m-b10">
                     <div class="col-lg-6 col-md-6">
@@ -171,7 +171,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/newsbestcarsunder11lakhinindiaspecificvariantsofferinggreatvaluein2024/honda amaze.png" alt="Honda Amaze (VX CVT Petrol)" title="Honda Amaze (VX CVT Petrol)" /></center></div>
+                    <div class="col-lg-6 col-md-6 justify-content-center align-items-center"><center><img src="~/images/blogs/2024/newsbestcarsunder11lakhinindiaspecificvariantsofferinggreatvaluein2024/honda amaze.webp" alt="Honda Amaze (VX CVT Petrol)" title="Honda Amaze (VX CVT Petrol)" /></center></div>
                 </div>
             </div>
 
@@ -185,7 +185,7 @@
                     <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
-                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                             <div class="latest-bikes-details-text">
                                 <p><i class="fa fa-calendar"></i> @newsdata.Date?.ToString("d MMM yyyy")</p>
                                 <p>@Truncate(@newsdata.NewsSummary, 170)</p>
