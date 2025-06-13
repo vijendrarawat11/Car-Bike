@@ -1715,17 +1715,23 @@ header.transparent {
             color: #175678;
             font-weight: 600;
         }
-/*--------------------Compare Page------------------------------*/
-.compare-container {
-    max-width: 100%;
-    margin: 0 auto;
-    /*padding: 15px;*/
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    padding:10px 0 20px 0;
-}
+        .aboutus-text h1 {
+            color: #175678;
+        }
+        .aboutus-text ul li{
+            margin-left:10px;
+        }
+        /*--------------------Compare Page------------------------------*/
+        .compare-container {
+            max-width: 100%;
+            margin: 0 auto;
+            /*padding: 15px;*/
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            padding: 10px 0 20px 0;
+        }
 .compare-container p{
     margin: 20px;
     font-size:1.2em;

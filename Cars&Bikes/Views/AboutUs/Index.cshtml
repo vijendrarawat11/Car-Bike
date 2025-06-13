@@ -107,22 +107,84 @@
         </div>
     </div>
     *@
-    <div class="m-t90">
-        <h1 class="subheading">About Us</h1>
+
+   <div class="col-lg-9 col-md-9 aboutus-text m-t70 m-l90 m-r90">  
+    
+        <h1>About Us</h1>
         <p>Welcome to <span class="font-weight-700">BikeCarHub.com</span> — your go-to hub for all things bikes and cars in India.</p>
-        <h2 class="subheading">Who We Are</h2>
+        <h2>Who We Are</h2>
         <p>We are a passionate team of automobile enthusiasts committed to helping users make informed decisions when it comes to two-wheelers and four-wheelers. Whether you're researching your first scooter or planning to upgrade to a luxury sedan, we're here to provide clear, unbiased, and up-to-date information.</p>
-        <h2 class="subheading">What We Offer</h2>
+        <h2>What We Offer</h2>
         <ul>
             <li>Detailed specs and comparisons for bikes and cars</li>
             <li>Latest pricing, on-road cost breakdowns, and mileage insights</li>
             <li>Expert reviews and user ratings</li>
             <li>Upcoming vehicle launch updates and industry news</li>
         </ul>
-        <h2 class="subheading">Why Choose Us?</h2>
+        <h2>Why Choose Us?</h2>
         <p>We focus on transparency, simplicity, and user-first content. Our goal is not just to display data, but to empower you to choose the right vehicle that fits your budget, lifestyle, and preferences.</p>
-        <h2 class="subheading">Get in Touch</h2>
+        <h2>Get in Touch</h2>
         <p>Have questions, suggestions, or feedback? Reach out to us at <a href="mailto:info@bikecarhub.com">info@bikecarhub.com</a>. We’d love to hear from you!</p>
-        <p>Thank you for visiting <span class="font-weight-700">BikeCarHub.com</span> — Drive smarter. Ride better.</p>
+        <p>Thank you for visiting <span class="font-weight-700">BikeCarHub.com</span> — Drive smarter. Ride better.</p>            
+ 
+    </div>
+    <div class="row contact-details-container">
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class=" contact-details-info">
+                        <i class="bi bi-geo-alt"></i>
+                        <h3>Our Address</h3>
+                        <p>
+                            Lane No 5F, Shivraj Nagar,
+                            Badonwala, Uttarakhand, 248007
+                            India
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class=" contact-details-info">
+                        <i class="bi bi-envelope"></i>
+                        <h3>Email Us</h3>
+                        <p>info@voxtus.com</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class=" contact-details-info">
+                        <i class="bi bi-telephone"></i>
+                        <h3>Call Us</h3>
+                        <p>+918630235507<br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 p-5">
+            <p><span class="font-weight-700">Send Us a Message</span></p>
+            <p> (Please fill out the following details)</p>
+            <p class="text-center">@TempData["success"]</p>
+            <form asp-action="Index" method="post" class="contact-form">
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PhoneNo"></label>
+                    <input asp-for="PhoneNo" class="form-control" />
+                    <span asp-validation-for="PhoneNo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Message"></label>
+                    <textarea asp-for="Message" class="form-control"></textarea>
+                    <span asp-validation-for="Message" class="text-danger"></span>
+                </div>
+                <button type="submit" class="contact-form-button">Submit</button>
+            </form>
+        </div>
         </div>
 </body>
