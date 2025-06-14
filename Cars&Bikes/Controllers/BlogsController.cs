@@ -462,6 +462,17 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2025/June112025BlogDetails1.cshtml", blogsDetails);
         }
 
+        [Route("blogs/top-5-trending-electric-scooters-in-india")]
+        public IActionResult June132025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Top 5 Trending Electric Scooters in India");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June132025BlogDetails1.cshtml", blogsDetails);
+        }
+
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
