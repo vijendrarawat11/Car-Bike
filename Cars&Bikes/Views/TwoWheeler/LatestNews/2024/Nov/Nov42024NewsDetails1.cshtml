@@ -18,14 +18,14 @@
     }
 }
 <body id="bg">
-    <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
-    <div class="">
+    @* <div class="header-img"><img src="~/images/main-slider/header.webp" /></div> *@
+    <div class="m-t90">
         <div><h1 class="latest-bike-head">Latest Bike News</h1></div>
         <div class=" latest-bike-container">
             <h2>@Model.NewsHeading</h2>
             @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
             <div class="upcoming-bikes-details-image">
-                <img src="@Model.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" />
+                <img src="@Model.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.webp")';" />
                 <div class="upcoming-bikes-details-text">
                     <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
                     @* <p>@ViewBag.TWNews.NewsSummary</p> *@
@@ -41,8 +41,8 @@
                 <h3 class="subheading">Design</h3>
                 <p>True to <a class="for-link" asp-controller="Home" asp-action="TWBrandDetails" asp-route-brandId="18">Royal Enfield’s</a> style, the Bear 650 combines vintage aesthetics with a rugged look, ideal for those who appreciate classic design. Featuring round headlights, minimalistic bodywork, and a stance made for both urban and off-road environments, it’s designed to attract both city commuters and adventure seekers.</p>
                 <div class="row  m-b20">
-                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/latestnews/2024/nov/royalenfieldbear650tolaunchtomorrowpricespecsrevealed/1.png" /></div>
-                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/latestnews/2024/nov/royalenfieldbear650tolaunchtomorrowpricespecsrevealed/2.png" /></div>
+                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/latestnews/2024/nov/royalenfieldbear650tolaunchtomorrowpricespecsrevealed/1.webp" /></div>
+                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/latestnews/2024/nov/royalenfieldbear650tolaunchtomorrowpricespecsrevealed/2.webp" /></div>
                 </div>
                 <h3 class="subheading">Engine and Performance</h3>
                 <ol>
@@ -97,7 +97,7 @@
                     <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
-                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                             <div class="latest-bikes-details-text">
                                 <p><i class="fa fa-calendar"></i> @newsdata.Date?.ToString("d MMM yyyy")</p>
                                 <p>@Truncate(@newsdata.NewsSummary, 170)</p>

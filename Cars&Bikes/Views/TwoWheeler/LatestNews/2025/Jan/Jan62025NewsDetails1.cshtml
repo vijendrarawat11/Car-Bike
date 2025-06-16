@@ -18,14 +18,14 @@
     }
 }
 <body id="bg">
-    <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
-    <div class="">
+    @* <div class="header-img"><img src="~/images/main-slider/header.webp" /></div> *@
+    <div class="m-t90">
         <div><h1 class="latest-bike-head">Latest Bike News</h1></div>
         <div class=" latest-bike-container">
             <h2>@Model.NewsHeading</h2>
             @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
             <div class="upcoming-bikes-details-image">
-                <img src="@Model.ImageFolderURL" alt="@Model.NewsHeading" title="@Model.NewsHeading" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" />
+                <img src="@Model.ImageFolderURL" alt="@Model.NewsHeading" title="@Model.NewsHeading" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.webp")';" />
                 <div class="upcoming-bikes-details-text">
                     <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
                     @* <p>@ViewBag.TWNews.NewsSummary</p> *@
@@ -108,8 +108,8 @@
                 <h3 class="subheading">MG Cyberster Specifications and Features: A Closer Look</h3>
                 <p>The MG Cyberster is more than just a car—it’s a statement. With its cutting-edge design, exhilarating performance, and state-of-the-art technology, the Cyberster redefines what we can expect from electric vehicles. Here’s an in-depth look at its specifications and features:</p>
                 <div class="row m-b20">
-                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/latestnews/2025/jan/upcomingmgcyberstertheelectricconvertiblerevolution/cybersterexterior1.jpg" alt="cybersterexterior1" title="cybersterexterior1" /></div>
-                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/latestnews/2025/jan/upcomingmgcyberstertheelectricconvertiblerevolution/cybersterexterior2.jpg" alt="cybersterexterior2" title="cybersterexterior2" /></div>
+                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/latestnews/2025/jan/upcomingmgcyberstertheelectricconvertiblerevolution/cybersterexterior1.webp" alt="cybersterexterior1" title="cybersterexterior1" /></div>
+                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/latestnews/2025/jan/upcomingmgcyberstertheelectricconvertiblerevolution/cybersterexterior2.webp" alt="cybersterexterior2" title="cybersterexterior2" /></div>
                 </div>
                 <h3 class="subheading">Specifications of MG Cyberster</h3>
                 <p class="font-weight-700">1. Powertrain & Performance</p>
@@ -153,8 +153,8 @@
                     <li><span class="font-weight-700">OTA Updates:</span> Over-the-air updates ensure the latest features are always at your fingertips.</li>
                 </ul>
                 <div class="row m-b20">
-                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/latestnews/2025/jan/upcomingmgcyberstertheelectricconvertiblerevolution/cybersterinterior.jpg" alt="cybersterinterior" title="cybersterinterior" /></div>
-                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/latestnews/2025/jan/upcomingmgcyberstertheelectricconvertiblerevolution/cybersterperformance.jpg" alt="cybersterperformance" title="cybersterperformance" /></div>
+                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/latestnews/2025/jan/upcomingmgcyberstertheelectricconvertiblerevolution/cybersterinterior.webp" alt="cybersterinterior" title="cybersterinterior" /></div>
+                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/latestnews/2025/jan/upcomingmgcyberstertheelectricconvertiblerevolution/cybersterperformance.webp" alt="cybersterperformance" title="cybersterperformance" /></div>
                 </div>
                 <p class="font-weight-700">3. Safety</p>
                 <ul>
@@ -179,7 +179,7 @@
                     <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
-                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                             <div class="latest-bikes-details-text">
                                 <p><i class="fa fa-calendar"></i> @newsdata.Date?.ToString("d MMM yyyy")</p>
                                 <p>@Truncate(@newsdata.NewsSummary, 170)</p>

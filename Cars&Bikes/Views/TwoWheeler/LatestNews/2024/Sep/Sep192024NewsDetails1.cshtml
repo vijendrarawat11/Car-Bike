@@ -18,14 +18,14 @@
     }
 }
 <body id="bg">
-    <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
-    <div class="">
+    @* <div class="header-img"><img src="~/images/main-slider/header.webp" /></div> *@
+    <div class="m-t90">
         <div><h1 class="latest-bike-head">Latest Bike News</h1></div>
         <div class=" latest-bike-container">
             <h2>@Model.NewsHeading</h2>
             @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
             <div class="upcoming-bikes-details-image">
-                <img src="@Model.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                <img src="@Model.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                 <div class="upcoming-bikes-details-text">
                     <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
                     @* <p>@ViewBag.TWNews.NewsSummary</p> *@
@@ -38,14 +38,14 @@
                 <h5 class="subheading">Features and Specifications</h5>
                 <p>The eMAX 7 is designed with family-friendly features and ample space, accommodating up to seven passengers. It boasts a modern aesthetic and is equipped with cutting-edge technology, including a high-definition infotainment system and advanced driver-assistance features. The vehicle will also offer significant battery capacity, promising an impressive range suitable for both urban and long-distance travel.</p>
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/latestnews/2024/sep/byd emax 7 electric mpv set to launch in india on october 8/2.png" /></div>
-                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/latestnews/2024/sep/byd emax 7 electric mpv set to launch in india on october 8/3.png" /></div>
+                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/latestnews/2024/sep/byd emax 7 electric mpv set to launch in india on october 8/2.webp" /></div>
+                    <div class="col-lg-6 col-md-6 text-center"><img src="~/images/latestnews/2024/sep/byd emax 7 electric mpv set to launch in india on october 8/3.webp" /></div>
                 </div><h5 class="subheading">Performance and Efficiency</h5>
                 <p>BYD’s eMAX 7 is expected to provide remarkable performance metrics, with rapid acceleration and a top speed that meets the expectations of both city and highway driving. The MPV will leverage BYD's proprietary battery technology, which is known for its safety, longevity, and efficient energy consumption. This positions the eMAX 7 as a viable alternative to traditional fuel-based vehicles.</p>
                 <h5 class="subheading">Market Impact</h5>
                 <p>The introduction of the eMAX 7 is significant for the Indian market, where the demand for electric vehicles is on the rise. With government incentives promoting electric mobility and the increasing awareness of environmental sustainability, BYD is strategically positioning itself to tap into this burgeoning segment. The eMAX 7 is expected to attract families seeking spacious vehicles that also prioritize eco-friendliness.</p>
                 <br /><p>As the launch date approaches, industry analysts are keenly observing the potential market response to the BYD eMAX 7. With its combination of innovative design, advanced technology, and commitment to sustainability, the eMAX 7 is poised to make a notable impact in the Indian electric MPV landscape.</p>
-                @* <div class="image-box"><img src="~/images/latestnews/2024/sep/byd emax 7 electric mpv set to launch in india on october 8/2.png" /></div> *@
+                @* <div class="image-box"><img src="~/images/latestnews/2024/sep/byd emax 7 electric mpv set to launch in india on october 8/2.webp" /></div> *@
                 
             </div>
 
@@ -59,7 +59,7 @@
                     <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
-                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                             <div class="latest-bikes-details-text">
                                 <p><i class="fa fa-calendar"></i> @newsdata.Date?.ToString("d MMM yyyy")</p>
                                 <p>@Truncate(@newsdata.NewsSummary, 170)</p>

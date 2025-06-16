@@ -63,12 +63,12 @@
             @* <a href="https://example.com/news1" class="text-decoration-none text-dark"> *@
                 @* <a href="@Url.Action("TWCompareTwoBikes", "Compare", new { variant1 = 103, variant2 = 205 })" class="text-decoration-none text-dark"> *@
                 <div class="card" onclick="compareByNames('Honda Activa 125', 'TVS Jupiter')">
-                    <img src="/images/blogs/2025/may/top5royalenfieldbikesinindia/reclassic350.png" class="card-img-top" alt="News 1">
+                    <img src="/images/blogs/2025/may/top5royalenfieldbikesinindia/reclassic350.webp" class="card-img-top" alt="News 1">
                     <div class="card-body">
                             <p class="card-text">Honda Activa 125 vs TVS Jupiter </p>
                     </div>
                 </div>
-            </a>
+           
             <a href="https://example.com/news2" class="text-decoration-none text-dark">
                 <div class="card">
                     <img src="/images/blogs/2025/may/top5royalenfieldbikesinindia/RE Interceptor 650.png" class="card-img-top" alt="News 2">
@@ -133,7 +133,8 @@
         success: function (response) {
         if (response.success) {
         // Redirect to comparison page with the fetched IDs
-        window.location.href = `/Compare/TWCompareTwoBikes?variant1=${response.variantId1}&variant2=${response.variantId2}`;
+            // window.location.href = `/Compare/GetVariantIdsByNames?variant1=${response.variantId1}&variant2=${response.variantId2}`;
+                        window.location.href = `/Compare/GetVariantIdsByNames?variant1=${response.bikeName1}&variant2=${response.bikeName2}`;
         } else {
         alert("Bikes not found or incomplete data.");
         }
