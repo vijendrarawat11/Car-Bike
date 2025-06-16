@@ -18,14 +18,14 @@
     }
 }
 <body id="bg">
-    <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
-    <div class="">
+    @* <div class="header-img"><img src="~/images/main-slider/header.webp" /></div> *@
+    <div class="m-t90">
         <div><h1 class="latest-bike-head">Latest Bike News</h1></div>
         <div class=" latest-bike-container">
             <h2>@Model.NewsHeading</h2>
             @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
             <div class="upcoming-bikes-details-image">
-                <img src="@Model.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                <img src="@Model.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                 <div class="upcoming-bikes-details-text">
                     <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
                     @* <p>@ViewBag.TWNews.NewsSummary</p> *@
@@ -37,9 +37,9 @@
                 <p>Tata Motors has introduced the Nexon iCNG, an innovative addition to its popular Nexon lineup, designed to meet the increasing demand for environmentally friendly vehicles in India. Priced at ₹8.99 lakh, the Nexon iCNG aims to provide both performance and efficiency, with a claimed mileage of 24 kilometers per kg, appealing to cost-conscious and eco-aware consumers alike.</p>
                 <p>The Nexon iCNG retains the stylish design and robust build that have made the Nexon a favorite among compact SUV buyers. It features a bold front grille, striking LED headlights, and sporty alloy wheels, giving it a modern and aggressive stance on the road. Inside, the Nexon iCNG boasts a well-appointed cabin with premium materials, advanced infotainment options, and a spacious layout, ensuring comfort for both drivers and passengers</p>
                 <div class="row  m-b10">
-                    <div class="col-lg-4 col-md-4 text-center"><img src="~/images/latestnews/2024/sep/tata nexon icng debuts in india at 8.99 lakh, promising 24 kmkg mileage/1.png" /></div>
-                    <div class="col-lg-4 col-md-4 text-center"><img src="~/images/latestnews/2024/sep/tata nexon icng debuts in india at 8.99 lakh, promising 24 kmkg mileage/2.png" /></div>
-                    <div class="col-lg-4 col-md-4 text-center"><img src="~/images/latestnews/2024/sep/tata nexon icng debuts in india at 8.99 lakh, promising 24 kmkg mileage/3.png" /></div>
+                    <div class="col-lg-4 col-md-4 text-center"><img src="~/images/latestnews/2024/sep/tata nexon icng debuts in india at 8.99 lakh, promising 24 kmkg mileage/1.webp" /></div>
+                    <div class="col-lg-4 col-md-4 text-center"><img src="~/images/latestnews/2024/sep/tata nexon icng debuts in india at 8.99 lakh, promising 24 kmkg mileage/2.webp" /></div>
+                    <div class="col-lg-4 col-md-4 text-center"><img src="~/images/latestnews/2024/sep/tata nexon icng debuts in india at 8.99 lakh, promising 24 kmkg mileage/3.webp" /></div>
                 </div>
                 <p>Under the hood, the Nexon iCNG is powered by a 1.2-liter turbocharged petrol engine that produces 73 bhp and 95 Nm of torque. This engine is designed to provide a smooth driving experience, whether in the city or on highways. The vehicle is equipped with a bi-fuel system that allows for a seamless switch between petrol and CNG, ensuring that drivers can enjoy flexibility and reduced fuel costs.</p>
                 <p>Safety features are a priority for Tata Motors, and the Nexon iCNG is no exception. It comes with multiple airbags, ABS with EBD, rear parking sensors, and a reinforced body structure, ensuring a secure driving experience. The inclusion of advanced technology like a touchscreen infotainment system with smartphone connectivity further enhances the driving experience.</p>
@@ -57,7 +57,7 @@
                     <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
-                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                             <div class="latest-bikes-details-text">
                                 <p><i class="fa fa-calendar"></i> @newsdata.Date?.ToString("d MMM yyyy")</p>
                                 <p>@Truncate(@newsdata.NewsSummary, 170)</p>

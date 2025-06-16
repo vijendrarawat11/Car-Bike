@@ -18,14 +18,14 @@
     }
 }
 <body id="bg">
-    <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
-    <div class="">
+    @* <div class="header-img"><img src="~/images/main-slider/header.webp" /></div> *@
+    <div class="m-t90">
         <div><h1 class="latest-bike-head">Latest Bike News</h1></div>
         <div class=" latest-bike-container">
             <h2>@Model.NewsHeading</h2>
             @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
             <div class="upcoming-bikes-details-image">
-                <img src="@Model.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" />
+                <img src="@Model.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.webp")';" />
                 <div class="upcoming-bikes-details-text">
                     <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
                     @* <p>@ViewBag.TWNews.NewsSummary</p> *@
@@ -37,8 +37,8 @@
                 <p>Ratan Tata, a name synonymous with the Tata Group, has left an indelible mark on the conglomerate’s journey toward becoming a global powerhouse. Taking over the reins in 1991 as chairman, Tata's tenure saw the company undergo a massive transformation, expanding beyond traditional sectors into new industries, markets, and technologies. Under his leadership, Tata Group diversified into automotive, telecommunications, IT services, and global steel production.</p>
                 <p>One of the most defining moments of his leadership was the acquisition of global brands like Jaguar Land Rover in 2008 and the takeover of Corus Steel in 2007. These bold moves not only elevated the brand's international stature but also cemented Tata Group’s presence in key markets like Europe and North America. His ability to foresee global trends and take calculated risks contributed immensely to the company's expansion.</p>
                 <div class="row  m-b20">
-                    <div class="col-lg-6 col-md-6 text-center" style="height:100%"><img src="~/images/latestnews/2024/oct/ratan tata's visionary leadership and impact on tata group's global success/2.png" /></div>
-                    <div class="col-lg-6 col-md-6 text-center" style="height:100%"><img src="~/images/latestnews/2024/oct/ratan tata's visionary leadership and impact on tata group's global success/3.png" /></div>
+                    <div class="col-lg-6 col-md-6 text-center" style="height:100%"><img src="~/images/latestnews/2024/oct/ratan tata's visionary leadership and impact on tata group's global success/2.webp" /></div>
+                    <div class="col-lg-6 col-md-6 text-center" style="height:100%"><img src="~/images/latestnews/2024/oct/ratan tata's visionary leadership and impact on tata group's global success/3.webp" /></div>
                 </div>
                 <p>Beyond business, Ratan Tata is revered for his strong commitment to ethical business practices and corporate responsibility. He championed the group's investment in social welfare, education, and healthcare initiatives through the Tata Trusts, ensuring that Tata Group continues to have a positive impact on society.</p>
                 <p>Even after stepping down as chairman in 2012, Ratan Tata's influence remains significant. He continues to mentor future leaders and provide strategic insights, making sure that Tata Group remains true to its values of integrity, innovation, and excellence. His leadership period, often seen as a golden era for the company, laid a solid foundation for future growth and diversification.</p>
@@ -55,7 +55,7 @@
                     <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
-                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                             <div class="latest-bikes-details-text">
                                 <p><i class="fa fa-calendar"></i> @newsdata.Date?.ToString("d MMM yyyy")</p>
                                 <p>@Truncate(@newsdata.NewsSummary, 170)</p>
