@@ -108,7 +108,7 @@
     </div>
     *@
 
-   <div class="col-lg-9 col-md-9 aboutus-text m-t70 m-l90 m-r90">  
+   <div class="aboutus-text m-t70">  
     
         <h1>About Us</h1>
         <p>Welcome to <span class="font-weight-700">BikeCarHub.com</span> — your go-to hub for all things bikes and cars in India.</p>
@@ -159,9 +159,8 @@
             </div>
         </div>
         <div class="col-lg-6 p-5">
-            <p><span class="font-weight-700">Send Us a Message</span></p>
-            <p> (Please fill out the following details)</p>
             <p class="text-center">@TempData["success"]</p>
+            <p><span class="font-weight-700">Send Us a Message</span><br />(Please fill out the following details)</p>
             <form asp-action="Index" method="post" class="contact-form">
                 <div class="form-group">
                     <label asp-for="Name"></label>

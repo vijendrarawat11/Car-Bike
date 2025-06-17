@@ -20,8 +20,9 @@
 }
 @* <div class="header-img"> <img src="~/images/main-slider/header.png" /></div> *@
 <!-- Breadcrumb row END -->
+<div class=" m-t90">
 <h1 class="for-h1 mb-5">Blogs</h1>
-<div class="upcoming-bikes-details-row m-t90">
+<div class="upcoming-bikes-details-row">
     @foreach (var allBlogs in ViewBag.allBlogs)
     {
         <a href="/@allBlogs.URL" style="text-decoration:none;">
@@ -41,5 +42,5 @@
         </a>
     }
 </div>
-
+</div>
 

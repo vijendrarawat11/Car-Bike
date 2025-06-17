@@ -18,14 +18,14 @@
     }
 }
 <body id="bg">
-    <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
-    <div class="">
+    @* <div class="header-img"><img src="~/images/main-slider/header.webp" /></div> *@
+    <div class="m-t90">
         <div><h1 class="latest-bike-head">Latest Bike News</h1></div>
         <div class=" latest-bike-container">
             <h2>@Model.NewsHeading</h2>
             @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
             <div class="upcoming-bikes-details-image">
-                <img src="@Model.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" />
+                <img src="@Model.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.webp")';" />
                 <div class="upcoming-bikes-details-text">
                     <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
                     @* <p>@ViewBag.TWNews.NewsSummary</p> *@
@@ -64,7 +64,7 @@
                     <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
-                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                             <div class="latest-bikes-details-text">
                                 <p><i class="fa fa-calendar"></i> @newsdata.Date?.ToString("d MMM yyyy")</p>
                                 <p>@Truncate(@newsdata.NewsSummary, 170)</p>

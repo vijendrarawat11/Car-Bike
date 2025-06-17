@@ -18,14 +18,14 @@
     }
 }
 <body id="bg">
-    <div class="header-img"><img src="~/images/main-slider/header.png" /></div>
-    <div class="">
+    @* <div class="header-img"><img src="~/images/main-slider/header.webp" /></div> *@
+    <div class="m-t90">
         <div><h1 class="latest-bike-head">Latest Bike News</h1></div>
         <div class=" latest-bike-container">
             <h2>@Model.NewsHeading</h2>
             @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
             <div class="upcoming-bikes-details-image">
-                <img src="@Model.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                <img src="@Model.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                 <div class="upcoming-bikes-details-text">
                     <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
                     @* <p>@ViewBag.TWNews.NewsSummary</p> *@
@@ -35,13 +35,13 @@
                 @* <p>@Html.Raw(@Model.NewsDetail.Replace("\n", "<br>"))</p> *@
                 <p>@Model.NewsSummary</p>
                 <p>The <span class="font-weight-700">Kia Carnival</span> has officially hit the market and already made headlines by securing more than <span class="font-weight-700">1,800 bookings</span> on its first day. This impressive number underscores the vehicle’s strong appeal in the increasingly competitive multi-purpose vehicle (MPV) segment, particularly among families and individuals looking for spacious, comfortable, and technologically advanced options.</p>
-                <div class="image-box"><img src="~/images/latestnews/2024/sep/kia carnival launches with 1,800 first-day bookings/2.png" /></div>
+                <div class="image-box"><img src="~/images/latestnews/2024/sep/kia carnival launches with 1,800 first-day bookings/2.webp" /></div>
                 <p>Kia’s latest model is designed to cater to the diverse needs of modern consumers, offering a blend of style, functionality, and cutting-edge features. The Carnival showcases a bold exterior design, complemented by a well-appointed interior that prioritizes passenger comfort and convenience. The vehicle offers seating for up to eight occupants, with configurable seating arrangements that can easily accommodate both passengers and cargo.</p>
                 <p>Under the hood, the new Carnival is powered by a robust engine that balances performance with fuel efficiency, making it suitable for both city driving and longer journeys. The vehicle also incorporates advanced safety features, including multiple airbags, stability control, and a suite of driver assistance technologies, ensuring peace of mind for families on the go.</p>
-                <div class="image-box"><img src="~/images/latestnews/2024/sep/kia carnival launches with 1,800 first-day bookings/3.png" /></div>
+                <div class="image-box"><img src="~/images/latestnews/2024/sep/kia carnival launches with 1,800 first-day bookings/3.webp" /></div>
                 <p>Kia's marketing strategy has played a significant role in generating excitement ahead of the Carnival’s launch. The company invested in comprehensive promotional campaigns across various platforms, effectively communicating the vehicle's key benefits. Test drive events and community engagements helped potential customers experience the Carnival firsthand, leading to the swift uptick in bookings.</p>
                 <p>The high number of initial orders indicates not just strong consumer interest, but also a growing trend towards MPVs as a preferred choice for family transportation. Industry analysts believe that the Carnival's entry into the market may challenge competitors by setting new benchmarks in quality and value.</p>
-                <div class="image-box"><img src="~/images/latestnews/2024/sep/kia carnival launches with 1,800 first-day bookings/4.png" /></div>
+                <div class="image-box"><img src="~/images/latestnews/2024/sep/kia carnival launches with 1,800 first-day bookings/4.webp" /></div>
                 <p>Kia is now focused on ensuring a smooth delivery process for its customers, emphasizing commitment to customer satisfaction. As the Carnival begins to hit the roads, the company is optimistic about sustaining this momentum, with plans for future updates and enhancements based on customer feedback.</p>
                 <p>In summary, the Kia Carnival's launch signifies a promising start for Kia in the MPV market, driven by a combination of innovative design, practicality, and a keen understanding of consumer needs.</p>
             </div>
@@ -56,7 +56,7 @@
                     <h2>@Truncate(@newsdata.NewsHeading, 80)</h2>
                     <a href="/@newsdata.ImageURL">
                         <div class="latest-allbike-image ">
-                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                            <img src="@newsdata.ImageFolderURL" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.webp")';" />
                             <div class="latest-bikes-details-text">
                                 <p><i class="fa fa-calendar"></i> @newsdata.Date?.ToString("d MMM yyyy")</p>
                                 <p>@Truncate(@newsdata.NewsSummary, 170)</p>
