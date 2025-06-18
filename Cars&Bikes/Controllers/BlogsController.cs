@@ -484,16 +484,18 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2025/June162025BlogDetails1.cshtml", blogsDetails);
         }
 
-        [Route("blogs/royal-enfield-vs-jawa–best-cruiser-bike-comparison-(2025)")]
+        [Route("blogs/royal-enfield-vs-jawa–best-cruiser-bike-comparison-2025")]
         public IActionResult June172025BlogDetails1()
         {
-            var blogsDetails = GetBlogDetails("Royal Enfield vs Jawa – Best Cruiser Bike Comparison (2025) ");
+            var blogsDetails = GetBlogDetails("Royal Enfield vs Jawa – Best Cruiser Bike Comparison (2025) | BikeCarHub");
             if (blogsDetails == null)
             {
                 return NotFound(); // Return 404 if news item is not found
             }
             return View("~/Views/Blogs/2025/June172025BlogDetails1.cshtml", blogsDetails);
         }
+
+     
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
