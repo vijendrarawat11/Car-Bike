@@ -495,7 +495,30 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2025/June172025BlogDetails1.cshtml", blogsDetails);
         }
 
-     
+
+        [Route("blogs/hyundai-i20-vs-tata-altroz-2025-comparison")]
+        public IActionResult June182025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Hyundai i20 vs Tata Altroz – 2025 Comparison");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June182025BlogDetails1.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/manual-vs-automatic-cars-in-india-2025-which-one-right-for-you")]
+        public IActionResult June1820252BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Manual vs Automatic Cars in India (2025): Which One’s Right for You?");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June1820252BlogDetails1.cshtml", blogsDetails);
+        }
+
+
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
