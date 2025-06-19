@@ -2,10 +2,10 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Hyundai i20 vs Tata Altroz – 2025 Comparison";
+    ViewData["Title"] = "Manual vs Automatic Cars in India (2025): Which One’s Right for You?";
 }
 @section MetaTags {
-    <meta name="keywords" content="Tata Altroz vs Hundai i10" />
+    <meta name="keywords" content="Tata Altroz vs Hundai i20" />
     <meta name="description" content="Compare Tata Altroz vs Hundai i10  in 2025. Find the best for long rides, city use, comfort, mileage, features, and pricing with BikeCarHub." />
 }
 <!--For truncate-->
@@ -31,20 +31,27 @@
                 </div>
             </div>
             <div class="latest-bikes-details-content">
-                @* <p>@Html.Raw(@Model.BlogSummary.Replace("\n", "<br>"))</p> *@
+                <p><span class="font-weight-700">Written by</span>: BikeCarHub Editorial Team</p>
+                <p><span class="font-weight-700">Published on</span>: 18th June 2025</p>
+                 <p>@Html.Raw(@Model.BlogSummary.Replace("\n", "<br>"))</p>
 
+               
+            
+                <p>With Indian roads becoming more crowded and automatics now more fuel-efficient and affordable, this decision is more relevant than ever. Let’s break it down and help you decide with clarity.</p>
 
-
-                <p>Written by: BikeCarHub Editorial Team</p>
-                <p>Published on: 18th June 2025</p>
                 <div class="div-line"></div>
+
+                @* <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center"><img src="~/images/blogs/2025/june/manualvsautomatic/auto vs manual.webp"  alt="bikecarhubAutoVSManual" title="bikecarhubAutoVSManual" /></div>
+                </div> *@
+
 
                 <h3 class="subheading">1. Manual Cars: What Are They Really Like?</h3>
                 <p>Manual cars are the classic pick. You control the gears and the clutch—great if you like being in charge behind the wheel.</p>
 
                 <div class="pros-cons">
                     <div>
-                        <h4>Pros of Manual Cars</h4>
+                        <h5 class="subheading">Pros of Manual Cars</h5>
                         <ul>
                             <li><span class="font-weight-700">Cheaper to Buy</span>: Save ₹40,000–₹1.5 lakh over the automatic version.</li>
                             <li><span class="font-weight-700">Fuel Efficient</span>: In many models, they still edge out automatics by 1–2 km/l.</li>
@@ -53,9 +60,9 @@
                         </ul>
                     </div>
                     <div>
-                        <h4>Cons of Manual Cars</h4>
+                        <h5 class="subheading">Cons of Manual Cars</h5>
                         <ul>
-                            <li><span class="font-weight-700">City Driving = Tiring</span>: Constant gear shifting in traffic? Not fun.</li>
+                            <li><span class="font-weight-700">City Driving  Tiring</span>: Constant gear shifting in traffic? Not fun.</li>
                             <li><span class="font-weight-700">Takes Time to Learn</span>: Not everyone picks it up easily.</li>
                             <li><span class="font-weight-700">Resale Struggles in Cities</span>: Automatics are now preferred in metros.</li>
                         </ul>
@@ -75,7 +82,7 @@
 
                 <div class="pros-cons">
                     <div>
-                        <h4>Pros of Automatic Cars</h4>
+                        <h5 class="subheading">Pros of Automatic Cars</h5>
                         <ul>
                             <li><span class="font-weight-700">Stress-Free in Traffic</span>: No clutch = no leg pain.</li>
                             <li><span class="font-weight-700">Beginner-Friendly</span>: Great for new or elderly drivers.</li>
@@ -84,7 +91,7 @@
                         </ul>
                     </div>
                     <div>
-                        <h4>Cons of Automatic Cars</h4>
+                        <h5 class="subheading">Cons of Automatic Cars</h5>
                         <ul>
                             <li><span class="font-weight-700">More Expensive</span>: Usually ₹40K–₹1.5L more.</li>
                             <li><span class="font-weight-700">Slightly Costlier to Maintain</span>: Especially CVT/DCT setups.</li>
@@ -96,10 +103,10 @@
 
                 <h3 class="subheading">3. What the Brands Are Saying</h3>
 
-                <h4>Maruti Suzuki: Big on AMT</h4>
+                <h5 class="subheading">Maruti Suzuki: Big on AMT</h5>
                 <p>In 2025, Maruti's AGS (AMT) sales crossed <span class="font-weight-700">1.3 lakh units</span>, with models like Alto K10, Celerio, and Swift continuing strong demand. No price cuts were announced this year, but AGS variants remained a key contributor to compact car sales.</p>
 
-                <h4>Hyundai: Smooth with IVT & DCT</h4>
+                <h5 class="subheading">Hyundai: Smooth with IVT & DCT</h5>
                 <ul>
                     <li>The <span class="font-weight-700">Venue IVT</span> offers drive modes, paddle shifters, and connected features.</li>
                     <li>Turbo variants with <span class="font-weight-700">DCT</span> offer sportier driving—but at a premium.</li>
@@ -109,15 +116,18 @@
                 <div class="div-line"></div>
 
                 <h3 class="subheading">4. Manual vs Automatic: Head-to-Head</h3>
-                <table>
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table-content">
+                        <thead>
                     <tr>
-                        <th>Feature</th>
-                        <th>Manual</th>
-                        <th>AMT (Maruti)</th>
-                        <th>CVT/IVT (Hyundai, Nissan, Honda)</th>
-                        <th>DCT (Hyundai, Kia Sonet/HTX, etc.)</th>
+                        <th class="text-center">Feature</th>
+                                <th class="text-center">Manual</th>
+                                <th class="text-center">AMT (Maruti)</th>
+                                <th class="text-center">CVT/IVT (Hyundai, Nissan, Honda)</th>
+                                <th class="text-center">DCT (Hyundai, Kia Sonet/HTX, etc.)</th>
                     </tr>
-                    <tr>
+                    </thead>
+                        <tr class="compare-head-text">
                         <td>Ease of Use</td>
                         <td>Lowest comfort in city</td>
                         <td>Moderate (some jerkiness)</td>
@@ -131,7 +141,7 @@
                         <td>Almost equal (only 0.5–1 km/l difference)</td>
                         <td>Slightly lower due to performance tuning</td>
                     </tr>
-                    <tr>
+                        <tr class="compare-head-text">
                         <td>Price Premium</td>
                         <td>Baseline</td>
                         <td>₹40k–₹70k extra</td>
@@ -145,7 +155,7 @@
                         <td>Medium-High (CVT oil, belt wear)</td>
                         <td>Highest (dual clutches, more tech)</td>
                     </tr>
-                    <tr>
+                        <tr class="compare-head-text">
                         <td>Driving Feel</td>
                         <td>Engaging, driver‑oriented</td>
                         <td>Some hesitation in low gears</td>
@@ -167,7 +177,7 @@
 
                 <div class="pros-cons">
                     <div>
-                        <h4>Choose Manual if:</h4>
+                        <h5 class="subheading">Choose Manual if:</h5>
                         <ul>
                             <li>You want the lowest cost.</li>
                             <li>You enjoy driving and want more control.</li>
@@ -176,7 +186,7 @@
                         </ul>
                     </div>
                     <div>
-                        <h4>Choose Automatic if:</h4>
+                        <h5 class="subheading">Choose Automatic if:</h5>
                         <ul>
                             <li>You live in a traffic-heavy city.</li>
                             <li>You're a new, elderly, or convenience-first driver.</li>
@@ -186,62 +196,71 @@
                     </div>
                 </div>
 
-                <div class="verdict-box">
-                    <span class="font-weight-700">Want a Middle Ground? Try an AMT.</span><br>
-                    It gives you the ease of an automatic without blowing your budget. Great for hatchbacks like the <span class="font-weight-700">WagonR</span>, <span class="font-weight-700">Celerio</span>, <span class="font-weight-700">Swift</span>, and <span class="font-weight-700">Alto K10</span>.
-                </div>
+                
+                    <h5 class="subheading">Want a Middle Ground? Try an AMT.</h5>
+                    <p> It gives you the ease of an automatic without blowing your budget. Great for hatchbacks like the <span class="font-weight-700">WagonR</span>, <span class="font-weight-700">Celerio</span>, <span class="font-weight-700"><a class="for-link" asp-controller="ValueForMoney" asp-action="MarutiSuzukiSwift2025_1">Swift</a></span>, and <span class="font-weight-700"><a class="for-link" asp-controller="ValueForMoney" asp-action="AltoK10_1">Alto K10</a></span>.</p>
+                
 
                 <div class="div-line"></div>
 
                 <h3 class="subheading">6. Best Automatic Cars in 2025 (₹5L–₹15L Range)</h3>
 
-                <table>
-                    <tr>
-                        <th>Model</th>
-                        <th>Key Features</th>
-                        <th>Why Buy</th>
-                    </tr>
-                    <tr>
-                        <td><span class="font-weight-700">Hyundai Venue IVT</span></td>
-                        <td>Price: ₹13–14L</td>
-                        <td>Smooth drive, smart features, connected tech</td>
-                    </tr>
-                    <tr>
-                        <td><span class="font-weight-700">Maruti Swift AMT/CVT</span></td>
-                        <td>Mileage: ~23–24 km/l</td>
-                        <td>Sporty, reliable, easy to service</td>
-                    </tr>
-                    <tr>
-                        <td><span class="font-weight-700">Alto K10 AMT</span></td>
-                        <td>Price: ~₹5.5L</td>
-                        <td>Cheapest automatic that's still super efficient</td>
-                    </tr>
-                    <tr>
-                        <td><span class="font-weight-700">WagonR AMT</span></td>
-                        <td>Price: ~₹6.5L</td>
-                        <td>Practical and city-friendly</td>
-                    </tr>
-                    <tr>
-                        <td><span class="font-weight-700">Dzire AMT</span></td>
-                        <td>Price: ~₹8L</td>
-                        <td>Sedan space and smooth drive in one</td>
-                    </tr>
-                    <tr>
-                        <td><span class="font-weight-700">Nissan Magnite CVT</span></td>
-                        <td>Price: ~₹10L</td>
-                        <td>Smooth CVT at an affordable price</td>
-                    </tr>
-                    <tr>
-                        <td><span class="font-weight-700">Kia Sonet DCT</span></td>
-                        <td>Price: ~₹12L</td>
-                        <td>Sporty drive and great looks</td>
-                    </tr>
-                    <tr>
-                        <td><span class="font-weight-700">Hyundai Venue Turbo DCT</span></td>
-                        <td>Price: ~₹14L</td>
-                        <td>Punchy performance + premium features</td>
-                    </tr>
-                </table>
+                    <h5 class="subheading">Hyundai Venue IVT</h5>
+                    <ul>
+                        <li>Price: ₹13–14 lakh</li>
+                        <li>Offers smooth drive quality</li>
+                        <li>Loaded with smart and connected features</li>
+                    </ul>
+
+                    <h5 class="subheading">Maruti Swift AMT/CVT</h5>
+                    <ul>
+                        <li>Mileage: ~23–24 km/l</li>
+                        <li>Sporty and reliable design</li>
+                        <li>Low maintenance and easy to service</li>
+                    </ul>
+
+                    <h5 class="subheading">Alto K10 AMT</h5>
+                    <ul>
+                        <li>Price: ~₹5.5 lakh</li>
+                        <li>Most affordable automatic option</li>
+                        <li>Highly fuel-efficient and budget-friendly</li>
+                    </ul>
+
+                    <h5 class="subheading">WagonR AMT</h5>
+                    <ul>
+                        <li>Price: ~₹6.5 lakh</li>
+                        <li>Extremely practical for daily city use</li>
+                        <li>Spacious and easy to maneuver</li>
+                    </ul>
+
+                    <h5 class="subheading">Dzire AMT</h5>
+                    <ul>
+                        <li>Price: ~₹8 lakh</li>
+                        <li>Offers sedan-like space and comfort</li>
+                        <li>Smooth and refined driving experience</li>
+                    </ul>
+
+                    <h5 class="subheading">Nissan Magnite CVT</h5>
+                    <ul>
+                        <li>Price: ~₹10 lakh</li>
+                        <li>Affordable SUV with CVT smoothness</li>
+                        <li>Great value for money</li>
+                    </ul>
+
+                    <h5 class="subheading">Kia Sonet DCT</h5>
+                    <ul>
+                        <li>Price: ~₹12 lakh</li>
+                        <li>Sporty and stylish design</li>
+                        <li>Delivers a fun and engaging drive</li>
+                    </ul>
+
+                    <h5 class="subheading">Hyundai Venue Turbo DCT</h5>
+                    <ul>
+                        <li>Price: ~₹14 lakh</li>
+                        <li>Punchy turbo performance</li>
+                        <li>Comes with premium features and tech</li>
+                    </ul>
+         
 
                 <div class="div-line"></div>
 
@@ -324,16 +343,17 @@
 
                 <h3 class="subheading">9. Final Verdict</h3>
 
+                    <a class="for-link" asp-controller="Home" asp-action="Index"><span class="font-weight-700">BikeCarHub</span></a>
                 <div class="pros-cons">
                     <div>
-                        <h4>Manuals:</h4>
+                            <h5 class="subheading">Manuals:</h5>
                         <p>
                             Great for budget buyers, rural roads, or driving enthusiasts.<br>
                             More engaging, slightly more fuel-efficient, and cheaper to maintain.
                         </p>
                     </div>
                     <div>
-                        <h4>Automatics:</h4>
+                            <h5 class="subheading">Automatics:</h5>
                         <p>
                             Perfect for urban driving, families, and beginners.<br>
                             Modern autos are efficient, comfortable, and well-equipped.
@@ -341,13 +361,12 @@
                     </div>
                 </div>
 
-                <div class="verdict-box">
-                    <span class="font-weight-700">Still confused? Test drive both.</span><br>
-                    AMTs can feel jerky if you're used to CVTs. Manuals can be tiring in traffic. Only your own test drive will tell you what <em>feels right</em>.
-                </div>
+                
+                    <h5 class="subheading">Still confused? Test drive both.</h5>
+                    <p> AMTs can feel jerky if you're used to CVTs. Manuals can be tiring in traffic. Only your own test drive will tell you what <em>feels right</em>.</p>
 
-                <h4>Your Pre-Purchase Checklist</h4>
-                <div class="checklist">
+                    <h3 class="subheading">Your Pre-Purchase Checklist</h3>
+                <div>
                     <ol>
                         <li>Drive both manual and automatic versions</li>
                         <li>Try AMTs in traffic</li>
@@ -359,11 +378,12 @@
 
                 <div class="div-line"></div>
 
-                <h3>Final Word</h3>
+                    <h3 class="subheading">Final Word</h3>
                 <p>There's no one-size-fits-all answer. But in 2025, both manuals and automatics have matured. Whether you're watching your wallet or prioritizing convenience, India has an option that fits your style.</p>
                 <p>Take a test drive, compare, and choose the car that'll <span class="font-weight-700">make every drive feel right</span>.</p>
             </div>
         </div>
+    </div>
     </div>
 
 </body>

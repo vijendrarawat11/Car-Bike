@@ -1921,7 +1921,7 @@ header.transparent {
     align-items: center; /* Centers vertically */
     /*height: 260px;*/
     padding: 0 15px 0 15px;
-    margin-top: 10%;
+  /*  margin-top: 10%;*/
 }
 .blog-head {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
