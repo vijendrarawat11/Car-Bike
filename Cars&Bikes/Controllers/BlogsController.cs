@@ -518,6 +518,28 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2025/June182025BlogDetails2.cshtml", blogsDetails);
         }
 
+        [Route("blogs/ev-vs-petrol-bikes-which-one-should-you-buy-in-2025")]
+        public IActionResult June192025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("EV vs Petrol Bikes: Which One Should You Buy in 2025? | BikeCarHub");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June192025BlogDetails1.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/top-10-indian-150-160cc-bikes-in-india-2025-best-mileage-style-value")]
+        public IActionResult June192025BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("Top 10 Indian 150-160cc Bikes in India (2025) – Best Mileage, Style & Value | BikeCarHub");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June192025BlogDetails2.cshtml", blogsDetails);
+        }
+
 
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
