@@ -5,7 +5,7 @@
 }
 
 @model TwoWheeler
-<div class=" m-t90">
+<div class="header-img"><img src="~/images/main-slider/header.png" /></div>
 <h1 class="latest-bike-head">Comparing Bikes and Scooters</h1>
 <div class="compare-container">
 <h3>Find Your Perfect Ride by Comparing Bikes and Scooters Side by Side!</h3>
@@ -23,7 +23,7 @@
  
     <div class="compare-ddl">
         @* <label for="twoWheelerDropdown1">Select TwoWheeler 1:</label> *@
-            <select id="twoWheelerDropdown1" class="ddlcompare" @* asp-items="ViewBag.TWList" *@>
+            <select id="twoWheelerDropdown1" class="ddlcompare">
         <option value="">--Select Model--</option>
     </select>
     </div>
@@ -49,7 +49,7 @@
     <div class="compare-ddl">
     <!-- TwoWheeler and Variant Dropdown for the second vehicle -->
     @* <label for="twoWheelerDropdown2">Select TwoWheeler 2:</label> *@
-            <select id="twoWheelerDropdown2" class="ddlcompare" @* asp-items="ViewBag.TWList" *@>
+            <select id="twoWheelerDropdown2" class="ddlcompare">
         <option value="">--Select Model--</option>
     </select>
     </div>
