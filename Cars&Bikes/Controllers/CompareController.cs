@@ -1,4 +1,5 @@
-﻿using Cars_Bikes.Data;
+﻿using System.Collections.Generic;
+using Cars_Bikes.Data;
 using Cars_Bikes.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -270,17 +271,33 @@ namespace Cars_Bikes.Controllers
 
             if (v1 == null || v2 == null)
             {
-                return NotFound();
+                return NotFound("One or both bikes not found");
             }
+           
+
+            var firstBikeVariants = _context.TWVarients
+                .Where(v => v.TwoWheelerId == v1.TwoWheelerId)
+                .ToList();
+
+            var secondBikeVariants = _context.TWVarients
+                .Where(v => v.TwoWheelerId == v2.TwoWheelerId)
+                .ToList();
 
             //var model = new TwoWheeler
             //{
             //    Variant1 = v1,
             //    Variant2 = v2
             //};
+            var viewModel = new CompareViewModel
+            {
+                Variant1 = v1,
+                Variant2 = v2,
+                FirstBikeVariants = firstBikeVariants,
+                SecondBikeVariants = secondBikeVariants
+            };
 
             //return View(model);
-            return View();
+            return View(viewModel);
         }
 
         [HttpGet]
@@ -308,26 +325,41 @@ namespace Cars_Bikes.Controllers
         [HttpGet]
         public IActionResult GetVariantIdsByNames(string name1, string name2)
         {
+            if (string.IsNullOrWhiteSpace(name1) || string.IsNullOrWhiteSpace(name2))
+            {
+                return Json(new { success = false, message = "Invalid bike name(s)" });
+            }
+
             var v1 = _context.TWVarients
                 .Include(v => v.TwoWheeler)
-                .FirstOrDefault(v => v.TwoWheeler.TwoWheelerName == name1);
+                //.Where(v => EF.Functions.Like(v.TwoWheeler.TwoWheelerName, name1));
+                //.FirstOrDefault(v => v.TwoWheeler.TwoWheelerName == name1);
+                .FirstOrDefault(v => v.TwoWheeler.TwoWheelerName.Trim().ToLower()== name1.Trim().ToLower());
+
 
             var v2 = _context.TWVarients
                 .Include(v => v.TwoWheeler)
-                .FirstOrDefault(v => v.TwoWheeler.TwoWheelerName == name2);
-
+                // .Where(v => EF.Functions.Like(v.TwoWheeler.TwoWheelerName, name2));
+                //.FirstOrDefault(v => v.TwoWheeler.TwoWheelerName == name2);
+                .FirstOrDefault(v => v.TwoWheeler.TwoWheelerName.Trim().ToLower() == name2.Trim().ToLower());
             if (v1 == null || v2 == null)
             {
-                return Json(new { success = false });
+                return Json(new
+                {
+                    success = false,
+                    message = $"Could not find variants for: {(v1 == null ? name1 : "")} {(v2 == null ? name2 : "")}"
+                });
             }
-
             return Json(new
             {
                 success = true,
-                variantId1 = v1.TWVarientId,
-                variantId2 = v2.TWVarientId
+                v1=v1.TWVarientId,
+                v2=v2.TWVarientId
             });
         }
+        
+
+
 
 
     }

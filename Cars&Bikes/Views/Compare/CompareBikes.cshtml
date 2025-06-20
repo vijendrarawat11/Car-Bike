@@ -62,7 +62,7 @@
         <div class="card-wrapper" id="cardContainer">
             @* <a href="https://example.com/news1" class="text-decoration-none text-dark"> *@
                 @* <a href="@Url.Action("TWCompareTwoBikes", "Compare", new { variant1 = 103, variant2 = 205 })" class="text-decoration-none text-dark"> *@
-                <div class="card" onclick="compareByNames('Honda Activa 125', 'TVS Jupiter')">
+                <div class="card" role="button" tabindex="0" onclick="compareByNames('Honda Activa 125', 'TVS Jupiter')">
                     <img src="/images/blogs/2025/may/top5royalenfieldbikesinindia/reclassic350.webp" class="card-img-top" alt="News 1">
                     <div class="card-body">
                             <p class="card-text">Honda Activa 125 vs TVS Jupiter </p>
@@ -114,6 +114,7 @@
         <button class="scroll-btn scroll-right" onclick="scrollRight()">&#8250;</button>
     </div>
 </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
     const container = document.getElementById('cardContainer');
@@ -133,13 +134,16 @@
         success: function (response) {
         if (response.success) {
         // Redirect to comparison page with the fetched IDs
-            // window.location.href = `/Compare/GetVariantIdsByNames?variant1=${response.variantId1}&variant2=${response.variantId2}`;
-                        window.location.href = `/Compare/GetVariantIdsByNames?variant1=${response.bikeName1}&variant2=${response.bikeName2}`;
+                 window.location.href = `/Compare/TWCompareTwoBikes?variant1=${response.v1}&variant2=${response.v2}`;
+                        //window.location.href = `/Compare/GetVariantIdsByNames?variant1=${response.bikeName1}&variant2=${response.bikeName2}`;
         } else {
-        alert("Bikes not found or incomplete data.");
+            alert(response.message ||  "Bikes not found or incomplete data.");
         }
         },
-        error: function () {
+            error: function (xhr, status, error) {
+                console.log("Error occurred: " + error);
+                console.log("Status: " + status);
+                console.log("Response Text: " + xhr.responseText);
         alert("Error occurred while fetching data.");
         }
         });
