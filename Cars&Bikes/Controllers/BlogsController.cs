@@ -451,10 +451,10 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/June052025BlogDetails1.cshtml", blogsDetails);
         }
-        [Route("blogs/royal-enfield-guerrilla-450-launch-date-price-features-specs-more")]
+        [Route("blogs/royal-enfield-guerrilla-450-price-features-specs-more")]
         public IActionResult June112025BlogDetails1()
         {
-            var blogsDetails = GetBlogDetails("Royal Enfield Guerrilla 450: Launch Date, Price, Features, Specs & More");
+            var blogsDetails = GetBlogDetails("Royal Enfield Guerrilla 450: Price, Features, Specs & More");
             if (blogsDetails == null)
             {
                 return NotFound(); // Return 404 if news item is not found
@@ -472,6 +472,53 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/June132025BlogDetails1.cshtml", blogsDetails);
         }
+
+        [Route("blogs/best-bikes-for-long-rides-in-india-touring-friendly-picks")]
+        public IActionResult June162025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Best Bikes for Long Rides in India – Touring Friendly Picks (2025 Edition)");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June162025BlogDetails1.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/royal-enfield-vs-jawa–best-cruiser-bike-comparison-2025")]
+        public IActionResult June172025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Royal Enfield vs Jawa – Best Cruiser Bike Comparison (2025) | BikeCarHub");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June172025BlogDetails1.cshtml", blogsDetails);
+        }
+
+
+        [Route("blogs/hyundai-i20-vs-tata-altroz-2025-comparison")]
+        public IActionResult June182025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Hyundai i20 vs Tata Altroz – 2025 Comparison");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June182025BlogDetails1.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/manual-vs-automatic-cars-in-india-2025-which-one-right-for-you")]
+        public IActionResult June182025BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("Manual vs Automatic Cars in India (2025): Which One’s Right for You?");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June182025BlogDetails2.cshtml", blogsDetails);
+        }
+
+
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {

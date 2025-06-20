@@ -1699,12 +1699,14 @@ header.transparent {
         left: 30%;
         transform: translate(-30%, -26%);*/
         width: 100%;
-        padding: 20px 30px 20px 30px;
+        padding: 20px 50px 20px 50px;
     }
 
         .aboutus-text p {
-            margin-bottom: 40px;
+            padding-bottom: 20px;
+            margin-top: 10px;
             color: black;
+            font-size: 1.1em;
         }
 
         .aboutus-text h2 {
@@ -1716,11 +1718,25 @@ header.transparent {
             font-weight: 600;
         }
         .aboutus-text h1 {
-            color: #175678;
+            /*color: #175678;*/
+            color: black;
+            font-size: 2em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+            padding-top: 30px;
+            padding-bottom: 20px;
         }
-        .aboutus-text ul li{
-            margin-left:10px;
+        .aboutus-text ul {
+            line-height: 1.6;
+            font-size: 1.1em;
+            color: black;
+            padding: 10px;
+            margin-left: 30px;
         }
+            .aboutus-text ul li {
+                padding: 2px 0 10px 0;
+            }
         /*--------------------Compare Page------------------------------*/
         .compare-container {
             max-width: 100%;
@@ -1905,7 +1921,7 @@ header.transparent {
     align-items: center; /* Centers vertically */
     /*height: 260px;*/
     padding: 0 15px 0 15px;
-    margin-top: 10%;
+  /*  margin-top: 10%;*/
 }
 .blog-head {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1913,7 +1929,7 @@ header.transparent {
     justify-content: center; /* Centers horizontally */
     align-items: center; /* Centers vertically */
     height: 100%; /* Ensure the container has a height to center within */
-    border-left: 4px solid #175678;
+/*    border-left: 4px solid #175678;*/
 }
 
     .blog-head h1 {
