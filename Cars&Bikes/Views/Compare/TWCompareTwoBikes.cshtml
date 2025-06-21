@@ -59,7 +59,7 @@
 </div>
     <div class="compareButton">
         <button type="button" class="btn btn-primary" id="compareButton">Compare</button>
-        <div id="comparisonTable" class="mt-4"></div>
+        @* <div id="comparisonTable" class="mt-4"></div> *@
     </div>
     
     <div class="comparison-table" id="comparisonTable" style="display:none;">
@@ -106,9 +106,9 @@
                 <h5>
                     Specifications
                 </h5>
-                <i class="bi bi-chevron-down toggle-icon"></i>
+                <i class="bi bi-chevron-up toggle-icon"></i>
             </div>
-            <div id="specificationsContent" style="display: none;">
+            <div id="specificationsContent" style="display: block;">
                 <table class="comparison-table-content">
                     <tbody>
                         <tr>
@@ -146,9 +146,9 @@
                 <h5>
                     Engine & Transmission
                 </h5>
-                <i class="bi bi-chevron-down toggle-icon"></i>
+                <i class="bi bi-chevron-up toggle-icon"></i>
             </div>
-            <div id="engineTransmissionContent" style="display: none;">
+            <div id="engineTransmissionContent" style="display: block;">
                 <table class="comparison-table-content">
                     <tbody>
                         <tr>
@@ -226,9 +226,9 @@
                 <h5>
                     Features
                 </h5>
-                <i class="bi bi-chevron-down toggle-icon"></i>
+                <i class="bi bi-chevron-up toggle-icon"></i>
             </div>
-            <div id="featuresContent" style="display: none;">
+            <div id="featuresContent" style="display: block;">
                 <table class="comparison-table-content">
                     <tbody>
                         <tr>
@@ -316,9 +316,9 @@
                 <h5>
                     Safety
                 </h5>
-                <i class="bi bi-chevron-down toggle-icon"></i>
+                <i class="bi bi-chevron-up toggle-icon"></i>
             </div>
-            <div id="safetyContent" style="display: none;">
+            <div id="safetyContent" style="display: block;">
                 <table class="comparison-table-content">
                     <tbody>
                         <tr>
@@ -361,9 +361,9 @@
                 <h5>
                     Mileage & Performance
                 </h5>
-                <i class="bi bi-chevron-down toggle-icon"></i>
+                <i class="bi bi-chevron-up toggle-icon"></i>
             </div>
-            <div id="mileageContent" style="display: none;">
+            <div id="mileageContent" style="display: block;">
                 <table class="comparison-table-content">
                     <tbody>
                         <tr>
@@ -391,9 +391,9 @@
                 <h5>
                     Dimensions & Capacity
                 </h5>
-                <i class="bi bi-chevron-down toggle-icon"></i>
+                <i class="bi bi-chevron-up toggle-icon"></i>
             </div>
-            <div id="dimensionsContent" style="display: none;">
+            <div id="dimensionsContent" style="display: block;">
                 <table class="comparison-table-content">
                     <tbody>
                         <tr>
@@ -451,9 +451,9 @@
                 <h5>
                     Electricals
                 </h5>
-                <i class="bi bi-chevron-down toggle-icon"></i>
+                <i class="bi bi-chevron-up toggle-icon"></i>
             </div>
-            <div id="electricalsContent" style="display: none;">
+            <div id="electricalsContent" style="display: block;">
                 <table class="comparison-table-content">
                     <tbody>
                         <tr>
@@ -506,9 +506,9 @@
                 <h5>
                     Tyres & Brakes
                 </h5>
-                <i class="bi bi-chevron-down toggle-icon"></i>
+                <i class="bi bi-chevron-up toggle-icon"></i>
             </div>
-            <div id="tyresContent" style="display: none;">
+            <div id="tyresContent" style="display: block;">
                 <table class="comparison-table-content">
                     <tbody>
                         <tr>
@@ -546,9 +546,9 @@
                 <h5>
                     Motor & Battery
                 </h5>
-                <i class="bi bi-chevron-down toggle-icon"></i>
+                <i class="bi bi-chevron-up toggle-icon"></i>
             </div>
-            <div id="motorContent" style="display: none;">
+            <div id="motorContent" style="display: block;">
                 <table class="comparison-table-content">
                     <tbody>
                         <tr>
@@ -581,9 +581,9 @@
                 <h5>
                     Underpinnings
                 </h5>
-                <i class="bi bi-chevron-down toggle-icon"></i>
+                <i class="bi bi-chevron-up toggle-icon"></i>
             </div>
-            <div id="underpinningsContent" style="display: none;">
+            <div id="underpinningsContent" style="display: block;">
                 <table class="comparison-table-content">
                     <tbody>
                         <tr>
@@ -636,9 +636,9 @@
                 <h5>
                     Charging
                 </h5>
-                <i class="bi bi-chevron-down toggle-icon"></i>
+                <i class="bi bi-chevron-up toggle-icon"></i>
             </div>
-            <div id="chargingContent" style="display: none;">
+            <div id="chargingContent" style="display: block;">
                 <table class="comparison-table-content">
                     <tbody>
                         <tr>
@@ -661,9 +661,11 @@
 
     <script>
         $('#compareButton').click(function () {
-            debugger;
+            //debugger;
             var variantId1 = $('#firstVariant').val();
             var variantId2 = $('#secondVariant').val();
+             console.log("Variant1 ID:", variantId1);
+            console.log("Variant2 ID:", variantId2);
             if (variantId1 && variantId2) {
                 $('#comparisonTable').show();
                 if (variantId1) {
@@ -793,4 +795,19 @@
         });
     }
     </script>
+<script>
+    function toggleSection(sectionId, header) {
+        var content = document.getElementById(sectionId);
+        var icon = header.querySelector('.toggle-icon');
 
+        if (content.style.display === "none") {
+            content.style.display = "block";
+            icon.classList.remove("bi-chevron-down");
+            icon.classList.add("bi-chevron-up");
+        } else {
+            content.style.display = "none";
+            icon.classList.remove("bi-chevron-up");
+            icon.classList.add("bi-chevron-down");
+        }
+    }
+</script>

@@ -322,6 +322,8 @@ namespace Cars_Bikes.Controllers
                 bodyType = spec.BodyType
             });
         }
+      
+
         [HttpGet]
         public IActionResult GetVariantIdsByNames(string name1, string name2)
         {
