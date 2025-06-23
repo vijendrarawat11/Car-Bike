@@ -184,6 +184,8 @@ namespace Cars_Bikes.Controllers.TwoWheeler.UpcomingBike
             }
             var allupcomingbike = _context.UpcomingBikes.OrderByDescending(m => m.FilterLaunchDate).Take(8).ToList();
             ViewBag.allupcomingbike = allupcomingbike;
+            var Allbrand = _context.TwowheelerBrands.ToList();
+            ViewBag.AllBrand = Allbrand;
             return upcomingItem;
         }
     }
