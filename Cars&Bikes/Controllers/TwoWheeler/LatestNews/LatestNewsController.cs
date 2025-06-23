@@ -790,6 +790,8 @@ namespace Cars_Bikes.Controllers.TwoWheeler.LatestNews
             ViewBag.AllNews = allNews;
             var brand = _context.TwowheelerBrands.ToList();
             ViewBag.Brand = brand;
+            var Allbrand = _context.TwowheelerBrands.ToList();
+            ViewBag.AllBrand = Allbrand;
             return newsItem;
         }
     }
