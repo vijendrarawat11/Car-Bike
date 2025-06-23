@@ -540,6 +540,40 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2025/June192025BlogDetails2.cshtml", blogsDetails);
         }
 
+        [Route("blogs/hunter-350-vs-bullet-350–detailed-cruiser-bike-comparison")]
+        public IActionResult June202025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Hunter 350 vs Bullet 350 – Detailed Cruiser Bike Comparison (2025) | BikeCarHub");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June202025BlogDetails1.cshtml", blogsDetails);
+        }
+
+
+        [Route("blogs/best-electric-cars-in-india-under-15 lakh")]
+        public IActionResult June202025BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("Best Electric Cars in India (Under ₹15 Lakh) – Mid 2025 Guide");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June202025BlogDetails2.cshtml", blogsDetails);
+        }
+
+
+        [Route("blogs/best-first-buy-cars-in-india-2025")]
+        public IActionResult June232025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Best First buy Cars in India (2025)");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June232025BlogDetails1.cshtml", blogsDetails);
+        }
 
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
