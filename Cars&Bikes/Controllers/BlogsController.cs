@@ -575,6 +575,28 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2025/June232025BlogDetails1.cshtml", blogsDetails);
         }
 
+        [Route("blogs/honda-activa-6g-vs-tvs-jupiter-125–full-comparison-of-mileage-features-performance-and-price")]
+        public IActionResult June232025BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("Honda Activa 6G vs TVS Jupiter 125 – Full Comparison of Mileage, Features, Performance, and Price (2025) | BikeCarHub");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June232025BlogDetails2.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/honda-amaze-vs-tata-tigor-detailed-comparison-price-mileage-features")]
+        public IActionResult June232025BlogDetails3()
+        {
+            var blogsDetails = GetBlogDetails("Honda Amaze vs Tata Tigor: Detailed Comparison - Price, Mileage, Features");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June232025BlogDetails3.cshtml", blogsDetails);
+        }
+
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
