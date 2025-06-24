@@ -1,11 +1,11 @@
 ﻿@model Cars_Bikes.Models.CompareViewModel
 <div class="m-t90">
-<h2>Comparison</h2>
+    <h2>Comparison between<span class="font-weight-700"> @Model.Variant1.TwoWheeler.TwoWheelerName</span> and <span class="font-weight-700">@Model.Variant2.TwoWheeler.TwoWheelerName</span> </h2>
 
 <div class="compare-box">
-   <div class="compare-card">
+   <div class="compare-card-two">
      <div class="row">
-                <img class="twImage1" src="" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/bicycle.png")';" />
+                <img class="twImage1" src="" alt="Bike Image" loading="eager" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/bicycle.png")';" />
                 <h4>Add to compare</h4>
                 <div class="compare-ddl">
         
@@ -19,7 +19,7 @@
                 </div>
                 <div class="compare-ddl">
                                 <label>Variant</label>
-                                <select id="firstVariant" class="form-select">
+                    <select id="firstVariant" class="form-select" onchange="checkVariantsSelected()">
                                     @foreach (var v in Model.FirstBikeVariants)
                                     {
                                         <option value="@v.TWVarientId">
@@ -31,8 +31,8 @@
       </div>
    </div>
    
-            <div class="compare-card">
-                <img class="twImage1" src="" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/bicycle.png")';" />
+            <div class="compare-card-two">
+                <img class="twImage2" src="" alt="Bike Image" loading="eager" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/bicycle.png")';" />
                 <h4>Add to compare</h4>
                         <div class="compare-ddl">
                                 <label>Bike</label>
@@ -44,7 +44,7 @@
                         </div>
                         <div class="compare-ddl">
                                     <label>Variant</label>
-                                    <select id="secondVariant" class="form-select">
+                <select id="secondVariant" class="form-select" onchange="checkVariantsSelected()">
                                         @foreach (var v in Model.SecondBikeVariants)
                                         {
                                             <option value="@v.TWVarientId">
@@ -57,11 +57,12 @@
             </div>
    
 </div>
+@*
     <div class="compareButton">
         <button type="button" class="btn btn-primary" id="compareButton">Compare</button>
-        @* <div id="comparisonTable" class="mt-4"></div> *@
+        
     </div>
-    
+  *@  
     <div class="comparison-table" id="comparisonTable" style="display:none;">
         <div class="compare-table-container for-tick">
             <table class="comparison-table-content m-t20">
@@ -78,11 +79,12 @@
         <div class="compare-table-container">
             <table class="comparison-table-content m-t20">
                 <tbody>
-                    <tr>
-                        <th></th>
-                        <th><div class="Compare-img"><img class="twImage1" src="" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" /></div></th>
-                        <th><div class="Compare-img"><img class="twImage2" src="" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" /></div></th>
-                    </tr>
+                    @* <tr> *@
+                    @*     <th></th> *@
+                    @*     <th><div class="Compare-img"><img class="twImage1" src="" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" /></div></th> *@
+                    @*     <th><div class="Compare-img"><img class="twImage2" src="" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/default.jpg")';" /></div></th> *@
+                    @* </tr> *@
+                    
                     <tr class="compare-head-text">
                         <th>Mileage</th>
                         <td class="milageColumn1"></td>
@@ -658,6 +660,11 @@
     </div>
 </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        checkVariantsSelected();
+    });
+</script>
 
     <script>
         $('#compareButton').click(function () {
@@ -796,6 +803,31 @@
     }
     </script>
 <script>
+    function checkVariantsSelected() {
+        var variant1 = document.getElementById('firstVariant').value;
+        var variant2 = document.getElementById('secondVariant').value;
+        console.log("Variant1 ID:", variant1);
+        console.log("Variant2 ID:", variant2);
+        if (variant1 && variant2) {
+            // Show the specifications table
+            $('#comparisonTable').show();
+                if (variant1) {
+                    loadVariantData(variant1, 1); // Load data for TwoWheeler 1
+                    $('#comparisonColumn1').show(); // Show TwoWheeler 1 column
+                    $('.milageColumn1, .frontBrakeColumn1, .engineTypeColumn1, .maxTorqueColumn1').show(); // Show related data cells
+                }
+                if (variant2) {
+                    loadVariantData(variant2, 2); // Load data for TwoWheeler 2
+                    $('#comparisonColumn2').show(); // Show TwoWheeler 2 column
+                    $('.milageColumn2, .frontBrakeColumn2, .engineTypeColumn2, .maxTorqueColumn2').show(); // Show related data cells
+                }
+                else {
+                alert('Please select at least one TwoWheeler and Variant.');
+            }
+        }
+    }
+</script>
+<script>
     function toggleSection(sectionId, header) {
         var content = document.getElementById(sectionId);
         var icon = header.querySelector('.toggle-icon');
@@ -811,3 +843,4 @@
         }
     }
 </script>
+

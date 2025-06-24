@@ -1766,11 +1766,19 @@ header.transparent {
     text-align:center;
 }
 .compare-card img {
-    width:50%;
+    width: 50%;
     opacity: 0.8;
-    margin-bottom:10px;
-    height:117.9px;
-    object-fit:fill;
+    margin-bottom: 10px;
+    height: 117.9px;
+    object-fit: fill;
+}
+.compare-card-two img {
+    margin-bottom: 10px;
+    object-fit: fill;
+    min-height: 164px;
+    object-fit: cover;
+    width: 50%;
+    height: 118px;
 }
 .compare-card {
     padding: 0 30px 30px 30px;
@@ -1781,6 +1789,14 @@ header.transparent {
     margin: 25px;
     border-top-left-radius:160px;
     border-bottom-right-radius:70px;
+}
+.compare-card-two {
+    padding: 0 30px 30px 30px;
+    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 27%;
+    margin: 25px;
 }
 @media (max-width: 767px) {
     .compare-card {
@@ -1851,7 +1867,7 @@ header.transparent {
         color: #A7A7A7;
         font-size: 16px;
         border-top: 0.4px solid #eee;
-        /*width:26.66%;*/
+        width:20%;
     }
 .expandable-header {
     margin: 10px 0 10px 0;
@@ -1883,6 +1899,7 @@ header.transparent {
     /*border-top: 2px solid #eee;*/
     border-right: 2px solid #eee;
     font-size: 16px;
+    width:20%;
 }
 .comparison-table-content td {
     font-size: 14px;
@@ -1892,6 +1909,7 @@ header.transparent {
     margin-left: 10px;
     text-align: center;
     font-size: 16px;
+    width:40%;
 }
 .compare-head-text {
     background-color: #F9F9F9;
