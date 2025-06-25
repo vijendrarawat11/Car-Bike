@@ -2,6 +2,11 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    ViewData["Title"] = "Compare your two wheeler here";
+}
+@section MetaTags {
+    <meta name="keywords" content="bike comparison, two wheeler comparison, comparison between bikes, scooter comparison, electric vehicle comparison, ev comparison, comparison blogs, comparison bikes" />
+    <meta name="description" content="Here you can compare your two wheeler and find the best bike for you. Get the detailed comparison with bikecarhub." />
 }
 
 @model TwoWheeler
@@ -78,13 +83,13 @@
 
     <div class="compare-table-container">
     <table class="comparison-table-content m-t20">
-        @* <thead>
+         <thead>
             <tr>
                 <th>Overview</th>
                 <th id="comparisonColumn1" class="IdTWName1" style="display:none; text-align:center"></th>
                 <th id="comparisonColumn2" class="IdTWName2" style="display:none; text-align:center"></th>
             </tr>
-        </thead> *@
+        </thead> 
         <tbody>
             <tr>
                 <th></th>
