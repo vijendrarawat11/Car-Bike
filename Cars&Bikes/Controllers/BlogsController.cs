@@ -597,6 +597,86 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2025/June232025BlogDetails3.cshtml", blogsDetails);
         }
 
+        [Route("blogs/bajaj-chetak-3501-vs-honda-activa-electric-a-complete-comparison-for-2025")]
+        public IActionResult June242025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Bajaj Chetak 3501 vs Honda Activa Electric: A Complete Comparison for 2025");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June242025BlogDetails1.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/bajaj-chetak-3502-vs-tvs-iqube-detailed-comparison-of-indias-leading-electric-scooters-in-2025")]
+        public IActionResult June242025BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("Bajaj Chetak 3502 vs TVS iQube: Detailed Comparison of India’s Leading Electric Scooters in 2025");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June242025BlogDetails2.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/best-cars-under-10-lakh-in-india")]
+        public IActionResult June242025BlogDetails3()
+        {
+            var blogsDetails = GetBlogDetails("Best Cars Under ₹10 Lakh in India");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June242025BlogDetails3.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/the-maruti-brezza-and-skoda-kylaq-which-one-is-better-for-you.")]
+        public IActionResult June252025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("The Maruti Brezza and Škoda Kylaq, Which one is better for you.");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June252025BlogDetails3.cshtml", blogsDetails);
+        }
+
+
+        [Route("blogs/maruti-brezza-and-the-tata-nexon-which-one-is-best-for-you")]
+        public IActionResult June252025BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("Maruti Brezza and the Tata Nexon, which one is best for you.");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June252025BlogDetails3.cshtml", blogsDetails);
+        }
+
+
+        [Route("blogs/the-maruti-brezza-and-the-kia-sonet-which-oen-is-best-for-you")]
+        public IActionResult June252025BlogDetails3()
+        {
+            var blogsDetails = GetBlogDetails("The Maruti Brezza and the Kia Sonet, which oen is best for you.");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June252025BlogDetails3.cshtml", blogsDetails);
+        }
+
+
+
+        [Route("blogs/the-maruti-brezza-and-hyundai-venue-which-one-is-better-for-you")]
+        public IActionResult June252025BlogDetails4()
+        {
+            var blogsDetails = GetBlogDetails("The Maruti Brezza and Hyundai Venue, which one is better for you.");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June252025BlogDetails4.cshtml", blogsDetails);
+        }
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
