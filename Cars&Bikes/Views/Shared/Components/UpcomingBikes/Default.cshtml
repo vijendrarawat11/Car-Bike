@@ -1,0 +1,20 @@
+﻿@model List<Cars_Bikes.Models.UpcomingBike>
+
+@* <div class="upcoming-bikes-section"> *@
+@*     <h2>Upcoming Bikes</h2> *@
+@*     <div class="row"> *@
+@*         @foreach (var bike in Model) *@
+@*         { *@
+@*             <div class="col-md-4 col-lg-3 mb-4"> *@
+@*                 <div class="bike-card"> *@
+@*                     <a href="/@bike.URL" style="text-decoration: none;"> *@
+@*                         <img src="@bike.ImageURL" alt="@bike.BikeName" class="img-fluid" loading="lazy" /> *@
+@*                         <h5 class="bike-name mt-2">@bike.BikeName</h5> *@
+@*                         <p class="launch-date">Launch Date: @bike.FilterLaunchDate?.ToString("MMMM yyyy")</p> *@
+@*                     </a> *@
+@*                 </div> *@
+@*             </div> *@
+@*         } *@
+@*     </div> *@
+@* </div> *@
+@* @await Component.InvokeAsync("UpcomingBikes") *@
