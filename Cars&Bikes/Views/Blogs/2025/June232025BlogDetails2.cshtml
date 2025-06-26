@@ -413,6 +413,8 @@
                     </div>
                 </div>
             </div>
+            @* @await Html.PartialAsync("_AllBlogComponent") *@
+            @await Component.InvokeAsync("AllBlog")
             @await Html.PartialAsync("_AllBrandComponent")
         </div>
     </div>

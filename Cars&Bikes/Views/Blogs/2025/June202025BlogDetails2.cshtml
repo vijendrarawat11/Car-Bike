@@ -2,11 +2,11 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Best Electric Cars in India Under ₹15 Lakh (2025 Guide) – Tata, MG, Citroën EVs Compared";
+    ViewData["Title"] = "Best Electric Cars in India Under ₹15 Lakh (2025)";
 }
 @section MetaTags {
-    <meta name="keywords" content="best electric cars in India under 15 lakh, electric cars under 15 lakhs 2025, Tata Tiago EV review, Nexon EV vs Punch EV, affordable EV cars India 2025, EV cars with best range under 15 lakh, MG Comet EV review India, budget electric SUV India, Citroën eC3 features India, top EVs under 15 lakh rupees" />
-    <meta name="description" content="Explore the top electric cars under ₹15 lakh in India (2025) including Tata Tiago EV, Nexon EV, MG Comet, Citroën eC3 & more. Compare range, price, battery, pros & cons, and best EV for your needs." />
+    <meta name="keywords" content="Best electric cars under 15 lakh India 2025, Affordable electric cars India 2025, Budget EVs in India 2025, Top EVs under ₹15 lakh India, Cheapest electric cars India 2025, Electric cars for middle class India, Best EV cars India 2025, Electric hatchbacks under 15 lakh, Upcoming electric cars under 15 lakh, EV buying guide India 2025, Mid 2025 affordable electric cars, Best EVs for city driving India, Long range EVs under 15 lakh, Entry level electric cars India, Best family electric cars India 2025" />
+    <meta name="description" content="Explore the best electric cars in India under ₹15 lakh (Mid 2025). Compare features, range, and prices of affordable EVs perfect for budget-conscious buyers." />
 }
 <!--For truncate-->
 @functions {
@@ -347,6 +347,7 @@
 
                 <p>For more visit <a class="for-link" asp-controller="Home" asp-action="Index">BikeCarHub</a></p>
             </div>
+            @await Component.InvokeAsync("AllBlog")
             @await Html.PartialAsync("_AllBrandComponent")
             </div>
 
