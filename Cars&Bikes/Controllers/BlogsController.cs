@@ -1,6 +1,8 @@
 ﻿using Cars_Bikes.Data;
+using Google.Apis.Discovery;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Cars_Bikes.Controllers
 {
@@ -630,7 +632,7 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2025/June242025BlogDetails3.cshtml", blogsDetails);
         }
 
-        [Route("blogs/the-maruti-brezza-and-skoda-kylaq-which-one-is-better-for-you.")]
+        [Route("blogs/the-maruti-brezza-and-skoda-kylaq-which-one-is-better-for-you")]
         public IActionResult June252025BlogDetails1()
         {
             var blogsDetails = GetBlogDetails("The Maruti Brezza and Škoda Kylaq, Which one is better for you.");
@@ -650,14 +652,14 @@ namespace Cars_Bikes.Controllers
             {
                 return NotFound(); // Return 404 if news item is not found
             }
-            return View("~/Views/Blogs/2025/June252025BlogDetails3.cshtml", blogsDetails);
+            return View("~/Views/Blogs/2025/June252025BlogDetails2.cshtml", blogsDetails);
         }
 
 
-        [Route("blogs/the-maruti-brezza-and-the-kia-sonet-which-oen-is-best-for-you")]
+        [Route("blogs/the-maruti-brezza-and-the-kia-sonet-which-one-is-best-for-you")]
         public IActionResult June252025BlogDetails3()
         {
-            var blogsDetails = GetBlogDetails("The Maruti Brezza and the Kia Sonet, which oen is best for you.");
+            var blogsDetails = GetBlogDetails("The Maruti Brezza and the Kia Sonet, which one is best for you.");
             if (blogsDetails == null)
             {
                 return NotFound(); // Return 404 if news item is not found
@@ -676,6 +678,66 @@ namespace Cars_Bikes.Controllers
                 return NotFound(); // Return 404 if news item is not found
             }
             return View("~/Views/Blogs/2025/June252025BlogDetails4.cshtml", blogsDetails);
+        }
+
+
+        [Route("blogs/kia-sonet-vs-hyundai-venue-the-ultimate-compact-suv-showdown")]
+        public IActionResult June262025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Kia Sonet vs Hyundai Venue: The Ultimate Compact SUV Showdown");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June262025BlogDetails1.cshtml", blogsDetails);
+        }
+
+
+
+        [Route("blogs/kia-sonet-vs-hyundai-venue-vs-tata-nexon-vs-maruti-suzuki-brezza-vs-skoda-kylaq")]
+        public IActionResult June262025BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("Kia Sonet vs Hyundai Venue vs Tata Nexon vs Maruti Suzuki Brezza vs Škoda Kylaq");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June262025BlogDetails2.cshtml", blogsDetails);
+        }
+
+
+        [Route("blogs/ktm-duke-200-vs-bajaj-pulsar-ns200-full-comparison-of-performance-features-mileage-and-price")]
+        public IActionResult June262025BlogDetails3()
+        {
+            var blogsDetails = GetBlogDetails("KTM Duke 200 vs Bajaj Pulsar NS200 – Full Comparison of Performance, Features, Mileage, and Price (2025) | BikeCarHub");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June262025BlogDetails3.cshtml", blogsDetails);
+        }
+
+
+        [Route("blogs/ktm-duke-200-vs-yamaha-R15–full-comparison-of-performance-features-and-value")]
+        public IActionResult June262025BlogDetails4()
+        {
+            var blogsDetails = GetBlogDetails("KTM Duke 200 vs Yamaha R15 – Full Comparison of Performance, Features, and Value (2025) | BikeCarHub");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June262025BlogDetails4.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/bajaj-pulsar-150-vs-tvs-apache-rtr-160–detailed-comparison")]
+        public IActionResult June262025BlogDetails5()
+        {
+            var blogsDetails = GetBlogDetails("Bajaj Pulsar 150 vs TVS Apache RTR 160 – 2025 Detailed Comparison");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June262025BlogDetails5.cshtml", blogsDetails);
         }
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
