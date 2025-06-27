@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using Cars_Bikes.Data;
 using Cars_Bikes.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -359,10 +360,93 @@ namespace Cars_Bikes.Controllers
                 v2=v2.TWVarientId
             });
         }
-        
 
+        [Route("compare/{slug}")]
+        public IActionResult CompareBySlug(string slug)
+        {
+            var names = slug.Split("-vs-", StringSplitOptions.RemoveEmptyEntries);
+            if (names.Length != 2) return NotFound();
 
+            string name1 = names[0].Replace("-", " ");
+            string name2 = names[1].Replace("-", " ");
 
+            // Optional: Capitalize words if needed
+            name1 = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(name1);
+            name2 = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(name2);
 
+            // Now get variant IDs using service or DB query
+            var variant1 = _context.TWVarients
+                            .FirstOrDefault(v => v.TwoWheeler.TwoWheelerName.ToLower() == name1.ToLower());
+            var variant2 = _context.TWVarients
+                            .FirstOrDefault(v => v.TwoWheeler.TwoWheelerName.ToLower() == name2.ToLower());
+
+            if (variant1 == null || variant2 == null)
+            {
+                return NotFound("One or both bike names not found.");
+            }
+
+            return RedirectToAction("TWCompareTwoBikes", new
+            {
+                variant1 = variant1.TWVarientId,
+                variant2 = variant2.TWVarientId
+            });
+        }
+
+        [HttpGet("Compare/{bike1}-vs-{bike2}")]
+        public IActionResult CompareByNames(string bike1, string bike2)
+        {
+            if (string.IsNullOrWhiteSpace(bike1) || string.IsNullOrWhiteSpace(bike2))
+            {
+                return NotFound("Invalid bike names");
+            }
+            string normalized1 = bike1.Trim().ToLower().Replace("-", " ");
+            string normalized2 = bike2.Trim().ToLower().Replace("-", " ");
+            var v1 = _context.TWVarients
+                             .Include(v => v.TwoWheeler)
+                             .ThenInclude(w => w.TwoWheelerBrands)
+                             //.FirstOrDefault(v => v.TwoWheeler.TwoWheelerName == bike1);
+                             .FirstOrDefault(v => v.TwoWheeler.TwoWheelerName.Trim().ToLower() == normalized1);
+
+            var v2 = _context.TWVarients
+                             .Include(v => v.TwoWheeler)
+                             .ThenInclude(w => w.TwoWheelerBrands)
+                             //.FirstOrDefault(v => v.TwoWheeler.TwoWheelerName == bike2);
+                             .FirstOrDefault(v => v.TwoWheeler.TwoWheelerName.Trim().ToLower() == normalized2);
+
+            if (v1 == null || v2 == null)
+            {
+                //return NotFound("One or both bikes not found");
+                return NotFound($"Could not find variants for: {(v1 == null ? bike1 : "")} {(v2 == null ? bike2 : "")}");
+            }
+
+            var firstBikeVariants = _context.TWVarients
+                .Where(v => v.TwoWheelerId == v1.TwoWheelerId)
+                .ToList();
+
+            var secondBikeVariants = _context.TWVarients
+                .Where(v => v.TwoWheelerId == v2.TwoWheelerId)
+                .ToList();
+
+            var viewModel = new CompareViewModel
+            {
+                Variant1 = v1,
+                Variant2 = v2,
+                FirstBikeVariants = firstBikeVariants,
+                SecondBikeVariants = secondBikeVariants
+            };
+
+            if (bike1.ToLower().Contains("honda") && bike2.ToLower().Contains("tvs"))
+            {
+                return View("CompareHondaVsTVS", viewModel);
+            }
+            else if (bike1.ToLower().Contains("suzuki") && bike2.ToLower().Contains("hero"))
+            {
+                return View("CompareSuzukiVsHero", viewModel);
+            }
+            else
+            {
+                return View("TWCompareTwoBikes", viewModel); 
+            }
+        }
     }
 }
