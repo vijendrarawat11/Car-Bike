@@ -53,6 +53,7 @@ namespace Cars_Bikes.Controllers
         }
 
         [HttpGet]
+        [Route("Compare/GetTWSpecData")]
         public JsonResult GetTWSpecData(int variantId)
         {
             var specs = _context.TWSpec
@@ -210,6 +211,7 @@ namespace Cars_Bikes.Controllers
                     c.ChargingAtChargingStation
                 })
                 .FirstOrDefault();
+            Console.WriteLine("Fetched specs for VariantID: " + variantId);
             return Json(new
             {
                 specs,
@@ -439,9 +441,9 @@ namespace Cars_Bikes.Controllers
             {
                 return View("CompareHondaVsTVS", viewModel);
             }
-            else if (bike1.ToLower().Contains("suzuki") && bike2.ToLower().Contains("hero"))
+            else if (bike1.ToLower().Contains("royal") && bike2.ToLower().Contains("tvs"))
             {
-                return View("CompareSuzukiVsHero", viewModel);
+                return View("CompareTVSVsRoyal", viewModel);
             }
             else
             {

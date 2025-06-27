@@ -68,9 +68,9 @@
             <table class="comparison-table-content m-t20">
                 <thead>
                     <tr>
-                        <th>Overview</th>
-                        <th id="comparisonColumn1" class="IdTWName1" style="display:none; text-align:center"></th>
-                        <th id="comparisonColumn2" class="IdTWName2" style="display:none; text-align:center"></th>
+                        <th class="col-20">Overview</th>
+                        <th id="comparisonColumn1" class="col-40 IdTWName1" style="display:none; text-align:center"></th>
+                        <th id="comparisonColumn2" class="col-40 IdTWName2" style="display:none; text-align:center"></th>
                     </tr>
                 </thead>
             </table>
@@ -691,8 +691,7 @@
         });
     function loadVariantData(variantId, columnNumber) {
         $.ajax({
-            // url: '@Url.Action("GetTWSpecData", "Compare")',
-            url: '/Compare/GetTWSpecData',
+            url: '@Url.Action("GetTWSpecData", "Compare")',
             type: 'GET',
             data: { variantId: variantId },
             success: function (data) {

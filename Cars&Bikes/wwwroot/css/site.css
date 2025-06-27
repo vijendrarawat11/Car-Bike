@@ -1738,6 +1738,13 @@ header.transparent {
                 padding: 2px 0 10px 0;
             }
         /*--------------------Compare Page------------------------------*/
+.col-20 {
+    width: 20% !important;
+}
+
+.col-40 {
+    width: 40% !important;
+}
         .compare-container {
             max-width: 100%;
             margin: 0 auto;
@@ -1766,7 +1773,7 @@ header.transparent {
     text-align:center;
 }
 .compare-card img {
-    width: 50%;
+    width: 100% !important;
     opacity: 0.8;
     margin-bottom: 10px;
     height: 117.9px;
@@ -1777,7 +1784,7 @@ header.transparent {
     object-fit: fill;
     min-height: 164px;
     object-fit: cover;
-    width: 50%;
+    width: 100%;
     height: 118px;
 }
 .compare-card {
