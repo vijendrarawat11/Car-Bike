@@ -730,14 +730,14 @@ namespace Cars_Bikes.Controllers
         }
 
         [Route("blogs/bajaj-pulsar-150-vs-tvs-apache-rtr-160–detailed-comparison")]
-        public IActionResult June262025BlogDetails5()
+        public IActionResult June272025BlogDetails1()
         {
             var blogsDetails = GetBlogDetails("Bajaj Pulsar 150 vs TVS Apache RTR 160 – 2025 Detailed Comparison");
             if (blogsDetails == null)
             {
                 return NotFound(); // Return 404 if news item is not found
             }
-            return View("~/Views/Blogs/2025/June262025BlogDetails5.cshtml", blogsDetails);
+            return View("~/Views/Blogs/2025/June272025BlogDetails1.cshtml", blogsDetails);
         }
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
