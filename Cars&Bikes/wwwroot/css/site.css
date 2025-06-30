@@ -1738,11 +1738,11 @@ header.transparent {
                 padding: 2px 0 10px 0;
             }
         /*--------------------Compare Page------------------------------*/
-.col-20 {
+.compare-col-20 {
     width: 20% !important;
 }
 
-.col-40 {
+.compare-col-40 {
     width: 40% !important;
 }
         .compare-container {
@@ -1784,7 +1784,7 @@ header.transparent {
     object-fit: fill;
     min-height: 164px;
     object-fit: cover;
-    width: 100%;
+/*    width: 100%;*/
     height: 118px;
 }
 .compare-card {
