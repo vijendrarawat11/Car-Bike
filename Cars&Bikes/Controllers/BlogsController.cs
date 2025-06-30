@@ -729,7 +729,7 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2025/June262025BlogDetails4.cshtml", blogsDetails);
         }
 
-        [Route("blogs/bajaj-pulsar-150-vs-tvs-apache-rtr-160–detailed-comparison")]
+        [Route("blogs/ bajaj-pulsar-150-vs-tvs-apache-rtr-160–detailed-comparison")]
         public IActionResult June272025BlogDetails1()
         {
             var blogsDetails = GetBlogDetails("Bajaj Pulsar 150 vs TVS Apache RTR 160 – 2025 Detailed Comparison");
@@ -738,6 +738,167 @@ namespace Cars_Bikes.Controllers
                 return NotFound(); // Return 404 if news item is not found
             }
             return View("~/Views/Blogs/2025/June272025BlogDetails1.cshtml", blogsDetails);
+        }
+
+
+        [Route("blogs/suzuki-gixxer-sf-vs-yamaha-fz25–detailed-comparison-of-performance-features-and-value")]
+        public IActionResult June272025BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("Suzuki Gixxer SF vs Yamaha FZ25 – Detailed Comparison of Performance, Features, and Value (2025) | BikeCarHub");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June272025BlogDetails2.cshtml", blogsDetails);
+        }
+
+
+        [Route("blogs/the-tata-nexon-ev-and-mahindra-xuv400-ev")]
+        public IActionResult June272025BlogDetails3()
+        {
+            var blogsDetails = GetBlogDetails("The Tata Nexon EV and Mahindra XUV400 EV");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June272025BlogDetails3.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/tata-punch-vs-hyundai-exter-india-micro-suv-battle")]
+        public IActionResult June272025BlogDetails4()
+        {
+            var blogsDetails = GetBlogDetails("Tata Punch vs Hyundai Exter (2025): India’s Micro SUV Battle");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June272025BlogDetails4.cshtml", blogsDetails);
+        }
+
+
+        [Route("blogs/kia-sonet-vs-skoda-kylaq–compact-suvs-redefined")]
+        public IActionResult June272025BlogDetails5()
+        {
+            var blogsDetails = GetBlogDetails("Kia Sonet vs Škoda Kylaq (2025) – Compact SUVs Redefined");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June272025BlogDetails5.cshtml", blogsDetails);
+        }
+
+
+        [Route("blogs/kia-sonet-vs-tata-nexon–which-subcompact-suv-wins")]
+        public IActionResult June272025BlogDetails6()
+        {
+            var blogsDetails = GetBlogDetails("Kia Sonet vs Tata Nexon (2025) – Which Subcompact SUV Wins?");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June272025BlogDetails6.cshtml", blogsDetails);
+        }
+
+       
+
+        [Route("blogs/hyundai-venue-vs-skoda-kylaq–2025-compact-suv-showdown")]
+        public IActionResult June302025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Hyundai Venue vs Škoda Kylaq – 2025 Compact SUV Showdown");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June302025BlogDetails6.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/tvs-ntorq-125-vs-hero-xtreme-125r–which-125cc-ride-should-you-buy-in-2025")]
+        public IActionResult June302025BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("TVS Ntorq 125 vs Hero Xtreme 125R – Which 125cc Ride Should You Buy in 2025? | BikeCarHub");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June302025BlogDetails6.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/tvs-jupiter-vs-honda-activa-2025-scooter-comparison")]
+        public IActionResult June302025BlogDetails3()
+        {
+            var blogsDetails = GetBlogDetails("TVS Jupiter vs Honda Activa: 2025 Scooter Comparison");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June302025BlogDetails6.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/top-5-long-range-evs-in-india-for-2025")]
+        public IActionResult June302025BlogDetails4()
+        {
+            var blogsDetails = GetBlogDetails("Top 5 Long Range EVs in India for 2025");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June302025BlogDetails6.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/top-5-commuter-bikes-for-daily-use-in-india")]
+        public IActionResult June302025BlogDetails5()
+        {
+            var blogsDetails = GetBlogDetails("Top 5 Commuter Bikes for Daily Use in India (2025 Guide)");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June302025BlogDetails6.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/top-5-budget-friendly-bikes-in-india-under-1-lakh")]
+        public IActionResult June302025BlogDetails6()
+        {
+            var blogsDetails = GetBlogDetails("Top 5 Budget-Friendly Bikes in India Under ₹1 Lakh (2025)");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June302025BlogDetails6.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/top-10-upcoming-bikes-in-india")]
+        public IActionResult June302025BlogDetails7()
+        {
+            var blogsDetails = GetBlogDetails("Top 10 Upcoming Bikes in India (2025 Edition) | BikeCarHub");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June302025BlogDetails6.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/top-10-mileage-fuel-Efficient-cars-in-india")]
+        public IActionResult June302025BlogDetails8()
+        {
+            var blogsDetails = GetBlogDetails("Top 10 Mileage (Fuel-Efficient) Cars in India");
+            if (blogsDetails == null)
+
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June302025BlogDetails8.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/tata-punch-vs-hyundai-exter-indias-micro-suv-battle")]
+        public IActionResult June302025BlogDetails9()
+        {
+            var blogsDetails = GetBlogDetails("Tata Punch vs Hyundai Exter (2025): India’s Micro SUV Battle");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June302025BlogDetails9.cshtml", blogsDetails);
         }
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
