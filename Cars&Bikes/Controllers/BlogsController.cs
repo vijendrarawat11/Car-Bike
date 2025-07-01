@@ -809,18 +809,18 @@ namespace Cars_Bikes.Controllers
             {
                 return NotFound(); // Return 404 if news item is not found
             }
-            return View("~/Views/Blogs/2025/June302025BlogDetails6.cshtml", blogsDetails);
+            return View("~/Views/Blogs/2025/June302025BlogDetails1.cshtml", blogsDetails);
         }
 
-        [Route("blogs/tvs-ntorq-125-vs-hero-xtreme-125r–which-125cc-ride-should-you-buy-in-2025")]
-        public IActionResult June302025BlogDetails2()
+        [Route("blogs/tvs-vs-hero")]
+        public IActionResult July012025BlogDetails1()
         {
-            var blogsDetails = GetBlogDetails("TVS Ntorq 125 vs Hero Xtreme 125R – Which 125cc Ride Should You Buy in 2025? | BikeCarHub");
+            var blogsDetails = GetBlogDetails("TVS Ntorq 125 vs Hero Xtreme 125R");
             if (blogsDetails == null)
             {
                 return NotFound(); // Return 404 if news item is not found
             }
-            return View("~/Views/Blogs/2025/June302025BlogDetails6.cshtml", blogsDetails);
+            return View("~/Views/Blogs/2025/July012025BlogDetails1.cshtml", blogsDetails);
         }
 
         [Route("blogs/tvs-jupiter-vs-honda-activa-2025-scooter-comparison")]
@@ -831,7 +831,7 @@ namespace Cars_Bikes.Controllers
             {
                 return NotFound(); // Return 404 if news item is not found
             }
-            return View("~/Views/Blogs/2025/June302025BlogDetails6.cshtml", blogsDetails);
+            return View("~/Views/Blogs/2025/June302025BlogDetails3.cshtml", blogsDetails);
         }
 
         [Route("blogs/top-5-long-range-evs-in-india-for-2025")]
@@ -842,7 +842,7 @@ namespace Cars_Bikes.Controllers
             {
                 return NotFound(); // Return 404 if news item is not found
             }
-            return View("~/Views/Blogs/2025/June302025BlogDetails6.cshtml", blogsDetails);
+            return View("~/Views/Blogs/2025/June302025BlogDetails4.cshtml", blogsDetails);
         }
 
         [Route("blogs/top-5-commuter-bikes-for-daily-use-in-india")]
@@ -853,7 +853,7 @@ namespace Cars_Bikes.Controllers
             {
                 return NotFound(); // Return 404 if news item is not found
             }
-            return View("~/Views/Blogs/2025/June302025BlogDetails6.cshtml", blogsDetails);
+            return View("~/Views/Blogs/2025/June302025BlogDetails5.cshtml", blogsDetails);
         }
 
         [Route("blogs/top-5-budget-friendly-bikes-in-india-under-1-lakh")]
@@ -875,7 +875,7 @@ namespace Cars_Bikes.Controllers
             {
                 return NotFound(); // Return 404 if news item is not found
             }
-            return View("~/Views/Blogs/2025/June302025BlogDetails6.cshtml", blogsDetails);
+            return View("~/Views/Blogs/2025/June302025BlogDetails7.cshtml", blogsDetails);
         }
 
         [Route("blogs/top-10-mileage-fuel-Efficient-cars-in-india")]

@@ -17,6 +17,7 @@
   <ItemGroup>
     <Folder Include="Views\UpcomingBike\" />
     <Folder Include="wwwroot\.well-known\pki-validation\" />
+    <Folder Include="wwwroot\images\Blogs\2025\July\NewFolder9\" />
     <Folder Include="wwwroot\images\TwoWheeler\Upcomming\2025\" />
   </ItemGroup>
   <ItemGroup>
