@@ -1874,7 +1874,7 @@ header.transparent {
         color: #A7A7A7;
         font-size: 16px;
         border-top: 0.4px solid #eee;
-        width:20%;
+/*        width:20%;*/
     }
 .expandable-header {
     margin: 10px 0 10px 0;

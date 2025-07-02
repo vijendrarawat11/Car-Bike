@@ -16,7 +16,7 @@ namespace Cars_Bikes.Controllers
         }
         public IActionResult Index()
         {
-            var allBlogs = _context.Blogs.OrderByDescending(m => m.Date).Take(16).ToList();
+            var allBlogs = _context.Blogs.OrderByDescending(m => m.Date).Take(100).ToList();
             ViewBag.allBlogs = allBlogs;
             return View();
         }

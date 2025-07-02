@@ -19,7 +19,7 @@ namespace Cars_Bikes.Controllers
         {
             return View();
         }
-
+        [Route("compare/twcompare")]
         public IActionResult TWCompare()
         {
             var TWList = _context.Twowheelers.ToList();
