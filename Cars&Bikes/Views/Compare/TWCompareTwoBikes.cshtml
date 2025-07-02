@@ -63,14 +63,79 @@
         
     </div>
   *@  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#overviewContent">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#specificationsContent">Specifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#engineTransmissionContent">Engine & Transmission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#featuresContent">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#safetyContent">Safety</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mileageContent">Mileage & Performance</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#dimensionsContent">Dimensions & Capacity</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#electricalsContent">Electricals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tyresContent">Tyres & Brakes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#motorContent">Motor & Battery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#underpinningsContent">Underpinnings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#chargingContent">Charging</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <div class="compare-tabs">
+        <button onclick="scrollToSection('overviewContent')">Overview</button> 
+        <button onclick="scrollToSection('specificationsContent')">Specifications</button>
+        <button onclick="scrollToSection('engineTransmissionContent')">Engine & Transmission</button>
+        <button onclick="scrollToSection('featuresContent')">Features</button>
+        <button onclick="scrollToSection('safetyContent')">Safety</button>
+        <button onclick="scrollToSection('mileageContent')">Mileage & Performance</button>
+        <button onclick="scrollToSection('dimensionsContent')">Dimensions & Capacity</button>
+        <button onclick="scrollToSection('electricalsContent')">Electricals</button>
+        <button onclick="scrollToSection('tyresContent')">Tyres & Brakes</button>
+        <button onclick="scrollToSection('motorContent')">Motor & Battery</button>
+        <button onclick="scrollToSection('underpinningsContent')">Underpinnings</button>
+        <button onclick="scrollToSection('chargingContent')">Charging</button>
+
+    </div>
     <div class="comparison-table" id="comparisonTable" style="display:none;">
-        <div class="compare-table-container for-tick">
+        <div class="compare-table-container for-tick" id="overviewContent">
             <table class="comparison-table-content m-t20">
                 <thead>
                     <tr>
-                        <th>Overview</th>
-                        <th id="comparisonColumn1" class="IdTWName1" style="display:none; text-align:center"></th>
-                        <th id="comparisonColumn2" class="IdTWName2" style="display:none; text-align:center"></th>
+                        <th class="compare-col-20">Overview</th>
+                        <th id="comparisonColumn1" class="compare-col-40 IdTWName1" style="display:none; text-align:center"></th>
+                        <th id="comparisonColumn2" class="compare-col-40 IdTWName2" style="display:none; text-align:center"></th>
                     </tr>
                 </thead>
             </table>
@@ -667,6 +732,12 @@
 </script>
 
     <script>
+        function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
         $('#compareButton').click(function () {
             //debugger;
             var variantId1 = $('#firstVariant').val();

@@ -437,13 +437,13 @@ namespace Cars_Bikes.Controllers
                 SecondBikeVariants = secondBikeVariants
             };
 
-            if (bike1.ToLower().Contains("honda") && bike2.ToLower().Contains("tvs"))
+            if (bike1.ToLower().Contains("hondaactiva125") && bike2.ToLower().Contains("tvsjupiter"))
             {
-                return View("CompareHondaVsTVS", viewModel);
+                return View("CompareHondaActiva125VsTVSJupiter", viewModel);
             }
-            else if (bike1.ToLower().Contains("royal") && bike2.ToLower().Contains("tvs"))
+            else if (bike1.ToLower().Contains("tvsapacherr310") && bike2.ToLower().Contains("royalenfieldbullet350"))
             {
-                return View("CompareTVSVsRoyal", viewModel);
+                return View("CompareTVSApacheRR310VsRoyalEnfieldBullet350", viewModel);
             }
             else
             {
