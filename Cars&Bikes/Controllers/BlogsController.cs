@@ -1,5 +1,6 @@
 ﻿using Cars_Bikes.Data;
 using Google.Apis.Discovery;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -856,10 +857,10 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2025/June302025BlogDetails5.cshtml", blogsDetails);
         }
 
-        [Route("blogs/top-5-budget-friendly-bikes-in-india-under-1-lakh")]
+        [Route("blogs/top-10-mileage-fuel-efficient-cars-in-india")] 
         public IActionResult June302025BlogDetails6()
         {
-            var blogsDetails = GetBlogDetails("Top 5 Budget-Friendly Bikes in India Under ₹1 Lakh (2025)");
+            var blogsDetails = GetBlogDetails("Top 10 Mileage Fuel Efficient Cars in India"); 
             if (blogsDetails == null)
             {
                 return NotFound(); // Return 404 if news item is not found
@@ -870,7 +871,7 @@ namespace Cars_Bikes.Controllers
         [Route("blogs/top-10-upcoming-bikes-in-india")]
         public IActionResult June302025BlogDetails7()
         {
-            var blogsDetails = GetBlogDetails("Top 10 Upcoming Bikes in India (2025 Edition) | BikeCarHub");
+            var blogsDetails = GetBlogDetails("Top 10 Upcoming Bikes in India");
             if (blogsDetails == null)
             {
                 return NotFound(); // Return 404 if news item is not found
@@ -878,10 +879,10 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2025/June302025BlogDetails7.cshtml", blogsDetails);
         }
 
-        [Route("blogs/top-10-mileage-fuel-Efficient-cars-in-india")]
+        [Route("blogs/top-5-budget-friendly-bikes-in-india-under-1-lakh")]
         public IActionResult June302025BlogDetails8()
         {
-            var blogsDetails = GetBlogDetails("Top 10 Mileage (Fuel-Efficient) Cars in India");
+            var blogsDetails = GetBlogDetails("Top 5 Budget-Friendly Bikes in India Under ₹1 Lakh");
             if (blogsDetails == null)
 
             {
@@ -890,15 +891,26 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2025/June302025BlogDetails8.cshtml", blogsDetails);
         }
 
-        [Route("blogs/tata-punch-vs-hyundai-exter-indias-micro-suv-battle")]
+        [Route("blogs/yezdi-adventure-vs-royal-enfield-himalayan")]
         public IActionResult June302025BlogDetails9()
+        {
+            var blogsDetails = GetBlogDetails("Yezdi Adventure vs Royal Enfield Himalayan 450");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/June302025BlogDetails9.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/tata-punch-vs-hyundai-exter-indias-micro-suv-battle")]
+        public IActionResult July012025BlogDetails2()
         {
             var blogsDetails = GetBlogDetails("Tata Punch vs Hyundai Exter (2025): India’s Micro SUV Battle");
             if (blogsDetails == null)
             {
                 return NotFound(); // Return 404 if news item is not found
             }
-            return View("~/Views/Blogs/2025/June302025BlogDetails9.cshtml", blogsDetails);
+            return View("~/Views/Blogs/2025/July012025BlogDetails2.cshtml", blogsDetails);
         }
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
