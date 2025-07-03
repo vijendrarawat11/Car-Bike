@@ -913,6 +913,62 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2025/July012025BlogDetails2.cshtml", blogsDetails);
         }
 
+        [Route("blogs/meteor-vs-yezdi-roadster-cruiser-bike-comparison")]
+        public IActionResult July022025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Meteor 350 vs Yezdi Roadster: Cruiser Bike Comparison 2025");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July022025BlogDetails1.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/maruti-swift-vs-tata-punch")]
+        public IActionResult July022025BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("Maruti Swift vs Tata Punch");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July022025BlogDetails2.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/hyundai-vs-maruti-swift")]
+        public IActionResult July022025BlogDetails3()
+        {
+            var blogsDetails = GetBlogDetails("Hyundai vs Maruti Swift");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July022025BlogDetails3.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/tata-motors-vs-maruti-suzuki")]
+        public IActionResult July022025BlogDetails4()
+        {
+            var blogsDetails = GetBlogDetails("Tata Motors vs Maruti Suzuki");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July022025BlogDetails4.cshtml", blogsDetails);
+        }
+
+
+        [Route("blogs/tata-nexon-vs-skoda-kylaq")]
+        public IActionResult July022025BlogDetails5()
+        {
+            var blogsDetails = GetBlogDetails("Tata Nexon vs Škoda Kylaq");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July022025BlogDetails5.cshtml", blogsDetails);
+        }
+
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
