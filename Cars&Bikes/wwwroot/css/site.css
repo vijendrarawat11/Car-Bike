@@ -1,4 +1,4 @@
-<!--html {
+﻿<!--html {
   font-size: 14px;
 }
 
@@ -1942,7 +1942,18 @@ header.transparent {
     margin-bottom: 20px;
     border-bottom: 2px solid #ddd;
     padding-bottom: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
 }
+    .compare-tabs::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .compare-tabs::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+    }
 
     .compare-tabs button {
         background: none;
@@ -1951,6 +1962,7 @@ header.transparent {
         cursor: pointer;
         font-weight: bold;
         border-bottom: 2px solid transparent;
+        flex: 0 0 auto;
     }
 
         .compare-tabs button:hover,
@@ -1959,7 +1971,74 @@ header.transparent {
             color: #007bff;
         }
 .compare-section {
-    scroll-margin-top: 10000px; 
+    scroll-margin-top: -100px; 
+    scroll-padding-top:-100px;
+}
+@media (max-width: 768px) {
+    .compare-tabs {
+        gap: 0.5rem;
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+    }
+
+        .compare-tabs button {
+            padding: 8px 12px;
+            font-size: 13px;
+            min-width: 120px;
+        }
+
+    .compare-section {
+        padding: 15px;
+        scroll-margin-top: 80px;
+    }
+
+        .compare-section h2 {
+            font-size: 1.3rem;
+        }
+}
+
+@media (max-width: 480px) {
+    .compare-tabs {
+        gap: 0.3rem;
+        padding-bottom: 6px;
+    }
+
+        .compare-tabs button {
+            padding: 6px 10px;
+            font-size: 12px;
+            min-width: 100px;
+        }
+
+    .compare-section {
+        padding: 12px;
+        scroll-margin-top: 60px;
+    }
+
+        .compare-section h2 {
+            font-size: 1.2rem;
+        }
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+    .scroll-indicator::after {
+        content: "← Scroll for more options →";
+        position: absolute;
+        right: 0;
+        top: -25px;
+        font-size: 12px;
+        color: #999;
+        pointer-events: none;
+    }
+
+@media (min-width: 1200px) {
+    .scroll-indicator::after {
+        display: none;
+    }
 }
 
 /*------------------------------------------Blogs section-------------------------------------*/
