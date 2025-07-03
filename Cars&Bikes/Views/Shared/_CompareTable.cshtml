@@ -62,15 +62,20 @@
         <button type="button" class="btn btn-primary" id="compareButton">Compare</button>
 
     </div>
-  *@  
+  *@
+    <div class="compare-tabs">
+        <button onclick="scrollToSection('overviewContent')">Overview</button>
+        <button onclick="scrollToSection('specificationsContent')">Specifications</button>
+        <button onclick="scrollToSection('engineTransmissionContent')">Engine & Transmission</button>
+    </div>
     <div class="comparison-table" id="comparisonTable" style="display:none;">
         <div class="compare-table-container for-tick">
             <table class="comparison-table-content m-t20">
                 <thead>
                     <tr>
-                        <th class="compare-col-20">Overview</th>
-                        <th id="comparisonColumn1" class="compare-col-40 IdTWName1" style="display:none; text-align:center"></th>
-                        <th id="comparisonColumn2" class="compare-col-40 IdTWName2" style="display:none; text-align:center"></th>
+                        <th class="compare-col-20">Overview</th> 
+                        <th id="comparisonColumn1" class="compare-col-40 IdTWName1" style="display:table-cell; text-align:center"></th>
+                        <th id="comparisonColumn2" class="compare-col-40 IdTWName2" style="display:table-cell; text-align:center"></th>
                     </tr>
                 </thead>
             </table>
