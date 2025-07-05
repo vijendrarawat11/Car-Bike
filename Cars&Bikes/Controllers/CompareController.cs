@@ -5,7 +5,7 @@ using Cars_Bikes.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-
+using System.Diagnostics;
 namespace Cars_Bikes.Controllers
 {
     public class CompareController : Controller
@@ -397,6 +397,9 @@ namespace Cars_Bikes.Controllers
         [HttpGet("Compare/{bike1}-vs-{bike2}")]
         public IActionResult CompareByNames(string bike1, string bike2)
         {
+            Console.WriteLine("CompareByNames Called");
+            Debug.WriteLine("CompareByNames Called");
+
             if (string.IsNullOrWhiteSpace(bike1) || string.IsNullOrWhiteSpace(bike2))
             {
                 return NotFound("Invalid bike names");
@@ -436,14 +439,37 @@ namespace Cars_Bikes.Controllers
                 FirstBikeVariants = firstBikeVariants,
                 SecondBikeVariants = secondBikeVariants
             };
-
-            if (bike1.ToLower().Contains("hondaactiva125") && bike2.ToLower().Contains("tvsjupiter"))
+            Console.WriteLine($"Bike1: {bike1}");
+            Console.WriteLine($"Bike2: {bike2}");
+            Console.WriteLine($"Normalized1: {normalized1}");
+            Console.WriteLine($"Normalized2: {normalized2}");
+             Debug.WriteLine($"Bike1: {bike1}");
+            Debug.WriteLine($"Bike2: {bike2}");
+            Debug.WriteLine($"Normalized1: {normalized1}");
+            Debug.WriteLine($"Normalized2: {normalized2}");
+            if (normalized1.Contains("honda activa 125") && normalized2.Contains("tvs jupiter"))
             {
                 return View("CompareHondaActiva125VsTVSJupiter", viewModel);
             }
-            else if (bike1.ToLower().Contains("tvsapacherr310") && bike2.ToLower().Contains("royalenfieldbullet350"))
+            if (normalized1.Replace(" ", "") == "tvsapacherr310" && normalized2.Replace(" ", "") == "royalenfieldbullet350")
             {
                 return View("CompareTVSApacheRR310VsRoyalEnfieldBullet350", viewModel);
+            }
+            if (normalized1.Contains("bajaj pulsar 125") && normalized2.Contains("bajaj pulsar 250"))
+            {
+                return View("CompareBajajPulsar125vsBajajPulsar150", viewModel);
+            }
+            if (normalized1.Contains("tvs apache rtr 1604V") && normalized2.Contains("bajaj dominar 250"))
+            {
+                return View("CompareTVSApacheRTR1604VvsBajajDominar250", viewModel);
+            }
+            if (normalized1.Contains("bajaj pulsar RS200") && normalized2.Contains("bajaj pulsar NS200"))
+            {
+                return View("CompareBajajPulsarRS200vsBajajPulsarNS200", viewModel);
+            }
+            if (normalized1.Contains("Yamaha R3") && normalized2.Contains("Bajaj Pulsar NS200"))
+            {
+                return View("CompareYamahaR3vsBajajPulsarNS200", viewModel);
             }
             else
             {

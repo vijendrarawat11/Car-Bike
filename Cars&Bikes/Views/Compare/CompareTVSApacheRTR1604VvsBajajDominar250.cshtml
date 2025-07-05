@@ -1,0 +1,11 @@
+﻿@model CompareViewModel
+
+
+@{
+    ViewData["Title"] = "TVS Apache RTR 160 4V vs Bajaj Dominar 250";
+}
+<div class="m-t90">
+    @* @Html.RenderPartial("_CompareTable", Model) *@
+
+    @await Html.PartialAsync("_CompareTable", Model)
+</div>

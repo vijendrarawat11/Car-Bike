@@ -63,13 +63,23 @@
 
     </div>
   *@
-    <div class="compare-tabs">
+    <div class="compare-tabs compare-section">
         <button onclick="scrollToSection('overviewContent')">Overview</button>
         <button onclick="scrollToSection('specificationsContent')">Specifications</button>
         <button onclick="scrollToSection('engineTransmissionContent')">Engine & Transmission</button>
+        <button onclick="scrollToSection('featuresContent')">Features</button>
+        <button onclick="scrollToSection('safetyContent')">Safety</button>
+        <button onclick="scrollToSection('mileageContent')">Mileage & Performance</button>
+        <button onclick="scrollToSection('dimensionsContent')">Dimensions & Capacity</button>
+        <button onclick="scrollToSection('electricalsContent')">Electricals</button>
+        <button onclick="scrollToSection('tyresContent')">Tyres & Brakes</button>
+        <button onclick="scrollToSection('motorContent')">Motor & Battery</button>
+        <button onclick="scrollToSection('underpinningsContent')">Underpinnings</button>
+        <button onclick="scrollToSection('chargingContent')">Charging</button>
+
     </div>
     <div class="comparison-table" id="comparisonTable" style="display:none;">
-        <div class="compare-table-container for-tick">
+        <div class="compare-table-container for-tick" id="overviewContent">
             <table class="comparison-table-content m-t20">
                 <thead>
                     <tr>
@@ -672,6 +682,12 @@
 </script>
 
     <script>
+    function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
         $('#compareButton').click(function () {
             //debugger;
             var variantId1 = $('#firstVariant').val();
