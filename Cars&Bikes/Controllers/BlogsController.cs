@@ -969,6 +969,193 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2025/July022025BlogDetails5.cshtml", blogsDetails);
         }
 
+
+        [Route("blogs/honda-shine-vs-hero-splendor")]
+        public IActionResult July032025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Honda Shine vs Hero Splendor – Which Is Better for You in 2025?");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July032025BlogDetails1.cshtml", blogsDetails);
+        }
+
+
+
+        [Route("blogs/how-to-apply-for-a-driving-license-online-in-india")]
+        public IActionResult July032025BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("How to Apply for a Driving License Online in India (2025 Guide)");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July032025BlogDetails1.cshtml", blogsDetails);
+        }
+
+
+
+        [Route("blogs/bajaj-chetak-vs-tvs-iqube-vs-ather-rizta-s-vs-honda-activa-electric-vs-ola-s1-pro")]
+        public IActionResult July032025BlogDetails3()
+        {
+            var blogsDetails = GetBlogDetails("Bajaj Chetak 3501 vs TVS iQube vs Ather Rizta s vs Honda Activa Electric vs Ola S1 Pro+ - Full Comparison");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July032025BlogDetails3.cshtml", blogsDetails);
+        }
+
+
+
+        [Route("blogs/indias-top-suvs-under-15 lakh")]
+        public IActionResult July032025BlogDetails4()
+        {
+            var blogsDetails = GetBlogDetails("India's Top SUVs Under ₹15 Lakh 2025 – Petrol & Diesel");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July032025BlogDetails4.cshtml", blogsDetails);
+        }
+
+
+        [Route("blogs/hatchback-vs-sedan")]
+        public IActionResult July032025BlogDetails5()
+        {
+            var blogsDetails = GetBlogDetails("Hatchback vs Sedan");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July032025BlogDetails5.cshtml", blogsDetails);
+        }
+
+
+        [Route("blogs/rc-transfer-process-for-second-hand-vehicles")]
+        public IActionResult July042025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("RC Transfer Process for Second-Hand Vehicles");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July042025BlogDetails1.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/how-to-check-rc-insurance-challan-online-in-india")]
+        public IActionResult July042025BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("How to check RC Insurance Challan Online in India");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July042025BlogDetails2.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/how-to-transfer-bike-ownership-online-in-india")]
+        public IActionResult July042025BlogDetails3()
+        {
+            var blogsDetails = GetBlogDetails("How to Transfer Bike Ownership Online in India");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July042025BlogDetails3.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/kia-sonet-hyundai-venue-tata-nexon-maruti-suzuki-brezza-and-skoda-kylaq")]
+        public IActionResult July042025BlogDetails4()
+        {
+            var blogsDetails = GetBlogDetails("Kia Sonet, Hyundai Venue, Tata Nexon, Maruti Suzuki Brezza, and Skoda Kylaq");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July042025BlogDetails4.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/new-driving-rules-in-india–complete-guide-for-drivers")]
+        public IActionResult July042025BlogDetails5()
+        {
+            var blogsDetails = GetBlogDetails("New Driving Rules in India 2025 – Complete Guide for Drivers");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July042025BlogDetails5.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/tata-nexon-vs-skoda-kylaq-deep-dive-into-indias-b-segment-suv-battle")]
+        public IActionResult July042025BlogDetails6()
+        {
+            var blogsDetails = GetBlogDetails("Tata Nexon vs Škoda Kylaq: Deep Dive into India's B Segment SUV Battle");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July042025BlogDetails6.cshtml", blogsDetails);
+        }
+
+
+        [Route("blogs/tata-nexon-vs-hyundai-venue-compact-suv-face-Off")]
+        public IActionResult July042025BlogDetails7()
+        {
+            var blogsDetails = GetBlogDetails("Tata Nexon vs Hyundai Venue: Compact SUV Face-Off");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July042025BlogDetails7.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/ kia-sonet-vs-skoda-kylaq–compact-suvs-redefined")]
+        public IActionResult July052025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Kia Sonet vs Škoda Kylaq (2025) – Compact SUVs Redefined");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July052025BlogDetails1.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/ kia-Sonet-vs-tata-nexon–which-subcompact-suv-wins")]
+        public IActionResult July052025BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("Kia Sonet vs Tata Nexon (2025) – Which Subcompact SUV Wins?");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July052025BlogDetails2.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/tata-nexon-ev-and-mahindra-xuv400-ev")]
+        public IActionResult July052025BlogDetails3()
+        {
+            var blogsDetails = GetBlogDetails("Tata Nexon EV and Mahindra XUV400 EV");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July052025BlogDetails3.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/things-to-check-before-buying-a-second-hand-bike-in-india")]
+        public IActionResult July052025BlogDetails4()
+        {
+            var blogsDetails = GetBlogDetails("Things to Check Before Buying a Second-Hand Bike in India (2025 Guide)");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July052025BlogDetails4.cshtml", blogsDetails);
+        }
+
+
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
