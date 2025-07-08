@@ -991,7 +991,7 @@ namespace Cars_Bikes.Controllers
             {
                 return NotFound(); // Return 404 if news item is not found
             }
-            return View("~/Views/Blogs/2025/July032025BlogDetails1.cshtml", blogsDetails);
+            return View("~/Views/Blogs/2025/July032025BlogDetails2.cshtml", blogsDetails);
         }
 
 
