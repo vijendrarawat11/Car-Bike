@@ -12,17 +12,18 @@
             position: relative;
         }
 
-        .scroll-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 2;
-            background-color: rgba(0, 0, 0, 0.6);
+        .compare-scroll-btn {
+            position: absolute; 
+             top: 50%; 
+            transform: translateY(-50%); 
+            background-color: rgba(255, 255, 255, 0.8);;
+            /* color: white; */
+            border-radius: 50%; 
             border: none;
-            color: white;
             padding: 10px;
             cursor: pointer;
-            border-radius: 50%;
+            pointer-events: all;
+            z-index: 10;
         }
 
         .scroll-left {
@@ -75,7 +76,7 @@
         <h2 class="for-h1">Compare Bikes </h2>
 
         <div class="scroll-container">
-            <button class="scroll-btn scroll-left" onclick="scrollCompareLeft()">&#9664;</button>
+            <button class="compare-scroll-btn scroll-left" onclick="scrollCompareLeft()">&#9664;</button>
             @* <button class="scroll-btn scroll-left" onclick="scrollLeft(this)">&#9664;</button> //Make Scroll Buttons Work with Multiple Carousels *@
             <div class="card-wrapper" id="cardContainer">
                 @* <div class="card" role="button" tabindex="0" onclick="compareByNames('Honda Activa 125', 'TVS Jupiter')"> *@
@@ -457,7 +458,7 @@
 
             </div>
 
-            <button class="scroll-btn scroll-right" onclick="scrollCompareRight()">&#9654;</button>
+            <button class="compare-scroll-btn scroll-right" onclick="scrollCompareRight()">&#9654;</button>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
