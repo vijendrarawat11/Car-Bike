@@ -692,11 +692,34 @@
         checkVariantsSelected();
     });
 </script>
-<script>
-    function scrollToSection(sectionId) {
-      const element = document.getElementById(sectionId);
-      const offset = document.querySelector('.nav-header')?.offsetHeight || 60;
+@* <script> *@
+@*     function scrollToSection(sectionId) { *@
+@*         console.log("Scrolltosectioncalled"); *@
+@*       const element = document.getElementById(sectionId); *@
+@*       const offset = document.querySelector('.nav-header')?.offsetHeight || 60; *@
 
+@*       if (element) { *@
+@*         const elementPosition = element.getBoundingClientRect().top + window.scrollY; *@
+@*         const offsetPosition = elementPosition - offset; *@
+
+@*         window.scrollTo({ *@
+@*           top: offsetPosition, *@
+@*           behavior: 'smooth' *@
+@*         }); *@
+@*       } *@
+@*     } *@
+@* </script> *@
+
+
+    <script>
+    function scrollToSection(sectionId) {
+        console.log("Scrolltosectioncalled");
+      const element = document.getElementById(sectionId);
+      const offset = document.querySelector('.nav-header')?.offsetHeight || 1000;
+      const navbar = document.querySelector('.nav-header');
+      if (navbar) {
+      navbar.style.display = 'none';
+    }
       if (element) {
         const elementPosition = element.getBoundingClientRect().top + window.scrollY;
         const offsetPosition = elementPosition - offset;
@@ -706,12 +729,17 @@
           behavior: 'smooth'
         });
       }
-    }
-</script>
-
-
-    <script>
-    function scrollToSection(sectionId) {
+       setTimeout(() => {
+      if (navbar) {
+        navbar.style.display = 'block';
+      }
+    }, 10000);
+    //    window.addEventListener('scroll', () => {
+    //   if (navbar && navbar.style.display === 'none') {
+    //     navbar.style.display = 'block';
+    //   }
+    // }, { once: true });
+  
             const section = document.getElementById(sectionId);
             if (section) {
                 section.scrollIntoView({ behavior: 'smooth', block: 'start' });
