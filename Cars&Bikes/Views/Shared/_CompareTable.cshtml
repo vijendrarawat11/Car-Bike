@@ -1,4 +1,16 @@
 ﻿@model Cars_Bikes.Models.CompareViewModel
+<style>
+    .content-section {
+        scroll-margin-top: 1000px; 
+    }
+
+    .compare-for-tick {
+        /* position: sticky; */
+        top: 80px;
+        background-color: #fff;
+        /* z-index: 1; */
+    }
+</style>
 <div class="m-t90">
     <h2>Comparison between<span class="font-weight-700"> @Model.Variant1.TwoWheeler.TwoWheelerName</span> and <span class="font-weight-700">@Model.Variant2.TwoWheeler.TwoWheelerName</span> </h2>
 
@@ -63,6 +75,7 @@
 
     </div>
   *@
+
     <div class="compare-tabs compare-section">
         <button onclick="scrollToSection('overviewContent')">Overview</button>
         <button onclick="scrollToSection('specificationsContent')">Specifications</button>
@@ -76,10 +89,9 @@
         <button onclick="scrollToSection('motorContent')">Motor & Battery</button>
         <button onclick="scrollToSection('underpinningsContent')">Underpinnings</button>
         <button onclick="scrollToSection('chargingContent')">Charging</button>
-
     </div>
     <div class="comparison-table" id="comparisonTable" style="display:none;">
-        <div class="compare-table-container for-tick" id="overviewContent">
+        <div class="compare-table-container compare-for-tick" id="overviewContent">
             <table class="comparison-table-content m-t20">
                 <thead>
                     <tr>
@@ -119,7 +131,7 @@
             </table>
         </div>
         <div class="compare-table-container">
-            <div class="expandable-header" onclick="toggleSection('specificationsContent', this)">
+            <div class="expandable-header content-section" onclick="toggleSection('specificationsContent', this)">
                 <h5>
                     Specifications
                 </h5>
@@ -680,6 +692,23 @@
         checkVariantsSelected();
     });
 </script>
+<script>
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      const offset = document.querySelector('.nav-header')?.offsetHeight || 60;
+
+      if (element) {
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+</script>
+
 
     <script>
     function scrollToSection(sectionId) {

@@ -970,10 +970,10 @@ namespace Cars_Bikes.Controllers
         }
 
 
-        [Route("blogs/honda-shine-vs-hero-splendor")]
+        [Route("blogs/honda-shine-vs-hero-splendor-plus")]
         public IActionResult July032025BlogDetails1()
         {
-            var blogsDetails = GetBlogDetails("Honda Shine vs Hero Splendor – Which Is Better for You in 2025?");
+            var blogsDetails = GetBlogDetails("Honda Shine vs Hero Splendor Plus – Which Is Better for You in 2025?");
             if (blogsDetails == null)
             {
                 return NotFound(); // Return 404 if news item is not found
