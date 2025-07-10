@@ -471,6 +471,49 @@ namespace Cars_Bikes.Controllers
             {
                 return View("CompareYamahaR3vsBajajPulsarNS200", viewModel);
             }
+         
+            if (normalized1.Contains("Suzuki Gixxer") && normalized2.Contains("TVS Apache RTR 160"))
+            {
+                return View("CompareSuzukiGixxervsTVSApacheRTR160", viewModel);
+            }
+            if (normalized1.Contains("TVS Radeon") && normalized2.Contains("Hero Splendor Plus"))
+            {
+                return View("CompareTVSRadeonvsHeroSplendorPlus", viewModel);
+            }
+            if (normalized1.Contains("Bajaj Pulsar 150") && normalized2.Contains("TVS Apache RTR 160"))
+            {
+                return View("CompareBajajPulsar150vsTVSApacheRTR160", viewModel);
+            }
+            if (normalized1.Contains("Bajaj Platina 110") && normalized2.Contains("TVS Sport"))
+            {
+                return View("CompareBajajPlatina110vsTVSSport", viewModel);
+            }
+            if (normalized1.Contains("Honda Activa 125") && normalized2.Contains("TVS Jupiter"))
+            {
+                return View("CompareHondaActiva125VsTVSJupiter", viewModel);
+            }
+            if (normalized1.Contains("Suzuki Access 125") && normalized2.Contains("TVS Jupiter"))
+            {
+                return View("CompareSuzukiAccess125vsTVSJupiter", viewModel);
+            }
+            if (normalized1.Contains("Honda Unicorn") && normalized2.Contains("Suzuki Gixxer"))
+            {
+                return View("CompareHondaUnicornvsSuzukiGixxer", viewModel);
+            }
+            if (normalized1.Contains("Honda Activa 6G") && normalized2.Contains("TVS Jupiter"))
+            {
+                return View("CompareHondaActiva6GvsTVSJupiter", viewModel);
+            }
+            if (normalized1.Contains("Kawasaki Ninja") && normalized2.Contains("BMW S 1000 RR"))
+            {
+                return View("CompareKawasakiNinjavsBMWS1000RR", viewModel);
+            }
+            if (normalized1.Contains("Bajaj Pulsar RS200") && normalized2.Contains("Hero Karizma XMR"))
+            {
+                return View("CompareBajajPulsarRS200vsHeroKarizmaXMR", viewModel);
+            }
+          
+
             else
             {
                 return View("TWCompareTwoBikes", viewModel); 
