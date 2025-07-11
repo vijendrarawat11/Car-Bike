@@ -19,7 +19,7 @@ namespace Cars_Bikes.Controllers.TwoWheeler.UpcomingBike
         {
             var upcomingbike = _context.UpcomingBikes.Where(m => m.UpcomingBikeId == id).ToList();
             ViewBag.upcomingbike = upcomingbike;
-            var allupcomingbike = _context.UpcomingBikes.OrderByDescending(m => m.FilterLaunchDate).Take(8).ToList();
+            var allupcomingbike = _context.UpcomingBikes.OrderByDescending(m => m.FilterLaunchDate).Take(10).ToList();
             ViewBag.allupcomingbike = allupcomingbike;
             return View("~/Views/TwoWheeler/UpcomingBike/TWUpcomingBikeDetails.cshtml");
         }
