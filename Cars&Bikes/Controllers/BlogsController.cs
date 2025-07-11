@@ -1155,6 +1155,17 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2025/July052025BlogDetails4.cshtml", blogsDetails);
         }
 
+        [Route("blogs/top-5-best-scooty-for-ladies-in-india")]
+        public IActionResult July102025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Top 5 Best Scooty for Ladies in India 2025 – Stylish, Lightweight & Easy to Ride");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July102025BlogDetails1.cshtml", blogsDetails);
+        }
+
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
