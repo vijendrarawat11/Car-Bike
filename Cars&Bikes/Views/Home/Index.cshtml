@@ -100,7 +100,7 @@
         <div class="blogs-section">
                 <h2 class="for-h1">Value For Money</h2>
                 <div class="blogs-section">
-                    <button class="scroll-button-vfm left-vfm" onclick="scrollLeftVFM()">&#9664;</button>
+                <button class="scroll-button-vfm left-vfm" onclick="scrollLeftVFM()">&#128896;</button>
                     <div class=" blogs-container" id="VFMContainer">
                         @foreach (var VFM in ViewBag.VFM)
                         {
@@ -115,14 +115,14 @@
                                 </section>
                             </div>
                         }
-                </div><button class="scroll-button-vfm right-vfm" onclick="scrollRightVFM()">&#9654;</button>
+                </div><button class="scroll-button-vfm right-vfm" onclick="scrollRightVFM()">&#128898;</button>
                 </div>
         </div>
 
         <!-- Upcoming bikes section -->
         <div class="upcoming-bikes-section">
                 <h2 class="for-h1"><a asp-controller="UpcomingBike" asp-action="TWUpcomingBikeDetails">Upcoming Bikes</a></h2>
-            <button class="scroll-button-ub left-ub" onclick="scrollLeftUB()">&#9664;</button>
+            <button class="scroll-button-ub left-ub" onclick="scrollLeftUB()">&#128896;</button>
            <div class="upcoming-bikes-container" id="upcomingBikesContainer">
                 @foreach (var bike in ViewBag.upcomingbike)
                 {
@@ -145,7 +145,7 @@
                     @* </a> *@
                 }
             </div>
-            <button class="scroll-button-ub right-ub" onclick="scrollRightUB()">&#9654;</button>
+            <button class="scroll-button-ub right-ub" onclick="scrollRightUB()">&#128898;</button>
         </div>
 
 
@@ -912,7 +912,7 @@
             <div class="blogs-section">
                 <h2 class="for-h1">Latest News</h2>
                 <div class="blogs-section">
-                    <button class="scroll-button-ln left-ln" onclick="scrollLeftLN()">&#9664;</button>
+                    <button class="scroll-button-ln left-ln" onclick="scrollLeftLN()">&#128896;</button>
             @* <div class="tab-lscontent active" id="bikeNews"> *@
             @*     <button class="scroll-button left" onclick="scrollLeftLN()">&#9664;</button> *@
                 <div class="latest-news-container" id="latestNewsContainer">
@@ -956,8 +956,8 @@
                 @* <div class="scroll-btns"> *@
                 @*     <button class="scroll-btn left" onclick="scrollLeftLN('bikeNews')">&#9664;</button>  *@
                 @*      <button class="scroll-btn right" onclick="scrollRightLN('bikeNews')">&#9654;</button> *@
-                    
-                 <button class="scroll-button-ln right-ln" onclick="scrollRightLN()">&#9654;</button>
+
+                    <button class="scroll-button-ln right-ln" onclick="scrollRightLN()">&#128896;</button>
                 @* </div> *@
                 
             </div>
