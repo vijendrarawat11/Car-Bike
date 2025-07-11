@@ -393,6 +393,11 @@ namespace Cars_Bikes.Controllers
                 variant2 = variant2.TWVarientId
             });
         }
+        [HttpGet("/Compare/AllCompareBikes")]
+        public IActionResult AllCompareBikes()
+        {
+            return View();
+        }
 
         [HttpGet("Compare/{bike1}-vs-{bike2}")]
         public IActionResult CompareByNames(string bike1, string bike2)

@@ -1049,6 +1049,21 @@ body {
     /* Optional: add styling */
     text-align: center;
 }
+    .All-brand-container a {
+        color: black; 
+        text-decoration: none;
+    }
+        .All-brand-container a:hover {
+            color: white; 
+        }
+        .All-brand-container a h4 {
+            color: black;
+        }
+
+        .All-brand-container a:hover h4 {
+            color: white;
+        }
+
 
 .All-brand {
     background-color: #f9f9f9;
@@ -1056,6 +1071,11 @@ body {
     padding: 10px;
     transition: transform 0.2s ease;
     height: 155px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
     .All-brand:hover {
@@ -1067,16 +1087,33 @@ body {
 .side-all-brand-text {
     width: 100%;
     box-sizing: border-box;
-    align-items: center;
-    padding: 5px;
+/*    align-items: center;
+    padding: 5px;*/
+    text-align: center;
+    padding-top: 10px;
 }
 
     .side-all-brand-text h4 {
         font-size: 1.1em;
         font-weight: 700;
-        align-items: center;
+/*        align-items: center;*/
+        margin: 0;
+        color: black
     }
+/*
+.side-brand-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px; 
+}
 
+    .side-brand-img img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+    }
+    */
         /*---------------------------TwoWheeler Details Page--------------------------*/
         .linkmaincontainer {
     border: 1px solid #ccc;
@@ -1502,7 +1539,7 @@ header.transparent {
     position: absolute;
     top: 30%;
     left:5%;
-    /*width: 100%;*/
+    width: 100%;
 }
 .search-container {
     background-color: rgba(255, 255, 255, .95);
