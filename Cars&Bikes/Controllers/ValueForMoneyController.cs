@@ -12,6 +12,8 @@ namespace Cars_Bikes.Controllers
         }
         public IActionResult Index()
         {
+            var allVFM = _context.ValueForMoney.OrderByDescending(m => m.Date).Take(100).ToList();
+            ViewBag.allVFM = allVFM;
             return View();
         }
         [Route("value-for-money/skoda-kylaq-value-for-money-variant")]
