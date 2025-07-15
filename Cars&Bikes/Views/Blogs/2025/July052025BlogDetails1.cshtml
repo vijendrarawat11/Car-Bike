@@ -13,6 +13,7 @@
     public string Truncate(string input, int length)
     {
         if (string.IsNullOrEmpty(input) || input.Length <= length)
+
             return input;
         return input.Substring(0, length) + "...";
     }
@@ -41,17 +42,17 @@
                 <p>@Html.Raw(@Model.BlogSummary.Replace("\n", "<br>"))</p>
 
                 <div class="div-line"></div>
-                <h2 class="subheading">Value Proposition & Positioning</h2>
+                <h2 class="subheading">1.Value Proposition & Positioning</h2>
 
                 <h3 class="subheading">Kia Sonet (2025)</h3>
                 <ul>
                     <li>Builds on a proven platform (K2) with a mid-2024 facelift, offering refreshed design and upgraded interiors.</li>
-                    <li>Official price range: ₹7.99--15.76 L ex-showroom.</li>
+                    <li>Official price range: <span class=text-highlight>₹7.99--15.76 L</span> ex-showroom.</li>
                 </ul>
 
                 <h3 class="subheading">Škoda Kylaq (2025)</h3>
                 <ul>
-                    <li>Škoda's first sub-4m SUV on the MQB A0-IN platform, offering a European driving experience priced from ₹7.89 L.</li>
+                    <li>Škoda's first sub-4m SUV on the MQB A0-IN platform, offering a European driving experience priced from< ₹7.89 L.</li>
                     <li>Positioned as a compact SUV with safety and sophistication based on proven Volkswagen-Škoda DNA.</li>
                 </ul>
 
