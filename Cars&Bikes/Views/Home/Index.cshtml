@@ -75,7 +75,7 @@
             <!--Search-->
             <div class="search-main-container">
                 <div class="search-container">
-                <div class="search-head"><h2>Search Bikes or Cars</h2></div>
+                <div class="search-head"><h2>Search Bikes</h2></div>
                 <div class="search-bottom">
                 <div class="search-ddn">
                 <select id="ddlBrand" class="ddnvarient" asp-items="ViewBag.TWLists">
@@ -98,7 +98,7 @@
         @await Html.PartialAsync("_AllBlogComponent")
             <!-- Value For Money -->
         <div class="blogs-section">
-                <h2 class="for-h1">Value For Money</h2>
+            <h2 class="for-h1"><a asp-controller="ValueForMoney" asp-action="Index">Value For Money</a></h2>
                 <div class="blogs-section">
                 <button class="scroll-button-vfm left-vfm" onclick="scrollLeftVFM()">&#128896;</button>
                     <div class=" blogs-container" id="VFMContainer">
@@ -910,7 +910,7 @@
                 </ul> *@
             @* </div> *@
             <div class="blogs-section">
-                <h2 class="for-h1">Latest News</h2>
+                <h2 class="for-h1" ><a asp-controller="LatestNews" asp-action="Index">Latest News</a></h2>
                 <div class="blogs-section">
                     <button class="scroll-button-ln left-ln" onclick="scrollLeftLN()">&#128896;</button>
             @* <div class="tab-lscontent active" id="bikeNews"> *@

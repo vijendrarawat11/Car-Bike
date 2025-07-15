@@ -12,11 +12,15 @@ namespace Cars_Bikes.Controllers.TwoWheeler.LatestNews
         {
             _context = context;
         }
+        [Route("LatestNews/Index")]
         public IActionResult Index()
         {
+            
+            var allLatestNews = _context.TWLatestNews.OrderByDescending(m => m.Date).Take(100).ToList();
+            ViewBag.allLatestNews = allLatestNews;
             return View();
         }
-        //[Route("latest-news/bajaj-pulsar-ns200")]
+        
         public IActionResult TWLatestNewsDetails(int id, string heading)
         {
             var newsItem = _context.TWLatestNews.FirstOrDefault(m => m.ImageURL == heading);
