@@ -1166,6 +1166,17 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2025/July102025BlogDetails1.cshtml", blogsDetails);
         }
 
+        [Route("blogs/kia-carens-clavis-ev")]
+        public IActionResult July172025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Kia Carens Clavis EV: The Bold New 7-Seater Electric SUV for India");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July172025BlogDetails1.cshtml", blogsDetails);
+        }
+
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
