@@ -46,6 +46,8 @@ namespace Cars_Bikes.Data
         public DbSet<TWEVCharging> TWEVChargings { get; set; }
         public DbSet<TWEVUnderpinning> TWEVUnderpinnings { get; set; }
         public DbSet<TWEVAppFeatures> TWEVAppFeatures { get; set; }
+        public DbSet<CompareItems> CompareItems { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TwoWheelerBrand>().HasKey(t => t.TWBrandId);
