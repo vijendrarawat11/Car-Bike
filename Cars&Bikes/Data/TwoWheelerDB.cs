@@ -17,7 +17,7 @@ namespace Cars_Bikes.Data
         public DbSet<TWSafety> TWSafety { get; set; }
         public DbSet<TWEngineAndTransmission> TWEngineAndTransmissions { get; set; }
         public DbSet<TWMileageAndPerformance> TWMileageAndPerformances { get; set; }
-        //public DbSet<TWChassisAndSuspension> TWChassisAndSuspensions { get; set; }
+        public DbSet<TWChassisAndSuspension> TWChassisAndSuspensions { get; set; }
         public DbSet<TWDimensionsAndCapacity> TWDimensionsAndCapacities { get; set; }
         public DbSet<TWElectricals> TWElectricals { get; set; }
         public DbSet<TWTyresAndBrakes> TWTyresAndBrakes { get; set; }
