@@ -437,8 +437,11 @@
                         // Process the data
                         response($.map(data, function (item) {
                             return {
-                                label: item,  // Display name in the dropdown
-                                value: item   // Selected value
+                                // label: item,  Display name in the dropdown
+                                // value: item   Selected value
+                                 label: item.label,
+                                value: item.label,
+                                type: item.type
                             };
                         }));
 
@@ -453,16 +456,33 @@
                     }
                 });
             },
-            select: function (event, ui) {
+            // select: function (event, ui) {
                 // When an item is selected (either manually or automatically)
-                $.ajax({
-                    url: '@Url.Action("GetTwoWheelerDetailsByName", "Home")',
-                    data: { twoWheelerName: ui.item.value },
-                    success: function (data) {
-                        // Redirect to the details page using the slug
-                        window.location.href = '/' + data.brandName + '/' + data.twName;
-                    }
-                });
+            //     $.ajax({
+            //         url: '@Url.Action("GetTwoWheelerDetailsByName", "Home")',
+            //         data: { twoWheelerName: ui.item.value },
+            //         success: function (data) {
+            //             Redirect to the details page using the slug
+            //             window.location.href = '/' + data.brandName + '/' + data.twName;
+            //         }
+            //     });
+            // },
+             select: function (event, ui) {
+                if (ui.item.type === "TwoWheeler") {
+                    // Call existing TwoWheeler redirect logic
+                    $.ajax({
+                        url: '@Url.Action("GetTwoWheelerDetailsByName", "Home")',
+                        data: { twoWheelerName: ui.item.value },
+                        success: function (data) {
+                            if (data) {
+                                window.location.href = '/' + data.brandName + '/' + data.twName;
+                            }
+                        }
+                    });
+                } else if (ui.item.type === "Compare") {
+                    // Redirect using CompareItems table (assume compareUrl exists in DB)
+                    window.location.href = '/Compare/' + ui.item.value.toLowerCase().replace(/\s+/g, "-");
+                }
             },
             minLength: 2 // Start searching after 2 characters
         });

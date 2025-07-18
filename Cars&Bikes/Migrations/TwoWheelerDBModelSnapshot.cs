@@ -17,7 +17,7 @@ namespace Cars_Bikes.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.19")
+                .HasAnnotation("ProductVersion", "9.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -56,6 +56,27 @@ namespace Cars_Bikes.Migrations
                     b.HasKey("BlogId");
 
                     b.ToTable("Blogs");
+                });
+
+            modelBuilder.Entity("Cars_Bikes.Models.CompareItems", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CompareUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Topic")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CompareItems");
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.LoginModel", b =>
@@ -118,11 +139,9 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -173,11 +192,9 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -231,11 +248,9 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -280,11 +295,9 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -364,11 +377,9 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -413,7 +424,6 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("TailLight")
@@ -423,7 +433,6 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("varchar(30)");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -477,11 +486,9 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("varchar(50)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -568,14 +575,12 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("varchar(20)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Tripmeter")
                         .HasColumnType("varchar(20)");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("USBChargingPort")
@@ -629,7 +634,6 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<decimal?>("TorqueMotor")
@@ -639,7 +643,6 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("varchar(20)");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -675,14 +678,12 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<decimal?>("TopSpeed")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -721,11 +722,9 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -797,11 +796,9 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -849,11 +846,9 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -901,14 +896,12 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("TubelessTyre")
                         .HasColumnType("varchar(20)");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("TyreSize")
@@ -965,7 +958,6 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("TailLight")
@@ -975,7 +967,6 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("varchar(50)");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -1041,11 +1032,9 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("ValvePerCylinder")
@@ -1117,7 +1106,6 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Tachometer")
@@ -1127,7 +1115,6 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("varchar(20)");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -1173,7 +1160,6 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("TopColorCode")
@@ -1181,7 +1167,6 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -1264,11 +1249,9 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -1307,14 +1290,12 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Transmission")
                         .HasColumnType("varchar(20)");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -1391,14 +1372,12 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("TractionControl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -1443,11 +1422,9 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -1492,11 +1469,9 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -1538,14 +1513,12 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TWVarientId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("TubelessTyre")
                         .HasColumnType("varchar(10)");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("TyreSize")
@@ -1584,7 +1557,6 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TwoWheelerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Varients")
@@ -1639,7 +1611,6 @@ namespace Cars_Bikes.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("TwoWBrandId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("TwoWheelerName")
@@ -1777,15 +1748,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -1796,15 +1763,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -1815,15 +1778,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -1834,15 +1793,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -1872,15 +1827,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -1891,15 +1842,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -1910,15 +1857,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -1929,15 +1872,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -1948,15 +1887,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -1967,15 +1902,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -1986,15 +1917,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -2005,15 +1932,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -2024,15 +1947,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -2043,15 +1962,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -2062,15 +1977,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -2081,15 +1992,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -2100,15 +2007,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -2119,15 +2022,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -2147,15 +2046,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -2166,15 +2061,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -2185,15 +2076,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -2204,15 +2091,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -2223,15 +2106,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -2242,15 +2121,11 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TWVarient", "TWVarients")
                         .WithMany()
-                        .HasForeignKey("TWVarientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TWVarientId");
 
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany()
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TWVarients");
 
@@ -2261,9 +2136,7 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TwoWheeler", "TwoWheeler")
                         .WithMany("TWVarients")
-                        .HasForeignKey("TwoWheelerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TwoWheelerId");
 
                     b.Navigation("TwoWheeler");
                 });
@@ -2272,8 +2145,7 @@ namespace Cars_Bikes.Migrations
                 {
                     b.HasOne("Cars_Bikes.Models.TwoWheelerBrand", "TwoWheelerBrands")
                         .WithMany("TwoWheelers")
-                        .HasForeignKey("TwoWBrandId")
-                        .IsRequired();
+                        .HasForeignKey("TwoWBrandId");
 
                     b.Navigation("TwoWheelerBrands");
                 });

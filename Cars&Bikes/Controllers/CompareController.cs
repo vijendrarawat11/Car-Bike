@@ -468,6 +468,14 @@ namespace Cars_Bikes.Controllers
             {
                 return View("CompareTVSApacheRTR1604VvsBajajDominar250", viewModel);
             }
+            if (normalized1.Contains("tvs ronin") && normalized2.Contains("royal enfield hunter 350"))
+            {
+                return View("CompareRoyalEnfieldHunter350vsTVSRonin", viewModel);
+            }
+            if (normalized1.Contains("honda activa 125") && normalized2.Contains("suzuki access 125"))
+            {
+                return View("CompareHondaActiva125vsSuzukiAccess125", viewModel);
+            }
             if (normalized1.Contains("bajaj pulsar RS200") && normalized2.Contains("bajaj pulsar NS200"))
             {
                 return View("CompareBajajPulsarRS200vsBajajPulsarNS200", viewModel);

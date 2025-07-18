@@ -185,13 +185,32 @@ namespace Cars_Bikes.Controllers
         [HttpGet]
         public JsonResult GetTwoWheelerNames(string term)
         {
-            var suggestions = _context.Twowheelers
-                .Where(tw => tw.TwoWheelerName.Contains(term) && tw.IsActive == true)
-                .Select(tw => tw.TwoWheelerName)
-                .Take(10) // limit results
-                .ToList();
+            //var suggestions = _context.Twowheelers
+                //.Where(tw => tw.TwoWheelerName.Contains(term) && tw.IsActive == true)
+                //.Select(tw => tw.TwoWheelerName)
+                //.Take(10) // limit results
+                //.ToList();
+            //return Json(suggestions);
+            var twoWheelerSuggestions = _context.Twowheelers
+           .Where(tw => tw.TwoWheelerName.Contains(term) && tw.IsActive == true)
+           .Select(tw => new {
+               Label = tw.TwoWheelerName,
+               Type = "TwoWheeler"
+           }).ToList();
+            var compareSuggestions = _context.CompareItems
+       .Where(ci => ci.Topic.Contains(term))
+       .Select(ci => new {
+           Label = ci.Topic,
+           Type = "Compare"
+       }).ToList();
 
-            return Json(suggestions);
+            var combined = twoWheelerSuggestions
+                .Concat(compareSuggestions)
+                //.Union(compareSuggestions)
+                .Take(20)
+                .ToList();
+            return Json(combined);
+           
         }
         [HttpGet]
         public JsonResult GetTwoWheelerDetailsByName(string twoWheelerName)
