@@ -1178,6 +1178,18 @@ namespace Cars_Bikes.Controllers
         }
 
 
+        [Route("blogs/vinfast-vf6-vf7-electric-suvs-launch-in-india")]
+        public IActionResult July182025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("VinFast VF6 & VF7 Electric SUVs Launch in India – Price, Features, Range & Booking Info");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July182025BlogDetails1.cshtml", blogsDetails);
+        }
+
+
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
