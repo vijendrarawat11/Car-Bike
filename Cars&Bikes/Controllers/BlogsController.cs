@@ -1190,6 +1190,19 @@ namespace Cars_Bikes.Controllers
         }
 
 
+        [Route("blogs/top-5-best-bikes-for-college-students-under-lakh-in-india")]
+        public IActionResult July212025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Top 5 Best Bikes for College Students Under ₹1.5 Lakh in India (2025)");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July212025BlogDetails1.cshtml", blogsDetails);
+        }
+
+
+
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
