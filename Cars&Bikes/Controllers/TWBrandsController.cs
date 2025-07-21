@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Cars_Bikes.Models;
 using Cars_Bikes.Data;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc.Rendering;
 namespace Cars_Bikes.Controllers
 {
     public class TWBrandsController : Controller
@@ -57,5 +58,52 @@ namespace Cars_Bikes.Controllers
         {
             return View();
         }
+
+        public IActionResult ManageTwoWheelerData()
+        {
+            ViewBag.BrandList = _context.Twowheelers
+                .Include(x => x.TwoWheelerBrands)
+                .Select(x => new SelectListItem
+                {
+                    Value = x.TwoWheelerId.ToString(),
+                    Text = $"{x.TwoWheelerBrands.BrandName} - {x.TwoWheelerName}"
+                }).ToList();
+
+            return View();
+        }
+
+
+        [HttpGet]
+        public JsonResult GetVariants(int twoWheelerId)
+        {
+            var variants = _context.TWVarients
+                .Where(v => v.TwoWheelerId == twoWheelerId)
+                //.Select(v => new { v.TWVarientId, v.Varients })
+                .Select(v => new { tWVarientId = v.TWVarientId, varients = v.Varients })
+                .ToList();
+
+            return Json(variants);
+        }
+        
+
+        public IActionResult GetByVariant(int id)
+        {
+            var spec = _context.TWSpec.FirstOrDefault(x => x.TWVarientId == id);
+            Console.WriteLine("GetVariants called with brandId: " + id);
+            Console.WriteLine("Spec:"+spec);
+            return PartialView("_SpecPartial", spec);
+        }
+        public IActionResult GetFeaturesByVariant(int id)
+        {
+            var feature = _context.TWFeatures.FirstOrDefault(x => x.TWVarientId == id);
+            return PartialView("_FeaturePartial", feature);
+        }
+
+        public IActionResult GetUnderpinningsByVariant(int id)
+        {
+            var perf = _context.TWUnderpinnings.FirstOrDefault(x => x.TWVarientId == id);
+            return PartialView("_PerformancePartial", perf);
+        }
+
     }
 }
