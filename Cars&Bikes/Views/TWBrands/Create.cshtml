@@ -33,7 +33,7 @@
                             <input asp-for="BrandName" class="form-control" required />
                             <span asp-validation-for="BrandName" class="text-danger"></span>
                         </div>
-
+                        @*
                         <div class="form-check mb-3">
                             <input asp-for="IsPetrol" class="form-check-input" type="checkbox" />
                             <label asp-for="IsPetrol" class="form-check-label">Is Petrol?</label>
@@ -45,7 +45,18 @@
                             <label asp-for="IsEV" class="form-check-label">Is EV?</label>
                             <span asp-validation-for="BrandName" class="text-danger"></span>
                         </div>
+                        *@
+                        <div class="form-check mb-3">
+                            <input name="IsPetrol" class="form-check-input" type="checkbox" value="true" @(Model?.IsPetrol == true ? "checked" : "") />
+                            <label class="form-check-label">Is Petrol?</label>
+                            <span asp-validation-for="IsPetrol" class="text-danger"></span>
+                        </div>
 
+                        <div class="form-check mb-3">
+                            <input name="IsEV" class="form-check-input" type="checkbox" value="true" @(Model?.IsEV == true ? "checked" : "") />
+                            <label class="form-check-label">Is EV?</label>
+                            <span asp-validation-for="IsEV" class="text-danger"></span>
+                        </div>
                         <div class="mb-3">
                             <label asp-for="BrandLogoURL" class="form-label">Brand Logo URL</label>
                             <input asp-for="BrandLogoURL" class="form-control" />
@@ -57,7 +68,7 @@
                             <textarea asp-for="Discription" class="form-control"></textarea>
                             <span asp-validation-for="BrandName" class="text-danger"></span>
                         </div>
-
+                        @*
                         <div class="form-check mb-3">
                             <input asp-for="IsFWBrand" class="form-check-input" type="checkbox" />
                             <label asp-for="IsFWBrand" class="form-check-label">Is FW Brand?</label>
@@ -69,7 +80,18 @@
                             <label asp-for="IsTWBrand" class="form-check-label">Is TW Brand?</label>
                             <span asp-validation-for="BrandName" class="text-danger"></span>
                         </div>
+                        *@
+                        <div class="form-check mb-3">
+                            <input name="IsFWBrand" class="form-check-input" type="checkbox" value="true" @(Model?.IsFWBrand == true ? "checked" : "") />
+                            <label class="form-check-label">Is FW Brand?</label>
+                            <span asp-validation-for="IsFWBrand" class="text-danger"></span>
+                        </div>
 
+                        <div class="form-check mb-3">
+                            <input name="IsTWBrand" class="form-check-input" type="checkbox" value="true" @(Model?.IsTWBrand == true ? "checked" : "") />
+                            <label class="form-check-label">Is TW Brand?</label>
+                            <span asp-validation-for="IsTWBrand" class="text-danger"></span>
+                        </div>
                         <div class="mb-3">
                             <label asp-for="MetaDescription" class="form-label">Meta Description</label>
                             <input asp-for="MetaDescription" class="form-control" />

@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Manage Two-Wheeler Data";
+}
+<h4>Filter by Brand and Variant</h4>
+
+<div class="row mb-3">
+    <div class="col-md-4">
+        <label>Select Two-Wheeler</label>
+        <select id="brandDropdown" class="form-select">
+            <option value="">-- Select Brand --</option>
+            @foreach (var item in ViewBag.BrandList)
+            {
+                <option value="@item.Value">@item.Text</option>
+            }
+        </select>
+    </div>
+
+    <div class="col-md-4">
+        <label>Select Variant</label>
+        <select id="variantDropdown" class="form-select">
+            <option value="">-- Select Variant --</option>
+        </select>
+    </div>
+</div>
+
+<div id="tabsSection" style="display:none;">
+    <ul class="nav nav-tabs" id="dataTabs" role="tablist">
+        <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#specTab">Specification</a></li>
+        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#featureTab">Features</a></li>
+        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#performanceTab">Performance</a></li>
+    </ul>
+
+    <div class="tab-content mt-3">
+        <div class="tab-pane fade show active" id="specTab">
+            <div id="specContent">Loading specification...</div>
+        </div>
+        @* <div class="tab-pane fade" id="featureTab"> *@
+        @*     <div id="featureContent">Loading features...</div> *@
+        @* </div> *@
+        @* <div class="tab-pane fade" id="performanceTab"> *@
+        @*     <div id="performanceContent">Loading performance...</div> *@
+        @* </div> *@
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#brandDropdown').change(function () {
+                var brandId = $(this).val();
+                $('#variantDropdown').empty().append('<option value="">Loading...</option>');
+                $('#tabsSection').hide();
+
+                if (brandId) {
+                    $.get('/TWBrands/GetVariants', { twoWheelerId: brandId }, function (data) {
+                     console.log("Returned variants:", data);
+                        $('#variantDropdown').empty().append('<option value="">-- Select Variant --</option>');
+                        $.each(data, function (i, item) {
+                        console.log("item:", item);
+                            // $('#variantDropdown').append(`<option value="${item.TWVarientId}">${item.varients}</option>`);
+                         $('#variantDropdown').append(`<option value="${item.tWVarientId}">${item.varients}</option>`);
+
+                        });
+                    });
+                }
+            });
+
+       $(document).on('change', '#variantDropdown', function () {
+                let variantId = $(this).val();
+            console.log("Dropdown changed: " + variantId);
+                if (variantId) {
+                    $('#tabsSection').show();
+
+                    // Load Specification
+                $('#specContent').load(`/TWBrands/GetByVariant/${variantId}`, function (response, status, xhr) {
+                console.log("Spec Load Status:", status);
+                if (status === "error") {
+                    console.error("Spec Load Error:", xhr.status, xhr.statusText);
+                }
+            });
+                // $('#specContent').load(`/TWBrands/GetByVariant/${variantId}`);
+                    //$('#specContent').attr('href', '/TW/EditTWSpec/');
+                    // Load Features
+            // $('#featureContent').load(`/TWBrands/GetFeaturesByVariant/${variantId}`);
+
+                    // Load Performance
+        // $('#performanceContent').load(`/TWBrands/GetTWUnderpinningsByVariant/${variantId}`);
+                }
+            });
+        });
+    </script>
+
+
