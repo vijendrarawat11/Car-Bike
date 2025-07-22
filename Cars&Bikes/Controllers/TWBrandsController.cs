@@ -88,10 +88,28 @@ namespace Cars_Bikes.Controllers
 
         public IActionResult GetByVariant(int id)
         {
-            var spec = _context.TWSpec.FirstOrDefault(x => x.TWVarientId == id);
-            Console.WriteLine("GetVariants called with brandId: " + id);
-            Console.WriteLine("Spec:"+spec);
-            return PartialView("_SpecPartial", spec);
+            //var spec = _context.TWSpec.FirstOrDefault(x => x.TWVarientId == id);
+            //Console.WriteLine("GetVariants called with brandId: " + id);
+            //Console.WriteLine("Spec:"+spec);
+            //return PartialView("~/Views/Shared/_SpecPartial.cshtml", spec);
+            try
+            {
+                Console.WriteLine("GetByVariant called with variantId: " + id);
+
+                var spec = _context.TWSpec.FirstOrDefault(x => x.TWVarientId == id);
+
+                if (spec == null)
+                {
+                    Console.WriteLine("No spec found for variantId: " + id);
+                }
+
+                return PartialView("EditTWSpec", spec);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in GetByVariant: " + ex.Message);
+                return StatusCode(500, "Internal server error");
+            }
         }
         public IActionResult GetFeaturesByVariant(int id)
         {
