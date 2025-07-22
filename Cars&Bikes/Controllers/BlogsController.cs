@@ -1202,6 +1202,18 @@ namespace Cars_Bikes.Controllers
         }
 
 
+        [Route("blogs/top-5-super-bikes-in-india–bikecarhub-official")]
+        public IActionResult July222025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Top 5 Super Bikes in India 2025 – BikeCarHub Official");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July222025BlogDetails1.cshtml", blogsDetails);
+        }
+
+
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
