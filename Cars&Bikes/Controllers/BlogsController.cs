@@ -1214,6 +1214,28 @@ namespace Cars_Bikes.Controllers
         }
 
 
+        [Route("blogs/tesla-model-y-full-review-specs-variants-features")]
+        public IActionResult July232025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Tesla Model Y: Full Review, Specs, Variants & Features – The Ultimate All-Electric SUV");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July232025BlogDetails1.cshtml", blogsDetails);
+        }
+
+        [Route("blogs/renault-triber-2025-facelift")]
+        public IActionResult July242025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Renault Triber 2025 Facelift – India’s Most Versatile 7-Seater Just Got a Stylish Upgrade");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July242025BlogDetails1.cshtml", blogsDetails);
+        }
+
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
