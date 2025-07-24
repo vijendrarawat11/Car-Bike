@@ -1,9 +1,13 @@
-﻿@if (Model != null)
+﻿@model Cars_Bikes.Models.TWSpec
+
+<h1>Bikes</h1>
+@if (Model != null)
 {
     <div>
-        <p><strong>Engine Type:</strong> @Model.EngineType</p>
-        <p><strong>Battery Capacity:</strong> @Model.BatteryCapacity</p>
-        <!-- Add more fields -->
+        <h1>Specifications</h1>
+        <p><strong>Milage:</strong> @Model.Milage</p>
+        <p><strong>Front Brake:</strong> @Model.FrontBrake</p>
+       
         <a href="@Url.Action("Edit", "TWSpec", new { id = Model.TWSpecId })" class="btn btn-sm btn-warning">Update</a>
         <a href="@Url.Action("Delete", "TWSpec", new { id = Model.TWSpecId })" class="btn btn-sm btn-danger">Delete</a>
     </div>
