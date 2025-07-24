@@ -16,7 +16,7 @@ namespace Cars_Bikes.Controllers.TwoWheeler.Brand
         }
         public IActionResult Index()
         {
-
+            
             return View();
         }
         [Route("bajaj/bajaj-pulsar-150")]
@@ -174,7 +174,8 @@ namespace Cars_Bikes.Controllers.TwoWheeler.Brand
                 // Handle the case where the bike is not found
                 return null;
             }
-
+            var Allbrand = _context.TwowheelerBrands.ToList();
+            ViewBag.AllBrand = Allbrand;
             return bike;
         }
         //[HttpGet]

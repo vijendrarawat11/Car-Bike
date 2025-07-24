@@ -71,6 +71,18 @@ namespace Cars_Bikes.Controllers
 
             return View();
         }
+        public IActionResult ManageTwoWheelerData1()
+        {
+            ViewBag.BrandList = _context.Twowheelers
+                .Include(x => x.TwoWheelerBrands)
+                .Select(x => new SelectListItem
+                {
+                    Value = x.TwoWheelerId.ToString(),
+                    Text = $"{x.TwoWheelerBrands.BrandName} - {x.TwoWheelerName}"
+                }).ToList();
+
+            return View();
+        }
 
 
         [HttpGet]
@@ -114,7 +126,7 @@ namespace Cars_Bikes.Controllers
         public IActionResult GetFeaturesByVariant(int id)
         {
             var feature = _context.TWFeatures.FirstOrDefault(x => x.TWVarientId == id);
-            return PartialView("_FeaturePartial", feature);
+            return PartialView("EditTWSpec", feature);
         }
 
         public IActionResult GetUnderpinningsByVariant(int id)
