@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 namespace Cars_Bikes.Models
 {
     public class TWEVPerformance
@@ -10,12 +10,14 @@ namespace Cars_Bikes.Models
         public string? TWName { get; set; }
         public string? Varients { get; set; }
         [Column(TypeName = "varchar(20)")]
+        [ValidateNever]
         public string? ScooterSpeed { get; set; }
         public decimal? ZeroTo40Kmphsec { get; set; }
         public decimal? TopSpeed { get; set; }
         public decimal? ZeroTo100Kmphsec { get; set; }
         public int? TwoWheelerId { get; set; }
         [ForeignKey("TwoWheelerId")]
+        [ValidateNever]
         public virtual TwoWheeler TwoWheeler { get; set; }
         public int? TWVarientId { get; set; }
         [ForeignKey("TWVarientId")]

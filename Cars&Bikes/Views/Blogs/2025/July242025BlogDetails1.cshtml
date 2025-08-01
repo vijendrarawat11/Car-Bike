@@ -134,11 +134,11 @@
             <p>The new Triber comes in four well-equipped trims to suit different needs and budgets.</p>
 
             <div style="overflow-x: auto;">
-                <table>
+                        <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th class="text-center">Variant</th>
-                            <th class="text-center">Key Features</th>
+                            <th>Variant</th>
+                            <th>Key Features</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -336,6 +336,8 @@
 
     @await Component.InvokeAsync("AllBlog")
     @await Html.PartialAsync("_AllBrandComponent")
+    
+	
 </body>
 <script>
     function showFallbackIcon(imgElement) {

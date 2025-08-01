@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 namespace Cars_Bikes.Models
 {
     [Table("LatestNews")]
@@ -20,6 +20,7 @@ namespace Cars_Bikes.Models
         public DateTime? Date { get; set; } = DateTime.Now;
         public int? TwoWBrandId { get; set; }
         [ForeignKey("TwoWBrandId")]
+        [ValidateNever]
         public virtual TwoWheelerBrand TwoWheelerBrands { get; set; }
         [Column(TypeName = "varchar(30)")]
         public string? BrandName { get; set; }

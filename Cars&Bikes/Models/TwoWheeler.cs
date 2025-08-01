@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 namespace Cars_Bikes.Models
 {
     [Table("TwoWheelers")]
@@ -22,6 +22,7 @@ namespace Cars_Bikes.Models
         public string? Type { get; set; } = null!;
         public int? TwoWBrandId { get; set; }
         [ForeignKey("TwoWBrandId")]
+        [ValidateNever]
         public virtual TwoWheelerBrand TwoWheelerBrands { get; set; }
         public string? TWImage { get; set; }
         //[DataType(DataType.Date)]

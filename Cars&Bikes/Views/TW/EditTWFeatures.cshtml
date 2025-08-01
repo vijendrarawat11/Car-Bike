@@ -4,19 +4,20 @@
 }
 
 <body>
-    <div class="header-img"> <img src="~/images/main-slider/header.png" /></div>
+    
     <div class="container">
         <div class="row justify-content-center align-items-center" style="min-height: 80vh;">
             <!-- only 80% screen height -->
-            <form asp-controller="AdminLogin" asp-action="Logout" method="post">
-                <button type="submit" class="btn btn-danger btn-sm">Logout</button>
-            </form>
             <div class="col-md-8 col-lg-6">
+                <form asp-controller="AdminLogin" asp-action="Logout" method="post">
+                    <button type="submit" class="btn btn-danger btn-sm">Logout</button>
+                </form>
+           
                 <!-- middle sized form -->
                 <div class="card shadow-lg p-4">
-                    <div class="container mt-4">
-                        <h3>Create TW Features</h3>
-                        <form asp-action="CreateTWFeatures" method="post">
+                    @* <div class="container mt-4"> *@
+                        <h3>Edit TW Features</h3>
+                        <form asp-action="EditTWFeatures" method="post">
                             <div class="form-group">
                                 <label asp-for="TwoWheelerId"></label>
                                 <select asp-for="TwoWheelerId" asp-items="ViewBag.TwoWheelers" class="form-control"></select>
@@ -101,9 +102,9 @@
                                 <label asp-for="AdjustableWindshield"></label>
                                 <input asp-for="AdjustableWindshield" class="form-control" />
                             </div>
-                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="submit" class="btn btn-primary">Update</button>
                         </form>
-                    </div>
+                    @* </div> *@
                 </div>
 
             </div>

@@ -5,7 +5,7 @@
 <h4>Filter by Brand and Variant</h4>
 
 <div class="row mb-3 m-t90">
-    <div class="col-md-4">
+    <div class="col-md-3">
         <label>Select Two-Wheeler</label>
         <select id="brandDropdown" class="form-select">
             <option value="">-- Select Brand --</option>
@@ -16,13 +16,13 @@
         </select>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-3">
         <label>Select Variant</label>
         <select id="variantDropdown" class="form-select">
             <option value="">-- Select Variant --</option>
         </select>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
         <label>Select Form Type</label>
         <select id="formTypeDropdown" class="form-select" disabled>
             <option value="">-- Select Form Type --</option>
@@ -32,15 +32,33 @@
             <option value="charging">Charging</option>
             <option value="chasis">Chasis and Suspension</option>
             <option value="engine">Engine</option>
-            <option value="imageColor">ImageColorPrice</option>
+            <option value="imageColorPrice">ImageColorPrice</option>
             <option value="dimensions">Dimensions</option>
             <option value="electricals">Electricals</option>
-            <option value="mileage">MileageandPerformance</option>
-            <option value="motor">MotorandBattery</option>
-            <option value="tyre">TyreandBrake</option>
+            <option value="mileageAndPerformances">MileageandPerformances</option>
+            <option value="motorAndBattery">MotorandBattery</option>
+            <option value="tyresAndBrakes">TyreandBrake</option>
             <option value="underpinning">Underpinning</option>
         </select>
     </div>
+    <div class="col-md-3 mt-3">
+        <label>Select Action</label>
+        <select id="actionDropdown" class="form-select" disabled>
+            <option value="">-- Select Action --</option>
+            <option value="edit">Update</option>
+            <option value="delete">Delete</option>
+        </select>
+    </div>
+
+    @*
+    <div class="col-md-4">
+        <label>Select</label>
+        <select id="variantDropdown" class="form-select">
+            <option value="update">Update</option>
+            <option value="delete">Delete</option>
+        </select>
+    </div>
+    *@
 </div>
 @*
 <div class="row mb-3">
@@ -69,6 +87,7 @@
             const brandId = $(this).val();
             $('#variantDropdown').empty().append('<option value="">Loading...</option>');
             $('#formTypeDropdown').prop('disabled', true);
+            $('#actionDropdown').prop('disabled', true);
             selectedVariantId = null;
 
             if (brandId) {
@@ -86,27 +105,30 @@
             selectedVariantId = $(this).val();
             if (selectedVariantId) {
                 $('#formTypeDropdown').prop('disabled', false);
+                  $('#actionDropdown').prop('disabled', false);
                 $('#specContent').html('Now select form type to load the form...');
             } else {
                 $('#formTypeDropdown').prop('disabled', true);
+                 $('#actionDropdown').prop('disabled', true);
                 $('#specContent').html('Please select a variant.');
             }
         });
 
         // Load form when Form Type is selected
-        $('#formTypeDropdown').change(function () {
-            const formType = $(this).val();
+        $('#formTypeDropdown, #actionDropdown').change(function () {
+             const formType = $('#formTypeDropdown').val();
+            const action = $('#actionDropdown').val();
 
-            if (!selectedVariantId || !formType) {
-                $('#specContent').html('Please select both variant and form type.');
+            if (!selectedVariantId || !formType || !action) {
+                $('#specContent').html('Please select variant, form type, and action.');
                 return;
             }
-
+            /*
             let url = '';
 
             switch (formType) {
                 case 'spec':
-                    url = `/TWBrands/GetByVariant/${selectedVariantId}`;
+                    url = `/TW/EditTWSpec/${selectedVariantId}`;
                     break;
                 case 'features':
                     url = `/TW/EditTWFeatures/${selectedVariantId}`;
@@ -114,11 +136,100 @@
                 case 'safety':
                     url = `/TW/EditTWSafety/${selectedVariantId}`;
                     break;
+                case 'charging':
+                    url = `/TW/EditTWCharging/${selectedVariantId}`;
+                    break;
+                case 'chasis':
+                    url = `/TW/EditTWChassis/${selectedVariantId}`;
+                    break;
+                case 'engine':
+                    url = `/TW/EditTWEngine/${selectedVariantId}`;
+                    break;
+                case 'dimensions':
+                    url = `/TW/EditTWDimensions/${selectedVariantId}`;
+                    break;
+                case 'electricals':
+                    url = `/TW/EditTWElectricals/${selectedVariantId}`;
+                    break;
+                case 'mileage':
+                    url = `/TW/EditTWMileageAndPerformance/${selectedVariantId}`;
+                    break;
+                case 'motor':
+                    url = `/TW/EditTWMotorAndBattery/${selectedVariantId}`;
+                    break;
+                case 'tyre':
+                    url = `/TW/EditTWTyreAndBrakes/${selectedVariantId}`;
+                    break;
+                case 'underpinning':
+                    url = `/TW/EditTWUnderpinning/${selectedVariantId}`;
+                    break;
                 default:
                     $('#specContent').html('Invalid selection.');
                     return;
             }
+            */
+            let controller = '';
+            switch (formType) {
+                case 'spec':
+                    controller = 'TW';
+                    break;
+                case 'features':
+                    controller = 'TW';
+                    break;
+                case 'safety':
+                    controller = 'TW';
+                    break;
 
+                case 'charging':
+                    controller = 'TW';
+                    break;
+                case 'chasis':
+                    controller = 'TW';
+                    break;
+                case 'engine':
+                    controller = 'TW';
+                    break;
+                case 'imageColorPrice':
+                    controller = 'TW';
+                    break;
+                case 'dimensions':
+                    controller = 'TW';
+                    break;
+                case 'electricals':
+                    controller = 'TW';
+                    break;
+                case 'mileageAndPerformances':
+                    controller = 'TW';
+                    break;
+                case 'motorAndBattery':
+                    controller = 'TW';
+                    break;
+                case 'tyresAndBrakes':
+                    controller = 'TW';
+                    break;
+                case 'underpinning':
+                    controller = 'TW';
+                    break;
+
+                default:
+                    $('#specContent').html('Invalid form type.');
+                    return;
+            }
+
+            let actionName = '';
+            switch (action) {
+                case 'edit':
+                    actionName = `EditTW${capitalizeFirst(formType)}`;
+                    break;
+                case 'delete':
+                    actionName = `DeleteTW${capitalizeFirst(formType)}`;
+                    break;
+                default:
+                    $('#specContent').html('Invalid action type.');
+                    return;
+            }
+
+            const url = `/${controller}/${actionName}/${selectedVariantId}`;
             $('#specContent').html('Loading...');
             $('#specContent').load(url, function (response, status, xhr) {
                 if (status === "error") {
@@ -126,6 +237,9 @@
                 }
             });
         });
+         function capitalizeFirst(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
     });
 </script>
 

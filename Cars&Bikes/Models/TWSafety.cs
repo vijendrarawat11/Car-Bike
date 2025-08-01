@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 namespace Cars_Bikes.Models
 {
     public class TWSafety
@@ -16,12 +16,14 @@ namespace Cars_Bikes.Models
         public string? Display { get; set; }
         public int? TwoWheelerId { get; set; }
         [ForeignKey("TwoWheelerId")]
+        [ValidateNever]
         public virtual TwoWheeler TwoWheeler { get; set; }
         public string? RidingModes { get; set; }
         public string? TractionControl { get; set; }
         public string? AdditionalFeatures { get; set; }
         public int? TWVarientId { get; set; }
         [ForeignKey("TWVarientId")]
+        [ValidateNever]
         public virtual TWVarient TWVarients { get; set; }
         public DateTime? CreatedDateTime { get; set; } = DateTime.Now;
     }

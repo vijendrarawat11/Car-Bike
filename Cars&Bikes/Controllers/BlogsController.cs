@@ -1235,6 +1235,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/July242025BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/most-powerful-bikes-under-two-lakhs-in-india-2025")]
+        public IActionResult July292025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Most Powerful Bikes Under ₹2 Lakhs in India (2025)");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/July292025BlogDetails1.cshtml", blogsDetails);
+        }
 
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)

@@ -20,6 +20,7 @@ namespace Cars_Bikes.ViewComponents
         {
             var blogs = _context.Blogs
                                 .OrderByDescending(m => m.Date)
+                                .Skip(1)
                                 .Take(10)
                                 .ToList();
 

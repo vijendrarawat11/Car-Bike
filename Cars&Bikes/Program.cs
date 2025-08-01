@@ -1,5 +1,6 @@
 using Cars_Bikes.Data;
 using Cars_Bikes.Models;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -41,8 +42,14 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
-
+//app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions
+{
+    ContentTypeProvider = new FileExtensionContentTypeProvider
+    {
+        Mappings = { [".avif"] = "image/avif" }
+    }
+});
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
@@ -54,6 +61,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
 
 
 app.UseEndpoints(endpoints =>

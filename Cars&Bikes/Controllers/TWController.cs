@@ -254,24 +254,27 @@ namespace Cars_Bikes.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult EditTWSpec(TWSpec spec)
         {
+            Debug.WriteLine("Edit TW Spec Called");
             if (ModelState.IsValid)
             {
+                Debug.WriteLine("Model is Valid");
                 spec.TwoWheeler = _context.Twowheelers.FirstOrDefault(t => t.TwoWheelerId == spec.TwoWheelerId);
                 spec.TWVarients = _context.TWVarients.FirstOrDefault(v => v.TWVarientId == spec.TWVarientId);
-
+                Debug.WriteLine("Updating Changes");
                 _context.TWSpec.Update(spec);
+                Debug.WriteLine("Saving chnages to DB");
                 _context.SaveChanges();
-
+                Debug.WriteLine("Redirect to success");
                 return RedirectToAction("Success"); // or a success page
             }
-
+            Debug.WriteLine("Update failed");
             ViewBag.TwoWheelers = new SelectList(_context.Twowheelers, "TwoWheelerId", "TwoWheelerName", spec.TwoWheelerId);
             ViewBag.TWVarients = new SelectList(_context.TWVarients, "TWVarientId", "Varients", spec.TWVarientId);
 
             return View(spec);
         }
         //function for creating DeleteTWSpec
-        public IActionResult Delete(int id)
+        public IActionResult DeleteTWSpec(int id)
         {
             var spec = _context.TWSpec
                 .Include(s => s.TwoWheeler)
@@ -287,7 +290,7 @@ namespace Cars_Bikes.Controllers
         }
 
        
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("DeleteTWSpec")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
@@ -462,7 +465,7 @@ namespace Cars_Bikes.Controllers
 
                 _context.TWSafety.Update(safety);
                 _context.SaveChanges();
-                return RedirectToAction("ListTWSafety");
+                return RedirectToAction("Success");
             }
 
             ViewBag.TwoWheelers = new SelectList(_context.Twowheelers, "TwoWheelerId", "TwoWheelerName", safety.TwoWheelerId);
@@ -771,7 +774,7 @@ namespace Cars_Bikes.Controllers
 
                 _context.TWEngineAndTransmissions.Update(engine);
                 _context.SaveChanges();
-                return RedirectToAction("ListTWEngine");
+                return RedirectToAction("Success");
             }
 
             ViewBag.TwoWheelers = new SelectList(_context.Twowheelers, "TwoWheelerId", "TwoWheelerName", engine.TwoWheelerId);
@@ -868,7 +871,7 @@ namespace Cars_Bikes.Controllers
             {
                 _context.Update(charging);
                 _context.SaveChanges();
-                return RedirectToAction("ListTWCharging");
+                return RedirectToAction("Success");
             }
 
             ViewBag.TwoWheelers = new SelectList(_context.Twowheelers, "TwoWheelerId", "TwoWheelerName", charging.TwoWheelerId);
@@ -1243,9 +1246,11 @@ namespace Cars_Bikes.Controllers
         {
             if (ModelState.IsValid)
             {
+                feature.TwoWheeler = _context.Twowheelers.FirstOrDefault(t => t.TwoWheelerId == feature.TwoWheelerId);
+                feature.TWVarients = _context.TWVarients.FirstOrDefault(v => v.TWVarientId == feature.TWVarientId);
                 _context.TWFeatures.Update(feature);
                 _context.SaveChanges();
-                return RedirectToAction("ListTWFeatures");
+                return RedirectToAction("Success");
             }
 
             ViewBag.TwoWheelers = new SelectList(_context.Twowheelers, "TwoWheelerId", "TwoWheelerName", feature.TwoWheelerId);
@@ -1504,9 +1509,10 @@ namespace Cars_Bikes.Controllers
             return View(motor);
         }
 
-        public async Task<IActionResult> EditTWMotorAndBattery(int id)
+        public IActionResult EditTWMotorAndBattery(int id)
         {
-            var motor = await _context.TWMotorAndBatteries.FindAsync(id);
+            //var motor = await _context.TWMotorAndBatteries.FindAsync(id);
+            var motor = _context.TWMotorAndBatteries.Find(id);
             if (motor == null) return NotFound();
 
             ViewBag.TwoWheelerId = new SelectList(_context.Twowheelers, "TwoWheelerId", "TWName", motor.TwoWheelerId);
@@ -1516,14 +1522,14 @@ namespace Cars_Bikes.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditTWMotorAndBattery(int id, TWMotorAndBattery motor)
+        public IActionResult EditTWMotorAndBattery(TWMotorAndBattery motor)
         {
-            if (id != motor.TWMotorAndBatteryId) return NotFound();
+            //if (id != motor.TWMotorAndBatteryId) return NotFound();
 
             if (ModelState.IsValid)
             {
                 _context.Update(motor);
-                await _context.SaveChangesAsync();
+                 _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
 
