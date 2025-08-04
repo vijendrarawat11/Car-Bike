@@ -1245,6 +1245,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/July292025BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/hero-vs-honda-Which-bike-brand-is-better-under-twolakh-in-india")]
+        public IActionResult Aug042025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Hero vs Honda: Which Bike Brand is Better Under ₹1.5 Lakh in India (2025)?");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Aug042025BlogDetails1.cshtml", blogsDetails);
+        }
 
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
