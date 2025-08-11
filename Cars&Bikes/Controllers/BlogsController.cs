@@ -1255,6 +1255,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Aug042025BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/royal-enfield-interceptor-650-vs-continental-GT-650")]
+        public IActionResult Aug082025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Royal Enfield Interceptor 650 vs Continental GT 650: Which 650cc Twin Should You Ride in 2025?");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Aug082025BlogDetails1.cshtml", blogsDetails);
+        }
 
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
