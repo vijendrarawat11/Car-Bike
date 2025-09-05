@@ -1265,6 +1265,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Aug082025BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/renault-kiger-facelift-launching-on-24-august-2025-price-features-and-everything-you-need-to-know")]
+        public IActionResult Aug192025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Renault Kiger Facelift Launching on 24 August 2025 – Price, Features, and Everything You Need to Know");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Aug192025BlogDetails1.cshtml", blogsDetails);
+        }
 
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)

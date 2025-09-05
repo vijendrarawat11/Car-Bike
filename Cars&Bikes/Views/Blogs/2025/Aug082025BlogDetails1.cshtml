@@ -24,7 +24,7 @@
         <div class=" latest-bike-container">
             @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
             <div class="upcoming-bikes-details-image">
-                <img src="~/images/blogs/2025/july/tesla model y india review/model y.webp" alt="@Model.BlogHeading" title="@Model.BlogHeading" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+                <img src="@Model.ImageURL" alt="@Model.BlogHeading" title="@Model.BlogHeading" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
 
                 <div class="upcoming-bikes-details-text">
                     <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
@@ -204,7 +204,7 @@
                 </ul>
 
                 <h3 class="subheading">7. Features & Customization Options</h3>
-                <p>Royal Enfield's <span class="font-weight-700">Make It Yours (MiY) program allows extensive customization from Day one:</p>
+                <p>Royal Enfield's <span class="font-weight-700">Make It Yours (MiY)</span> program allows extensive customization from Day one:</p>
                 <p><span class="font-weight-700">Shared Features: </span></p>
                 <ul>
                     <li>Adjustable clutch and brake levers</li>
