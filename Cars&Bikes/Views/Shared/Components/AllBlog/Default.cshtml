@@ -18,7 +18,8 @@
             </div>
         </div>
         <div class="col-lg-10 col-md-10 blogs-section">
-            <button class="scroll-button left" onclick="scrollLeft()">&#9664;</button>
+            @* <button class="scroll-button left" onclick="scrollLeft()">&#9664;</button> *@
+            <button class="scroll-button left" onclick="scrollContainer('blogsContainer', -1)">&#9664;</button>
             <div class="blogs-container" id="blogsContainer">
                 @foreach (var blog in Model)
                 {
@@ -34,10 +35,12 @@
                     </div>
                 }
             </div>
-            <button class="scroll-button right" onclick="scrollRight()">&#9654;</button>
+            <button class="scroll-button right" onclick="scrollContainer('blogsContainer', 1)">&#9654;</button>
+            @* <button class="scroll-button right" onclick="scrollRight()">&#9654;</button> *@
         </div>
     </div>
 </div>
+@*
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const container = document.getElementById('blogsContainer');
@@ -62,3 +65,4 @@
         document.querySelector('.scroll-button.right').addEventListener('click', window.scrollRight);
     });
 </script>
+*@

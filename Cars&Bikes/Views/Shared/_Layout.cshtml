@@ -291,6 +291,19 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>-->
     <!--<script src="~/js/site.js" asp-append-version="true"></script>-->
     @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        function scrollContainer(containerId, direction) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            const item = container.querySelector('.blogs-item');
+            if (!item) return;
+
+            const itemWidth = item.offsetWidth;
+            container.scrollBy({ left: direction * itemWidth, behavior: 'smooth' });
+        }
+    </script>
+
 </body>
 </html>
 

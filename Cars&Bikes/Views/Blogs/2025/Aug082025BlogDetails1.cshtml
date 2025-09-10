@@ -501,8 +501,10 @@
         </div>
     </div>
 
-    @await Component.InvokeAsync("AllBlog")
-    @await Html.PartialAsync("_AllBrandComponent")
+    @* @await Component.InvokeAsync("AllBlog") *@
+    @* @await Html.PartialAsync("_AllBrandComponent") *@
+    @await Html.PartialAsync("_AllViewComponent")
+
 </body>
 <script>
     function showFallbackIcon(imgElement) {

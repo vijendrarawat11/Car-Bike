@@ -5,12 +5,12 @@ using Google;
 using Cars_Bikes.Data;
 namespace Cars_Bikes.ViewComponents
 {
-    public class UpcomingBikesViewComponent : ViewComponent
+    public class VFMViewComponent : ViewComponent
     {
         private readonly TwoWheelerDB _context;
         private readonly FourWheelerDB _fourwheeler;
 
-        public UpcomingBikesViewComponent(TwoWheelerDB context, FourWheelerDB fourWheeler)
+        public VFMViewComponent(TwoWheelerDB context, FourWheelerDB fourWheeler)
         {
             _context = context;
             _fourwheeler = fourWheeler;
@@ -18,12 +18,12 @@ namespace Cars_Bikes.ViewComponents
 
         public IViewComponentResult Invoke()
         {
-            var upcomingBikes = _context.UpcomingBikes
-                                        .OrderByDescending(b => b.FilterLaunchDate)
+            var vfm = _context.ValueForMoney
+                                        .OrderByDescending(m => m.Date)
                                         .Take(5)
                                         .ToList();
 
-            return View(upcomingBikes); 
+            return View(vfm);
         }
     }
 }

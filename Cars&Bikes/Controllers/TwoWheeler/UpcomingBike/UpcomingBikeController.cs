@@ -13,6 +13,8 @@ namespace Cars_Bikes.Controllers.TwoWheeler.UpcomingBike
         }
         public IActionResult Index()
         {
+            var upcomingBikes = _context.UpcomingBikes.ToList();
+            ViewBag.upcomingBikes = upcomingBikes;
             return View();
         }
         public IActionResult TWUpcomingBikeDetails(int id)
