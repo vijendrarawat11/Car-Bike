@@ -1288,6 +1288,8 @@ namespace Cars_Bikes.Controllers
             }
             var Allbrand = _context.TwowheelerBrands.ToList();
             ViewBag.AllBrand = Allbrand;
+            var Blogs = _context.Blogs.OrderByDescending(m => m.Date).Take(10).ToList();
+            ViewBag.Blogs = Blogs;
             //var newsItem = _context.TWLatestNews.Where(n => n.NewsHeading == newsHeading).ToList();
             //var allNews = _context.TWLatestNews.OrderByDescending(m => m.Date).Take(90).ToList();
             //ViewBag.AllNews = allNews;

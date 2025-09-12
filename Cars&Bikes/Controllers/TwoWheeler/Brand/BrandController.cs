@@ -633,9 +633,11 @@ namespace Cars_Bikes.Controllers.TwoWheeler.Brand
         }
         private IEnumerable<Cars_Bikes.Models.TwoWheeler> GetBrandDetails(string brandName)
         {
+            
             return _context.Twowheelers
                 .Where(n => n.TwoWheelerBrands.BrandName == brandName)
                 .ToList();
+
         }
     }
 }

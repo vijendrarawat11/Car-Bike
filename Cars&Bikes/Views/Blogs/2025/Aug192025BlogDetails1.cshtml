@@ -446,7 +446,7 @@
 
                 <p>The <span class="font-weight-700"> 2025 Renault Kiger Facelift</span> strengthens Renault’s position in the compact SUV segment. With a stylish exterior refresh, richer interiors, and the same fun-to-drive yet efficient engine lineup, it’s a strong contender against more expensive rivals. Most importantly, Renault has kept pricing highly competitive, starting at just ₹6.14 lakh, making it one of the best value-for-money buys of the year.</p>
 
-                <p>For more in-depth car reviews, brochure-based specs, and buyer’s guides, keep following <a class="for-link" asp-controller="Index" asp-action="Home">BikeCarHub.</a></p>
+                <p>For more in-depth car reviews, brochure-based specs, and buyer’s guides, keep following <a class="for-link" asp-controller="Home" asp-action="Index">BikeCarHub.</a></p>
 
 
 
@@ -674,13 +674,13 @@
             </div>
         </div>
     </div>
-
+    @* @await Html.PartialAsync("_AllBlogComponent") *@
   @*   @await Component.InvokeAsync("AllBlog")
     @await Component.InvokeAsync("UpcomingBikes")
     @await Component.InvokeAsync("LatestNews")
     @await Component.InvokeAsync("VFM")
     @await Html.PartialAsync("_AllBrandComponent") *@
-    @await Html.PartialAsync("_AllViewComponent")
+     @await Html.PartialAsync("_AllViewComponent")
 </body>
 <script>
     function showFallbackIcon(imgElement) {
