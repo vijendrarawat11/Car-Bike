@@ -1275,6 +1275,26 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Aug192025BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/road-and-highway-types-in-india-a-complete-guide-to-classifications-and-rules")]
+        public IActionResult Sept122025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Road and Highway Types in India: A Complete Guide to Classifications and Rules");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Sept122025BlogDetails1.cshtml", blogsDetails);
+        }
+        [Route("blogs/maruti-victoris-mileage-features-variants-complete-details")]
+        public IActionResult Sept152025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Maruti Victoris: Mileage, Features, Variants & Complete Details");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Sept152025BlogDetails1.cshtml", blogsDetails);
+        }
 
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
