@@ -1295,7 +1295,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Sept152025BlogDetails1.cshtml", blogsDetails);
         }
-
+        [Route("blogs/royal-enfield-bike-prices-after-GST-full-list-of-cheaper-costlier-models")]
+        public IActionResult Sept162025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Royal Enfield Bike Prices After GST 2.0: Full List of Cheaper & Costlier Models in 2025");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Sept162025BlogDetails1.cshtml", blogsDetails);
+        }
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
