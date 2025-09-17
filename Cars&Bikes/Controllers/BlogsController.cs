@@ -1,8 +1,10 @@
 ﻿using Cars_Bikes.Data;
+using Cars_Bikes.Models;
 using Google.Apis.Discovery;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 
 namespace Cars_Bikes.Controllers
@@ -161,7 +163,7 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2024/Nov282024BlogDetails1.cshtml", blogsDetails);
         }
         [Route("blogs/top-5-best-selling-bajaj-motorcycles-in-india")]
-        public IActionResult Dec32024BlogDetails1()
+        public IActionResult Dec32024BlogDetails1(blogs/top-5-two-wheeler-electric-vehicles-under-₹1-5-lakh-in-india
         {
             var blogsDetails = GetBlogDetails("Top 5 Best-Selling Bajaj Motorcycles in India");
             if (blogsDetails == null)
