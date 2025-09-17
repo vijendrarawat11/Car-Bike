@@ -163,7 +163,7 @@ namespace Cars_Bikes.Controllers
             return View("~/Views/Blogs/2024/Nov282024BlogDetails1.cshtml", blogsDetails);
         }
         [Route("blogs/top-5-best-selling-bajaj-motorcycles-in-india")]
-        public IActionResult Dec32024BlogDetails1(blogs/top-5-two-wheeler-electric-vehicles-under-₹1-5-lakh-in-india
+        public IActionResult Dec32024BlogDetails1()
         {
             var blogsDetails = GetBlogDetails("Top 5 Best-Selling Bajaj Motorcycles in India");
             if (blogsDetails == null)
