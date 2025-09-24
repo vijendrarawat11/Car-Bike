@@ -26,7 +26,11 @@
     <!-- Favicons -->
     <link href="~/images/favicon.webp" rel="icon">
 
+    <!-- Google AdSense library -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2867930648844772"
+            crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8720291170595920"
             crossorigin="anonymous"></script>
     <script async custom-element="amp-auto-ads"
             src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
@@ -58,6 +62,16 @@
                     <i class="bi bi-list"></i>
                 </div>
             </nav>
+            @* <!-- Horizontal ads -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-8720291170595920"
+                 data-ad-slot="9025038118"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script> *@
             <div class="overlay" id="overlay">
                 <span class="close-btn" id="closeBtn"><i class="bi bi-x"></i></span>
                 <div class="overlay-content">
@@ -291,6 +305,7 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>-->
     <!--<script src="~/js/site.js" asp-append-version="true"></script>-->
     @await RenderSectionAsync("Scripts", required: false)
+    <!--Script for scrolling of view components -->
     <script>
         function scrollContainer(containerId, direction) {
             const container = document.getElementById(containerId);
@@ -303,7 +318,17 @@
             container.scrollBy({ left: direction * itemWidth, behavior: 'smooth' });
         }
     </script>
-
+    <!--Script for ads-->
+    <script>
+        // Hide empty AdSense containers
+        setTimeout(function () {
+            document.querySelectorAll('.google-ad').forEach(ad => {
+                if (ad.offsetHeight <= 0) {
+                    ad.style.display = "none";
+                }
+            });
+        }, 3000); // wait 3 seconds after page load
+    </script>
 </body>
 </html>
 

@@ -93,9 +93,31 @@
             </div>
             <!--Search End-->
         </div>
-           
+        @*
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-format="autorelaxed"
+             data-ad-client="ca-pub-8720291170595920"
+             data-ad-slot="9704814526"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        *@
             @* </div> *@
         @await Html.PartialAsync("_AllBlogComponent")
+        <!-- Horizontal ads --> 
+        <div class="google-ad">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8720291170595920"
+             data-ad-slot="9025038118"
+             data-ad-format="auto"
+             data-full-width-responsive="true">
+         </ins>
+         </div>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
             <!-- Value For Money -->
         <div class="blogs-section">
             <h2 class="for-h1"><a asp-controller="ValueForMoney" asp-action="Index">Value For Money</a></h2>
@@ -118,7 +140,16 @@
                 </div><button class="scroll-button-vfm right-vfm" onclick="scrollRightVFM()">&#128898;</button>
                 </div>
         </div>
-
+        <div class="google-ad">
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:1000px;height:200px"
+             data-ad-client="ca-pub-8720291170595920"
+             data-ad-slot="6204553210">
+         </ins>
+         </div>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
         <!-- Upcoming bikes section -->
         <div class="upcoming-bikes-section">
                 <h2 class="for-h1"><a asp-controller="UpcomingBike" asp-action="TWUpcomingBikeDetails">Upcoming Bikes</a></h2>
