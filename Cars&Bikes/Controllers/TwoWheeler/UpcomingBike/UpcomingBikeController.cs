@@ -256,36 +256,25 @@ namespace Cars_Bikes.Controllers.TwoWheeler.UpcomingBike
             }
             return View("~/Views/TwoWheeler/UpcomingBike/2025/Oct2025UpcomingBikeDetails6.cshtml", upcomingDetails);
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        [Route("upcoming-bike/suzuki-gSX-8S")]
-        public IActionResult Oct2025UpcomingBikeDetails9()
+        [Route("upcoming-bike/ktm-125-duke")]
+        public IActionResult Oct2025UpcomingBikeDetails7()
         {
-            var upcomingDetails = GetUpcomingBikeDetails("Suzuki GSX-8S");
+            var upcomingDetails = GetUpcomingBikeDetails("KTM 125 Duke");
             if (upcomingDetails == null)
             {
                 return NotFound(); // Return 404 if news item is not found
             }
-            return View("~/Views/TwoWheeler/UpcomingBike/2025/Oct2025UpcomingBikeDetails9.cshtml", upcomingDetails);
+            return View("~/Views/TwoWheeler/UpcomingBike/2025/Oct2025UpcomingBikeDetails7.cshtml", upcomingDetails);
+        }
+        [Route("upcoming-bike/ktm-390-smc-r")]
+        public IActionResult Oct2025UpcomingBikeDetails8()
+        {
+            var upcomingDetails = GetUpcomingBikeDetails("KTM 390 SMC R");
+            if (upcomingDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/UpcomingBike/2025/Oct2025UpcomingBikeDetails8.cshtml", upcomingDetails);
         }
         private Cars_Bikes.Models.UpcomingBike GetUpcomingBikeDetails(string upcomingBikeName)
         {
