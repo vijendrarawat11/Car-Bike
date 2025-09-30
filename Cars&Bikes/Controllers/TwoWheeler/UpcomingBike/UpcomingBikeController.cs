@@ -286,7 +286,7 @@ namespace Cars_Bikes.Controllers.TwoWheeler.UpcomingBike
             }
             return View("~/Views/TwoWheeler/UpcomingBike/2025/Oct2025UpcomingBikeDetails9.cshtml", upcomingDetails);
         }
-        [Route("upcoming-bike/suzuki-burgman-street-electric")]
+        [Route("upcoming-bike/suzuki-burgman-electric")]
         public IActionResult Oct2025UpcomingBikeDetails10()
         {
             var upcomingDetails = GetUpcomingBikeDetails("Suzuki Burgman Street Electric");
