@@ -289,7 +289,7 @@ namespace Cars_Bikes.Controllers.TwoWheeler.UpcomingBike
         [Route("upcoming-bike/suzuki-burgman-electric")]
         public IActionResult Oct2025UpcomingBikeDetails10()
         {
-            var upcomingDetails = GetUpcomingBikeDetails("Suzuki Burgman Street Electric");
+            var upcomingDetails = GetUpcomingBikeDetails("Suzuki Burgman Electric");
             if (upcomingDetails == null)
             {
                 return NotFound(); // Return 404 if news item is not found
