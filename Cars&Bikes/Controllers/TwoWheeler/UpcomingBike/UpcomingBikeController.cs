@@ -306,6 +306,16 @@ namespace Cars_Bikes.Controllers.TwoWheeler.UpcomingBike
             }
             return View("~/Views/TwoWheeler/UpcomingBike/2025/Oct2025UpcomingBikeDetails11.cshtml", upcomingDetails);
         }
+        [Route("upcoming-bike/ola-cruiser")]
+        public IActionResult Oct2025UpcomingBikeDetails12()
+        {
+            var upcomingDetails = GetUpcomingBikeDetails("OLA Cruiser");
+            if (upcomingDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/UpcomingBike/2025/Oct2025UpcomingBikeDetails12.cshtml", upcomingDetails);
+        }
         private Cars_Bikes.Models.UpcomingBike GetUpcomingBikeDetails(string upcomingBikeName)
         {
             var upcomingItem = _context.UpcomingBikes
