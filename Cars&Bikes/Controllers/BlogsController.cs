@@ -1307,6 +1307,26 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Sept162025BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/choosing-the-right-bike-insurance-coverage-types-policy-checklist-and-expert-tips")]
+        public IActionResult Oct132025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Choosing the Right Bike Insurance: Coverage Types, Policy Checklist, and Expert Tips");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Oct132025BlogDetails1.cshtml", blogsDetails);
+        }
+        [Route("blogs/new-mahindra-bolero-2025-boss")]
+        public IActionResult Oct132025BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("New Mahindra Bolero 2025 BOSS");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Oct132025BlogDetails2.cshtml", blogsDetails);
+        }
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
