@@ -1327,6 +1327,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Oct132025BlogDetails2.cshtml", blogsDetails);
         }
+        [Route("blogs/the-electric-orbit-detailed-review-of-the-tvs-orbiter-scooter-and-its-future-in-urban-mobility")]
+        public IActionResult Oct142025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("The Electric Orbit: Detailed Review of the TVS Orbiter Scooter and Its Future in Urban Mobility");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Oct142025BlogDetails1.cshtml", blogsDetails);
+        }
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
