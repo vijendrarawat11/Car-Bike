@@ -1337,6 +1337,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Oct142025BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/tvs-apache-rtx-the-definitive-review-of-the-rally-tourer-extreme-price-specs-and-features")]
+        public IActionResult Oct162025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("TVS Apache RTX: The Definitive Review of the Rally Tourer Extreme - Price, Specs, and Features");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Oct162025BlogDetails1.cshtml", blogsDetails);
+        }
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
