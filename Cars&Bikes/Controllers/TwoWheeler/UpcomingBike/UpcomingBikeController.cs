@@ -376,6 +376,26 @@ namespace Cars_Bikes.Controllers.TwoWheeler.UpcomingBike
             }
             return View("~/Views/TwoWheeler/UpcomingBike/2025/Nov2025UpcomingBikeDetails6.cshtml", upcomingDetails);
         }
+        [Route("upcoming-bike/royal-enfield-scrambler-450")]
+        public IActionResult Dec2025UpcomingBikeDetails1()
+        {
+            var upcomingDetails = GetUpcomingBikeDetails("Royal Enfield Scrambler 450");
+            if (upcomingDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/UpcomingBike/2025/Dec2025UpcomingBikeDetails1.cshtml", upcomingDetails);
+        }
+        [Route("upcoming-bike/kTM-390-adventureR")]
+        public IActionResult Dec2025UpcomingBikeDetails2()
+        {
+            var upcomingDetails = GetUpcomingBikeDetails("KTM 390 Adventure R");
+            if (upcomingDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/UpcomingBike/2025/Dec2025UpcomingBikeDetails2.cshtml", upcomingDetails);
+        }
         private Cars_Bikes.Models.UpcomingBike GetUpcomingBikeDetails(string upcomingBikeName)
         {
             var upcomingItem = _context.UpcomingBikes

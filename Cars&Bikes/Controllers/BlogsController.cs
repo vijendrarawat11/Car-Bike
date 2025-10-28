@@ -1347,6 +1347,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Oct162025BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/the-ultimate-road-trip-prep")]
+        public IActionResult Oct272025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("The Ultimate Road Trip Prep");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Oct272025BlogDetails1.cshtml", blogsDetails);
+        }
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
