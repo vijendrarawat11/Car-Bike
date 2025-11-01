@@ -396,6 +396,36 @@ namespace Cars_Bikes.Controllers.TwoWheeler.UpcomingBike
             }
             return View("~/Views/TwoWheeler/UpcomingBike/2025/Dec2025UpcomingBikeDetails2.cshtml", upcomingDetails);
         }
+        [Route("upcoming-bike/cFMoto-450-mt")]
+        public IActionResult Dec2025UpcomingBikeDetails3()
+        {
+            var upcomingDetails = GetUpcomingBikeDetails("CFMoto 450 MT");
+            if (upcomingDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/UpcomingBike/2025/Dec2025UpcomingBikeDetails3.cshtml", upcomingDetails);
+        }
+        [Route("upcoming-bike/bsa-scrambler-650")]
+        public IActionResult Dec2025UpcomingBikeDetails4()
+        {
+            var upcomingDetails = GetUpcomingBikeDetails("BSA Scrambler 650");
+            if (upcomingDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/UpcomingBike/2025/Dec2025UpcomingBikeDetails4.cshtml", upcomingDetails);
+        }
+        [Route("upcoming-bike/brixton-crossfire-500-december2025")]
+        public IActionResult Dec2025UpcomingBikeDetails5()
+        {
+            var upcomingDetails = GetUpcomingBikeDetails("Brixton Crossfire 500 December2025");
+            if (upcomingDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/UpcomingBike/2025/Dec2025UpcomingBikeDetails5.cshtml", upcomingDetails);
+        }
         private Cars_Bikes.Models.UpcomingBike GetUpcomingBikeDetails(string upcomingBikeName)
         {
             var upcomingItem = _context.UpcomingBikes
