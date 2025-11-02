@@ -16,6 +16,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\TwoWheeler\UpcomingBike\" />
+    <Folder Include="Views\UpcomingBike\" />
     <Folder Include="wwwroot\.well-known\pki-validation\" />
   </ItemGroup>
   <ItemGroup>
