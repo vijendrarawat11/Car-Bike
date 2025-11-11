@@ -26,6 +26,8 @@ namespace Cars_Bikes.Controllers
             ViewBag.TWList = new SelectList(TWList, "TwoWheelerId", "TwoWheelerName");
             var BrandList = _context.TwowheelerBrands.ToList();
             ViewBag.BrandList = new SelectList(BrandList, "TWBrandId", "BrandName");
+            //var Allbrand = _context.TwowheelerBrands.ToList();
+            //ViewBag.AllBrand = Allbrand;
 
             ViewBag.image = TWList;
             return View();

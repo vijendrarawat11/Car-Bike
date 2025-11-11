@@ -1357,6 +1357,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Oct272025BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/hyundai-venue")]
+        public IActionResult Nov102025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Hyundai VENUE: The New Urban Icon - Unpacking the Compact SUV's Tech, Design, and Value");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Nov102025BlogDetails1.cshtml", blogsDetails);
+        }
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {

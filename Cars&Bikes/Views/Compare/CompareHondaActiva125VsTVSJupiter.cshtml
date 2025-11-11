@@ -12,3 +12,19 @@
 
      @await Html.PartialAsync("_CompareTable", Model)
 </div>
+<div class="google-ad">
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:1000px;height:200px"
+         data-ad-client="ca-pub-8720291170595920"
+         data-ad-slot="6204553210">
+    </ins>
+</div>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+@* @await Component.InvokeAsync("AllBlog")
+@await Component.InvokeAsync("UpcomingBikes")
+@await Component.InvokeAsync("LatestNews")
+@await Component.InvokeAsync("VFM") *@
+@await Html.PartialAsync("_AllComponent")  
+@* @await Html.PartialAsync("_CompareBikes") *@
