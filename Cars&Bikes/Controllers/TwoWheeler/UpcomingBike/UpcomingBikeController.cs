@@ -446,6 +446,36 @@ namespace Cars_Bikes.Controllers.TwoWheeler.UpcomingBike
             }
             return View("~/Views/TwoWheeler/UpcomingBike/2025/Dec2025UpcomingBikeDetails7.cshtml", upcomingDetails);
         }
+        [Route("upcoming-bike/benelli-leoncino-800")]
+        public IActionResult Dec2025UpcomingBikeDetails8()
+        {
+            var upcomingDetails = GetUpcomingBikeDetails("BMW F 450 GS");
+            if (upcomingDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/UpcomingBike/2025/Dec2025UpcomingBikeDetails8.cshtml", upcomingDetails);
+        }
+        [Route("upcoming-bike/ducati-multistrada-v2")]
+        public IActionResult Dec2025UpcomingBikeDetails9()
+        {
+            var upcomingDetails = GetUpcomingBikeDetails("Ducati Multistrada V2");
+            if (upcomingDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/UpcomingBike/2025/Dec2025UpcomingBikeDetails9.cshtml", upcomingDetails);
+        }
+        [Route("upcoming-bike/hero-karizma-xMR-250")]
+        public IActionResult Dec2025UpcomingBikeDetails10()
+        {
+            var upcomingDetails = GetUpcomingBikeDetails("Hero Karizma XMR 250");
+            if (upcomingDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/UpcomingBike/2025/Dec2025UpcomingBikeDetails10.cshtml", upcomingDetails);
+        }
         private Cars_Bikes.Models.UpcomingBike GetUpcomingBikeDetails(string upcomingBikeName)
         {
             var upcomingItem = _context.UpcomingBikes
