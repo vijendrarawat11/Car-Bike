@@ -454,77 +454,115 @@ namespace Cars_Bikes.Controllers
             Debug.WriteLine($"Bike2: {bike2}");
             Debug.WriteLine($"Normalized1: {normalized1}");
             Debug.WriteLine($"Normalized2: {normalized2}");
+
             if (normalized1.Contains("honda activa 125") && normalized2.Contains("tvs jupiter"))
             {
+                var Allbrand = _context.TwowheelerBrands.ToList();
+                ViewBag.AllBrand = Allbrand;
                 return View("CompareHondaActiva125VsTVSJupiter", viewModel);
             }
-            if (normalized1.Replace(" ", "") == "tvsapacherr310" && normalized2.Replace(" ", "") == "royalenfieldbullet350")
+            //if (normalized1.Replace(" ", "") == "tvsapacherr310" && normalized2.Replace(" ", "") == "royalenfieldbullet350")
+            if (normalized1.Contains("Royal Enfield Bullet 350") && normalized2.Contains("TVS Apache RR 310"))
             {
+                var Allbrand = _context.TwowheelerBrands.ToList();
+                ViewBag.AllBrand = Allbrand;
                 return View("CompareTVSApacheRR310VsRoyalEnfieldBullet350", viewModel);
             }
             if (normalized1.Contains("bajaj pulsar 125") && normalized2.Contains("bajaj pulsar 250"))
             {
+                var Allbrand = _context.TwowheelerBrands.ToList();
+                ViewBag.AllBrand = Allbrand;
                 return View("CompareBajajPulsar125vsBajajPulsar150", viewModel);
             }
             if (normalized1.Contains("tvs apache rtr 1604V") && normalized2.Contains("bajaj dominar 250"))
             {
+                var Allbrand = _context.TwowheelerBrands.ToList();
+                ViewBag.AllBrand = Allbrand;
                 return View("CompareTVSApacheRTR1604VvsBajajDominar250", viewModel);
             }
             if (normalized1.Contains("tvs ronin") && normalized2.Contains("royal enfield hunter 350"))
             {
+                var Allbrand = _context.TwowheelerBrands.ToList();
+                ViewBag.AllBrand = Allbrand;
                 return View("CompareRoyalEnfieldHunter350vsTVSRonin", viewModel);
             }
             if (normalized1.Contains("honda activa 125") && normalized2.Contains("suzuki access 125"))
             {
+                var Allbrand = _context.TwowheelerBrands.ToList();
+                ViewBag.AllBrand = Allbrand;
                 return View("CompareHondaActiva125vsSuzukiAccess125", viewModel);
             }
             if (normalized1.Contains("bajaj pulsar RS200") && normalized2.Contains("bajaj pulsar NS200"))
             {
+                var Allbrand = _context.TwowheelerBrands.ToList();
+                ViewBag.AllBrand = Allbrand;
                 return View("CompareBajajPulsarRS200vsBajajPulsarNS200", viewModel);
             }
             if (normalized1.Contains("Yamaha R3") && normalized2.Contains("Bajaj Pulsar NS200"))
             {
+                var Allbrand = _context.TwowheelerBrands.ToList();
+                ViewBag.AllBrand = Allbrand;
                 return View("CompareYamahaR3vsBajajPulsarNS200", viewModel);
             }
          
             if (normalized1.Contains("Suzuki Gixxer") && normalized2.Contains("TVS Apache RTR 160"))
             {
+                var Allbrand = _context.TwowheelerBrands.ToList();
+                ViewBag.AllBrand = Allbrand;
                 return View("CompareSuzukiGixxervsTVSApacheRTR160", viewModel);
             }
             if (normalized1.Contains("TVS Radeon") && normalized2.Contains("Hero Splendor Plus"))
             {
+                var Allbrand = _context.TwowheelerBrands.ToList();
+                ViewBag.AllBrand = Allbrand;
                 return View("CompareTVSRadeonvsHeroSplendorPlus", viewModel);
             }
             if (normalized1.Contains("Bajaj Pulsar 150") && normalized2.Contains("TVS Apache RTR 160"))
             {
+                var Allbrand = _context.TwowheelerBrands.ToList();
+                ViewBag.AllBrand = Allbrand;
                 return View("CompareBajajPulsar150vsTVSApacheRTR160", viewModel);
             }
             if (normalized1.Contains("Bajaj Platina 110") && normalized2.Contains("TVS Sport"))
             {
+                var Allbrand = _context.TwowheelerBrands.ToList();
+                ViewBag.AllBrand = Allbrand;
                 return View("CompareBajajPlatina110vsTVSSport", viewModel);
             }
             if (normalized1.Contains("Honda Activa 125") && normalized2.Contains("TVS Jupiter"))
             {
+                var Allbrand = _context.TwowheelerBrands.ToList();
+                ViewBag.AllBrand = Allbrand;
                 return View("CompareHondaActiva125VsTVSJupiter", viewModel);
             }
             if (normalized1.Contains("Suzuki Access 125") && normalized2.Contains("TVS Jupiter"))
             {
+                var Allbrand = _context.TwowheelerBrands.ToList();
+                ViewBag.AllBrand = Allbrand;
                 return View("CompareSuzukiAccess125vsTVSJupiter", viewModel);
             }
             if (normalized1.Contains("Honda Unicorn") && normalized2.Contains("Suzuki Gixxer"))
             {
+                var Allbrand = _context.TwowheelerBrands.ToList();
+                ViewBag.AllBrand = Allbrand;
                 return View("CompareHondaUnicornvsSuzukiGixxer", viewModel);
             }
             if (normalized1.Contains("Honda Activa 6G") && normalized2.Contains("TVS Jupiter"))
             {
+                var Allbrand = _context.TwowheelerBrands.ToList();
+                ViewBag.AllBrand = Allbrand;
                 return View("CompareHondaActiva6GvsTVSJupiter", viewModel);
             }
             if (normalized1.Contains("Kawasaki Ninja") && normalized2.Contains("BMW S 1000 RR"))
             {
+                var Allbrand = _context.TwowheelerBrands.ToList();
+                ViewBag.AllBrand = Allbrand;
                 return View("CompareKawasakiNinjavsBMWS1000RR", viewModel);
             }
             if (normalized1.Contains("Bajaj Pulsar RS200") && normalized2.Contains("Hero Karizma XMR"))
             {
+                var Allbrand = _context.TwowheelerBrands.ToList();
+                ViewBag.AllBrand = Allbrand;
                 return View("CompareBajajPulsarRS200vsHeroKarizmaXMR", viewModel);
             }
           

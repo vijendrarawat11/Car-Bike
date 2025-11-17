@@ -449,7 +449,7 @@ namespace Cars_Bikes.Controllers.TwoWheeler.UpcomingBike
         [Route("upcoming-bike/benelli-leoncino-800")]
         public IActionResult Dec2025UpcomingBikeDetails8()
         {
-            var upcomingDetails = GetUpcomingBikeDetails("BMW F 450 GS");
+            var upcomingDetails = GetUpcomingBikeDetails("Benelli Leoncino 800");
             if (upcomingDetails == null)
             {
                 return NotFound(); // Return 404 if news item is not found
@@ -475,6 +475,16 @@ namespace Cars_Bikes.Controllers.TwoWheeler.UpcomingBike
                 return NotFound(); // Return 404 if news item is not found
             }
             return View("~/Views/TwoWheeler/UpcomingBike/2025/Dec2025UpcomingBikeDetails10.cshtml", upcomingDetails);
+        }
+        [Route("upcoming-bike/hero-mavrick-440")]
+        public IActionResult Dec2025UpcomingBikeDetails11()
+        {
+            var upcomingDetails = GetUpcomingBikeDetails("Hero Mavrick 440");
+            if (upcomingDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/UpcomingBike/2025/Dec2025UpcomingBikeDetails11.cshtml", upcomingDetails);
         }
         private Cars_Bikes.Models.UpcomingBike GetUpcomingBikeDetails(string upcomingBikeName)
         {

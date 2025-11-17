@@ -12,7 +12,8 @@
     <!-- Use shared comparison table -->
     @Html.PartialAsync("_CompareTable", Model)
 </div>
-<div class="google-ad">
+<p>first paragraph</p>
+@* <div class="google-ad">
     <ins class="adsbygoogle"
          style="display:inline-block;width:1000px;height:200px"
          data-ad-client="ca-pub-8720291170595920"
@@ -21,5 +22,10 @@
 </div>
 <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-@await Html.PartialAsync("_AllComponent")  
+</script> *@
+
+<p>second paragraph</p>
+@await Component.InvokeAsync("AllBlog")
+@await Html.PartialAsync("_AllComponent")
+@* @await Html.PartialAsync("_AllViewComponent")   *@
+<p>third paragraph</p>
