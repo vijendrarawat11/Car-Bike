@@ -31,6 +31,11 @@
 		<priority>0.80</priority>
 	</url>
 	<url>
+		<loc>https://bikecarhub.com/blogs/tata-sierra</loc>
+		<lastmod>2025-11-26T07:44:11+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
 		<loc>https://bikecarhub.com/blogs/hyundai-venue</loc>
 		<lastmod>2025-11-10T07:44:11+00:00</lastmod>
 		<priority>0.80</priority>
@@ -145,6 +150,26 @@
 		<lastmod>2025-09-17T07:44:11+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
+	<url>
+		<loc>https://bikecarhub.com/upcoming-bike/yamaha-yZF-r7</loc>
+		<lastmod>2025-11-21T07:44:11+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://bikecarhub.com/upcoming-bike/triumph-tiger-sport-800</loc>
+		<lastmod>2025-11-21T07:44:11+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://bikecarhub.com/upcoming-bike/royal-enfield-himalayan-750</loc>
+		<lastmod>2025-11-20T07:44:11+00:00</lastmod>
+		<priority>0.80</priority>
+    </url>
+     <url>
+		<loc>https://bikecarhub.com/upcoming-bike/tVS-xL-eV</loc>
+		<lastmod>2025-11-20T07:44:11+00:00</lastmod>
+		<priority>0.80</priority>
+    </url>
 	<url>
 		<loc>https://bikecarhub.com/upcoming-bike/indian-fTR-1200</loc>
 		<lastmod>2025-11-18T07:44:11+00:00</lastmod>

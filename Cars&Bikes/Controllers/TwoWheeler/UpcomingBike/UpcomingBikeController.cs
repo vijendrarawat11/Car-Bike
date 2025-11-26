@@ -506,6 +506,46 @@ namespace Cars_Bikes.Controllers.TwoWheeler.UpcomingBike
             }
             return View("~/Views/TwoWheeler/UpcomingBike/2025/Dec2025UpcomingBikeDetails13.cshtml", upcomingDetails);
         }
+        [Route("upcoming-bike/tVS-xL-eV")]
+        public IActionResult Dec2025UpcomingBikeDetails14()
+        {
+            var upcomingDetails = GetUpcomingBikeDetails("TVS XL EV");
+            if (upcomingDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/UpcomingBike/2025/Dec2025UpcomingBikeDetails14.cshtml", upcomingDetails);
+        }
+        [Route("upcoming-bike/royal-enfield-himalayan-750")]
+        public IActionResult Dec2025UpcomingBikeDetails15()
+        {
+            var upcomingDetails = GetUpcomingBikeDetails("Royal Enfield Himalayan 750");
+            if (upcomingDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/UpcomingBike/2025/Dec2025UpcomingBikeDetails15.cshtml", upcomingDetails);
+        }
+        [Route("upcoming-bike/triumph-tiger-sport-800")]
+        public IActionResult Dec2025UpcomingBikeDetails16()
+        {
+            var upcomingDetails = GetUpcomingBikeDetails("Triumph Tiger Sport 800");
+            if (upcomingDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/UpcomingBike/2025/Dec2025UpcomingBikeDetails16.cshtml", upcomingDetails);
+        }
+        [Route("upcoming-bike/yamaha-yZF-r7")]
+        public IActionResult Dec2025UpcomingBikeDetails17()
+        {
+            var upcomingDetails = GetUpcomingBikeDetails("Yamaha YZF-R7");
+            if (upcomingDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/TwoWheeler/UpcomingBike/2025/Dec2025UpcomingBikeDetails17.cshtml", upcomingDetails);
+        }
         private Cars_Bikes.Models.UpcomingBike GetUpcomingBikeDetails(string upcomingBikeName)
         {
             var upcomingItem = _context.UpcomingBikes

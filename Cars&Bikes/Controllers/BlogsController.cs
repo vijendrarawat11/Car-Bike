@@ -1367,6 +1367,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Nov102025BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/tata-sierra")]
+        public IActionResult Nov102025BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("The Legend Reborn: Unveiling the All-New Tata Sierra 2025 – A Definitive BikeCarHub Review");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Nov102025BlogDetails2.cshtml", blogsDetails);
+        }
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
