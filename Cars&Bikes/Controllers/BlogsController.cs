@@ -1377,6 +1377,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Nov102025BlogDetails2.cshtml", blogsDetails);
         }
+        [Route("blogs/tata-sierra-2025")]
+        public IActionResult Nov102025BlogDetails3()
+        {
+            var blogsDetails = GetBlogDetails("Tata Sierra: The Return of a Legend That Dares to Escape Mediocrity");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Nov102025BlogDetails3.cshtml", blogsDetails);
+        }
 
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
