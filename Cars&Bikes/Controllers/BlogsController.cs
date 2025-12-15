@@ -1387,7 +1387,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Nov102025BlogDetails3.cshtml", blogsDetails);
         }
-
+        [Route("blogs/mahindraBE-formulaE-edition")]
+        public IActionResult Nov102025BlogDetails4()
+        {
+            var blogsDetails = GetBlogDetails("Mahindra BE 6 Formula E Edition");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Nov102025BlogDetails4.cshtml", blogsDetails);
+        }
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
