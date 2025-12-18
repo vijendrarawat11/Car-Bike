@@ -1397,6 +1397,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Nov102025BlogDetails4.cshtml", blogsDetails);
         }
+        [Route("blogs/kia-seltos")]
+        public IActionResult Dec012025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("The All-New KIA Seltos: A Comprehensive Review of the 'Badass. Forever.' Mid-Size SUV");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Dec012025BlogDetails1.cshtml", blogsDetails);
+        }
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
