@@ -1417,6 +1417,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2026/Jan012026BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/tata-harrier-petrol")]
+        public IActionResult Jan012026BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("New Tata Harrier Petrol Version: A Powerful, Premium & Tech-Loaded SUV for Modern India");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2026/Jan012026BlogDetails2.cshtml", blogsDetails);
+        }
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
