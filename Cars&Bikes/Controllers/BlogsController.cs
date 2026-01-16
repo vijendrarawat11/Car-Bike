@@ -1427,6 +1427,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2026/Jan012026BlogDetails2.cshtml", blogsDetails);
         }
+        [Route("blogs/bMW-new-x3")]
+        public IActionResult Jan012026BlogDetails3()
+        {
+            var blogsDetails = GetBlogDetails("BMW New X3: Price, Features, Specifications & Complete Review");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2026/Jan012026BlogDetails3.cshtml", blogsDetails);
+        }
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
