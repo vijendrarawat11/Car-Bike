@@ -1447,6 +1447,26 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2026/Jan012026BlogDetails4.cshtml", blogsDetails);
         }
+        [Route("blogs/new-bMW2-series-gran-coupe")]
+        public IActionResult Jan012026BlogDetails5()
+        {
+            var blogsDetails = GetBlogDetails("The New BMW 2 Series Gran Coupe: Price, Features, Specs & Full Review");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2026/Jan012026BlogDetails5.cshtml", blogsDetails);
+        }
+        [Route("blogs/the-new-skoda-kushaq")]
+        public IActionResult Jan012026BlogDetails6()
+        {
+            var blogsDetails = GetBlogDetails("The New Skoda Kushaq: A Perfect Blend of European Engineering and Indian Soul");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2026/Jan012026BlogDetails6.cshtml", blogsDetails);
+        }
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
