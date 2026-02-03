@@ -1377,7 +1377,96 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2025/Nov102025BlogDetails2.cshtml", blogsDetails);
         }
-
+        [Route("blogs/tata-sierra-2025")]
+        public IActionResult Nov102025BlogDetails3()
+        {
+            var blogsDetails = GetBlogDetails("Tata Sierra: The Return of a Legend That Dares to Escape Mediocrity");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Nov102025BlogDetails3.cshtml", blogsDetails);
+        }
+        [Route("blogs/mahindraBE-formulaE-edition")]
+        public IActionResult Nov102025BlogDetails4()
+        {
+            var blogsDetails = GetBlogDetails("Mahindra BE 6 Formula E Edition");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Nov102025BlogDetails4.cshtml", blogsDetails);
+        }
+        [Route("blogs/kia-seltos")]
+        public IActionResult Dec012025BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("The All-New KIA Seltos: A Comprehensive Review of the 'Badass. Forever.' Mid-Size SUV");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2025/Dec012025BlogDetails1.cshtml", blogsDetails);
+        }
+        [Route("blogs/mahindra-xUV-7XO")]
+        public IActionResult Jan012026BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Mahindra XUV 7XO: Price, Features, Specifications, Mileage & Complete Review");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2026/Jan012026BlogDetails1.cshtml", blogsDetails);
+        }
+        [Route("blogs/tata-harrier-petrol")]
+        public IActionResult Jan012026BlogDetails2()
+        {
+            var blogsDetails = GetBlogDetails("New Tata Harrier Petrol Version: A Powerful, Premium & Tech-Loaded SUV for Modern India");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2026/Jan012026BlogDetails2.cshtml", blogsDetails);
+        }
+        [Route("blogs/bMW-new-x3")]
+        public IActionResult Jan012026BlogDetails3()
+        {
+            var blogsDetails = GetBlogDetails("BMW New X3: Price, Features, Specifications & Complete Review");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2026/Jan012026BlogDetails3.cshtml", blogsDetails);
+        }
+        [Route("blogs/all-new-tata-punch-facelift")]
+        public IActionResult Jan012026BlogDetails4()
+        {
+            var blogsDetails = GetBlogDetails("All-New Tata Punch Facelift 2025 – Price, Variants, Features, Specifications & Complete Buyer’s Guide");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2026/Jan012026BlogDetails4.cshtml", blogsDetails);
+        }
+        [Route("blogs/new-bMW2-series-gran-coupe")]
+        public IActionResult Jan012026BlogDetails5()
+        {
+            var blogsDetails = GetBlogDetails("The New BMW 2 Series Gran Coupe: Price, Features, Specs & Full Review");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2026/Jan012026BlogDetails5.cshtml", blogsDetails);
+        }
+        [Route("blogs/the-new-skoda-kushaq")]
+        public IActionResult Jan012026BlogDetails6()
+        {
+            var blogsDetails = GetBlogDetails("The New Skoda Kushaq: A Perfect Blend of European Engineering and Indian Soul");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2026/Jan012026BlogDetails6.cshtml", blogsDetails);
+        }
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
