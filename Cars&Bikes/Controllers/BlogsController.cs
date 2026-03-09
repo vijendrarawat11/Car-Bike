@@ -1467,6 +1467,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2026/Jan012026BlogDetails6.cshtml", blogsDetails);
         }
+        [Route("blogs/nissan-gravite")]
+        public IActionResult Feb012026BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("Nissan Gravite: The New Class of Togetherness Redefining Indian Family Mobility");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2026/Feb012026BlogDetails1.cshtml", blogsDetails);
+        }
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
