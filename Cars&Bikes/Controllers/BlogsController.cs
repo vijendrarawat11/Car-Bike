@@ -1477,6 +1477,26 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2026/Feb012026BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/mg-majestor")]
+        public IActionResult Mar012026BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("MG Majestor 2026: India's Most Dominant Off-Road SUV");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2026/Mar012026BlogDetails1.cshtml", blogsDetails);
+        }
+        [Route("blogs/new-renault-duster")]
+        public IActionResult Apr012026BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("The New Renault Duster: A Bold Comeback with Hybrid Power, Smart Tech & Rugged Style");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2026/Apr012026BlogDetails1.cshtml", blogsDetails);
+        }
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
