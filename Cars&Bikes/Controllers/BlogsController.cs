@@ -1497,6 +1497,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2026/Apr012026BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/bmw-F-450-GS")]
+        public IActionResult May012026BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("BMW F 450 GS India Launch: Price, Specs, Features & Complete Review");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2026/May012026BlogDetails1.cshtml", blogsDetails);
+        }
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
