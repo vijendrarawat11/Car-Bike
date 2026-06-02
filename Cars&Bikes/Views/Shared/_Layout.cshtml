@@ -8,26 +8,22 @@
     @RenderSection("MetaTags", required: false)
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-   
-    @* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> *@
-    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
-    <!--<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />-->
-    <!--<link rel="stylesheet" href="~/Cars_Bikes.styles.css" asp-append-version="true" />-->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous"> 
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link href="~/css/style.min.css" rel="stylesheet" />
     <link href="~/css/templete.min.css" rel="stylesheet" />
     <link href="~/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/css/site.css" rel="stylesheet" />
     <link rel="canonical" href="https://www.bikecarhub.com/" />
-    @* <a href="https://www.bikecarhub.com" hreflang="en">bikecarhub</a>
-    <a href="https://www.bikecarhub.com" hreflang="hi">bikecarhub</a> *@
     <!-- Favicons -->
     <link href="~/images/favicon.webp" rel="icon">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXF8795RLN"></script>
-    <script>   window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());   gtag('config', 'G-YXF8795RLN'); </script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-YXF8795RLN');</script>
     <!-- Google AdSense library -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2867930648844772"
@@ -35,536 +31,902 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8720291170595920"
             crossorigin="anonymous"></script>
     <script async custom-element="amp-auto-ads"
-            src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-    </script>
-</head>
-<body>
-    <header id="navbar" class="nav-header">
-        <div class="navbar-container">
-            <nav>
-                <div class="logo">
-                    @* <img src="~/images/logo new.png" /> *@
-                    @* <img src="~/images/logo new name.png" /> *@
-                    <a asp-controller="Home" asp-action="Index"><img src="~/images/bchlogo.webp" alt="bikecarhublogo" title="bikecarhublogo" /> @* <img src="~/images/new logo white bg.png" /> *@@* <img src="~/images/logo newname psd 2.png" alt="BCH Logo" /> *@</a>
-                </div>
-                <div class="search-div"><input type="text" id="searchTwoWheeler" placeholder="Search" class="for-search" /><i class="bi bi-search search-icon"></i></div>
-                <!-- <div class="logo">Logo</div> -->
-                <ul class="nav-links" id="nav-links">
-                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-controller="Compare" asp-action="TWCompare">Compare</a></li>
-                    <li><a asp-controller="Blogs" asp-action="Index">Blogs</a></li>
-                    <li><a asp-controller="EmiCalculator" asp-action="EmiCalculator">EMI Calculator </a></li>
-                  @*   <li><a asp-controller="AboutUs" asp-action="Index">About Us</a></li> *@
-                    @* <li><a asp-controller="LatestNews" asp-action="Sep22024NewsDetails1">Aug282024NewsDetails1</a></li> *@
-                    <li><a class="text-white" id="contact-link">Ask a Question</a></li>
-                    @* <li><a id="loginButton" class="btn btn-primary" onclick="openLoginModal()">Login</a></li> *@
-                </ul>
+            src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 
-                <div class="hamburger" id="hamburger">
-                    <i class="bi bi-list"></i>
-                </div>
-            </nav>
-            @* <!-- Horizontal ads -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-8720291170595920"
-                 data-ad-slot="9025038118"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script> *@
-            <div class="overlay" id="overlay">
-                <span class="close-btn" id="closeBtn"><i class="bi bi-x"></i></span>
-                <div class="overlay-content">
-                    <ul class="overlay-links">
+</head>
+@*<body>*@
+<body data-isauthenticated="@User.Identity.IsAuthenticated.ToString().ToLower()">
+    <div id="modal-root">
+        <header id="navbar" class="nav-header">
+            <div class="navbar-container">
+                <nav>
+                    <div class="logo">
+
+                        <a asp-controller="Home" asp-action="Index"><img src="~/images/bchlogo.webp" alt="bikecarhublogo" title="bikecarhublogo" /> @* <img src="~/images/new logo white bg.png" /> *@@* <img src="~/images/logo newname psd 2.png" alt="BCH Logo" /> *@</a>
+                    </div>
+                    <div class="search-div"><input type="text" id="searchTwoWheeler" placeholder="Search" class="for-search" /><i class="bi bi-search search-icon"></i></div>
+                    <!-- <div class="logo">Logo</div> -->
+                    <ul class="nav-links" id="nav-links">
                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                         <li><a asp-controller="Compare" asp-action="TWCompare">Compare</a></li>
                         <li><a asp-controller="Blogs" asp-action="Index">Blogs</a></li>
                         <li><a asp-controller="EmiCalculator" asp-action="EmiCalculator">EMI Calculator </a></li>
-                        <li><a asp-controller="AboutUs" asp-action="Index">About Us</a></li>
-                        <li><a class ="text-white" id="contact-link-overlay">Ask a Question</a></li>
-                        @* <li><a id="loginButton" class="btn btn-primary" onclick="openLoginModal()">Login</a></li> *@
+                        <li><a class="text-white" id="contact-link">Ask a Question</a></li>
+                        <li><a href="/Home/BestBikeFinder"> Budget Bikes</a></li>
+                        @*<li><a href="/home/wishlist" class="wishlist-nav"><i class="fa-solid fa-heart"></i><span id="wishlistCount">0</span></a></li>*@
+
                     </ul>
+                    <div class="d-flex align-items-center gap-3">
+                        <!-- THEME TOGGLE -->
+                        @*<label class="theme-switch">
+                                <input type="checkbox" id="darkModeToggle">
+                                <span class="slider-toggle">
+                                    <i class="bi bi-sun-fill sun-icon"></i>
+                                    <i class="bi bi-moon-fill moon-icon"></i>
+                                </span>
+                            </label>*@
+
+                        <!-- HAMBURGER -->
+                        <div class="hamburger" id="hamburger">
+                            <i class="bi bi-list"></i>
+                        </div>
+
+                    </div>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @*<div class="position-relative me-3">*@
+                        <div class="auth-section position-relative">
+                            <button id="profileToggle"
+                                    class="profile-btn d-flex align-items-center justify-content-center">
+                                <i class="bi bi-person-circle"
+                                   style="font-size: 28px; position: relative; top: -10px; "></i>
+                            </button>
+
+                            <div id="profileMenu"
+                                 class="bg-white rounded-4 shadow-lg p-2 position-absolute end-0 mt-3"
+                                 style="display:none; min-width:220px; z-index:9999;">
+                                <div class="px-3 py-2">
+                                    @*<small class="text-muted">Signed in as</small>*@
+                                    <div class="fw-semibold">@User.Identity.Name</div>
+                                </div>
+
+                                <a asp-controller="Review"
+                                   asp-action="MyReviews"
+                                   class="dropdown-item text-decoration-none">
+                                    <i class="bi bi-chat-left-text me-2"></i>
+                                    My Reviews
+                                </a>
+                                <a href="/Wishlist/Index"
+                                   id="wishlistNavLink"
+                                   class="dropdown-item text-decoration-none">
+
+                                    <div class="wishlist-row">
+
+                                        <div class="wishlist-left">
+
+                                            <div class="wishlist-icon-wrapper">
+
+                                                <i class="bi bi-heart-fill wishlist-heart-icon"></i>
+
+                                                <span id="wishlistCountBadge"
+                                                      class="wishlist-heart-count">
+                                                    0
+                                                </span>
+
+                                            </div>
+
+                                            <span>Wishlist</span>
+
+                                        </div>
+
+                                    </div>
+
+                                </a>
+                                <a asp-controller="Account"
+                                   asp-action="Logout"
+                                   class="dropdown-item text-danger text-decoration-none">
+                                    <i class="bi bi-box-arrow-right me-2"></i>
+                                    Logout
+                                </a>
+
+                            </div>
+
+                        </div>
+                    }
+                    else
+                    {
+                        @*<div class="d-flex align-items-center gap-2">*@
+                        <div class="auth-section">
+                            <a asp-controller="Account"
+                               asp-action="Login"
+                               class="custom-login-btn">
+
+                                <i class="fa fa-user"></i> Login
+
+                            </a>
+                        </div>
+                    }
+                </nav>
+                <div class="overlay" id="overlay">
+                    <span class="close-btn" id="closeBtn"><i class="bi bi-x"></i></span>
+                    <div class="overlay-content">
+                        <ul class="overlay-links">
+                            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li><a asp-controller="Compare" asp-action="TWCompare">Compare</a></li>
+                            <li><a asp-controller="Blogs" asp-action="Index">Blogs</a></li>
+                            <li><a asp-controller="EmiCalculator" asp-action="EmiCalculator">EMI Calculator </a></li>
+                            <li><a asp-controller="AboutUs" asp-action="Index">About Us</a></li>
+                            <li><a class="text-white" id="contact-link-overlay">Ask a Question</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </header>
+
+        <!-- Contact Form Popup -->
+        <div class="contact-form-popup" id="contactFormPopup">
+            <div class="contact-form-content">
+                <span class="close-btn" id="contactFormClose"><i class="bi bi-x"></i></span>
+                @* <h2>Contact Us</h2> *@
+                <form id="contactForm" method="post" asp-controller="ContactUs" asp-action="Index">
+                    <input type="hidden" name="__RequestVerificationToken" value="" />
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="Name" required>
+                    <label for="phoneNo">Phone No.</label>
+                    <input type="text" id="phoneNo" name="PhoneNo" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="Email" required>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="Message"></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </div>
-    </header>
 
-    <!-- Contact Form Popup -->
-    <div class="contact-form-popup" id="contactFormPopup">
-        <div class="contact-form-content">
-            <span class="close-btn" id="contactFormClose"><i class="bi bi-x"></i></span>
-            @* <h2>Contact Us</h2> *@
-            <form id="contactForm" method="post" asp-controller="ContactUs" asp-action="Index">
-                <input type="hidden" name="__RequestVerificationToken" value="" />
-                <label for="name">Name</label>
-                <input type="text" id="name" name="Name" required>
-                <label for="phoneNo">Phone No.</label>
-                <input type="text" id="phoneNo" name="PhoneNo" required>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="Email" required>
-                <label for="message">Message</label>
-                <textarea id="message" name="Message"></textarea>
-                <button type="submit">Submit</button>
-            </form>
+        <!-- Login Modal -->
+        <div id="loginModal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close" onclick="closeLoginModal()">&times;</span>
+                <h2>Login</h2>
+                @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "loginForm" }))
+                {
+                    <div>
+                        @Html.Label("Username")
+                        @Html.TextBox("Username", null, new { @class = "form-control", required = "required" })
+                    </div>
+                    <div>
+                        @Html.Label("Password")
+                        @Html.Password("Password", null, new { @class = "form-control", required = "required" })
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <button type="submit" class="btn btn-success">Login</button>
+                    </div>
+                    <div id="errorMessage" style="color:red; margin-top:10px;"></div>
+                }
+            </div>
         </div>
-    </div>
-
-    <!-- Login Modal -->
-    <div id="loginModal" class="modal" style="display:none;">
-        <div class="modal-content">
-            <span class="close" onclick="closeLoginModal()">&times;</span>
-            <h2>Login</h2>
-            @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "loginForm" }))
-            {
-                <div>
-                    @Html.Label("Username")
-                    @Html.TextBox("Username", null, new { @class = "form-control", required = "required" })
-                </div>
-                <div>
-                    @Html.Label("Password")
-                    @Html.Password("Password", null, new { @class = "form-control", required = "required" })
-                </div>
-                <div style="margin-top: 10px;">
-                    <button type="submit" class="btn btn-success">Login</button>
-                </div>
-                <div id="errorMessage" style="color:red; margin-top:10px;"></div>
-            }
+        <div class="">
+            <main role="main" class="">
+                @RenderBody()
+            </main>
         </div>
-    </div>
-    <div class="">
-        <main role="main" class="">
-            @RenderBody()
-        </main>
-    </div>
 
-    <!-- Footer -->
-<footer class="site-footer">
-    <div class="footer-top">
-        <div class="container">
-            <div class="row">
-                <!--<div class="col-md-3 col-sm-6 col-xs-6 footer-col-4">
-                    <div class="widget widget_about">
-                        <div class="logo-footer"><img src="images/logo-light.png" alt=""></div>
-                        <p class="m-tb20"><strong>CarZone</strong> is simply dummy text of the print ing and in type setting industry. Lorem Ipsum has bee the industry's standard...</p>
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
 
-                        <ul class="dlab-contact-info">
-                            <li><i class="flaticon-placeholder"></i>Demo Address #8901 Marmora Road Chi Minh City, Vietnam</li>
-                            <li><i class="flaticon-customer-service"></i>Phone : 0800-123456 (24/7 Support Line)</li>
-                        </ul>
-                    </div>
-                </div>-->
-                <div class="col-md-6 col-sm-6 col-xs-6 footer-col-4">
-                    <div class="widget widget_services">
-                        <h4 class="m-b15 text-uppercase">Useful Links</h4>
-                        <div class="dlab-separator bg-primary"></div>
-                        <ul>
-                            @* <li><a href="new-car-latest.html">News</a></li> *@
-                                <li><a asp-controller="ContactUs" asp-action="Index"> Contact BikeCarHub</a></li>
-                                <li><a asp-controller="AboutUs" asp-action="Index">About BikeCarHub</a></li>
-                                <li><a asp-controller="UpcomingBike" asp-action="TWUpcomingBikeDetails">Upcoming Bikes & Cars</a></li>
-                            @* <li><a href="used-car-search.html">Review</a></li> *@
-                            <!--<li><a href="used-car-sell.html">Car Sell</a></li>-->
-                                <li><a asp-controller="Compare" asp-action="TWCompare">Compare</a></li>
-                                <li><a asp-controller="Legal" asp-action="PrivacyPolicy">Privacy Policy</a></li>
-                                <li><a asp-controller="Legal" asp-action="TermsandConditions">Terms and conditions</a></li>
-                                <li><a asp-controller="Legal" asp-action="Disclaimer">Disclaimer</a></li>
-                                <li><a asp-controller="AdminLogin" asp-action="Login">AdminLogin</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-                <!--<div class="col-md-3 col-sm-6 col-xs-6 footer-col-4">
-                    <div class="widget recent-posts-entry">
-                        <h4 class="m-b15 text-uppercase">recent posts </h4>
-                        <div class="dlab-separator bg-primary"></div>
-                        <div class="widget-post-bx">
-                            <div class="widget-post clearfix">
-                                <div class="dlab-post-media"> <img src="images/blog/recent-blog/pic1.jpg" alt="" width="200" height="143"> </div>
-                                <div class="dlab-post-info">
-                                    <div class="dlab-post-header">
-                                        <h5><a href="blog-single.html">Time to change...</a></h5>
-                                    </div>
-                                    <div class="dlab-post-meta">
-                                        <ul>
-                                            <li class="post-author">By Admin</li>
-                                            <li class="post-comment"><i class="fa fa-comments"></i> 28</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="widget-post clearfix">
-                                <div class="dlab-post-media"> <img src="images/blog/recent-blog/pic2.jpg" alt="" width="200" height="160"> </div>
-                                <div class="dlab-post-info">
-                                    <div class="dlab-post-header">
-                                        <h5><a href="blog-single.html">Time to change...</a></h5>
-                                    </div>
-                                    <div class="dlab-post-meta">
-                                        <ul>
-                                            <li class="post-author">By Admin</li>
-                                            <li class="post-comment"><i class="fa fa-comments"></i> 28</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="widget-post clearfix">
-                                <div class="dlab-post-media"> <img src="images/blog/recent-blog/pic3.jpg" alt="" width="200" height="160"> </div>
-                                <div class="dlab-post-info">
-                                    <div class="dlab-post-header">
-                                        <h5><a href="blog-single.html">Time to change...</a></h5>
-                                    </div>
-                                    <div class="dlab-post-meta">
-                                        <ul>
-                                            <li class="post-author">By Admin</li>
-                                            <li class="post-comment"><i class="fa fa-comments"></i> 28</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
-               
-
-                    <div class ="col-md-6 col-sm-6 col-xs-6 footer-col-4">
-                    <div class="widget ">
-                        <h4 class="m-b15 text-uppercase">Newsletter </h4>
-                        <div class="dlab-separator bg-primary"></div>
-                        <p class="m-tb20">Keep up on our always evolving products features and technology. Enter your e-mail and subscribe to our newsletter.</p>
-                        
-                            <form id="newsletterForm" method="post" class="dlab-subscribe-form dzSubscribe  m-l10 m-r10" asp-controller="Home" asp-action="NewsLetter">
-                                <div class="dzSubscribeMsg"></div>
-                                <div class="input-group m-b15">
-                                    <input name="Email" required="required" type="email" class="form-control" placeholder="Enter Your Email">
-                                </div>
-                                <div class="input-group">
-                                    <button type="submit" class="contact-form-button">
-                                        SUBSCRIBE TO BIKECARHUB
-                                    </button>
-                                </div>
-                            </form>
-                     </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 footer-col-4">
-                            <div class="widget ">
-                                <h4 class="m-b15 text-uppercase">About Bikecarhub </h4>
+                        <!-- Useful Links -->
+                        <div class="col-md-3 col-sm-6 footer-col-4 p-r0">
+                            <div class="widget widget_services">
+                                <h4 class="m-b15 text-uppercase">Useful Links</h4>
                                 <div class="dlab-separator bg-primary"></div>
-                                <p class="m-tb20">BikeCarHub is a one-stop destination for Indian vehicle shoppers, combining pricing tools, informative reviews, comparison features, launch calendars, and news—all maintained by an established tech firm in Dehradun. It's especially handy if you're researching your next ride, be it bike, scooter, car or EV.</p>
+
+                                <ul>
+                                    <li><a asp-controller="ContactUs" asp-action="Index">Contact BikeCarHub</a></li>
+                                    <li><a asp-controller="AboutUs" asp-action="Index">About BikeCarHub</a></li>
+                                    <li><a asp-controller="UpcomingBike" asp-action="TWUpcomingBikeDetails">Upcoming Bikes & Cars</a></li>
+                                    <li><a asp-controller="Compare" asp-action="TWCompare">Compare</a></li>
+                                    <li><a asp-controller="Legal" asp-action="PrivacyPolicy">Privacy Policy</a></li>
+                                    <li><a asp-controller="Legal" asp-action="TermsandConditions">Terms and Conditions</a></li>
+                                    <li><a asp-controller="Legal" asp-action="Disclaimer">Disclaimer</a></li>
+                                    <li><a asp-controller="AdminLogin" asp-action="Login">Admin Login</a></li>
+                                </ul>
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-sm-6 col-xs-6 footer-col-4">
-                            <div class="widget ">
-                                <h4 class="m-b15 text-uppercase">Contact Us</h4>
+                        <!-- Newsletter -->
+                        <div class="col-md-4 col-sm-6 footer-col-4">
+                            <div class="widget">
+                                <h4 class="m-b15 text-uppercase">Newsletter</h4>
                                 <div class="dlab-separator bg-primary"></div>
+
                                 <p class="m-tb20">
-                                    <span class="font-weight-700"> Phone:</span>  +91 8630235507<br /><span class="font-weight-700">Email: </span> info@voxtus.com
+                                    Keep up on our always evolving products features and technology.
+                                    Enter your email and subscribe to our Newsletter.
+                                </p>
+
+                                <form id="newsletterForm"
+                                      method="post"
+                                      class="dlab-subscribe-form dzSubscribe"
+                                      asp-controller="Home"
+                                      asp-action="NewsLetter">
+
+                                    <div class="dzSubscribeMsg"></div>
+
+                                    <div class="input-group m-b15">
+                                        <input name="Email"
+                                               required="required"
+                                               type="email"
+                                               class="form-control rounded-pill px-4"
+                                               placeholder="Enter your email">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <button type="submit"
+                                                class="contact-form-button rounded-pill">
+                                            SUBSCRIBE TO BIKECARHUB
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- About -->
+                        <div class="col-md-3 col-sm-6 footer-col-4">
+                            <div class="widget">
+                                <h4 class="m-b15 text-uppercase">About BikeCarHub</h4>
+                                <div class="dlab-separator bg-primary"></div>
+
+                                <p class="m-tb20">
+                                    BikeCarHub is a one-stop destination for Indian vehicle shoppers,
+                                    combining pricing tools, informative reviews, comparison features,
+                                    launch calendars, and news—all maintained by an established tech
+                                    firm in Dehradun. It's especially handy if you're researching your
+                                    next ride, be it a Bike, Scooter, Car or EV.
                                 </p>
                             </div>
                         </div>
-                     <ul style="display: flex; list-style:none; gap:20px; align-items:center">   
-                            @* <li><a href="#" class="site-button-link facebook hover"><i class="fa fa-facebook"></i></a></li> *@
-                            <li><a href="https://www.instagram.com/?hl=en" class="site-button-link google-plus hover"><i class="bi bi-instagram"></i></a></li>
-                            <li><a href="https://x.com/home?lang=en" class="site-button-link twitter hover"><i class="bi bi-twitter-x"></i></a></li>
-                            <li><a href="https://www.linkedin.com/feed/?trk=nav_back_to_linkedin" class="site-button-link linkedin hover"><i class="fa fa-linkedin"></i></a></li>
-                    </ul> 
+
+                        <!-- Contact -->
+                        <div class="col-md-2 col-sm-6 footer-col-4">
+                            <div class="widget">
+                                <h4 class="m-b15 text-uppercase">Contact Us</h4>
+                                <div class="dlab-separator bg-primary"></div>
+
+                                <p class="m-tb20">
+                                    <span class="font-weight-700">Phone:</span>
+                                    +91 8630235507
+                                    <br />
+
+                                    <span class="font-weight-700">Email:</span>
+                                    info@voxtus.com
+                                </p>
+
+                                <ul class="social-icons">
+                                    <li>
+                                        <a href="https://www.instagram.com/?hl=en"
+                                           class="site-button-link google-plus hover">
+                                            <i class="bi bi-instagram"></i>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="https://x.com/home?lang=en"
+                                           class="site-button-link twitter hover">
+                                            <i class="bi bi-twitter-x"></i>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="https://www.linkedin.com/feed/?trk=nav_back_to_linkedin"
+                                           class="site-button-link linkedin hover">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-           <!-- <div class="clearfix">
-                <ul class="full-social-icon clearfix">
-                    <li class="fb col-md-3 col-sm-6 col-xs-6 m-b30">
-                        <a href="#"><i class="fa fa-facebook"></i> Share On Facebook </a>
-                    </li>
-                    <li class="tw col-md-3 col-sm-6 col-xs-6 m-b30">
-                        <a href="#"><i class="fa fa-twitter"></i> Tweet About it </a>
-                    </li>
-                    <li class="gplus col-md-3 col-sm-6 col-xs-6 m-b30">
-                        <a href="#"><i class="fa fa-google-plus"></i> Google Plus | 78+ </a>
-                    </li>
-                    <li class="linkd col-md-3 col-sm-6 col-xs-6 m-b30">
-                        <a href="#"><i class="fa fa-linkedin"></i> Linkedin | 21k </a>
-                    </li>
-                </ul>
-            </div>-->
-        </div>
-    </div>
-    <!-- footer bottom part -->
-    <div class="footer-bottom">
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-6 col-sm-6 text-left"> © 2024 <a href="https://voxtus.com/" target="_blank">Voxtus Technologies Pvt. Ltd.</a> All rights reserved. </div>
-                <div class="col-md-6 col-sm-6 text-right ">
-                        <a asp-controller="AboutUs" asp-action="Index"> About BikeCarHub</a> |
-                        <a asp-controller="ContactUs" asp-action="Index"> Contact BikeCarHub</a> @* | *@
-                    @* <a href="page-about.html"> Privacy Policy</a> *@
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-6 col-sm-6 text-left">
+                            © 2024
+                            <a href="https://voxtus.com/" target="_blank">
+                                Voxtus Technologies Pvt. Ltd.
+                            </a>
+                            All rights reserved.
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 text-right">
+                            <a asp-controller="AboutUs" asp-action="Index">
+                                About BikeCarHub
+                            </a>
+                            |
+                            <a asp-controller="ContactUs" asp-action="Index">
+                                Contact BikeCarHub
+                            </a>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</footer>
-<!-- Footer END-->
-    <!--<script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>-->
-    <!--<script src="~/js/site.js" asp-append-version="true"></script>-->
-    @await RenderSectionAsync("Scripts", required: false)
-    <!--Script for scrolling of view components -->
-    <script>
-        function scrollContainer(containerId, direction) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-
-            const item = container.querySelector('.blogs-item');
-            if (!item) return;
-
-            const itemWidth = item.offsetWidth;
-            container.scrollBy({ left: direction * itemWidth, behavior: 'smooth' });
+        </footer>
+        <!-- Footer END-->
+        <!-- LOGIN POPUP -->
+        @{
+            string currentPath = Context.Request.Path.Value?.ToLower() ?? "";
         }
-    </script>
-    <!--Script for ads-->
-    <script>
-        // Hide empty AdSense containers
-        setTimeout(function () {
-            document.querySelectorAll('.google-ad').forEach(ad => {
-                if (ad.offsetHeight <= 0) {
-                    ad.style.display = "none";
-                }
-            });
-        }, 3000); // wait 3 seconds after page load
-    </script>
-</body>
-</html>
+        @{
+            var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+            var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
 
-
-
-@* <link href="~/css/plugins.css" rel="stylesheet" /> *@
-@* <link href="~/css/skin/skin-1.css" rel="stylesheet" /> *@
-@* <link href="~/plugins/revolution/v5.4.3/css/navigation.css" rel="stylesheet" /> *@
-@* <link href="~/plugins/revolution/v5.4.3/css/settings.css" rel="stylesheet" /> *@
-
-
- @* <script src="~/js/jquery.min.js"></script> *@
- @* <script src="~/js/wow.js"></script> *@
- @* <script src="~/js/bootstrap.min.js"></script> *@
- @* <script src="~/js/bootstrap-select.min.js"></script> *@
- @* <script src="~/js/jquery.bootstrap-touchspin.js"></script>
- <script src="~/js/magnific-popup.js"></script>
- <script src="~/js/waypoints-min.js"></script>
- <script src="~/js/counterup.min.js"></script>
- <script src="~/js/imagesloaded.js"></script>
- <script src="~/js/masonry-3.1.4.js"></script>
- <script src="~/js/masonry.filter.js"></script>
- <script src="~/js/owl.carousel.js"></script>
- <script src="~/js/dz.carousel.js"></script>
- <script src="~/js/dz.ajax.js"></script> *@
-
-@*  <script src="~/plugins/revolution/v5.4.3/js/jquery.themepunch.revolution.min.js"></script>
- <script src="~/plugins/revolution/v5.4.3/js/jquery.themepunch.tools.min.js"></script>
- <script src="~/plugins/revolution/v5.4.3/js/extensions/revolution.extension.actions.min.js"></script>
- <script src="~/plugins/revolution/v5.4.3/js/extensions/revolution.extension.carousel.min.js"></script>
- <script src="~/plugins/revolution/v5.4.3/js/extensions/revolution.extension.kenburn.min.js"></script>
- <script src="~/plugins/revolution/v5.4.3/js/extensions/revolution.extension.layeranimation.min.js"></script>
- <script src="~/plugins/revolution/v5.4.3/js/extensions/revolution.extension.migration.min.js"></script>
- <script src="~/plugins/revolution/v5.4.3/js/extensions/revolution.extension.parallax.min.js"></script>
- <script src="~/plugins/revolution/v5.4.3/js/extensions/revolution.extension.slideanims.min.js"></script>
- <script src="~/plugins/revolution/v5.4.3/js/extensions/revolution.extension.video.min.js"></script> *@
- @* <script src="~/js/rev.slider.js"></script>
- <script src="~/js/modernizr.custom.js"></script>
- <script src="~/js/jquery.hoverdir.js"></script> *@
- @* <script src="~/js/custom.min.js"></script> *@
-@* <script>
-    jQuery(document).ready(function () {
-        'use strict';
-        dz_rev_slider_1();
-    }); /*ready*/
-</script> *@
-<!--Ask a Question-->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const navbar = document.getElementById('navbar');
-        const overlay = document.getElementById('overlay');
-        const hamburger = document.getElementById('hamburger');
-        const closeBtn = document.getElementById('closeBtn');
-        const contactLink = document.getElementById('contact-link');
-        const contactLinkOverlay = document.getElementById('contact-link-overlay');
-        const contactForm = document.getElementById('contactForm');
-        const contactFormPopup = document.getElementById('contactFormPopup');
-        const contactFormClose = document.getElementById('contactFormClose');
-
-        // Toggle overlay menu
-        hamburger.addEventListener('click', () => {
-            overlay.style.display = 'block';
-        });
-
-        closeBtn.addEventListener('click', () => {
-            overlay.style.display = 'none';
-        });
-
-        // Show contact form popup
-        contactLink.addEventListener('click', () => {
-            contactFormPopup.style.display = 'flex';
-        });
-
-        contactLinkOverlay.addEventListener('click', () => {
-            overlay.style.display = 'none';
-            contactFormPopup.style.display = 'flex';
-        });
-
-        // Close contact form popup
-        contactFormClose.addEventListener('click', () => {
-            contactFormPopup.style.display = 'none';
-        });
-
-        // Change navbar color on scroll
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.remove('transparent');
-                navbar.classList.add('white-bg');
-            } else {
-                navbar.classList.remove('white-bg');
-                navbar.classList.add('transparent');
-            }
-        });
-
-        // Initial navbar color
-        if (window.scrollY <= 50) {
-            navbar.classList.add('transparent');
+            bool hideAuthPopup =
+                currentController == "Account" &&
+                (currentAction == "Login"
+                || currentAction == "Register"
+                || currentAction == "ForgotPassword"
+                || currentAction == "ResetPassword");
         }
-        // Submit form via AJAX
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const formData = new FormData(contactForm);
-            const response = await fetch(contactForm.action, {
-                method: 'POST',
-                body: formData,
-            });
-            const result = await response.text(); // Use text() instead of json() for ASP.NET responses
+        @*@if (!User.Identity.IsAuthenticated && currentPath != "/account/login" && currentPath != "/account/register")*@
+        @if (!User.Identity.IsAuthenticated && !hideAuthPopup)
+        {
+            <div id="authPopupOverlay" class="auth-popup-overlay">
 
-            if (response.ok) {
-                alert('Your message has been sent. Thank you!');
-                contactForm.reset();
-                contactFormPopup.style.display = 'none';
-            } else {
-                alert('There was an error. Please try again.');
-            }
-        });
-    });</script>
+                <div class="auth-popup-box">
 
-<script>
-        document.getElementById('newsletterForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the default form submission
+                    <h2>Welcome to BikeCarHub</h2>
 
-            // Perform the actual form submission using fetch or any other method
-            const form = event.target;
-            const formData = new FormData(form);
+                    <p>
+                        Login or register for a better experience.
+                    </p>
 
-            fetch(form.action, {
-                method: form.method,
-                body: formData
-            }).then(response => {
-                if (response.ok) {
-                    // If the submission is successful, clear the form
-                    form.reset();
-                    // Optionally, you can display a success message here
-                    document.querySelector('.dzSubscribeMsg').innerHTML = 'Subscription successful!';
-                } else {
-                    // Handle the error case
-                    document.querySelector('.dzSubscribeMsg').innerHTML = 'Subscription failed. Please try again.';
-                }
-            }).catch(error => {
-                // Handle network errors or other errors
-                document.querySelector('.dzSubscribeMsg').innerHTML = 'An error occurred. Please try again.';
-            });
-        });
-</script>
+                    <div class="auth-popup-buttons">
 
-<!---------------------Search--------------------------->
+                        <a asp-controller="Account"
+                           asp-action="Login"
+                           class="btn btn-dark w-100 mb-2">
+                            Login
+                        </a>
 
-<link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> 
-@* <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script> *@
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script> 
+                        <a asp-controller="Account"
+                           asp-action="Register"
+                           class="btn btn-primary w-100 mb-2">
+                            Register
+                        </a>
 
-<script>
+                        <button id="guestBtn"
+                                class="btn btn-outline-secondary w-100">
+                            Continue as Guest
+                        </button>
 
-    $(document).ready(function () {
-        $("#searchTwoWheeler").val("");
-        $("#searchTwoWheeler").autocomplete({
-            source: function (request, response) {
-                $.ajax({
-                    url: '@Url.Action("GetTwoWheelerNames", "Home")',
-                    data: { term: request.term },
-                    success: function (data) {
-                        // Process the data
-                        response($.map(data, function (item) {
-                            return {
-                                // label: item,  Display name in the dropdown
-                                // value: item   Selected value
-                                 label: item.label,
-                                value: item.label,
-                                type: item.type
-                            };
-                        }));
+                    </div>
 
-                        // Automatically select the first item from the list
-                        if (data.length > 0) {
-                            $("#searchTwoWheeler").autocomplete("option", "autoFocus", true);
-                            // $("#searchTwoWheeler").val(data[0]); // Set the input field to the first result
+                </div>
 
-                            // Trigger the select event automatically for the first item
-                            // $("#searchTwoWheeler").data("ui-autocomplete")._trigger("select", null, { item: { value: data[0] } });
-                        }
+            </div>
+        }
+
+        @*@await RenderSectionAsync("Scripts", required: false)*@
+        <!--Script for scrolling of view components -->
+        <script>function scrollContainer(containerId, direction) {
+                const container = document.getElementById(containerId);
+                if (!container) return;
+
+                const item = container.querySelector('.blogs-item');
+                if (!item) return;
+
+                //const itemWidth = item.offsetWidth;
+                const itemWidth = item?.offsetWidth || 0;
+                container.scrollBy({ left: direction * itemWidth, behavior: 'smooth' });
+            }</script>
+        <!--Script for ads-->
+        <script>// Hide empty AdSense containers
+            setTimeout(function () {
+                document.querySelectorAll('.google-ad').forEach(ad => {
+                    if (ad.offsetHeight <= 0) {
+                        ad.style.display = "none";
                     }
                 });
-            },
-            // select: function (event, ui) {
-                // When an item is selected (either manually or automatically)
-            //     $.ajax({
-            //         url: '@Url.Action("GetTwoWheelerDetailsByName", "Home")',
-            //         data: { twoWheelerName: ui.item.value },
-            //         success: function (data) {
-            //             Redirect to the details page using the slug
-            //             window.location.href = '/' + data.brandName + '/' + data.twName;
-            //         }
-            //     });
-            // },
-             select: function (event, ui) {
-                if (ui.item.type === "TwoWheeler") {
-                    // Call existing TwoWheeler redirect logic
+            }, 3000); // wait 3 seconds after page load</script>
+        <script>document.addEventListener("click", function (e) {
+
+                const link = e.target.closest(".brand-bike-card a");
+
+                if (link) {
+                    link.blur();
+                }
+
+            });</script>
+
+        <script>document.addEventListener("DOMContentLoaded", () => {
+
+                const profileToggle = document.getElementById("profileToggle");
+                const profileMenu = document.getElementById("profileMenu");
+
+                if (profileToggle && profileMenu) {
+
+                    profileToggle.addEventListener("click", (e) => {
+
+                        e.stopPropagation();
+
+                        if (profileMenu.style.display === "block") {
+                            profileMenu.style.display = "none";
+                        }
+                        else {
+                            profileMenu.style.display = "block";
+                        }
+
+                    });
+
+                    document.addEventListener("click", () => {
+                        profileMenu.style.display = "none";
+                    });
+
+                }
+
+            });</script>
+        <script>document.addEventListener('DOMContentLoaded', () => {
+
+                const navbar = document.getElementById('navbar');
+                const overlay = document.getElementById('overlay');
+                const hamburger = document.getElementById('hamburger');
+                const closeBtn = document.getElementById('closeBtn');
+
+                const contactLink = document.getElementById('contact-link');
+                const contactLinkOverlay = document.getElementById('contact-link-overlay');
+
+                const contactForm = document.getElementById('contactForm');
+                const contactFormPopup = document.getElementById('contactFormPopup');
+                const contactFormClose = document.getElementById('contactFormClose');
+
+                // Prevent overlay from blocking clicks initially
+                if (overlay) {
+                    overlay.style.pointerEvents = 'none';
+                }
+
+                // OPEN MENU
+                if (hamburger && overlay) {
+
+                    hamburger.addEventListener('click', () => {
+
+                        overlay.style.display = 'block';
+                        overlay.style.pointerEvents = 'auto';
+
+                    });
+                }
+
+                // CLOSE MENU
+                if (closeBtn && overlay) {
+
+                    closeBtn.addEventListener('click', () => {
+
+                        overlay.style.display = 'none';
+                        overlay.style.pointerEvents = 'none';
+
+                    });
+                }
+
+                // OPEN CONTACT FORM
+                if (contactLinkOverlay && contactFormPopup && overlay) {
+
+                    contactLinkOverlay.addEventListener('click', () => {
+
+                        overlay.style.display = 'none';
+                        overlay.style.pointerEvents = 'none';
+
+                        contactFormPopup.style.display = 'flex';
+
+                    });
+                }
+
+                // CLOSE CONTACT FORM
+                if (contactFormClose && contactFormPopup) {
+
+                    contactFormClose.addEventListener('click', () => {
+
+                        contactFormPopup.style.display = 'none';
+
+                    });
+                }
+
+                // NAVBAR SCROLL EFFECT
+                if (navbar) {
+
+                    window.addEventListener('scroll', () => {
+
+                        if (window.scrollY > 50) {
+
+                            navbar.classList.remove('transparent');
+                            navbar.classList.add('white-bg');
+
+                        } else {
+
+                            navbar.classList.remove('white-bg');
+                            navbar.classList.add('transparent');
+
+                        }
+
+                    });
+
+                    if (window.scrollY <= 50) {
+
+                        navbar.classList.add('transparent');
+
+                    }
+                }
+
+                // CONTACT FORM SUBMIT
+                if (contactForm) {
+
+                    contactForm.addEventListener('submit', async (e) => {
+
+                        e.preventDefault();
+
+                        const formData = new FormData(contactForm);
+
+                        try {
+
+                            const response = await fetch(contactForm.action, {
+                                method: 'POST',
+                                body: formData
+                            });
+
+                            if (response.ok) {
+
+                                alert('Your message has been sent. Thank you!');
+
+                                contactForm.reset();
+
+                                contactFormPopup.style.display = 'none';
+
+                            } else {
+
+                                alert('There was an error. Please try again.');
+
+                            }
+
+                        } catch (error) {
+
+                            console.error(error);
+
+                            alert('Something went wrong.');
+
+                        }
+
+                    });
+                }
+
+            });</script>
+
+        <script>document.addEventListener("DOMContentLoaded", function () {
+
+                const newsletterForm = document.getElementById('newsletterForm');
+
+                if (newsletterForm) {
+
+                    newsletterForm.addEventListener('submit', async function (event) {
+
+                        event.preventDefault();
+
+                        const formData = new FormData(newsletterForm);
+
+                        try {
+
+                            const response = await fetch(newsletterForm.action, {
+                                method: newsletterForm.method,
+                                body: formData
+                            });
+
+                            if (response.ok) {
+
+                                alert("Subscribed successfully!");
+                                newsletterForm.reset();
+
+                            } else {
+
+                                alert("Subscription failed!");
+
+                            }
+
+                        } catch (error) {
+
+                            console.error(error);
+                            alert("Something went wrong.");
+
+                        }
+
+                    });
+
+                }
+
+            });</script>
+        <script>document.addEventListener("DOMContentLoaded", function () {
+
+                const wishlistLink =
+                    document.getElementById("wishlistNavLink");
+
+                if (!wishlistLink) return;
+
+                wishlistLink.addEventListener("click", function (e) {
+
+                    const isLoggedIn =
+                        document.body.dataset.isauthenticated === "true";
+
+                    if (!isLoggedIn) {
+
+                        e.preventDefault();
+
+                        const modal =
+                            new bootstrap.Modal(
+                                document.getElementById("loginRequiredModal")
+                            );
+
+                        modal.show();
+                    }
+                });
+            });</script>
+
+        <!---------------------Search--------------------------->
+
+        <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+        @*
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script>*@
+
+        <script>$(document).ready(function () {
+            $("#searchTwoWheeler").val("");
+            $("#searchTwoWheeler").autocomplete({
+                source: function (request, response) {
                     $.ajax({
-                        url: '@Url.Action("GetTwoWheelerDetailsByName", "Home")',
-                        data: { twoWheelerName: ui.item.value },
+                        url: '@Url.Action("GetTwoWheelerNames", "Home")',
+                        data: { term: request.term },
                         success: function (data) {
-                            if (data) {
-                                window.location.href = '/' + data.brandName + '/' + data.twName;
+                            // Process the data
+                            response($.map(data, function (item) {
+                                return {
+                                    // label: item,  Display name in the dropdown
+                                    // value: item   Selected value
+                                    label: item.label,
+                                    value: item.label,
+                                    type: item.type
+                                };
+                            }));
+
+                            // Automatically select the first item from the list
+                            if (data.length > 0) {
+                                $("#searchTwoWheeler").autocomplete("option", "autoFocus", true);
                             }
                         }
                     });
-                } else if (ui.item.type === "Compare") {
-                    // Redirect using CompareItems table (assume compareUrl exists in DB)
-                    window.location.href = '/Compare/' + ui.item.value.toLowerCase().replace(/\s+/g, "-");
-                }
-            },
-            minLength: 2 // Start searching after 2 characters
-        });
-    });
-</script>
-@* -----------------------------------Login pages---------------------------------- *@
-<script>
-    function openLoginModal() {
-        document.getElementById('loginModal').style.display = 'flex';
-    }
+                },
+                select: function (event, ui) {
+                    if (ui.item.type === "TwoWheeler") {
+                        // Call existing TwoWheeler redirect logic
+                        $.ajax({
+                            url: '@Url.Action("GetTwoWheelerDetailsByName", "Home")',
+                            data: { twoWheelerName: ui.item.value },
+                            success: function (data) {
+                                if (data) {
+                                    window.location.href = '/' + data.brandName + '/' + data.twName;
+                                }
+                            }
+                        });
+                    } else if (ui.item.type === "Compare") {
+                        // Redirect using CompareItems table (assume compareUrl exists in DB)
+                        window.location.href = '/Compare/' + ui.item.value.toLowerCase().replace(/\s+/g, "-");
+                    }
+                },
+                minLength: 2 // Start searching after 2 characters
+            });
+        });</script>
+        <script>const darkModeToggle = document.getElementById("darkModeToggle");
 
-    function closeLoginModal() {
-        document.getElementById('loginModal').style.display = 'none';
-    }
-</script>
-@* @if (Session["Username"] != null)
-{
-    <span>Welcome, @Session["Username"]!</span>
-    <a href="/Account/Logout" class="btn btn-danger">Logout</a>
-}
-else
-{
-    <button id="loginButton" class="btn btn-primary" onclick="openLoginModal()">Login</button>
-} *@
+            darkModeToggle.addEventListener("click", () => {
+
+                document.body.classList.toggle("dark-mode");
+
+                if (document.body.classList.contains("dark-mode")) {
+                    localStorage.setItem("theme", "dark");
+                }
+                else {
+                    localStorage.setItem("theme", "light");
+                }
+            });
+
+            window.addEventListener("load", () => {
+
+                const savedTheme = localStorage.getItem("theme");
+
+                if (savedTheme === "dark") {
+                    document.body.classList.add("dark-mode");
+                }
+
+            });</script>
+        @* -----------------------------------Login pages---------------------------------- *@
+        <script>function openLoginModal() {
+                document.getElementById('loginModal').style.display = 'flex';
+            }
+
+            function closeLoginModal() {
+                document.getElementById('loginModal').style.display = 'none';
+            }</script>
+
+        @*<script>setTimeout(() => {
+
+                const popup = document.getElementById("authPopupOverlay");
+                const guestBtn = document.getElementById("guestBtn");
+
+                if (!popup) return;
+
+                const dismissed = localStorage.getItem("bch_guest_mode");
+
+                if (dismissed !== "true") {
+                    popup.style.display = "flex";
+                }
+
+                if (guestBtn) {
+
+                    guestBtn.onclick = function () {
+
+                        localStorage.setItem("bch_guest_mode", "true");
+
+                        popup.style.display = "none";
+                    };
+                }
+
+            }, 500);</script>*@
+        <script>async function updateWishlistCount() {
+
+                const badge =
+                    document.getElementById("wishlistCountBadge");
+
+                if (!badge) return;
+
+                try {
+
+                    const response =
+                        await fetch('/Wishlist/GetWishlistCount');
+
+                    const count =
+                        await response.json();
+
+                    badge.innerText = count;
+
+                    if (count <= 0) {
+
+                        badge.style.display = "none";
+
+                    } else {
+
+                        badge.style.display = "flex";
+
+                    }
+
+                } catch (error) {
+
+                    console.log(error);
+
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+
+                updateWishlistCount();
+
+            });</script>
+        <script>document.addEventListener("DOMContentLoaded", function () {
+
+                const popup =
+                    document.getElementById("authPopupOverlay");
+
+                const guestBtn =
+                    document.getElementById("guestBtn");
+
+                if (!popup) return;
+
+                const guestMode =
+                    localStorage.getItem("bch_guest_mode");
+
+                if (guestMode !== "true") {
+
+                    setTimeout(() => {
+
+                        popup.style.display = "flex";
+
+                    }, 600);
+                }
+
+                if (guestBtn) {
+
+                    guestBtn.addEventListener("click", function () {
+
+                        localStorage.setItem(
+                            "bch_guest_mode",
+                            "true"
+                        );
+
+                        popup.style.display = "none";
+                    });
+                }
+
+            });</script>
+        <div class="modal"
+             id="loginRequiredModal"
+             tabindex="-1"
+             aria-hidden="true">
+
+            <div class="modal-dialog modal-dialog-centered">
+
+                <div class="modal-content bch-login-modal">
+
+                    <button type="button"
+                            class="btn-close custom-close"
+                            data-bs-dismiss="modal">
+                    </button>
+
+                    <div class="modal-body text-center">
+
+                        <div class="bch-modal-logo">
+
+                            <img src="/images/bchlogo.webp"
+                                 alt="BikeCarHub">
+
+                        </div>
+
+                        <div class="bch-heart-circle">
+
+                            <i class="fa-solid fa-heart"></i>
+
+                        </div>
+
+                        <h3>
+                            Your Bike Awaits
+                        </h3>
+
+                        <p>
+                            Login to add bikes to your wishlist
+                            and access them anytime on BikeCarHub.
+                        </p>
+
+                        <div class="bch-modal-buttons">
+                            <a href="/Account/Login"
+                               class="bch-login-btn">
+                                Login Now
+                            </a>
+                            <button type="button"
+                                    class="bch-cancel-btn"
+                                    data-bs-dismiss="modal">
+                                Continue Browsing
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>document.addEventListener('hidden.bs.modal', function () {
+
+                document.body.classList.remove('modal-open');
+
+                document.body.style = '';
+
+                document.querySelectorAll('.modal-backdrop')
+                    .forEach(el => el.remove());
+
+            });</script>
+        @*@RenderSection("Scripts", required: false)*@
+        @await RenderSectionAsync("Scripts", required: false)
+    </div>
+</body>
+</html>

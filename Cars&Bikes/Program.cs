@@ -3,6 +3,8 @@ using Cars_Bikes.Models;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Identity;
+using Cars_Bikes.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,27 +12,38 @@ var builder = WebApplication.CreateBuilder(args);
 //builder.Services.AddControllers();
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<TwoWheelerDB>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Con")));
+//builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+builder.Services.AddIdentity<ApplicationUser, IdentityRole<int>>()
+    .AddEntityFrameworkStores<TwoWheelerDB>()
+    .AddDefaultTokenProviders();
 builder.Services.AddDbContext<FourWheelerDB>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Con")));
 
 builder.Services.AddSession();
-builder.Services.AddAuthentication("MyCookieAuth")
-    .AddCookie("MyCookieAuth", options =>
-    {
-        options.LoginPath = "/Account/Login"; // Redirect here if not logged in
-        options.LogoutPath = "/Account/Logout";
-        options.AccessDeniedPath = "/Account/AccessDenied";
-        options.ExpireTimeSpan = TimeSpan.FromMinutes(30); // Cookie expires in 30 min
-        options.SlidingExpiration = true; // Renew cookie on activity
-        options.Cookie.HttpOnly = true; // Prevent JavaScript access (more secure)
-        options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Use only HTTPS
-        options.Cookie.SameSite = SameSiteMode.Strict; // Prevent cross-site acces
-    });
+//builder.Services.AddAuthentication("MyCookieAuth")
+//    .AddCookie("MyCookieAuth", options =>
+//    {
+//        options.LoginPath = "/Account/Login"; // Redirect here if not logged in
+//        options.LogoutPath = "/Account/Logout";
+//        options.AccessDeniedPath = "/Account/AccessDenied";
+//        options.ExpireTimeSpan = TimeSpan.FromMinutes(30); // Cookie expires in 30 min
+//        options.SlidingExpiration = true; // Renew cookie on activity
+//        options.Cookie.HttpOnly = true; // Prevent JavaScript access (more secure)
+//        options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Use only HTTPS
+//        options.Cookie.SameSite = SameSiteMode.Strict; // Prevent cross-site acces
+//    });
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
     options.AddPolicy("AuthorOnly", policy => policy.RequireRole("Author"));
 });
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Account/Login";
+});
+builder.Services.Configure<EmailSettings>(
+    builder.Configuration.GetSection("EmailSettings"));
 
+builder.Services.AddScoped<EmailService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -41,7 +54,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 //app.UseStaticFiles();
 app.UseStaticFiles(new StaticFileOptions
 {
@@ -57,19 +70,21 @@ app.UseAuthorization();
 app.UseSession(); // Enable session
 
 app.MapControllerRoute(
+    name: "twoWheelerDetails",
+    //pattern: "{brandName}/{twName}",
+    pattern: "bike/{brandName}/{twName}",
+    defaults: new { controller = "Home", action = "TwoWheelerDetails" });
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
 app.Run();
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapControllerRoute(
+//        name: "twoWheelerDetails",
+//        pattern: "{brandName}/{twName}",
+//        defaults: new { controller = "Home", action = "TwoWheelerDetails" });
 
-
-
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllerRoute(
-        name: "twoWheelerDetails",
-        pattern: "{brandName}/{twName}",
-        defaults: new { controller = "Home", action = "TwoWheelerDetails" });
-
-    endpoints.MapDefaultControllerRoute(); // Other default routes
-});
+//    endpoints.MapDefaultControllerRoute(); // Other default routes
+//});

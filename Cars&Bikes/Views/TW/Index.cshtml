@@ -7,7 +7,7 @@
 
 <body>
     <div class="header-img"> <img src="~/images/main-slider/header.png" /></div>
-    
+
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
         <div class="col-md-8">
             <h2>TWSpec List</h2>
@@ -16,36 +16,36 @@
                 <button type="submit" class="btn btn-primary">Search</button>
             </form>
             <div class="card shadow-lg p-4">
-    <div class="table-responsive">
+                <div class="table-responsive">
 
-  <table class="table table-striped  table-bordered">
-    <thead>
-        <tr>
-            <th>TW Name</th>
-            <th>Variant</th>
-            <th>Milage</th>
-            <th>Fuel Capacity</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.TWName</td>
-                <td>@item.Varients</td>
-                <td>@item.Milage</td>
-                <td>@item.FuelCapacity</td>
-                <td>
-                    <a asp-action="EditTWSpec" asp-route-id="@item.TWSpecId" class="btn btn-sm btn-warning">Edit</a>
-                        <a asp-action="Delete" asp-route-id="@item.TWSpecId" class="btn btn-sm btn-danger">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-</div>
-</div>
-</div>
+                    <table class="table table-striped  table-bordered">
+                        <thead>
+                            <tr>
+                                <th>TW Name</th>
+                                <th>Variant</th>
+                                <th>Milage</th>
+                                <th>Fuel Capacity</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.TWName</td>
+                                    <td>@item.Varients</td>
+                                    <td>@item.Milage</td>
+                                    <td>@item.FuelCapacity</td>
+                                    <td>
+                                        <a asp-action="EditTWSpec" asp-route-id="@item.TWSpecId" class="btn btn-sm btn-warning">Edit</a>
+                                        <a asp-action="Delete" asp-route-id="@item.TWSpecId" class="btn btn-sm btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </body>

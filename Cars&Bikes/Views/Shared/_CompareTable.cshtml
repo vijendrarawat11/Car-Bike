@@ -1,7 +1,7 @@
 ﻿@model Cars_Bikes.Models.CompareViewModel
 <style>
     .content-section {
-        scroll-margin-top: 1000px; 
+        scroll-margin-top: 1000px;
     }
 
     .compare-for-tick {
@@ -14,67 +14,67 @@
 <div class="m-t90">
     <h2>Comparison between<span class="font-weight-700"> @Model.Variant1.TwoWheeler.TwoWheelerName</span> and <span class="font-weight-700">@Model.Variant2.TwoWheeler.TwoWheelerName</span> </h2>
 
-<div class="compare-box">
-   <div class="compare-card-two">
+    <div class="compare-box">
+        <div class="compare-card-two">
             @* <div class="row"> *@
             <img class="twImage1" src="" alt="Bike Image" loading="eager" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/bicycle.webp")';" />
-                <h4>Add to compare</h4>
-                <div class="compare-ddl">
+            <h4>Add to compare</h4>
+            <div class="compare-ddl">
 
-                        <label>Bike</label>
-                        <select id="firstBike" disabled class="form-select">
-                            <option selected value="@Model.Variant1.TWVarientId"> 
+                <label>Bike</label>
+                <select id="firstBike" disabled class="form-select">
+                    <option selected value="@Model.Variant1.TWVarientId">
 
                         @Model.Variant1.TwoWheeler.TwoWheelerName
-                            </option>
-                        </select>
-                </div>
-                <div class="compare-ddl">
-                                <label>Variant</label>
-                    <select id="firstVariant" class="form-select" onchange="checkVariantsSelected()">
+                    </option>
+                </select>
+            </div>
+            <div class="compare-ddl">
+                <label>Variant</label>
+                <select id="firstVariant" class="form-select" onchange="checkVariantsSelected()">
                     @foreach (var v in Model.FirstBikeVariants)
                     {
-                                            <option value="@v.TWVarientId">
+                        <option value="@v.TWVarientId">
                             @v.Varients
-                                           </option>
+                        </option>
                     }
-                                </select>
-                </div>
+                </select>
+            </div>
             @* </div> *@
-   </div>
+        </div>
 
-            <div class="compare-card-two">
+        <div class="compare-card-two">
             <img class="twImage2" src="" alt="Bike Image" loading="eager" onerror="this.onerror=null; this.src='@Url.Content("~/images/twowheeler/bicycle.webp")';" />
-                <h4>Add to compare</h4>
-                        <div class="compare-ddl">
-                                <label>Bike</label>
-                                <select id="secondBike" disabled class="form-select">
-                                    <option selected value="@Model.Variant2.TWVarientId">
+            <h4>Add to compare</h4>
+            <div class="compare-ddl">
+                <label>Bike</label>
+                <select id="secondBike" disabled class="form-select">
+                    <option selected value="@Model.Variant2.TWVarientId">
                         @Model.Variant2.TwoWheeler.TwoWheelerName
-                                    </option>
-                                </select>
-                        </div>
-                        <div class="compare-ddl">
-                                    <label>Variant</label>
+                    </option>
+                </select>
+            </div>
+            <div class="compare-ddl">
+                <label>Variant</label>
                 <select id="secondVariant" class="form-select" onchange="checkVariantsSelected()">
                     @foreach (var v in Model.SecondBikeVariants)
                     {
-                                                <option value="@v.TWVarientId">
+                        <option value="@v.TWVarientId">
                             @v.Varients
-                                                </option>
+                        </option>
                     }
-                                    </select>
+                </select>
 
-                        </div>
             </div>
-
-</div>
-    @*
-    <div class="compareButton">
-        <button type="button" class="btn btn-primary" id="compareButton">Compare</button>
+        </div>
 
     </div>
-  *@
+    @*
+        <div class="compareButton">
+            <button type="button" class="btn btn-primary" id="compareButton">Compare</button>
+
+        </div>
+    *@
 
     <div class="compare-tabs compare-section">
         <button onclick="scrollToSection('overviewContent')">Overview</button>
@@ -95,7 +95,7 @@
             <table class="comparison-table-content m-t20">
                 <thead>
                     <tr>
-                        <th class="compare-col-20">Overview</th> 
+                        <th class="compare-col-20">Overview</th>
                         <th id="comparisonColumn1" class="compare-col-40 IdTWName1" style="display:table-cell; text-align:center"></th>
                         <th id="comparisonColumn2" class="compare-col-40 IdTWName2" style="display:table-cell; text-align:center"></th>
                     </tr>
@@ -686,12 +686,10 @@
         </div>
     </div>
 </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function () {
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>$(document).ready(function () {
         checkVariantsSelected();
-    });
-</script>
+    });</script>
 @* <script> *@
 @*     function scrollToSection(sectionId) { *@
 @*         console.log("Scrolltosectioncalled"); *@
@@ -711,7 +709,7 @@
 @* </script> *@
 
 
-    <script>
+<script>
     function scrollToSection(sectionId) {
         console.log("Scrolltosectioncalled");
       const element = document.getElementById(sectionId);
@@ -739,7 +737,7 @@
     //     navbar.style.display = 'block';
     //   }
     // }, { once: true });
-  
+
             const section = document.getElementById(sectionId);
             if (section) {
                 section.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -880,9 +878,8 @@
             }
         });
     }
-    </script>
-<script>
-    function checkVariantsSelected() {
+</script>
+<script>function checkVariantsSelected() {
         var variant1 = document.getElementById('firstVariant').value;
         var variant2 = document.getElementById('secondVariant').value;
         console.log("Variant1 ID:", variant1);
@@ -890,24 +887,22 @@
         if (variant1 && variant2) {
             // Show the specifications table
             $('#comparisonTable').show();
-                if (variant1) {
-                    loadVariantData(variant1, 1); // Load data for TwoWheeler 1
-                    $('#comparisonColumn1').show(); // Show TwoWheeler 1 column
-                    $('.milageColumn1, .frontBrakeColumn1, .engineTypeColumn1, .maxTorqueColumn1').show(); // Show related data cells
-                }
-                if (variant2) {
-                    loadVariantData(variant2, 2); // Load data for TwoWheeler 2
-                    $('#comparisonColumn2').show(); // Show TwoWheeler 2 column
-                    $('.milageColumn2, .frontBrakeColumn2, .engineTypeColumn2, .maxTorqueColumn2').show(); // Show related data cells
-                }
-                else {
+            if (variant1) {
+                loadVariantData(variant1, 1); // Load data for TwoWheeler 1
+                $('#comparisonColumn1').show(); // Show TwoWheeler 1 column
+                $('.milageColumn1, .frontBrakeColumn1, .engineTypeColumn1, .maxTorqueColumn1').show(); // Show related data cells
+            }
+            if (variant2) {
+                loadVariantData(variant2, 2); // Load data for TwoWheeler 2
+                $('#comparisonColumn2').show(); // Show TwoWheeler 2 column
+                $('.milageColumn2, .frontBrakeColumn2, .engineTypeColumn2, .maxTorqueColumn2').show(); // Show related data cells
+            }
+            else {
                 alert('Please select at least one TwoWheeler and Variant.');
             }
         }
-    }
-</script>
-<script>
-    function toggleSection(sectionId, header) {
+    }</script>
+<script>function toggleSection(sectionId, header) {
         var content = document.getElementById(sectionId);
         var icon = header.querySelector('.toggle-icon');
 
@@ -920,6 +915,5 @@
             icon.classList.remove("bi-chevron-up");
             icon.classList.add("bi-chevron-down");
         }
-    }
-</script>
+    }</script>
 

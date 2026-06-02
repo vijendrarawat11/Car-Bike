@@ -1,10 +1,13 @@
 ﻿using Cars_Bikes.Models;
 using Google.Apis.Discovery;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace Cars_Bikes.Data
 {
-    public class TwoWheelerDB:DbContext
+    //public class TwoWheelerDB : IdentityDbContext<ApplicationUser>
+     public class TwoWheelerDB : IdentityDbContext<ApplicationUser, IdentityRole<int>, int>
     {
         public TwoWheelerDB(DbContextOptions<TwoWheelerDB> options) : base(options)
         {
@@ -47,12 +50,21 @@ namespace Cars_Bikes.Data
         public DbSet<TWEVUnderpinning> TWEVUnderpinnings { get; set; }
         public DbSet<TWEVAppFeatures> TWEVAppFeatures { get; set; }
         public DbSet<CompareItems> CompareItems { get; set; }
+        public DbSet<Wishlist> Wishlist { get; set; }
+        public DbSet<Review> Reviews { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<TwoWheelerBrand>().HasKey(t => t.TWBrandId);
             modelBuilder.Entity<TwoWheeler>().HasOne(s => s.TwoWheelerBrands).WithMany(b => b.TwoWheelers).HasForeignKey(s => s.TwoWBrandId).OnDelete(DeleteBehavior.ClientSetNull);
-            
+
+            modelBuilder.Entity<Review>()
+            .HasOne(r => r.TwoWheeler)
+            .WithMany()
+            .HasForeignKey(r => r.TwoWheelerID)
+            .OnDelete(DeleteBehavior.Cascade);
+
         }
     }
 }

@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
+
 namespace Cars_Bikes.Controllers
 {
     public class CompareController : Controller
@@ -34,6 +36,8 @@ namespace Cars_Bikes.Controllers
         }
 
         // AJAX action to get variants by TwoWheelerId
+        [HttpGet]
+        [Route("Compare/GetTwoWheelersByBrandId")]
         public JsonResult GetTwoWheelersByBrandId(int brandId)
         {
             var twoWheelers = _context.Twowheelers
@@ -44,6 +48,8 @@ namespace Cars_Bikes.Controllers
             return Json(twoWheelers);
         }
         // AJAX action to get variants by TwoWheelerId
+        [HttpGet]
+        [Route("Compare/GetVariantsByTwoWheelerId")]
         public IActionResult GetVariantsByTwoWheelerId(int twoWheelerId)
         {
             var variants = _context.TWVarients
@@ -233,7 +239,8 @@ namespace Cars_Bikes.Controllers
         {
             var results = _context.Twowheelers
                                   .Where(t => t.TwoWheelerName.Contains(searchTerm))
-                                  .Select(t => new {
+                                  .Select(t => new
+                                  {
                                       twoWheelerId = t.TwoWheelerId,
                                       twoWheelerName = t.TwoWheelerName
                                   })
@@ -278,16 +285,12 @@ namespace Cars_Bikes.Controllers
             {
                 return NotFound("One or both bikes not found");
             }
-           
-
             var firstBikeVariants = _context.TWVarients
                 .Where(v => v.TwoWheelerId == v1.TwoWheelerId)
                 .ToList();
-
             var secondBikeVariants = _context.TWVarients
                 .Where(v => v.TwoWheelerId == v2.TwoWheelerId)
                 .ToList();
-
             //var model = new TwoWheeler
             //{
             //    Variant1 = v1,
@@ -300,22 +303,17 @@ namespace Cars_Bikes.Controllers
                 FirstBikeVariants = firstBikeVariants,
                 SecondBikeVariants = secondBikeVariants
             };
-
             //return View(model);
             return View(viewModel);
         }
-
         [HttpGet]
         public JsonResult GetVariantDetails(int variantId)
         {
             var variant = _context.TWVarients.Include(v => v.TwoWheeler).ThenInclude(t => t.Brand)
                             .FirstOrDefault(v => v.TWVarientId == variantId);
-
             var spec = _context.TWSpec.FirstOrDefault(s => s.TWVarientId == variantId);
-
             if (variant == null || spec == null)
                 return Json(null);
-
             return Json(new
             {
                 brandId = variant.TwoWheeler.TwoWBrandId,
@@ -327,8 +325,6 @@ namespace Cars_Bikes.Controllers
                 bodyType = spec.BodyType
             });
         }
-      
-
         [HttpGet]
         public IActionResult GetVariantIdsByNames(string name1, string name2)
         {
@@ -341,7 +337,7 @@ namespace Cars_Bikes.Controllers
                 .Include(v => v.TwoWheeler)
                 //.Where(v => EF.Functions.Like(v.TwoWheeler.TwoWheelerName, name1));
                 //.FirstOrDefault(v => v.TwoWheeler.TwoWheelerName == name1);
-                .FirstOrDefault(v => v.TwoWheeler.TwoWheelerName.Trim().ToLower()== name1.Trim().ToLower());
+                .FirstOrDefault(v => v.TwoWheeler.TwoWheelerName.Trim().ToLower() == name1.Trim().ToLower());
 
 
             var v2 = _context.TWVarients
@@ -360,8 +356,8 @@ namespace Cars_Bikes.Controllers
             return Json(new
             {
                 success = true,
-                v1=v1.TWVarientId,
-                v2=v2.TWVarientId
+                v1 = v1.TWVarientId,
+                v2 = v2.TWVarientId
             });
         }
 
@@ -450,7 +446,7 @@ namespace Cars_Bikes.Controllers
             Console.WriteLine($"Bike2: {bike2}");
             Console.WriteLine($"Normalized1: {normalized1}");
             Console.WriteLine($"Normalized2: {normalized2}");
-             Debug.WriteLine($"Bike1: {bike1}");
+            Debug.WriteLine($"Bike1: {bike1}");
             Debug.WriteLine($"Bike2: {bike2}");
             Debug.WriteLine($"Normalized1: {normalized1}");
             Debug.WriteLine($"Normalized2: {normalized2}");
@@ -504,7 +500,7 @@ namespace Cars_Bikes.Controllers
                 ViewBag.AllBrand = Allbrand;
                 return View("CompareYamahaR3vsBajajPulsarNS200", viewModel);
             }
-         
+
             if (normalized1.Contains("Suzuki Gixxer") && normalized2.Contains("TVS Apache RTR 160"))
             {
                 var Allbrand = _context.TwowheelerBrands.ToList();
@@ -565,11 +561,11 @@ namespace Cars_Bikes.Controllers
                 ViewBag.AllBrand = Allbrand;
                 return View("CompareBajajPulsarRS200vsHeroKarizmaXMR", viewModel);
             }
-          
+
 
             else
             {
-                return View("TWCompareTwoBikes", viewModel); 
+                return View("TWCompareTwoBikes", viewModel);
             }
         }
     }

@@ -5,161 +5,87 @@
 }
 @model TwoWheeler
 @* @model IEnumerable<YourNamespace.Models.TwoWheeler> *@
-    @* @model IEnumerable<TwoWheeler> *@
+@* @model IEnumerable<TwoWheeler> *@
 @* @model Tuple<List<Cars_Bikes.TwoWheeler>, List<Cars_Bikes.TWSpec>> *@
 @* @{
-    var twoWheelers = ViewBag.TwoWheelers as List<Cars_Bikes.Models.TwoWheeler>;
-} *@
+        var twoWheelers = ViewBag.TwoWheelers as List<Cars_Bikes.Models.TwoWheeler>;
+    } *@
 @*<link href="~/css/site.css" rel="stylesheet" />
-<link href="~/css/style.min.css" rel="stylesheet" />
-<link href="~/css/bootstrap.min.css" rel="stylesheet" /> *@
+    <link href="~/css/style.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" /> *@
 <body>
-    @* <div class="page-wraper"> *@
-        @* <div id="loading-area"></div> *@
-        <!-- Content -->
-        @* <div class=" page-content"> *@
-            <!-- inner page banner -->
-       @*  <div class="dlab-bnr-inr overlay-black-middle container-fluid" style="background-image:url(images/banner/bnr3.jpg);">
-            <center> <img src="~/images/car2.png" style="height:170px; margin:0;" /><img src="~/images/car3.png" style="height:170px; margin:0;" /></center>
-                <div class="">
-                    <div class="dlab-bnr-inr-entry">
-                        <h1 class="text-white">Bike Details</h1>
-                    </div>
-                </div>
-            </div> *@
-       @*  <div class="container-fluid" style="backdrop-filter:blur(4px);height:160px;background:linear-gradient(#23335A,#475372,#78829A,#9EA3AD);"></div>
-            <!-- inner page banner END -->
-            <!-- Breadcrumb row -->
-            <div class="breadcrumb-row">
-                <div class="container">
-                    <ul class="list-inline">
-                        <li><a href="#">Home</a></li>
-                        <li>Car Details</li>
-                    </ul>
-                </div>
-            </div> *@
-        <div class="header-img"> <img src="~/images/main-slider/header.png" /></div>
-            <!-- Breadcrumb row END -->
-            @* <div class="container">
-                <div class="row">
-                        <div class="col-md-12 ">
-                            <div class="nav">
-                                <ul><li><a></a></li>
-                                    <li class="active"><a href="car-details-overview.html">Overview</a></li>
-                                    <li><a href="car-detail-specifications.html">Specifications</a></li>
-                                    <li><a href="car-detail-price.html">Price</a></li>
-                                    <li><a href="car-detail-compare.html">Compare</a></li>
-                                    <li><a href="car-detail-pictures.html">Pictures</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> *@
-        @* <div class="container-fluid m-t100" style="background-color:black; border-radius:20px; position:sticky;">
-            <div class="container">
-                <h2 class="text-gray">Car Details</h2>
-            </div>
-        </div> *@
-        
-            <div class="container-fluid section-full p-t30 bg-white content-inner-2">
-                <div class="container-fluid">
-                
-                    <div class="row">
-                        <!-- Side bar start -->
-                        <div class="col-md-8">
-                                @* @foreach (var twoWheeler in Model.Item1) *@
-                            @* @foreach (var twoWheeler in ViewBag.TwoWheelers)
-                                {  *@
-                            <div class="car-dl-info m-b30">
-                            <h1 class="h3 m-t0 price IdTWName" id=""> </h1>
-                                <ul class="used-car-dl-info">
-                                <li id="IdTWBrand"><i class="fa fa-bank"></i>  </li>
-                                    @* <li><i class="fa fa-calendar"></i> @twoWheeler.LaunchDate?.ToString("d MMM yyyy")</li> *@
-                                <li id="IdTWLaunchdate"><i class="fa fa-calendar"></i></li>
-                                <li id="IdTWMileage"><i class="fa fa-list"></i></li>
-                                </ul>
-                                @foreach (var item in ViewBag.TwoWheelers)
-                                {
-                                if (item.IsActive == false)
-                                {
-                                        <p class="tw-notes">DISCONTINUED<br>@item.NotesOrComments</p>
-                                }
-                                }
+
+    <!-- Content -->
+    <!-- inner page banner -->
+    <div class="header-img"> <img src="~/images/main-slider/header.png" /></div>
+    <!-- Breadcrumb row END -->
+
+    <div class="container-fluid section-full p-t30 bg-white content-inner-2">
+        <div class="container-fluid">
+
+            <div class="row">
+                <!-- Side bar start -->
+                <div class="col-md-8">
+                    @* @foreach (var twoWheeler in Model.Item1) *@
+                    @* @foreach (var twoWheeler in ViewBag.TwoWheelers)
+                        {  *@
+                    <div class="car-dl-info m-b30">
+                        <h1 class="h3 m-t0 price IdTWName" id=""> </h1>
+                        <ul class="used-car-dl-info">
+                            <li id="IdTWBrand"><i class="fa fa-bank"></i>  </li>
+                            @* <li><i class="fa fa-calendar"></i> @twoWheeler.LaunchDate?.ToString("d MMM yyyy")</li> *@
+                            <li id="IdTWLaunchdate"><i class="fa fa-calendar"></i></li>
+                            <li id="IdTWMileage"><i class="fa fa-list"></i></li>
+                        </ul>
+                        @foreach (var item in ViewBag.TwoWheelers)
+                        {
+                            if (item.IsActive == false)
+                            {
+                                <p class="tw-notes">DISCONTINUED<br>@item.NotesOrComments</p>
+                            }
+                        }
                         <div class="tw-img m-t20"><center><img id="IdTWimage" src="" alt="Bike Image" onerror="this.onerror=null; this.src='@Url.Content("/images/twowheeler/default.jpg")';" class="img-fluid" /></center></div>
-                        </div>
-
-
-                                @* } *@
-                            @* <div class="owl-fade-one owl-carousel owl-btn-center-lr">
-                                <div class="item">
-                                    <div class="dlab-thum-bx"> <img src="images/blog/default/thum1.jpg" alt=""> </div>
-                                </div>
-                                <div class="item">
-                                    <div class="dlab-thum-bx"> <img src="images/blog/default/thum2.jpg" alt=""> </div>
-                                </div>
-                                <div class="item">
-                                    <div class="dlab-thum-bx"> <img src="images/blog/default/thum3.jpg" alt=""> </div>
-                                </div>
-                                <div class="item">
-                                    <div class="dlab-thum-bx"> <img src="images/blog/default/thum4.jpg" alt=""> </div>
-                                </div>
-                            </div> *@
-                           
-
-                            <div class="modal fade lead-form-modal" id="car-details" tabindex="-1" role="dialog">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        <div class="modal-body clearfix">
-                                            <div class="pull-letf max-width-300"></div>
-                                            <div class="lead-form">
-                                                <form>
-                                                    <h3 class="m-t0">Personal Details</h3>
-                                                    <div class="form-group">
-                                                        <input value="" class="form-control" placeholder="Name" />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input value="" class="form-control" placeholder="Mobile Number" />
-                                                    </div>
-                                                    <div class="clearfix">
-                                                        <button type="button" class="btn-primary site-button btn-block">Submit </button>
-                                                    </div>
-                                                </form>
+                    </div>
+                    <div class="modal fade lead-form-modal" id="car-details" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <div class="modal-body clearfix">
+                                    <div class="pull-letf max-width-300"></div>
+                                    <div class="lead-form">
+                                        <form>
+                                            <h3 class="m-t0">Personal Details</h3>
+                                            <div class="form-group">
+                                                <input value="" class="form-control" placeholder="Name" />
                                             </div>
-                                        </div>
+                                            <div class="form-group">
+                                                <input value="" class="form-control" placeholder="Mobile Number" />
+                                            </div>
+                                            <div class="clearfix">
+                                                <button type="button" class="btn-primary site-button btn-block">Submit </button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-                            
                         </div>
-                        <!-- Side bar END -->
-                        <div class="col-md-4 ">
-                            <div class="car-dl-info m-b30">
-                                   @*  @foreach (var twoWheeler in ViewBag.TwoWheelers)
-                                { *@
-                                <div class="price">
-                                    <h3 class="m-t0 m-b5" id="Idprice"></h3>
-                                    <span class="IdTWName"></span>
-                                </div>
-                                @* } *@
-                                @* <form>
-                                    <p class="m-t0 m-b5">Ex-showroom Price</p>
-                                    <div class="form-group">
-                                        <select>
-                                            <option>Mumbai</option>
-                                            <option>Chandigarh </option>
-                                            <option>Rajasthan</option>
-                                        </select>
-                                    </div>
-                                    <div class="clearfix">
-                                        <button type="button" class="btn-primary site-button btn-block" title="READ MORE" rel="bookmark" data-toggle="modal" data-target="#car-details">View On Road Price </button>
-                                    </div>
-                                </form> *@
-                        
+                    </div>
+
+                </div>
+                <!-- Side bar END -->
+                <div class="col-md-4 ">
+                    <div class="car-dl-info m-b30">
+                        @*  @foreach (var twoWheeler in ViewBag.TwoWheelers)
+                            { *@
+                        <div class="price">
+                            <h3 class="m-t0 m-b5" id="Idprice"></h3>
+                            <span class="IdTWName"></span>
                         </div>
+
+
+                    </div>
                     <div class="clearfix m-b30 m-t30">
                         <div class="sideboxdetails">
                             <h6>Brand</h6>
@@ -208,238 +134,85 @@
                             <h5 id="IdgearBox"></h5>
                         </div>
                     </div>
-                        @* @foreach (var twoWheeler in ViewBag.Specs)
-                        { *@
-                            
-                            @* } *@
 
-                            @* <div class="widget client-logo-wg">
-                                <h4 class="widget-title">Popular Cars By Brand</h4>
-                                <ul>
-                                    <li class="brand-logo">
-                                        <a href="new-car-popular.html"><img src="images/client-logo/logo1.jpg" alt="" /></a>
-                                    </li>
-                                    <li class="brand-logo">
-                                        <a href="new-car-popular.html"><img src="images/client-logo/logo2.jpg" alt="" /></a>
-                                    </li>
-                                    <li class="brand-logo">
-                                        <a href="new-car-popular.html"><img src="images/client-logo/logo3.jpg" alt="" /></a>
-                                    </li>
-                                    <li class="brand-logo">
-                                        <a href="new-car-popular.html"><img src="images/client-logo/logo4.jpg" alt="" /></a>
-                                    </li>
-                                    <li class="brand-logo">
-                                        <a href="new-car-popular.html"><img src="images/client-logo/logo5.jpg" alt="" /></a>
-                                    </li>
-                                    <li class="brand-logo">
-                                        <a href="new-car-popular.html"><img src="images/client-logo/logo6.jpg" alt="" /></a>
-                                    </li>
-                                    <li class="brand-logo">
-                                        <a href="new-car-popular.html"><img src="images/client-logo/logo7.jpg" alt="" /></a>
-                                    </li>
-                                    <li class="brand-logo">
-                                        <a href="new-car-popular.html"><img src="images/client-logo/logo8.jpg" alt="" /></a>
-                                    </li>
-                                    <li class="brand-logo">
-                                        <a href="new-car-popular.html"><img src="images/client-logo/logo9.jpg" alt="" /></a>
-                                    </li>
-                                    <li class="brand-logo">
-                                        <a href="new-car-popular.html"><img src="images/client-logo/logo10.jpg" alt="" /></a>
-                                    </li>
-                                    <li class="brand-logo">
-                                        <a href="new-car-popular.html"><img src="images/client-logo/logo11.jpg" alt="" /></a>
-                                    </li>
-                                    <li class="brand-logo">
-                                        <a href="new-car-popular.html"><img src="images/client-logo/logo12.jpg" alt="" /></a>
-                                    </li>
-                                </ul>
-                            </div> *@
-                        </div>
-                    </div>
                 </div>
             </div>
-            
-            @* <div class="section-full bg-white  p-t40 p-b70">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="section-head">
-                                <h3 class="h4 text-uppercase">For your quick look</h3>
-
-                            </div>
-                            <div class="clearfix owl-carousel owl-btn-style-2 quick-look">
-                                <div class="item">
-                                    <div class="dlab-feed-list">
-                                        <div class="dlab-media">
-                                            <a href="new-car-search-result-column.html"><img src="images/our-work/work/pic1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="dlab-info">
-                                            <h4 class="dlab-title"><a href="new-car-search-result-column.html">Hyundai santa fe sport </a></h4>
-                                            <div class="dlab-separator bg-black"></div>
-                                            <p class="dlab-price"><del>$40,152</del> <span class="text-primary">$26,598</span></p>
-                                        </div>
-                                        <div class="icon-box-btn text-center">
-                                            <ul class="clearfix">
-                                                <li>2019</li>
-                                                <li>Manual</li>
-                                                <li>210 hp </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="dlab-feed-list">
-                                        <div class="dlab-media">
-                                            <a href="new-car-search-result-column.html"><img src="images/our-work/work/pic2.jpg" alt=""></a>
-                                        </div>
-                                        <div class="dlab-info">
-                                            <h4 class="dlab-title"><a href="new-car-search-result-column.html">Hyundai santa fe sport </a></h4>
-                                            <div class="dlab-separator bg-black"></div>
-                                            <p class="dlab-price"><del>$40,152</del> <span class="text-primary">$26,598</span></p>
-                                        </div>
-                                        <div class="icon-box-btn text-center">
-                                            <ul class="clearfix">
-                                                <li>2019</li>
-                                                <li>Manual</li>
-                                                <li>210 hp </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="dlab-feed-list">
-                                        <div class="dlab-media">
-                                            <a href="new-car-search-result-column.html"><img src="images/our-work/work/pic3.jpg" alt=""></a>
-                                        </div>
-                                        <div class="dlab-info">
-                                            <h4 class="dlab-title"><a href="new-car-search-result-column.html">Hyundai santa fe sport </a></h4>
-                                            <div class="dlab-separator bg-black"></div>
-                                            <p class="dlab-price"><del>$40,152</del> <span class="text-primary">$26,598</span></p>
-                                        </div>
-                                        <div class="icon-box-btn text-center">
-                                            <ul class="clearfix">
-                                                <li>2019</li>
-                                                <li>Manual</li>
-                                                <li>210 hp </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="dlab-feed-list">
-                                        <div class="dlab-media">
-                                            <a href="new-car-search-result-column.html"><img src="images/our-work/work/pic4.jpg" alt=""></a>
-                                        </div>
-                                        <div class="dlab-info">
-                                            <h4 class="dlab-title"><a href="new-car-search-result-column.html">Hyundai santa fe sport </a></h4>
-                                            <div class="dlab-separator bg-black"></div>
-                                            <p class="dlab-price"><del>$40,152</del> <span class="text-primary">$26,598</span></p>
-                                        </div>
-                                        <div class="icon-box-btn text-center">
-                                            <ul class="clearfix">
-                                                <li>2019</li>
-                                                <li>Manual</li>
-                                                <li>210 hp </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div> *@
-       
-@* @using (Html.BeginForm("TwoWheelerDetails", "Home", FormMethod.Get, new { id = "varientId" }))
-{
-    @Html.Hidden("brandId", brandId)
-    @Html.Hidden("modelId", modelId)
-
-     <div>
-        @Html.Label("Select Varient")
-        <select class="form-control"  id="varientId" name="varientId" onchange="this.form.submit()">
-            <option value="" disabled>Select Varient</option>
-            @foreach (var item in ViewBag.Varient as SelectList)
-            {
-                        <option value="@item.Value" onchange="@(item.Value == ViewBag.SelectedVarientId.ToString() ? "selected" : "")">@item.Text</option>
-            }
-        </select>
+        </div>
     </div>
-    } *@
-        <div class="linkmaincontainer">
-            <select class="ddnvarient" asp-items="ViewBag.Varient" id="varientId">
-                <option value="" disabled>Select Varient</option>
-            </select>
-            <div class="linkcontainer shadow rounded-6">
-            
-            
-                <div class="highlight">
-                
-                    <ul>
-                        <li data-target="specifications">Specifications</li>
-                        <li data-target="engineTransmission">Engine & Transmission</li>
-                        <li data-target="features">Features</li>
-                        <li data-target="safety">Safety</li>
-                        <li data-target="mileageandperformance">Mileage & Performance</li>
-                        @* <li data-target="chassisAndSuspension">Chassis & Suspension</li> *@
-                        <li data-target="dimensionsAndCapacity">Dimensions & Capacity</li>
-                        <li data-target="electricals">Electricals</li>
-                        <li data-target="tyresAndBrakes">Tyres & Brakes</li>
-                        <li data-target="motorAndBatteries">Motor & Battery</li>
-                        <li data-target="underpinnings">Underpinnings</li>
-                        @foreach (var item in ViewBag.TwoWheelers)
-                                {
-                                if (item.IsEV == true)
-                                {
-                        <li data-target="chargings">Chargings</li>
-                                }}
-                    </ul>
-                </div>
-                <div class="content" id="content">
-                    <section id="specifications">
-                        <h4 class="contentheading">Specifications</h4>
+    <div class="linkmaincontainer">
+        <select class="ddnvarient" asp-items="ViewBag.Varient" id="varientId">
+            <option value="" disabled>Select Varient</option>
+        </select>
+        <div class="linkcontainer shadow rounded-6">
+
+
+            <div class="highlight">
+
+                <ul>
+                    <li data-target="specifications">Specifications</li>
+                    <li data-target="engineTransmission">Engine & Transmission</li>
+                    <li data-target="features">Features</li>
+                    <li data-target="safety">Safety</li>
+                    <li data-target="mileageandperformance">Mileage & Performance</li>
+                    @* <li data-target="chassisAndSuspension">Chassis & Suspension</li> *@
+                    <li data-target="dimensionsAndCapacity">Dimensions & Capacity</li>
+                    <li data-target="electricals">Electricals</li>
+                    <li data-target="tyresAndBrakes">Tyres & Brakes</li>
+                    <li data-target="motorAndBatteries">Motor & Battery</li>
+                    <li data-target="underpinnings">Underpinnings</li>
+                    @foreach (var item in ViewBag.TwoWheelers)
+                    {
+                        if (item.IsEV == true)
+                        {
+                            <li data-target="chargings">Chargings</li>
+                        }
+                    }
+                </ul>
+            </div>
+            <div class="content" id="content">
+                <section id="specifications">
+                    <h4 class="contentheading">Specifications</h4>
                     <div id="specificationsContainer">
                         @* @foreach (var spec in ViewBag.Specs)
                             { *@
-                            <div class="container-fluid">
-                                    <table class="contenttable">
-                                    <tr>
-                                        <th><h4>Varient :- </h4></th>
-                                        <td></td>
-                                    </tr>
-                                        <tr>
-                                        <th>Mileage</th>
-                                        <td></td>
-                                        </tr>
-                                        <tr>
-                                        <th>Front Brake</th>
-                                        <td></td>
-                                        </tr>
-                                        <tr>
-                                        <th>Rear Brake</th>
-                                        <td></td>
-                                        </tr>
-                                        <tr>
-                                        <th>Fuel Capacity</th>
-                                        <td></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                           @*  } *@
-                            </div>
-                    </section>
-                    <section id="engineTransmission">
-                        <h4 class="contentheading">Engine & Transmission</h4>
-                    <div id="engineTransmissionContainer">
-                            @* @foreach (var engineandtransmission in ViewBag.EngineAndTransmission)
-                            { *@
-                                <div class="container-fluid">
-                                <table class="contenttable">
-                                    <tr>
+                        <div class="container-fluid">
+                            <table class="contenttable">
+                                <tr>
                                     <th><h4>Varient :- </h4></th>
-                                        <td></td>
-                                    </tr>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>Mileage</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>Front Brake</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>Rear Brake</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>Fuel Capacity</th>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                        @*  } *@
+                    </div>
+                </section>
+                <section id="engineTransmission">
+                    <h4 class="contentheading">Engine & Transmission</h4>
+                    <div id="engineTransmissionContainer">
+                        @* @foreach (var engineandtransmission in ViewBag.EngineAndTransmission)
+                            { *@
+                        <div class="container-fluid">
+                            <table class="contenttable">
+                                <tr>
+                                    <th><h4>Varient :- </h4></th>
+                                    <td></td>
+                                </tr>
                                 <tr>
                                     <th>Engine Type</th>
                                     <td></td>
@@ -488,22 +261,22 @@
                                     <th>Compression Ratio</th>
                                     <td></td>
                                 </tr>
-                                </table>
-                                </div>
-                            @* } *@
-                            </div>
-                    </section>
-                    <section id="features">
-                        <h4 class="contentheading">Features</h4>
+                            </table>
+                        </div>
+                        @* } *@
+                    </div>
+                </section>
+                <section id="features">
+                    <h4 class="contentheading">Features</h4>
                     <div id="featuresContainer">
                         @* @foreach (var features in ViewBag.Features)
-                        { *@
-                            <div class="container-fluid">
-                                <table class="contenttable">
-                                    <tr>
+                            { *@
+                        <div class="container-fluid">
+                            <table class="contenttable">
+                                <tr>
                                     <th><h4>Varient :-</h4></th>
-                                        <td></td>
-                                    </tr>
+                                    <td></td>
+                                </tr>
                                 <tr>
                                     <th>ABS</th>
                                     <td></td>
@@ -552,22 +325,22 @@
                                     <th>Passenger Footrest</th>
                                     <td></td>
                                 </tr>
-                                </table>
-                            </div>
-                        @* } *@
+                            </table>
                         </div>
-                    </section>
-                    <section id="safety">
-                        <h4 class="contentheading">Safety</h4>
+                        @* } *@
+                    </div>
+                </section>
+                <section id="safety">
+                    <h4 class="contentheading">Safety</h4>
                     <div id="safetyContainer">
                         @* @foreach (var safety in ViewBag.Safety)
-                        { *@
-                            <div class="container-fluid">
-                                <table class="contenttable">
-                                    <tr>
+                            { *@
+                        <div class="container-fluid">
+                            <table class="contenttable">
+                                <tr>
                                     <th><h4>Varient :- </h4></th>
-                                        <td></td>
-                                    </tr>
+                                    <td></td>
+                                </tr>
                                 <tr>
                                     <th>Pass Switch</th>
                                     <td></td>
@@ -580,22 +353,22 @@
                                     <th>Display</th>
                                     <td></td>
                                 </tr>
-                                </table>
-                                </div>
-                        @* } *@
+                            </table>
                         </div>
-                    </section>
-                    <section id="mileageandperformance">
-                        <h4 class="contentheading">Mileage & Performance</h4>
+                        @* } *@
+                    </div>
+                </section>
+                <section id="mileageandperformance">
+                    <h4 class="contentheading">Mileage & Performance</h4>
                     <div id="mileageAndPerformanceContainer">
                         @* @foreach (var mileageandperformance in ViewBag.MileageAndPerformance)
-                        { *@
-                             <div class="container-fluid">
-                                <table class="contenttable">
-                                    <tr>
+                            { *@
+                        <div class="container-fluid">
+                            <table class="contenttable">
+                                <tr>
                                     <th><h4>Varient :- </h4></th>
-                                        <td></td>
-                                    </tr>
+                                    <td></td>
+                                </tr>
                                 <tr>
                                     <th>Overall Mileage</th>
                                     <td></td>
@@ -608,44 +381,22 @@
                                     <th>Highway Mileage</th>
                                     <td></td>
                                 </tr>
-                                </table>
-                             </div>
-                        @* } *@
+                            </table>
                         </div>
-                    </section>
-                    @* <section id="chassisAndSuspension">
-                        <h4 class="contentheading">Chassis & Suspension</h4>
-                        @foreach (var chassisAndSuspension in ViewBag.ChassisAndSuspension)
-                        {
-                            <div class="container-fluid">
-                                <table class="contenttable">
-                                    <tr>
-                                    <th><h4>Varient :- @chassisAndSuspension.Varients</h4></th>
-                                        <td></td>
-                                    </tr>
-                                <tr>
-                                    <th>Body Type</th>
-                                    <td>@chassisAndSuspension.BodyType</td>
-                                </tr>
-                                <tr>
-                                    <th>Body Graphics</th>
-                                    <td>@chassisAndSuspension.BodyGraphics</td>
-                                </tr>
-                                </table>
-                            </div>
-                        }
-                    </section> *@
-                    <section id="dimensionsAndCapacity">
-                        <h4 class="contentheading">Dimensions & Capacity</h4>
+                        @* } *@
+                    </div>
+                </section>
+                <section id="dimensionsAndCapacity">
+                    <h4 class="contentheading">Dimensions & Capacity</h4>
                     <div id="dimensionsAndCapacityContainer">
                         @* @foreach (var dimensionsAndCapacity in ViewBag.DimensionsAndCapacity)
-                        { *@
-                            <div class="container-fluid">
-                                <table class="contenttable">
-                                    <tr>
+                            { *@
+                        <div class="container-fluid">
+                            <table class="contenttable">
+                                <tr>
                                     <th><h4>Varient :- </h4></th>
-                                        <td></td>
-                                    </tr>
+                                    <td></td>
+                                </tr>
                                 <tr>
                                     <th>Width</th>
                                     <td></td>
@@ -682,22 +433,22 @@
                                     <th>Saddle Height</th>
                                     <td></td>
                                 </tr>
-                                </table>
-                                </div>
-                        @* } *@
+                            </table>
                         </div>
-                    </section>
-                    <section id="electricals">
-                        <h4 class="contentheading">Electricals</h4>
+                        @* } *@
+                    </div>
+                </section>
+                <section id="electricals">
+                    <h4 class="contentheading">Electricals</h4>
                     <div id="electricalsContainer">
                         @* @foreach (var electricals in ViewBag.Electricals)
-                        { *@
-                            <div class="container-fluid">
-                                <table class="contenttable">
-                                    <tr>
+                            { *@
+                        <div class="container-fluid">
+                            <table class="contenttable">
+                                <tr>
                                     <th><h4>Varient :- </h4></th>
-                                        <td></td>
-                                    </tr>
+                                    <td></td>
+                                </tr>
                                 <tr>
                                     <th>Headlight</th>
                                     <td></td>
@@ -730,22 +481,22 @@
                                     <th>DRLs</th>
                                     <td></td>
                                 </tr>
-                                </table>
-                                </div>
-                        @* } *@
+                            </table>
                         </div>
-                    </section>
-                    <section id="tyresAndBrakes">
-                        <h4 class="contentheading">Tyres & Brakes</h4>
+                        @* } *@
+                    </div>
+                </section>
+                <section id="tyresAndBrakes">
+                    <h4 class="contentheading">Tyres & Brakes</h4>
                     <div id="tyresAndBrakesContainer">
                         @* @foreach (var tyresAndBrakes in ViewBag.TyresAndBrakes)
-                        { *@
-                            <div class="container-fluid">
-                                <table class="contenttable">
-                                    <tr>
+                            { *@
+                        <div class="container-fluid">
+                            <table class="contenttable">
+                                <tr>
                                     <th><h4>Varient :- </h4></th>
-                                        <td></td>
-                                    </tr>
+                                    <td></td>
+                                </tr>
                                 <tr>
                                     <th>Front Brake Diameter</th>
                                     <td></td>
@@ -766,22 +517,22 @@
                                     <th>Rear Suspension</th>
                                     <td></td>
                                 </tr>
-                                </table>
-                                </div>
-                        @* } *@
+                            </table>
                         </div>
-                    </section>
-                    <section id="motorAndBatteries">
-                        <h4 class="contentheading">Motor & Battery</h4>
+                        @* } *@
+                    </div>
+                </section>
+                <section id="motorAndBatteries">
+                    <h4 class="contentheading">Motor & Battery</h4>
                     <div id="motorAndBatteryContainer">
                         @* @foreach (var motorAndBatteries in ViewBag.MotorAndBatteries)
-                        { *@
-                            <div class="container-fluid">
-                                <table class="contenttable">
-                                    <tr>
+                            { *@
+                        <div class="container-fluid">
+                            <table class="contenttable">
+                                <tr>
                                     <th><h4>Varient :- </h4></th>
-                                        <td></td>
-                                    </tr>
+                                    <td></td>
+                                </tr>
                                 <tr>
                                     <th>Peak Power</th>
                                     <td></td>
@@ -798,22 +549,22 @@
                                     <th>Battery Capacity</th>
                                     <td></td>
                                 </tr>
-                                </table>
-                                </div>
-                        @* } *@
+                            </table>
                         </div>
-                    </section>
-                    <section id="underpinnings">
-                        <h4 class="contentheading">Underpinnings</h4>
+                        @* } *@
+                    </div>
+                </section>
+                <section id="underpinnings">
+                    <h4 class="contentheading">Underpinnings</h4>
                     <div id="underpinningContainer">
                         @* @foreach (var underpinnings in ViewBag.Underpinnings)
-                        { *@
-                            <div class="container-fluid">
-                                <table class="contenttable">
-                                    <tr>
+                            { *@
+                        <div class="container-fluid">
+                            <table class="contenttable">
+                                <tr>
                                     <th><h4>Varient :- </h4></th>
-                                        <td></td>
-                                    </tr>
+                                    <td></td>
+                                </tr>
                                 <tr>
                                     <th>Suspension Front</th>
                                     <td></td>
@@ -845,49 +596,50 @@
                                     <th>Tubeless Tyre</th>
                                     <td></td>
                                 </tr>
-                                </table>
-                                </div>
-                        @* } *@
+                            </table>
                         </div>
-                    </section>
-                    @foreach (var item in ViewBag.TwoWheelers)
-                                {
-                                if (item.IsEV == true)
-                                {
-                    <section id="chargings">
-                        <h4 class="contentheading">chargings</h4>
-                        <div id="chargingContainer">
-                        @* @foreach (var chargings in ViewBag.Chargings)
-                        { *@
-                            <div class="container-fluid">
-                                <table class="contenttable">
-                                    <tr>
-                                    <th><h4>Varient :- </h4></th>
-                                        <td></td>
-                                    </tr>
-                                <tr>
-                                    <th>Charging At Home</th>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th>Charging At Charging Station</th>
-                                    <td></td>
-                                </tr>
-                                </table>
-                                </div>
                         @* } *@
                     </div>
-                    </section>}}
-                </div>
+                </section>
+                @foreach (var item in ViewBag.TwoWheelers)
+                {
+                    if (item.IsEV == true)
+                    {
+                        <section id="chargings">
+                            <h4 class="contentheading">chargings</h4>
+                            <div id="chargingContainer">
+                                @* @foreach (var chargings in ViewBag.Chargings)
+                                    { *@
+                                <div class="container-fluid">
+                                    <table class="contenttable">
+                                        <tr>
+                                            <th><h4>Varient :- </h4></th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Charging At Home</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Charging At Charging Station</th>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>}
+                }
+                }
             </div>
-            </div>
-        <!-- Content END-->
-        <button class="scroltop fa fa-chevron-up"></button>
+        </div>
+    </div>
+   
+    <!-- Content END-->
+    <button class="scroltop fa fa-chevron-up"></button>
     @* </div> *@
 
-     <!--For Highlisght the scorllspy part-->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
+    <!--For Highlisght the scorllspy part-->
+    @*<script>document.addEventListener('DOMContentLoaded', function () {
             const navLinks = document.querySelectorAll('.highlight li');
             const sections = document.querySelectorAll('section');
             const content = document.getElementById('content');
@@ -912,9 +664,75 @@
                     content.scrollTo({ top: topOffset, behavior: 'smooth' });
                 });
             });
-        });
-    </script>
+        });</script>*@
+    <script>document.addEventListener('DOMContentLoaded', function () {
 
+            const navLinks = document.querySelectorAll('.highlight li');
+            const sections = document.querySelectorAll('section');
+            const content = document.getElementById('content');
+
+            if (!content || navLinks.length === 0 || sections.length === 0) {
+                return;
+            }
+
+            function changeActiveLink() {
+
+                let currentIndex = -1;
+
+                sections.forEach((section, index) => {
+
+                    if (!section) return;
+
+                    const sectionTop = section.offsetTop;
+
+                    if (content.scrollTop + 80 >= sectionTop - content.offsetTop) {
+                        currentIndex = index;
+                    }
+
+                });
+
+                navLinks.forEach(link => {
+                    if (link) {
+                        link.classList.remove('active');
+                    }
+                });
+
+                if (currentIndex >= 0 && navLinks[currentIndex]) {
+                    navLinks[currentIndex].classList.add('active');
+                }
+            }
+
+            changeActiveLink();
+
+            content.addEventListener('scroll', changeActiveLink);
+
+            navLinks.forEach(link => {
+
+                if (!link) return;
+
+                link.addEventListener('click', function () {
+
+                    const targetId = this?.getAttribute('data-target');
+
+                    if (!targetId) return;
+
+                    const targetElement = document.getElementById(targetId);
+
+                    if (!targetElement) return;
+
+                    const topOffset =
+                        targetElement.offsetTop - content.offsetTop;
+
+                    content.scrollTo({
+                        top: topOffset,
+                        behavior: 'smooth'
+                    });
+
+                });
+
+            });
+
+        });</script>
     <!--Display the data according to varients-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -932,7 +750,7 @@
             function fetchSpec(varientId) {
                 $.getJSON('@Url.Action("GetTWSpecByVarients", "Home")', { varientId: $("#varientId").val() }, function (data) {
                     //alert(JSON.stringify(data));
-                    
+
                     // Update specifications table
                     var specificationsContainer = $('#specificationsContainer');
                     specificationsContainer.empty(); // Clear existing content
@@ -1380,43 +1198,152 @@
                     });
                     // display two table data combine
                     if (data.specs && data.specs.length > 0) {
-                        var item = data.specs[0]; // Assuming the data array contains one object
-                        $('#IdTWbrand').text(item.twoWheeler.brand || 'N/A');
-                        $('#Idprice').text(item.twoWheeler.price || 'N/A');
-                        $('#IdTWmileage').text(item.milage ? item.milage + ' kmpl' : 'N/A');
+
+                        var item = data.specs[0];
+
+                        $('#IdTWbrand').text(item.twoWheeler?.brand || 'N/A');
+
+                        $('#Idprice').text(item.twoWheeler?.price || 'N/A');
+
+                        $('#IdTWmileage').html(
+                            '<i class="bi bi-speedometer"></i> ' +
+                            (item.milage ? item.milage + ' kmpl' : 'N/A')
+                        );
+
                         $('#IdTWbodytype').text(item.bodyType || 'N/A');
-                        
-                        // Format launch date
-                        if (item.twoWheeler && item.twoWheeler.launchDate) {
+
+                        if (item.twoWheeler?.launchDate) {
+
                             var launchDate = new Date(item.twoWheeler.launchDate);
+
                             var formattedDate = launchDate.toLocaleDateString('en-GB', {
                                 day: '2-digit',
                                 month: 'short',
                                 year: 'numeric'
                             });
-                                $('#IdTWlaunchdate').text(formattedDate);
+
+                            $('#IdTWlaunchdate').text(formattedDate);
+
                         } else {
+
                             $('#IdTWlaunchdate').text('N/A');
+
                         }
 
-                        $('#IdTWfuelCapacity').text(item.fuelCapacity ? item.fuelCapacity + ' L' : 'N/A');
-                            $('#IdTWMileage').html('<i class="bi bi-speedometer"></i> ' + (item.milage ? item.milage + ' kmpl' : 'N/A'));
-                        $('.IdTWName').text(item.twoWheeler.twoWheelerName || 'N/A');
-                            $('#IdTWBrand').html('<i class="bi bi-award"></i> ' + item.twoWheeler.brand || 'N/A');
-                            $('#IdTWimage').attr('src', item.twoWheeler.twImage || 'N/A');
+                        $('#IdTWfuelCapacity').text(
+                            item.fuelCapacity ? item.fuelCapacity + ' L' : 'N/A'
+                        );
+
+                        $('.IdTWName').text(
+                            item.twoWheeler?.twoWheelerName || 'N/A'
+                        );
+
+                        $('#IdTWBrand').html(
+                            '<i class="bi bi-award"></i> ' +
+                            (item.twoWheeler?.brand || 'N/A')
+                        );
+
+                        $('#IdTWimage').attr(
+                            'src',
+                            item.twoWheeler?.twImage || ''
+                        );
+
+                        const vehicleData = {
+
+                            name: item.twoWheeler?.twoWheelerName || '',
+
+                            image: item.twoWheeler?.twImage || '',
+
+                            url: window.location.href
+
+                        };
+
+                        let recentVehicles =
+                            JSON.parse(localStorage.getItem("recentVehicles")) || [];
+
+                        recentVehicles =
+                            recentVehicles.filter(v => v.name !== vehicleData.name);
+
+                        recentVehicles.unshift(vehicleData);
+
+                        recentVehicles = recentVehicles.slice(0, 6);
+
+                        localStorage.setItem(
+                            "recentVehicles",
+                            JSON.stringify(recentVehicles)
+                        );
+
+                        console.log("RECENT VEHICLE SAVED");
+
                     } else {
-                        // Handle case where no data is returned
+
                         $('#IdTWbrand').text('N/A');
                         $('#Idprice').text('N/A');
                         $('#IdTWmileage').text('N/A');
                         $('#IdTWbodytype').text('N/A');
                         $('#IdTWlaunchdate').text('N/A');
                         $('#IdTWfuelCapacity').text('N/A');
-                        $('#IdTWMileage').text('N/A');
-                        $('#IdTWName').text('N/A');
-                            $('#IdTWBrand').html('N/A');
-                            $('#IdTWimage').attr('src', ''); // Set to a default or empty image
-                        }
+                        $('.IdTWName').text('N/A');
+
+                    }
+                    //if (data.specs && data.specs.length > 0) {
+                    //    var item = data.specs[0]; // Assuming the data array contains one object
+                    //    $('#IdTWbrand').text(item.twoWheeler.brand || 'N/A');
+                    //    $('#Idprice').text(item.twoWheeler.price || 'N/A');
+                    //    $('#IdTWmileage').text(item.milage ? item.milage + ' kmpl' : 'N/A');
+                    //    $('#IdTWbodytype').text(item.bodyType || 'N/A');
+
+                    //    // Format launch date
+                    //    if (item.twoWheeler && item.twoWheeler.launchDate) {
+                    //        var launchDate = new Date(item.twoWheeler.launchDate);
+                    //        var formattedDate = launchDate.toLocaleDateString('en-GB', {
+                    //            day: '2-digit',
+                    //            month: 'short',
+                    //            year: 'numeric'
+                    //        });
+                    //            $('#IdTWlaunchdate').text(formattedDate);
+                    //    } else {
+                    //        $('#IdTWlaunchdate').text('N/A');
+                    //    }
+
+                    //    $('#IdTWfuelCapacity').text(item.fuelCapacity ? item.fuelCapacity + ' L' : 'N/A');
+                    //        $('#IdTWMileage').html('<i class="bi bi-speedometer"></i> ' + (item.milage ? item.milage + ' kmpl' : 'N/A'));
+                    //    //$('.IdTWName').text(item.twoWheeler.twoWheelerName || 'N/A');
+                    //    $('.IdTWName').text(item.twoWheeler?.twoWheelerName || 'N/A');
+                    //        $('#IdTWBrand').html('<i class="bi bi-award"></i> ' + item.twoWheeler?.brand || 'N/A');
+                    //    //$('#IdTWimage').attr('src', item.twoWheeler.twImage || 'N/A');
+                    //    $('#IdTWimage').attr('src', item.twoWheeler?.twImage || '');
+                    //    const vehicleData = {
+                    //        //name: item.twoWheeler.twoWheelerName,
+                    //        //image: item.twoWheeler.twImage,
+                    //        name: item.twoWheeler?.twoWheelerName || '',
+                    //        image: item.twoWheeler?.twImage || '',
+                    //        url: window.location.href
+                    //    };
+
+                    //    let recentVehicles = JSON.parse(localStorage.getItem("recentVehicles")) || [];
+
+                    //    recentVehicles = recentVehicles.filter(v => v.name !== vehicleData.name);
+
+                    //    recentVehicles.unshift(vehicleData);
+
+                    //    recentVehicles = recentVehicles.slice(0, 6);
+
+                    //    localStorage.setItem("recentVehicles", JSON.stringify(recentVehicles));
+                    //    console.log("RECENT VEHICLE SAVED");
+                    //} else {
+                    //    // Handle case where no data is returned
+                    //    $('#IdTWbrand').text('N/A');
+                    //    $('#Idprice').text('N/A');
+                    //    $('#IdTWmileage').text('N/A');
+                    //    $('#IdTWbodytype').text('N/A');
+                    //    $('#IdTWlaunchdate').text('N/A');
+                    //    $('#IdTWfuelCapacity').text('N/A');
+                    //    $('#IdTWMileage').text('N/A');
+                    //    $('#IdTWName').text('N/A');
+                    //        $('#IdTWBrand').html('N/A');
+                    //        $('#IdTWimage').attr('src', ''); // Set to a default or empty image
+                    //    }
 
                         // display engine
                         if (data.engine && data.engine.length > 0) {
@@ -1455,4 +1382,23 @@
             }
         });
     </script>
+    <script>$(document).ready(function () {
+
+            const recentVehicles = JSON.parse(localStorage.getItem("recentVehicles")) || [];
+
+            let html = '';
+
+            recentVehicles.forEach(vehicle => {
+
+                html += `
+                                                <a href="${vehicle.url}" class="recent-card">
+                                                    <img src="${vehicle.image}" alt="${vehicle.name}">
+                                                    <h4>${vehicle.name}</h4>
+                                                </a>
+                                            `;
+            });
+
+            $('#recentVehicleContainer').html(html);
+
+        });</script>
 </body>
