@@ -20,10 +20,16 @@ html {
 }
 
 body {
-    /*margin-bottom: 60px;*/
+    margin-bottom: 20px;
     padding-top: 90px;
 }
--->
+/*body {
+    padding-top: 40px;
+}
+
+.home-body {
+    padding-top: 90px;
+}*/
 /* Upcoming bikes styles */
 .upcoming-bikes-section {
     padding: 15px;
@@ -658,7 +664,7 @@ body {
     letter-spacing: 1px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: center;
-    padding: 20px 0 0 0;
+/*    padding: 20px 0 0 0;*/
 }
 
 .header-img {
@@ -676,7 +682,7 @@ body {
 /*    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);*/
     letter-spacing: 1px;
     padding: 30px 20px 0 20px;
-    margin-top: 20px;
+/*    margin-top: 20px;*/
 }
 
 .latest-bike-description {
@@ -688,7 +694,7 @@ body {
 }
 
 .latest-bikes-details-content {
-    padding: 40px 20px 20px 20px;
+    padding: 0px 20px 20px 20px;
     border: 1px solid #ddd;
 }
 
@@ -1820,8 +1826,8 @@ header.transparent {
     }
     /* About Paragraph */
     .aboutus-text p {
-        padding-bottom: 10px;
-        margin-top: 10px;
+/*        padding-bottom: 10px;
+        margin-top: 10px;*/
         color: black;
         font-size: 1.1em;
     }
@@ -1831,14 +1837,14 @@ header.transparent {
     width: 100%;
     padding-left: 0px;
     padding-right: 0px;
-    padding-top: 20px;
+/*    padding-top: 20px;*/
 }
 
 /* About Heading H2 */
 .aboutus-text h2 {
     font-size: 1.5em;
     /*    margin-bottom: 20px;*/
-    margin-top: 20px;
+/*    margin-top: 20px;*/
     color: #175678;
     font-weight: 600;
 }
@@ -1847,11 +1853,11 @@ header.transparent {
 .aboutus-text h1 {
     color: black;
     font-size: 2em;
-    margin: 0;
+/*    margin: 0;*/
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     letter-spacing: 1px;
-    padding-top: 30px;
-    padding-bottom: 20px;
+/*    padding-top: 30px;
+    padding-bottom: 20px;*/
 }
 
 /* About List */
@@ -1859,13 +1865,13 @@ header.transparent {
     line-height: 1.6;
     font-size: 1.1em;
     color: black;
-    padding: 10px;
+/*    padding: 10px;*/
     margin-left: 10px;
 }
 
     /* About List Items */
     .aboutus-text ul li {
-        padding: 2px 0 10px 0;
+/*        padding: 2px 0 10px 0;*/
     }
 /* ================= ABOUT PAGE CONTACT SECTION ================= */
 
@@ -2051,7 +2057,7 @@ body {
 
 /* Contact Container */
 .contact-details-container {
-    padding: 10px 0;
+/*    padding: 10px 0;*/
     margin-top: 10px;
     align-items: flex-start;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2064,22 +2070,20 @@ body {
     text-align: left;
 }
 
-
-*/
 .contact-page-header h1 {
     color: black;
     font-size: 2em;
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     letter-spacing: 1px;
-    padding-top: 30px;
-    padding-bottom: 20px;
+/*    padding-top: 30px;*/
+/*    padding-bottom: 20px;*/
 }
 /* Better subtitle readability */
 .contact-subtitle {
     font-size: 16px;
     line-height: 1.9;
-    margin-bottom: 28px;
+/*    margin-bottom: 28px;*/
 }
 
 .contact-mini-info {
@@ -2089,7 +2093,7 @@ body {
 }
 
     .contact-mini-info p {
-        margin-bottom: 10px;
+/*        margin-bottom: 10px;*/
         font-size: 16px;
     }
 
@@ -2740,7 +2744,9 @@ body {
     justify-content: space-around;
     align-items: center;
     background: #f5f5f5;
-    padding: 5px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
 }
 
 
@@ -4957,8 +4963,8 @@ body.dark-mode .view-all-btn {
 /*------------Best bike finder under budget--------------*/
 .budget-finder-container {
     width: 90%;
-    margin: 50px auto;
-    margin-top: 85px;
+    margin: 20px auto;
+/*    margin-top: 85px;*/
 }
 
 .filter-box {

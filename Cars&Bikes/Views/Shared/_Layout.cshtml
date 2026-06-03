@@ -51,9 +51,13 @@
                         <li><a asp-controller="Compare" asp-action="TWCompare">Compare</a></li>
                         <li><a asp-controller="Blogs" asp-action="Index">Blogs</a></li>
                         <li><a asp-controller="EmiCalculator" asp-action="EmiCalculator">EMI Calculator </a></li>
-                        <li><a class="text-white" id="contact-link">Ask a Question</a></li>
+                        @*<li><a class="text-white" id="contact-link">Ask a Question</a></li>*@
+                    <li>
+                        <a href="#" id="contact-link">
+                            Ask a Question
+                        </a>
+                    </li>
                         <li><a href="/Home/BestBikeFinder"> Budget Bikes</a></li>
-                        @*<li><a href="/home/wishlist" class="wishlist-nav"><i class="fa-solid fa-heart"></i><span id="wishlistCount">0</span></a></li>*@
 
                     </ul>
                     <div class="d-flex align-items-center gap-3">
@@ -157,7 +161,8 @@
                             <li><a asp-controller="Blogs" asp-action="Index">Blogs</a></li>
                             <li><a asp-controller="EmiCalculator" asp-action="EmiCalculator">EMI Calculator </a></li>
                             <li><a asp-controller="AboutUs" asp-action="Index">About Us</a></li>
-                            <li><a class="text-white" id="contact-link-overlay">Ask a Question</a></li>
+                            <li><a href="#" id="contact-link-overlay">Ask a Question</a></li>
+                            @*<li><a asp-controller="Ask a Question" asp-action="Ask a Question">Ask a Question </a></li>*@
                         </ul>
                     </div>
                 </div>
@@ -516,19 +521,6 @@
                     });
                 }
 
-                // OPEN CONTACT FORM
-                if (contactLinkOverlay && contactFormPopup && overlay) {
-
-                    contactLinkOverlay.addEventListener('click', () => {
-
-                        overlay.style.display = 'none';
-                        overlay.style.pointerEvents = 'none';
-
-                        contactFormPopup.style.display = 'flex';
-
-                    });
-                }
-
                 // CLOSE CONTACT FORM
                 if (contactFormClose && contactFormPopup) {
 
@@ -605,7 +597,31 @@
 
                     });
                 }
+                function openContactForm() {
+                    if (overlay) {
+                        overlay.style.display = 'none';
+                        overlay.style.pointerEvents = 'none';
+                    }
 
+                    if (contactFormPopup) {
+                        contactFormPopup.style.display = 'flex';
+                    }
+                }
+
+                //if (contactLink) {
+                //    contactLink.addEventListener('click', openContactForm);
+                //}
+    if (contactLink) {
+        contactLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            openContactForm();
+        });
+    }
+
+                if (contactLinkOverlay) {
+                    contactLinkOverlay.addEventListener('click', openContactForm);
+                }
+                
             });</script>
 
         <script>document.addEventListener("DOMContentLoaded", function () {
