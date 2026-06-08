@@ -126,7 +126,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasKey("BlogId");
 
-                    b.ToTable("Blogs");
+                    b.ToTable("Blogs", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.CompareItems", b =>
@@ -147,7 +147,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CompareItems");
+                    b.ToTable("CompareItems", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.LoginModel", b =>
@@ -166,7 +166,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasKey("LoginId");
 
-                    b.ToTable("LoginModel");
+                    b.ToTable("LoginModel", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.NewsLetter", b =>
@@ -186,7 +186,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("NewsLetters");
+                    b.ToTable("NewsLetters", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.Review", b =>
@@ -223,7 +223,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerID");
 
-                    b.ToTable("Reviews");
+                    b.ToTable("Reviews", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWCharging", b =>
@@ -261,7 +261,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWChargings");
+                    b.ToTable("TWChargings", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWChassisAndSuspension", b =>
@@ -296,7 +296,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWChassisAndSuspensions");
+                    b.ToTable("TWChassisAndSuspensions", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWDimensionsAndCapacity", b =>
@@ -355,7 +355,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWDimensionsAndCapacities");
+                    b.ToTable("TWDimensionsAndCapacities", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWEVAppFeatures", b =>
@@ -405,7 +405,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWEVAppFeatures");
+                    b.ToTable("TWEVAppFeatures", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWEVCharging", b =>
@@ -452,7 +452,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWEVChargings");
+                    b.ToTable("TWEVChargings", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWEVChassisAndSuspension", b =>
@@ -484,7 +484,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWEVChassisAndSuspensions");
+                    b.ToTable("TWEVChassisAndSuspensions", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWEVDimensionsAndCapacity", b =>
@@ -540,7 +540,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWEVDimensionsAndCapacities");
+                    b.ToTable("TWEVDimensionsAndCapacities", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWEVElectricals", b =>
@@ -587,7 +587,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWEVElectricals");
+                    b.ToTable("TWEVElectricals", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWEVEngineAndTransmission", b =>
@@ -643,7 +643,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWEVEngineAndTransmissions");
+                    b.ToTable("TWEVEngineAndTransmissions", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWEVFeatures", b =>
@@ -741,7 +741,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWEVFeatures");
+                    b.ToTable("TWEVFeatures", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWEVMotorAndBattery", b =>
@@ -800,7 +800,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWEVMotorAndBatteries");
+                    b.ToTable("TWEVMotorAndBatteries", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWEVPerformance", b =>
@@ -844,7 +844,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWEVPerformances");
+                    b.ToTable("TWEVPerformances", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWEVRange", b =>
@@ -879,7 +879,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWEVRanges");
+                    b.ToTable("TWEVRanges", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWEVSafety", b =>
@@ -953,7 +953,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWEVSafety");
+                    b.ToTable("TWEVSafety", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWEVTyresAndBrakes", b =>
@@ -1003,7 +1003,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWEVTyresAndBrakes");
+                    b.ToTable("TWEVTyresAndBrakes", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWEVUnderpinning", b =>
@@ -1065,7 +1065,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWEVUnderpinnings");
+                    b.ToTable("TWEVUnderpinnings", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWElectricals", b =>
@@ -1121,7 +1121,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWElectricals");
+                    b.ToTable("TWElectricals", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWEngineAndTransmission", b =>
@@ -1192,7 +1192,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWEngineAndTransmissions");
+                    b.ToTable("TWEngineAndTransmissions", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWFeatures", b =>
@@ -1269,7 +1269,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWFeatures");
+                    b.ToTable("TWFeatures", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWImageColorPrice", b =>
@@ -1321,7 +1321,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWImageColorPrices");
+                    b.ToTable("TWImageColorPrices", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWLatestNews", b =>
@@ -1365,7 +1365,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWBrandId");
 
-                    b.ToTable("LatestNews");
+                    b.ToTable("LatestNews", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWMileageAndPerformance", b =>
@@ -1406,7 +1406,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWMileageAndPerformances");
+                    b.ToTable("TWMileageAndPerformances", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWMotorAndBattery", b =>
@@ -1450,7 +1450,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWMotorAndBatteries");
+                    b.ToTable("TWMotorAndBatteries", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWOrFWContactUs", b =>
@@ -1482,7 +1482,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TWOrFWContactUs");
+                    b.ToTable("TWOrFWContactUs", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWSafety", b =>
@@ -1532,7 +1532,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWSafety");
+                    b.ToTable("TWSafety", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWSpec", b =>
@@ -1579,7 +1579,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWSpec");
+                    b.ToTable("TWSpec", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWTyresAndBrakes", b =>
@@ -1626,7 +1626,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWTyresAndBrakes");
+                    b.ToTable("TWTyresAndBrakes", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWUnderpinning", b =>
@@ -1682,7 +1682,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWUnderpinnings");
+                    b.ToTable("TWUnderpinnings", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TWVarient", b =>
@@ -1709,7 +1709,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerId");
 
-                    b.ToTable("TWVarients");
+                    b.ToTable("TWVarients", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TwoWheeler", b =>
@@ -1767,7 +1767,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWBrandId");
 
-                    b.ToTable("Twowheelers");
+                    b.ToTable("Twowheelers", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.TwoWheelerBrand", b =>
@@ -1813,7 +1813,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasKey("TWBrandId");
 
-                    b.ToTable("TWBrands");
+                    b.ToTable("TWBrands", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.UpcomingBike", b =>
@@ -1855,7 +1855,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWBrandId");
 
-                    b.ToTable("TWUpcomingBikes");
+                    b.ToTable("TWUpcomingBikes", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.ValueForMoney", b =>
@@ -1884,7 +1884,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasKey("VFMId");
 
-                    b.ToTable("ValueForMoney");
+                    b.ToTable("ValueForMoney", (string)null);
                 });
 
             modelBuilder.Entity("Cars_Bikes.Models.Wishlist", b =>
@@ -1911,7 +1911,7 @@ namespace Cars_Bikes.Migrations
 
                     b.HasIndex("TwoWheelerID");
 
-                    b.ToTable("Wishlist");
+                    b.ToTable("Wishlist", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<int>", b =>

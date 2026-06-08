@@ -30,6 +30,8 @@
         color: #444;
         font-size: 15px;
         line-height: 1.7;
+        overflow-wrap: anywhere;
+        word-break: break-all;
     }
 
     .review-date {
@@ -40,6 +42,7 @@
     .reviews-page-header {
         padding-bottom: 40px;
     }
+
     .review-actions {
         display: flex;
         gap: 10px;
@@ -50,6 +53,7 @@
             border-radius: 8px;
             font-weight: 600;
         }
+
     .modal-header {
         background: #0f2d3c;
         color: white;
@@ -67,11 +71,12 @@
     .btn-secondary {
         border-radius: 8px;
     }
+
     .btn-close {
         filter: invert(1);
     }
 </style>
-<div class="reviews-page-header container mt-5">
+<div class="reviews-page-header container mt-3">
 
     <h2 class="mb-4">My Reviews</h2>
     <p>Manage and view all your bike reviews.</p>
@@ -86,108 +91,108 @@
     {
         foreach (var review in Model)
         {
-<div class="my-review-card">
+            <div class="my-review-card">
 
-    <div class="d-flex justify-content-between align-items-start">
+                <div class="d-flex justify-content-between align-items-start">
 
-        <div>
-            <h4 class="bike-name">
-                @review.TwoWheeler?.TwoWheelerName
-            </h4>
+                    <div>
+                        <h4 class="bike-name">
+                            @review.TwoWheeler?.TwoWheelerName
+                        </h4>
 
-            <div class="review-stars">
-                @for (int i = 0; i < review.Rating; i++)
-                {
-                    <span>★</span>
-                }
-            </div>
-        </div>
+                        <div class="review-stars">
+                            @for (int i = 0; i < review.Rating; i++)
+                            {
+                                <span>★</span>
+                            }
+                        </div>
+                    </div>
 
-        <div class="review-date">
-            @review.CreatedAt.ToString("dd MMM yyyy")
-        </div>
+                    <div class="review-date">
+                        @review.CreatedAt.ToString("dd MMM yyyy")
+                    </div>
 
-    </div>
-
-    <div class="review-content">
-        @review.ReviewText
-    </div>
-    <div class="review-actions mt-3">
-    @*<a asp-controller="Review"
-           asp-action="EditReview"
-           asp-route-id="@review.ReviewID"
-           class="btn btn-sm btn-outline-primary">
-            Edit
-        </a>*@
-    <a asp-controller="Review"
-           asp-action="EditReview"
-           asp-route-id="@review.ReviewID"
-           class="btn btn-sm btn-outline-primary">
-            Edit
-        </a>
-        <button type="button"
-                class="btn btn-sm btn-outline-danger"
-                data-bs-toggle="modal"
-                data-bs-target="#deleteModal-@review.ReviewID">
-            Delete
-        </button>
-
-    </div>
-    <div class="modal"
-         id="deleteModal-@review.ReviewID"
-         tabindex="-1"
-         aria-hidden="true">
-
-        <div class="modal-dialog modal-dialog-centered">
-
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title">
-                        Delete Review
-                    </h5>
-
-                    <button type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal">
-                    </button>
                 </div>
 
-                <div class="modal-body">
-                    Are you sure you want to delete your review for
-                    <strong>@review.TwoWheeler?.TwoWheelerName</strong>?
-                    <br /><br />
-                    This action cannot be undone.
+                <div class="review-content">
+                    @review.ReviewText
                 </div>
-
-                <div class="modal-footer">
-
+                <div class="review-actions mt-3">
+                    @*<a asp-controller="Review"
+                           asp-action="EditReview"
+                           asp-route-id="@review.ReviewID"
+                           class="btn btn-sm btn-outline-primary">
+                            Edit
+                        </a>*@
+                    <a asp-controller="Review"
+                       asp-action="EditReview"
+                       asp-route-id="@review.ReviewID"
+                       class="btn btn-sm btn-outline-primary">
+                        Edit
+                    </a>
                     <button type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal">
-                        Cancel
+                            class="btn btn-sm btn-outline-danger"
+                            data-bs-toggle="modal"
+                            data-bs-target="#deleteModal-@review.ReviewID">
+                        Delete
                     </button>
 
-                    <form asp-controller="Review"
-                          asp-action="DeleteReview"
-                          asp-route-id="@review.ReviewID"
-                          method="post">
+                </div>
+                <div class="modal"
+                     id="deleteModal-@review.ReviewID"
+                     tabindex="-1"
+                     aria-hidden="true">
 
-                        <button type="submit"
-                                class="btn btn-danger">
-                            Delete Review
-                        </button>
+                    <div class="modal-dialog modal-dialog-centered">
 
-                    </form>
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title">
+                                    Delete Review
+                                </h5>
+
+                                <button type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal">
+                                </button>
+                            </div>
+
+                            <div class="modal-body">
+                                Are you sure you want to delete your review for
+                                <strong>@review.TwoWheeler?.TwoWheelerName</strong>?
+                                <br /><br />
+                                This action cannot be undone.
+                            </div>
+
+                            <div class="modal-footer">
+
+                                <button type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal">
+                                    Cancel
+                                </button>
+
+                                <form asp-controller="Review"
+                                      asp-action="DeleteReview"
+                                      asp-route-id="@review.ReviewID"
+                                      method="post">
+
+                                    <button type="submit"
+                                            class="btn btn-danger">
+                                        Delete Review
+                                    </button>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
-
             </div>
-
-        </div>
-
-    </div>
-</div>
         }
     }
 

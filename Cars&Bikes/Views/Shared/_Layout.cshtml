@@ -52,14 +52,45 @@
                         <li><a asp-controller="Blogs" asp-action="Index">Blogs</a></li>
                         <li><a asp-controller="EmiCalculator" asp-action="EmiCalculator">EMI Calculator </a></li>
                         @*<li><a class="text-white" id="contact-link">Ask a Question</a></li>*@
-                    <li>
-                        <a href="#" id="contact-link">
-                            Ask a Question
-                        </a>
-                    </li>
+                        <li>
+                            <a href="#" id="contact-link">
+                                Ask a Question
+                            </a>
+                        </li>
+
                         <li><a href="/Home/BestBikeFinder"> Budget Bikes</a></li>
 
+                        <!-- ROHIT YADAV    -->
+                        <!-- DROPDOWN BUTTON
+                            <li><a href="/Home/BestBikeFinder"> Budget Bikes</a></li>
+
+                            <li>
+                                <select id="languageSelector"
+                                        style="padding:5px;border-radius:5px;border:none;">
+                                    <option value="en">English</option>
+                                    <option value="hi">हिन्दी</option>
+                                </select>
+                            </li>
+
+                        </ul>
+                            -->
+                        <!-- DROPDOWN ICON-->
+                        <li class="language-dropdown">
+                            <a href="javascript:void(0);" id="languageIcon">
+                                <i class="bi bi-translate"></i>
+                            </a>
+                            <ul class="language-menu notranslate">
+                                <li data-lang="en">
+                                    <span lang="en">English</span>
+                                </li>
+                                <li data-lang="hi">
+                                    <span lang="hi">हिन्दी</span>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
+                    <!--end of language dropdown-->
+
                     <div class="d-flex align-items-center gap-3">
                         <!-- THEME TOGGLE -->
                         @*<label class="theme-switch">
@@ -87,12 +118,12 @@
                                    style="font-size: 28px; position: relative; top: -10px; "></i>
                             </button>
 
-                            <div id="profileMenu"
-                                 class="bg-white rounded-4 shadow-lg p-2 position-absolute end-0 mt-3"
-                                 style="display:none; min-width:220px; z-index:9999;">
-                                <div class="px-3 py-2">
-                                    @*<small class="text-muted">Signed in as</small>*@
-                                    <div class="fw-semibold">@User.Identity.Name</div>
+                            <!--<div id="profileMenu"
+                             class="bg-white rounded-4 shadow-lg p-2 position-absolute end-0 mt-3"
+                             style="display:none; min-width:220px; z-index:9999;">
+                            <div class="px-3 py-2">-->
+                            @*<small class="text-muted">Signed in as</small>*@
+                            <!--<div class="fw-semibold">@User.Identity.Name</div>
                                 </div>
 
                                 <a asp-controller="Review"
@@ -134,8 +165,61 @@
                                     Logout
                                 </a>
 
-                            </div>
+                            </div>-->
+                            <div id="profileMenu"
+                                 class="bg-white rounded-4 shadow-lg p-2 position-absolute end-0 mt-3"
+                                 style="display:none; min-width:220px; z-index:9999;">
 
+                                <div class=" profile-user">
+                                    <div class="fw-semibold">@User.Identity.Name</div>
+                                </div>
+
+                                <a asp-controller="Review"
+                                   asp-action="MyReviews"
+                                   class="dropdown-item profile-menu-item text-decoration-none">
+
+                                    <i class="bi bi-chat-left-text"></i>
+
+                                    <span>My Reviews</span>
+
+                                </a>
+
+                                <a href="/Wishlist/Index"
+                                   id="wishlistNavLink"
+                                   class="dropdown-item profile-menu-item text-decoration-none">
+
+                                    <div class="wishlist-icon-wrapper">
+
+                                        @*<i class="bi bi-heart-fill"></i>
+
+        <span id="wishlistCountBadge"
+              class="wishlist-heart-count">
+            0
+        </span>*@
+                                        <i class="bi bi-heart-fill wishlist-heart-icon"></i>
+
+                                        <span id="wishlistCountBadge"
+                                              class="wishlist-heart-count">
+                                            0
+                                        </span>
+
+                                    </div>
+
+                                    <span>Wishlist</span>
+
+                                </a>
+
+                                <a asp-controller="Account"
+                                   asp-action="Logout"
+                                   class="dropdown-item profile-menu-item text-danger text-decoration-none">
+
+                                    <i class="bi bi-box-arrow-right"></i>
+
+                                    <span>Logout</span>
+
+                                </a>
+
+                            </div>
                         </div>
                     }
                     else
@@ -163,6 +247,20 @@
                             <li><a asp-controller="AboutUs" asp-action="Index">About Us</a></li>
                             <li><a href="#" id="contact-link-overlay">Ask a Question</a></li>
                             @*<li><a asp-controller="Ask a Question" asp-action="Ask a Question">Ask a Question </a></li>*@
+                            <li class="mobile-language-dropdown">
+                                <a href="javascript:void(0);" id="mobileLanguageIcon">
+                                    <i class="bi bi-translate"></i> Language
+                                </a>
+
+                                <ul class="mobile-language-menu notranslate">
+                                    <li data-lang="en">
+                                        <span lang="en">English</span>
+                                    </li>
+                                    <li data-lang="hi">
+                                        <span lang="hi">हिन्दी</span>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -311,24 +409,48 @@
                                 </p>
 
                                 <ul class="social-icons">
+                                    <!--
                                     <li>
                                         <a href="https://www.instagram.com/?hl=en"
-                                           class="site-button-link google-plus hover">
+                                            class="site-button-link google-plus hover">
                                             <i class="bi bi-instagram"></i>
                                         </a>
                                     </li>
 
                                     <li>
                                         <a href="https://x.com/home?lang=en"
-                                           class="site-button-link twitter hover">
+                                            class="site-button-link twitter hover">
                                             <i class="bi bi-twitter-x"></i>
                                         </a>
                                     </li>
 
                                     <li>
                                         <a href="https://www.linkedin.com/feed/?trk=nav_back_to_linkedin"
-                                           class="site-button-link linkedin hover">
+                                            class="site-button-link linkedin hover">
                                             <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                     -->
+                                    <!-- ROHIT YADAV -->
+                                    <li>
+                                        <a href="https://www.instagram.com/bikecarhub2024/?hl=en"
+                                           class="site-button-link google-plus hover">
+                                            <i class="bi bi-instagram"></i>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="https://x.com/bikecarhub"
+                                           class="site-button-link twitter hover">
+                                            <i class="bi bi-twitter-x"></i>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="https://www.linkedin.com/in/bikecar-hub-a42a81356/"
+                                           class="site-button-link linkedin hover">
+                                            <!--<i class="fa fa-linkedin"></i>-->
+                                            <i class="bi bi-linkedin"></i>
                                         </a>
                                     </li>
                                 </ul>
@@ -611,17 +733,17 @@
                 //if (contactLink) {
                 //    contactLink.addEventListener('click', openContactForm);
                 //}
-    if (contactLink) {
-        contactLink.addEventListener('click', function (e) {
-            e.preventDefault();
-            openContactForm();
-        });
-    }
+                if (contactLink) {
+                    contactLink.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        openContactForm();
+                    });
+                }
 
                 if (contactLinkOverlay) {
                     contactLinkOverlay.addEventListener('click', openContactForm);
                 }
-                
+
             });</script>
 
         <script>document.addEventListener("DOMContentLoaded", function () {
@@ -942,6 +1064,233 @@
 
             });</script>
         @*@RenderSection("Scripts", required: false)*@
+        <!--ROHIT YADAV-->
+        <!-- Hidden google translate container-->
+        <div id="google_translate_element" style="display:none;"></div>
+        <!---->
+        <!--GOOGLE TRANSLATE SCRIPT-->
+        <script type="text/javascript">function googleTranslateElementInit() {
+                new google.translate.TranslateElement(
+                    {
+                        pageLanguage: 'en',
+                        includedLanguages: 'en,hi',
+                        autoDisplay: false
+                    },
+                    'google_translate_element'
+                );
+            }</script>
+        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <!---->
+        <!--CONNECT DROPDOWN TO TRANSLATER FOR BUTTON
+        <script>document.addEventListener("DOMContentLoaded", function () {
+
+            const selector =
+                document.getElementById("languageSelector");
+
+            if (!selector) return;
+
+            selector.addEventListener("change", function () {
+
+                const language = this.value;
+
+                const interval = setInterval(function () {
+
+                    const googleSelect =
+                        document.querySelector(".goog-te-combo");
+
+                    if (googleSelect) {
+
+                        googleSelect.value = language;
+
+                        googleSelect.dispatchEvent(
+                            new Event("change")
+                        );
+
+                        clearInterval(interval);
+                    }
+
+                }, 500);
+
+            });
+
+        });</script>
+        -->
+        <!--CONNECT DROPDOWN TO TRANSLATER FOR ICON-->
+        <script>function updateLanguageTick(selectedLang) {
+
+                //document.querySelectorAll(".language-menu li")
+                document.querySelectorAll(
+                    ".language-menu li, .mobile-language-menu li"
+                )
+                    .forEach(li => {
+
+                        const lang = li.dataset.lang;
+
+                        if (lang === "en") {
+
+                            li.innerHTML =
+                                (selectedLang === "en")
+                                    ? "✓ <span lang='en'>English</span>"
+                                    : "<span lang='en'>English</span>";
+
+                        } else {
+
+                            li.innerHTML =
+                                (selectedLang === "hi")
+                                    ? "✓ <span lang='hi'>हिन्दी</span>"
+                                    : "<span lang='hi'>हिन्दी</span>";
+
+                        }
+
+                    });
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+
+                //document.querySelectorAll(".language-menu li")
+                document.querySelectorAll(
+                    ".language-menu li, .mobile-language-menu li"
+                )
+                    .forEach(item => {
+
+                        item.addEventListener("click", function () {
+
+                            const language =
+                                this.getAttribute("data-lang");
+
+                            localStorage.setItem(
+                                "selectedLanguage",
+                                language
+                            );
+
+                            updateLanguageTick(language);
+
+                            const interval = setInterval(function () {
+
+                                const googleSelect =
+                                    document.querySelector(".goog-te-combo");
+
+                                if (googleSelect) {
+
+                                    googleSelect.value = language;
+
+                                    googleSelect.dispatchEvent(
+                                        new Event("change")
+                                    );
+
+                                    clearInterval(interval);
+                                }
+
+                            }, 500);
+
+                        });
+
+                    });
+
+            });</script>
+        <!--REMEMBER USER'S SELECTED SCRIPT FOR BUTTON
+        <script>document.addEventListener("DOMContentLoaded", function () {
+
+                const selector =
+                    document.getElementById("languageSelector");
+
+                if (!selector) return;
+
+                const savedLanguage =
+                    localStorage.getItem("selectedLanguage");
+
+                if (savedLanguage) {
+                    selector.value = savedLanguage;
+                }
+
+                selector.addEventListener("change", function () {
+
+                    localStorage.setItem(
+                        "selectedLanguage",
+                        this.value
+                    );
+
+                });
+
+            });</script>
+        -->
+        <!--REMEMBER USER'S SELECTED SCRIPT FOR ICON-->
+        <script>window.addEventListener("load", function () {
+
+                const savedLanguage =
+                    localStorage.getItem("selectedLanguage") || "en";
+
+                updateLanguageTick(savedLanguage);
+
+                const interval = setInterval(function () {
+
+                    const googleSelect =
+                        document.querySelector(".goog-te-combo");
+
+                    if (googleSelect) {
+
+                        googleSelect.value = savedLanguage;
+
+                        googleSelect.dispatchEvent(
+                            new Event("change")
+                        );
+
+                        clearInterval(interval);
+                    }
+
+                }, 500);
+
+            });</script>
+        <!---->
+        <script>document.addEventListener("DOMContentLoaded", function () {
+
+                const icon = document.getElementById("languageIcon");
+                const menu = document.querySelector(".language-menu");
+
+                if (icon && menu) {
+
+                    icon.addEventListener("click", function (e) {
+                        e.preventDefault();
+
+                        menu.style.display =
+                            menu.style.display === "block"
+                                ? "none"
+                                : "block";
+                    });
+
+                    document.addEventListener("click", function (e) {
+
+                        if (!menu.contains(e.target) &&
+                            !icon.contains(e.target)) {
+
+                            menu.style.display = "none";
+                        }
+                    });
+                }
+            });</script>
+        <script>document.addEventListener("DOMContentLoaded", function () {
+
+                const mobileIcon =
+                    document.getElementById("mobileLanguageIcon");
+
+                const mobileMenu =
+                    document.querySelector(".mobile-language-menu");
+
+                if (mobileIcon && mobileMenu) {
+
+                    mobileIcon.addEventListener("click", function (e) {
+
+                        e.preventDefault();
+
+                        mobileMenu.style.display =
+                            mobileMenu.style.display === "block"
+                                ? "none"
+                                : "block";
+                    });
+
+                }
+
+            });</script>
         @await RenderSectionAsync("Scripts", required: false)
     </div>
 </body>
