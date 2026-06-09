@@ -11,24 +11,24 @@ namespace Cars_Bikes.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "Blogs",
-                columns: table => new
-                {
-                    BlogId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    BlogHeading = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
-                    BlogSummary = table.Column<string>(type: "nvarchar(2000)", maxLength: 2000, nullable: true),
-                    BlogDetail = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    URL = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Date = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsTwoWheeler = table.Column<bool>(type: "bit", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Blogs", x => x.BlogId);
-                });
+            //migrationBuilder.CreateTable(
+            //    name: "Blogs",
+            //    columns: table => new
+            //    {
+            //        BlogId = table.Column<int>(type: "int", nullable: false)
+            //            .Annotation("SqlServer:Identity", "1, 1"),
+            //        BlogHeading = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+            //        BlogSummary = table.Column<string>(type: "nvarchar(2000)", maxLength: 2000, nullable: true),
+            //        BlogDetail = table.Column<string>(type: "nvarchar(max)", nullable: true),
+            //        URL = table.Column<string>(type: "nvarchar(max)", nullable: true),
+            //        Date = table.Column<DateTime>(type: "datetime2", nullable: true),
+            //        ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
+            //        IsTwoWheeler = table.Column<bool>(type: "bit", nullable: true)
+            //    },
+            //    constraints: table =>
+            //    {
+            //        table.PrimaryKey("PK_Blogs", x => x.BlogId);
+            //    });
 
             migrationBuilder.CreateTable(
                 name: "CompareItems",
@@ -44,21 +44,21 @@ namespace Cars_Bikes.Migrations
                     table.PrimaryKey("PK_CompareItems", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "LoginModel",
-                columns: table => new
-                {
-                    LoginId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_LoginModel", x => x.LoginId);
-                });
+            //migrationBuilder.CreateTable(
+            //    name: "LoginModel",
+            //    columns: table => new
+            //    {
+            //        LoginId = table.Column<int>(type: "int", nullable: false)
+            //            .Annotation("SqlServer:Identity", "1, 1"),
+            //        Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
+            //        Password = table.Column<string>(type: "nvarchar(max)", nullable: true)
+            //    },
+            //    constraints: table =>
+            //    {
+            //        table.PrimaryKey("PK_LoginModel", x => x.LoginId);
+            //    });
 
-            migrationBuilder.CreateTable(
+           /* migrationBuilder.CreateTable(
                 name: "NewsLetters",
                 columns: table => new
                 {
@@ -1121,7 +1121,7 @@ namespace Cars_Bikes.Migrations
                         principalTable: "TwoWheelers",
                         principalColumn: "TwoWheelerId");
                 });
-
+           
             migrationBuilder.CreateIndex(
                 name: "IX_LatestNews_TwoWBrandId",
                 table: "LatestNews",
@@ -1401,6 +1401,7 @@ namespace Cars_Bikes.Migrations
                 name: "IX_TWVarients_TwoWheelerId",
                 table: "TWVarients",
                 column: "TwoWheelerId");
+           */
         }
 
         /// <inheritdoc />
