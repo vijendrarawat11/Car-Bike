@@ -4,6 +4,8 @@ namespace Cars_Bikes.ViewModels
 {
     public class TwoWheelerFullDetailsViewModel
     {
+        public TwoWheeler? TwoWheeler { get; set; }
+
         public TWSpec? TWSpec { get; set; }
         public TWMotorAndBattery? TWMotorAndBattery { get; set; }
         public TWFeatures? TWFeatures { get; set; }

@@ -1,5 +1,6 @@
 ﻿using Cars_Bikes.Data;
 using Cars_Bikes.Models;
+using Google.Apis.Drive.v3.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -165,17 +166,43 @@ namespace Cars_Bikes.Controllers.TwoWheeler.Brand
         }
         private Cars_Bikes.Models.TwoWheeler GetBikeDetails(string bikeName)
         {
-            var bike = _context.Twowheelers.Include(b => b.TWVarients)
-                //.Include(b => b.TWSpecs)
+            var bike = _context.Twowheelers
+                .Include(b => b.TWVarients)
                 .FirstOrDefault(b => b.TwoWheelerName == bikeName);
 
             if (bike == null)
             {
-                // Handle the case where the bike is not found
                 return null;
             }
+
+            var reviews = _context.Reviews
+                .Where(r => r.TwoWheelerID == bike.TwoWheelerId)
+                .OrderByDescending(r => r.CreatedAt)
+                .ToList();
+
+            ViewBag.Reviews = reviews;
+            ViewBag.ReviewCount = reviews.Count;
+
+            ViewBag.AverageRating = reviews.Any()
+                ? reviews.Average(r => r.Rating)
+                : 0;
+
+            var user = User.Identity?.IsAuthenticated == true
+                ? _context.Users.FirstOrDefault(u => u.UserName == User.Identity.Name)
+                : null;
+
+            Review? userReview = null;
+
+            if (user != null)
+            {
+                userReview = reviews.FirstOrDefault(r => r.UserID == user.Id);
+            }
+
+            ViewBag.UserReview = userReview;
+
             var Allbrand = _context.TwowheelerBrands.ToList();
             ViewBag.AllBrand = Allbrand;
+
             return bike;
         }
         //[HttpGet]

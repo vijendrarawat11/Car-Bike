@@ -19,9 +19,9 @@
     }
 }
 @* <div class="header-img"> <img src="~/images/main-slider/header.png" /></div> *@
-<!-- Breadcrumb row END -->
-<div class=" m-t90">
-<h1 class="for-h1 mb-5">Blogs</h1>
+<!-- Breadcrumb row END --> 
+<div class="m-t10">
+<h1 class="for-h1">Blogs</h1>
 <div class="upcoming-bikes-details-row">
     @foreach (var allBlogs in ViewBag.allBlogs)
     {
@@ -32,11 +32,12 @@
                 </div>
 
                 @* <a href="@Url.Action("TWUpcomingBikeDetails", "Home", new { id = allUpbike.UpcomingBikeId })"style="text-decoration:none;"> *@
-                <div class="upcoming-allbikes-details-content">
-                    <h2>@Truncate(@allBlogs.BlogHeading, 22)</h2>
-                    <p><i class="fa fa-calendar"></i>  @allBlogs.Date.ToString("d MMM yyyy")</p>
-                    <a href="/@allBlogs.URL" class="details-button" style="text-decoration:none;">View Details</a>
-                </div>
+            <div class="upcoming-allbikes-details-content">
+                @*<h2>@Truncate(@allBlogs.BlogHeading, 22)</h2>*@
+                <h2>@allBlogs.BlogHeading</h2>
+                <p><i class="fa fa-calendar"></i>  @allBlogs.Date.ToString("d MMM yyyy")</p>
+                <a href="/@allBlogs.URL" class="details-button" style="text-decoration:none;">View Details</a>
+            </div>
                 @* </a> *@
             </div>
         </a>

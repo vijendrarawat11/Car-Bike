@@ -338,7 +338,7 @@ namespace Cars_Bikes.Controllers
                 //return RedirectToAction("Success");
                 return RedirectToAction("CreateSpecAndSafety");
             }
-
+            
             ViewBag.TwoWheelers = new SelectList(_context.Twowheelers, "TwoWheelerId", "TwoWheelerName", safety.TwoWheelerId);
             ViewBag.TWVarients = new SelectList(_context.TWVarients, "TWVarientId", "Varients", safety.TWVarientId);
             Debug.WriteLine("Not saved");
@@ -1567,34 +1567,81 @@ namespace Cars_Bikes.Controllers
         //public async Task<IActionResult> Details(int twoWheelerId, int varientId)
         //public IActionResult Details(int id)
         //{
-            //var viewModel = new TwoWheelerFullDetailsViewModel
-            //{
-            //    TWSpec = await _context.TWSpec.FirstOrDefaultAsync(x => x.TwoWheelerId == twoWheelerId && x.TWVarientId == varientId),
-            //    TWMotorAndBattery = await _context.TWMotorAndBatteries.FirstOrDefaultAsync(x => x.TwoWheelerId == twoWheelerId && x.TWVarientId == varientId),
-            //    TWFeatures = await _context.TWFeatures.FirstOrDefaultAsync(x => x.TwoWheelerId == twoWheelerId && x.TWVarientId == varientId),
+        //var viewModel = new TwoWheelerFullDetailsViewModel
+        //{
+        //    TWSpec = await _context.TWSpec.FirstOrDefaultAsync(x => x.TwoWheelerId == twoWheelerId && x.TWVarientId == varientId),
+        //    TWMotorAndBattery = await _context.TWMotorAndBatteries.FirstOrDefaultAsync(x => x.TwoWheelerId == twoWheelerId && x.TWVarientId == varientId),
+        //    TWFeatures = await _context.TWFeatures.FirstOrDefaultAsync(x => x.TwoWheelerId == twoWheelerId && x.TWVarientId == varientId),
 
-            //};
-            //return View(viewModel);
+        //};
+        //return View(viewModel);
 
 
-       //     var twoWheelerList = _context.Twowheelers
-       //.Select(t => new SelectListItem
-       //{
-       //    Value = t.TwoWheelerId.ToString(),
-       //    Text = t.TwoWheelerName
-       //}).ToList();
+        //     var twoWheelerList = _context.Twowheelers
+        //.Select(t => new SelectListItem
+        //{
+        //    Value = t.TwoWheelerId.ToString(),
+        //    Text = t.TwoWheelerName
+        //}).ToList();
 
-       //     ViewBag.TwoWheelers = twoWheelerList;
+        //     ViewBag.TwoWheelers = twoWheelerList;
 
-       //     // Empty initially; to be filled dynamically with JS
-       //     ViewBag.TWVarients = new List<SelectListItem>();
+        //     // Empty initially; to be filled dynamically with JS
+        //     ViewBag.TWVarients = new List<SelectListItem>();
 
-       //     return View();
-       // }
-        public IActionResult Details()
+        //     return View();
+        // }
+        //public IActionResult Details()
+        //{
+        //    var viewModel = new TwoWheelerFullDetailsViewModel(); // Create a valid model
+
+        //    ViewBag.TwoWheelers = _context.Twowheelers
+        //        .Select(t => new SelectListItem
+        //        {
+        //            Value = t.TwoWheelerId.ToString(),
+        //            Text = t.TwoWheelerName
+        //        }).ToList();
+
+        //    //ViewBag.TWVarients = new List<SelectListItem>();
+        //    ViewBag.TWVarients = _context.TWVarients
+        //.Select(v => new SelectListItem
+        //{
+        //    Value = v.TWVarientId.ToString(),
+        //    Text = v.TWName
+        //}).ToList();
+        //    return View(viewModel); 
+        //}
+        public IActionResult Details(int? id)
         {
-            var viewModel = new TwoWheelerFullDetailsViewModel(); // Create a valid model
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            var bike = _context.Twowheelers
+                .FirstOrDefault(x => x.TwoWheelerId == id);
+            Console.WriteLine($"Bike Id = {bike.TwoWheelerId}");
+            if (bike == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new TwoWheelerFullDetailsViewModel
+            {
+                TwoWheeler = bike
+            };
+            var reviews = _context.Reviews
+            .Where(r => r.TwoWheelerID == bike.TwoWheelerId)
+            .OrderByDescending(r => r.CreatedAt)
+            .ToList();
+
+            ViewBag.Reviews = reviews;
+
+            ViewBag.ReviewCount = reviews.Count;
+
+            ViewBag.AverageRating = reviews.Any()
+                ? reviews.Average(r => r.Rating)
+                : 0;
             ViewBag.TwoWheelers = _context.Twowheelers
                 .Select(t => new SelectListItem
                 {
@@ -1602,14 +1649,14 @@ namespace Cars_Bikes.Controllers
                     Text = t.TwoWheelerName
                 }).ToList();
 
-            //ViewBag.TWVarients = new List<SelectListItem>();
             ViewBag.TWVarients = _context.TWVarients
-        .Select(v => new SelectListItem
-        {
-            Value = v.TWVarientId.ToString(),
-            Text = v.TWName
-        }).ToList();
-            return View(viewModel); 
+                .Select(v => new SelectListItem
+                {
+                    Value = v.TWVarientId.ToString(),
+                    Text = v.TWName
+                }).ToList();
+
+            return View(viewModel);
         }
 
         public IActionResult GetBrands()
@@ -1674,9 +1721,5 @@ namespace Cars_Bikes.Controllers
                 _ => Content("Invalid tab name.")
             };
         }
-
-
     }
-
 }
-

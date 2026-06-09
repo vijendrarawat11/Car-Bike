@@ -151,6 +151,7 @@ namespace Cars_Bikes.Controllers
             ////return View("TwoWheelerDetails", tuple);
 
             ViewBag.TwoWheelers = twoWheelers;
+            ViewBag.TwoWheelerId = modelId;
             ////ViewBag.Specs = spec;
             //ViewBag.Features = features;
             //ViewBag.Safety = safety;
@@ -247,6 +248,54 @@ namespace Cars_Bikes.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        public IActionResult Wishlist()
+        {
+            return View();
+        }
+        public IActionResult BestBikeFinder(string budget, string typeFilter)
+        {
+            var bikes = _context.Twowheelers.AsQueryable();
+
+            if (!string.IsNullOrEmpty(budget))
+            {
+                int maxBudget = int.Parse(budget);
+
+                bikes = bikes.Where(x => x.BasePrice <= maxBudget);
+            }
+
+            if (!string.IsNullOrEmpty(typeFilter))
+            {
+                bikes = bikes.Where(x => x.Type == typeFilter);
+            }
+
+            return View(bikes.ToList());
+        }
+        public IActionResult Details(int id)
+        {
+            var bike = _context.Twowheelers
+                .FirstOrDefault(x => x.TwoWheelerId == id);
+
+            if (bike == null)
+            {
+                return NotFound();
+            }
+
+            var reviews = _context.Reviews
+                .Where(r => r.TwoWheelerID == id)
+                .OrderByDescending(r => r.CreatedAt)
+                .ToList();
+
+            ViewBag.Reviews = reviews;
+
+            ViewBag.ReviewCount = reviews.Count;
+
+            ViewBag.AverageRating =
+                reviews.Any()
+                ? reviews.Average(r => r.Rating)
+                : 0;
+
+            return View(bike);
         }
     }
 }

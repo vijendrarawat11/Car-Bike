@@ -7,38 +7,34 @@
     <div class="header-img"> <img src="~/images/main-slider/header.png" /></div>
     <!-- Brand Dropdown -->
     <div class="form-group">
-    <label>Select Variant</label>
-    <select id="variantDropdown" class="form-control">
-        <option value="">-- Select Variant --</option>
-        @foreach (var item in ViewBag.TWVarients as List<SelectListItem>)
-        {
-            <option value="@item.Value">@item.Text</option>
-        }
-    </select>
-</div>
-
-<!-- Show this only after a variant is selected -->
-<div id="tabSection" style="display: none;">
-    <ul class="nav nav-tabs" id="variantTabs" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" data-tab="specTab">Specification</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-tab="featuresTab">Features</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-tab="motorTab">Motor & Battery</a>
-        </li>
-    </ul>
-
-    <div id="tabContent" class="mt-3">
-        <!-- AJAX-loaded form will appear here -->
+        <label>Select Variant</label>
+        <select id="variantDropdown" class="form-control">
+            <option value="">-- Select Variant --</option>
+            @foreach (var item in ViewBag.TWVarients as List<SelectListItem>)
+            {
+                <option value="@item.Value">@item.Text</option>
+            }
+        </select>
     </div>
-</div>
 
+    <!-- Show this only after a variant is selected -->
+    <div id="tabSection" style="display: none;">
+        <ul class="nav nav-tabs" id="variantTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-tab="specTab">Specification</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-tab="featuresTab">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-tab="motorTab">Motor & Battery</a>
+            </li>
+        </ul>
 
-
-
+        <div id="tabContent" class="mt-3">
+            <!-- AJAX-loaded form will appear here -->
+        </div>
+    </div>
     @* <select id="brandDropdown" class="form-control"> *@
     @*     <option value="">-- Select Brand --</option> *@
     @*     @foreach (var item in ViewBag.TwoWheelers as List<SelectListItem>) *@
@@ -110,31 +106,31 @@
     @* </div> *@
 
 
-@* <ul class="nav nav-tabs" id="myTab" role="tablist"> *@
-@*     <li class="nav-item" role="presentation"> *@
-@*         <a class="nav-link active" id="spec-tab" data-bs-toggle="tab" href="#spec" role="tab">Specification</a> *@
-@*     </li> *@
-@*     <li class="nav-item" role="presentation"> *@
-@*         <a class="nav-link" id="motor-tab" data-bs-toggle="tab" href="#motor" role="tab">Motor & Battery</a> *@
-@*     </li> *@
-@*     <li class="nav-item" role="presentation"> *@
-@*         <a class="nav-link" id="features-tab" data-bs-toggle="tab" href="#features" role="tab">Features</a> *@
-@*     </li> *@
-    
-@* </ul> *@
+    @* <ul class="nav nav-tabs" id="myTab" role="tablist"> *@
+    @*     <li class="nav-item" role="presentation"> *@
+    @*         <a class="nav-link active" id="spec-tab" data-bs-toggle="tab" href="#spec" role="tab">Specification</a> *@
+    @*     </li> *@
+    @*     <li class="nav-item" role="presentation"> *@
+    @*         <a class="nav-link" id="motor-tab" data-bs-toggle="tab" href="#motor" role="tab">Motor & Battery</a> *@
+    @*     </li> *@
+    @*     <li class="nav-item" role="presentation"> *@
+    @*         <a class="nav-link" id="features-tab" data-bs-toggle="tab" href="#features" role="tab">Features</a> *@
+    @*     </li> *@
 
-@* <div class="tab-content mt-3"> *@
-@*     <div class="tab-pane fade show active" id="spec-tab" role="tabpanel"> *@
-@*         @Html.Partial("Partials/_SpecPartial", Model.TWSpec) *@
-@*     </div> *@
-@*     <div class="tab-pane fade" id="motor" role="tabpanel"> *@
-@*         @Html.Partial("Partials/_MotorPartial", Model.TWMotorAndBattery) *@
-@*     </div> *@
-@*     <div class="tab-pane fade" id="features" role="tabpanel"> *@
-@*         @Html.Partial("Partials/_FeaturesPartial", Model.TWFeatures) *@
-@*     </div> *@
-@*     <!-- Add more partials --> *@
-@* </div> *@
+    @* </ul> *@
+
+    @* <div class="tab-content mt-3"> *@
+    @*     <div class="tab-pane fade show active" id="spec-tab" role="tabpanel"> *@
+    @*         @Html.Partial("Partials/_SpecPartial", Model.TWSpec) *@
+    @*     </div> *@
+    @*     <div class="tab-pane fade" id="motor" role="tabpanel"> *@
+    @*         @Html.Partial("Partials/_MotorPartial", Model.TWMotorAndBattery) *@
+    @*     </div> *@
+    @*     <div class="tab-pane fade" id="features" role="tabpanel"> *@
+    @*         @Html.Partial("Partials/_FeaturesPartial", Model.TWFeatures) *@
+    @*     </div> *@
+    @*     <!-- Add more partials --> *@
+    @* </div> *@
 </body>
 @* <script src="~/js/twdetails.js"></script> *@
 @* @section Scripts { *@
@@ -231,140 +227,99 @@
 @* } *@
 
 @*
-@section Scripts {
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    @section Scripts {
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <script>
-        $(document).ready(function () {
+        <script>
+            $(document).ready(function () {
 
-            // Populate variants based on selected brand
-            $('#twoWheelerDropdown').change(function () {
-                var brandId = $(this).val();
+                // Populate variants based on selected brand
+                $('#twoWheelerDropdown').change(function () {
+                    var brandId = $(this).val();
 
-                $('#twVarientDropdown').empty().append('<option value="">-- Select Variant --</option>');
-                $('#tabContent').html(''); // Clear form content when brand changes
+                    $('#twVarientDropdown').empty().append('<option value="">-- Select Variant --</option>');
+                    $('#tabContent').html(''); // Clear form content when brand changes
 
-                if (brandId) {
-                    $.ajax({
-                        url: '/TW/GetVariants',  // Adjust to match your controller name if different
-                        type: 'GET',
-                        data: { brandId: brandId },
-                        success: function (variants) {
-                            $.each(variants, function (index, variant) {
-                                $('#twVarientDropdown').append('<option value="' + variant.twVarientId + '">' + variant.twName + '</option>');
+                    if (brandId) {
+                        $.ajax({
+                            url: '/TW/GetVariants',  // Adjust to match your controller name if different
+                            type: 'GET',
+                            data: { brandId: brandId },
+                            success: function (variants) {
+                                $.each(variants, function (index, variant) {
+                                    $('#twVarientDropdown').append('<option value="' + variant.twVarientId + '">' + variant.twName + '</option>');
+                                });
+                            },
+                            error: function () {
+                                alert('Error loading variants.');
+                            }
+                        });
+                    }
+                });
+
+                // Load the partial view when variant is selected
+                $('#twVarientDropdown').change(function () {
+                    var brandId = $('#twoWheelerDropdown').val();
+                    var variantId = $(this).val();
+
+                    if (brandId && variantId) {
+                        $.ajax({
+                            url: '/TW/GetVariants',
+                            type: 'GET',
+                            data: { brandId: brandId, variantId: variantId },
+                            success: function (data) {
+                                $('#tabContent').html(data); // Load partial into tab area
+                            },
+                            error: function () {
+                                alert('Error loading details.');
+                            }
+                        });
+                    }
+                });
+
+            });
+
+             $(document).ready(function () {
+                // Load Variants when brand selected
+                $('#brandDropdown').change(function () {
+                    const brandId = $(this).val();
+                    $('#variantDropdown').empty().append('<option value="">-- Select Variant --</option>');
+                    if (brandId) {
+                        $.getJSON('/TW/GetVariants', { brandId: brandId }, function (data) {
+                            $.each(data, function (i, item) {
+                                $('#variantDropdown').append(`<option value="${item.twVarientId}">${item.twName}</option>`);
                             });
-                        },
-                        error: function () {
-                            alert('Error loading variants.');
-                        }
-                    });
-                }
-            });
-
-            // Load the partial view when variant is selected
-            $('#twVarientDropdown').change(function () {
-                var brandId = $('#twoWheelerDropdown').val();
-                var variantId = $(this).val();
-
-                if (brandId && variantId) {
-                    $.ajax({
-                        url: '/TW/GetVariants',
-                        type: 'GET',
-                        data: { brandId: brandId, variantId: variantId },
-                        success: function (data) {
-                            $('#tabContent').html(data); // Load partial into tab area
-                        },
-                        error: function () {
-                            alert('Error loading details.');
-                        }
-                    });
-                }
-            });
-
-        });
-
-         $(document).ready(function () {
-            // Load Variants when brand selected
-            $('#brandDropdown').change(function () {
-                const brandId = $(this).val();
-                $('#variantDropdown').empty().append('<option value="">-- Select Variant --</option>');
-                if (brandId) {
-                    $.getJSON('/TW/GetVariants', { brandId: brandId }, function (data) {
-                        $.each(data, function (i, item) {
-                            $('#variantDropdown').append(`<option value="${item.twVarientId}">${item.twName}</option>`);
                         });
-                    });
-                }
-            });
+                    }
+                });
 
-            // Load forms in tabs when both selected
-            $('#variantDropdown').change(function () {
-                const brandId = $('#brandDropdown').val();
-                const variantId = $(this).val();
-                if (brandId && variantId) {
-                    // Load each tab with separate AJAX call
-                    $('#tabContent .tab-pane').each(function () {
-                        const tabId = $(this).attr('id'); // e.g., specTab, featuresTab
-                        $.get(`/TW/LoadTabPartial`, {
-                            brandId: brandId,
-                            variantId: variantId,
-                            tab: tabId
-                        }, function (html) {
-                            $(`#${tabId}`).html(html);
+                // Load forms in tabs when both selected
+                $('#variantDropdown').change(function () {
+                    const brandId = $('#brandDropdown').val();
+                    const variantId = $(this).val();
+                    if (brandId && variantId) {
+                        // Load each tab with separate AJAX call
+                        $('#tabContent .tab-pane').each(function () {
+                            const tabId = $(this).attr('id'); // e.g., specTab, featuresTab
+                            $.get(`/TW/LoadTabPartial`, {
+                                brandId: brandId,
+                                variantId: variantId,
+                                tab: tabId
+                            }, function (html) {
+                                $(`#${tabId}`).html(html);
+                            });
                         });
-                    });
-                }
+                    }
+                });
             });
-        });
-    </script>
-}
-*@
-
-@*
-@section Scripts {
-    <script>
-        $(document).ready(function () {
-            // Load variants when brand changes
-            $('#brandDropdown').change(function () {
-                const brandId = $(this).val();
-                $('#variantDropdown').empty().append('<option value="">-- Select Variant --</option>');
-                $('#tabContent .tab-pane').empty(); // Clear tabs
-
-                if (brandId) {
-                    $.get('/TW/GetVariants', { brandId: brandId }, function (variants) {
-                        $.each(variants, function (i, v) {
-                            $('#variantDropdown').append(`<option value="${v.twVarientId}">${v.twName}</option>`);
-                        });
-                    });
-                }
-            });
-
-            // Load tab content dynamically when variant is selected
-            $('#variantDropdown').change(function () {
-                const brandId = $('#brandDropdown').val();
-                const variantId = $(this).val();
-
-                if (brandId && variantId) {
-                    $('#tabContent .tab-pane').each(function () {
-                        const tabId = $(this).attr('id'); // e.g., specTab
-                        $.get('/TW/LoadTabPartial', {
-                            brandId: brandId,
-                            variantId: variantId,
-                            tab: tabId
-                        }, function (html) {
-                            $(`#${tabId}`).html(html);
-                        });
-                    });
-                }
-            });
-        });
-    </script>
-}
+        </script>
+    }
 *@
 
 @section Scripts {
-    <script>
-        $(document).ready(function () {
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>$(document).ready(function () {
             // When a variant is selected
             $('#variantDropdown').change(function () {
                 const variantId = $(this).val();
@@ -396,6 +351,47 @@
                     $('#tabContent').html(html);
                 });
             });
-        });
-    </script>
+        });</script>
 }
+<div class="bike-details-page container mt-5">
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <img src="@Model.TwoWheeler?.TWImage"
+                 class="img-fluid rounded" />
+        </div>
+
+        <div class="col-md-6">
+
+            <h1>@Model.TwoWheeler?.TwoWheelerName</h1>
+
+            <h3>@Model.TwoWheeler?.Price</h3>
+
+            <p>
+                Brand:
+                @Model.TwoWheeler?.Brand
+            </p>
+
+            <p>
+                Type:
+                @Model.TwoWheeler?.Type
+            </p>
+
+            <p>
+                Launch Date:
+                @Model.TwoWheeler?.LaunchDate
+            </p>
+
+            @if (!string.IsNullOrEmpty(Model.TwoWheeler?.Discription))
+            {
+                <p>
+                    @Model.TwoWheeler.Discription
+                </p>
+            }
+
+        </div>
+
+    </div>
+
+</div>

@@ -14,6 +14,7 @@ namespace Cars_Bikes.Models
         //[DisplayFormat(DataFormatString = "{0:d MMM yyyy}", ApplyFormatInEditMode = true)]
 
         public string? ExpectedLaunchDate { get; set; }
+        //public string? ExpectedPrice { get; set; } -----------we dont have this field in database for now----------
         public string? ImageURL { get; set; }
         public int? TwoWBrandId { get; set; }
         [ForeignKey("TwoWBrandId")]

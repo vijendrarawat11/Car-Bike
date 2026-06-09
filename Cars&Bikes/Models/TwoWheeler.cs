@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 namespace Cars_Bikes.Models
 {
-    [Table("TwoWheelers")]
+    [Table("Twowheelers")]
     public class TwoWheeler
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

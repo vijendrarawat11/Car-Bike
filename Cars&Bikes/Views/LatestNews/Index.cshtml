@@ -14,7 +14,7 @@
         return input.Substring(0, length) + "...";
     }
 }
-<div class=" m-t90">
+<div class=" m-t10">
     <h1 class="for-h1 mb-5">Latest News</h1>
     <div class="upcoming-bikes-details-row">
         @foreach (var allLatestNews in ViewBag.allLatestNews)
@@ -26,11 +26,12 @@
                     </div>
 
                     @* <a href="@Url.Action("TWUpcomingBikeDetails", "Home", new { id = allUpbike.UpcomingBikeId })"style="text-decoration:none;"> *@
-                    <div class="upcoming-allbikes-details-content">
-                        <h2>@Truncate(@allLatestNews.NewsHeading, 22)</h2>
-                        <p><i class="fa fa-calendar"></i>  @allLatestNews.Date.ToString("d MMM yyyy")</p>
-                        <a href="/@allLatestNews.ImageURL" class="details-button" style="text-decoration:none;">View Details</a>
-                    </div>
+                <div class="upcoming-allbikes-details-content">
+                    @*<h2>@Truncate(@allLatestNews.NewsHeading, 22)</h2>*@
+                    <h2>@allLatestNews.NewsHeading</h2>
+                    <p><i class="fa fa-calendar"></i>  @allLatestNews.Date.ToString("d MMM yyyy")</p>
+                    <a href="/@allLatestNews.ImageURL" class="details-button" style="text-decoration:none;">View Details</a>
+                </div>
                     @* </a> *@
                 </div>
             </a>

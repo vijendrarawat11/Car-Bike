@@ -6,8 +6,12 @@
     <RootNamespace>Cars_Bikes</RootNamespace>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
     <PackageReference Include="Google.Apis.Drive.v3" Version="1.68.0.3428" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.4">
       <PrivateAssets>all</PrivateAssets>
@@ -18,6 +22,14 @@
     <Folder Include="Controllers\TwoWheeler\UpcomingBike\" />
     <Folder Include="Views\UpcomingBike\" />
     <Folder Include="wwwroot\.well-known\pki-validation\" />
+    <Folder Include="Services\" />
+    <Folder Include="Views\Wishlist\" />
+    <Folder Include="Views\Review\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Services\" />
+    <None Remove="Views\Wishlist\" />
+    <None Remove="Views\Review\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Views\TwoWheeler\LatestNews\2024\Nov\Nov292024NewsDetails1.cshtml" />

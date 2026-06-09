@@ -7,7 +7,26 @@
                 <div class=" brand-container">
                     <div class="brand-bike-card">
                         <div class="brand-bike-image">
-                            <img src="@brand.TWImage" alt="@brand.TwoWheelerName" title="@brand.TwoWheelerName" onerror="this.onerror=null; this.src='@Url.Content("/images/twowheeler/default.jpg")';">
+                            <span class="wishlist-wrapper">
+                                @*<i class="fa-regular fa-heart wishlist-icon"
+           data-bike="@brand.TwoWheelerName"
+           data-price="@brand.Price"
+           data-image="@Url.Content(brand.TWImage)"
+           data-url="/@brand.Brand.Replace(" ", "-").ToLower()/@brand.TwoWheelerName.Replace(" ", "-").ToLower()">
+        </i>*@
+                                <i class="fa-regular fa-heart wishlist-icon"
+                                   data-id="@brand.TwoWheelerId"
+                                   data-bike="@brand.TwoWheelerName"
+                                   data-price="@brand.Price"
+                                   data-image="@Url.Content(brand.TWImage)"
+                                   data-url="/@brand.Brand.Replace(" ", "-").ToLower()/@brand.TwoWheelerName.Replace(" ", "-").ToLower()">
+                                </i>
+                            </span>
+                            <img src="@brand.TWImage"
+                                 alt="@brand.TwoWheelerName"
+                                 title="@brand.TwoWheelerName"
+                                 onerror="this.onerror=null; this.src='@Url.Content("/images/twowheeler/default.jpg")';">
+
                         </div>
                         <div class="brand-bike-details">
                             <h2>@brand.TwoWheelerName</h2>
@@ -40,9 +59,129 @@
         }
     </div>
 </div>
-<script>
-    function showFallbackIcon(imgElement) {
+<script>function showFallbackIcon(imgElement) {
         imgElement.style.display = 'none'; // Hide the broken image
         imgElement.nextElementSibling.style.display = 'block'; // Show the fallback icon
-    }
-</script>
+    }</script>
+@*<script>document.addEventListener("DOMContentLoaded", function () {
+
+        document.querySelectorAll(".wishlist-icon")
+            .forEach(icon => {
+
+                icon.addEventListener("click", function (e) {
+
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const bikeData = {
+
+                        id: icon.dataset.id,
+                        name: icon.dataset.bike,
+                        price: icon.dataset.price,
+                        image: icon.dataset.image,
+                        url: icon.dataset.url
+                    };
+
+                    const isLoggedIn =
+                        document.body.dataset.isauthenticated === "true";
+
+                    if (!isLoggedIn) {
+
+                        const modalElement =
+                            document.getElementById("loginRequiredModal");
+
+                        let modal =
+                            bootstrap.Modal.getInstance(modalElement);
+
+                        if (!modal) {
+
+                            modal =
+                                new bootstrap.Modal(modalElement);
+                        }
+                        setTimeout(() => {
+
+                            modal.show();
+
+                        }, 100);
+
+                        return;
+                    }
+
+                    fetch('/Wishlist/AddToWishlist?twoWheelerId=' + bikeData.id, {
+                        method: 'POST'
+                    })
+                        .then(response => {
+
+                            if (response.ok) {
+
+                                icon.classList.remove("fa-regular");
+                                icon.classList.add("fa-solid");
+
+                                icon.style.pointerEvents = "none";
+                            }
+                        });
+
+                });
+
+            });
+
+    });</script>*@
+<script>document.addEventListener("DOMContentLoaded", function () {
+
+        document.querySelectorAll(".wishlist-icon")
+            .forEach(icon => {
+
+                icon.addEventListener("click", function (e) {
+
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const bikeData = {
+
+                        id: icon.dataset.id
+                    };
+
+                    const isLoggedIn =
+                        document.body.dataset.isauthenticated === "true";
+
+                    if (!isLoggedIn) {
+
+                        const modalElement =
+                            document.getElementById("loginRequiredModal");
+
+                        const existingModal =
+                            bootstrap.Modal.getInstance(modalElement);
+
+                        if (existingModal) {
+
+                            existingModal.dispose();
+                        }
+
+                        const modal =
+                            new bootstrap.Modal(modalElement, {
+                                backdrop: true,
+                                keyboard: true
+                            });
+
+                        modal.show();
+
+                        return;
+                    }
+
+                    fetch('/Wishlist/AddToWishlist?twoWheelerId=' + bikeData.id, {
+                        method: 'POST'
+                    })
+                        .then(response => {
+
+                            if (response.ok) {
+
+                                icon.classList.remove("fa-regular");
+                                icon.classList.add("fa-solid");
+                            }
+                        });
+
+                });
+
+            });
+
+    });</script>
