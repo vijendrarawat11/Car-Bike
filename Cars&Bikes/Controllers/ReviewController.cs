@@ -48,10 +48,10 @@ namespace Cars_Bikes.Controllers
             {
                 return RedirectToAction("Login", "Account");
             }
-            if (reviewText.Length < 100 || reviewText.Length > 500)
+            if (reviewText.Length < 10 || reviewText.Length > 1000)
             {
                 TempData["ReviewError"] =
-                    "Review must be between 100 and 500 characters.";
+                    "Review must be between 10 and 1000 characters.";
 
                 return Redirect(Request.Headers["Referer"].ToString());
             }

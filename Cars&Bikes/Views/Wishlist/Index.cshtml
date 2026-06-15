@@ -7,14 +7,115 @@
 <div class="wishlist-page">
 
     <h1 class="wishlist-heading">My Wishlist</h1>
-
+   
     <div class="wishlist-container">
 
         @if (Model.Count == 0)
         {
-            <h2 class="empty-wishlist">
-                Your wishlist is empty.
-            </h2>
+            <style>
+                .wishlist-page {
+/*                    min-height: 70vh;*/
+                    background: #f5f7fa;
+/*                    padding: 40px 20px 80px;*/
+                }
+
+                .wishlist-heading {
+                    text-align: center;
+                    font-size: 42px;
+                    font-weight: 700;
+                    color: #1f2937;
+/*                    margin-bottom: 70px;*/
+                }
+
+                .wishlist-container {
+                    display: block !important;
+                }
+                .empty-wishlist-container {
+                    width: 100% !important;
+                    margin: 0 auto !important;
+                    display: flex !important;
+                    flex-direction: column !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    text-align: center !important;
+                }
+
+                .empty-wishlist,
+                .wishlist-message,
+                .empty-heart,
+                .explore-btn {
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                }
+                .empty-heart {
+                    width: 90px;
+                    height: 90px;
+                    border-radius: 50%;
+                    background: #e8eef5;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+/*                    margin-bottom: 30px;*/
+                }
+
+                    .empty-heart i {
+                        font-size: 42px;
+                        color: #2f3542;
+                    }
+
+                .empty-wishlist {
+                    font-size: 30px;
+                    font-weight: 600;
+                    color: #222;
+/*                    margin-bottom: 18px;*/
+                    text-align: center;
+                }
+
+                .wishlist-message {
+                    font-size: 20px;
+                    color: #666;
+                    max-width: 650px;
+/*                    line-height: 1.6;*/
+/*                    margin-bottom: 35px;*/
+                }
+
+                .explore-btn {
+                    background: #1976d2;
+                    color: white;
+                    padding: 15px 38px;
+                    border-radius: 8px;
+                    font-size: 18px;
+                    font-weight: 500;
+                    text-decoration: none;
+                    transition: .3s;
+                }
+
+                    .explore-btn:hover {
+                        background: #125aa3;
+                        color: white;
+                        text-decoration: none;
+                        transform: translateY(-2px);
+                    }
+            </style>
+            <div class="empty-wishlist-container">
+
+                <div class="empty-heart">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+
+                <h2 class="empty-wishlist">
+                    Your wishlist is empty
+                </h2>
+
+                <p class="wishlist-message">
+                    Browse bikes and cars to add them to your wishlist.
+                </p>
+
+                <a href="/" class="explore-btn">
+                    Explore Vehicles
+                </a>
+
+            </div>
         }
         else
         {
