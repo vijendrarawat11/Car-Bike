@@ -1,0 +1,768 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "New Honda City Facelift 2025: Price, Features & Specs";
+}
+@section MetaTags {
+    <meta name="keywords" content="New Honda City facelift 2025, Honda City price in India, Honda City e:HEV, Honda City hybrid mileage, Honda City vs Hyundai Verna, Honda City ZX+ features, Honda City speciﬁcations, Honda City ADAS, Honda SENSING, Honda City fuel eﬃciency, Honda City facelift review, Honda City starting price, Honda City interior features, Honda City petrol vs hybrid, Honda City variants comparison, Honda City 2026 India launch" />
+    <meta name="description" content="Explore the New Honda City facelift — starting ₹11,99,900. Full specs, features, e:HEV hybrid details, safety tech, variant comparison & FAQs at BikeCarHub." />
+}
+
+@functions {
+    public string Truncate(string input, int length)
+    {
+        if (string.IsNullOrEmpty(input) || input.Length <= length)
+            return input;
+        return input.Substring(0, length) + "...";
+    }
+}
+<body id="bg">
+    @* <div class="header-img"><img src="~/images/main-slider/header.png" alt="bikecarhubheaderimage" title="bikecarhubheaderimage" /></div> *@
+    <div class=" ">
+        <div><h1 class="latest-bike-head">@Model.BlogHeading</h1></div>
+
+
+        <div class=" latest-bike-container">
+            @* <div style="background-image:url(@ViewBag.TWNews.ImageURL);background-repeat:no-repeat;background-position: center;background-size:contain ;height: 400px;box-shadow: 5px 10px 8px #888888;border-radius:10px;background-color:#ebecee;padding:60px;"></div> *@
+            <div class="upcoming-bikes-details-image">
+                <img src="@Model.ImageURL" alt="@Model.BlogHeading" title="@Model.BlogHeading" onerror="this.onerror=null; this.src='@Url.Content("~/images/default.jpg")';" />
+
+                <div class="upcoming-bikes-details-text">
+                    <p><i class="fa fa-calendar"></i> @Model.Date?.ToString("d MMM yyyy")</p>
+                    @* <p>@ViewBag.TWNews.NewsSummary</p> *@
+                </div>
+            </div>
+            <div class="latest-bikes-details-content">
+                <h3 class="subheading">Introduction: A Fresh Chapter for India's Favourite Sedan</h3>
+                <p>@Html.Raw(@Model.BlogSummary.Replace("\n", "<br>"))</p>
+                <p>The New Honda City facelift has arrived, and it is not just a cosmetic refresh. Honda has gone deep — redesigning the exterior language, elevating the interior to near-premium territory, improving the technology stack, and most importantly, keeping its dual powertrain strategy intact. Whether someone is looking for a fuel-eﬃcient self-charging hybrid or a punchy petrol sedan, the New City has an answer for both.</p>
+                <p>
+                    At <span class="font-weight-700">BikeCarHub, </span>the team has gone through every detail of this updated sedan — from its sharp new face to its comprehensive feature list — and this article breaks it all down. Starting price is
+                    ₹11,99,900, and from here, the story only gets more interesting.
+                </p>
+                <h3 class="subheading">Exterior Design: Sharp, Sporty & Attention-Grabbing</h3>
+                <p class="font-weight-700">A Bold New Face</p>
+                <p>The most immediately noticeable change on the New Honda City facelift is its front end. Honda has adopted what it calls the <span class="font-weight-700">"Blade-Eye" Signature LED Lighting System </span>— a wide, horizontal LED strip that sweeps across the front fascia, ﬂanked by sleek projector headlamps with integrated split LED DRLs and turn signals. The eﬀect is dramatic and modern, giving the City a far more premium and assertive stance than before.</p>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center image-height"><img src="~/images/blogs/2026/june/honda city facelift/img1.webp" alt="img1" title="img1" loading="lazy" /></div>
+                </div>
+                <p>Complementing this is the <span class="font-weight-700">Signature Matrix-Mesh Black Painted Front Upper Grille</span> and the redesigned lower bumper with <span class="font-weight-700">Aero-Blade Front Bumper Air Curtains.</span> The Matrix-Mesh lower bumper garnish at the front and rear ties the design together with a consistent, geometric visual theme. It genuinely looks like a car from a segment above its price point.</p>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center image-height"><img src="~/images/blogs/2026/june/honda city facelift/img2.webp" alt="img2" title="img2" loading="lazy" /></div>
+                </div>
+                <p class="font-weight-700">From Every Angle</p>
+                <p>
+                    Moving to the rear, the facelift introduces the <span class="font-weight-700">Signature Z-Edge Wrap-around LED Tail Lamps with Clear Lens</span> — a bold, Z-shaped LED cluster that wraps across the boot lid and gives the City
+
+                    a distinctive identity even in a rearview mirror. A <span class="font-weight-700">Sporty Trunk Lip Spoiler</span> on the top variants
+                    adds a subtle athletic touch.
+                </p>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center image-height"><img src="~/images/blogs/2026/june/honda city facelift/img3.webp" alt="img3" title="img3" loading="lazy" /></div>
+                </div>
+                <p>On the sides, the <span class="font-weight-700">Aero-Blade Diamond Cut Alloy Wheels</span> — available in 16-inch size depending on the variant — add a premium metallic glint to the proﬁle. The result is a silhouette that feels tighter, more purposeful, and decidedly more contemporary than the pre-facelift model.</p>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center image-height"><img src="~/images/blogs/2026/june/honda city facelift/img4.webp" alt="img4" title="img4" loading="lazy" /></div>
+                </div>
+                <p class="font-weight-700">Available Colour Options</p>
+                <p>Honda has given the New City a palette that suits a wide range of personalities. The six colour options are:</p>
+                <ul>
+                    <li>Crystal Black Pearl</li>
+                    <li>Radiant Red Metallic </li>
+                    <li>Obsidian Blue Pearl</li>
+                    <li>Meteoroid Gray Metallic </li>
+                    <li>Lunar Silver Metallic</li>
+                    <li>Platinum White Pearl</li>
+                </ul>
+                <p>Each ﬁnish has been chosen to complement the car's sharper body lines, with the darker shades bringing out the muscular creases and the lighter ones emphasizing the clean, smooth surfaces.</p>
+                <h3 class="subheading">Interior: Luxury Meets Practicality</h3>
+                <p class="font-weight-700">A Cabin That Impresses</p>
+                <p>Step inside the New Honda City and the ﬁrst thing that strikes is the sense of space and reﬁnement. Honda has moved to a <span class="font-weight-700">Luxurious Ivory and Black Two-Tone Interior</span> theme on higher trims, upholstered with <span class="font-weight-700">Perforated Ivory Leather Seats</span> that look and feel genuinely premium. The seat design itself has been updated — the top ZX+ variant gets an Exclusive Sporty Design while the ZX gets a Contemporary design.</p>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center image-height"><img src="~/images/blogs/2026/june/honda city facelift/img6.webp" alt="img5" title="img5" loading="lazy" /></div>
+                </div>
+                <p>The dashboard is anchored by the <span class="font-weight-700">Dark Iron 3D Pattern Garnish</span> on the assistant side, which houses the <span class="font-weight-700">Welcome Ambient Lighting strip</span> — a subtle but classy touch that lights up when you approach the car. Additional ambient lighting is positioned in the front footwell and along the dashboard and display audio unit, creating a layered, atmospheric feel during evening drives.</p>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center image-height"><img src="~/images/blogs/2026/june/honda city facelift/img7.webp" alt="img6" title="img6" loading="lazy" /></div>
+                </div>
+                <p>BikeCarHub notes that the interior quality on the ZX and ZX+ trims genuinely punches above its segment, standing comfortably alongside rivals that cost signiﬁcantly more.</p>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center image-height"><img src="~/images/blogs/2026/june/honda city facelift/img8.webp" alt="img7" title="img7" loading="lazy" /></div>
+                </div>
+                <p class="font-weight-700">Infotainment and Connectivity</p>
+                <p>At the heart of the dashboard sits the <span class="font-weight-700">25.6 cm (10.1-inch) Floating Touchscreen Display Audio</span> on ZX and ZX+ trims — a large, tablet-style screen with wireless Android Auto and Apple CarPlay support. Lower SV and V trims get a more modest 20.3 cm (8-inch) screen with wired connectivity.</p>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center image-height"><img src="~/images/blogs/2026/june/honda city facelift/img9.webp" alt="img8" title="img8" loading="lazy" /></div>
+                </div>
+                <p></p>
+                <p>The premium sound system is a major upgrade — the top variants get an <span class="font-weight-700">8-Speaker Premium Surround Sound System (4 Speakers + 4 Tweeters)</span> that delivers rich, room-ﬁlling audio. The driver's view is complemented by a <span class="font-weight-700">17.7 cm (7-inch) HD Full Colour TFT Meter</span> on ZX+ trims, oﬀering detailed information including power ﬂow displays (on the e:HEV variant), G-Meter display, and a digital speedometer.</p>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center image-height"><img src="~/images/blogs/2026/june/honda city facelift/img10.webp" alt="img10" title="img10" loading="lazy" /></div>
+                </div>
+                <p>Other cabin tech highlights include:</p>
+                <ul>
+                    <li><span class="font-weight-700">Wireless Smartphone Charger</span> (standard built-in on e:HEV; Plug & Play type on petrol ZX/ZX+)</li>
+                    <li><span class="font-weight-700">Fully Automatic Climate Control</span> with Max Cool mode and click-feel AC dials </li>
+                    <li><span class="font-weight-700">Rear AC Vents with 2 USB-C Charging Ports</span> for passenger convenience</li>
+                    <li><span class="font-weight-700">One-Touch Electric Sunroof</span> with Slide/Tilt function and Pinch Guard (ZX and above)</li>
+                    <li><span class="font-weight-700">PM 2.5 Cabin Air Purifying Filter</span> — particularly relevant for those driving in India's urban environments</li>
+                    <li><span class="font-weight-700">Rear Windscreen Sunshade</span> for comfort in Indian summers</li>
+                </ul>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center image-height"><img src="~/images/blogs/2026/june/honda city facelift/img11.webp" alt="img11" title="img11" loading="lazy" /></div>
+                </div>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center image-height"><img src="~/images/blogs/2026/june/honda city facelift/img12.webp" alt="img12" title="img12" loading="lazy" /></div>
+                </div>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center image-height"><img src="~/images/blogs/2026/june/honda city facelift/img13.webp" alt="img13" title="img13" loading="lazy" /></div>
+                </div>
+                <h3 class="subheading">Performance: Two Powertrains, One Character</h3>
+                <p class="font-weight-700">The e:HEV Self-Charging Hybrid</p>
+                <p>The headline powertrain of the New Honda City facelift is undoubtedly the <span class="font-weight-700">e:HEV (Self- Charging Strong Hybrid)</span> system. This is Honda's proprietary Two-Motor Hybrid setup, combining a <span class="font-weight-700">1.5L Atkinson Cycle DOHC i-VTEC Engine</span> with a generator motor and a traction motor, all managed by an Intelligent Power Unit (IPU) and Power Control Unit (PCU).</p>
+                <p>The system intelligently switches between three drive modes:</p>
+                <ul>
+                    <li><span class="font-weight-700">EV Drive Mode</span> — runs silently on battery power alone, producing zero local emissions </li>
+                    <li><span class="font-weight-700">Hybrid Drive Mode</span> — the petrol engine acts as a generator while the motor drives the wheels</li>
+                    <li><span class="font-weight-700">Engine Drive Mode</span> — the engine directly drives the wheels, with the motor providing peak power boosts</li>
+                 </ul>
+                <p>The combined system output is an impressive <span class="font-weight-700">93 kW (126 PS)</span>, and the traction motor delivers a thrilling <span class="font-weight-700">253 Nm of torque from 0 to 3,000 rpm</span> — meaning that instantaneous shove oﬀ the line is always on tap. Despite this performance, the certiﬁed fuel eﬃciency is an outstanding <span class="font-weight-700">27.26 km/L</span> (as per CMVR Rule 115), which is among the best in its segment.</p>
+                <p>The e:HEV also features <span class="font-weight-700">Electric Regenerative Braking</span> (through the Electric Servo Brake system) and <span class="font-weight-700">Deceleration Selector Paddles</span> that allow drivers to control the level of energy regeneration — a feature enthusiasts will appreciate.</p>
+                <p class="font-weight-700">The Pure Petrol i-VTEC Engine</p>
+                <p>For those who prefer a traditional driving experience, the <span class="font-weight-700">1.5L i-VTEC DOHC engine with Variable Timing Control (VTC)</span> remains in the lineup and is available with either a 6-speed <span class="font-weight-700">Manual Transmission</span> or a <span class="font-weight-700">7-speed CVT (Automatic)</span>.</p>
+                <p>This engine produces <span class="font-weight-700">89 kW (121 PS) at 6,600 rpm</span> and <span class="font-weight-700">145 Nm of torque at 4,300 rpm</span>. It is classic Honda i-VTEC — smooth at low revs for daily commuting, and responsive when the driver demands more. The 7-speed CVT includes Sporty Paddle Shifters, while fuel eﬃciency stands at <span class="font-weight-700">17.97 km/L (CVT) and 17.77 km/L (MT)</span> as certiﬁed.</p>
+                <p>Both engines are <span class="font-weight-700">E20 (20% ethanol-blended petrol) compliant</span>, aligning with India's clean fuel roadmap.</p>
+                <h3 class="subheading">Safety: Honda SENSING and Beyond</h3>
+                <p class="font-weight-700">Intelligent ADAS Technology</p>
+                <p>Honda has equipped the New City with its <span class="font-weight-700">Honda SENSING</span> Advanced Driver Assistance System (ADAS) on V, ZX, and ZX+ variants. The suite includes:</p>
+                <ul>
+                    <li><span class="font-weight-700">Collision Mitigation Braking System (CMBS)</span> — detects potential collisions and applies the brakes automatically</li>
+                    <li><span class="font-weight-700">Adaptive Cruise Control with Low Speed Follow</span> (Low Speed Follow exclusive to e:HEV) </li>
+                    <li><span class="font-weight-700">Lane Keeping Assist System (LKAS)</span> — gently steers the car to keep it centered in its lane </li>
+                    <li><span class="font-weight-700">Road Departure Mitigation System</span> — alerts and provides steering support when the carveers oﬀ the road</li>
+                    <li><span class="font-weight-700">Auto High-Beam</span> — switches between low and high beams based on oncoming traﬃc</li>
+                    <li><span class="font-weight-700">Lead Car Departure Notiﬁcation System</span> — alerts the driver when the car ahead starts moving at a traﬃc stop</li>
+                </ul>
+                <p>These features are not gimmicks — they represent a meaningful safety net that can genuinely prevent or mitigate accidents on Indian highways and city roads.</p>
+                <p class="font-weight-700">Passive Safety and Other Features</p>
+                <p>Standard safety across all variants is comprehensive. Every New Honda City comes with:</p>
+                <ul>
+                    <li><span class="font-weight-700">6 Airbags</span> — Dual Front, Front Side, and Side Curtain airbags</li>
+                    <li><span class="font-weight-700">ACE™ Body Structure</span> (Advanced Compatibility Engineering) for enhanced crash energy absorption</li>
+                    <li><span class="font-weight-700">Vehicle Stability Assist (VSA) with Traction Control </span></li>
+                    <li><span class="font-weight-700">Agile Handling Assist (AHA)</span></li>
+                    <li><span class="font-weight-700">Anti-Lock Braking System (ABS)</span> with Brake Assist and EBD </li>
+                    <li><span class="font-weight-700">Hill Start Assist</span></li>
+                    <li><span class="font-weight-700">Emergency Stop Signal</span></li>
+                    <li><span class="font-weight-700">Tyre Pressure Monitoring System (Deﬂation Warning System) </span></li>
+                    <li><span class="font-weight-700">ISOFIX Anchorages & Tether</span> for child seat safety</li>
+                    <li><span class="font-weight-700">Rear Parking Sensors</span> across all variants</li>
+                </ul>
+                <p>The ZX+ e:HEV gets additional safety hardware: <span class="font-weight-700">360° Surround-Vision Multi-View Camera, All 4-Wheel Disc Brakes, Electronic Parking Brake (EPB)</span> with Auto Brake Hold, and <span class="font-weight-700">AVAS</span> (Acoustic Vehicle Alerting System for low-speed EV mode) — a thoughtful feature for pedestrian safety.</p>
+                <p><span class="font-weight-700">LaneWatch™ Camera</span> on ZX and ZX+ trims projects a wide-angle view of the left blind spot onto the touchscreen whenever the left indicator is activated.</p>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center image-height"><img src="~/images/blogs/2026/june/honda city facelift/img14.webp" alt="img14" title="img14" loading="lazy" /></div>
+                </div>
+                <h3 class="subheading">Comfort and Convenience: First-Class Experience</h3>
+                <p>Honda has paid great attention to making the everyday driving experience as eﬀortless as possible. Highlights include:</p>
+                <ul>
+                    <li><span class="font-weight-700">Active Ventilated Front Seats</span> (ZX+ only) — a blessing for Indian summers </li>
+                    <li><span class="font-weight-700">One-Touch Push Start/Stop</span> with Smart Keyless Access</li>
+                    <li><span class="font-weight-700">Remote Engine Start</span> — start and pre-cool the car before you even step outside (CVT and e:HEV variants)</li>
+                    <li><span class="font-weight-700">Walk Away Auto Lock</span> — the car locks itself as you walk away</li>
+                    <li><span class="font-weight-700">Power Windows with Auto Up/Down and Pinch Guard</span> on all doors (ZX+ gets all 4 doors) </li>
+                    <li><span class="font-weight-700">Telescopic and Tilt Steering Adjustment</span></li>
+                    <li><span class="font-weight-700">Auto Dimming Inside Rear View Mirror</span> (ZX and ZX+) </li>
+                    <li><span class="font-weight-700">Rain Sensing Wipers</span> (ZX and ZX+)</li>
+                    <li><span class="font-weight-700">Auto Headlamps</span> with Follow-Me-Home and Lead-Me-To-Car functions</li>
+                    <li><span class="font-weight-700">Rear Armrest with Cup Holders</span>, 1L door bottle holders, seat back pockets</li>
+                </ul>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center image-height"><img src="~/images/blogs/2026/june/honda city facelift/img15.webp" alt="img15" title="img15" loading="lazy" /></div>
+                </div>
+                <p>Storage has been thoughtfully designed throughout — front console cup holders, a lower console pocket sized for smartphones, driver's side coin pocket, and a generous <span class="font-weight-700">506-litre</span> boot on the petrol variant. The e:HEV has a slightly smaller boot due to the hybrid battery placement.</p>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center image-height"><img src="~/images/blogs/2026/june/honda city facelift/img16.webp" alt="img16" title="img16" loading="lazy" /></div>
+                </div>
+                <h3 class="subheading">Honda Connect: Always-On Connectivity</h3>
+                <p>The New City on V, ZX, and ZX+ trims comes with <span class="font-weight-700">Honda Connect</span>, a next-generation connected car system with a <span class="font-weight-700">free 3-year subscription</span> and a total of <span class="font-weight-700">39 smart features.</span> Connectivity extends to Alexa voice control and smartwatch integration.</p>
+                <p>The Honda Connect app is divided into three areas:</p>
+                <p><span class="font-weight-700">Peace of Mind:</span> Service Scheduler, Tow Away Alert, RSA Request & Tracking, Fuel Pay, Tyre Pressure Monitoring (via app, with accessory), Payment Gateway</p>
+                <p><span class="font-weight-700">Safety & Security:</span> Car Location, Geo-Fence Alert, Auto Crash Notiﬁcation, Stolen Vehicle Tracking, Contextual Speeding Alert, Unauthorized Access Alert, Drive View Recorder (with accessory)</p>
+                <p><span class="font-weight-700">Convenience:</span> Find My Car, Digital Pick & Drop, Remote Operations (lock/unlock, AC control), Trip Diary, Share Car Location, Free Service Coupon Redemption</p>
+                <div class="row m-b20">
+                    <div class="col-lg-12 col-md-12 text-center image-height"><img src="~/images/blogs/2026/june/honda city facelift/img5.webp" alt="img17" title="img17" loading="lazy" /></div>
+                </div>
+                <h3 class="subheading">Full Speciﬁcations Table</h3>
+                <div style="overflow-x: auto;">
+
+                    <table class="comparison-table-content">
+
+                        <thead>
+                            <tr>
+                                <th class="font-weight-600 text-center">Speciﬁcation</th>
+                                <th class="font-weight-600 text-center">e:HEV (Hybrid)</th>
+                                <th class="font-weight-600 text-center">i-VTEC (Petrol)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Engine Type</td>
+                                <td>1.5L Atkinson Cycle DOHC i-VTEC</td>
+                                <td>1.5L DOHC i-VTEC with VTC</td>
+                            </tr>
+                            <tr>
+                                <td>Displacement</td>
+                                <td>1,498 cc</td>
+                                <td>1,498 cc</td>
+                            </tr>
+                            <tr>
+                                <td>Max Power</td>
+                                <td>74 kW (100 PS) @@ 5,600–6,400 rpm (Engine)</td>
+                                <td>89 kW (121 PS) @@ 6,600 rpm</td>
+                            </tr>
+                            <tr>
+                                <td>System Power</td>
+                                <td>93 kW (126 PS)</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td>Max Torque</td>
+                                <td>131 Nm @@ 4,500–5,000 rpm (Engine) / 253 Nm (Motor)</td>
+                                <td>145 Nm @@ 4,300 rpm</td>
+                            </tr>
+                            <tr>
+                                <td>Fuel Eﬃciency</td>
+                                <td>27.26 km/L</td>
+                                <td>17.77 km/L (MT) / 17.97 km/L (CVT)</td>
+                            </tr>
+                            <tr>
+                                <td>Transmission</td>
+                                <td>Two-Motor e-CVT</td>
+                                <td>6-speed MT / 7-speed CVT</td>
+                            </tr>
+                            <tr>
+                                <td>Drive Modes</td>
+                                <td>EV / Hybrid / Engine</td>
+                                <td>D / S / SM (CVT)</td>
+                            </tr>
+                            <tr>
+                                <td>Battery Type</td>
+                                <td>Lithium-ion High-Voltage (172.8V)</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td>Fuel Type</td>
+                                <td>E20 Compliant Petrol</td>
+                                <td>E20 Compliant Petrol</td>
+                            </tr>
+                            <tr>
+                                <td>Overall Length</td>
+                                <td>4,594 mm</td>
+                                <td>4,594 mm</td>
+                            </tr>
+                            <tr>
+                                <td>Overall Width</td>
+                                <td>1,748 mm</td>
+                                <td>1,748 mm</td>
+                            </tr>
+                            <tr>
+                                <td>Overall Height</td>
+                                <td>1,489 mm</td>
+                                <td>1,489 mm</td>
+                            </tr>
+                            <tr>
+                                <td>Wheelbase</td>
+                                <td>2,600 mm</td>
+                                <td>2,600 mm</td>
+                            </tr>
+                            <tr>
+                                <td>Kerb Weight</td>
+                                <td>1,294 kg</td>
+                                <td>1,123–1,168 kg (variant dependent)</td>
+                            </tr>
+                            <tr>
+                                <td>Boot Space</td>
+                                <td>Large (slightly reduced)</td>
+                                <td>506 Litres</td>
+                            </tr>
+                            <tr>
+                                <td>Fuel Tank</td>
+                                <td>40 Litres</td>
+                                <td>40 Litres</td>
+                            </tr>
+                            <tr>
+                                <td>Seating</td>
+                                <td>5</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Turning Radius</td>
+                                <td>5.3 m</td>
+                                <td>5.3 m</td>
+                            </tr>
+                            <tr>
+                                <td>Front Suspension</td>
+                                <td>McPherson Strut with Coil Spring</td>
+                                <td>McPherson Strut with Coil Spring</td>
+                            </tr>
+                            <tr>
+                                <td>Rear Suspension</td>
+                                <td>Torsion Beam with Coil Spring</td>
+                                <td>Torsion Beam with Coil Spring</td>
+                            </tr>
+                            <tr>
+                                <td>Front Brakes</td>
+                                <td>Disc (Ventilated)</td>
+                                <td>Disc (Ventilated)</td>
+                            </tr>
+                            <tr>
+                                <td>Rear Brakes</td>
+                                <td>Disc (e:HEV ZX+)</td>
+                                <td>Drum</td>
+                            </tr>
+                            <tr>
+                                <td>Tyres (Top)</td>
+                                <td>185/55 R16</td>
+                                <td>185/55 R16 (ZX/ZX+)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3 class="subheading">Key Features Comparison: Variant-Wise Breakdown</h3>
+                <div style="overflow-x: auto;">
+
+                    <table class="comparison-table-content">
+
+                        <thead>
+                            <tr>
+                                <th class="font-weight-600 text-center">Feature</th>
+                                <th class="font-weight-600 text-center">SV</th>
+                                <th class="font-weight-600 text-center">V</th>
+                                <th class="font-weight-600 text-center">ZX</th>
+                                <th class="font-weight-600 text-center">ZX+</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Honda SENSING (ADAS)</td>
+                                <td>✗</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Low Speed Follow</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✓ Low Speed Follow</td>
+                            </tr>
+                            <tr>
+                                <td>Honda Connect</td>
+                                <td>✗</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Touchscreen Size</td>
+                                <td>8"</td>
+                                <td>8"</td>
+                                <td>10.1"</td>
+                                <td>10.1"</td>
+                            </tr>
+                            <tr>
+                                <td>Wireless CarPlay/Android Auto</td>
+                                <td>Wired</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>8-Speaker Sound System</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Wireless Charger</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>Plug & Play</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Electric Sunroof</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Leather Seats</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Active Ventilated Seats</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>360° Camera</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Alloy Wheels</td>
+                                <td>✗</td>
+                                <td>15" Gray</td>
+                                <td>16" Shark Gray</td>
+                                <td>16" Berlina Black</td>
+                            </tr>
+                            <tr>
+                                <td>6 Airbags</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>EPB + Auto Brake Hold</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✓ (e:HEV)</td>
+                            </tr>
+                            <tr>
+                                <td>e:HEV Powertrain Option</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Trunk Lip Spoiler</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>7" TFT Instrument Cluster</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Remote Engine Start</td>
+                                <td>✗</td>
+                                <td>✓ (CVT)</td>
+                                <td>✓ (CVT)</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>LaneWatch Camera</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>PM 2.5 Filter</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Rear Sunshade</td>
+                                <td>✗</td>
+                                <td>✗</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3 class="subheading">Honda City Facelift vs Rivals: Quick Comparison</h3>
+                <div style="overflow-x: auto;">
+
+                    <table class="comparison-table-content">
+
+                        <thead>
+                            <tr>
+                                <th class="font-weight-600 text-center">Parameter</th>
+                                <th class="font-weight-600 text-center">Honda City ZX+ e:HEV</th>
+                                <th class="font-weight-600 text-center">Maruti Ciaz Alpha</th>
+                                <th class="font-weight-600 text-center">Hyundai Verna SX(O) Turbo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Engine</td>
+                                <td>1.5L Hybrid (93 kW)</td>
+                                <td>1.5L Petrol (77 kW)</td>
+                                <td>1.0L Turbo (88 kW)</td>
+                            </tr>
+                            <tr>
+                                <td>Fuel Eﬃciency</td>
+                                <td>27.26 km/L</td>
+                                <td>~20 km/L</td>
+                                <td>~18–19 km/L</td>
+                            </tr>
+                            <tr>
+                                <td>ADAS</td>
+                                <td>Honda SENSING (6 features)</td>
+                                <td>Basic</td>
+                                <td>5+ ADAS features</td>
+                            </tr>
+                            <tr>
+                                <td>Airbags</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>Sunroof</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Wireless CarPlay</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Ventilated Seats</td>
+                                <td>✓</td>
+                                <td>✗</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>360° Camera</td>
+                                <td>✓</td>
+                                <td>✗</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Connected Car Tech</td>
+                                <td>Honda Connect (39 features)</td>
+                                <td>Basic</td>
+                                <td>Hyundai BlueLink</td>
+                            </tr>
+                            <tr>
+                                <td>Warranty</td>
+                                <td>3 yr standard / up to 10 yr</td>
+                                <td>2 yr standard</td>
+                                <td>3 yr standard</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>Note: Prices and features of competitors are subject to change. Please verify with respective dealerships.</p>
+                <h3 class="subheading">Warranty: Peace of Mind, the Honda Way</h3>
+                <p>Honda backs the New City with a comprehensive warranty structure that is among the most generous in its segment:</p>
+                <ul>
+                    <li><span class="font-weight-700">3-Year / Unlimited km Standard Warranty</span> (all variants)</li>
+                    <li><span class="font-weight-700">Up to 7-Year / Unlimited km Extended Warranty</span> (purchasable)</li>
+                    <li><span class="font-weight-700">Up to 10-Year Anytime Warranty</span> (renewable annually, up to 1,20,000 km) </li>
+                </ul>
+                <p>For the e:HEV speciﬁcally:</p>
+                <ul>
+                    <li><span class="font-weight-700">5-Year / 1,00,000 km Hybrid System Components Warranty</span></li>
+                    <li><span class="font-weight-700">8-Year / 1,60,000 km Lithium-Ion Battery Warranty</span></li>
+                </ul>
+                <p>This is an important reassurance for buyers considering the hybrid system — Honda is clearly conﬁdent enough in the technology to back it with 8 years of battery coverage.</p>
+                <h3 class="subheading">Genuine Accessories: Make It Your Own</h3>
+                <p>Honda oﬀers a <span class="font-weight-700">Signature Package</span> for those wanting to personalize their City further. Items include:</p>
+                <ul>
+                    <li>Trunk Garnish</li>
+                    <li>Tail Lamp Garnish</li>
+                    <li>Front Upper Moulding Garnish </li>
+                    <li>Window Chrome Moulding</li>
+                    <li>Door Lower Garnish</li>
+                </ul>
+                <p>Items in the Signature Package can be purchased as a set or individually. A complete accessories brochure is available at Honda dealerships.</p>
+                <h3 class="subheading">Starting Price and Value Proposition</h3>
+                <p>The New Honda City facelift starts at <span class="font-weight-700">₹11,99,900 (ex-showroom)</span> for the base SV variant. Given the breadth of features even at this entry point — 6 airbags, ADAS on V and above, Honda's trusted i-VTEC engine, and a polished new design — the value proposition is strong.</p>
+                <p>The top-of-the-range ZX+ e:HEV brings a luxury cabin, a technologically sophisticated hybrid powertrain, class-leading fuel eﬃciency, Honda SENSING with all features including Low Speed Follow, 360° camera, ventilated seats, and 10-year warranty potential — making a compelling case for itself in the upper end of the midsize sedan segment.</p>
+                <p>For daily commuters in Indian cities who are conscious of fuel costs, the e:HEV variant's 27.26 km/L eﬃciency can translate into signiﬁcant savings over time, potentially recovering its premium over the petrol variant within a few years of driving.</p>
+                <h3 class="subheading">Final Verdict: Should You Buy the New Honda City Facelift?</h3>
+                <p>The New Honda City facelift is exactly what the nameplate needed. It retains everything that made the City great — interior space, build quality, driving reﬁnement, low running costs — and elevates almost every aspect of the package. The exterior is sharper, the interior is more premium, the technology is more comprehensive, and the hybrid option is genuinely impressive.</p>
+                <p>For sedan buyers in India who want a car that feels special every single day without stretching into luxury car territory, the New Honda City is a very easy recommendation. Whether one chooses the frugal e:HEV or the spirited i-VTEC, the experience is polished and conﬁdence- inspiring.</p>
+                <p>BikeCarHub will continue to bring in-depth reviews and comparisons as more real-world data on the New Honda City comes in. Stay tuned.</p>
+                <h3 class="subheading">10 Frequently Asked Questions (FAQs)</h3>
+                <div class="accordion" id="bmwAccordion">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                Q1. What is the starting price of the New Honda City facelift
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#bmwAccordion">
+                            <div class="accordion-body">
+                                The New Honda City facelift starts at ₹11,99,900 (ex-showroom) for the base SV (Manual, i-VTEC) variant. Prices go up based on the variant and powertrain chosen.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                Q2. What are the powertrain options available in the New Honda City?
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#bmwAccordion">
+                            <div class="accordion-body">
+                                The New Honda City is available in two powertrains: the <span class="font-weight-700">1.5L i-VTEC petrol engine</span> (paired with a 6-speed MT or 7- speed CVT) and the <span class="font-weight-700">e:HEV Self-Charging Strong Hybrid</span> system (with a Two-Motor e-CVT).
+                                The e:HEV is only available in the top ZX+ grade.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                Q3. What is the fuel eﬃciency of the Honda City e:HEV
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#bmwAccordion">
+                            <div class="accordion-body">
+                                The ERC is BMW Motorrad's The Honda City e:HEV delivers a certiﬁed fuel eﬃciency of <span class="font-weight-700">27.26 km/L</span> under Rule 115 of CMVR 1989 — making it one of the most fuel-eﬃcient sedans in its segment in India.advanced centrifugal clutch system that eliminates manual clutch lever operation during normal riding — including starting off, gear changes, and off-road maneuvering. It comes standard on the GS Trophy variant and is available as an optional accessory on all other variants.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                                Q4. Does the New Honda City have ADAS features?
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#bmwAccordion">
+                            <div class="accordion-body">
+                                Yes. The New Honda City comes with <span class="font-weight-700">Honda SENSING</span> (ADAS) on V, ZX, and ZX+ variants. The system includes Collision Mitigation Braking, Adaptive Cruise Control, Lane Keeping Assist, Road Departure Mitigation, Auto High- Beam, and Lead Car Departure Notiﬁcation. Low Speed Follow is exclusive to the ZX+ e:HEV.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
+                                Q5. How many airbags does the New Honda City have?
+                            </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#bmwAccordion">
+                            <div class="accordion-body">
+                                The New Honda City comes with <span class="font-weight-700">6 airbags as standard across all variants</span> — Dual Front, Front Side (i-Side), and Side Curtain airbags.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading6">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6">
+                                Q6. What colour options are available for the New Honda City
+                            </button>
+                        </h2>
+                        <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#bmwAccordion">
+                            <div class="accordion-body">
+                                Six colour options are available: Crystal Black Pearl, Radiant Red Metallic, Obsidian Blue Pearl, Meteoroid Gray Metallic, Lunar Silver Metallic, and Platinum White Pearl.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading7">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7">
+                                Q7. What is Honda Connect and which variants get it?
+                            </button>
+                        </h2>
+                        <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#bmwAccordion">
+                            <div class="accordion-body">
+                                Honda Connect is Honda's connected car platform oﬀering 39 smart features across categories like Safety & Security, Convenience, and Peace of Mind. It is available on V, ZX, and ZX+ variants and comes with a free 3-year subscription. It supports Alexa remote capability and Smartwatch connectivity.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading8">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8">
+                                Q8. Does the Honda City e:HEV need to be plugged in to charge?
+                            </button>
+                        </h2>
+                        <div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#bmwAccordion">
+                            <div class="accordion-body">
+                                No. The Honda City e:HEV is a <span class="font-weight-700">Self-Charging Strong Hybrid</span> — it charges its own Lithium-ion battery through the petrol engine and regenerative braking. No external charging is required at any point.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading9">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9">
+                                Q9. What warranty does the New Honda City come with
+                            </button>
+                        </h2>
+                        <div id="collapse9" class="accordion-collapse collapse" data-bs-parent="#bmwAccordion">
+                            <div class="accordion-body">
+                                The New Honda City comes with a 3- year/unlimited km standard warranty, extendable up to 7 years (unlimited km) as an Extended Warranty, and up to 10 years (or 1,20,000 km) via Anytime Warranty. The e:HEV's Hybrid System Components carry a 5-year/1,00,000 km warranty, while the Lithium-ion Battery is covered for 8 years or 1,60,000 km.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading10">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10">
+                                Q10. Is the Honda City e:HEV worth the premium over the petrol variant?
+                            </button>
+                        </h2>
+                        <div id="collapse10" class="accordion-collapse collapse" data-bs-parent="#bmwAccordion">
+                            <div class="accordion-body">
+                                For buyers who
+                                clock high daily mileage — especially in urban stop-and-go traﬃc where hybrids excel — the e:HEV's exceptional fuel eﬃciency (27.26 km/L vs ~18 km/L for petrol) can oﬀset the higher purchase price over a few years. Add to that the smoother driving experience, additional premium features, 360° camera, all-disc brakes, and EPB with Auto Brake Hold, and the ZX+ e:HEV represents strong value for a buyer looking for the best possible Honda City experience.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p></p>
+                <p class="text-right"><span class="font-weight-700">Written by:</span> BikeCarHub Editorial Team</p>
+                <p class="text-right"><span class="font-weight-700">Published on:</span>19 June 2026</p>
+                <p></p>
+                <p>For  <a class="for-link" asp-controller="Blogs" asp-action="Jan012026BlogDetails3">BMW New X3</a></p>
+                <p>For <a class="for-link" asp-controller="Blogs" asp-action="Jan012026BlogDetails5">The New BMW 2 Series Gran Coupe</a></p>
+                <p>Check other Vehicles on<a class="for-link" asp-controller="Home" asp-action="Index"> BikeCarHub</a></p>
+            </div>
+        </div>
+
+    </div>
+
+    @await Html.PartialAsync("_AllViewComponent")
+</body>
+<script>
+    function showFallbackIcon(imgElement) {
+        imgElement.style.display = 'none'; // Hide the broken image
+        imgElement.nextElementSibling.style.display = 'block'; // Show the fallback icon
+    }
+</script>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}

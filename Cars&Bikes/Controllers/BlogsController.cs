@@ -1507,6 +1507,16 @@ namespace Cars_Bikes.Controllers
             }
             return View("~/Views/Blogs/2026/May012026BlogDetails1.cshtml", blogsDetails);
         }
+        [Route("blogs/new-honda-city-facelift")]
+        public IActionResult Jun192026BlogDetails1()
+        {
+            var blogsDetails = GetBlogDetails("New Honda City Facelift 2025: Price, Features, Specs & Everything You Need to Know");
+            if (blogsDetails == null)
+            {
+                return NotFound(); // Return 404 if news item is not found
+            }
+            return View("~/Views/Blogs/2026/Jun192026BlogDetails1.cshtml", blogsDetails);
+        }
         private Cars_Bikes.Models.Blogs GetBlogDetails(string blogsHeading)
         {
             var blogsItem = _context.Blogs
